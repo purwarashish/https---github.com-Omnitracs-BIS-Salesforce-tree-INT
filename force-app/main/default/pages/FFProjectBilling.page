@@ -1,0 +1,123 @@
+<apex:page controller="FFProjectBillingController" sidebar="false" docType="html-5.0">
+ 
+    <apex:form >
+        Billing From End Date: &nbsp;&nbsp;<apex:input type="date" value="{!billingFromDate}" required="true" /> &nbsp;&nbsp;
+		Billing To End Date: &nbsp;&nbsp;<apex:input type="date" value="{!billingToDate}" required="true" /> &nbsp;&nbsp;
+        <apex:commandButton value="View Mode" action="{!getAllProjects}"/> &nbsp; &nbsp;
+		<apex:commandButton value="Update Mode" action="{!updateBillableProjects}"/> &nbsp; &nbsp;
+        <apex:commandButton value="Export To Excel" action="{!exportToExcel}"/>
+		<apex:pagemessages />
+        
+        <apex:pageBlock title="Details" rendered="{!billingToDate != null}">
+            <b> <apex:outputLabel >Submitted By:&nbsp;&nbsp;</apex:outputLabel>
+            <apex:outputText value="{!$User.FirstName&' '&$User.LastName}"/></b> <br/>
+            <b> <apex:outputLabel >Submitted On:&nbsp;&nbsp;</apex:outputLabel>
+            <apex:outputText value="{0,date,M'/'d'/'yyyy HH:mm z}">
+                <apex:param value="{!NOW()}" />
+            </apex:outputText> </b> <br/>
+            <b> <apex:outputLabel >Mode: &nbsp;&nbsp;</apex:outputLabel>
+            <apex:outputText value="{!mode}"/> </b> <br/>
+            <b><apex:outputLabel >Billing From End Date :</apex:outputLabel> &nbsp;&nbsp;
+            <apex:outputText value="{0,date,M'/'d'/'yyyy}">
+                <apex:param value="{!billingFromDate}" /> 
+            </apex:outputText></b> <br/>
+			<b><apex:outputLabel >Billing To End Date :</apex:outputLabel> &nbsp;&nbsp;
+            <apex:outputText value="{0,date,M'/'d'/'yyyy}">
+                <apex:param value="{!billingToDate}" /> 
+            </apex:outputText></b>
+        </apex:pageBlock>
+        
+        <apex:pageBlock title="Billable Projects" rendered="{! billingToDate != null && mode != 'Update'}">
+            <apex:pageBlockTable value="{!lstBillableProjects}" var="item">
+                <apex:column >
+                    <apex:facet name="header">Project Name</apex:facet>
+                    <apex:outputlink value="/{!item.projectId}">{!item.projectName}</apex:outputlink>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">Unbilled Revenue</apex:facet>
+                    <apex:outputText value="{!item.unbilledRevenue}"/>
+                </apex:column>
+                <apex:column >
+                     <apex:facet name="header">Approved Timecards</apex:facet>
+                   <apex:outputText value="{!item.approvedTimecards}"/>
+                </apex:column>
+				<apex:column >
+                    <apex:facet name="header">Billable Amount</apex:facet>
+                   <apex:outputText value="{!item.billableAmount}"/>
+                </apex:column>
+                <apex:column >
+                     <apex:facet name="header">Unapproved Timecards</apex:facet>
+                   <apex:outputText value="{!item.unapprovedTimecards}"/>
+                </apex:column>
+				<apex:column >
+                    <apex:facet name="header">Unapproved Timecard Amount</apex:facet>
+                    <apex:outputText value="{!item.unApprovedAmount}"/>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        <apex:pageBlock title="Excluded from Billing" rendered="{! billingToDate != null && mode != 'Update'}">
+            <apex:pageBlockTable value="{!lstExcludedFromBilling}" var="item">
+                <apex:column >
+                    <apex:facet name="header">Project Name</apex:facet>
+                    <apex:outputlink value="/{!item.projectId}">{!item.projectName}</apex:outputlink>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        <apex:pageBlock title="Insufficient Budget" rendered="{! billingToDate != null && mode != 'Update'}">
+            <apex:pageBlockTable value="{!lstInsufficientBudget}" var="item">
+                <apex:column >
+                    <apex:facet name="header">Project Name</apex:facet>
+                    <apex:outputlink value="/{!item.projectId}">{!item.projectName}</apex:outputlink>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">Unbilled Revenue</apex:facet>
+                    <apex:outputText value="{!item.unbilledRevenue}"/>
+                </apex:column>
+                <apex:column >
+                     <apex:facet name="header">Approved Timecards</apex:facet>
+                   <apex:outputText value="{!item.approvedTimecards}"/>
+                </apex:column>
+				<apex:column >
+                    <apex:facet name="header">Billable Amount</apex:facet>
+                   <apex:outputText value="{!item.billableAmount}"/>
+                </apex:column>
+                <apex:column >
+                     <apex:facet name="header">Unapproved Timecards</apex:facet>
+                   <apex:outputText value="{!item.unapprovedTimecards}"/>
+                </apex:column>
+				<apex:column >
+                    <apex:facet name="header">Unapproved Timecard Amount</apex:facet>
+                    <apex:outputText value="{!item.unApprovedAmount}"/>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        <apex:pageBlock title="Projects Billable Amount < $300" rendered="{! billingToDate != null && mode != 'Update'}">
+            <apex:pageBlockTable value="{!lstInsufficientHours}" var="item">
+                <apex:column >
+                    <apex:facet name="header">Project Name</apex:facet>
+                    <apex:outputlink value="/{!item.projectId}">{!item.projectName}</apex:outputlink>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">Unbilled Revenue</apex:facet>
+                    <apex:outputText value="{!item.unbilledRevenue}"/>
+                </apex:column>
+                <apex:column >
+                     <apex:facet name="header">Approved Timecards</apex:facet>
+                   <apex:outputText value="{!item.approvedTimecards}"/>
+                </apex:column>
+				<apex:column >
+                    <apex:facet name="header">Billable Amount</apex:facet>
+                   <apex:outputText value="{!item.billableAmount}"/>
+                </apex:column>
+                <apex:column >
+                     <apex:facet name="header">Unapproved Timecards</apex:facet>
+                   <apex:outputText value="{!item.unapprovedTimecards}"/>
+                </apex:column>
+				<apex:column >
+                    <apex:facet name="header">Unapproved Timecard Amount</apex:facet>
+                    <apex:outputText value="{!item.unApprovedAmount}"/>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

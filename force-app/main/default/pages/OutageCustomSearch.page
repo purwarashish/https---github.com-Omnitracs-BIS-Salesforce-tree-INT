@@ -1,0 +1,128 @@
+<!---------------------------------------------------------------------------------------------------
+Name : OutageCustomSearch
+Author : Shruti Karn
+Date : 30 August 2010
+
+Usage : This page is the Step 3 for Outage Contact Wizard when "Custom" option is selected at Step2
+    
+----------------------------------------------------------------------------------------------------->
+<apex:page controller="OutageContactWizardController" tabStyle="Campaign" id="pageId" wizard="false" showHeader="true" sidebar="true">
+    
+    <script language="Javascript">
+    var FileNme='';
+    function findValidFile()
+    {
+      
+      FileNme = FileNme.toLowerCase();
+      if(FileNme.indexOf('csv') == -1)
+      {
+         alert('Please upload a CSV File');
+         var a = document.getElementsByName('pageId:contactNotificationForm:portalinfo:pgblksectn:inptfile:inputFile:file');
+         a[0].parentNode.innerHTML = a[0].parentNode.innerHTML;
+         return false;
+      }
+      else
+          return true;
+    }
+    function sendFileName(obj1)
+    {
+        FileNme = obj1.value;
+    }
+    function showErrorMsg()
+        {
+            var value = document.getElementById('pageId:contactNotificationForm:portalinfo:pgblksectn:pgblksectnitm2:idtype').rows.length;
+            var textValue = document.getElementById('pageId:contactNotificationForm:portalinfo:pgblksectn:inptText').value;
+            textValue = textValue.replace(/^\s+|\s+$/g, '');
+            //alert(textValue);
+            //alert(textValue.length);
+            var isError = true;
+            for(var i=0;i<value;i++)
+            {
+                var checkboxValue = document.getElementById('pageId:contactNotificationForm:portalinfo:pgblksectn:pgblksectnitm2:idtype:'+i).checked;
+                if(checkboxValue == true)
+                {
+                    isError = false;
+                    break;
+                }
+                                
+            }
+            if(isError == true)
+            {
+                    alert('Please select the type of Id\n');
+                    return false;
+            }
+            else if(FileNme == '' && textValue == '')
+            {
+                alert('Please provide atleast one Id \n');
+                
+                return false;
+            }
+           else if(textValue != '' && textValue.length > 4000)
+           {
+               alert('List of Ids should not exceed 4000 characters. \n');
+               return false;
+           }
+            else
+                return true;  
+         
+        } 
+   
+    </script>
+    <apex:sectionHeader title="Outage Contact Tool" subtitle="Step 3 of 5" />
+    <apex:includeScript value="{!$Resource.OutageTool}"/>
+    <apex:form id="contactNotificationForm"> 
+    <apex:actionFunction name="findAcctIds" action="{!findConnectionType}" oncomplete="redirect()" />
+    <apex:actionFunction name="redirect2next" action="{!redirectToStep2}" />
+    <apex:actionFunction name="clearFile" action="{!clearFile}"/>
+    <apex:messages style="color:rgb(204,0,0);font-weight: bold;text-align:center"/>
+    <apex:pageBlock title="Step 3. Custom Info" id="portalinfo">
+        <apex:pageBlockSection collapsible="false" columns="1" id="pgblksectn">
+           <apex:pageBlockSectionItem id="pgblksectnitm1" >  
+              <apex:outputPanel >
+                  <div style="text-align:right">
+                      <apex:commandButton value="Previous" action="{!redirectToStep2}"/>
+                      <apex:commandButton value="Next" action="{!redirectToStep4}" onclick="javascript:return showErrorMsg(); "/> 
+                      <apex:commandLink value="Cancel" action="/home/home.jsp"/>
+                  </div>
+              </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem id="pgblksectnitm2">  
+                <apex:selectRadio layout="pageDirection" value="{!strCustomSearch}" id="idtype">
+                    <apex:selectOption itemValue="{!$Label.NMC_ACCOUNT}" itemLabel="{!$Label.NMC_ACCOUNT}" />
+                    <apex:selectOption itemValue="{!$Label.CUST_ID}" itemLabel="{!$Label.CUST_ID}" />
+                    <apex:selectOption itemValue="{!$Label.AUX_ID}" itemLabel="{!$Label.AUX_ID}" />
+                    <apex:selectOption itemValue="{!$Label.COMPANY_ID}" itemLabel="{!$Label.COMPANY_ID}" />
+                 </apex:selectRadio>
+                 
+             </apex:pageBlockSectionItem>
+                <apex:outputPanel >
+                    <apex:inputTextarea id="inptText" cols="80" rows="6" value="{!listofID}"/><br/>
+                    You can enter upto 4000 characters.
+                 </apex:outputPanel>
+                <apex:outputPanel id="outputPnl" >
+                
+<apex:inputFile id="inptfile" value="{!contentFile}" filename="{!nameFile}" onchange="javscript:sendFileName(this);" />
+
+                    <!--<apex:inputFile id="inptfile" value="{!contentFile}" filename="{!nameFile}" onchange="javscript:sendFileName(this);" /> -->
+                    
+                    
+                    <script> var selectedalpha= document.getElementById('{!$Component.inptfile}'); </script>
+                    
+                    <apex:commandButton value="Upload" action="{!uploadFile}" onclick="javascript:return findValidFile();"/>
+                    
+                    <!--<apex:commandButton value="Upload" action="{!uploadFile}" onclick="if(findValidFile()){this.disabled=false;}else{return false};"/>-->
+                </apex:outputPanel>
+            <apex:pageBlockSectionItem id="pgblksectnitem4">  
+              <apex:outputPanel >
+                  <div style="text-align:right">
+                      <apex:commandButton value="Previous" action="{!redirectToStep2}"/>
+                      <apex:commandButton value="Next" action="{!redirectToStep4}" onclick="javascript:return showErrorMsg(); "/> 
+                      <apex:commandLink value="Cancel" action="/home/home.jsp"/>
+                  </div>
+              </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+     </apex:pageBlockSection>   
+    </apex:pageBlock>
+    
+   </apex:form>
+</apex:page>

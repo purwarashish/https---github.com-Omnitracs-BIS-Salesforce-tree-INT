@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Est_Billable_Hours_Cannot_Change</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISCHANGED( Estimated_Billable_Hours__c ),
+$Profile.Name &lt;&gt; &quot;Professional Services Mgmt - Outlook&quot;,
+$Profile.Name &lt;&gt; &quot;Professional Services Mgmt&quot;
+)</errorConditionFormula>
+    <errorDisplayField>Estimated_Billable_Hours__c</errorDisplayField>
+    <errorMessage>Estimated Billable Hours cannot be changed</errorMessage>
+</ValidationRule>

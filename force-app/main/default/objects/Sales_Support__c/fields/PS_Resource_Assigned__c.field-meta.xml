@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PS_Resource_Assigned__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Owner: Sales Enablement (Gina Imirie)
+Description: The filed is used to enter the PS Resource assigned for Evaluation Sales Support Activity Record</description>
+    <externalId>false</externalId>
+    <label>PS Resource</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Sales_Support_Activities2</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

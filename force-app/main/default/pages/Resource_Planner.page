@@ -1,0 +1,299 @@
+<apex:page Controller="ExportToExcelController" docType="html-5.0">
+<apex:includeScript value="{!URLFOR($Resource.PAS_JS_CSS, 'jquery-1.12.1.min.js')}"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script>
+   
+  var j$ = jQuery.noConflict();
+   j$(document).ready(function()                       
+  {   
+      j$("[id$='errorMessagesBottomPanel']").hide();
+       hideResourceName(); 
+       setFocus();                       
+  });
+   function setFocus()
+   {
+     document.getElementById("fromDate").focus();
+   }  
+    
+function openLookup(baseURL, width, modified, searchParam){
+    var originalbaseURL = baseURL;
+    var originalwidth = width;
+    var originalmodified = modified;
+    var originalsearchParam = searchParam;
+
+    var lookupType = baseURL.substr(baseURL.length-3, 3);
+    if (modified == '1') baseURL = baseURL + searchParam;
+
+    var isCustomLookup = false;
+
+    // Following "003" is the lookup type for Contact object
+    if(lookupType == "003")
+    {
+      var urlArr = baseURL.split("&");
+      var txtId = '';
+      if(urlArr.length > 2)
+      {
+          urlArr = urlArr[1].split('=');
+          txtId = urlArr[1];
+      }
+
+      // Following is the url of Custom Lookup page.
+      baseURL = "/apex/CustomResourceLookup?txt=" + txtId;
+
+      // Following is the id of apex:form control "myForm".
+      baseURL = baseURL + "&frm=" + escapeUTF("{!$Component.myForm}");
+      if (modified == '1') {
+        baseURL = baseURL + "&lksearch=" + searchParam;
+      }
+
+      // Following is the ID of inputField that is the lookup to be customized as custom lookup
+      if(txtId.indexOf('Contact') > -1 ){
+        isCustomLookup = true;
+      }
+    }
+
+    if(isCustomLookup == true){
+      openPopup(baseURL, "lookup", 350, 480, "width="+width+",height=480,toolbar=no,status=no,directories=no,menubar=no,resizable=yes,scrollable=no", true);
+    }
+    else {
+      if (modified == '1') originalbaseURL = originalbaseURL + originalsearchParam;
+      openPopup(originalbaseURL, "lookup", 350, 480, "width="+originalwidth+",height=480,toolbar=no,status=no,directories=no,menubar=no,resizable=yes,scrollable=no", true);
+    } 
+  }
+function fetchResourceName()
+{
+var resourceVal=j$("[id$='Contact']").val();
+j$("[id$='strResourceName']").val(resourceVal);
+}
+function hideResourceName()
+{
+ var resourceType=j$("[id$='resourceType']").val();
+ if(resourceType!='singleResource')
+ {
+   j$("[id$='resourceNamePanel2']").hide();
+   j$("[id$='resourceNamePanel']").hide();
+   j$("[id$='resourceNameVal']").hide();
+
+ }
+ else
+ {
+  j$("[id$='resourceNamePanel']").show();
+   j$("[id$='resourceNameVal']").show();
+j$("[id$='resourceNamePanel2']").show();
+ }
+ 
+}
+
+function validateForm()
+{
+
+j$("[id$='displaymessage']").hide();
+
+     var error=false;
+     var inValidate=false;
+     var errorDate=false;
+     var resourceType=j$("[id$='resourceType']").val();
+    if(j$("[id$='resourceType']").val()==''|| j$("[id$='resourceType']").val()==null ||j$("[id$='resourceType']")=='--None--')
+    {
+          j$("[id$='resourceType']").addClass( "errorClass" );
+          error=true;
+          
+    }
+    else
+    {
+         j$("[id$='resourceType']").removeClass( "errorClass" );
+    }
+    if(j$("[id$='resourceType']").val()!='' && j$("[id$='resourceType']").val()!=null && j$("[id$='resourceType']").val()!='--None--' && j$("[id$='resourceType']").val()=='singleResource')
+    {
+        if(j$("[id$='Contact']").val()=='' || j$("[id$='Contact']").val()==null)
+        {
+          j$("[id$='Contact']").addClass( "errorClass" );
+          error=true;
+         } 
+         else
+         {
+              j$("[id$='Contact']").removeClass( "errorClass" );
+         }
+    }
+    else
+    {
+         j$("[id$='Contact']").removeClass( "errorClass" );
+    }
+    if(j$("[id$='fromDate']").val()==''|| j$("[id$='fromDate']").val()==null)
+    {
+        j$("[id$='fromDate']").addClass( "errorClass" );
+        error=true;
+        
+    }
+    else
+    {
+         j$("[id$='fromDate']").removeClass( "errorClass" );
+    }
+    if(j$("[id$='ToDate']").val()==''|| j$("[id$='ToDate']").val()==null)
+    {
+        j$("[id$='ToDate']").addClass( "errorClass" );
+        error=true;
+        
+    }
+    else
+    {
+         j$("[id$='ToDate']").removeClass( "errorClass" );
+    }
+    if(j$("[id$='selectedDuration']").val()==''|| j$("[id$='selectedDuration']").val()==null)
+    {
+        j$("[id$='selectedDuration']").addClass( "errorClass" );
+        error=true;
+    
+    }
+    else
+    {
+      
+         j$("[id$='selectedDuration']").removeClass( "errorClass" );
+    }
+
+    D1=j$("[id$='fromDate']").val();
+    D2=j$("[id$='ToDate']").val();
+    var date1 = new Date(D1);
+    var date2 = new Date(D2);
+    var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+    var diffDays = Math.ceil(timeDiff / (1000*3600*24))+1; 
+
+    dateFirst = D1.split('-');
+    dateSecond = D2.split('-');
+   var value = new Date(dateFirst[2], dateFirst[1], dateFirst[0]); //Year, Month, Date
+   var current = new Date(dateSecond[2], dateSecond[1], dateSecond[0]);   
+    if( date1>date2)
+    {
+      j$("[id$='errorMessagesBottomPanel']").show();      
+     j$('.box-errorMsg').text('From date should be lesser than To date');
+        return false;
+    }  
+    else if(diffDays>730 && resourceType=='singleResource')
+    {  
+       j$("[id$='errorMessagesBottomPanel']").show();          
+      j$('.box-errorMsg').text('For single resource maximum date range should be less than 2 years');
+        return false;
+    }
+    else if(diffDays>183 && resourceType=='allResources')
+    {  
+        j$("[id$='errorMessagesBottomPanel']").show();          
+        j$('.box-errorMsg').text('For all Resources maximum date Range should be less than 6 months');
+        return false;
+    }
+    if(error==true)
+    {
+        j$("[id$='errorMessagesBottomPanel']").show();         
+        j$('.box-errorMsg').text('Please enter a values to the fields that are highlighted in red');
+        return false;
+    }
+     else{     
+     j$("[id$='errorMessagesBottomPanel']").hide();
+     return true;}
+}
+     
+</script>
+<style>
+  
+    table.detailList {
+        width:80% !important;
+        text-align: right;
+        margin: 0 auto;
+    }
+   .errorClass
+   {
+        border : 1px solid red;
+        
+   } 
+  #dvLoading
+    {
+       background:#000 url(images/loader.gif) no-repeat center center;
+       height: 100px;
+       width: 100px;
+       position: fixed;
+       z-index: 1000;
+       left: 50%;
+       top: 50%;
+       margin: -25px 0 0 -25px;
+    }
+</style>
+<apex:Form id="myForm">
+<apex:pageBlock title="Export Resource Planner">
+<div id="displaymessage"><apex:pageMessages ></apex:pageMessages></div>
+ <!-- MESSAGES PANEL STARTS-->
+  <apex:outputPanel id="errorMessagesBottomPanel" style="display:none">
+  <center>
+  <table  bgcolor="#FFFACD" style="border-color: #ff0000;">
+  <tr class="messageRow display-none">
+  <td>
+  <span class="box-error">
+  <span class="box-errorImgWrap">
+  <apex:image url="/img/msg_icons/error16.png" styleClass="box-errorImg"/>
+  </span>
+  <span class="box-errorMsg" style="color:red"> </span>
+  </span>
+  </td>
+  </tr>
+  </table>
+  </center>
+ </apex:outputPanel>
+ 
+<apex:pageBlockSection >
+ <apex:outputPanel style="position:relative;left:180px;width:200px;">
+   <apex:outputLabel ><b> Resource Type</b> </apex:outputLabel>
+   <apex:selectList size="1" id="resourceType" value="{!selectedResourceType}"  onchange="hideResourceName()"  style="position:relative;left:95px;width:155px;">
+      <apex:selectOptions id="pick" value="{!lstResourceType }" />
+  </apex:selectList>
+  </apex:outputPanel>  
+</apex:pageBlockSection>
+
+<apex:pageBlockSection id="resourceNamePanel2">
+ <apex:outputPanel id="resourceNamePanel" style="position:relative;left:180px;width:200px;" >
+  <apex:outputLabel ><b> Resource Name </b></apex:outputLabel>
+            <apex:Inputfield id="Contact" value="{!objPseAssignment.pse__Resource__c}" style="position:relative;left:86px;width:150px;" onchange="fetchResourceName();"/>
+           <apex:inputHidden value="{!strResourceName}" id="strResourceName" />
+  </apex:outputPanel>
+</apex:pageBlockSection>
+
+ <apex:pageBlockSection > 
+  <apex:outputPanel style="position:relative;left:180px;width:200px;">          
+             <apex:outputLabel ><b> From </b></apex:outputLabel> 
+                <apex:outputPanel style="position:relative;left:149px;">             
+                   <apex:Inputfield id="fromDate" style="width:152px;" value="{!objSchedule.pse__Start_Date__c}" required="false"/> 
+               </apex:outputPanel>    
+</apex:outputPanel>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection >
+  <apex:outputPanel style="position:relative;left:180px;width:200px;">
+           <apex:outputLabel ><b> To </b></apex:outputLabel>
+            <apex:outputPanel style="position:relative;left:166px;">            
+            <apex:Inputfield id="ToDate" style="width:152px;" value="{!objSchedule.pse__End_Date__c}" required="false" /> 
+            </apex:outputPanel>  
+ </apex:outputPanel>
+ </apex:pageBlockSection>
+ 
+ <apex:pageBlockSection >
+ <apex:outputPanel style="position:relative;left:180px;width:200px;">
+            <apex:outputLabel ><b> Duration</b></apex:outputLabel>
+            <apex:selectList size="1" id="selectedDuration" value="{!selectedDuration}" style="position:relative;left:133px;width:155px;">
+              <apex:selectOptions value="{!lstDuration}" />
+            </apex:selectList>
+ </apex:outputPanel>
+ </apex:pageBlockSection>
+ 
+ <apex:pageBlockSection >
+ <apex:outputPanel style="position:relative;left:360px;">
+  <apex:commandButton action="{!exporttoExcel}" value="Export To Excel" style="color: #330000;" onclick="return validateForm();"/>  
+  </apex:outputPanel>
+  <apex:outputPanel style="position:relative;left:40px;">  
+  <apex:commandButton action="{!clear}" value="Reset Fields" style="color: #330000;"/> 
+  </apex:outputPanel>
+  </apex:pageBlockSection> 
+  <apex:outputPanel > 
+   Note about Date Ranges:<br/>  
+  &nbsp;&nbsp;1.If you select a date range GREATER THAN 6 MONTHS for a <u>single</u> resource, the exported file will automatically be sent to your email account.<br/>
+  &nbsp;&nbsp;2.If you select a date range GREATER THAN 2 MONTHS for <u>multiple</u> resources, the exported file will automatically be sent to your email account.
+  </apex:outputPanel>
+ </apex:pageBlock>
+  </apex:form>  
+</apex:page>

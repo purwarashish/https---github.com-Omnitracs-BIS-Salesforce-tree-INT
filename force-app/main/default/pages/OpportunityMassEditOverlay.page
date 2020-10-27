@@ -1,0 +1,150 @@
+<apex:page id="pg" standardController="Opportunity" recordSetVar="unused" sidebar="false" extensions="Overlay_Oppty_Extension">
+    <script>
+      function setFocusOnLoad(){}
+       var oppStages = new Object();   
+    </script>
+    <apex:repeat value="{!OppStageList}" var="stage">
+    <script>
+     oppStages ['{!stage.MasterLabel}'] = {probability: '{!stage.DefaultProbability}'};
+    </script>
+    </apex:repeat>
+    
+    <script>
+    function getDefaultProb(idOfStage) 
+    {
+    try{    
+     var commonId = idOfStage.substring(0, idOfStage.lastIndexOf(":") + 1);
+     var idOfProb = commonId + 'prob';
+     
+     var selStageElement = document.getElementById(idOfStage);
+     var selStage = selStageElement.value;
+     
+     var selProbElement = document.getElementById(idOfProb);
+     selProbElement.value = Math.round(oppStages[selStage].probability);
+     }
+     catch(e)
+     {
+     }
+    }
+    </script>
+    <apex:include pageName="Overlay_Resources"/>
+    <apex:form id="frm">
+        <apex:pageBlock mode="edit" title="{!$Label.Opportunity_Mass_Edit_Title}" id="masseditblock">
+            <apex:pageBlock > 
+              {!$Label.Mass_Edit_Unsaved_Information_Lost} 
+           <br/> <strong>{!$Label.Mass_Edit_Oppty_LineItem_Notification}</strong>
+            </apex:pageBlock>
+            <apex:pageMessages />
+            <apex:pageBlockButtons >
+                <apex:commandButton value="{!$Label.Mass_Edit_Save_Button}" action="{!saveOpptys}" onclick="DisableSubmitButtons('{!$Label.Processing}');"/>
+                <apex:commandButton value="{!$Label.Mass_Edit_Return_Button}" action="{!cancel}" immediate="true" onclick="DisableSubmitButtons('{!$Label.Processing}');return confirmCancel('{!$Label.Unsaved_Overlay}')" />
+            </apex:pageBlockButtons>
+            
+            
+            <table id="tbl" class="list" cellspacing="0" cellpadding="0" border="0">
+                <colgroup span="8"></colgroup>
+                <thead class="rich-table-head">
+                  <tr class="headerRow">
+                     <th class="headerRow" colspan="1" scope="col">
+                        <div> {!$ObjectType.Account.Fields.Name.Label} </div>
+                     </th>
+                     
+                     <th class="headerRow" colspan="1" scope="col">
+                        <div> {!$ObjectType.Opportunity.Fields.OwnerID.Label} </div>
+                     </th>
+                     
+                     <th class="headerRow" colspan="1" scope="col">
+                        <div> {!$ObjectType.Opportunity.Fields.Name.Label} </div>
+                     </th>
+                     
+                     <th class="headerRow" colspan="1" scope="col">
+                        <div> {!$ObjectType.Opportunity.Fields.Oppty_Quantity__c.Label} </div>
+                     </th>
+                     
+                     <th class="headerRow" colspan="1" scope="col">
+                        <div> {!$ObjectType.Opportunity.Fields.StageName.Label} </div>
+                     </th>
+                     
+                     <th class="headerRow" colspan="1" scope="col">
+                        <div> {!$ObjectType.Opportunity.Fields.Probability.Label} </div>
+                     </th>
+                     
+                     <th class="headerRow" colspan="1" scope="col">
+                        <div> {!$ObjectType.Opportunity.Fields.CloseDate.Label} </div>
+                     </th>
+                     
+                     <th class="headerRow" colspan="1" scope="col">
+                        <div> {!$ObjectType.Opportunity.Fields.LastModifiedDate.Label} </div>
+                     </th>
+                     
+                  </tr>
+                </thead>
+                <tbody>
+                    <apex:repeat id="rep" var="opp" value="{!selectedOpportunity}">
+                      <tr>
+                        <td>
+                           <apex:outputField value="{!opp.opportunityInstance.Account.Name}"/>
+                        </td>
+                      
+                        <td>
+                           <apex:outputField value="{!opp.opportunityInstance.Owner.Name}"/>
+                        </td>
+                        
+                        <td>
+                           <apex:outputField value="{!opp.opportunityInstance.Name}"/>
+                        </td>
+                        
+                        <td>
+                             <apex:outputLink rel="#{!opp.opportunityInstance.id}ABC" styleClass="modalInput" rendered="{!IF(opp.opportunityInstance.TotalOpportunityQuantity > 0,true,false)}"> 
+                                 <apex:outputText id="Connections" value="{0, number, integer}" >
+                                     <apex:param value="{!opp.opportunityInstance.TotalOpportunityQuantity}" />
+                                 </apex:outputText>
+                             </apex:outputLink>
+                     
+                    
+                             <apex:outputField value="{!opp.opportunityInstance.TotalOpportunityQuantity}" rendered="{!IF(opp.opportunityInstance.TotalOpportunityQuantity == 0,true,false)}"/>
+                      
+                    
+                             <div id="{!opp.opportunityInstance.id}ABC" class="modal">
+                                <c:Overlay_OpptyLineItem_Edit opptyId="{!opp.opportunityInstance.Id}" opptyName="{!opp.opportunityInstance.Name}" pageController="{!extensionInstance}" rowIndex="{!opp.wrapperIndex}" topIndex="{!opp.computedTopIndex}"/>
+                             </div>
+                        </td>
+                        
+<!--                         <td> -->
+<!--                            <apex:inputField value="{!opp.opportunityInstance.Forecast_Demand__c}"/> -->
+<!--                         </td> -->
+                        
+                        <td>
+                           <apex:inputField id="stage" value="{!opp.opportunityInstance.StageName}" onchange="getDefaultProb(this.id)"/>
+                        </td>
+                        
+                        <td>
+                           <apex:inputField id="prob" value="{!opp.opportunityInstance.Probability}"/>
+                        </td>
+                        
+                        <td>
+                          <apex:inputField value="{!opp.opportunityInstance.CloseDate}"/>
+                        </td>
+                        
+                        <td>
+                          <apex:outputField value="{!opp.opportunityInstance.LastModifiedDate}"/>
+                        </td>
+                      
+                      </tr>
+                      
+                      <tr>
+                       <td>
+                          <div> <strong>{!$Label.Mass_Edit_Activity_Label} </strong></div> 
+                       </td>
+                        <td colspan="7">
+                          <apex:inputTextArea value="{!opp.taskInstance.Description}" cols="220" rows="1"/>
+                        </td>
+                      </tr>
+                    </apex:repeat>
+                </tbody>
+            </table>
+           
+        </apex:pageBlock>
+    </apex:form>
+        
+    </apex:page>

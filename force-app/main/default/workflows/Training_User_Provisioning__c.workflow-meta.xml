@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <outboundMessages>
+        <fullName>Invoke_Informatica_for_INT</fullName>
+        <apiVersion>33.0</apiVersion>
+        <endpointUrl>https://app.informaticaondemand.com/saas/api/1/salesforceoutboundmessage/IFsEU2nau3Nma7Cz05FFvOLJqCyXQZ7W</endpointUrl>
+        <fields>ConnectionReceivedId</fields>
+        <fields>ConnectionSentId</fields>
+        <fields>CreatedById</fields>
+        <fields>CreatedDate</fields>
+        <fields>CurrencyIsoCode</fields>
+        <fields>Email__c</fields>
+        <fields>Environment__c</fields>
+        <fields>First_Name__c</fields>
+        <fields>Id</fields>
+        <fields>IsDeleted</fields>
+        <fields>LastModifiedById</fields>
+        <fields>LastModifiedDate</fields>
+        <fields>LastReferencedDate</fields>
+        <fields>LastViewedDate</fields>
+        <fields>Last_Name__c</fields>
+        <fields>Name</fields>
+        <fields>OwnerId</fields>
+        <fields>SystemModstamp</fields>
+        <fields>User__c</fields>
+        <fields>Username__c</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>sysadmin@omnitracs.com</integrationUser>
+        <name>Invoke Informatica for INT</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <outboundMessages>
+        <fullName>Invoke_Informatica_for_UAT</fullName>
+        <apiVersion>33.0</apiVersion>
+        <endpointUrl>https://app.informaticaondemand.com/saas/api/1/salesforceoutboundmessage/35SHoHoQQbjNRySRWbHxIWlopG4txQbl</endpointUrl>
+        <fields>ConnectionReceivedId</fields>
+        <fields>ConnectionSentId</fields>
+        <fields>CreatedById</fields>
+        <fields>CreatedDate</fields>
+        <fields>CurrencyIsoCode</fields>
+        <fields>Email__c</fields>
+        <fields>Environment__c</fields>
+        <fields>First_Name__c</fields>
+        <fields>Id</fields>
+        <fields>IsDeleted</fields>
+        <fields>LastModifiedById</fields>
+        <fields>LastModifiedDate</fields>
+        <fields>LastReferencedDate</fields>
+        <fields>LastViewedDate</fields>
+        <fields>Last_Name__c</fields>
+        <fields>Name</fields>
+        <fields>OwnerId</fields>
+        <fields>SystemModstamp</fields>
+        <fields>User__c</fields>
+        <fields>Username__c</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>sysadmin@omnitracs.com</integrationUser>
+        <name>Invoke Informatica for UAT</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>Create user record in INT Sandbox</fullName>
+        <actions>
+            <name>Invoke_Informatica_for_INT</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Training_User_Provisioning__c.Environment__c</field>
+            <operation>equals</operation>
+            <value>INT</value>
+        </criteriaItems>
+        <description>Create user record in INT Sandbox instance</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Create user record in UAT sandbox</fullName>
+        <actions>
+            <name>Invoke_Informatica_for_UAT</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Training_User_Provisioning__c.Environment__c</field>
+            <operation>equals</operation>
+            <value>UAT</value>
+        </criteriaItems>
+        <description>Create user record in UAT sandbox</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

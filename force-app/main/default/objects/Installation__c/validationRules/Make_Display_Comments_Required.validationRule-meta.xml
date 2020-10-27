@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Make_Display_Comments_Required</fullName>
+    <active>true</active>
+    <description>Make Display Comments required if Display is No.</description>
+    <errorConditionFormula>AND( 
+ISBLANK( Display_Comments__c ), 
+ISPICKVAL( Display__c , &quot;No&quot;) 
+)</errorConditionFormula>
+    <errorDisplayField>Display_Comments__c</errorDisplayField>
+    <errorMessage>Display Comments is required if Display is &quot;No&quot;</errorMessage>
+</ValidationRule>

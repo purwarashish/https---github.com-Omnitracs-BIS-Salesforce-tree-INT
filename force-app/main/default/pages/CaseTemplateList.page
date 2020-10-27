@@ -1,0 +1,80 @@
+<apex:page id="page1" tabStyle="Case" standardController="Case" extensions="CaseTemplateListController" > 
+<script language="Javascript">
+function changeRecords()
+{
+
+Change();
+
+}
+function SelectedId(id1)
+{
+
+
+var id2 = id1.lastIndexOf("theButton");
+
+var id3 = id1.substring(0,id2);
+id3 = id3 + "selrec";
+selectedrec.value = document.getElementById(id3).value;
+
+}
+</script>
+<apex:form id="form1" >
+<apex:sectionHeader title="All Templates" subtitle="All Active Templates Available" />
+<apex:actionFunction name="Change" action="{!SelectedRecords}"/>
+
+<table>
+<tr>
+
+<td width="60%">
+<h2>Click on Use Template to create new Case from Template:</h2></td>
+<td width="300"><h2>Folder </h2></td>
+<td width="60%">
+<apex:selectList value="{!folder}" size="1" onchange="javascript:changeRecords();">
+        <apex:selectOption itemValue="AllFolders" itemLabel="All Templates"></apex:selectOption>
+        <apex:selectOptions value="{!options }"></apex:selectOptions>               
+</apex:selectList> </td>
+</tr>
+</table>
+<br/><br/>
+
+
+<apex:pageblock id="pageblk">
+<apex:panelGrid style="width:56%"  columns="2">
+
+    <apex:outputPanel id="panel" >
+        <apex:commandLink style="font-weight:bold" value="Template Name" action="{!ChangeOrder}" rerender="panel,pageblktable"> <apex:image value="../img/sort_asc_arrow.gif" rendered="{!asce}" id="asce" />
+        <apex:image value="../img/sort_desc_arrow.gif" rendered="{!NOT(asce)}" id="desc" />
+        </apex:commandLink>
+    </apex:outputPanel>
+
+    <apex:outputText style="font-weight:bold;" value="Description"></apex:outputText>
+
+</apex:panelGrid>
+<apex:pageblockTable value="{!templateList}"  var="template" id="pageblktable">
+
+        <apex:column >
+            <apex:outputText value="{!template.Name}"></apex:outputText>
+        </apex:column>
+        
+        <apex:column style="width:47%">
+            <apex:outputField value="{!template.Description__c}" ></apex:outputField>
+            
+        </apex:column>
+
+        <apex:column style="width:20%">
+            <apex:variable value="{!template.Id}" var="id"/>
+            <apex:inputHidden value="{!template.Id}" id="selrec"/>
+           <!-- <script> var selrec= document.getElementById('{!$Component.selrec}'); </script>-->
+
+            <apex:commandButton id="theButton" value="Use This Template" onclick="SelectedId(this.id);" action="{!CreateNewCase}" style="align:right"/>   
+            <!--<apex:param assignTo="{!templateID}" value="{!template.Id}" />     -->
+        </apex:column>
+
+ </apex:pageblockTable>
+</apex:pageblock>
+<apex:inputhidden value="{!templateID}" id="selectedid" />
+<script> var selectedrec= document.getElementById('{!$Component.selectedid}'); </script>
+
+</apex:form>
+
+</apex:page>

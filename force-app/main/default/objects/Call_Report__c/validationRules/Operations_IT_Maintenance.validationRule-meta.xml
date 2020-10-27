@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Operations_IT_Maintenance</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND ( $Profile.Name &lt;&gt; &quot;QWBS Interface&quot;, 
+ISPICKVAL(  Status__c , &quot;Completed&quot;), 
+( Operations_IT_Maintenance__c  =&quot;&quot; ) ,
+$RecordType.Name &lt;&gt; &quot;Call Plans&quot;,
+$RecordType.Name &lt;&gt; &quot;Inside Sales Call Report&quot;,
+$RecordType.Name &lt;&gt; &quot;Product Mgmt Call Report&quot;)</errorConditionFormula>
+    <errorDisplayField>Operations_IT_Maintenance__c</errorDisplayField>
+    <errorMessage>Operations / IT / Maintenance is required once a call report is completed.</errorMessage>
+</ValidationRule>

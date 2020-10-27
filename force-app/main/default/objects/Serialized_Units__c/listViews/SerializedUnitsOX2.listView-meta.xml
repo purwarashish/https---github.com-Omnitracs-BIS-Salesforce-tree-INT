@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SerializedUnitsOX2</fullName>
+    <columns>NAME</columns>
+    <columns>Product__c</columns>
+    <columns>Item_ID__c</columns>
+    <columns>Unit_State__c</columns>
+    <columns>Account__c</columns>
+    <columns>NMC_Account__c</columns>
+    <columns>NMC_System__c</columns>
+    <columns>NMC_State__c</columns>
+    <columns>Last_Message_Date__c</columns>
+    <columns>Last_Position_Date__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Item_Type__c</field>
+        <operation>equals</operation>
+        <value>OX2</value>
+    </filters>
+    <label>Serialized Units OX2</label>
+    <language>en_US</language>
+</ListView>

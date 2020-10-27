@@ -1,0 +1,836 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Mgmt_Call_Report</fullName>
+    <active>true</active>
+    <description>Used for Product Management call reports</description>
+    <label>Product Mgmt Call Report</label>
+    <picklistValues>
+        <picklist>Advance_Achieved__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applications_Services__c</picklist>
+        <values>
+            <fullName>Data Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Services %E2%80%93 Active Driver Coach</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Services %E2%80%93 Analytics Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Services %E2%80%93 Critical Event Reporting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Services %E2%80%93 Critical Event Video</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Services %E2%80%93 Driver Workflow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Services %E2%80%93 Exact Fuel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Services %E2%80%93 Extended Fault Monitoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Services %E2%80%93 Extended Productivity %28BlueDot%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Services %E2%80%93 Fault Monitoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Services %E2%80%93 Fuel Tax Automation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Services %E2%80%93 In-Cab Printing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Services %E2%80%93 In-Cab Scanning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Services %E2%80%93 Media Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Services %E2%80%93 Mobile Apps</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Services %E2%80%93 Mobile Data Capture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Services %E2%80%93 Per Diem Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Services %E2%80%93 Performance Monitoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Services %E2%80%93 Tire Inflation Alerts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Services %E2%80%93 Tire Pressure Monitoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Services %E2%80%93 Trip Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Services %E2%80%93 Vehicle Inspection Reports</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Services %E2%80%93 Web Browser</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Services %E2%80%93 Weigh Station Bypass</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Services - Customer Portal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Services - DTTS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Services - Mobile Hours of Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Services - Services Portal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Services - Support Portal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Services - Trailer ID</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GeoTRACS %28Canada%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grove %28Canada%29 - DVIR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grove %28Canada%29 - Enhanced Scanning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grove %28Canada%29 - Finesse Hours of Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grove %28Canada%29 - IFTA tool</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hours of Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Navigation %E2%80%93 ALK CoPilot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Navigation %E2%80%93 CER Black Spots</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Navigation %E2%80%93 CER Posted Road Speed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Navigation %E2%80%93 NaviGo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Navigation %E2%80%93 Omnitracs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEM Solutions - Analytics and Faults</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTAP Engine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTAP Transmission</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Omnitracs Analytics %E2%80%93 Accident Severity Model</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Omnitracs Analytics %E2%80%93 Automated Insights</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Omnitracs Analytics %E2%80%93 Driver Retention Model</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Omnitracs Analytics %E2%80%93 Fleet Business Intelligence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Omnitracs Analytics %E2%80%93 Recruitment Model</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Omnitracs Analytics %E2%80%93 Safety Model</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Omnitracs Analytics %E2%80%93 Workers%E2%80%99 Compensation Model</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Omnitracs Analytics - Active Driver Coaching</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Omnitracs Integrated Telematics %28OIT%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RDC - Routing%2C Dispatching%2C and Compliance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roadnet Active Alerts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roadnet Anywhere</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roadnet Dispatching</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roadnet FleetLoader</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roadnet Fleetview</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roadnet Insights</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roadnet MobileCast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roadnet Routing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roadnet Scheduler</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roadnet Territory Planner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roadnet Transportation Suite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sylectus Alliance Network</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sylectus Mobile On-Demand</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sylectus TMS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trailer Tracks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Virtual Load View</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XRS %E2%80%93 Critical Event Video</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XRS %E2%80%93 Driver Performance Reporting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XRS %E2%80%93 Driver Vehicle Inspection Report</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XRS %E2%80%93 Fleetview</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XRS %E2%80%93 Flex Forms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XRS %E2%80%93 IFTA Reporting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XRS %E2%80%93 Per Diem Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XRS %E2%80%93 Weigh Station Bypass</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XRS Black Box Reconstruction</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Hardware__c</picklist>
+        <values>
+            <fullName>IVG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP100</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP110</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP200</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP50</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Omnitracs Mobile Canada %28formerly Shaw Mobile%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roadnet Telematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>T2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TT150</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TT210</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XRS - Android</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XRS - WinMo</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>How_are_Employees_Paid__c</picklist>
+        <values>
+            <fullName>Commission</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hourly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mixed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Per Mile Driven</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Percentage %28%25%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Method__c</picklist>
+        <values>
+            <fullName>Alternate Site Visit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Site Visit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tradeshow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinar</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Next_Steps__c</picklist>
+        <values>
+            <fullName>Callback</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract out for signature</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email update</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Evaluation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Happy with competition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Long term contract with competitor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Looking at Functionality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On-site meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Price negotiations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Solution offered</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>PS_Discipline__c</picklist>
+        <values>
+            <fullName>Installation</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Technical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Management_Attendees__c</picklist>
+        <values>
+            <fullName>Amine Faridi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Andrew Bates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Andy Hicks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aneil Razvi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arielle McMahon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ashlei Mitchell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bill McHenry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brenda Cudone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brian Walton-King</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bryan Slaughenhoupt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Casey Crawford</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chris Chappelear</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chris Taylor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Christian Beatty</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Colleen Watson</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Craig Powell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dalia Vazquez</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dallas Miller</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dave Gutz</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>David Palle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dawn Lein</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Daysha Diaz</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deepak Kadambi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dhiren Patel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drew Schimelpfenig</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Emmanuel Carranza</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Florence Dougherty</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Garth Robbins</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hannah Archuleta</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jon Cronson</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kam Rosham</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kartik Manegar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Larissa Magaña</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Laura Lohrke</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lisa Dobbs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marc Jazwiecki</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mark Elpers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mic Yariv</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mick Milnark</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mike Segal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Miranda Leadbeater</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Noah Gates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Noah Palmer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paul Nagy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rachel Allen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scott Beatty</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scott Sparr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Skip Gilcrease</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tony Forrest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tyler Forcum</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Purpose__c</picklist>
+        <values>
+            <fullName>BETA Feedback</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General Product Discussion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net Promoter Score %28NPS%29 Survey Feedback</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roadmap review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Win%2FLoss Call</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Requires_Prewire_Products__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Satisfaction_Level__c</picklist>
+        <values>
+            <fullName>Dissatisfied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neutral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Satisfied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Very Dissatisfied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Very Satisfied</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sentiment__c</picklist>
+        <values>
+            <fullName>Negative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neutral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Positive</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Draft</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Top_Issues_Functional_Category__c</picklist>
+        <values>
+            <fullName>Billing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Professional Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales %2F Sales Ops</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Supply Chain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type_of_Competitor__c</picklist>
+        <values>
+            <fullName>Competitive Takeaway</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Competitive Threat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Competitor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

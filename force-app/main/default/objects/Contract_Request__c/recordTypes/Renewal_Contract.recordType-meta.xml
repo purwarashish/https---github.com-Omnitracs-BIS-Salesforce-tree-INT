@@ -1,0 +1,2021 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Renewal_Contract</fullName>
+    <active>true</active>
+    <description>Use this Request Type only if you would like to create a new contract for an existing product. For Example, this would be used if you want to move a customer over to the modular contract or if you want to consolidate the contrac and all its amendments.</description>
+    <label>Renewal Contract</label>
+    <picklistValues>
+        <picklist>Additional_Products__c</picklist>
+        <values>
+            <fullName>7-way Diagnostic Tool</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External Panel Mount</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal Panel Mount</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low Profile Antenna</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Media Display Unit %28MDU%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mounts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Optional Cargo Sensor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Optional Door Sensor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Application_Name__c</picklist>
+        <values>
+            <fullName>Amber Alert</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Analytics Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CSA Safety Performance Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CoPilot Truck</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Content Delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Critical Event Reporting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Sharing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driver Workflow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hours of Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In-Cab Scanning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incab Video Training %28 Protread %29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Media Manager Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NaviGo powered by Telogis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Performance Monitoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trip Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle Inspection Report</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle Maintenance</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applications_Features__c</picklist>
+        <values>
+            <fullName>Additional Stored Positions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Amber Alert</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Automated Arrival and Departure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Content Delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Critical Event Reporting Basic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Critical Event Reporting Premium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cross Street Location</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driver Direct Navigator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driver Notification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driver Workflow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Extended Hardware Warranty</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Extended Productivity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fault Monitoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fault Monitoring-Extd Faults %28Cummins%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fault Monitoring-Extd Faults %28Navistar%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fault Monitoring-Extended Faults</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FleetAdvisor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GSM Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hard Braking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hours of Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hours of Service Mobile</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In-Cab Printing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In-Cab Scanning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incab Video Training %28 Protread %29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JTRACS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Navigation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Panic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Priority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QMASS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QTRACS Portal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QTRACS%2F400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SMS Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SensorTRACS Performance Monitoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SensorTRACS Portal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SensorTRACS%2F400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Software Maintenance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>T2 Asset Reefer Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>T2 Asset Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>T2 Aux Sensor Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>T2 Cargo Sensors Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>T2 Door Sensors Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>T2 Portal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tethered Asset Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TrailerTRACS%2F400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trip Reporting Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle Command and Control</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Virtual Display Unit %28VDU%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Virtual EDU</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Billable_Units_Discount_Eligibility__c</picklist>
+        <values>
+            <fullName>0%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9%25</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Carrier_Network__c</picklist>
+        <values>
+            <fullName>Cingular GSM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International GSM%2FGPRS%2FEDGE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SMS over Cingular GSM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SMS over Sprint PCS CDMA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sprint PCS CDMA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>T-Mobile GSM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vodafone GSM - International</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Connection_Type__c</picklist>
+        <values>
+            <fullName>Dial-Up Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internet Connection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contingency_Contract__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contingency_Period__c</picklist>
+        <values>
+            <fullName>90 Days</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contract_Origin__c</picklist>
+        <values>
+            <fullName>Drafted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contract_Source__c</picklist>
+        <values>
+            <fullName>Customer Portal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drafted - Custom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drafted - Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salesforce Content</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contract_Type__c</picklist>
+        <values>
+            <fullName>Flat Rate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Subscription</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Time %26 Material</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contracts_Administrator_to_Send__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Data_per_Month__c</picklist>
+        <values>
+            <fullName>10 MB - Cingular CDMA %28%24165%2E00 per month per device%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10 MB - Cingular GSM%2FGPRS%2FEDGE %28%24165%2E00 per month per device%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10 MB - International GSM%2FGPRS%2FEDGE %28%24545%2E00 per month per device%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10 MB - T-Mobile CDMA %28%24165%2E00 per month per device%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10 MB - T-Mobile GSM%2FGPRS%2FEDGE %28%24165%2E00 per month per device%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20 MB - Cingular CDMA %28%24195%2E00 per month per device%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20 MB - Cingular GSM%2FGPRS%2FEDGE %28%24195%2E00 per month per device%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20 MB - International GSM%2FGPRS%2FEDGE %28%24885%2E00 per month per device%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20 MB - T-Mobile CDMA %28%24195%2E00 per month per device%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20 MB - T-Mobile GSM%2FGPRS%2FEDGE %28%24195%2E00 per month per device%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 MB - International GSM%2FGPRS%2FEDGE %28%24295%2E00 per month per device%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>50 MB - Cingular CDMA %28%24230%2E00 per month per device%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>50 MB - Cingular GSM%2FGPRS%2FEDGE %28%24230%2E00 per month per device%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>50 MB - T-Mobile CDMA %28%24230%2E00 per month per device%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>50 MB - T-Mobile GSM%2FGPRS%2FEDGE %28%24230%2E00 per month per device%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CDMA%2FSMA w%2F 500 messages %28%241950%2E00 per month per device%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GSM%2FSMS w%2F 500 messages %28%24195%2E00 per month per device%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Discounts_Other_Incentives__c</picklist>
+        <values>
+            <fullName>Amendment%3A Retention Toolkit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Competitive Rebate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driver%2FDispatch Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Extended Warranty</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Free Messaging</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>High Volume Terminal Install</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IGPS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In-Service Discount</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Installation Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mounts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Off-Hours Discount</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28please describe%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Panic Button</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualcomm Authorized Service Installation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualcomm Installation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self-install Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technical Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TrailerTRACS Dry Van</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TrailerTRACS Reefer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web-based SFM Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wireless Panic Button</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>EchoSigned__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Eval_Conversion__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Expense_Reimbursement__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes %2B Premium</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Extended_Software_Maintenance__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Extended_Terminal_Maintenance__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FRA_Product__c</picklist>
+        <values>
+            <fullName>Consulting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Content Development%3A External</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Content Development%3A Internal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driver Recruiting Model</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driver Retention Model</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driving Center Platform</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fatigue Risk Model</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IS%3A Driver Recruiting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IS%3A Driver Retention</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IS%3A Fatigue Model</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IS%3A Safety Model Driving</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IS%3A Safety Model Worker Comp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Safety Model%3A Driving</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Safety Model%3A Workers Comp</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Future_Hardware_Purchase_Credit__c</picklist>
+        <values>
+            <fullName>0%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9%25</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>GT_Reporting_Interval__c</picklist>
+        <values>
+            <fullName>Daily</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weekly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Hardware_Repair_Discount__c</picklist>
+        <values>
+            <fullName>0%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>19%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9%25</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ICC_I_E_S_Access_Service__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>In_Service_percent__c</picklist>
+        <values>
+            <fullName>0%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>19%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9%25</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Length_of_Evaluation_Period__c</picklist>
+        <values>
+            <fullName>60 Days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>90 Days</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Length_of_Term_Extension__c</picklist>
+        <values>
+            <fullName>Five Years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>One Year</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Three Years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Two Years</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Length_of_Term__c</picklist>
+        <values>
+            <fullName>1 Year</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 Years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>30 Days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>60 Days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>90 Days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Letter_Type__c</picklist>
+        <values>
+            <fullName>Early Termination</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>One-Time Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payment Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recurring Discount%2FCredit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Settlement Agreement Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard Termination</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Method_of_Shipment__c</picklist>
+        <values>
+            <fullName>2 Business Days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Pickup</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ground Shipping %285-7 days%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Next Business Day - A%2EM%2E Delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Next Business Day - P%2EM%2E Delivery</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>NMC_Account_Information__c</picklist>
+        <values>
+            <fullName>Current Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New%2FCurrent Customer - Needs New NMC Account Setup</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New%2FCurrent Customer - Needs Test NMC Account Setup</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>NRF__c</picklist>
+        <values>
+            <fullName>%240</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%241</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2410</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2411</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2412</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2413</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2414</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2415</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%242</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%243</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%244</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%245</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%246</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%247</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%248</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%249</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Non_Standard_Terms__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OT_OE_Retention_Toolkit__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Off_Hours_Discount_percent__c</picklist>
+        <values>
+            <fullName>15%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>25%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>30%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>35%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>40%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>50%25</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>One_Free_Drivers_Dispatchers_Training__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>One_Free_Session_Installation_Training__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Optional_Services__c</picklist>
+        <values>
+            <fullName>Asynchronous Dial-Up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dedicated CI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PPP Dial Back-up Direct Dial Number Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PPP Dial-Up</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Out_of_Guidelines_Pricing__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Payment_Type__c</picklist>
+        <values>
+            <fullName>Bill Me</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Charge My Account</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Portalble_Units__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Preferred_Carrier__c</picklist>
+        <values>
+            <fullName>FedEx</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UPS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product__c</picklist>
+        <values>
+            <fullName>GlobalTRACS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GlobalTRACS %26 GlobalTRACS Lite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GlobalTRACS Lite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP100S</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP100T</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP110</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP200</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP50</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OmniExpress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OmniTRACS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refurbished OmniTRACS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SFM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>T2 System</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trailer Tracks 210</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Professional_Services__c</picklist>
+        <values>
+            <fullName>Drivers%2FDispatchers Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>High Volume Term%2E Install</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>High Volume Term%2E Install w%2FSolar Panel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Installation Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Professional Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualcomm Authorized Service Installation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualcomm Installation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Terminal Installation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Terminal Installation with Door Sensor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Terminal Installation with Solar Panel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web-based SFM Training</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Project_Type__c</picklist>
+        <values>
+            <fullName>Flash Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flash Translations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Online Learning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Writing %26 Development</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Request_Status__c</picklist>
+        <values>
+            <fullName>Assigned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract Request Pending</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Contract received - OT signature pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract sent to Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Distributed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hold%3A Finance Approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hold%3A Needs Approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hold%3A See Notes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending Approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending NMC Setup</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Set-up Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Signed by Omnitracs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submitted</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Request_Type__c</picklist>
+        <values>
+            <fullName>Renewal Contract</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Required_Services__c</picklist>
+        <values>
+            <fullName>Direct Dial Number Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PPTP - Customer-Provided Internet Connection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Toll-Free Number Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VPN - Customer-Provided Internet Connection</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reseller_y_n__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Satellite_Modem__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Send_via_EchoSign__c</picklist>
+        <values>
+            <fullName>EchoSign</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Service_Activation__c</picklist>
+        <values>
+            <fullName>%2412%2E00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2424%2E00</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Service_Plan__c</picklist>
+        <values>
+            <fullName>Compliance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Core</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EOBR Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EOBR Plan 1 Year%2C %2423%2E95</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EOBR Plan 2 Years%2C %2422%2E95</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EOBR Plan 3 Years%2C %2421%2E95</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EOBR Plan 5 Years%2C %2419%2E95</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enhanced Plan with Fleet Averaging</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enhanced Plan with Volume Rate Tiers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GlobalTRACS  Message Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GlobalTRACS %26 GlobalTRACS Lite Message Plans</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GlobalTRACS Lite Message Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IMCT Base Message Service Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IMCT Enhanced Message Service Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LTL Plan with Fleet Averaging</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP100S Foundation Service Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP100S UVP %E2%80%93 Bronze %40 %2459%2E95 for One %281%29 year</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP100S UVP %E2%80%93 Gold %40 %2449%2E95 for Five %285%29 years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP100S UVP %E2%80%93 Silver %40 %2453%2E95 for Three %283%29 years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP100T Service Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP100T UVP %E2%80%93 Bronze %40 %2449%2E95 for One %281%29 year</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP100T UVP %E2%80%93 Gold %40 %2439%2E95 for Five %285%29 years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP100T UVP %E2%80%93 Silver %40 43%2E95 for Three %283%29 years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP110 UVP - Bronze %40 49%2E95 for one %281%29 year</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP110 UVP - Gold %40 39%2E95 for five %285%29 years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP110 UVP - Silver %40 43%2E95 for three %283%29 years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP200 UVP - Bronze %40 49%2E95%2F59%2E95 for one %281%29 year</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP200 UVP - Gold %40 39%2E95%2F49%2E95 for five %285%29 years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP200 UVP - Silver %40 43%2E95%2F53%2E95 for three %283%29 years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEX Basic Message Service Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEX Bronze Message Service Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEX Gold Message Service Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEX Platinum Lite Message Service Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEX Platinum Message Service Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEX Silver Message Service Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Performance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard Terrestrial Plan 1 Year</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard Terrestrial Plan 2 Years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard Terrestrial Plan 3 Years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard Terrestrial Plan 5 Years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard Terrestrial Plans</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>T2 Asset Reefer Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>T2 Asset Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trailer Tracking Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trailer Tracking Reefer Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Value Plan HOS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Value Plan Safety%2FCompliance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Value Plan Safety%2FCompliance with Dispatch</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Software__c</picklist>
+        <values>
+            <fullName>Portal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QTRACS%2F400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QTRACS%2FWin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SensorTRACS%2F400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SensorTRACS%2FWin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TrailerTRACS%2F400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TrailerTRACS%2FWin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Virtual Display Kit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Virtual EDU</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Spares_Discount_Percentage__c</picklist>
+        <values>
+            <fullName>0%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>19%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9%25</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Special_Offer__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Test_Type__c</picklist>
+        <values>
+            <fullName>Alpha</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alpha%2FBeta</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Beta</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Third_Party_Software__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ToS_Type__c</picklist>
+        <values>
+            <fullName>Evaluation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Production</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type_of_Service__c</picklist>
+        <values>
+            <fullName>Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Managed Network Services</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Who_is_doing_the_work__c</picklist>
+        <values>
+            <fullName>Director</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In-House Trainer%2FDesigner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Project Analyst</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Project Manager</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Within_Sales_Chips_Guidelines__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

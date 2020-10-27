@@ -1,0 +1,7 @@
+<apex:page controller="debugIssue">
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1></h1>
+  {!res}
+  This is your new Page
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

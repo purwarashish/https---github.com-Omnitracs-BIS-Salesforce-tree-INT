@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Accretive_Non_Recurring_ACV__c</fullName>
+    <description>Accretive Non Recurring Revenue (Non-Recurring ACV)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Hardwarec + Pro Serve Price *  Quantity</inlineHelpText>
+    <label>Accretive Non Recurring ACV</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

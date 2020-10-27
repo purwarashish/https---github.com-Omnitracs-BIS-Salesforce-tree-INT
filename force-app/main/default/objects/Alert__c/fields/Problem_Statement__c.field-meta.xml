@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Problem_Statement__c</fullName>
+    <description>Brief statement of the problem (255 character limit).</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Brief statement of the problem (255 character limit).</inlineHelpText>
+    <label>Problem Statement</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

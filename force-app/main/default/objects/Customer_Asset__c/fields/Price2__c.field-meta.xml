@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Price2__c</fullName>
+    <description>New Price field is directly reflective of the CPQ Asset or Subscription linked to the Customer Asset record. This field is populated via Process Builder.</description>
+    <externalId>false</externalId>
+    <label>Price2</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>5</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

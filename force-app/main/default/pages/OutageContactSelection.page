@@ -1,0 +1,212 @@
+<!---------------------------------------------------------------------------------------------------
+Name : OutageContactSelection
+Author : Shruti Karn
+Date : 18 August 2010
+
+Usage : This page is the Step 4 for Outage Contact Wizard to display the list of Contacts
+    
+----------------------------------------------------------------------------------------------------->
+<apex:page controller="OutageContactWizardController" tabStyle="Campaign" id="notificaionType" wizard="false" showHeader="true" sidebar="true" action="{!findContact}" >
+    <script language="Javascript">
+
+    function redirect()
+    { 
+        
+         redirect2next(); 
+    }
+
+    function showMsg()
+    {
+
+        if({!intContactListSize } > 1000)
+        {
+            var answer = confirm('Only first 1000 records will be exported.Do you wish to continue?');
+            if(answer)
+               {
+
+                  return true;
+               }
+               else
+               {
+                    return false;
+               }
+         }
+         else
+            return true;
+    }
+    function ckeckOrUncheckAll(chkbx)
+    {
+        var mainchkbx = chkbx.checked
+        var i=0;
+        var size = {!intContactListSize};
+        if({!intContactListSize } > 100)
+            size =100;
+        var lstchkbx = document.getElementById('notificaionType:contactNotificationForm:contactInfo:pgblksectn:SelectOption:pageblk:pgblktbl:'+i+':inptchkbx');
+        while(i < size )
+        {
+            lstchkbx = document.getElementById('notificaionType:contactNotificationForm:contactInfo:pgblksectn:SelectOption:pageblk:pgblktbl:'+i+':inptchkbx');
+            lstchkbx.checked = mainchkbx;
+            i++;
+        }
+    }
+
+    function mainCheck()
+    {
+        var i=0;
+        var lstchkbx = document.getElementById('notificaionType:contactNotificationForm:contactInfo:pgblksectn:SelectOption:pageblk:pgblktbl:'+i+':inptchkbx');
+        var chck = 'true';
+        var mainchkbx = document.getElementById('notificaionType:contactNotificationForm:contactInfo:pgblksectn:SelectOption:pageblk:pgblktbl:mainchkbx');
+        while(lstchkbx != null)
+        {
+          
+           if(lstchkbx.checked == false)
+           {
+               chck = 'false';
+               break;
+           }
+          i++;
+          lstchkbx = document.getElementById('notificaionType:contactNotificationForm:contactInfo:pgblksectn:SelectOption:pageblk:pgblktbl:'+i+':inptchkbx');
+        }
+         
+           if(chck == 'false')
+               mainchkbx.checked = false;
+           else
+               mainchkbx.checked = true;
+           
+    }
+
+    function display(objId)
+    {
+        
+        var currval = objId;
+        selectedrec.value = currval;
+        Change();
+    }
+    
+     
+    function showErrorMsg()
+    {
+         if({!intContactListSize} == 0 )
+               {
+                    alert('There are no contacts. Please press “Previous” to select additional criteria');
+                  return false;
+               }
+               else
+               {
+                    
+                    return true;
+               }
+    }
+    
+    function showOption()
+    {
+       // alert('hi');
+        var left = (screen.width/2)-(w/2);
+var top = (screen.height/2)-(h/2);
+
+    }
+    </script>
+    <apex:sectionHeader title="Outage Contact Tool" subtitle="Step 4 of 6"/>
+
+    <apex:form id="contactNotificationForm">
+    <!--  <c:pbtable filter="true" jqueryUI="false" pbTable="notificaionType:contactNotificationForm:contactInfo:pgblksectn:SelectOption:pageblk:pgblktbl"> </c:pbtable>-->
+    <apex:actionFunction name="Change" action="{!changeOrder}" />
+    <apex:actionFunction name="redirect2next" action="{!redirectToStep5}" />
+    <apex:actionFunction name="Ordering" action="{!alphabetOrdering}" />
+
+    <apex:messages style="color:rgb(204,0,0);font-weight: bold;text-align:center" id="errMsg" />
+    <apex:pageBlock title="Step 4. Specify the recipients to include" id="contactInfo">
+        <apex:pageBlockSection collapsible="false" columns="1" id="pgblksectn">
+            <apex:pageBlockSectionItem >
+              <apex:outputPanel >
+                  <div style="text-align:right">
+                      <apex:commandButton value="Previous" action="{!redirectToStep3}"/>
+                      <!--<apex:commandButton value="Next" action="{!updateContactRecords}" onclick="javascript:return showErrorMsg();" oncomplete="redirect()"/> -->
+                      <apex:commandButton value="Next"  action="{!updateContactRecords}" onclick="if(showErrorMsg()){this.disabled=false;}else{return false}; "   oncomplete="redirect()" status="loadingStatusAdd" rerender="ProcessingText"/>
+                      <apex:commandLink value="Cancel" action="/home/home.jsp"/>
+
+                  </div>
+              </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+
+            <apex:pageBlockSectionItem id="SelectOption">
+                <apex:panelGrid columns="1" width="100%">
+                <div style="text-align:right">
+                <apex:outputpanel style="text-align:right" >
+                    Search for Contact: <apex:inputText value="{!search_Value}" /> <apex:commandButton value="Search" action="{!SearchContact}" reRender="errMsg,pgblktbl"/>
+                    <apex:include pageName="Alphabet_Ordering" />
+                    <div style="text-align:right">
+                    <!--<apex:commandButton value="Export to Excel" action="/apex/OutageContactsExportToExcel" onclick="javascript:return showMsg();" style="text-align:right;" />-->
+                    <apex:commandButton value="Export to Excel"  style="text-align:right;" onclick="openIntegration('/apex/OutageExportOptions', 'height=300,width=410,location=no,resizable=no,toolbar=no,status=no,menubar=no,scrollbars=1',1);return false;" />
+                    </div>
+                    <apex:panelGrid columns="2"  >
+                            <apex:commandLink id="prev" action="{!previous}" rendered="{!NOT(if(currentPage== 1,true,false))}" >Previous</apex:commandlink>
+                            <apex:commandLink id="next" action="{!next}" rendered="{!NOT(if(currentPage== totalPages,true,false))}" >Next</apex:commandlink>
+                    </apex:panelGrid>
+
+                    <br/>
+                </apex:outputpanel>
+                </div>
+                <apex:pageBlock id="pageblk">
+                   <apex:pageBlockTable value="{!lstFinalContact}" var="cont" width="100%" id="pgblktbl">
+                   <apex:column >
+                       <apex:facet name="header">
+                            <apex:inputCheckbox id="mainchkbx" selected="true" onchange="javascript:ckeckOrUncheckAll(this);" onclick="javascript:ckeckOrUncheckAll(this);" />
+                        </apex:facet>
+                            <apex:inputField id="inptchkbx" value="{!cont.SendEmail__c}" onchange="javascript:mainCheck();" onclick="javascript:mainCheck();"/>
+                       </apex:column>
+                      <apex:column >
+                       <apex:facet name="header">
+                            <apex:outputPanel id="panel1" style="width:200" >
+                                <apex:commandLink style="font-weight:bold;word-wrap:break-word;"  value="Contact:Contact Name" rerender="panel1,pgblktbl" onclick="javascript:display('Name');" >
+                                <apex:image value="../img/sort_asc_arrow.gif" rendered="{!AND(asce,if(current_value == 'Name',true,false))}" />
+                                    <apex:image value="../img/sort_desc_arrow.gif" rendered="{!AND(NOT(asce),if(current_value == 'Type__c',true,false))}" />
+                                </apex:commandLink>
+                            </apex:outputPanel>
+                        </apex:facet>
+                            <apex:outputField value="{!cont.Contact__c}"/>
+                       </apex:column>
+
+                       <apex:column headerValue="Contact:Email">
+                             <apex:outputField value="{!cont.Contact__r.Email}"/>
+                       </apex:column>
+
+                        <apex:column headerValue="Account:Account Name">
+                              <apex:outputField value="{!cont.Account__c}"/>
+                       </apex:column>
+                   </apex:pageBlockTable>
+                </apex:pageBlock>
+               </apex:panelGrid>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem id="numOfContSel">
+               
+               <b>You have selected {!intSelContactSize} of {!intContactListSize} records</b>
+               <apex:commandLink value="Refresh" action="{!findSelContacts}" />
+            </apex:pageBlockSectionItem>
+           
+            <apex:pageBlockSectionItem >
+              <apex:outputPanel >
+                  <div style="text-align:right">
+                      <apex:commandButton value="Previous" action="{!redirectToStep3}"/>
+                      <apex:commandButton value="Next"  action="{!updateContactRecords}" onclick="if(showErrorMsg()){this.disabled=false;}else{return false}; "   oncomplete="redirect()" status="loadingStatusAdd" rerender="ProcessingText"/>
+                      <apex:commandLink value="Cancel" action="/home/home.jsp"/>
+                       
+                  </div>
+              </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    <apex:inputhidden value="{!alphabet}" id="selectedalpha" /> 
+    <script> var selectedalpha= document.getElementById('{!$Component.selectedalpha}'); </script>
+    <apex:inputhidden value="{!current_Value}" id="selectedid" />
+    <script> var selectedrec= document.getElementById('{!$Component.selectedid}'); </script>
+    <apex:actionStatus id="loadingStatusAdd">
+        <apex:facet name="start">
+            <c:loadingStatus id="loadingStatusAddComponent" BackColor="#efefef" borderColor="#336699" borderSize="3" height="50px" width="150px" ImageUrl="/img/loading.gif" Message="Processing..." BluryBackGround_DivId="bbgd1" SalesforceStatusBox_DivId="ssbd1" messageStyle="color:darkred;font-size:11pt;font-weight:bold;"/>
+        </apex:facet>
+    </apex:actionStatus>
+
+    </apex:form>
+    <script language="Javascript">mainCheck();</script>
+
+</apex:page>

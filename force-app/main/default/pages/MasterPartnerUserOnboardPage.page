@@ -1,0 +1,11 @@
+<apex:page standardcontroller="Account" extensions="MasterPartnerUserOnboardCtrl">
+<apex:form >
+<apex:pageBlock >
+ <apex:pageBlockButtons id="btns" location="bottom" rendered="true">
+          
+          
+          <apex:commandButton id="saveBtn1" value="Generate Master Partner User" action="{!save}" />
+          </apex:pageBlockButtons>
+          </apex:pageBlock>
+          </apex:form>
+</apex:page>

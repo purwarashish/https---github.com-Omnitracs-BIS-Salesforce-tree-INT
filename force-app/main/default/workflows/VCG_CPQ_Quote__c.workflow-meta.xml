@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Notification_for_quote_when_status_is_changed</fullName>
+        <ccEmails>KHudson@omnitracs.com</ccEmails>
+        <description>Notification for quote when status is changed</description>
+        <protected>false</protected>
+        <senderAddress>sfdc.support@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Roadnet_Sales_Domestic_Templates/Quote_Status_Changed</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_Owner_on_Approval</fullName>
+        <description>Notify Owner on Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>All_Email_Templates/CPQ_Approved_Email_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_Owner_on_Rejection</fullName>
+        <description>Notify Owner on Rejection</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>All_Email_Templates/CPQ_Rejected_Email_Template</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Quote_Status_to_Approved</fullName>
+        <description>Update quote Status once final approval has been given.</description>
+        <field>Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Quote Status to Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Account_Legal_Name</fullName>
+        <field>Account_Legal_Name__c</field>
+        <formula>Account__r.Legal_Name__c</formula>
+        <name>Set Account Legal Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Approved_By_Accounting</fullName>
+        <field>Last_Approved_By__c</field>
+        <formula>&apos;00G5000000254t4&apos;</formula>
+        <name>Set Approved By Accounting</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Approved_By_DealDesk</fullName>
+        <field>Last_Approved_By__c</field>
+        <formula>&apos;00G5000000254t6&apos;</formula>
+        <name>Set Approved By DealDesk</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Approved_By_Finance</fullName>
+        <field>Last_Approved_By__c</field>
+        <formula>&apos;00G5000000254t7&apos;</formula>
+        <name>Set Approved By Finance</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Approved_By_Legal</fullName>
+        <field>Last_Approved_By__c</field>
+        <formula>&apos;00G5000000254t8&apos;</formula>
+        <name>Set Approved By Legal</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Approved_By_Pro_Serv</fullName>
+        <field>Last_Approved_By__c</field>
+        <formula>&apos;00G5000000254t9&apos;</formula>
+        <name>Set Approved By Pro Serv</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Approved_By_Services_Operations</fullName>
+        <field>Last_Approved_By__c</field>
+        <formula>&apos;00G5000000254tA&apos;</formula>
+        <name>Set Approved By Services Operations</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Approved_by_CPQ_Analytics</fullName>
+        <field>Last_Approved_By__c</field>
+        <formula>&apos;00G3B000000RLy7UAG&apos;</formula>
+        <name>Set Approved by CPQ Analytics</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Approved_by_Contract_Renewal</fullName>
+        <field>Last_Approved_By__c</field>
+        <formula>&apos;00G5000000254t5&apos;</formula>
+        <name>Set Approved by Contract Renewal</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Approval_Process_1</fullName>
+        <field>Approval_Process__c</field>
+        <formula>&quot;Quote Approval Process 1&quot;</formula>
+        <name>Update Approval Process - 1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Evaluated_Status_to_Evaluated</fullName>
+        <field>Evaluated_Status__c</field>
+        <literalValue>Evaluated</literalValue>
+        <name>Update Evaluated Status to Evaluated</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Evaluated_Status_to_Post_Eval</fullName>
+        <field>Evaluated_Status__c</field>
+        <literalValue>Post Evaluation</literalValue>
+        <name>Update Evaluated Status to Post Eval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Evaluated_Status_to_Pre_Eval</fullName>
+        <field>Evaluated_Status__c</field>
+        <literalValue>Pre Evaluation</literalValue>
+        <name>Update Evaluated Status to Pre Eval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Last_Approved_By</fullName>
+        <field>Last_Approved_By__c</field>
+        <formula>Approver__c</formula>
+        <name>Update Last Approved By</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Quote_Approval_Status_Approved</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Update Quote Approval Status Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Quote_Status</fullName>
+        <field>Status__c</field>
+        <literalValue>Recalled</literalValue>
+        <name>Update Quote Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Quote_Status_Rejected</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Update Quote Status Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Quote_Status_to_Approved</fullName>
+        <field>Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Update Quote Status to Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Quote_Status_to_Pending_Approval</fullName>
+        <field>Status__c</field>
+        <literalValue>Pending Approval</literalValue>
+        <name>Update Quote Status to Pending Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Quote_Status_to_Recalled</fullName>
+        <field>Status__c</field>
+        <literalValue>Recalled</literalValue>
+        <name>Update Quote Status to Recalled</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Quote_Status_to_Rejected</fullName>
+        <field>Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Update Quote Status to Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Ran_Approvals_False</fullName>
+        <field>Ran_Approvals__c</field>
+        <literalValue>0</literalValue>
+        <name>Update Ran Approvals - False</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Ready_for_Approval</fullName>
+        <field>Ready_For_Approval__c</field>
+        <literalValue>1</literalValue>
+        <name>Update Ready for Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Ready_for_Approval_Recall</fullName>
+        <field>Ready_For_Approval__c</field>
+        <literalValue>0</literalValue>
+        <name>Update Ready for Approval - Recall</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Ready_for_Approval_Recall_Rejec</fullName>
+        <field>Ready_For_Approval__c</field>
+        <literalValue>0</literalValue>
+        <name>Update Ready for Approval - Recall/Rejec</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>Email Notification - Quote status is changed</fullName>
+        <actions>
+            <name>Notification_for_quote_when_status_is_changed</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Notify Kevin Hudson when an EMEA opportunity related quote&apos;s status is changed</description>
+        <formula>(ISCHANGED( Status__c )) &amp;&amp; ISPICKVAL( Opportunity__r.Geo_Region__c ,&apos;EMEA&apos;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Account Legal Name on Quote creation</fullName>
+        <actions>
+            <name>Set_Account_Legal_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>VCG_CPQ_Quote__c.Status__c</field>
+            <operation>notEqual</operation>
+            <value>Approved</value>
+        </criteriaItems>
+        <description>It will copy &apos;Legal Name&apos; from Account to &apos;Account Legal Name&apos; field</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set quote Status to Approved</fullName>
+        <actions>
+            <name>Quote_Status_to_Approved</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>VCG_CPQ_Quote__c.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </criteriaItems>
+        <description>Update quote Status once final approval has been given.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

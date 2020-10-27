@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <frameHeight>600</frameHeight>
+    <hasSidebar>true</hasSidebar>
+    <label>Siebel</label>
+    <motif>Custom7: Square</motif>
+    <url>http://qwbscrm:90/sales_enu/start.swe</url>
+    <urlEncodingKey>UTF-8</urlEncodingKey>
+</CustomTab>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Make_Tools_Comments_Required</fullName>
+    <active>true</active>
+    <description>Make Tools Comments required if Tools is No.</description>
+    <errorConditionFormula>AND( 
+ISBLANK( Tools_Comments__c ), 
+ISPICKVAL( Tools__c , &quot;No&quot;) 
+)</errorConditionFormula>
+    <errorDisplayField>Tools_Comments__c</errorDisplayField>
+    <errorMessage>Tools Comments is required if Tools is &quot;No&quot;</errorMessage>
+</ValidationRule>

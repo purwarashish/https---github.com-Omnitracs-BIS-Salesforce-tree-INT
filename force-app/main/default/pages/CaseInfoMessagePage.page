@@ -1,0 +1,42 @@
+<!-- /*******************************************************************************
+ * File:  CaseInfoMessagePage.Page
+ * Date:  October 13th, 2009
+ * Author:  Joseph Hutchins
+ *
+ * The use, disclosure, reproduction, modification, transfer, or transmittal of
+ * this work for any purpose in any form or by any means without the written 
+ * permission of United Parcel Service is strictly prohibited.
+ *
+ * Confidential, unpublished property of United Parcel Service.
+ * Use and distribution limited solely to authorized personnel.
+ *
+ * Copyright 2009, UPS Logistics Technologies, Inc.  All rights reserved.
+ *  *******************************************************************************/ -->
+<apex:page standardController="Case" extensions="CaseInfoMesageExtension">
+    <script language="javascript">
+        function closeWindow()
+        {
+            self.close();
+        }
+    </script>
+    <apex:form >
+    <apex:pagemessages />
+    <apex:pagemessage strength="2" 
+severity="{!severity}" title="{!infoMessage}" detail="" />
+        <apex:pageBlock >
+	        <apex:pageblockButtons >
+	            
+	            <apex:commandButton value="Go to Edit of Case" action="{!gotoCaseButton}" rendered="{!showGotoCaseButton}"/>
+                   
+	            <apex:commandbutton action="{!back}" value="Back"/>
+	            
+	            
+	            <apex:commandButton value="Close Window" onclick="Javascript:top.window.close();" immediate="true"
+	               rendered="{!showCloseWindowButton}"/>   
+	               
+	        </apex:pageblockButtons>
+            <apex:outputtext value="{!InfoMessageDetail}"/>
+
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

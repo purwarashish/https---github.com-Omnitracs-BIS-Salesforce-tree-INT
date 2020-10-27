@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hardware_Platform__c</fullName>
+    <description>Created for Contract Management.</description>
+    <externalId>false</externalId>
+    <label>Hardware Platform</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Critical Event Video</fullName>
+                <default>false</default>
+                <label>Critical Event Video</label>
+            </value>
+            <value>
+                <fullName>IVG</fullName>
+                <default>false</default>
+                <label>IVG</label>
+            </value>
+            <value>
+                <fullName>MCP100S</fullName>
+                <default>false</default>
+                <label>MCP100S</label>
+            </value>
+            <value>
+                <fullName>MCP100T</fullName>
+                <default>false</default>
+                <label>MCP100T</label>
+            </value>
+            <value>
+                <fullName>MCP110</fullName>
+                <default>false</default>
+                <label>MCP110</label>
+            </value>
+            <value>
+                <fullName>MCP200</fullName>
+                <default>false</default>
+                <label>MCP200</label>
+            </value>
+            <value>
+                <fullName>MCP50</fullName>
+                <default>false</default>
+                <label>MCP50</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>OmniExpress</fullName>
+                <default>false</default>
+                <label>OmniExpress</label>
+            </value>
+            <value>
+                <fullName>OmniTRACS</fullName>
+                <default>false</default>
+                <label>OmniTRACS</label>
+            </value>
+            <value>
+                <fullName>Service Fleet Manager</fullName>
+                <default>false</default>
+                <label>Service Fleet Manager</label>
+            </value>
+            <value>
+                <fullName>Trailer Tracks</fullName>
+                <default>false</default>
+                <label>Trailer Tracks</label>
+            </value>
+            <value>
+                <fullName>TruckMAIL</fullName>
+                <default>false</default>
+                <label>TruckMAIL</label>
+            </value>
+            <value>
+                <fullName>TT150</fullName>
+                <default>false</default>
+                <label>TT150</label>
+            </value>
+            <value>
+                <fullName>TT210</fullName>
+                <default>false</default>
+                <label>TT210</label>
+            </value>
+            <value>
+                <fullName>XRS</fullName>
+                <default>false</default>
+                <label>XRS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

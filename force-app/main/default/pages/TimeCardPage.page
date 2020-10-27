@@ -1,0 +1,369 @@
+<!--/*******************************************************************************
+ * File:  TimeEntry.Page
+ * Date:  December 18, 2012
+ * Author:  Joseph Hutchins
+ *
+ *  Modification By Abhishek Dey
+ *    Date : 11/25/2015
+ *    Details : Added 'Total Time' column in VF page to represent a summation of 'Total TimeCard Time' and 'Total Case Time'. Logic provided.
+ *
+ * The use, disclosure, reproduction, modification, transfer, or transmittal of
+ * this work for any purpose in any form or by any means without the written 
+ * permission of United Parcel Service is strictly prohibited.
+ *
+ * Confidential, unpublished property of United Parcel Service.
+ * Use and distribution limited solely to authorized personnel.
+ *
+ * Copyright 2009, UPS Logistics Technologies, Inc.  All rights reserved
+ *  *******************************************************************************/-->
+<apex:page controller="TimeCardExtension" action="{!verifyUserIsApartOfCaseTeam}">
+
+    <!--  Stops the account name from having focus when page loads. -->
+    <script>
+       function setFocusOnLoad(){}
+    </script>
+    <apex:form id="theForm" >
+        <apex:pagemessages />
+        <apex:pagemessage strength="3" severity="info" title="Debug Section" detail="isLead: {!isLead} showNoTimeCardSection: {!showNoTimeCardSection}"  rendered="{!isDebug}"/>
+        <!-- <apex:pagemessage strength="3" severity="error" title="Unsaved Changes" detail="Please SAVE your changes before moving on."  rendered="{!showDidTimeCardChangeDialog}"/>-->
+            
+        <apex:pagemessage strength="2"
+            severity="info" title="Please use minutes in time entry" detail="" />
+        
+        <!--    BEGIN SECTION WHERE NO TIME CARD EXISTS -->
+        <apex:pageblock title="No Time Card Exists for date: {!weekBegin}" rendered="{!showNoTimeCardSection}">
+            <!-- Commenting as per case 02202026. Related Code didnot remove from controller. Might be needed in future-->
+            <!--<apex:pageblockbuttons >
+                <apex:commandbutton value="Create New Time Card" action="{!createNewTimeCard}"/>
+                <apex:commandbutton value="Cancel" action="{!cancel}"/>
+            </apex:pageblockbuttons> --> 
+             
+            <apex:pageblocksection title="Week Begin Selection">
+                 <apex:pageblocksectionitem rendered="{!isLead}">
+                    <apex:outputlabel value="Select CS Tech:"/>
+                    <apex:selectlist value="{!selectedCSSupport}" size="1">
+                        <apex:selectoptions value="{!csSupportMembers}"/>
+                        <apex:actionsupport event="onchange" action="{!csSupportPicklistOnChange}"/>
+                    </apex:selectlist>
+                </apex:pageblocksectionitem>
+                
+                <apex:pageblocksectionitem rendered="{!isLead}">
+                    <apex:outputlabel value=""/>
+                    <apex:outputtext value=""/>
+                </apex:pageblocksectionitem>
+                
+                
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Select Week Begin:"/>
+                    <apex:inputfield value="{!timeCardForDateLookUponly.Week_Begin__c}">
+                        <apex:actionsupport event="onchange" action="{!weekBeginSelectionOnChange}"/>
+                     </apex:inputfield>
+                </apex:pageblocksectionitem>
+                
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Current Week:"/>
+                    <apex:outputtext value="{!weekBegin} - {!weekend}"/>
+                </apex:pageblocksectionitem>
+            </apex:pageblocksection>
+            
+        </apex:pageblock>
+        <!--   END SECTION WITH NO TIME CARD -->
+        
+        
+        <!--   BEGIN SECTION OF TIME CARD EXISTS AND IS QUERIED -->
+        <apex:pageBlock title="Time Card {!timeCard.Name} for {!TimeCard.User__r.Name}" rendered="{!!showNoTimeCardSection}">
+            <apex:pageblockbuttons >
+                <apex:commandbutton value="Save" action="{!saveChanges}"/ >
+                <apex:commandbutton value="Cancel" action="{!cancel}"/>
+                <apex:commandbutton value="Submit For Approval" action="{!submitForApproval}" rendered="{!showSubmitButton}"/>
+            </apex:pageblockbuttons>
+            
+            <apex:pageblocksection title="Week Begin Selection">
+                <apex:pageblocksectionitem rendered="{!isLead}">
+                    <apex:outputlabel value="Select CS Tech:"/>
+                    <apex:selectlist value="{!selectedCSSupport}" size="1">
+                        <apex:selectoptions value="{!csSupportMembers}"/>
+                        <apex:actionsupport event="onchange" action="{!csSupportPicklistOnChange}"/>
+                    </apex:selectlist>
+                </apex:pageblocksectionitem>
+                
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Select Week Begin:"/>
+                    <apex:inputfield value="{!timeCardForDateLookUponly.Week_Begin__c}">
+                        <apex:actionsupport event="onchange" action="{!weekBeginSelectionOnChange}"/>
+                     </apex:inputfield>
+                </apex:pageblocksectionitem>
+                
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Current Week:"/>
+                    <apex:outputtext value="{!weekBegin} - {!weekend}"/>
+                </apex:pageblocksectionitem>
+                       
+                
+            </apex:pageblocksection>
+            
+            <apex:pageblocksection title="Time Card Detail" columns="2">
+                
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Week Begin:"/>
+                    <apex:outputtext value="{!weekBegin}"/>
+                   <!--  <apex:inputfield value="{!timeCardForDateLookupOnly.Date__c}">
+                        <apex:actionsupport event="onchange" action="{!weekBeginOnChange}"/>
+                    </apex:inputfield>-->
+                </apex:pageblocksectionitem>
+                
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Support Tech"/>
+                    <apex:outputtext value="{!timeCard.User__r.Name}"/>
+                </apex:pageblocksectionitem>
+                
+                <apex:pageblocksectionitem rendered="{!!isLead}">
+                    <apex:outputlabel value="Status"/>
+                    <apex:outputpanel >
+                        <apex:outputtext value="{!timeCard.Submit_Status__c}" />
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem rendered="{!isLead}">
+                    <apex:outputlabel value="Status"/>
+                    <apex:outputpanel >
+                        <apex:inputfield value="{!timeCard.Submit_Status__c}" >
+                           <apex:actionsupport event="onchange"/><!-- will show the inputfield rejection reason on change to rejected -->
+                        </apex:inputfield>
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>
+                 <apex:outputtext value="" /><!-- blank space for formating -->
+                
+             
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Submitted by"/>
+                    <apex:outputtext value="{!timeCard.Submitted_by__r.Name}"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Approved by"/>
+                    <apex:outputtext value="{!timeCard.Approved_by__r.Name}"/>
+                </apex:pageblocksectionitem>
+               
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Submitted Date"/>
+                    <apex:outputtext value="{!submittedDate}"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Approved Date"/>
+                    <apex:outputtext value="{!approvedDate}"/>
+                </apex:pageblocksectionitem>
+                
+                <!--   all one row -->
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Rejected by"/>
+                    <apex:outputtext value="{!timeCard.Rejected_by__r.Name}"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem rendered="{!showRejectedReasonInputField}">
+                    <apex:outputlabel value="Rejection Reason"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputtextarea value="{!timeCard.Rejection_Reason__c}" rows="5" cols="100"/>
+                    </apex:outputPanel>
+                </apex:pageblocksectionitem>      
+                <apex:pageblocksectionitem rendered="{!!showRejectedReasonInputField}">
+                    <apex:outputlabel value="Rejected Reason"/>
+                    <apex:outputtext value="{!timeCard.Rejection_Reason__c}"/>
+                </apex:pageblocksectionitem>
+                <!--   end all one row -->
+                
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Rejected Date"/>
+                    <apex:outputtext value="{!rejectedDate}"/>
+                </apex:pageblocksectionitem>
+                <apex:outputtext value=""/>
+                
+                <apex:pageblocksectionItem >
+                    <apex:outputlabel value="Created by"/>
+                    <apex:outputtext value="{!timeCard.CreatedBy.Name} {!timeCard.CreatedDate}"/>
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem >
+                    <apex:outputlabel value="Last Modified by"/>
+                    <apex:outputtext value="{!timeCard.lastModifiedby.Name} {!timeCard.lastmodifiedDate}"/>
+                </apex:pageblocksectionItem>
+            </apex:pageblocksection>
+            </apex:pageblock>
+            <apex:pageblock rendered="{!!showNoTimeCardSection}" id="timeCardDetailsTable" >
+                <apex:pageblocktable value="{!tableRows}" var="row" style="width:100%">
+                     
+                     <apex:column >
+                        <apex:facet name="header">Day Of <br /> Week</apex:facet>
+                        <apex:outputfield value="{!row.tcd.Day_of_Week_Name__c}"/>      
+                    </apex:column>
+                    
+                    <apex:column value="{!row.tcd.Date__c}"/>
+                    
+                    <!-- copy pasting starts below -->
+                                        
+                    <apex:column id="adminColumn">
+                        <apex:facet name="header">Administrative</apex:facet>
+                        <apex:inputtext id="adminCell" style="background-color:{!row.adminColor}"  size="4"  value="{!row.tcd.Admin_Time_Spent__c}"  rendered="{!!row.isReadOnly}">
+                            <apex:actionsupport event="onblur" action="{!simpleRefresh}" rerender="adminCell"/>
+                        </apex:inputtext>                        
+                        <apex:outputtext value="{0, number, 0}" rendered="{!row.isReadOnly}">
+                            <apex:param value="{!row.tcd.Admin_Time_Spent__c}"/>
+                        </apex:outputtext>
+                    </apex:column>
+                    <apex:column id="meetingColumn">
+                        <apex:facet name="header">Meetings</apex:facet>
+                        <apex:inputtext id="meetingCell" style="background-color:{!row.MeetingColor}"  size="4"  value="{!row.tcd.Meeting_Time_Spent__c}"  rendered="{!!row.isReadOnly}">
+                            <apex:actionsupport event="onblur" action="{!simpleRefresh}" rerender="meetingCell"/>
+                        </apex:inputtext>
+                        <apex:outputtext value="{0, number, 0}" rendered="{!row.isReadOnly}">
+                            <apex:param value="{!row.tcd.Meeting_Time_Spent__c}"/>
+                        </apex:outputtext>
+                    </apex:column>                    
+
+                    <apex:column id="projectColumn">
+                        <apex:facet name="header">Project <br/> Time</apex:facet>
+                        <apex:inputtext id="projectCell" style="background-color:{!row.projectColor}"  size="4"  value="{!row.tcd.Project_Time_Spent__c}"  rendered="{!!row.isReadOnly}">
+                            <apex:actionsupport event="onblur" action="{!simpleRefresh}" rerender="projectCell"/>
+                        </apex:inputtext>
+                        <apex:outputtext value="{0, number, 0}" rendered="{!row.isReadOnly}">
+                            <apex:param value="{!row.tcd.Project_Time_Spent__c}"/>
+                        </apex:outputtext>
+                    </apex:column>
+                    
+                    
+                    <apex:column id="professionalColumn">
+                        <apex:facet name="header">Professional <br/> Services</apex:facet>
+                        <apex:inputtext id="professionalCell" style="background-color:{!row.professionalColor}"  size="4"  value="{!row.tcd.Professional_Services_Work_Time_Spent__c}"  rendered="{!!row.isReadOnly}">
+                            <apex:actionsupport event="onblur" action="{!simpleRefresh}" rerender="professionalCell"/>
+                        </apex:inputtext>
+                        <apex:outputtext value="{0, number, 0}" rendered="{!row.isReadOnly}">
+                            <apex:param value="{!row.tcd.Professional_Services_Work_Time_Spent__c}"/>
+                        </apex:outputtext>
+                    </apex:column> 
+                    
+                    <apex:column id="trainingColumn">
+                        <apex:facet name="header">Training</apex:facet>
+                        <apex:inputtext id="trainingCell" style="background-color:{!row.TrainingColor}"  size="4"  value="{!row.tcd.Training_Time_Spent__c}"  rendered="{!!row.isReadOnly}">
+                            <apex:actionsupport event="onblur" action="{!simpleRefresh}" rerender="trainingCell"/>
+                        </apex:inputtext>
+                        <apex:outputtext value="{0, number, 0}" rendered="{!row.isReadOnly}">
+                            <apex:param value="{!row.tcd.Training_Time_Spent__c}"/>
+                        </apex:outputtext>
+                    </apex:column>
+                   
+
+                    <apex:column id="bereavementColumn">
+                        <apex:facet name="header">Bereavement</apex:facet>
+                        <apex:inputtext id="bereavementCell" style="background-color:{!row.bereavementColor}"  size="4"  value="{!row.tcd.Bereavement_Time_Spent__c}"  rendered="{!!row.isReadOnly}">
+                            <apex:actionsupport event="onblur" action="{!simpleRefresh}" rerender="bereavementCell"/>
+                        </apex:inputtext>
+                        <apex:outputtext value="{0, number, 0}" rendered="{!row.isReadOnly}">
+                            <apex:param value="{!row.tcd.Bereavement_Time_Spent__c}"/>
+                        </apex:outputtext>
+                    </apex:column>                    
+
+                    <apex:column id="holidayColumn">
+                        <apex:facet name="header">Holiday</apex:facet>
+                        <apex:inputtext id="holidayCell" style="background-color:{!row.HolidayColor}"  size="4"  value="{!row.tcd.Holiday_Time_Spent__c}"  rendered="{!!row.isReadOnly}">
+                            <apex:actionsupport event="onblur" action="{!simpleRefresh}" rerender="holidayCell"/>
+                        </apex:inputtext>
+                        <apex:outputtext value="{0, number, 0}" rendered="{!row.isReadOnly}">
+                            <apex:param value="{!row.tcd.Holiday_Time_Spent__c}"/>
+                        </apex:outputtext>
+                    </apex:column>
+             
+                    <apex:column id="inLieuColumn">
+                        <apex:facet name="header">In Lieu <br/> Days</apex:facet>
+                        <apex:inputtext id="inLieuCell" style="background-color:{!row.inLieuColor}"  size="4"  value="{!row.tcd.In_Lieu_Days_Time_Spent__c}"  rendered="{!!row.isReadOnly}">
+                            <apex:actionsupport event="onblur" action="{!simpleRefresh}" rerender="inLieuCell"/>
+                        </apex:inputtext> 
+                        <apex:outputtext value="{0, number, 0}" rendered="{!row.isReadOnly}">
+                            <apex:param value="{!row.tcd.In_Lieu_Days_Time_Spent__c}"/>
+                        </apex:outputtext>
+                    </apex:column>
+                    
+                    <apex:column id="juryColumn">
+                        <apex:facet name="header">Jury <br /> Duty</apex:facet>
+                        <apex:inputtext id="juryCell" style="background-color:{!row.juryColor}"  size="4"  value="{!row.tcd.Jury_Duty_Time_Spent__c}"  rendered="{!!row.isReadOnly}">
+                            <apex:actionsupport event="onblur" action="{!simpleRefresh}" rerender="juryCell"/>
+                        </apex:inputtext>
+                        <apex:outputtext value="{0, number, 0}" rendered="{!row.isReadOnly}">
+                            <apex:param value="{!row.tcd.Jury_Duty_Time_Spent__c}"/>
+                        </apex:outputtext>
+                    </apex:column>
+
+                    <apex:column id="personalColumn">
+                        <apex:facet name="header">Personal</apex:facet>
+                        <apex:inputtext id="personalCell" style="background-color:{!row.PersonalColor}"  size="4"  value="{!row.tcd.Personal_Time_Spent__c}"  rendered="{!!row.isReadOnly}">
+                            <apex:actionsupport event="onblur" action="{!simpleRefresh}" rerender="personalCell"/>
+                        </apex:inputtext>
+                        <apex:outputtext value="{0, number, 0}" rendered="{!row.isReadOnly}">
+                            <apex:param value="{!row.tcd.Personal_Time_Spent__c}"/>
+                        </apex:outputtext>
+                    </apex:column>
+
+                    <apex:column id="sickColumn">
+                        <apex:facet name="header">Sick <br /> Time</apex:facet>
+                        <apex:inputtext id="sickCell" style="background-color:{!row.sickColor}"  size="4"  value="{!row.tcd.Sick_Time_Spent__c}"  rendered="{!!row.isReadOnly}">
+                            <apex:actionsupport event="onblur" action="{!simpleRefresh}" rerender="sickCell"/>
+                        </apex:inputtext>
+                        <apex:outputtext value="{0, number, 0}" rendered="{!row.isReadOnly}">
+                            <apex:param value="{!row.tcd.Sick_Time_Spent__c}"/>
+                        </apex:outputtext>
+                    </apex:column>
+
+                    <apex:column id="vacationColumn">
+                        <apex:facet name="header">Vacation</apex:facet>
+                        <apex:inputtext id="vacationCell" style="background-color:{!row.vacationColor}"  size="4"  value="{!row.tcd.Vacation_Time_Spent__c}"  rendered="{!!row.isReadOnly}">
+                            <apex:actionsupport event="onblur" action="{!simpleRefresh}" rerender="vacationCell"/>
+                        </apex:inputtext>
+                        <apex:outputtext value="{0, number, 0}" rendered="{!row.isReadOnly}">
+                            <apex:param value="{!row.tcd.Vacation_Time_Spent__c}"/>
+                        </apex:outputtext>
+                    </apex:column>
+                    
+                    <!-- Abhishek Added Hours Column -->
+                    
+                    <apex:column id="HoursColumn">
+                        <apex:facet name="header">Hours <br/> Worked </apex:facet>
+                        <apex:inputtext id="HoursCell" style="background-color:{!row.hoursColor}"  size="4"  value="{!row.tcd.Hours_Worked__c}"  rendered="{!!row.isReadOnly}">
+                            <apex:actionsupport event="onblur" action="{!simpleRefresh}" rerender="HoursCell"/>
+                        </apex:inputtext>
+                        <apex:outputtext value="{0, number, 0}" rendered="{!row.isReadOnly}">
+                            <apex:param value="{!row.tcd.Hours_Worked__c}"/>
+                        </apex:outputtext>
+                    </apex:column>
+
+                    <apex:column id="commentsColumn">
+                        <apex:facet name="header">Comments</apex:facet>
+                        <apex:inputtextarea id="commentsCell" style="background-color:{!row.commentsColor}"   value="{!row.tcd.Comments__c}"  rendered="{!!row.isReadOnly}">
+                            <apex:actionsupport event="onblur" action="{!simpleRefresh}" rerender="commentsCell"/>
+                        </apex:inputtextarea>                        
+                        <apex:outputtext value="{!row.tcd.Comments__c}" rendered="{!row.isReadOnly}"/>
+                    </apex:column>
+                    
+                    <apex:column >
+                        <apex:facet name="header">Total TimeCard <br/> Time</apex:facet>
+                        <apex:outputfield value="{!row.tcd.Total_Time_Spent__c}" rendered="{!!row.isReadonly}"/>
+                        <apex:outputtext value="{0, number, 0}" rendered="{!row.isReadOnly}">
+                            <apex:param value="{!row.totalForTable}"/>
+                        </apex:outputtext>
+                    </apex:column>
+                    
+                    <apex:column id="caseTimeColumn">
+                        <apex:facet name="header">Total<br />Case Time</apex:facet>
+                        <apex:outputtext value="{0, number, 0}">
+                            <apex:param value="{!row.caseTimeSum}"/>
+                        </apex:outputtext>
+                    </apex:column>
+                    <!-- Abhishek created as a part of CR- #02014490 -->
+                    <apex:column id="caseTotalTimeColumn">
+                        <apex:facet name="header">Total<br />Time</apex:facet>
+                    <apex:outputtext value="{!row.caseRowTotal}" rendered="{!!row.isReadonly}"/> 
+                        <apex:outputtext value="{0, number, 0}" rendered="{!row.isReadonly}">
+                            <apex:param value="{!row.caseTotalTime}" />
+                        </apex:outputtext>
+                    </apex:column>
+                </apex:pageblocktable>
+            
+        </apex:pageBlock>
+        <!--   END SECTION WHERE TIME CARD EXISTS AND IS QUEIRED  -->
+    </apex:form>
+</apex:page>

@@ -1,0 +1,165 @@
+<apex:page Controller="ExportToExcelControllerAttachment" cache="true" contentType="application/vnd.ms-excel#ResourcePlanner.xls">
+      <apex:outputPanel rendered="{!IF(selectedDuration=='Daily' && blnStaticRes==false,true,false)}" >
+    <table border="1">
+        <tr>
+            <td width="100">
+             <b>   <apex:outputText value="Resource Name" /></b>
+            </td>
+            <apex:variable var="i" value="{!0}"/>
+            <apex:repeat value="{!mapDaysValue}" var="key" rendered="{!if(i==0,true,false)}">
+            <td width="100">
+               <b> <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                    <apex:param value="{!key}" />
+                </apex:outputText>
+                </b>
+            </td>
+            <apex:variable var="i" value="{!i+1}"/>
+            </apex:repeat>
+        </tr>
+        <apex:repeat value="{!MapFinalData}" var="outerKey">
+        <tr>
+            <td width="100">
+            <apex:outputText value="{!outerKey}"/>
+            </td>
+            <apex:repeat value="{!MapFinalData[outerKey]}" var="innerKey">
+            <td width="100" style="background-color:{!IF(MapFinalData[outerKey][innerKey]< 10,strRed, if(MapFinalData[outerKey][innerKey]>= 10 && MapFinalData[outerKey][innerKey]<=19,strChoclate,if(MapFinalData[outerKey][innerKey]>19 && MapFinalData[outerKey][innerKey]<=29,strBluryWood,if(MapFinalData[outerKey][innerKey]>29 && MapFinalData[outerKey][innerKey]<=40,strWhite,strBlue))))}">
+                <apex:outputText value="{!MapFinalData[outerKey][innerKey]}"/>
+            </td>
+            </apex:repeat>
+        </tr>
+        </apex:repeat>
+    </table>
+ </apex:outputPanel>  
+ <apex:outputPanel rendered="{!IF(selectedDuration=='Weekly' && blnStaticRes==false,true,false)}" >
+    <table border="1">
+        <tr>
+           <td width="100">
+                <b> <apex:outputText value="Resource Name"/></b>
+            </td>
+            <apex:variable var="i" value="{!0}"/>
+            <apex:repeat value="{!mapWeeklyValue}" var="key" rendered="{!if(i==0,true,false)}">
+            <td width="100" style="background-color:#FFFFFF}">
+              <b>  <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                    <apex:param value="{!key-6}" />
+                </apex:outputText></b>
+            </td>
+            <apex:variable var="i" value="{!i+1}"/>
+            </apex:repeat>
+        </tr>
+        <apex:repeat value="{!MapFinalWeek}" var="outerKey">
+        <tr>
+            <td width="100">
+            <apex:outputText value="{!outerKey}"/>
+            </td>
+            <apex:repeat value="{!MapFinalWeek[outerKey]}" var="innerKey">
+            <td width="100" style="background-color:{!IF(MapFinalWeek[outerKey][innerKey]< 10,strRed, if(MapFinalWeek[outerKey][innerKey]>= 10 && MapFinalWeek[outerKey][innerKey]<=19,strChoclate,if(MapFinalWeek[outerKey][innerKey]>19 && MapFinalWeek[outerKey][innerKey]<=29,strBluryWood,if(MapFinalWeek[outerKey][innerKey]> 29 && MapFinalWeek[outerKey][innerKey]<=40,strWhite,strBlue))))}">
+                <apex:outputText value="{!ROUND(MapFinalWeek[outerKey][innerKey],2)}"/>
+            </td>
+            </apex:repeat>
+        </tr>
+        </apex:repeat>
+    </table>
+    </apex:outputPanel>  
+ <apex:outputPanel rendered="{!IF(selectedDuration=='Monthly' && blnStaticRes==false,true,false)}" >
+     <table border="1">
+        <tr>
+            <td width="100">
+               <b> <apex:outputText value="Resource Name" /></b>
+            </td>
+            <apex:variable var="i" value="{!0}"/>
+            <apex:repeat value="{!lstMonthKey}" var="monthKey" rendered="{!if(i==0,true,false)}">
+            <td width="100" style="background-color:#FFFFFF}">
+                <b><apex:outputText value="{!monthKey}"/></b>
+            </td>
+            <apex:variable var="i" value="{!i+1}"/>
+            </apex:repeat>
+        </tr>
+        <apex:repeat value="{!MapFinalMonthly}" var="UserName">
+        <tr>
+            <td width="100">
+            <apex:outputText value="{!UserName}"/>
+            </td>
+            <apex:repeat value="{!lstMonthKey}" var="MonthKeyVal">
+            <td width="100" style="background-color:{!IF(MapFinalMonthly[UserName][MonthKeyVal]< 10,strRed, if(MapFinalMonthly[UserName][MonthKeyVal]>= 10 && MapFinalMonthly[UserName][MonthKeyVal]<=19,strChoclate,if(MapFinalMonthly[UserName][MonthKeyVal]>19 && MapFinalMonthly[UserName][MonthKeyVal]<=29,strBluryWood,if(MapFinalMonthly[UserName][MonthKeyVal]>29 && MapFinalMonthly[UserName][MonthKeyVal]<=40,strWhite,strBlue))))}">
+                <apex:outputText value="{!MapFinalMonthly[UserName][MonthKeyVal]}"/>
+            </td>
+            </apex:repeat>
+        </tr>
+        </apex:repeat>
+    </table>
+  </apex:outputPanel>  
+ <apex:outputPanel rendered="{!IF(selectedDuration=='Quarterly' && blnStaticRes==false,true,false)}" >
+      <table border="1">
+        <tr>
+            <td width="100" >
+               <b> <apex:outputText value="Resource Name" /></b>
+            </td>
+            <apex:variable var="i" value="{!0}"/>
+            <apex:repeat value="{!lstQuarterKey}" var="quarterKey" rendered="{!if(i==0,true,false)}">
+            <td width="100" style="background-color:#FFFFFF}">
+               <b> <apex:outputText value="{!quarterKey}"/></b>
+            </td>
+            <apex:variable var="i" value="{!i+1}"/>
+            </apex:repeat>
+        </tr>
+        <apex:repeat value="{!MapFinalQuarters}" var="UserName">
+        <tr>
+            <td width="100">
+            <apex:outputText value="{!UserName}"/>
+            </td>
+            <apex:repeat value="{!lstQuarterKey}" var="quarterKey">
+            <td width="100" style="background-color:{!IF(MapFinalQuarters[UserName][quarterKey]< 10,strRed, if(MapFinalQuarters[UserName][quarterKey]>= 10 && MapFinalQuarters[UserName][quarterKey]<=19,strChoclate,if(MapFinalQuarters[UserName][quarterKey]>19 && MapFinalQuarters[UserName][quarterKey]<=29,strBluryWood,if(MapFinalQuarters[UserName][quarterKey]>29 && MapFinalQuarters[UserName][quarterKey]<=40,strWhite,strBlue))))}">
+                <apex:outputText value="{!MapFinalQuarters[UserName][quarterKey]}"/>
+            </td>
+            </apex:repeat>
+        </tr>
+        </apex:repeat>
+    </table>
+  </apex:outputPanel>
+  <br>
+  </br>
+   <br>
+  </br>
+   <br>
+  </br>
+  <table border="1">
+  <th>
+  <b><apex:outputText value="Individual Resources"/></b>
+  </th>
+        <tr>
+            <td width="100">
+                <apex:outputText value="Less than 10 hours"/>
+            </td>
+            <td style="background-color:{!strRed}" width="100">
+            </td>
+        </tr>
+        <tr>
+            <td width="100">
+             <apex:outputText value="10-19 Hours"/>
+            </td>
+            <td style="background-color:{!strChoclate}" width="100">
+            </td>
+        </tr>
+        <tr>
+            <td width="100">
+                <apex:outputText value="20-29 Hours"/>
+            </td>
+            <td style="background-color:{!strBluryWood}" width="100">
+            </td>
+        </tr>
+        <tr>
+            <td width="100">
+                <apex:outputText value="30-41 Hours"/>
+            </td>
+            <td style="background-color:{!strWhite}" width="100">
+            </td>
+            </tr>
+        <tr>
+            <td width="100">
+                <apex:outputText value="42 hours or more"/>
+            </td>
+            <td style="background-color:{!strBlue}" width="100">
+            </td>
+        </tr>
+   </table> 
+</apex:page>

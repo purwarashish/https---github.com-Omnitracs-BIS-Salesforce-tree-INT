@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Overall_Service_Experience_num__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE (TEXT(Overall_Service_Experience__c),
+&quot;Dissatisfied&quot;, 1,
+&quot;Insatisfecho&quot;, 1,
+&quot;Somewhat Dissatisfied&quot;, 2,
+&quot;Algo Satisfecho&quot;, 2,
+&quot;Neutral&quot;, 3,
+&quot;Satisfied&quot;, 4,
+&quot;Satisfecho&quot;, 4,
+&quot;Very Satisfied&quot;, 5,
+&quot;Muy Satisfecho&quot;, 5,
+0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Overall Service Experience #</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

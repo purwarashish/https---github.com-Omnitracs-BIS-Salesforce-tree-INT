@@ -1,0 +1,2 @@
+<apex:page standardController="Street_Area__c" extensions="StreetAreaExtension" action="{!redirectToNewOrEditPage}">
+</apex:page>

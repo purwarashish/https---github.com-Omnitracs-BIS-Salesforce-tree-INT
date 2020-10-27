@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open_Links_In_New_Window__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Allows the links on the developer home page to be opened in a new window.  If set to false then the links open web pages in the same window.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Allows the links on the developer home page to be opened in a new window.  If set to false then the links open web pages in the same window.</inlineHelpText>
+    <label>Open Links In New Window</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

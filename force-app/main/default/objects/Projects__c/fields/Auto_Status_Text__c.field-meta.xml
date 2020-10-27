@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Auto_Status_Text__c</fullName>
+    <description>Text version of the Auto Status calculation</description>
+    <externalId>false</externalId>
+    <formula>IF( Total_Hours__c &gt; Total_Estimated_Hours__c , &quot;Yellow&quot;, IF(TODAY() &gt; Estimated_Completion_Date__c, &quot;Yellow&quot;, IF(Actual_Margin__c - Target_Margin__c &lt;0 , &quot;Yellow&quot;,IF( AND( Target_Margin__c &gt; 0, Project_Cost__c &gt; Project_Revenue__c), &quot;Red&quot;, &quot;Green&quot;))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Project status</inlineHelpText>
+    <label>Auto Status Text</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

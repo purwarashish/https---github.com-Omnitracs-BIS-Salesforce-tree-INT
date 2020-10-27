@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Host_Service__c</fullName>
+    <description>Host Service</description>
+    <externalId>false</externalId>
+    <label>Host Service</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>MCT</fullName>
+                <default>false</default>
+                <label>MCT</label>
+            </value>
+            <value>
+                <fullName>realtimeAP</fullName>
+                <default>false</default>
+                <label>realtimeAP</label>
+            </value>
+            <value>
+                <fullName>RM</fullName>
+                <default>false</default>
+                <label>RM</label>
+            </value>
+            <value>
+                <fullName>Route Tracker</fullName>
+                <default>false</default>
+                <label>Route Tracker</label>
+            </value>
+            <value>
+                <fullName>RTFuel</fullName>
+                <default>false</default>
+                <label>RTFuel</label>
+            </value>
+            <value>
+                <fullName>TpMobileFuel</fullName>
+                <default>false</default>
+                <label>TpMobileFuel</label>
+            </value>
+            <value>
+                <fullName>TPMobile Premium</fullName>
+                <default>false</default>
+                <label>TPMobile Premium</label>
+            </value>
+            <value>
+                <fullName>TPMobile Standard</fullName>
+                <default>false</default>
+                <label>TPMobile Standard</label>
+            </value>
+            <value>
+                <fullName>TVMStan</fullName>
+                <default>false</default>
+                <label>TVMStan</label>
+            </value>
+            <value>
+                <fullName>XRS Premium</fullName>
+                <default>false</default>
+                <label>XRS Premium</label>
+            </value>
+            <value>
+                <fullName>XRS EOBR</fullName>
+                <default>false</default>
+                <label>XRS EOBR</label>
+            </value>
+            <value>
+                <fullName>XRS Compliance</fullName>
+                <default>false</default>
+                <label>XRS Compliance</label>
+            </value>
+            <value>
+                <fullName>XRS Core</fullName>
+                <default>false</default>
+                <label>XRS Core</label>
+            </value>
+            <value>
+                <fullName>XRS Performance</fullName>
+                <default>false</default>
+                <label>XRS Performance</label>
+            </value>
+            <value>
+                <fullName>RDC</fullName>
+                <default>false</default>
+                <label>RDC</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,192 @@
+<apex:page id="pg" controller="searchExistingDataController">
+ <style>
+    .activeTab {background-color: #FFFFFF; background-image:none}
+    .inactiveTab { background-color: #DFDFDF; background-image:none}
+    </style>
+
+<apex:form id="frm">
+        <apex:pageBlock id="blk" title="Can I Work it?">
+        <!-- <apex:messages style="color:rgb(204,0,0);font-weight: bold;text-align:center" /> -->
+        
+        
+        
+        <apex:outputText value="Enter the search text: "></apex:outputText>
+        <apex:inputText value="{!searchString}" id="srchTxt"/>  
+        
+        <apex:commandButton value="Search" action="{!search}" title="Contact can be searched by Name and Email.Accounts can be searched by Name and DOT.Leads can be searched by Name,Email and DOT." onclick=" return checkSearchBox();"/><br/>
+        
+        <apex:outputText value="Check what data you need to search: "/>
+        <apex:outputText value="Accounts"></apex:outputText>
+        <apex:inputCheckbox id="AccChk" value="{!AccountFlag}" selected="{!AccountFlag}" />
+        <apex:outputText value="Contacts"></apex:outputText>
+        <apex:inputCheckbox id="ConChk" value="{!ContactFlag}" selected="{!ContactFlag}" />
+        <apex:outputText value="Leads"></apex:outputText>
+        <apex:inputCheckbox id="LeadChk" value="{!LeadFlag}" selected="{!LeadFlag}" />
+        <br/>
+        <div style="padding-top:20px;">
+        <div><apex:outputText value="Scope: Accounts, Leads, Contacts. " style="font-style: italic"/></div>
+        <div><apex:outputText value="Accounts can be searched by Name and DOT#." style=" font-style: italic" /></div>
+        <div><apex:outputText value="Contact can be searched by Name, Account Name and Email." style=" font-style: italic"/></div>
+        <div><apex:outputText value="Leads can be searched by Name, Company Name, Email and DOT#." style=" font-style: italic"/></div>
+        </div>
+        
+        </apex:pageBlock>
+        
+        
+        <apex:pageBlock id="accBlk" tabStyle="Account" title="Accounts" rendered="{!NOT(ISNULL(accounts)) && accounts.size > 0}">
+        <apex:pageBlockTable id="accountTbl" value="{!accounts}" var="a" title="Accounts">
+            
+           
+           <apex:column >
+                <apex:facet name="header">Account Name</apex:facet> 
+
+                  <apex:commandLink action="{!checkAccountOwner}" value="{!a.name}" > 
+                  <apex:param name="AccountParam" assignTo="{!AccId}" value="{!a.Id}" />
+                  <apex:param name="selectedRecOwner" assignTo="{!selectedRecOwner}" value="{!a.ownerId}" />
+                  <apex:param name="selectedRecPartnerOwner" assignTo="{!selectedRecPartnerOwner}" value="{!a.RecordOwner__c}" />
+                    </apex:commandLink>                                   
+            </apex:column>
+
+            
+            
+            <apex:column value="{!a.QWBS_Cust_ID__c}"/>
+            <apex:column value="{!a.QWBS_Status__c}"/>
+            <apex:column value="{!a.BillingCity}"/>
+            <apex:column value="{!a.BillingState}"/>
+            <apex:column value="{!a.BillingCountry}"/>
+            <apex:column value="{!a.District__c}"/>
+        </apex:pageBlockTable>
+      
+        <apex:outputPanel layout="block" styleClass="pSearchShowMore" id="otpNav" rendered="{!NOT(ISNULL(setConAcc))}">   
+                  Total Accounts: <apex:outputText rendered="{!IF(setConAcc.resultSize==10000,true,false)}">10000 +</apex:outputText>
+                 
+                  <apex:outputText rendered="{!IF(setConAcc.resultSize < 10000,true,false)}">{!setConAcc.resultSize}</apex:outputText>   
+                  
+                      <apex:image url="/img/search_prevarrow_disabled.gif" styleClass="prevArrow" rendered="{!NOT(setConAcc.hasPrevious)}"/>   
+                      <apex:image url="/img/search_prevarrow.gif" title="Previous Page" styleClass="prevArrow" rendered="{!setConAcc.hasPrevious}"/>   
+                      
+                      <apex:commandLink action="{!setConAcc.previous}" rendered="{!setConAcc.hasPrevious}" reRender="accBlk">Previous</apex:commandLink>   
+                      <apex:outputPanel styleClass="pShowLess noLink" style="color:grey" rendered="{!NOT(setConAcc.hasPrevious)}">Previous Page</apex:outputPanel>            
+                      &nbsp;({!IF(setConAcc.PageNumber == 1,1,((setConAcc.PageNumber -1) * setConAcc.PageSize)+1)}-{!IF(setConAcc.resultSize < setConAcc.PageSize,setConAcc.resultSize,setConAcc.PageNumber * setConAcc.pageSize)})&nbsp;   
+                      <apex:outputPanel styleClass="pShowLess noLink" style="color:grey" rendered="{!NOT(setConAcc.hasNext)}">Next Page</apex:outputPanel>            
+
+                      <apex:commandLink value="Next Page" rendered="{!setConAcc.hasNext}" action="{!setConAcc.next}" reRender="accBlk"/>&nbsp;   
+
+                      <apex:image url="/img/search_nextarrow.gif" title="Next Page" styleClass="nextArrow" rendered="{!setConAcc.hasNext}"/>   
+                      <apex:image url="/img/search_nextarrow_disabled.gif" rendered="{!NOT(setConAcc.hasNext)}"/>             
+                  </apex:outputPanel> 
+                  </apex:pageBlock>
+        
+        
+        <apex:pageBlock id="contBlk" tabStyle="Contact" title="Contacts" rendered="{!NOT(ISNULL(Contacts)) && Contacts.size > 0}">
+        <apex:pageBlockTable id="contactTbl" value="{!contacts}" var="a" title="Contacts" >
+            
+            <apex:column value="{!a.Name}"/>
+            <apex:column value="{!a.Title}"/>
+            <apex:column value="{!a.Account.Name}"/>
+            <apex:column value="{!a.MailingCity}"/>
+            <apex:column value="{!a.MailingState}"/>
+           
+        </apex:pageBlockTable>
+        
+        <apex:outputPanel layout="block" styleClass="pSearchShowMore" id="otpNav1" rendered="{!NOT(ISNULL(setConCont))}">   
+                  Total Contacts: <apex:outputText rendered="{!IF(setConCont.resultSize==10000,true,false)}">10000 +</apex:outputText>
+                 
+                  <apex:outputText rendered="{!IF(setConCont.resultSize < 10000,true,false)}">{!setConCont.resultSize}</apex:outputText>   
+                  
+                      <apex:image url="/img/search_prevarrow_disabled.gif" styleClass="prevArrow" rendered="{!NOT(setConCont.hasPrevious)}"/>   
+                      <apex:image url="/img/search_prevarrow.gif" title="Previous Page" styleClass="prevArrow" rendered="{!setConCont.hasPrevious}"/>   
+                      
+                      <apex:commandLink action="{!setConCont.previous}" rendered="{!setConCont.hasPrevious}" reRender="contBlk">Previous</apex:commandLink>   
+                      <apex:outputPanel styleClass="pShowLess noLink" style="color:grey" rendered="{!NOT(setConCont.hasPrevious)}">Previous Page</apex:outputPanel>            
+                      &nbsp;({!IF(setConCont.PageNumber == 1,1,((setConCont.PageNumber -1) * setConCont.PageSize)+1)}-{!IF(setConCont.resultSize < setConCont.PageSize,setConCont.resultSize,setConCont.PageNumber * setConCont.pageSize)})&nbsp;   
+                      <apex:outputPanel styleClass="pShowLess noLink" style="color:grey" rendered="{!NOT(setConCont.hasNext)}">Next Page</apex:outputPanel>            
+
+                      <apex:commandLink value="Next Page" rendered="{!setConCont.hasNext}" action="{!setConCont.next}" reRender="contBlk"/>&nbsp;   
+
+                      <apex:image url="/img/search_nextarrow.gif" title="Next Page" styleClass="nextArrow" rendered="{!setConCont.hasNext}"/>   
+                      <apex:image url="/img/search_nextarrow_disabled.gif" rendered="{!NOT(setConCont.hasNext)}"/>             
+                  </apex:outputPanel> 
+         </apex:pageBlock>
+        
+        
+        <apex:pageBlock id="leadBlk" tabStyle="Lead" title="Leads" rendered="{!NOT(ISNULL(Leads)) && Leads.size > 0}">
+        <apex:pageBlockTable id="leadTbl" value="{!leads}" var="a" title="Leads">
+            
+            
+           
+            
+            <apex:column >
+                <apex:facet name="header">Name</apex:facet> 
+
+                  <apex:commandLink action="{!checkLeadOwner}" value="{!a.name}" > 
+                  <apex:param name="leadParam" assignTo="{!LeadId}" value="{!a.Id}" />
+                  <apex:param name="selectedRecOwner " assignTo="{!selectedRecOwner}" value="{!a.ownerId}" />
+
+                    </apex:commandLink>                                   
+            </apex:column>
+            
+           
+           
+            <apex:column value="{!a.Title}"/>
+            <apex:column value="{!a.Status}"/>
+            <apex:column value="{!a.Company}"/>
+            <apex:column value="{!a.City}"/>
+            <apex:column value="{!a.State}"/>
+        
+        </apex:pageBlockTable>
+        
+        <apex:outputPanel layout="block" styleClass="pSearchShowMore" id="otpNav2" rendered="{!NOT(ISNULL(setConLead))}">   
+                  Total Leads: <apex:outputText rendered="{!IF(setConLead.resultSize==10000,true,false)}">10000 +</apex:outputText>
+                 
+                  <apex:outputText rendered="{!IF(setConLead.resultSize < 10000,true,false)}">{!setConLead.resultSize}</apex:outputText>   
+                  
+                      <apex:image url="/img/search_prevarrow_disabled.gif" styleClass="prevArrow" rendered="{!NOT(setConLead.hasPrevious)}"/>   
+                      <apex:image url="/img/search_prevarrow.gif" title="Previous Page" styleClass="prevArrow" rendered="{!setConLead.hasPrevious}"/>   
+                      
+                      <apex:commandLink action="{!setConLead.previous}" rendered="{!setConLead.hasPrevious}" reRender="leadBlk">Previous</apex:commandLink>   
+                      <apex:outputPanel styleClass="pShowLess noLink" style="color:grey" rendered="{!NOT(setConLead.hasPrevious)}">Previous Page</apex:outputPanel>            
+                      &nbsp;({!IF(setConLead.PageNumber == 1,1,((setConLead.PageNumber -1) * setConLead.PageSize)+1)}-{!IF(setConLead.resultSize < setConLead.PageSize,setConLead.resultSize,setConLead.PageNumber * setConLead.pageSize)})&nbsp;   
+                      <apex:outputPanel styleClass="pShowLess noLink" style="color:grey" rendered="{!NOT(setConLead.hasNext)}">Next Page</apex:outputPanel>            
+
+                      <apex:commandLink value="Next Page" rendered="{!setConLead.hasNext}" action="{!setConLead.next}" reRender="leadBlk"/>&nbsp;   
+
+                      <apex:image url="/img/search_nextarrow.gif" title="Next Page" styleClass="nextArrow" rendered="{!setConLead.hasNext}"/>   
+                      <apex:image url="/img/search_nextarrow_disabled.gif" rendered="{!NOT(setConLead.hasNext)}"/>             
+                  </apex:outputPanel>
+         </apex:pageBlock>
+        
+       
+        <script type = "text/javascript">
+            function checkSearchBox()
+            {
+            
+            var Acc = document.getElementById("pg:frm:blk:AccChk");
+            var Con = document.getElementById("pg:frm:blk:ConChk");
+            var Lead = document.getElementById("pg:frm:blk:LeadChk");
+            var search = document.getElementsByName("pg:frm:blk:srchTxt");
+            
+            
+            if(Acc.checked != true && Con.checked != true && Lead.checked != true)
+            {
+                alert('Select atleast one object to search.');  
+                return false;
+            } 
+             
+             if(search[0].value == '' || search[0].value == null)
+            {
+                alert('Search Text Cannot be Blank');  
+                return false;
+            } 
+              
+            }
+            
+            
+        </script>
+        
+          
+        
+        
+</apex:form>
+
+</apex:page>

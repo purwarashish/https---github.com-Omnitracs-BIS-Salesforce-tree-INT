@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Are_They_a_Competitor__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Owned by Strategic Alliance Team (Matt Martinez &amp; Joe Vastine)</description>
+    <externalId>false</externalId>
+    <label>Are They a Competitor?</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

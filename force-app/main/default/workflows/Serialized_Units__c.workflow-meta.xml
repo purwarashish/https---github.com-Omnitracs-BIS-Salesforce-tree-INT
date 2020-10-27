@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>ItemTypeGTL</fullName>
+        <field>Item_Type__c</field>
+        <literalValue>GTL</literalValue>
+        <name>Item Type - GTL</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>NullLastMessageDate</fullName>
+        <description>Null the Last Message Date/Time field if the value is 1/1/1970</description>
+        <field>Last_Message_Date_Time__c</field>
+        <formula>IF ( DATEVALUE(Last_Message_Date_Time__c) = DATE(1970,01,01), NULL, Last_Message_Date_Time__c)</formula>
+        <name>Null Last Message Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>NullLastPositionDate</fullName>
+        <description>Null the Lsat Position Date/Time if the value is 1/1/1970</description>
+        <field>Last_Position_Date_Time__c</field>
+        <formula>IF ( DATEVALUE(Last_Position_Date_Time__c) = DATE(1970,01,01), NULL, Last_Position_Date_Time__c)</formula>
+        <name>Null Last Position Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>NullLastRTDDate</fullName>
+        <description>If the Last RTD Date = 1/1/1970, change the field to Null, otherwise leave the Last RTD Date.</description>
+        <field>LastRTDDate__c</field>
+        <formula>IF (  LastRTDDate__c  = DATE(1970,01,01), NULL, LastRTDDate__c)</formula>
+        <name>Null Last RTD Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>UpdateSerial</fullName>
+        <description>Update the Serial # (External Key) field with the value from the Serial Number field (Name)</description>
+        <field>Serial__c</field>
+        <formula>Name</formula>
+        <name>Update Serial #</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Date_Unit_Moved</fullName>
+        <field>Date_Unit_Moved__c</field>
+        <formula>TODAY()</formula>
+        <name>Update Date Unit Moved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_First_Record</fullName>
+        <field>FirstRecord__c</field>
+        <literalValue>0</literalValue>
+        <name>Update First Record</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_From_NMC_Account</fullName>
+        <field>UpdateFromNMC__c</field>
+        <literalValue>0</literalValue>
+        <name>Update From NMC Account</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Unit_Activation_Date_field</fullName>
+        <description>Updates Unit Activation Date field to NOW when the WFR is fired (i.e. when Unit State changes to Activated)</description>
+        <field>Unit_Activation_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>Update Unit Activation Date field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>Serialized Unit - GTL</fullName>
+        <actions>
+            <name>ItemTypeGTL</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Serialized_Units__c.Serial__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>130000001</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Serialized_Units__c.Serial__c</field>
+            <operation>lessOrEqual</operation>
+            <value>130999998</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Activation Date On Serialized Unit</fullName>
+        <actions>
+            <name>Update_Unit_Activation_Date_field</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>A field update on this WFR updates the Unit Activation Date field on Serialized Unit object</description>
+        <formula>Account__c!=&apos;0015000000RBHQ2&apos;&amp;&amp;Account__c!=&apos;&apos;</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Invalid Dates</fullName>
+        <actions>
+            <name>NullLastMessageDate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>NullLastPositionDate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>NullLastRTDDate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>(1 OR 2 OR 3)</booleanFilter>
+        <criteriaItems>
+            <field>Serialized_Units__c.Last_Message_Date__c</field>
+            <operation>equals</operation>
+            <value>1/1/1970</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Serialized_Units__c.Last_Position_Date__c</field>
+            <operation>equals</operation>
+            <value>1/1/1970</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Serialized_Units__c.LastRTDDate__c</field>
+            <operation>equals</operation>
+            <value>1/1/1970</value>
+        </criteriaItems>
+        <description>Update the Last Position, Last Message Date, Last RTD Date fields to null if the value is 1/1/1970.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Serial %23</fullName>
+        <actions>
+            <name>UpdateSerial</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Serialized_Units__c.Serial__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>Update the Serial # (External Key) field with the value from Serial Number(Name)</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>UpdateFromNMCAccountField</fullName>
+        <active>true</active>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <criteriaItems>
+            <field>Serialized_Units__c.UpdateFromNMC__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Serialized_Units__c.FirstRecord__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>This WFR is used to call the trigger on Serialized Unit when the record is updated through UpdateAccountinSU trigger.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Update_First_Record</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>Update_From_NMC_Account</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+</Workflow>

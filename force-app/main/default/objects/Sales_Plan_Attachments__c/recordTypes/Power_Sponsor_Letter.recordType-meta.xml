@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Power_Sponsor_Letter</fullName>
+    <active>true</active>
+    <description>Letter sent to the Power Sponsor during Develop; required for Prove</description>
+    <label>Power Sponsor Letter</label>
+</RecordType>

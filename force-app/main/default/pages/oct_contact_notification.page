@@ -1,0 +1,112 @@
+<apex:page controller="OutageContactToolController" tabStyle="Contact" id="pageId" >
+<script src="/soap/ajax/14.0/connection.js" type="text/javascript"></script>
+<script src="/soap/ajax/14.0/apex.js" type="text/javascript"></script>
+<script language="javascript">
+	function batchProcessAccounts(){
+		var numAccounts;
+		var totalNumAccounts = new Number(0);
+		var outageId = '{!outageContactInfoName}';
+		var progress = document.getElementById("{!$Component.contactNotificationForm.jsProgressMsg}");
+		var progressDIV = document.getElementById("myDIV");
+		var newMesg = document.getElementById("pageId:contactNotificationForm:newMsgId").innerHTML ;
+		var districtString = '{!acctDistricts}';
+		var districtArray = new Array();
+
+		districtArray = districtString.split('~');
+
+		sforce.connection.sessionId = "{!$Api.Session_ID}"; //to avoid session timeout
+
+		progressDIV.innerHTML = "Please wait...";
+		alert('The report will be generated now. This may take a minute. Please wait...');
+
+		try {
+
+			// Validate custom search text area fields and show an alert. This validation applies only
+			// when the user is coming from custom search page. VALUE 4 indicates the user is coming from
+			// custom search page.
+			if(newMesg == '4'){
+				var errorMessageForInvalidCustomSearchIds = sforce.apex.execute("OutageContactToolController","validateCustomSearchIds ",{a:outageId});
+				if(errorMessageForInvalidCustomSearchIds != ''){
+					alert(errorMessageForInvalidCustomSearchIds);
+				}
+			}
+	
+			for (var i=0; i < districtArray.length; i++) {
+				//alert('into loop - value of i is ' + i);
+				progressDIV.innerHTML = totalNumAccounts + " accounts found so far. <br/>Processing district " + i + " of " + districtArray.length + " districts. Next district = " + districtArray[i];
+		
+				//alert('totalNumAccounts = ' + totalNumAccounts + '\n districtArray[i] ' + districtArray[i]);
+				//window.status = 'Generating report.';
+				numAccounts = sforce.apex.execute("OutageContactToolController","retrieveAffectedAccountInfo ",{a:outageId, b:districtArray[i],c:newMesg});
+				// alert('completed processing - response is ' + numAccounts);
+				var numAccountsNUMBER = new Number(numAccounts);
+				//alert('numAccountsNUMBER = ' + numAccountsNUMBER);
+				totalNumAccounts = totalNumAccounts + numAccountsNUMBER;
+			}
+	
+			progressDIV.innerHTML = 'Completed processing. Forwarding to report...';
+	
+			var reportURL = sforce.apex.execute("OutageContactToolController","retrieveConnectionTypeReportURL ",{a:outageId ,b:newMesg});
+			window.top.location = reportURL;
+
+
+		} catch(err) {
+			txt="There was an error generating the report.\n\n";
+			txt+="Error description: " + err.description + "\n\n";
+			txt+="Click OK to continue.\n\n";
+			txt+=err.message;	
+		}
+
+		function ValidsearchKeyword2()
+		{
+		//alert('func called');
+		var isContact = false;
+		var inputTagList = document.getElementsByTagName("input");;
+		// alert(inputTagList.length);
+		for (var i = 0; i < inputTagList.length; i++)
+		{
+		inputType = inputTagList[i].getAttribute("type");
+		alert(inputType);
+		optionValue = inputTagList[i].getAttribute("id");
+		if ( inputType == "text" && optionValue.indexOf("contact_notification_type") > 0)
+		{
+		if(inputTagList[i].selected == true)
+		isContact = true;
+		}
+		}
+		if(isContact == false)
+		{
+		alert('Please choose a connection type');
+		return false;
+		}
+		else
+		{
+		return true;
+		}
+		}
+		}
+		</script>
+		<apex:sectionHeader title="Outage Contact Tool" subtitle="Step 3 of 3"/>
+		<apex:form id="contactNotificationForm">
+		<apex:messages />
+		<apex:outputText id="jspProgressMsg" value="" style="font-weight:bold; color:red;" rendered="true"></apex:outputText>
+		<div id="myDIV" style="font-weight:bold; color:red;"/>
+		<apex:outputText value="{!userMessage}" style="font-weight:bold; color:red;" rendered="true"></apex:outputText>
+		<apex:outputText value="{!QueryParameter}" id="newMsgId" style="visibility:hidden"/>
+
+		<apex:pageBlock id="contactInfo" title="Contact Notification Info">
+		<apex:pageBlockButtons id="pbButtons" location="both">
+		<apex:commandButton action="{!redirectToRespectivePageOnCancel}" value="Cancel"/>
+		<apex:commandButton action="{!submitHardwarePortalAndServicesPage}" value="Finish" status="serverProcessingStatus" rerender="myForm" oncomplete="javascript:batchProcessAccounts();"/>
+		</apex:pageBlockButtons>
+
+		<apex:pageBlockSection columns="1">
+		<apex:pageBlockSectionItem >
+		Contact Notification Type: <apex:selectList id="contact_notification_type" value="{!selected_contact_types}" multiselect="true" size="4">
+		<apex:selectOptions value="{!ContactTypes}"/>
+		</apex:selectList>
+		</apex:pageBlockSectionItem>
+		</apex:pageBlockSection>
+		</apex:pageBlock>
+		</apex:form>
+</apex:page>

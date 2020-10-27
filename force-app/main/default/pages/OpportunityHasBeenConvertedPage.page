@@ -1,0 +1,6 @@
+<apex:page standardController="Opportunity" extensions="OpportunityHasBeenConvertedExtension">
+    <apex:form >
+      <font style="font-size: 1.25em; "><p><b>This opportunity has already been converted to a contract.</b></p></font>
+      <apex:commandButton value="Back" action="{!back}"/>
+    </apex:form>
+</apex:page>

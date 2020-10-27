@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OVMessagingInvoices</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Invoice__c</columns>
+    <columns>Total_Bill__c</columns>
+    <columns>Min_Billable_Units__c</columns>
+    <columns>ARPU__c</columns>
+    <columns>Statement_Date__c</columns>
+    <columns>Product__c</columns>
+    <columns>Units__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Product__c</field>
+        <operation>contains</operation>
+        <value>OmniVision</value>
+    </filters>
+    <label>OV Messaging Invoices</label>
+    <language>en_US</language>
+</ListView>

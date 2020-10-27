@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Fund_Request_Status_Update</fullName>
+        <description>Fund Request - Status Update</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>PartnerRelationshipManagement/FundRequestStatusUpdate</template>
+    </alerts>
+    <alerts>
+        <fullName>fundrequestapprovedsubmitternotification</fullName>
+        <description>Fund Request Approved - Submitter Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>MDFEmailTemplates/FundRequestApproved</template>
+    </alerts>
+    <alerts>
+        <fullName>fundrequestrejectedsubmitternotification</fullName>
+        <description>Fund Request Rejected - Submitter Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>MDFEmailTemplates/FundRequestRejected</template>
+    </alerts>
+    <alerts>
+        <fullName>fundrequestsubmittedacknowledgment</fullName>
+        <description>Fund Request Submitted - Acknowledgment</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>MDFEmailTemplates/FundRequestSubmitterAcknowledgment</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Fund_Request_Approved</fullName>
+        <field>Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Fund Request - Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Fund_Request_Approved_Date</fullName>
+        <field>Approved_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>Fund Request - Approved Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Fund_Request_Approved_Flag</fullName>
+        <field>Approved__c</field>
+        <literalValue>1</literalValue>
+        <name>Fund Request - Approved Flag</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Fund_Request_Approved_Record_Type</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Fund_Request_Approved</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Fund Request - Approved Record Type</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Fund_Request_Partner_Autopopulate</fullName>
+        <field>Partner__c</field>
+        <formula>Account__r.Name</formula>
+        <name>Fund Request - Partner Autopopulate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Fund_Request_Rejected</fullName>
+        <field>Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Fund Request - Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Fund_Request_Submitted</fullName>
+        <field>Status__c</field>
+        <literalValue>Submitted</literalValue>
+        <name>Fund Request - Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>nullclaimdeadlinedate</fullName>
+        <description>Good to reset this at the start of an approval process.</description>
+        <field>Claim_Deadline_Date__c</field>
+        <name>Null Claim Deadline Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>setfundclaimdeadlinedate</fullName>
+        <field>Claim_Deadline_Date__c</field>
+        <formula>TODAY() + 60</formula>
+        <name>Set Fund Claim Deadline Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>updateapprovedtofalse</fullName>
+        <description>Used to trigger a budget recalculation. Used in place of driving the recalculation from an approval status text based value</description>
+        <field>Approved__c</field>
+        <literalValue>0</literalValue>
+        <name>Update Approved to False</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>updateapprovedtotrue</fullName>
+        <description>Used in favor of the approval status field so that the Apex trigger which will fire using this True/ False field rather than a text based value in the approval status page</description>
+        <field>Approved__c</field>
+        <literalValue>1</literalValue>
+        <name>Update Approved to True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>updatefundrequestapproveddate</fullName>
+        <field>Approved_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>Update Fund Request Approved Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>updatefundrequeststatustoapproved</fullName>
+        <field>Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Update Fund Request Status To Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>updatefundrequeststatustodraft</fullName>
+        <field>Status__c</field>
+        <literalValue>Draft</literalValue>
+        <name>Update Fund Request Status To Draft</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>updatefundrequeststatustoinprocess</fullName>
+        <field>Status__c</field>
+        <literalValue>In Process</literalValue>
+        <name>Update Fund Request Status To In Process</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>updatefundrequeststatustorejected</fullName>
+        <field>Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Update Fund Request Status To Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>updatefundrequeststatustosubmitted</fullName>
+        <field>Status__c</field>
+        <literalValue>Submitted</literalValue>
+        <name>Update Fund Request Status To Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>Fund Request - Partner Autopopulate</fullName>
+        <actions>
+            <name>Fund_Request_Partner_Autopopulate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>SFDC_MDF__c.OwnerId</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NetworkBranding xmlns="http://soap.sforce.com/2006/04/metadata">
+    <network>Partner Community</network>
+    <pageFooter>Partner_Community/Footer_Partner_Community.html</pageFooter>
+    <pageHeader>ButtonsLogosImages/oct2015_Rebrand_OT_logo_250x58_png.png</pageHeader>
+    <primaryColor>#80B539</primaryColor>
+    <primaryComplementColor>#222222</primaryComplementColor>
+    <quaternaryColor>#2F2F2F</quaternaryColor>
+    <quaternaryComplementColor>#FFFFFF</quaternaryComplementColor>
+    <secondaryColor>#80B539</secondaryColor>
+    <tertiaryColor>#2F2F2F</tertiaryColor>
+    <tertiaryComplementColor>#FFFFFF</tertiaryComplementColor>
+    <zeronaryColor>#FFFFFF</zeronaryColor>
+    <zeronaryComplementColor>#222222</zeronaryComplementColor>
+</NetworkBranding>

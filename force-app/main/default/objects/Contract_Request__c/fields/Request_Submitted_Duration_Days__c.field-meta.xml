@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Request_Submitted_Duration_Days__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF (ISNULL(Submitted_Submitted_for_Approval__c), null, IF (ISNULL( Assigned__c ), Today() -  Submitted_Submitted_for_Approval__c,  Assigned__c -  Submitted_Submitted_for_Approval__c ))</formula>
+    <inlineHelpText>The number of days the request has been sitting with a status of &quot;&quot;Submitted&quot;&quot;
+If the Submitted field is blank, the duration will be blank.
+If the Submitted field is complete, the duration is calculated by the Assigned minus the Submitted date.</inlineHelpText>
+    <label>Request Submitted Duration (Days)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

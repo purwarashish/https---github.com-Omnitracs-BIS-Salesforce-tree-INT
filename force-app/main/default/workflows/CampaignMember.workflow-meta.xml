@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Update_UTM_Campaign_Lead</fullName>
+        <field>utm_campaign__c</field>
+        <formula>Lead.utm_campaign_most_recent__c</formula>
+        <name>Update UTM Campaign - Lead</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_UTM_Content_Lead</fullName>
+        <field>utm_content__c</field>
+        <formula>Lead.utm_content_most_recent__c</formula>
+        <name>Update UTM Content - Lead</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_UTM_Keyword_Lead</fullName>
+        <field>utm_keyword__c</field>
+        <formula>Lead.utm_keyword_most_recent__c</formula>
+        <name>Update UTM Keyword - Lead</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_UTM_Medium_Lead</fullName>
+        <field>utm_medium__c</field>
+        <formula>Lead.utm_medium_most_recent__c</formula>
+        <name>Update UTM Medium - Lead</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_UTM_Source_Lead</fullName>
+        <field>utm_source__c</field>
+        <formula>Lead.utm_source_most_recent__c</formula>
+        <name>Update UTM Source - Lead</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>Mapping UTM parameters from Lead fields</fullName>
+        <actions>
+            <name>Update_UTM_Campaign_Lead</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_UTM_Content_Lead</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_UTM_Keyword_Lead</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_UTM_Medium_Lead</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_UTM_Source_Lead</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Campaign.Status</field>
+            <operation>notEqual</operation>
+            <value>Completed</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

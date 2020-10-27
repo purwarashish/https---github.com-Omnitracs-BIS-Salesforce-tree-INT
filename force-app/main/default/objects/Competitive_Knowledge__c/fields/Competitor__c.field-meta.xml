@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Competitor__c</fullName>
+    <externalId>false</externalId>
+    <label>Competitor</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AT&amp;T</fullName>
+                <default>false</default>
+                <label>AT&amp;T</label>
+            </value>
+            <value>
+                <fullName>Cadec</fullName>
+                <default>false</default>
+                <label>Cadec</label>
+            </value>
+            <value>
+                <fullName>CarrierWeb</fullName>
+                <default>false</default>
+                <label>CarrierWeb</label>
+            </value>
+            <value>
+                <fullName>Cooltrax</fullName>
+                <default>false</default>
+                <label>Cooltrax</label>
+            </value>
+            <value>
+                <fullName>Discrete Wireless</fullName>
+                <default>false</default>
+                <label>Discrete Wireless</label>
+            </value>
+            <value>
+                <fullName>DriveCam</fullName>
+                <default>false</default>
+                <label>DriveCam</label>
+            </value>
+            <value>
+                <fullName>Garmin</fullName>
+                <default>false</default>
+                <label>Garmin</label>
+            </value>
+            <value>
+                <fullName>Geotab</fullName>
+                <default>false</default>
+                <label>Geotab</label>
+            </value>
+            <value>
+                <fullName>I.D. Systems (formerly, GE Asset Intelligence, Terion)</fullName>
+                <default>false</default>
+                <label>I.D. Systems (formerly, GE Asset Intelligence, Terion)</label>
+            </value>
+            <value>
+                <fullName>iGlobal</fullName>
+                <default>false</default>
+                <label>iGlobal</label>
+            </value>
+            <value>
+                <fullName>International Telematics</fullName>
+                <default>false</default>
+                <label>International Telematics</label>
+            </value>
+            <value>
+                <fullName>JJ Keller</fullName>
+                <default>false</default>
+                <label>JJ Keller</label>
+            </value>
+            <value>
+                <fullName>McLeod</fullName>
+                <default>false</default>
+                <label>McLeod</label>
+            </value>
+            <value>
+                <fullName>MiX Telematics</fullName>
+                <default>false</default>
+                <label>MiX Telematics</label>
+            </value>
+            <value>
+                <fullName>Navman Wireless</fullName>
+                <default>false</default>
+                <label>Navman Wireless</label>
+            </value>
+            <value>
+                <fullName>Networkfleet</fullName>
+                <default>false</default>
+                <label>Networkfleet</label>
+            </value>
+            <value>
+                <fullName>PAR Logistics Management Systems</fullName>
+                <default>false</default>
+                <label>PAR Logistics Management Systems</label>
+            </value>
+            <value>
+                <fullName>PeopleNet</fullName>
+                <default>false</default>
+                <label>PeopleNet</label>
+            </value>
+            <value>
+                <fullName>RandMcNally/DriverTech</fullName>
+                <default>false</default>
+                <label>RandMcNally/DriverTech</label>
+            </value>
+            <value>
+                <fullName>Roadnet Telematics</fullName>
+                <default>false</default>
+                <label>Roadnet Telematics</label>
+            </value>
+            <value>
+                <fullName>SageQuest</fullName>
+                <default>false</default>
+                <label>SageQuest</label>
+            </value>
+            <value>
+                <fullName>SkyBitz</fullName>
+                <default>false</default>
+                <label>SkyBitz</label>
+            </value>
+            <value>
+                <fullName>Sprint</fullName>
+                <default>false</default>
+                <label>Sprint</label>
+            </value>
+            <value>
+                <fullName>Teletrac</fullName>
+                <default>false</default>
+                <label>Teletrac</label>
+            </value>
+            <value>
+                <fullName>TMW</fullName>
+                <default>false</default>
+                <label>TMW</label>
+            </value>
+            <value>
+                <fullName>TransCore</fullName>
+                <default>false</default>
+                <label>TransCore</label>
+            </value>
+            <value>
+                <fullName>Trimble</fullName>
+                <default>false</default>
+                <label>Trimble</label>
+            </value>
+            <value>
+                <fullName>U-Drove</fullName>
+                <default>false</default>
+                <label>U-Drove</label>
+            </value>
+            <value>
+                <fullName>Verizon</fullName>
+                <default>false</default>
+                <label>Verizon</label>
+            </value>
+            <value>
+                <fullName>WebTech</fullName>
+                <default>false</default>
+                <label>WebTech</label>
+            </value>
+            <value>
+                <fullName>WebTech Wireless</fullName>
+                <default>false</default>
+                <label>WebTech Wireless</label>
+            </value>
+            <value>
+                <fullName>XATA</fullName>
+                <default>false</default>
+                <label>XATA</label>
+            </value>
+            <value>
+                <fullName>XATA Turnpike</fullName>
+                <default>false</default>
+                <label>XATA Turnpike</label>
+            </value>
+            <value>
+                <fullName>Zonar Systems</fullName>
+                <default>false</default>
+                <label>Zonar Systems</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

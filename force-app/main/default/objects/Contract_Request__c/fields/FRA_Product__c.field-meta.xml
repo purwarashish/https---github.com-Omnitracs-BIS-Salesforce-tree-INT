@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FRA_Product__c</fullName>
+    <externalId>false</externalId>
+    <label>FRA Product</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Driving Center Platform</fullName>
+                <default>false</default>
+                <label>Driving Center Platform</label>
+            </value>
+            <value>
+                <fullName>Fatigue Risk Model</fullName>
+                <default>false</default>
+                <label>Fatigue Risk Model</label>
+            </value>
+            <value>
+                <fullName>Safety Model: Driving</fullName>
+                <default>false</default>
+                <label>Safety Model: Driving</label>
+            </value>
+            <value>
+                <fullName>Safety Model: Workers Comp</fullName>
+                <default>false</default>
+                <label>Safety Model: Workers Comp</label>
+            </value>
+            <value>
+                <fullName>Driver Recruiting Model</fullName>
+                <default>false</default>
+                <label>Driver Recruiting Model</label>
+            </value>
+            <value>
+                <fullName>Driver Retention Model</fullName>
+                <default>false</default>
+                <label>Driver Retention Model</label>
+            </value>
+            <value>
+                <fullName>IS: Fatigue Model</fullName>
+                <default>false</default>
+                <label>IS: Fatigue Model</label>
+            </value>
+            <value>
+                <fullName>IS: Safety Model Driving</fullName>
+                <default>false</default>
+                <label>IS: Safety Model Driving</label>
+            </value>
+            <value>
+                <fullName>IS: Safety Model Worker Comp</fullName>
+                <default>false</default>
+                <label>IS: Safety Model Worker Comp</label>
+            </value>
+            <value>
+                <fullName>IS: Driver Recruiting</fullName>
+                <default>false</default>
+                <label>IS: Driver Recruiting</label>
+            </value>
+            <value>
+                <fullName>IS: Driver Retention</fullName>
+                <default>false</default>
+                <label>IS: Driver Retention</label>
+            </value>
+            <value>
+                <fullName>Consulting</fullName>
+                <default>false</default>
+                <label>Consulting</label>
+            </value>
+            <value>
+                <fullName>Content Development: External</fullName>
+                <default>false</default>
+                <label>Content Development: External</label>
+            </value>
+            <value>
+                <fullName>Content Development: Internal</fullName>
+                <default>false</default>
+                <label>Content Development: Internal</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

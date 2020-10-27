@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QS_Catalyst_Information_needed</fullName>
+    <active>false</active>
+    <description>Provide evidence of catalyst if Influence level is &quot;Catalyst&quot;</description>
+    <errorConditionFormula>AND(
+OR (isnew(), ischanged(Influence_Level__c)),
+ispickval(Influence_Level__c, &quot;Catalyst&quot;), 
+ Evidence_this_person_is_the_Catalyst__c =&quot;&quot;
+)</errorConditionFormula>
+    <errorMessage>Please enter the evidence that this person is the catalyst</errorMessage>
+</ValidationRule>

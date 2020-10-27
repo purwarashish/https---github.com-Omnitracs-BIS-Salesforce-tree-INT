@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>CMCR_Additional_Information_Needed_Notification</fullName>
+        <description>CMCR - Additional Information Needed Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <recipient>emartin@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>smithc@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/Customer_Master_Change_Request_Need_Information</template>
+    </alerts>
+    <alerts>
+        <fullName>CMCR_Cancelled_Notification</fullName>
+        <description>CMCR - Cancelled Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <recipient>emartin@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>smithc@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/Customer_Master_Change_Request_Cancelled</template>
+    </alerts>
+    <alerts>
+        <fullName>CMCR_Completed_Notification</fullName>
+        <ccEmails>sales.ops@omnitracs.com</ccEmails>
+        <description>CMCR - Completed Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <recipient>emartin@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>smithc@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/Customer_Master_Change_Request_Completed</template>
+    </alerts>
+    <alerts>
+        <fullName>CMCR_Submitted_Notification</fullName>
+        <description>CMCR - Submitted Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>emartin@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>smithc@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/Customer_Master_Change_Request_Submitted</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>CMCR_Change_Record_Type_to_Closed</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Closed_Customer_Master_Change_Request</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>CMCR - Change Record Type to Closed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>CMCR - Additional Information Needed</fullName>
+        <actions>
+            <name>CMCR_Additional_Information_Needed_Notification</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Customer_Master_Change_Request__c.Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Pending Information</value>
+        </criteriaItems>
+        <description>Customer Master Change Request - More information neeeded</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>CMCR - Cancelled</fullName>
+        <actions>
+            <name>CMCR_Cancelled_Notification</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>CMCR_Change_Record_Type_to_Closed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Customer_Master_Change_Request__c.Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <description>Customer Master Change Request Cancelled</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>CMCR - Completed</fullName>
+        <actions>
+            <name>CMCR_Completed_Notification</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>CMCR_Change_Record_Type_to_Closed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Customer_Master_Change_Request__c.Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </criteriaItems>
+        <description>Customer Master Change Request Completed</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>CMCR - Submitted</fullName>
+        <actions>
+            <name>CMCR_Submitted_Notification</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Customer_Master_Change_Request__c.Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Submitted</value>
+        </criteriaItems>
+        <description>Customer Master Change Request Submitted.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,171 @@
+<!-- /*******************************************************************************
+ * File:  CloseCasePage.Page
+ * Date:  June 30th, 2009
+ * Author:  Joseph Hutchins
+ *
+ * The use, disclosure, reproduction, modification, transfer, or transmittal of
+ * this work for any purpose in any form or by any means without the written 
+ * permission of United Parcel Service is strictly prohibited.
+ *
+ * Confidential, unpublished property of United Parcel Service.
+ * Use and distribution limited solely to authorized personnel.
+ *
+ * Copyright 2009, UPS Logistics Technologies, Inc.  All rights reserved.
+ *  *******************************************************************************/ -->
+<apex:page standardController="Case" extensions="CloseCaseExtension" >
+    <!--  Stops the account name from having focus when page loads. -->
+    <script>
+       function setFocusOnLoad(){}
+    </script>
+    <apex:form id="theForm">
+    <apex:pagemessages />
+    <apex:pageMessage rendered="{!!isTimeSpentRequired}" strength="2" severity="info" title="Press Save to Close Case"
+        detail="This page is reserved for closing domestic support cases; however, you can still close this case by pressing save."/> 
+  <!--  <apex:pagemessage rendered="{!theCase.Account.Evaluation__c}"  strength="2" 
+        severity="info" title="{!accountIsEvalStatusTitle}" detail="{!standardAccountAlertDetail}" />-->
+    <apex:pagemessage rendered="{!theCase.Account.Spotlight_Account__c}"  strength="2" 
+        severity="confirm" title="{!spotlightAccountTitle}" detail="{!standardAccountAlertDetail}" />   
+        <apex:pageblock mode="edit" title="Close Case Information" >
+            <apex:pageBlockbuttons >
+                <input id="closeCaseButton" type="button" class="btn" onclick="showMinutesSave('{!$Component.caseTimeSection.startTimeBlarg.startTimeField}', '{!$Component.caseTimeSection.endTimeBlarg.endTimeField}');" style="font-weight:bold" title="Save" value="Save"/>
+                <apex:actionFunction action="{!save}" name="save" rerender="theForm" />
+                <!-- <apex:commandbutton action="{!save}" value="Close Case" id="closeCaseButton"/>-->
+                <apex:commandbutton action="{!cancel}" value="Cancel" id="cancelButton"/>
+            </apex:pageblockButtons>
+            
+            <apex:pageblocksection title="Product" rendered="{!isTimeSpentRequired}">
+                <apex:pageblocksectionItem >
+                    <apex:outputlabel value="Product"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                            <apex:inputfield value="{!theCase.Product_PL__c}"/>
+                        </apex:outputPanel>
+                </apex:pageblocksectionItem>
+                
+                <apex:pageblocksectionItem >
+                    <apex:outputlabel value="Case Reason"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                            <apex:outputtext value=""/>
+                        </apex:outputPanel>
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem >
+                    <apex:outputlabel value="Sub Reason"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                            <apex:inputfield value="{!theCase.Sub_Reason_pl__c}"/>
+                      </apex:outputPanel>
+                </apex:pageblocksectionItem>
+            </apex:pageblocksection>
+            
+            <apex:pageblocksection title="Case Event Information" rendered="{!isTimeSpentRequired}" columns="1">
+                
+                <apex:pageblocksectionItem >
+                    <apex:outputlabel value="{!isVisibleInSelfServiceFieldLabel}"/>
+                    <apex:inputfield id="CaseVisibleCheckbox" value="{!theCase.IsVisibleInSelfService}">
+                        <apex:actionsupport event="onchange" action="{!updateCaseEventExternalVisibleCheckbox}" rerender="CaseVisibleCheckbox"/>
+                    </apex:inputfield>
+                </apex:pageblocksectionItem>
+                
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Master Case Subject"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputtextarea rows="3" cols="100" value="{!theCase.subject}"/>
+                    </apex:outputPanel>
+                </apex:pageblocksectionitem>
+
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Case Event Subject"/>
+                    <apex:inputtextarea value="{!finalCaseEvent.Subject__c}" rows="3" cols="100"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Case Event Details"/>
+                    <apex:inputtextarea value="{!finalCaseEvent.Details__c}" rows="5" cols="100"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Solution"/>
+                    <apex:inputtextarea value="{!theCase.Solution__c}" rows="5" cols="100"/>
+                </apex:pageblocksectionitem>                    
+            </apex:pageblocksection>
+            
+            
+            <apex:pageBlockSection title="Case Time" id="caseTimeSection" rendered="{!isTimeSpentRequired}" >
+                <apex:pageblocksectionitem id="startTimeBlarg">
+                    <apex:outputlabel value="Start Time"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputfield value="{!theCase.Start_Time__c}" id="startTimeField">
+                            <apex:actionsupport event="onchange" rerender="startTimeField, inMinutes"/>
+                        </apex:inputfield>
+                     </apex:outputPanel>
+                </apex:pageblocksectionitem>
+                <!-- 
+                <apex:pageblocksectionitem id="endTimeBlarg">
+                    <apex:outputlabel value="End Time"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputfield value="{!theCase.End_Time__c}" id="endTimeField">
+                            <apex:actionsupport event="onchange" rerender="endTimeField, inMinutes"/>
+                        </apex:inputfield>
+                        <apex:commandbutton value="Now" action="{!now}" rerender="endTimeField, inMinutes"/>
+                        <apex:outputtext value=" {!caseMinutes} (in minutes)" id="inMinutes"/>
+                    </apex:outputPanel>
+                </apex:pageblocksectionitem>-->
+            </apex:pageBlockSection>
+            
+        </apex:pageblock>
+    </apex:form>
+    <script>
+    function alertUser()
+    {
+        alert("The Solution will not be created unless the checkbox is checked!");
+    }
+    function showMinutesSave(startTimeFieldId, endTimeFieldId)
+    {
+        if ({!!isTimeSpentRequired})//  the start time and time arent required so just save the event
+        {
+            save();
+            return;
+        }
+        
+        //  alright, so we pass the ids of the start time and end time fields
+        //  i think before we add nullness checks lets just make sure the basic part of it works
+        //  with the ids, we grab the actaul fields
+        //  then we can pass the to another method that does the subtraction
+        
+        var startTime = document.getElementById(startTimeFieldId).value;
+        var endTime = document.getElementById(endTimeFieldId).value
+        
+        if (startTime == '')
+        {
+            alert('Start Time needs to be set.');
+            return;
+        }
+        if (endTime == '')
+        {
+            alert('End Time needs to be set');
+            return;
+        }
+        
+        var seconds = (new Date(endTime) - new Date(startTime)) / 1000;
+        var minutes = seconds / 60;
+        if (minutes < 1)
+        {
+            minutes = 1;
+        }    
+        var msg = 'Time Spent on Case Event:  ' + minutes + ' minute(s).  If this is not correct, hit cancel and adjust start or end time.';
+        try
+        {
+            if (window.confirm(msg))
+            {
+                save();
+            }
+        }
+        catch(err)
+        {
+            save();
+        }
+    }
+    </script>
+</apex:page>

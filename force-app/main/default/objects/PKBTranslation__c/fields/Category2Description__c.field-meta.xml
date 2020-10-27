@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category2Description__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>The description of the second category that appears on the Home page of the public knowledge base.</inlineHelpText>
+    <label>Category 2 Description</label>
+    <length>32000</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

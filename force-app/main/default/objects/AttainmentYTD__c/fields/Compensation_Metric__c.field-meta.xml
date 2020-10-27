@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Compensation_Metric__c</fullName>
+    <externalId>false</externalId>
+    <label>Compensation Metric</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Hardware Margin</fullName>
+                <default>false</default>
+                <label>Hardware Margin</label>
+            </value>
+            <value>
+                <fullName>MCP Base Recurring Growth</fullName>
+                <default>false</default>
+                <label>MCP Base Recurring Growth</label>
+            </value>
+            <value>
+                <fullName>MCP Premium Application Growth</fullName>
+                <default>false</default>
+                <label>MCP Premium Application Growth</label>
+            </value>
+            <value>
+                <fullName>Total Weighted</fullName>
+                <default>false</default>
+                <label>Total Weighted</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

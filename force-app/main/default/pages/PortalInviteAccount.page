@@ -1,0 +1,15 @@
+<apex:page standardController="Account" extensions="PortalInviteAccountExtension" sidebar="false" showHeader="false" action="{!toggleButton}">
+    <form name="inviteToPortal" method="post" action="https://customer.{!$Label.CPURL}portal/pages/admin/customerProvisioningStatus.jsp?companyGUID={!CompanyGuid}" target="_blank"> 
+    <apex:pageBlock title="Omnitracs Customer Portal Invite" mode="detail">
+        <div>
+        <apex:outputText value="Onboarding Status:"/>
+            <font color="green"><apex:outputField value="{!Account.UnityOnboardStatus__c}" rendered="{!showGreenFont}"/></font>
+            <font color="blue"><apex:outputField value="{!Account.UnityOnboardStatus__c}" rendered="{!NOT(showGreenFont)}"/></font>
+        </div>        
+        <input type="hidden" name="sfAccount" id="sfAccount" value="{!FullAccountID}"/>        
+        <div id="buttonToHide" style="display:{!if(showStatusButton,"block","none")};">
+           <input type="submit" value="Check Status / Cancel Invite"/>
+        </div>
+    </apex:pageBlock>
+    </form>   
+</apex:page>

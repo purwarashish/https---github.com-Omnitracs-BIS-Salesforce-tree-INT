@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Request_to_speak_to_Product_Support__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+INCLUDES(Additional_Request__c, &quot;I have additional feedback and would lik&quot;), TRUE, 
+ IF(INCLUDES(Additional_Request__c, &quot;Tengo retroalimentación adicional y me g&quot;), TRUE, FALSE))</formula>
+    <label>Request to speak to Product Support</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

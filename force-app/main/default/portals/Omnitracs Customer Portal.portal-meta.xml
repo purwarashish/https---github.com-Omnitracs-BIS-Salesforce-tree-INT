@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Portal xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <admin>qesadmin@qualcomm.com</admin>
+    <description>Unity Customer Portal</description>
+    <emailSenderAddress>omnitracs.sfdc.noreply@omnitracs.com</emailSenderAddress>
+    <emailSenderName>Omnitracs Support</emailSenderName>
+    <enableSelfCloseCase>false</enableSelfCloseCase>
+    <forgotPassTemplate>All_Email_Templates/ChangePwdEmail</forgotPassTemplate>
+    <isSelfRegistrationActivated>false</isSelfRegistrationActivated>
+    <logoutUrl>https://alliance.int.omnitracs.com/CustomAuthEngine/logout?targeturl=https://login.int.omnitracs.com/logout.jsp?reason=2%26referrerID=SF</logoutUrl>
+    <newPassTemplate>All_Email_Templates/ChangePwdEmail</newPassTemplate>
+    <newUserTemplate>QESAutomatedMessages/CPNewUserEmail</newUserTemplate>
+    <selfRegUserDefaultProfile>unity customer portal user (sso)</selfRegUserDefaultProfile>
+    <selfRegUserDefaultRole>Worker</selfRegUserDefaultRole>
+    <selfRegUserTemplate>All_Email_Templates/SelfRegUserEmail</selfRegUserTemplate>
+    <showActionConfirmation>false</showActionConfirmation>
+    <type>CustomerSuccess</type>
+</Portal>

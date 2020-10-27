@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Currency_of_EULA__c</fullName>
+    <externalId>false</externalId>
+    <label>Currency of EULA</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>USD (USA)</fullName>
+                <default>false</default>
+                <label>USD (USA)</label>
+            </value>
+            <value>
+                <fullName>AUD (Australia)</fullName>
+                <default>false</default>
+                <label>AUD (Australia)</label>
+            </value>
+            <value>
+                <fullName>BRL (Brazil)</fullName>
+                <default>false</default>
+                <label>BRL (Brazil)</label>
+            </value>
+            <value>
+                <fullName>BSF (Venezuela)</fullName>
+                <default>false</default>
+                <label>BSF (Venezuela)</label>
+            </value>
+            <value>
+                <fullName>CLP (Chile)</fullName>
+                <default>false</default>
+                <label>CLP (Chile)</label>
+            </value>
+            <value>
+                <fullName>CNY (China)</fullName>
+                <default>false</default>
+                <label>CNY (China)</label>
+            </value>
+            <value>
+                <fullName>EUR (Euro)</fullName>
+                <default>false</default>
+                <label>EUR (Euro)</label>
+            </value>
+            <value>
+                <fullName>GBP (UK)</fullName>
+                <default>false</default>
+                <label>GBP (UK)</label>
+            </value>
+            <value>
+                <fullName>HKD (Hong Kong)</fullName>
+                <default>false</default>
+                <label>HKD (Hong Kong)</label>
+            </value>
+            <value>
+                <fullName>IDR (Indonesia)</fullName>
+                <default>false</default>
+                <label>IDR (Indonesia)</label>
+            </value>
+            <value>
+                <fullName>ILS (Israel)</fullName>
+                <default>false</default>
+                <label>ILS (Israel)</label>
+            </value>
+            <value>
+                <fullName>KRW (South-Korean Won)</fullName>
+                <default>false</default>
+                <label>KRW (South-Korean Won)</label>
+            </value>
+            <value>
+                <fullName>MXN (Mexico)</fullName>
+                <default>false</default>
+                <label>MXN (Mexico)</label>
+            </value>
+            <value>
+                <fullName>MYR (Malaysia)</fullName>
+                <default>false</default>
+                <label>MYR (Malaysia)</label>
+            </value>
+            <value>
+                <fullName>RUB (Russia)</fullName>
+                <default>false</default>
+                <label>RUB (Russia)</label>
+            </value>
+            <value>
+                <fullName>SGD (Singapore)</fullName>
+                <default>false</default>
+                <label>SGD (Singapore)</label>
+            </value>
+            <value>
+                <fullName>THB (Thailand)</fullName>
+                <default>false</default>
+                <label>THB (Thailand)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

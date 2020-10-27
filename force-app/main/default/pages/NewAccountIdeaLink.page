@@ -1,0 +1,70 @@
+<apex:page id="page" tabStyle="Customer_Idea__c" standardController="Customer_Idea__c" extensions="NewAccountIdeaLinkController">
+<script type="text/javascript">
+  function checkAccount()
+   {
+       
+       if((document.getElementById('{!$Component.form:pgblk:pgblksectn:acctID}_lkid').value) != null || (document.getElementById('{!$Component.form1.pgblk.pgblksectn1.acctID}_lkid').value) != '000000000000000')
+       {
+           findAcctId();
+       }
+       if((document.getElementById('{!$Component.form:pgblk:pgblksectn:ideaID}_lkid').value) != null || (document.getElementById('{!$Component.form1.pgblk.pgblksectn1.ideaID}_lkid').value) != '000000000000000')
+       {
+           findIdeaId();
+       }
+   }   
+
+  function refreshAccount()
+  {
+      refreshAcctField();
+  }
+  
+  function refreshIdea()
+  {
+      refreshIdeaField();
+  }
+  
+  function findAcctId()
+   {
+      var accountId = document.getElementById('{!$Component.form:pgblk:pgblksectn:acctID}_lkid').value;
+      findTotalUnits(accountId);
+   }
+   
+   function findIdeaId()
+   {
+      var ideaId = document.getElementById('{!$Component.form:pgblk:pgblksectn:ideaID}_lkid').value;
+   }  
+   
+ 
+</script>
+  <apex:form id="form">
+      <apex:Messages style="color:rgb(204,0,0);font-weight: bold;text-align:center" />
+      <apex:actionFunction name="refreshAcctField" reRender="form" immediate="true" oncomplete="javascript:findAcctId();" />
+      <apex:actionFunction name="refreshIdeaField" reRender="form" immediate="true" oncomplete="javascript:findIdeaId();"/>
+      <apex:actionFunction name="findTotalUnits" action="{!findTotalUnits}" reRender="totalTrucks" immediate="true">
+          <apex:param name="a" value="" assignTo="{!acctId}"/>
+      </apex:actionFunction>
+      <apex:sectionHeader title="Customer Idea Edit" subtitle="New Customer Idea" rendered="{!if(acctIdea.Id == null,true,false)}" />
+      <apex:sectionHeader title="Customer Idea Edit" subtitle="{!acctIdea.Name}" rendered="{!if(acctIdea.Id == null,false,true)}" />
+      <apex:pageBlock title="Customer Idea Edit" mode="edit" id="pgblk"> 
+          <apex:pageBlockButtons >
+              <apex:commandButton value="Save" action="{!Save}"/>
+              <apex:commandButton value="Cancel" action="{!Cancel}"/>
+          </apex:pageBlockButtons>
+          <apex:pageBlockSection title="Information" columns="1" id="pgblksectn">
+              <apex:inputField value="{!Customer_Idea__c.Account__c}" id="acctID" required="true" onchange="javascript:refreshAccount();" />
+              <apex:inputField value="{!Customer_Idea__c.Idea__c}" Rendered="{!ShowInput}" id="ideaID" required="true" onchange="javascript:refreshIdea();"/>
+              <apex:outputField value="{!Customer_Idea__c.Idea__c}" Rendered="{!Not(ShowInput)}"/>
+              <apex:inputField id="totalTrucks" value="{!Customer_Idea__c.Number_of_Trucks__c}"/>
+               <apex:inputField id="type" value="{!Customer_Idea__c.Type__c}" />
+              <apex:inputField id="priority" value="{!Customer_Idea__c.Priority__c}" />
+              <apex:inputField id="Commited" value="{!Customer_Idea__c.Committed__c}"/>
+              <!-- apex:inputField id="WillingToPay" value="{!Customer_Idea__c.Customer_Willing_to_Pay__c}"/-->
+              <!-- apex:inputField id="OptySize" value="{!Customer_Idea__c.Opportunity_Size__c}"/-->
+              <apex:inputField id="value" value="{!Customer_Idea__c.Value__c}" style="width:60%;"/>
+             
+          </apex:pageBlockSection>
+      </apex:pageBlock>
+  </apex:form>
+  <script>checkAccount()</script>
+
+</apex:page>

@@ -1,0 +1,19 @@
+<apex:page sidebar="false" showHeader="false" controller="CaseTemplateListController">
+  <html>
+  <head>
+  <script text="text/javascript"> 
+function SHOW(){
+selected();
+} 
+</script>
+</head>
+  <body onload='javascript:SHOW();'>
+  
+  <apex:form >
+      <apex:actionFunction action="{!createCase}" name="selected"/>
+  </apex:form>
+  
+  </body>
+  </html>
+  
+</apex:page>

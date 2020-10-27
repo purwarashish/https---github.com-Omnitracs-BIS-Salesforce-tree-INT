@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Functional_Restriction__c</fullName>
+    <externalId>false</externalId>
+    <label>Functional Restriction</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Export to Excel</fullName>
+                <default>false</default>
+                <label>Export to Excel</label>
+            </value>
+            <value>
+                <fullName>Export to PDF</fullName>
+                <default>false</default>
+                <label>Export to PDF</label>
+            </value>
+            <value>
+                <fullName>Export to Word</fullName>
+                <default>false</default>
+                <label>Export to Word</label>
+            </value>
+            <value>
+                <fullName>Edit Uplift</fullName>
+                <default>false</default>
+                <label>Edit Uplift</label>
+            </value>
+            <value>
+                <fullName>Edit Discount</fullName>
+                <default>false</default>
+                <label>Edit Discount</label>
+            </value>
+            <value>
+                <fullName>View Pricing Results</fullName>
+                <default>false</default>
+                <label>View Pricing Results</label>
+            </value>
+            <value>
+                <fullName>Override Pricing Results</fullName>
+                <default>false</default>
+                <label>Override Pricing Results</label>
+            </value>
+            <value>
+                <fullName>Create Product Groups</fullName>
+                <default>false</default>
+                <label>Create Product Groups</label>
+            </value>
+            <value>
+                <fullName>Edit Annual Unit Discount</fullName>
+                <default>false</default>
+                <label>Edit Annual Unit Discount</label>
+            </value>
+            <value>
+                <fullName>Edit Annual Unit Uplift</fullName>
+                <default>false</default>
+                <label>Edit Annual Unit Uplift</label>
+            </value>
+            <value>
+                <fullName>Edit Monthly Unit Discount</fullName>
+                <default>false</default>
+                <label>Edit Monthly Unit Discount</label>
+            </value>
+            <value>
+                <fullName>Edit Monthly Unit Uplift</fullName>
+                <default>false</default>
+                <label>Edit Monthly Unit Uplift</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Partner_CIS</fullName>
+    <columns>NAME</columns>
+    <columns>Cust_ID__c</columns>
+    <columns>Account__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>District__c</columns>
+    <columns>Units_Sold_or_Evaluating__c</columns>
+    <columns>Potential_Contract_Size__c</columns>
+    <columns>Decision_Maker__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Customer_Information_Sheet__c.Partner_CIS</value>
+    </filters>
+    <label>All Partner CIS</label>
+    <language>en_US</language>
+    <sharedTo>
+        <allInternalUsers/>
+    </sharedTo>
+</ListView>

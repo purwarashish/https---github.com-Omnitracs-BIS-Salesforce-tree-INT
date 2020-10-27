@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Risk_Factor__c</fullName>
+    <externalId>false</externalId>
+    <label>Risk Factor</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Customer Expectations</fullName>
+                <default>false</default>
+                <label>Customer Expectations</label>
+            </value>
+            <value>
+                <fullName>Customer Participation</fullName>
+                <default>false</default>
+                <label>Customer Participation</label>
+            </value>
+            <value>
+                <fullName>Product release</fullName>
+                <default>false</default>
+                <label>Product release</label>
+            </value>
+            <value>
+                <fullName>Integration and 3rd parties</fullName>
+                <default>false</default>
+                <label>Integration and 3rd parties</label>
+            </value>
+            <value>
+                <fullName>System Technical Issues</fullName>
+                <default>false</default>
+                <label>System Technical Issues</label>
+            </value>
+            <value>
+                <fullName>Budget</fullName>
+                <default>false</default>
+                <label>Budget</label>
+            </value>
+            <value>
+                <fullName>Schedule</fullName>
+                <default>false</default>
+                <label>Schedule</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

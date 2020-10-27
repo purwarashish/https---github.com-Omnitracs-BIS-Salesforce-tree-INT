@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <frameHeight>600</frameHeight>
+    <hasSidebar>false</hasSidebar>
+    <label>Account Summary</label>
+    <motif>Custom56: Bottle</motif>
+    <url>http://qcombi.qualcomm.com/cognos8/cgi-bin/cognosisapi.dll?b_action=xts.run&amp;m=portal/report-viewer.xts&amp;ui.action=run&amp;ui.object=%2fcontent%2fpackage%5b%40name%3d%27SFDC_Acounts_Event_Contact_Shipment%27%5d%2ffolder%5b%40name%3d%27Indexed%20Version%27%5d%2freport%5b%40name%3d%27Account%20Summary%20Report%20(Check%20box%20prompt)%27%5d&amp;cv.ccurl=1&amp;ui.backURL=%2fcgi-bin%2fcognosisapi.dll%3fb_action%3dxts.run%26m%3dportal%2fcc.xts%26m_folder%3diC7B2B80A57CD402B8760388623DF50A0</url>
+    <urlEncodingKey>UTF-8</urlEncodingKey>
+</CustomTab>

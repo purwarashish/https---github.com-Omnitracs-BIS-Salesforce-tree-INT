@@ -1,0 +1,148 @@
+<apex:page id="RejectPage" showHeader="false" sidebar="false"
+    controller="LeadRejectionController">
+
+    <Style>
+.sbtButton {
+    padding: 3px 10px !important;
+    font-size: 12px !important;
+    background: none repeat scroll 0 0 #1166AA !important;
+    border: 1px solid #1166AA !important;
+    color: #fff !important;
+}
+
+.sbtButton:hover {
+    background-color: #ccc;
+    opacity: 0.8;
+}
+</style>
+    <Script>
+        function validateForm()
+        { 
+          if(document.getElementById("RejectPage:form:pgBlk:rejectReason").value == "")
+           {
+            alert('Please select a valid Rejection Reason');
+           }
+           else
+           {   
+             rejectedLead();
+           }
+       }
+       
+    </Script>
+
+    <apex:form id="form">
+        <script>
+            function closeWindow() 
+              {
+                    
+                    if({!isFormIncomplete} == false)
+                    {
+                        window.opener.parent.location.replace('/00Q/o'); 
+                        window.close();
+                    }
+              }
+        </Script>
+        <div style="padding-left: 20px; text-align: center">
+            <h1 style="font-size: 15px;">Lead Rejection</h1>
+        </div>
+        <div
+            style="background-color: #D6D6D6; border: 2px solid #999999; margin-bottom: 15px; padding: 10px; font-size: 12px;">
+            <apex:outputPanel rendered="{!isPortalUser}">
+            <b>Use this screen ONLY if you are rejecting a lead. </b>
+            <p>
+                <b>To reassign a lead to a new owner:</b> <br /> Close this screen.
+                On the lead record, click the “Reassign” link at the top of the
+                page.
+            </p>
+            <p>
+                <b>To reject a lead (send it back to Corporate):</b> 
+                <br /> Step 1 – Select a lifecycle ‘Not A Lead’ (not a valid record) or ‘Recycle’ (a valid lead but not ready to buy in the near future, within a year) from the dropdown field (required).
+                <br /> Step 2 – Select the appropriate reason for rejecting the lead (required). 
+                <br /> Step 3 – In the “Rejection Notes” text box, add a short description of why you are rejecting the lead.
+            </p></apex:outputPanel>
+            
+            
+            <apex:outputPanel rendered="{!NOT(isPortalUser)}">
+            <b>Use this screen ONLY if you are rejecting a lead. </b>
+            <p>
+                <b>To reassign a lead to a new owner:</b> <br /> Close this screen.
+                On the lead record, click the “Change” link at the top of the
+                page.
+            </p>
+            <p>
+                <b>To reject a lead</b> 
+                <br /> Step 1 – Select a lifecycle ‘Not A Lead’ (not a valid record) or ‘Recycle’ (a valid lead but not ready to buy in the near future, within a year) from the dropdown field (required).
+                <br /> Step 2 – Select the appropriate reason for rejecting the lead (required). 
+                <br /> Step 3 – In the “Rejection Notes” text box, add a short description of why you are rejecting the lead.
+            </p></apex:outputPanel>
+        </div>
+
+
+
+        <apex:pageBlock id="pgBlk">
+            <apex:messages />
+            <table cellspacing="10">
+
+                <tr>
+                    <td width="35%" valign="top"><apex:outputLabel styleClass="b"
+                            value="Step 1: Lifecycle" />
+                    </td>
+                    <td width="35%" valign="top">
+                         <apex:outputpanel >
+                            <apex:inputField id="lifecycleStatus"
+                                value="{!currentLead.Lifecycle_Status__c}" required="true" /> 
+                        </apex:outputpanel>
+                    </td>
+                    <td width="30%" valign="top"></td>
+                </tr>
+                <tr>
+                    <td width="35%" valign="top"><apex:outputLabel styleClass="b"
+                            value="Step 2: Rejection Reason" />
+                    </td>
+                    <td width="35%" valign="top">
+                         <apex:outputpanel >
+                            <apex:inputField id="rejectReason"
+                                value="{!currentLead.IF_Rejection_Reason__c}" required="false" />
+                        </apex:outputpanel>
+                    </td>
+                    <td width="30%" valign="top"></td>
+                </tr>
+                <tr>
+                    <td width="35%" valign="top"><apex:outputLabel styleClass="b"
+                            value="Step 3: Rejection Notes" />
+                    </td>
+                    <td width="35%" valign="top"><apex:outputpanel >
+                            <apex:inputTextarea id="description" value="{!description}"
+                                rows="5" cols="80" />
+                        </apex:outputpanel></td>
+                    <td width="30%" valign="top"><apex:outputText id="describe"
+                            value="Add notes relevant to the reason you are rejecting this lead." />
+                    </td>
+                </tr>
+            </table>
+
+
+            <apex:pageBlockButtons location="bottom">
+                <!-- <apex:commandButton styleClass="sbtButton" value="Submit Rejection"
+                    id="theButton" action="{!rejectLead}" oncomplete="closeWindow()" rerender="form"/>
+               -->
+                <apex:actionStatus id="loadingStatusAdd">
+                    <apex:facet name="start">
+                        <c:loadingStatus id="loadingStatusAddComponent"
+                            BackColor="#efefef" borderColor="#336699" borderSize="3"
+                            height="50px" width="150px" ImageUrl="/img/loading.gif"
+                            Message="Processing..." BluryBackGround_DivId="bbgd1"
+                            SalesforceStatusBox_DivId="ssbd1"
+                            messageStyle="color:darkred;font-size:11pt;font-weight:bold;" />
+                    </apex:facet>
+                </apex:actionStatus>
+                <apex:commandButton styleClass="sbtButton" value="Submit Rejection"
+                    id="theButton" action="Javascript: void(0)"
+                    onclick=" validateForm(); return false;" />
+                <apex:actionFunction name="rejectedLead" action="{!rejectLead}"
+                    rerender="form" oncomplete="closeWindow();" status="loadingStatusAdd"/>
+                                        
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

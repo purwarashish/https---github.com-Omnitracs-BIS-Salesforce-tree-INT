@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pricing_and_Term_Details_required</fullName>
+    <active>true</active>
+    <description>Out-of-Guidelines Pricing and Terms details are required if yes is selected in &quot;Out-of-Guidelines Pricing&quot; and or &quot;Non-Standard Terms&quot;</description>
+    <errorConditionFormula>(ISPICKVAL(Out_of_Guidelines_Pricing__c  , &apos;yes&apos;)|| ISPICKVAL( Non_Standard_Terms__c , &apos;yes&apos;)||( ISPICKVAL(Out_of_Guidelines_Pricing__c  , &apos;yes&apos;)&amp;&amp; ISPICKVAL( Non_Standard_Terms__c , &apos;yes&apos;)))&amp;&amp; Details__c =NULL</errorConditionFormula>
+    <errorMessage>Details are mandatory if “yes” is selected in Out-of-Guidelines Pricing and/or Non-Standard Terms fields in &quot;Out-of-Guidelines Pricing and Terms&quot; section.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Percent_of_Records_Field_Is_Populated_On__c</fullName>
+    <description>The percent of records that have this field populated.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The percent of records that have this field populated.</inlineHelpText>
+    <label>Percent of Records Field Is Populated On</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

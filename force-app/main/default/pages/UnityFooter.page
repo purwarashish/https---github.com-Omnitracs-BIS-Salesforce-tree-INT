@@ -1,0 +1,56 @@
+<apex:page showHeader="false" sidebar="false" cache="true" controller="MainController">
+<div id="footer" align="center">
+
+<div class="footerContWrpL" style="width: 842px">
+<ul>
+<!-- part modified as CP Support Site Rebranding requirements -->
+<li style="margin-top: -6px !important;">
+<a class="padR20" href="http://www.omnitracs.com/">
+<!--
+<img width="104" height="23" title="Qualcomm" alt="Qualcomm" src="{!URLFOR($Resource.QESCustomerSupporCaseListView, 'Html/images/logo-2.png')}"> </img>
+-->
+<!-- <img src="{!URLFOR($Resource.OmnitracsQualcommlogo,'attachmentsnew1/omnitracs-logo-100x20-no-tagline-gray.png')}" width="150" height="30" alt="Qualcomm" title="Qualcomm" /> -->
+
+<!-- <img src="{!URLFOR($Resource.OmnitracsQualcommlogo,'attachmentsnew1/omnitracs-logo-100x20-no-tagline-gray.png')}"  alt="Qualcomm" title="Qualcomm" /> -->
+
+<!-- part modified as CP Support Site Rebranding requirements -->
+<img width="73" height="20" title="Omnitracs" alt="Omnitracs" src="{!URLFOR($Resource.QESCustomerSupporCaseListView, 'Html/images/logo-2.png')}"> </img>
+
+
+</a>
+</li>
+<li>
+<a href="http://www.omnitracs.com/">Transportation Solutions</a>
+</li>
+<li>
+<a target="_blank" href="http://www.omnitracs.com/privacy-policy">Privacy Policy</a>
+</li>
+<li>
+<a href="http://www.omnitracs.com/terms-of-use">Terms of Use</a>
+</li>
+<li>
+<a href="https://customer.{!$Label.CPURL}portal/pages/sitemap.jsp">Sitemap</a>
+</li>
+</ul>
+<p style="text-align: left;float: left;">&copy; 2012 - 2015 Omnitracs, LLC. All rights reserved.</p>
+</div>
+<!--input class="btnFeedBack" type="button" value="Feedback" onclick="javascript:openIntegration('/apex/feedback?pn='+pagename+'&ic=0', 'height=600,width=850,location=no,resizable=no,toolbar=no,status=no,menubar=no,scrollbars=yes', 1);" /-->
+<input class="btnFeedBack" type="button" value="Feedback" onclick="javascript:window.open('/apex/feedback?pn='+pagename+'&ic=0', 
+                                                                  'Feedback', 'height=600,width=850,location=no,resizable=no,toolbar=no,status=no,menubar=no,scrollbars=yes', 1);" />
+<!--<input class="btnFeedBack" type="button" onclick="show('lb'); show('popclose'); show('popUp');fadeObj('lb');hide('thankU')" name="" />
+<div id="popUp">
+<div class="relativeP"> </div>
+<div id="thankU">
+<div class="head">
+<a class="close" onclick="hide('lb');hide('popUp');" href="#">&nbsp;</a>
+</div>
+<div class="contwrp">
+<p>You have requested to sign up for [option selected]. Please be sure your email settings will allow emails from [xxx@qualcomm.com] to recieve your requested updates.</p>
+<div class="btnWrp">
+<a class="btnSignUp" onclick="hide('lb');hide('popUp')" href="#">Return to Page</a>
+</div>
+</div>
+</div>
+</div>-->
+</div> <!-- End footer -->
+</apex:page>

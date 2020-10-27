@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Response_4_Value__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( CONTAINS(Response_4__c, &quot;5&quot;),
+5, IF( CONTAINS(Response_4__c, &quot;4&quot;),
+4, IF( CONTAINS(Response_4__c, &quot;3&quot;),
+3, IF( CONTAINS(Response_4__c, &quot;2&quot;),
+2, IF( CONTAINS(Response_4__c, &quot;1&quot;),
+1, null)))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Response 4 Value</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

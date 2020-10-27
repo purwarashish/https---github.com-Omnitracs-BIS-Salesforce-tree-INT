@@ -1,0 +1,41 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "005500000011zaQAAQ",
+      "createdByName": "Kasia Dinen",
+      "createdDate": "2010-11-04T20:54:44.000Z",
+      "fileName": "emailservices/EmailToSalesforce.xml",
+      "fullName": "EmailToSalesforce",
+      "id": "09150000000TNIzAAO",
+      "lastModifiedById": "005500000011zaQAAQ",
+      "lastModifiedByName": "Kasia Dinen",
+      "lastModifiedDate": "2010-11-04T20:54:44.000Z",
+      "type": "EmailServicesFunction"
+    },
+    {
+      "createdById": "00550000000vfOcAAI",
+      "createdByName": "Mark Silber",
+      "createdDate": "2009-02-22T04:24:39.000Z",
+      "fileName": "emailservices/EmailToCase.xml",
+      "fullName": "EmailToCase",
+      "id": "091500000004CvqAAE",
+      "lastModifiedById": "00550000006mzYsAAI",
+      "lastModifiedByName": "Sneh Jha",
+      "lastModifiedDate": "2019-01-03T21:53:37.000Z",
+      "type": "EmailServicesFunction"
+    },
+    {
+      "createdById": "00550000003h5fCAAQ",
+      "createdByName": "Casey Keeling",
+      "createdDate": "2017-05-10T20:17:29.000Z",
+      "fileName": "emailservices/Approval Service.xml",
+      "fullName": "Approval Service",
+      "id": "09150000000TQKtAAO",
+      "lastModifiedById": "00550000003h5fCAAQ",
+      "lastModifiedByName": "Casey Keeling",
+      "lastModifiedDate": "2017-05-10T20:17:29.000Z",
+      "type": "EmailServicesFunction"
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Display_For_Product_Type__c</fullName>
+    <description>The &quot;CPQ Display Type&quot; values for which this field will be displayed.  I.e. if &quot;Hardware&quot; is selected, this field/column will be displayed for any product where the &quot;CPQ Display Type&quot; value == &apos;Hardware&apos;.</description>
+    <externalId>false</externalId>
+    <label>Display For Product Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Omnitracs MX:Hardware</fullName>
+                <default>false</default>
+                <label>Omnitracs MX:Hardware</label>
+            </value>
+            <value>
+                <fullName>Omnitracs MX:Professional Services</fullName>
+                <default>false</default>
+                <label>Omnitracs MX:Professional Services</label>
+            </value>
+            <value>
+                <fullName>Omnitracs MX:Software</fullName>
+                <default>false</default>
+                <label>Omnitracs MX:Software</label>
+            </value>
+            <value>
+                <fullName>Omnitracs US:Hardware</fullName>
+                <default>false</default>
+                <label>Omnitracs US:Hardware</label>
+            </value>
+            <value>
+                <fullName>Omnitracs US:Professional Services</fullName>
+                <default>false</default>
+                <label>Omnitracs US:Professional Services</label>
+            </value>
+            <value>
+                <fullName>Omnitracs US:Software</fullName>
+                <default>false</default>
+                <label>Omnitracs US:Software</label>
+            </value>
+            <value>
+                <fullName>Roadnet:Fee</fullName>
+                <default>false</default>
+                <label>Roadnet:Fee</label>
+            </value>
+            <value>
+                <fullName>Roadnet:Hardware</fullName>
+                <default>false</default>
+                <label>Roadnet:Hardware</label>
+            </value>
+            <value>
+                <fullName>Roadnet:Maintenance</fullName>
+                <default>false</default>
+                <label>Roadnet:Maintenance</label>
+            </value>
+            <value>
+                <fullName>Roadnet:Maps</fullName>
+                <default>false</default>
+                <label>Roadnet:Maps</label>
+            </value>
+            <value>
+                <fullName>Roadnet:Navigation</fullName>
+                <default>false</default>
+                <label>Roadnet:Navigation</label>
+            </value>
+            <value>
+                <fullName>Roadnet:Professional Services</fullName>
+                <default>false</default>
+                <label>Roadnet:Professional Services</label>
+            </value>
+            <value>
+                <fullName>Roadnet:Software</fullName>
+                <default>false</default>
+                <label>Roadnet:Software</label>
+            </value>
+            <value>
+                <fullName>Sylectus:Fee</fullName>
+                <default>false</default>
+                <label>Sylectus:Fee</label>
+            </value>
+            <value>
+                <fullName>Sylectus:Hardware</fullName>
+                <default>false</default>
+                <label>Sylectus:Hardware</label>
+            </value>
+            <value>
+                <fullName>Sylectus:Professional Services</fullName>
+                <default>false</default>
+                <label>Sylectus:Professional Services</label>
+            </value>
+            <value>
+                <fullName>Sylectus:Software</fullName>
+                <default>false</default>
+                <label>Sylectus:Software</label>
+            </value>
+            <value>
+                <fullName>XRS Corporation:Fee</fullName>
+                <default>false</default>
+                <label>XRS Corporation:Fee</label>
+            </value>
+            <value>
+                <fullName>XRS Corporation:Hardware</fullName>
+                <default>false</default>
+                <label>XRS Corporation:Hardware</label>
+            </value>
+            <value>
+                <fullName>XRS Corporation:Professional Services</fullName>
+                <default>false</default>
+                <label>XRS Corporation:Professional Services</label>
+            </value>
+            <value>
+                <fullName>XRS Corporation:Software</fullName>
+                <default>false</default>
+                <label>XRS Corporation:Software</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X05_Approval_Status_Approved</fullName>
+    <columns>NAME</columns>
+    <columns>Area__c</columns>
+    <columns>Track__c</columns>
+    <columns>Title__c</columns>
+    <columns>Business_Owner__c</columns>
+    <columns>Requirement_Status__c</columns>
+    <columns>Development_Status__c</columns>
+    <columns>Origin__c</columns>
+    <columns>Req_Identified_During__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Approved_Status__c</field>
+        <operation>equals</operation>
+        <value>Approved</value>
+    </filters>
+    <label>05) Approval Status: Approved</label>
+    <language>en_US</language>
+</ListView>

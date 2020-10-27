@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Order_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Order Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>B2B 82</fullName>
+                <default>false</default>
+                <label>B2B 82</label>
+            </value>
+            <value>
+                <fullName>BETA 82</fullName>
+                <default>false</default>
+                <label>BETA 82</label>
+            </value>
+            <value>
+                <fullName>EVAL 82</fullName>
+                <default>false</default>
+                <label>EVAL 82</label>
+            </value>
+            <value>
+                <fullName>INTERCO EUROPE 82</fullName>
+                <default>false</default>
+                <label>INTERCO EUROPE 82</label>
+            </value>
+            <value>
+                <fullName>INTERNAL 82</fullName>
+                <default>false</default>
+                <label>INTERNAL 82</label>
+            </value>
+            <value>
+                <fullName>INTRA 87</fullName>
+                <default>false</default>
+                <label>INTRA 87</label>
+            </value>
+            <value>
+                <fullName>LAB 82</fullName>
+                <default>false</default>
+                <label>LAB 82</label>
+            </value>
+            <value>
+                <fullName>LOAN 82</fullName>
+                <default>false</default>
+                <label>LOAN 82</label>
+            </value>
+            <value>
+                <fullName>METRO CONT 82</fullName>
+                <default>false</default>
+                <label>METRO CONT 82</label>
+            </value>
+            <value>
+                <fullName>REFURB 82</fullName>
+                <default>false</default>
+                <label>REFURB 82</label>
+            </value>
+            <value>
+                <fullName>RENT 82</fullName>
+                <default>false</default>
+                <label>RENT 82</label>
+            </value>
+            <value>
+                <fullName>RMA 82</fullName>
+                <default>false</default>
+                <label>RMA 82</label>
+            </value>
+            <value>
+                <fullName>RMA 87</fullName>
+                <default>false</default>
+                <label>RMA 87</label>
+            </value>
+            <value>
+                <fullName>RMA 87 I</fullName>
+                <default>false</default>
+                <label>RMA 87 I</label>
+            </value>
+            <value>
+                <fullName>RTS 82</fullName>
+                <default>false</default>
+                <label>RTS 82</label>
+            </value>
+            <value>
+                <fullName>RTS 86</fullName>
+                <default>false</default>
+                <label>RTS 86</label>
+            </value>
+            <value>
+                <fullName>SALE 82</fullName>
+                <default>false</default>
+                <label>SALE 82</label>
+            </value>
+            <value>
+                <fullName>SAMP 82</fullName>
+                <default>false</default>
+                <label>SAMP 82</label>
+            </value>
+            <value>
+                <fullName>SURPLUS SALE 82</fullName>
+                <default>false</default>
+                <label>SURPLUS SALE 82</label>
+            </value>
+            <value>
+                <fullName>T&amp;L CONT 82</fullName>
+                <default>false</default>
+                <label>T&amp;L CONT 82</label>
+            </value>
+            <value>
+                <fullName>WEB 82</fullName>
+                <default>false</default>
+                <label>WEB 82</label>
+            </value>
+            <value>
+                <fullName>WEB SC 82</fullName>
+                <default>false</default>
+                <label>WEB SC 82</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Request_Assigned_Duration_Days__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF (ISNULL(Assigned__c ), null, IF (ISNULL(Sent_to_Customer__c), Today() - Assigned__c , Sent_to_Customer__c - Assigned__c))</formula>
+    <inlineHelpText>The number of days the request has been sitting with a status of &quot;Assigned&quot;
+If the Assigned field is blank, the duration will be blank.
+If the Assigned field is complete, the duration is calculated by the Sent to Customer Date minus the Assigned date.</inlineHelpText>
+    <label>Request Assigned Duration (Days)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

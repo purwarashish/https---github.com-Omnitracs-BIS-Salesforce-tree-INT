@@ -1,0 +1,19 @@
+<apex:page standardController="Case" extensions="ReOpenCaseExtension">
+<apex:pageMessages />
+
+	<apex:form >
+        <apex:pageBlock title="Re-open Case #{!theCase.CaseNumber}">
+            <apex:pageblockbuttons location="bottom">
+                <apex:commandbutton value="Re-open Case" action="{!reOpenCase}"/>
+                <apex:commandbutton value="Cancel" action="{!cancel}"/>
+            </apex:pageblockbuttons>
+            <apex:pageblocksection title="Re-open Reason">
+            	<apex:pageblocksectionitem >
+            		<apex:outputLabel value="Reason for re-opening Case"/>
+	            	<apex:inputtextarea cols="50" rows="10" value="{!reason}"/>
+	            </apex:pageblocksectionitem>
+            </apex:pageblocksection>
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

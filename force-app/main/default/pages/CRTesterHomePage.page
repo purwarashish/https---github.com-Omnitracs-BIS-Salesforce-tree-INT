@@ -1,0 +1,114 @@
+<!-- 
+ *******************************************************************************
+ * File:  CRTesterHomePage.page
+ * Date:  Sep 14, 2009
+ * Author:  Charlie Heaps
+ *
+ * The use, disclosure, reproduction, modification, transfer, or transmittal of
+ * this work for any purpose in any form or by any means without the written 
+ * permission of United Parcel Service is strictly prohibited.
+ *
+ * Confidential, unpublished property of United Parcel Service.
+ * Use and distribution limited solely to authorized personnel.
+ *
+ * Copyright 2009, UPS Logistics Technologies, Inc.  All rights reserved.
+ *
+ * Purpose: 
+ *   VF page used to display a Change Request Version view for a Tester.
+ *
+ *******************************************************************************/
+ -->
+<apex:page controller="CRTesterHomePageController" id="thePage" action="{!pageActionMethod}">
+    <!-- 
+    Prevents the Target Completion Date field from getting the focus 
+    and popping up a date picker control.
+    -->    
+    <script>
+       function setFocusOnLoad(){}
+    </script>
+
+    <apex:pageMessages />
+    <apex:form id="form1" rendered="{!showTesterPicklist}">
+        <apex:panelGrid columns="3">
+            <apex:outputLabel value="Group Lead"/>
+
+            <apex:selectList value="{!pdLeadId}" size="1" style="font-size:10px" >
+                <apex:selectOptions value="{!pdLeadItems}"/>
+                <apex:actionSupport event="onchange" rerender="testerSelector" status="status1"/>
+            </apex:selectList>
+            
+            <apex:actionStatus id="status1" startText="Wait... " stopText=""/>
+                
+            <apex:outputLabel value="Tester"/>
+    
+            <apex:selectList id="testerSelector" value="{!testerId}" size="1" style="font-size:10px">
+                <apex:selectOptions value="{!groupMemberItems}"/>
+            </apex:selectList>
+            
+            <apex:commandButton value="Go" action="{!onRefresh}"/>
+        </apex:panelGrid>
+
+    </apex:form>
+
+
+    <apex:tabPanel value="{!defaultTab}" id="TabPanel" switchType="client" >
+    
+    	<apex:tab label="Group Scorecard" name="groupScores" id="groupScores">
+	    	<apex:outputPanel id="gscPanel" rendered="{!showContent}"> 
+				<c:CRTesterView id="gscView"
+		             title="Group Scorecard "
+		             viewType="groupScorecard"
+		             testerId="{!testerId}"
+		             groupDescription="{!pdLead.Name}"/>
+			</apex:outputPanel>
+	    </apex:tab>
+    
+	    <apex:tab label="Scorecard" name="scoreCard" id="scoreCard">
+		    <apex:outputPanel id="scoreCardPanel" rendered="{!showContent}"> 
+				<c:CRTesterView id="scorecardView"
+		             title="Submitted by {!tester.Name}. "
+		             viewType="scorecard"
+		             testerId="{!testerId}"/>
+		          
+		    </apex:outputPanel>
+	    </apex:tab>
+	    
+	    <apex:tab label="Submitted CRs" name="submittedCR" id="submittedCR">
+			<apex:outputPanel id="submittedPanel" rendered="{!showContent}"> 
+				<c:CRTesterView id="submittedView"
+		             title="CRs Submitted by {!tester.Name}. "
+		             viewType="submittedCR"
+		             testerId="{!testerId}"/>
+			</apex:outputPanel>
+	    </apex:tab>
+	    
+	    <apex:tab label="Assigned CRs" name="assignedCR" id="assignedCR">
+			<apex:outputPanel id="assignedPanel" rendered="{!showContent}"> 
+				<c:CRTesterView id="assignedView"
+		             title="CRs Assigned to {!tester.Name}. "
+		             viewType="assignedCR"
+		             testerId="{!testerId}"/>
+			</apex:outputPanel>
+	    </apex:tab>
+	    
+	    <apex:tab label="Test Runs" name="testRuns" id="testRuns">
+	    	<apex:outputPanel id="testRunPanel" rendered="{!showContent}"> 
+				<c:CRTesterView id="testRunView"
+		             title="Test Runs Assigned to {!tester.Name}. "
+		             viewType="assignedTestRuns"
+		             testerId="{!testerId}"/>
+			</apex:outputPanel>
+	    </apex:tab>
+	    
+	    <apex:tab label="Test Cases" name="testCases" id="testCases">
+	    	<apex:outputPanel id="testCasePanel" rendered="{!showContent}"> 
+				<c:CRTesterView id="testCaseView"
+		             title="Test Cases Assigned to {!tester.Name}. "
+		             viewType="testCases"
+		             testerId="{!testerId}"/>
+			</apex:outputPanel>
+	    </apex:tab>
+
+    </apex:tabPanel>
+    
+</apex:page>

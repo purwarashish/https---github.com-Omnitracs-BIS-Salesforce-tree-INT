@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PM_Milestone</fullName>
+    <active>true</active>
+    <description>Used for Program Management Milestones</description>
+    <label>PM Milestone</label>
+    <picklistValues>
+        <picklist>Health_RYG__c</picklist>
+        <values>
+            <fullName>Green</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Red</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yellow</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Milestone_Name__c</picklist>
+        <values>
+            <fullName>Alpha Start</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Beta Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Beta Start</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Code Freeze</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commercial Release</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Concept Review Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electrical Design Validation Test Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Execution Plan Review Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Field Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOST SW Performance Test Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>I%26T Test Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mechanical Design Validation Test Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Planning Review Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Press Release</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product Validation Test Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Regulatory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Release Readiness Review Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reliability Test Complete</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Milestone_Status__c</picklist>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Started</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Platform__c</picklist>
+        <values>
+            <fullName>All MCP Platforms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP100</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP110</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP200</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP50</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TT210</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

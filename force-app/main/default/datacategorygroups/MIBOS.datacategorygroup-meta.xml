@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCategoryGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <dataCategory>
+        <dataCategory>
+            <label>Navigation - OT Nav</label>
+            <name>Navigation_OT_Nav</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Administration</label>
+                    <name>Administration</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Reports</label>
+                    <name>Reports</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>RIC</label>
+                    <name>RIC</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Routing (RN)</label>
+                    <name>Routing_RN</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>RPD</label>
+                    <name>RPD</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>SuperMatrix</label>
+                    <name>SuperMatrix</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Telematics Adapter</label>
+                    <name>Telematics_Adapter</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Webservices</label>
+                    <name>Webservices</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Active Alert</label>
+                    <name>Active_Alert</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Dispatcher (MC)</label>
+                    <name>Dispatcher_MC</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Import</label>
+                    <name>Import</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Install</label>
+                    <name>Install</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Loading (FL)</label>
+                    <name>Loading_FL</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Maintenance</label>
+                    <name>Maintenance</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Map Related</label>
+                    <name>Map_Related</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Mobile (RTS)</label>
+                    <name>Mobile_RTS</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>MobileView</label>
+                    <name>MobileView</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Planning (TP)</label>
+                    <name>Planning_TP</name>
+                </dataCategory>
+                <label>Roadnet Transporation Suite</label>
+                <name>Roadnet_Transporation_Suite</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Compliance</label>
+                    <name>Compliance</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>OT Nav</label>
+                    <name>OT_Nav</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Insight</label>
+                    <name>Insight_RNA</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Strategic Planner</label>
+                    <name>Strategic_Planner</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Plan</label>
+                    <name>Plan</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Dispatch</label>
+                    <name>Dispatch</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Mobile (RNA)</label>
+                    <name>Mobile_RNA</name>
+                </dataCategory>
+                <label>Roadnet Anywhere</label>
+                <name>Roadnet_Anywhere</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Geotab</label>
+                    <name>Geotab</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Roadnet Telematics</label>
+                    <name>Roadnet_Telematics</name>
+                </dataCategory>
+                <label>Telematics</label>
+                <name>Telematics</name>
+            </dataCategory>
+            <label>Roadnet</label>
+            <name>Roadnet</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Connect</label>
+                    <name>Connect</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Virtual Fleet</label>
+                    <name>Virtual_Fleet</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Pro</label>
+                    <name>Pro</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>External Virtual Fleet</label>
+                    <name>External_Virtual_Fleet</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>MyPro</label>
+                    <name>MyPro</name>
+                </dataCategory>
+                <label>Product</label>
+                <name>Product</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Tracking Solutions</label>
+                    <name>Tracking_Solutions</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Imaging</label>
+                    <name>Imaging</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Integrations</label>
+                    <name>Integrations</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Reports</label>
+                    <name>Sylectus_Reports</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Accounting Imports</label>
+                    <name>Accounting_Imports</name>
+                </dataCategory>
+                <label>Modules</label>
+                <name>Modules</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Known Issues</label>
+                    <name>Known_Issues</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Technical Bulletin</label>
+                    <name>Technical_Bulletin</name>
+                </dataCategory>
+                <label>Internal</label>
+                <name>Internal</name>
+            </dataCategory>
+            <label>Sylectus</label>
+            <name>Sylectus</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Engineering</label>
+                    <name>Engineering</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Sales</label>
+                    <name>Sales</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Customer Support</label>
+                    <name>Customer_Support</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Marketing</label>
+                    <name>Marketing</name>
+                </dataCategory>
+                <label>Internal Access</label>
+                <name>Internal_Access</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Applications</label>
+                <name>Applications</name>
+            </dataCategory>
+            <label>Omnitracs Mexico</label>
+            <name>Omnitracs_Mexico</name>
+        </dataCategory>
+        <label>All</label>
+        <name>All</name>
+    </dataCategory>
+    <label>MIBOS</label>
+    <objectUsage>
+        <object>KnowledgeArticleVersion</object>
+    </objectUsage>
+</DataCategoryGroup>

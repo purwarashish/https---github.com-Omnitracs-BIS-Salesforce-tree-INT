@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Make_MAS_Comments_Required</fullName>
+    <active>true</active>
+    <description>Make MAS Comments required if MAS is No.</description>
+    <errorConditionFormula>AND( 
+ISBLANK( MAS_Comments__c ), 
+ISPICKVAL( MAS__c , &quot;No&quot;) 
+)</errorConditionFormula>
+    <errorDisplayField>MAS_Comments__c</errorDisplayField>
+    <errorMessage>MAS Comments is required if MAS is &quot;No&quot;</errorMessage>
+</ValidationRule>

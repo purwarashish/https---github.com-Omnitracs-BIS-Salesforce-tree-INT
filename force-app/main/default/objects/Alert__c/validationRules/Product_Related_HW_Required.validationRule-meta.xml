@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Related_HW_Required</fullName>
+    <active>true</active>
+    <description>If a Product is selected, please complete the Product Related HW section.</description>
+    <errorConditionFormula>AND(
+  NOT(ISPICKVAL( Product__c ,&quot;&quot;)),
+  ISPICKVAL( Product_Related_HW__c ,&quot;&quot;),
+  ISPICKVAL( Application__c ,&quot;&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>Product_Related_HW__c</errorDisplayField>
+    <errorMessage>If a Product is selected, please complete the Product Related HW section</errorMessage>
+</ValidationRule>

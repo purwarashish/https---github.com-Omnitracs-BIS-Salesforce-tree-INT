@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Requirements_PartnerChannel</fullName>
+    <columns>NAME</columns>
+    <columns>Track__c</columns>
+    <columns>Area__c</columns>
+    <columns>Title__c</columns>
+    <columns>Business_Owner__c</columns>
+    <columns>Requirement_Status__c</columns>
+    <columns>Approved_Status__c</columns>
+    <columns>Development_Status__c</columns>
+    <columns>Origin__c</columns>
+    <columns>Req_Identified_During__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Business_Owner__c</field>
+        <operation>contains</operation>
+        <value>Gerald</value>
+    </filters>
+    <label>Sales Requirements Partner Channel</label>
+    <language>en_US</language>
+</ListView>

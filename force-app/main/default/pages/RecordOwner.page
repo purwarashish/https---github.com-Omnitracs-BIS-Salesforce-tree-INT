@@ -1,0 +1,21 @@
+<apex:page standardController="Account" extensions="PartnerMasterOwnerController"
+        sidebar="false" showHeader="false" >
+<script>
+    function openWindow()
+    {
+        openIntegration('/apex/PartnerMasterOwnerExternal?id={!Account.Id}&ic=1','height=600,width=900,location=no,resizable=yes,toolbar=no,status=no,menubar=no,scrollbars=1', 1);      
+    }
+</script>
+<apex:form >
+    <table>
+    <tr>
+        <td class="dataCol col02" >
+
+            <apex:outputField value="{!Account.RecordOwner__c}" />  
+            <apex:commandLink value="[Change Owner]" onclick="openWindow();"/>
+            
+        </td>   
+    </tr>
+    </table>
+</apex:form>
+</apex:page>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Application__c</fullName>
+    <description>Select the application causing the customer concern.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Select the application causing the customer concern.</inlineHelpText>
+    <label>Application</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Analytics Manager</fullName>
+                <default>false</default>
+                <label>Analytics Manager</label>
+            </value>
+            <value>
+                <fullName>CoS Workflow</fullName>
+                <default>false</default>
+                <label>CoS Workflow</label>
+            </value>
+            <value>
+                <fullName>Critical Event Reporting</fullName>
+                <default>false</default>
+                <label>Critical Event Reporting</label>
+            </value>
+            <value>
+                <fullName>CSA</fullName>
+                <default>false</default>
+                <label>CSA</label>
+            </value>
+            <value>
+                <fullName>DVIR</fullName>
+                <default>false</default>
+                <label>DVIR</label>
+            </value>
+            <value>
+                <fullName>eTimecards</fullName>
+                <default>false</default>
+                <label>eTimecards</label>
+            </value>
+            <value>
+                <fullName>GeoFence</fullName>
+                <default>false</default>
+                <label>GeoFence</label>
+            </value>
+            <value>
+                <fullName>HoS</fullName>
+                <default>false</default>
+                <label>HoS</label>
+            </value>
+            <value>
+                <fullName>iQ</fullName>
+                <default>false</default>
+                <label>iQ</label>
+            </value>
+            <value>
+                <fullName>MMS</fullName>
+                <default>false</default>
+                <label>MMS</label>
+            </value>
+            <value>
+                <fullName>Navigation</fullName>
+                <default>false</default>
+                <label>Navigation</label>
+            </value>
+            <value>
+                <fullName>Performance Monitoring</fullName>
+                <default>false</default>
+                <label>Performance Monitoring</label>
+            </value>
+            <value>
+                <fullName>Predictive Perf</fullName>
+                <default>false</default>
+                <label>Predictive Perf</label>
+            </value>
+            <value>
+                <fullName>QSP</fullName>
+                <default>false</default>
+                <label>QSP</label>
+            </value>
+            <value>
+                <fullName>QTM</fullName>
+                <default>false</default>
+                <label>QTM</label>
+            </value>
+            <value>
+                <fullName>Training and Scoring</fullName>
+                <default>false</default>
+                <label>Training and Scoring</label>
+            </value>
+            <value>
+                <fullName>Vehicle Maintenance</fullName>
+                <default>false</default>
+                <label>Vehicle Maintenance</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

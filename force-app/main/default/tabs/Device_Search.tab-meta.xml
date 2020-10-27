@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <icon>ButtonsLogosImages/Tagg_Paw_Image.gif</icon>
+    <label>Device Search</label>
+    <motif>Custom131: TV Widescreen</motif>
+    <page>DeviceSearch</page>
+</CustomTab>

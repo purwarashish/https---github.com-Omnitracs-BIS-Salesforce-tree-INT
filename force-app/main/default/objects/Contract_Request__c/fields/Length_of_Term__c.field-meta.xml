@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Length_of_Term__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>1. Measured from signature date. 
+2. OmniTRACS and OmniExpress term length can&apos;t exceed 03.31.2015</inlineHelpText>
+    <label>Term</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Product__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1 Year</fullName>
+                <default>false</default>
+                <label>1 Year</label>
+            </value>
+            <value>
+                <fullName>2 years</fullName>
+                <default>false</default>
+                <label>2 years</label>
+            </value>
+            <value>
+                <fullName>30 Days</fullName>
+                <default>false</default>
+                <label>30 Days</label>
+            </value>
+            <value>
+                <fullName>3 Years</fullName>
+                <default>false</default>
+                <label>3 Years</label>
+            </value>
+            <value>
+                <fullName>4 years</fullName>
+                <default>false</default>
+                <label>4 years</label>
+            </value>
+            <value>
+                <fullName>5 years</fullName>
+                <default>false</default>
+                <label>5 years</label>
+            </value>
+            <value>
+                <fullName>60 Days</fullName>
+                <default>false</default>
+                <label>60 Days</label>
+            </value>
+            <value>
+                <fullName>90 Days</fullName>
+                <default>false</default>
+                <label>90 Days</label>
+            </value>
+            <value>
+                <fullName>December 31, 2014</fullName>
+                <default>false</default>
+                <label>December 31, 2014</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>Refurbished MCP100S</controllingFieldValue>
+            <controllingFieldValue>IVG</controllingFieldValue>
+            <controllingFieldValue>Penske Data Share</controllingFieldValue>
+            <controllingFieldValue>Ryder Data Share</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <valueName>1 Year</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>Refurbished MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <valueName>2 years</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>Refurbished MCP100S</controllingFieldValue>
+            <controllingFieldValue>IVG</controllingFieldValue>
+            <controllingFieldValue>Penske Data Share</controllingFieldValue>
+            <controllingFieldValue>Ryder Data Share</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <valueName>3 Years</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>Trailer Tracks 210</controllingFieldValue>
+            <controllingFieldValue>Refurbished MCP100S</controllingFieldValue>
+            <controllingFieldValue>IVG</controllingFieldValue>
+            <controllingFieldValue>Penske Data Share</controllingFieldValue>
+            <controllingFieldValue>Ryder Data Share</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <valueName>5 years</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS and OmniExpress</controllingFieldValue>
+            <controllingFieldValue>Refurbished MCP100S</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>Refurbished OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OmniTRACS and OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>Refurbished OmniTRACS</controllingFieldValue>
+            <valueName>December 31, 2014</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Field_is_Visible_to_User__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This field can be used to indicate if the field is on a page layout, or used behind-the-scenes in code; helps drive assessment on whether to keep the field or not.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This field can be used to indicate if the field is on a page layout, or used behind-the-scenes in code; helps drive assessment on whether to keep the field or not.</inlineHelpText>
+    <label>Field is Visible to User?</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

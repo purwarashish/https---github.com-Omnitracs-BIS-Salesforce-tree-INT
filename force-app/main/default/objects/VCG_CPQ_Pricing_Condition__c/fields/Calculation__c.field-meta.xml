@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Calculation__c</fullName>
+    <description>In the future this will be the formula that is entered, it will be parsed when the record is saved and converted into the compiled version automatically. For now, it is just a nice to read version that should match the compiled version.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Currently this is just a nice-to-read version of the compiled calculation formula</inlineHelpText>
+    <label>Calculation (Readable)</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

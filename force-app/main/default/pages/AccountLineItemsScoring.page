@@ -1,0 +1,118 @@
+<apex:page controller="AccountLineItemsScoring"  tabstyle="Account">
+ 
+ <apex:sectionHeader title="Account" subtitle="Scoring" />
+ 
+ <apex:form >
+ 
+  <apex:pageMessages />
+  
+ <apex:pageBlock >
+  
+  <apex:pageBlockButtons >
+    <apex:commandButton value="Back to Account"  action="{!BackToAccount}" />
+    &nbsp;&nbsp;
+    <apex:outputLink value="/{!$Label.AccountScoringHistoryReportID}?pv0={!AccountScoringId}"   target="_new" >View Scoring History</apex:outputLink>
+  </apex:pageBlockButtons>
+  
+  <apex:pageBlockSection columns="2" title="Scoring">
+  
+  <apex:outputField value="{!CurrentScoring.Account__c}"   />
+  
+      <apex:outputText value="" />
+      
+      
+  <apex:outputField value="{!CurrentScoring.Scoring_Model__c}" />
+  
+  <apex:outputField value="{!CurrentScoring.Is_Manual_Scoring__c}"  />
+  
+  <apex:outputField value="{!CurrentScoring.Date__c}" />
+  
+  <apex:outputField value="{!CurrentScoring.Date_Manual_Scoring__c}"  />
+  
+  <apex:outputField value="{!CurrentScoring.Overall_Calculated_Score__c}"  />
+  
+  <apex:outputField value="{!CurrentScoring.Manual_Score__c}"   />
+  
+      <apex:outputText value="" />
+  <apex:outputField value="{!CurrentScoring.Manual_Scoring_Reason__c}"   />
+  
+  <apex:outputText value="" /> 
+  <apex:outputField value="{!CurrentScoring.Manual_Scoring_Comments__c}"   />
+  
+  <apex:pageBlockSectionItem >
+  <apex:outputLabel value="Overall Score" /> 
+  <apex:outputPanel >
+     
+   <apex:image value="{!URLFOR($Resource.AccountScoring, 'Green.JPG')}" title="{!CurrentScoring.Aggregate_Score__c}" rendered="{!IF(CurrentScoring.Display_Type__c == 'Green' && CurrentScoring.Is_Manual_Scoring__c == false, true, false)}"/>
+    <apex:image value="{!URLFOR($Resource.AccountScoring, 'Yellow.JPG')}" title="{!CurrentScoring.Aggregate_Score__c}" rendered="{!IF(CurrentScoring.Display_Type__c == 'Yellow'  && CurrentScoring.Is_Manual_Scoring__c == false, true, false)}"/>
+    <apex:image value="{!URLFOR($Resource.AccountScoring, 'Red.JPG')}" title="{!CurrentScoring.Aggregate_Score__c}" rendered="{!IF(CurrentScoring.Display_Type__c == 'Red'  && CurrentScoring.Is_Manual_Scoring__c == false, true, false)}"/>
+
+    <apex:image value="{!URLFOR($Resource.AccountScoring, 'Green.JPG')}" title="{!CurrentScoring.Aggregate_Score__c}" rendered="{!IF(CurrentScoring.Manual_Display_Type__c == 'Green' && CurrentScoring.Is_Manual_Scoring__c == true, true, false)}"/>
+    <apex:image value="{!URLFOR($Resource.AccountScoring, 'Yellow.JPG')}" title="{!CurrentScoring.Aggregate_Score__c}" rendered="{!IF(CurrentScoring.Manual_Display_Type__c == 'Yellow'  && CurrentScoring.Is_Manual_Scoring__c == true, true, false)}"/>
+    <apex:image value="{!URLFOR($Resource.AccountScoring, 'Red.JPG')}" title="{!CurrentScoring.Aggregate_Score__c}" rendered="{!IF(CurrentScoring.Manual_Display_Type__c == 'Red'  && CurrentScoring.Is_Manual_Scoring__c == true, true, false)}"/>     
+ 
+  &nbsp;
+  <apex:outputField value="{!CurrentScoring.Aggregate_Score__c}" /> 
+  </apex:outputPanel>
+  </apex:pageBlockSectionItem>
+  
+
+  
+  </apex:pageBlockSection>
+  
+  <apex:pageBlockSection columns="1" title="Scoring Items">
+ <apex:pageBlockTable value="{!listScoringLines}" var="s" >
+ 
+ <apex:column >
+    <apex:facet name="header">
+        Scoring Item
+    </apex:facet>
+    <apex:outputText value="{!s.Scoring_Item__c}" />
+ </apex:column>
+  
+  <apex:column >
+    <apex:facet name="header">
+        Value
+    </apex:facet>
+    <apex:outputText value="{!s.Value__c}" />
+ </apex:column>
+  
+  <apex:column >
+        <apex:facet name="header">
+        Normalized Score
+    </apex:facet>
+    <apex:outputField value="{!s.Normalized_Score__c}" />
+ </apex:column>
+ 
+ 
+   <apex:column >
+    <apex:facet name="header">
+        Weight
+    </apex:facet>
+    <apex:outputField value="{!s.Scoring_Item_ID__r.Scoring_Weight__c}" />
+ </apex:column>
+ 
+  <apex:column >
+    <apex:facet name="header">
+        Weighted Score
+    </apex:facet>
+    <apex:outputPanel >
+    <apex:image value="{!URLFOR($Resource.AccountScoring, 'Green.JPG')}" title="{!s.Score__c}" rendered="{!IF(s.Display_Type__c == 'Green', true, false)}"/>
+    <apex:image value="{!URLFOR($Resource.AccountScoring, 'Yellow.JPG')}" title="{!s.Score__c}" rendered="{!IF(s.Display_Type__c == 'Yellow', true, false)}"/>
+    <apex:image value="{!URLFOR($Resource.AccountScoring, 'Red.JPG')}" title="{!s.Score__c}" rendered="{!IF(s.Display_Type__c == 'Red', true, false)}"/>
+    &nbsp;
+    <apex:outputField value="{!s.Score__c}" />
+    
+    </apex:outputPanel>
+ </apex:column>
+  
+ </apex:pageBlockTable>
+ 
+ </apex:pageBlockSection>
+ 
+ </apex:pageBlock>
+ 
+  
+ </apex:form>
+ 
+</apex:page>

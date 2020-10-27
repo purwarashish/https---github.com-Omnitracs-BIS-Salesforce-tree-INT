@@ -1,0 +1,58 @@
+<apex:page cache="true" showHeader="false" sidebar="false">
+<html>
+  <head>
+    <apex:stylesheet value="{!URLFor($Resource.QESUnityCSSAndJS, 'Html/css/mainstyle.css')}" />
+    <apex:stylesheet value="{!URLFor($Resource.QESUnityCSSAndJS, 'Html/css/customer.css')}" />
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"></meta>
+    <title>sorry</title>
+    <style>
+        .breadcumWrp{
+            height: 10px !important;
+        }  
+        .searchResultInnerLeft {
+            font-size: 120%;
+            text-align: center;
+        } 
+        #middle-container {
+            height: 80px;
+        }
+        a {
+            color: #0000FF !important;
+        }                 
+    </style>
+  </head>
+  <body>
+
+
+    <div id="bodyWrapper" >
+        <div id="header-customer">
+            <div class="preHeader">
+                <div class="mainNavWrp">
+                    <div class="logo">
+                        <a href="http://customer.{!$Label.CPURL}"><img src="{!URLFor($Resource.CPResources,'images/logo.png')}" width="111" height="33" alt="Omnitracs" title="Omnitracs" /></a>
+                    </div>
+                </div>                       
+            </div>
+        </div>
+    
+        <div class="breadcumWrp">     
+        </div>
+        <div id="middle-container">
+            <div class="custom-search-right fll" style="width:100%">
+                    <div class="searchResultInnerLeft fll" style="width:100%" >
+                        Sorry for the inconvenience, these services are currently unavailable. 
+                        <br/>
+                        The site should be available again shortly.  
+                        <br/>
+                        <br/>
+                        Click
+                        <a href="http://customer.{!$Label.CPURL}" style="color:default;">here</a>
+                        to go back to the Home Page.
+                    </div>                
+            </div>
+        </div> 
+    </div>    
+  </body>
+</html>
+<site:previewAsAdmin />
+</apex:page>

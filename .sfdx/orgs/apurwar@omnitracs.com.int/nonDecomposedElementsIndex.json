@@ -1,0 +1,617 @@
+{
+    "CustomLabels__AES256EncryptionKey": {
+        "fullName": "AES256EncryptionKey",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__AUX_ID": {
+        "fullName": "AUX_ID",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__AccountScoringHistoryReportID": {
+        "fullName": "AccountScoringHistoryReportID",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Account_Int_Partner_RecType": {
+        "fullName": "Account_Int_Partner_RecType",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Account_Other_RecType": {
+        "fullName": "Account_Other_RecType",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Account_Record_Type_Partner_Referral": {
+        "fullName": "Account_Record_Type_Partner_Referral",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Action_Header_on_Custom_Related_List": {
+        "fullName": "Action_Header_on_Custom_Related_List",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Activate_Summation_of_Open_Activity": {
+        "fullName": "Activate_Summation_of_Open_Activity",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Advance_Opportunity_Stage": {
+        "fullName": "Advance_Opportunity_Stage",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Advancement_Error": {
+        "fullName": "Advancement_Error",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Agreement_Owner_Profile": {
+        "fullName": "Agreement_Owner_Profile",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Agreement_Record_Type": {
+        "fullName": "Agreement_Record_Type",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__All_Discount_Record_type": {
+        "fullName": "All_Discount_Record_type",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__CALL_CENTER_RECORDTYPEID": {
+        "fullName": "CALL_CENTER_RECORDTYPEID",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__COMPANY_ID": {
+        "fullName": "COMPANY_ID",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__CPInviteURL": {
+        "fullName": "CPInviteURL",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__CPURL": {
+        "fullName": "CPURL",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__CUSTOM_SEARCH": {
+        "fullName": "CUSTOM_SEARCH",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__CUST_ID": {
+        "fullName": "CUST_ID",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Case_Create_Notify_Contact_Template_Id": {
+        "fullName": "Case_Create_Notify_Contact_Template_Id",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Case_Request": {
+        "fullName": "Case_Request",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__ConnectionAccountId": {
+        "fullName": "ConnectionAccountId",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Contact_Duplicate_Email_Grp": {
+        "fullName": "Contact_Duplicate_Email_Grp",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Contact_Record_Type_Partner": {
+        "fullName": "Contact_Record_Type_Partner",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Contact_Record_Type_Sales": {
+        "fullName": "Contact_Record_Type_Sales",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__ContentUrl": {
+        "fullName": "ContentUrl",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Customer_Portal_Content_Users": {
+        "fullName": "Customer_Portal_Content_Users",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__DiscountRequestRecTypeDevName": {
+        "fullName": "DiscountRequestRecTypeDevName",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Discount_Request_Notification_Template": {
+        "fullName": "Discount_Request_Notification_Template",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Discount_Request_OrgWideId": {
+        "fullName": "Discount_Request_OrgWideId",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Email": {
+        "fullName": "Email",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Email_Interface_ProfileId": {
+        "fullName": "Email_Interface_ProfileId",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Error_Creating_Leads_or_Tasks": {
+        "fullName": "Error_Creating_Leads_or_Tasks",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Error_Creating_Opptys_or_Tasks": {
+        "fullName": "Error_Creating_Opptys_or_Tasks",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Error_Email_Address": {
+        "fullName": "Error_Email_Address",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__EscalateCase_FldLbl_CaseOwner": {
+        "fullName": "EscalateCase_FldLbl_CaseOwner",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__EscalateCase_FldLbl_EscComments": {
+        "fullName": "EscalateCase_FldLbl_EscComments",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__EscalateCase_FldLbl_EscTo": {
+        "fullName": "EscalateCase_FldLbl_EscTo",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__EscalateCase_FldLbl_EscToUser": {
+        "fullName": "EscalateCase_FldLbl_EscToUser",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__EscalateCase_SecHdr_CaseInfo": {
+        "fullName": "EscalateCase_SecHdr_CaseInfo",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Existing_Key_Player": {
+        "fullName": "Existing_Key_Player",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__HARDWARE_VALUE": {
+        "fullName": "HARDWARE_VALUE",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__HUBADMIN_OWNER_ID": {
+        "fullName": "HUBADMIN_OWNER_ID",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__HUB_RECORDTYPE_ID": {
+        "fullName": "HUB_RECORDTYPE_ID",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Hardware_Discount_Request_Limit": {
+        "fullName": "Hardware_Discount_Request_Limit",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__IVG_image_ID": {
+        "fullName": "IVG_image_ID",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Instance_URL": {
+        "fullName": "Instance_URL",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Lead_Mass_Edit_Title": {
+        "fullName": "Lead_Mass_Edit_Title",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Lead_Title_Name": {
+        "fullName": "Lead_Title_Name",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__MCP110_image_ID": {
+        "fullName": "MCP110_image_ID",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__MCP200_image_ID": {
+        "fullName": "MCP200_image_ID",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__MCP50_image_ID": {
+        "fullName": "MCP50_image_ID",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Mass_Edit_Activity_Label": {
+        "fullName": "Mass_Edit_Activity_Label",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Mass_Edit_Oppty_LineItem_Notification": {
+        "fullName": "Mass_Edit_Oppty_LineItem_Notification",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Mass_Edit_Return_Button": {
+        "fullName": "Mass_Edit_Return_Button",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Mass_Edit_Save_Button": {
+        "fullName": "Mass_Edit_Save_Button",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Mass_Edit_Unsaved_Information_Lost": {
+        "fullName": "Mass_Edit_Unsaved_Information_Lost",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__NMC_ACCOUNT": {
+        "fullName": "NMC_ACCOUNT",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__NMC_SYSTEM_VALUE": {
+        "fullName": "NMC_SYSTEM_VALUE",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Next_Button": {
+        "fullName": "Next_Button",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__No_Commited_Actions": {
+        "fullName": "No_Commited_Actions",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__No_Objectives": {
+        "fullName": "No_Objectives",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__OmniTRACS": {
+        "fullName": "OmniTRACS",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__OmnitracsHouseAccountUser": {
+        "fullName": "OmnitracsHouseAccountUser",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Omnitracs_Account_Id": {
+        "fullName": "Omnitracs_Account_Id",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__OpportunityStageAdvancement_NotReady": {
+        "fullName": "OpportunityStageAdvancement_NotReady",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__OpportunityStageAdvancement_Ready": {
+        "fullName": "OpportunityStageAdvancement_Ready",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Opportunity_Line_Items": {
+        "fullName": "Opportunity_Line_Items",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Opportunity_Mass_Edit_Title": {
+        "fullName": "Opportunity_Mass_Edit_Title",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Opportunity_Product_Name": {
+        "fullName": "Opportunity_Product_Name",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Opportunity_Transportation_Logistic": {
+        "fullName": "Opportunity_Transportation_Logistic",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__OpptyLock_BlockedProfiles": {
+        "fullName": "OpptyLock_BlockedProfiles",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__PKB_All_Article_Types": {
+        "fullName": "PKB_All_Article_Types",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__PKB_Language": {
+        "fullName": "PKB_Language",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__PKB_Last_Updated": {
+        "fullName": "PKB_Last_Updated",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__PKB_MostPopular": {
+        "fullName": "PKB_MostPopular",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__PKB_Next10": {
+        "fullName": "PKB_Next10",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__PKB_No_Result": {
+        "fullName": "PKB_No_Result",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__PKB_Previous10": {
+        "fullName": "PKB_Previous10",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__PKB_Search_Button": {
+        "fullName": "PKB_Search_Button",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__PKB_Search_NoFilter": {
+        "fullName": "PKB_Search_NoFilter",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__PKB_Search_No_Result": {
+        "fullName": "PKB_Search_No_Result",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__PKB_Search_Result": {
+        "fullName": "PKB_Search_Result",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__PKB_Search_Support": {
+        "fullName": "PKB_Search_Support",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__PKB_Tab_Home": {
+        "fullName": "PKB_Tab_Home",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__PKB_Tab_Product": {
+        "fullName": "PKB_Tab_Product",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__PKB_Title": {
+        "fullName": "PKB_Title",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__PORTAL_AND_SERVICES_VALUE": {
+        "fullName": "PORTAL_AND_SERVICES_VALUE",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__PRM_Support_Email_Group": {
+        "fullName": "PRM_Support_Email_Group",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Partner_Master_Owner_Profile": {
+        "fullName": "Partner_Master_Owner_Profile",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Partner_Reseller_Lead": {
+        "fullName": "Partner_Reseller_Lead",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Partner_login_URL": {
+        "fullName": "Partner_login_URL",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Plan_Discount_Request_Limit": {
+        "fullName": "Plan_Discount_Request_Limit",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Processing": {
+        "fullName": "Processing",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Product_Catalog_Link": {
+        "fullName": "Product_Catalog_Link",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Project_Request": {
+        "fullName": "Project_Request",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__QES_INTERFACE_ID": {
+        "fullName": "QES_INTERFACE_ID",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__QES_UNITY_Customer_Portal_User_SSO": {
+        "fullName": "QES_UNITY_Customer_Portal_User_SSO",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Qualcomm_Account_Id": {
+        "fullName": "Qualcomm_Account_Id",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__RecordTypeId": {
+        "fullName": "RecordTypeId",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__RecursiveTriggerCount": {
+        "fullName": "RecursiveTriggerCount",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__S2S_Connection_Name": {
+        "fullName": "S2S_Connection_Name",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__S2S_User_Id": {
+        "fullName": "S2S_User_Id",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__SalesforceDocViewer": {
+        "fullName": "SalesforceDocViewer",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__ScoringModelFieldID": {
+        "fullName": "ScoringModelFieldID",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Show_Hide_Actions": {
+        "fullName": "Show_Hide_Actions",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Stage_Error": {
+        "fullName": "Stage_Error",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__TIS_Trigger_For_Lead_And_Opp": {
+        "fullName": "TIS_Trigger_For_Lead_And_Opp",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__T_L_Lead": {
+        "fullName": "T_L_Lead",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__T_L_Sales_Accounts_RecType_Id": {
+        "fullName": "T_L_Sales_Accounts_RecType_Id",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Task_Default_Subject": {
+        "fullName": "Task_Default_Subject",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Task_Status_Completed": {
+        "fullName": "Task_Status_Completed",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__UnamePwdLinkWebservice": {
+        "fullName": "UnamePwdLinkWebservice",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__UnityAdminServiceEndpoint": {
+        "fullName": "UnityAdminServiceEndpoint",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__UnityDomain": {
+        "fullName": "UnityDomain",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__UnitySuperLinkServiceEndpoint": {
+        "fullName": "UnitySuperLinkServiceEndpoint",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Unsaved_Overlay": {
+        "fullName": "Unsaved_Overlay",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Update_Plan": {
+        "fullName": "Update_Plan",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__UserIdsToAssignAcctToDirectSales": {
+        "fullName": "UserIdsToAssignAcctToDirectSales",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__View_All_Actions": {
+        "fullName": "View_All_Actions",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__View_Committed_Actions": {
+        "fullName": "View_Committed_Actions",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__XRS_Sales_order_Support": {
+        "fullName": "XRS_Sales_order_Support",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__partner_account_reseller": {
+        "fullName": "partner_account_reseller",
+        "type": "CustomLabels",
+        "metadataFilePath": "d:\\Projects\\Omnitracs\\Omnitracs QA\\Omnitracs INT\\Omintracs INT\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    }
+}

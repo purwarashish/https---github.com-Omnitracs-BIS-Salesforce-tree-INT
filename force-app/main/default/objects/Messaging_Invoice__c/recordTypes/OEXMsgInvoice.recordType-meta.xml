@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OEXMsgInvoice</fullName>
+    <active>true</active>
+    <description>Used for OmniExpress Message bill</description>
+    <label>OEX Msg Invoice</label>
+</RecordType>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FRA_CR_TM_Who_Doing_Work</fullName>
+    <active>true</active>
+    <description>If Time &amp; Material is selected, Who is doing the work is required.</description>
+    <errorConditionFormula>AND( 
+INCLUDES( Contract_Type__c , &quot;Time &amp; Material&quot;), 
+ISPICKVAL( Who_is_doing_the_work__c , &quot;&quot;) )</errorConditionFormula>
+    <errorDisplayField>Who_is_doing_the_work__c</errorDisplayField>
+    <errorMessage>If Time &amp; Material is selected, Who is doing the work is required.</errorMessage>
+</ValidationRule>

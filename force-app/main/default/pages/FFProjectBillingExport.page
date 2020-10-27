@@ -1,0 +1,55 @@
+<apex:page controller="FFProjectBillingController" contentType="application/vnd.ms-excel#View_AuditReport.xls" cache="true">
+    <apex:pageBlock title="Details">
+        <b> <apex:outputLabel >Submitted By: </apex:outputLabel>
+        <apex:outputText value="{!$User.FirstName&' '&$User.LastName}"/></b> <br/>
+        <b> <apex:outputLabel >Submitted On: </apex:outputLabel>
+        <apex:outputText value="{0,date,M'/'d'/'yyyy HH:mm z}">
+            <apex:param value="{!NOW()}" />
+        </apex:outputText> </b> <br/>
+        <b> <apex:outputLabel >Mode: </apex:outputLabel>
+        <apex:outputText value="Preview"/> </b> <br/>
+        <b><apex:outputLabel >Billing From End Date :</apex:outputLabel> &nbsp;&nbsp;
+            <apex:outputText value="{0,date,M'/'d'/'yyyy}">
+                <apex:param value="{!billingFromDate}" /> 
+            </apex:outputText></b> <br/>
+			<b><apex:outputLabel >Billing To End Date :</apex:outputLabel> &nbsp;&nbsp;
+            <apex:outputText value="{0,date,M'/'d'/'yyyy}">
+                <apex:param value="{!billingToDate}" /> 
+            </apex:outputText></b>
+    </apex:pageBlock>
+     <apex:pageBlock title="Billable Projects">
+        <apex:pageBlockTable value="{!lstBillableProjects}" var="item">
+            <apex:column headerValue="Project Name" value="{!item.projectName}" style="text-align:center"/>
+            <apex:column headerValue="Unbilled Revenue" value="{!item.unbilledRevenue}" style="text-align:center"/>
+			<apex:column headerValue="Approved Timecards" value="{!item.approvedTimecards}" style="text-align:center"/>
+            <apex:column headerValue="Billable Amount" value="{!item.billableAmount}" style="text-align:center"/>
+            <apex:column headerValue="Unapproved Timecards" value="{!item.unapprovedTimecards}" style="text-align:center"/>
+			<apex:column headerValue="Unapproved Timecard Amount" value="{!item.unApprovedAmount}" style="text-align:center"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    <apex:pageBlock title="Excluded from Billing">
+        <apex:pageBlockTable value="{!lstExcludedFromBilling}" var="item">
+            <apex:column headerValue="Project Name" value="{!item.projectName}" style="text-align:center"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    <apex:pageBlock title="Insufficient Budget">
+        <apex:pageBlockTable value="{!lstInsufficientBudget}" var="item">
+            <apex:column headerValue="Project Name" value="{!item.projectName}" style="text-align:center"/>
+            <apex:column headerValue="Unbilled Revenue" value="{!item.unbilledRevenue}" style="text-align:center"/>
+			<apex:column headerValue="Approved Timecards" value="{!item.approvedTimecards}" style="text-align:center"/>
+            <apex:column headerValue="Billable Amount" value="{!item.billableAmount}" style="text-align:center"/>
+            <apex:column headerValue="Unapproved Timecards" value="{!item.unapprovedTimecards}" style="text-align:center"/>
+			<apex:column headerValue="Unapproved Timecard Amount" value="{!item.unApprovedAmount}" style="text-align:center"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    <apex:pageBlock title="Projects Billable Amount < $300">
+        <apex:pageBlockTable value="{!lstInsufficientHours}" var="item" style="text-align:center">
+            <apex:column headerValue="Project Name" value="{!item.projectName}" style="text-align:center"/>
+            <apex:column headerValue="Unbilled Revenue" value="{!item.unbilledRevenue}" style="text-align:center"/>
+			<apex:column headerValue="Approved Timecards" value="{!item.approvedTimecards}" style="text-align:center"/>
+            <apex:column headerValue="Billable Amount" value="{!item.billableAmount}" style="text-align:center"/>
+            <apex:column headerValue="Unapproved Timecards" value="{!item.unapprovedTimecards}" style="text-align:center"/>
+			<apex:column headerValue="Unapproved Timecard Amount" value="{!item.unApprovedAmount}" style="text-align:center"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

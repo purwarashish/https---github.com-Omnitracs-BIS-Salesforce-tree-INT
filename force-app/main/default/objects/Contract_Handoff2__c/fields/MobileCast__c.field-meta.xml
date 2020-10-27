@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MobileCast__c</fullName>
+    <description>Phone type/name - Please note the type of phone the customer is purchasing.  and specific phone, if known **If suggested by sales, please provide the 3rd party suggested for MobileCast devices - name of contact &amp; email/phone information</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Phone type/name - Please note the type of phone the customer is purchasing.  and specific phone, if known **If suggested by sales, please provide the 3rd party suggested for MobileCast devices - name of contact &amp; email/phone information</inlineHelpText>
+    <label>MobileCast</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

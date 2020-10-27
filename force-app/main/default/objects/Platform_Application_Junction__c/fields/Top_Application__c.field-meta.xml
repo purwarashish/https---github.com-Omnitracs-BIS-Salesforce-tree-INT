@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Top_Application__c</fullName>
+    <description>This is master detail with Custom Object &quot;Application&quot; .</description>
+    <externalId>false</externalId>
+    <label>Top Application</label>
+    <referenceTo>Application__c</referenceTo>
+    <relationshipLabel>Platform Application Junction</relationshipLabel>
+    <relationshipName>Platform_Application_Junction</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

@@ -1,0 +1,46 @@
+<!--
+ *******************************************************************************
+ * File:  TestRunGenerator
+ * Date:  June 4th, 2010
+ * Author:  Evan Hartig
+ *
+ * The use, disclosure, reproduction, modification, transfer, or transmittal of
+ * this work for any purpose in any form or by any means without the written 
+ * permission of Roadnet Technologies is strictly prohibited.
+ *
+ * Confidential, unpublished property of Roadnet Technologies.
+ * Use and distribution limited solely to authorized personnel.
+ *
+ * Copyright 2009, Roadnet Technologies, Inc.  All rights reserved.
+ *
+ * Purpose: 
+ *   VF page for generating Test Runs based on a list of Test Cases
+ *******************************************************************************
+ -->
+
+<apex:page standardController="Test_Case__c" extensions="TestRunGenerator" recordSetVar="testCases" >
+	<apex:form >
+		<apex:sectionHeader title="You're generating some" subtitle="Test Runs" />
+		
+		<apex:pageBlock >
+			<apex:pageBlockButtons >
+				<apex:commandbutton id="btnSave" action="{!saveTestRuns}" value="Save" />
+				<apex:commandbutton id="btnCancel" action="{!cancel}" value="Cancel" />
+			</apex:pageBlockButtons>
+			<apex:pageBlockSection columns="1">
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel id="lblAssignedTo" value="Assign Runs To" />
+					<apex:inputField id="nameInput" value="{!baseRun.Assigned_To__c}"  />
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel id="lblReason" value="Run Parameters" />
+					<apex:inputTextArea id="notesInput" value="{!baseRun.Parameters__c}" style="width: 40%"/>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel id="lblCompletionDate" value="Target Completion Date" />
+					<apex:inputField id="completionDateInput" value="{!baseRun.Target_Completion_Date__c}" />
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

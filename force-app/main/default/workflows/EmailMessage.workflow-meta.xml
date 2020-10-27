@@ -1,0 +1,888 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Append_Subject_for_Roadnet_Engineering</fullName>
+        <description>Every time a mail is received to Roadnet Engineering Case, subject line is updated</description>
+        <field>Subject</field>
+        <formula>&quot;Reply Needed-&quot; &amp;Subject</formula>
+        <name>Append Subject for Roadnet Engineering</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <targetObject>ParentId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CaseOriginEmailXtraSupportmail</fullName>
+        <field>Origin</field>
+        <literalValue>Email-Xtrasupport</literalValue>
+        <name>Case Origin - Email-XtraSupport.mail</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <targetObject>ParentId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CaseOriginEmailhubadmin</fullName>
+        <field>Origin</field>
+        <literalValue>Email-HubAdmin</literalValue>
+        <name>Case Origin - Email-hubadmin</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <targetObject>ParentId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CaseOwnerETS</fullName>
+        <field>OwnerId</field>
+        <lookupValue>ETS775351</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Case Owner - ETS</name>
+        <notifyAssignee>true</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <targetObject>ParentId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CaseOwnerHubAdmin</fullName>
+        <field>OwnerId</field>
+        <lookupValue>HubAdmin</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Case Owner - HubAdmin</name>
+        <notifyAssignee>true</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <targetObject>ParentId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CaseStatusReOpened</fullName>
+        <field>Status</field>
+        <literalValue>Re-opened</literalValue>
+        <name>Case Status - Re-Opened</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <targetObject>ParentId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Status_Closed2</fullName>
+        <field>Status</field>
+        <literalValue>Closed</literalValue>
+        <name>Case Status = Closed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <targetObject>ParentId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Substatus_Completed</fullName>
+        <field>Substatus__c</field>
+        <literalValue>Completed</literalValue>
+        <name>Case Substatus = Completed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <targetObject>ParentId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CategoryHubAdmin</fullName>
+        <field>Category__c</field>
+        <literalValue>HubAdmin</literalValue>
+        <name>Category - HubAdmin</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <targetObject>ParentId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ChangeQueuetoETSAS400Portal</fullName>
+        <field>Queue__c</field>
+        <formula>&quot;ETS-AS400/Portal&quot;</formula>
+        <name>Change Queue to ETS-AS400/Portal</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <targetObject>ParentId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ChangeQueuetoHubAdmin</fullName>
+        <field>Queue__c</field>
+        <formula>&quot;HubAdmin&quot;</formula>
+        <name>Change Queue to HubAdmin</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <targetObject>ParentId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>EOX_Substatus_to_Pending_Response</fullName>
+        <field>Substatus__c</field>
+        <literalValue>Pending Response</literalValue>
+        <name>EOX - Substatus to Pending Response</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <targetObject>ParentId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>EmailReceivedafterClosure</fullName>
+        <field>Email_Received_after_Closure__c</field>
+        <literalValue>1</literalValue>
+        <name>Email Received after Closure</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <targetObject>ParentId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>NMCChangesubstatustoNewEmailRecv</fullName>
+        <field>Substatus__c</field>
+        <literalValue>New Email Received</literalValue>
+        <name>NMC - Change substatus to New Email Recv</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <targetObject>ParentId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>NMCChangesubstatustoPendResponse</fullName>
+        <field>Substatus__c</field>
+        <literalValue>Pending Response</literalValue>
+        <name>NMC - Change substatus to Pend Response</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <targetObject>ParentId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Queue_Strategic_Support</fullName>
+        <field>OwnerId</field>
+        <lookupValue>RN_Tier_2</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Queue- Strategic Support</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <targetObject>ParentId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>StatusOpen</fullName>
+        <field>Status</field>
+        <literalValue>Open</literalValue>
+        <name>Status - Open</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <targetObject>ParentId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>StatusPending</fullName>
+        <field>Status</field>
+        <literalValue>Pending</literalValue>
+        <name>Status - Pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <targetObject>ParentId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_Pending</fullName>
+        <field>Status</field>
+        <literalValue>Pending</literalValue>
+        <name>Status - Pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <targetObject>ParentId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SubstatusNewEmailReceived</fullName>
+        <field>Substatus__c</field>
+        <literalValue>New Email Received</literalValue>
+        <name>Substatus - New Email Received</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <targetObject>ParentId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SubstatusPendingResponse</fullName>
+        <field>Substatus__c</field>
+        <literalValue>Response</literalValue>
+        <name>Substatus - Pending Response</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <targetObject>ParentId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Substatus_Pending_Customer</fullName>
+        <field>Substatus__c</field>
+        <literalValue>Customer Feedback</literalValue>
+        <name>Substatus - Pending Customer</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <targetObject>ParentId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Date_Time_First_Email_Response</fullName>
+        <description>Update the Case Date/Time First Email Response field with the current date/time.</description>
+        <field>Date_Time_First_Email_Response__c</field>
+        <formula>NOW()</formula>
+        <name>Update Date/Time First Email Response</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <targetObject>ParentId</targetObject>
+    </fieldUpdates>
+    <rules>
+        <fullName>Auto-Close Case %28CP-IT and ERP Only%29</fullName>
+        <actions>
+            <name>Case_Status_Closed2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Case_Substatus_Completed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>(1 OR 4) AND 2 AND 3</booleanFilter>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>CP/IT Support,ERP Support</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>New - Unassigned,Open,Pending,Re-opened,Escalated,On Hold,In progress,Resolved</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>EmailMessage.Subject</field>
+            <operation>contains</operation>
+            <value>closenow</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Origin</field>
+            <operation>equals</operation>
+            <value>Email-CP IT Support,Email - ERP Support</value>
+        </criteriaItems>
+        <description>Closes a case when the word &quot;CLOSENOW&quot; is in the subject of the email</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case Metrics - Email</fullName>
+        <actions>
+            <name>Update_Date_Time_First_Email_Response</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND (4 OR 5 OR 6)</booleanFilter>
+        <criteriaItems>
+            <field>EmailMessage.Incoming</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Date_Time_First_Email_Response__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.ProfileId</field>
+            <operation>notContain</operation>
+            <value>Interface</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>BillOps Support,SFDC Support,CEMS Support,DMA Support,CP/IT Support,CP Transactions IT Support,BI/DW IT Support,CNR IT Support,iQ IT Support,Project Request,Case Request,VMS Requests,OTS Support,Employee Portal Support,ERP Support,Infrastructure Support</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Datacenter Support,Windows Infrastructure Support,Network Support,DBA Support,SSG Support,iAdmin Support,VMS Admin Support,Engineering Tools Support,Account Admin Support,IAM Support,UNIX-Resolvers,PTA Support,Oracle DBA Team,Inside Customer Success</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Soporte Omnitracs México,Suporte Omnitracs Brasil,Omnitracs Canada Support,Confluence,JIRA,JIRA Admin,Perforce,Service Center Support,Sylectus Support,Email Generated Cases</value>
+        </criteriaItems>
+        <description>Automatically populate the Date/Time First Email Response field on a Case when the first email is sent.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Checked Flag on Closed Case</fullName>
+        <actions>
+            <name>EmailReceivedafterClosure</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND (4 OR 5 OR 6 OR 7)</booleanFilter>
+        <criteriaItems>
+            <field>EmailMessage.Incoming</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>Closed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>EmailMessage.Subject</field>
+            <operation>notContain</operation>
+            <value>Re-open,reopen</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Origin</field>
+            <operation>equals</operation>
+            <value>Email-Xtrasupport,Email-DMA,Email-SFDC,Email-Shrek,Email-Technical Support,Email-CP IT Support,Email-ETS,Email-CEMS,Email-BI/DW IT,Customer Portal,Email-Product Support,Email-QC Transfer,Email-BillOps,Email-HubAdmin,Email-Engineering Tools</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Origin</field>
+            <operation>equals</operation>
+            <value>Email-iQ IT,Email-CNR IT,Email-OTS,Email-VMS Request,Email - Employee Portal,Email - ERP,Email - Infrastructure,Email - Datacenter,Email - Windows Infrastructure,Email - Network,Email - DBA,Email - iAdmin,Email - SSG,Email - VMS Admin,Email-Account Admin</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Origin</field>
+            <operation>equals</operation>
+            <value>Email - UNIX-Resolvers,Email - Channel Support,Email - PTA Support,Email - XRS Tier 2,Email - XRS Tier 1,Email-Oracle DBA Team,Email - Sylectus Support,Email - Sales Administration</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Project Request,Case Request,Confluence,JIRA,JIRA Admin,Perforce,Service Center Support,Omnitracs Canada Support,OT Tech 3PAD</value>
+        </criteriaItems>
+        <description>Checks flag on closed case to indicate that a new email was received after closure</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Close Case %28CP-IT%2C ERP Support%29</fullName>
+        <actions>
+            <name>Case_Status_Closed2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Case_Substatus_Completed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5</booleanFilter>
+        <criteriaItems>
+            <field>EmailMessage.Incoming</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>New - Unassigned,Open,Pending,Re-opened,Escalated,On Hold,In progress,Resolved</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>EmailMessage.Subject</field>
+            <operation>contains</operation>
+            <value>closenow,CLOSENOW</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Origin</field>
+            <operation>equals</operation>
+            <value>Email-CP IT Support,Email - ERP Support</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>CP/IT Support,ERP Support</value>
+        </criteriaItems>
+        <description>Closes a case when the word CLOSENOW is in the subject of the email (for CP-IT and ERP Support cases only)</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>EOX - Update Case substatus when email arrives</fullName>
+        <actions>
+            <name>SubstatusNewEmailReceived</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>EmailMessage.Incoming</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Category__c</field>
+            <operation>equals</operation>
+            <value>EOX Return</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>EOX Return</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Substatus__c</field>
+            <operation>equals</operation>
+            <value>In Progress,Not Submitted,Pending Response</value>
+        </criteriaItems>
+        <description>Changes the substatus of the EOX Request case when an email is received</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>EOX - Update Case substatus when email is sent</fullName>
+        <actions>
+            <name>EOX_Substatus_to_Pending_Response</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>EmailMessage.Incoming</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Category__c</field>
+            <operation>equals</operation>
+            <value>EOX Return</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>EOX Return</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Substatus__c</field>
+            <operation>equals</operation>
+            <value>In Progress,Not Submitted,New Email Received</value>
+        </criteriaItems>
+        <description>Changes the substatus of the EOX Request case when an email is sent</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Email message for IQ Case</fullName>
+        <actions>
+            <name>CaseOwnerHubAdmin</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>ChangeQueuetoHubAdmin</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Subject</field>
+            <operation>contains</operation>
+            <value>Value Pack Access Requested</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Queue__c</field>
+            <operation>equals</operation>
+            <value>Field CS</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>EmailMessage.Incoming</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>NMC - Update Case substatus when email arrives</fullName>
+        <actions>
+            <name>NMCChangesubstatustoNewEmailRecv</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>EmailMessage.Incoming</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Substatus__c</field>
+            <operation>equals</operation>
+            <value>Not Submitted,Pending Response,Pending NMC Setup</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Category__c</field>
+            <operation>equals</operation>
+            <value>NMC Account Request</value>
+        </criteriaItems>
+        <description>Changes the substatus of the NMC Account Request case when an email is received</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>NMC - Update Case substatus when email is sent</fullName>
+        <actions>
+            <name>NMCChangesubstatustoPendResponse</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>EmailMessage.Incoming</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Substatus__c</field>
+            <operation>equals</operation>
+            <value>New Email Received,Not Submitted,Pending NMC Setup</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Category__c</field>
+            <operation>equals</operation>
+            <value>NMC Account Request</value>
+        </criteriaItems>
+        <description>Changes the substatus of the NMC Account Request case when an email is sent</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Re-Open Closed Case</fullName>
+        <actions>
+            <name>CaseStatusReOpened</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>SubstatusNewEmailReceived</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND (4 OR 5 OR 6 OR 8 OR 7 OR 9 OR 10 OR 11)</booleanFilter>
+        <criteriaItems>
+            <field>EmailMessage.Incoming</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>Closed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>EmailMessage.Subject</field>
+            <operation>contains</operation>
+            <value>Re-open,reopen</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Origin</field>
+            <operation>equals</operation>
+            <value>Email-Xtrasupport,Email-DMA,Email - Sales Administration,Email-SFDC,Email-Shrek,Email-CEMS,Email-Product Support,Customer Portal,Email-BillOps,Email-QC Transfer,Email-HubAdmin</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Category__c</field>
+            <operation>equals</operation>
+            <value>HubAdmin</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Origin</field>
+            <operation>equals</operation>
+            <value>Email-iQ,Email-BI/DW IT,Email-CNR IT,Email-OTS,Email-VMS Request,Email - Employee Portal,Email - Infrastructure,Email - Datacenter,Email - Windows Infrastructure,Email - Network,Email - DBA,Email - iAdmin,Email - SSG</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Project Request,Case Request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Origin</field>
+            <operation>equals</operation>
+            <value>Email - VMS Admin,Email-Engineering Tools,Email-Account Admin,Email - UNIX-Resolvers,Email - Channel Support,Email - PTA Support,Email - XRS Product Support,Email - XRS Sales Administration</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Origin</field>
+            <operation>equals</operation>
+            <value>Email - Lab Support,Email - XRS Fuel Tax,Email -OT Navigation Driver Feedback,Email-Oracle DBA Team,Email - Omni Finance Pricing,Email - Customer Setup,Email - CPQ Operations,Email - ERP,Email - Agile Support</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Origin</field>
+            <operation>equals</operation>
+            <value>Email - Carrier Notifications,Email - OT Tech 3PAD,Email-Omnitracs Canada Orders,Email-Omnitracs Canada Returns,Email-Omnitracs Canada Transfers,Email - Roadnet Telematics,Email - Soporte Omnitracs México,Email - Suporte Omnitracs Brasil</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Origin</field>
+            <operation>equals</operation>
+            <value>Confluence,JIRA,JIRA Admin,Perforce,Service Center Support</value>
+        </criteriaItems>
+        <description>Reopens a closed case when the word &quot;Re-Open&quot; is in the subject of the email (includes omni finance pricing, customer setup and messages/billing)</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Re-Open Closed Case - Sales%2EOps</fullName>
+        <actions>
+            <name>CaseStatusReOpened</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>SubstatusNewEmailReceived</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>EmailMessage.Incoming</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>Closed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Origin</field>
+            <operation>equals</operation>
+            <value>Email - Sales.Ops</value>
+        </criteriaItems>
+        <description>Reopens a closed Sales.Ops case.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Re-Open Closed Case without %22re-open%22 in subject %28Omnitracs Canada Support</fullName>
+        <actions>
+            <name>CaseStatusReOpened</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>SubstatusNewEmailReceived</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND 4</booleanFilter>
+        <criteriaItems>
+            <field>EmailMessage.Incoming</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>Closed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Origin</field>
+            <operation>equals</operation>
+            <value>Email-Omnitracs Canada Support,Email-ETS,Email-Technical Support,Email - XRS Tier 2,Email - XRS Tier 1,Phone</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Subject</field>
+            <operation>notContain</operation>
+            <value>Out of Office,Delivery Status Notification (Failure)</value>
+        </criteriaItems>
+        <description>Reopens a closed case when email is received in closed status</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Case status when new email message is sent</fullName>
+        <actions>
+            <name>StatusPending</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Substatus_Pending_Customer</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND (4 OR 5 OR 6)</booleanFilter>
+        <criteriaItems>
+            <field>EmailMessage.Incoming</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>notEqual</operation>
+            <value>Closed,New - Unassigned</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.ProfileId</field>
+            <operation>notContain</operation>
+            <value>Interface</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>BI/DW IT Support,BillOps Support,CEMS Support,CNR IT Support,CP/IT Support,DMA Support,SFDC Support,Case Request,Project Request,Change Request,VMS Requests,OTS Support,Employee Portal Support,ERP Support,Infrastructure Support,Datacenter Support</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Windows Infrastructure Support,Network Support,DBA Support,SSG Support,iAdmin Support,VMS Admin Support,Training Case,Engineering Tools Support,Account Admin Support,IAM Support,Oracle DBA Team,Omnitracs Canada Support,OT Tech 3PAD</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Soporte Omnitracs México,Suporte Omnitracs Brasil,Omnitracs Canada Support,Confluence,JIRA,JIRA Admin,Perforce,Service Center Support,Inside Customer Success</value>
+        </criteriaItems>
+        <description>changes the status and sub status of the case when a new email is sent to pending - customer feedback.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Case when new email message arrives</fullName>
+        <actions>
+            <name>StatusOpen</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>SubstatusNewEmailReceived</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND (5 OR 6 OR 7 OR 8 OR 9 OR 10)</booleanFilter>
+        <criteriaItems>
+            <field>EmailMessage.Incoming</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>notEqual</operation>
+            <value>Closed,New - Unassigned</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>EmailMessage.Subject</field>
+            <operation>notContain</operation>
+            <value>Re-open,reopen</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>EOX Return</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Category__c</field>
+            <operation>equals</operation>
+            <value>HubAdmin</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Origin</field>
+            <operation>equals</operation>
+            <value>,Email-Xtrasupport,Email-DMA,Email-SFDC,Email-Shrek,Email-Technical Support,Email-CP IT Support,Email-ETS,Email-CEMS,Email-BI/DW IT,Email-Product Support,Customer Portal,Email-BillOps,Email-QC Transfer,Email-HubAdmin,Email-Roadnet Support</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Origin</field>
+            <operation>equals</operation>
+            <value>Email-iQ IT,Email-CNR IT,Email-OTS,Email-VMS Request,Email - Employee Portal,Email - ERP,Email - Infrastructure,Email - Datacenter,Email - Windows Infrastructure,Email - Network,Email - DBA,Email-Engineering Tools,Email - UNIX-Resolvers</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Project Request,Case Request,SSG Support,iAdmin Support,VMS Admin Support,Training Case,Account Admin Support,Confluence,JIRA,JIRA Admin,Perforce,Service Center Support,Sylectus Support,Omnitracs Canada Support</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Origin</field>
+            <operation>equals</operation>
+            <value>Email - Channel Support,Email - PTA Support,Email - XRS Product Support,Email - XRS Sales Administration,Email - XRS Tier 2,Email - XRS Tier 1,Email - Soporte Omnitracs México,Email - Suporte Omnitracs Brasil</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Origin</field>
+            <operation>equals</operation>
+            <value>,Email-Omnitracs Canada Orders,Email-Omnitracs Canada Returns,Email - RN Sales Administration,Email - Roadnet Product Support,Email-Omnitracs Canada Transfers,Email - Sales Administration</value>
+        </criteriaItems>
+        <description>Updates the Status &amp; Substatus of a case when a new email is received if the case is not closed and the subject does not have the word &quot;Open&quot; in it.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Case when new email message is sent</fullName>
+        <actions>
+            <name>StatusPending</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>SubstatusPendingResponse</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND (4 OR 5)</booleanFilter>
+        <criteriaItems>
+            <field>EmailMessage.Incoming</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>notEqual</operation>
+            <value>Closed,New - Unassigned</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>EOX Return</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Category__c</field>
+            <operation>equals</operation>
+            <value>HubAdmin</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Origin</field>
+            <operation>equals</operation>
+            <value>Email-Technical Support,Email-ETS,Email-Xtrasupport,Customer Portal,Email-Product Support,Email-QC Transfer,Email-Shrek,Email-HubAdmin,Email - UNIX-Resolvers,Email - Channel Support,Email - PTA Support,Email - Sylectus Support</value>
+        </criteriaItems>
+        <description>changes the status and sub status of the case when a new email is sent to pending - response</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Engineering Case to Strategic Support</fullName>
+        <actions>
+            <name>Append_Subject_for_Roadnet_Engineering</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Queue_Strategic_Support</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>EmailMessage.Incoming</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>EmailMessage.Subject</field>
+            <operation>notContain</operation>
+            <value>Re-open,reopen</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.OwnerId</field>
+            <operation>equals</operation>
+            <value>Roadnet Engineering</value>
+        </criteriaItems>
+        <description>As per Zach Evans request, Thsi workflow updates the Case to Roadnet Strategic Support when a new email is received.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>XtraSupport%2Email Email list CC%27d</fullName>
+        <actions>
+            <name>CaseOriginEmailXtraSupportmail</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>CaseOwnerETS</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>ChangeQueuetoETSAS400Portal</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>EmailMessage.CcAddress</field>
+            <operation>contains</operation>
+            <value>XtraSupport.mail</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.OwnerId</field>
+            <operation>notEqual</operation>
+            <value>ETS-AS400/Portal</value>
+        </criteriaItems>
+        <description>transfers case when a mail list is cc&apos;d</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bundle_Product__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>This is the product record for the Bundle if the bundle has a SKU. These bundles will be handled as single products on the quote, and saved to opp as a single product. It is expected that the asset trigger will convert to component products and the CPQ tool will convert back to the single bundle product on reading the assets.</description>
+    <externalId>false</externalId>
+    <label>Bundle Product</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>Record does not exist or is not a Bundle.</errorMessage>
+        <filterItems>
+            <field>Product2.Is_Bundle__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Product2</referenceTo>
+    <relationshipLabel>Bundle Products</relationshipLabel>
+    <relationshipName>Bundle_Products</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

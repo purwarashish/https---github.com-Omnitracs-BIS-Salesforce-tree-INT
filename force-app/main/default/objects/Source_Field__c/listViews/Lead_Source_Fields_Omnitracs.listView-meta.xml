@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Source_Fields_Omnitracs</fullName>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>Field_Name__c</columns>
+    <columns>System_Name__c</columns>
+    <columns>Source_Field_Type__c</columns>
+    <columns>System_Field__c</columns>
+    <columns>Transformation__c</columns>
+    <columns>Inbound_Integration_Notes__c</columns>
+    <columns>Outbound_Integration_Notes__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Source_System__c</field>
+        <operation>equals</operation>
+        <value>Omnitracs Salesforce</value>
+    </filters>
+    <filters>
+        <field>Source_Object__c</field>
+        <operation>equals</operation>
+        <value>Lead</value>
+    </filters>
+    <label>Lead Source Fields (Omnitracs)</label>
+    <language>en_US</language>
+</ListView>

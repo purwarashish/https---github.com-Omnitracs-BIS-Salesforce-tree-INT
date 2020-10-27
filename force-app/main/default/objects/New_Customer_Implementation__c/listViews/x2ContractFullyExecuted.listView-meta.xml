@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>x2ContractFullyExecuted</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>currentStage__c</columns>
+    <columns>percentComplete__c</columns>
+    <columns>contractRequestDate__c</columns>
+    <columns>contractToShipStatus__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>currentStage__c</field>
+        <operation>equals</operation>
+        <value>2-Contract Fully Executed</value>
+    </filters>
+    <label>2-Contract Fully Executed</label>
+    <language>en_US</language>
+</ListView>

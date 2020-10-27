@@ -1,0 +1,15 @@
+{
+  "status": 0,
+  "result": {
+    "createdById": "00550000003hXiJAAU",
+    "createdByName": "Derick Santiago",
+    "createdDate": "2014-12-10T01:20:15.000Z",
+    "fileName": "sharingSets/Case_Sharing_based_on_Contact_field.sharingSet",
+    "fullName": "Case_Sharing_based_on_Contact_field",
+    "id": "0H250000000CairCAC",
+    "lastModifiedById": "00550000003h5fCAAQ",
+    "lastModifiedByName": "Casey Keeling",
+    "lastModifiedDate": "2018-12-31T20:53:04.000Z",
+    "type": "SharingSet"
+  }
+}

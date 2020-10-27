@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Complete_Call_Report</fullName>
+    <availability>online</availability>
+    <description>Click the button to complete call report status</description>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Complete Call Report</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/20.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/20.0/apex.js&quot;)} 
+var cr=new sforce.SObject(&quot;call_report__c&quot;); 
+cr.id=&quot;{!JSENCODE(Call_Report__c.Id)}&quot;; 
+crstatus=&quot;{!Call_Report__c.Status__c}&quot; 
+crmeetobj=&quot;{!JSENCODE(Call_Report__c.Meeting_Objective_Agenda__c)}&quot; 
+crmeetsum=&quot;{!JSENCODE(Call_Report__c.Meeting_Summary__c)}&quot; 
+cropit=&quot;{!JSENCODE(Call_Report__c.Operations_IT_Maintenance__c)}&quot; 
+crnextobj=&quot;{!JSENCODE(Call_Report__c.Next_Objective_Strategy__c)}&quot; 
+crrectype=&quot;{!JSENCODE(Call_Report__c.RecordTypeId)}&quot; 
+var r = confirm(&quot;Record will not be able to edit once status is moved to Complete.\nAre you sure want to Complete the Call Report?&quot;); 
+if(r == true &amp;&amp; crstatus == &quot;Completed&quot;) 
+{  
+alert(&quot;This Call Report is already Completed&quot;); 
+} 
+else if(r == true &amp;&amp; crstatus != &quot;Completed&quot; &amp;&amp; crrectype == &apos;01250000000QM6C&apos; &amp;&amp; (crmeetobj == &apos;&apos; || crmeetsum == &apos;&apos; || cropit === &apos;&apos; || crnextobj == &apos;&apos;)) 
+{ 
+
+alert(&quot;Call Report is not Completed. Please verify if all the below fields are completed.\nMeeting Objective / Agenda\nMeeting Summary\nOperations / IT / Maintenance\nNext Objective/Strategy&quot;); 
+} 
+else if (r == true &amp;&amp; crstatus != &quot;Completed&quot; &amp;&amp; crrectype == &apos;01250000000QM6C&apos; &amp;&amp; crmeetobj != &apos;&apos; &amp;&amp; crmeetsum != &apos;&apos; &amp;&amp; cropit != &apos;&apos; &amp;&amp; crnextobj != &apos;&apos;) 
+{ 
+cr.Status__c = &quot;Completed&quot;; 
+var result = sforce.connection.update([cr]); 
+window.location.reload(); 
+if (result[0].getBoolean(&quot;success&quot;)) 
+{ 
+alert(&quot;Call Report is Completed &quot;); 
+} 
+else 
+{ 
+alert(&quot;Sales Call Report is not Completed.&quot;); 
+} 
+} 
+else if (r == true &amp;&amp; crstatus != &quot;Completed&quot; &amp;&amp; crrectype == &apos;01250000000J5e3&apos;) 
+{ 
+cr.Status__c = &quot;Completed&quot;; 
+var result = sforce.connection.update([cr]); 
+window.location.reload(); 
+if (result[0].getBoolean(&quot;success&quot;)) 
+{ 
+alert(&quot;Call Report is Completed &quot;); 
+} 
+else 
+{ 
+alert(&quot;Product Management Call Report is not Completed.&quot;); 
+} 
+} 
+else if(r == false) 
+{ 
+alert(&quot;Operation Cancelled&quot;); 
+}</url>
+</WebLink>

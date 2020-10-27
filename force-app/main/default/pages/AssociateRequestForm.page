@@ -1,0 +1,105 @@
+<apex:page standardController="Request_Form__c" extensions="AssociateRequestFormController">
+	<style>
+		.statusStyle {
+		    background:url(/img/loading32.gif) no-repeat 0 0; 
+		    padding-left:20px; 
+		    margin-left:10px; 
+		    padding-bottom:5px; 
+		}
+		body.wait, body.wait * { cursor: wait !important; }
+	</style> 
+	 
+	<apex:actionStatus id="processRequest" stopText="">
+	    <apex:facet name="start">
+	        <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.6; z-index: 1000; background-color: black;"/>
+		    <div style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 1001; margin: 15% 50%">
+		        <div style="display: inline-block; padding: 2px; background-color: #fff; width: 125px;">
+		            <img src="/img/loading.gif" style="float: left; margin: 8px;" />
+		            <span style="display: inline-block; padding: 10px 0px;">Please Wait...</span>
+		        </div>
+		    </div>
+	    </apex:facet>
+	</apex:actionStatus> 
+	
+	 <apex:form id="frm">
+	 	<apex:outputText value="{!Request_Form__c.Legal_Entity_State__c}" rendered="false"/>
+	 	<apex:outputText value="{!Request_Form__c.Legal_Entity_Type__c}" rendered="false"/>
+	 	
+	 	 <apex:sectionHeader title="Associating Request Form Multiparties"/>
+	     <apex:outputPanel id="messagepanel">
+	    	<apex:pageMessages />
+	     </apex:outputPanel>
+	     <apex:outputPanel id="AssociatePanel" rendered="{!!submitSuccessfull}" >
+	     	 <div style="width:100%; padding-bottom:10px; padding-Top:10px; padding-left:550px; ">
+	     	 	<apex:commandButton action="{!Cancel}" value="Return to Request Form" immediate="true"/>&nbsp;&nbsp;&nbsp;
+     		 	<!--<apex:commandButton action="{!Associate}" value="Assocaite" status="processRequest" rerender="frm"/>   -->
+     		 </div>
+	     	 <div style="padding-bottom:50px; ">
+			     <apex:pageBlock id="associateABlock" title="Associating MultiParty Companies to Accounts">
+				    <apex:pageBlockButtons location="top">
+				    	<apex:commandButton action="{!updateAccountRFC}" value="Update Account(s)" status="processRequest" rerender="frm"/>
+				    	<apex:commandButton action="{!createAccountRFC}" value="Create Account(s)" status="processRequest" rerender="frm"/>
+				    </apex:pageBlockButtons>
+				    <apex:outputLabel style="font-size:13px;padding-bottom:15px; " value="This section provides the Accounts already present, if we could not find a match and want to create a new Account, select the check box and Associate the Account"/>
+			     	<div style="padding-top:15px; ">
+				     	<apex:pageBlockTable value="{!associatedAccounts}" var="rfc" >
+				        	<apex:column >
+					        	<apex:facet name="header">Create Account</apex:facet>
+					        	<apex:OutputPanel rendered="{!rfc.Account_Associated__c == null}">
+					        		<apex:InputCheckbox value="{!rfc.To_Create__c}"/>
+					        	</apex:OutputPanel>
+					        </apex:column>
+					        <apex:column >
+					        	<apex:facet name="header">Company Name entered in request form</apex:facet>
+					            <apex:OutputText value="{!rfc.Company__c}"/>
+					        </apex:column>
+					        <apex:column >
+					        	<apex:facet name="header">Account Found</apex:facet>
+					        	<apex:InputField value="{!rfc.Account_Associated__c}"/>
+					        </apex:column>
+					     </apex:pageBlockTable>
+					</div>
+				 </apex:pageBlock>
+			   </div>
+			 <apex:pageBlock id="associateCBlock" title="Associating MultiParties to Contacts">   
+			  	<apex:pageBlockButtons location="top">
+					<apex:commandButton action="{!updateContactRFC}" value="Update Contact(s)" status="processRequest" rerender="frm"/>
+			    	<apex:commandButton action="{!createContactRFC}" value="Create Contact(s)" status="processRequest" rerender="frm"/>
+			    </apex:pageBlockButtons>
+			  	<apex:outputLabel style="font-size:13px;padding-bottom:15px; " value="This section provides the Contacts already present and the Account associated, if we could not find a match and want to create a new Contact, select the check box and Associate the Contact"/>
+		     	<div style="padding-top:15px; "> 
+				     <apex:pageBlockTable value="{!associatedContacts}" var="rfc">
+				     	<apex:column >
+				        	<apex:facet name="header">Create Contact</apex:facet>
+				        	<apex:OutputPanel rendered="{!rfc.Contact_Associated__c == null && rfc.Account_Associated__c != null}">
+				        		<apex:InputCheckbox value="{!rfc.To_Create__c}"/>
+				        	</apex:OutputPanel>
+				        </apex:column>
+				        <apex:column >
+				        	<apex:facet name="header">MultiParty Name</apex:facet>
+				            <apex:OutputText value="{!rfc.First_Name__c + ' '+ rfc.Name__c}"/>
+				        </apex:column>
+				        <apex:column >
+				        	<apex:facet name="header">Contact Found</apex:facet>
+				        	<apex:InputField value="{!rfc.Contact_Associated__c}"/>
+				        </apex:column>
+				        <apex:column >
+				        	<apex:facet name="header">Authorized Signer</apex:facet>
+				        	<apex:OutputPanel rendered="{!rfc.Type__c == 'First Party'}">
+				        		<apex:InputField value="{!rfc.Authorized_Signer__c}"/>
+				        	</apex:OutputPanel>
+				        </apex:column>
+				        <apex:column >
+				        	<apex:facet name="header">Company Name entered in request form</apex:facet>
+				            <apex:OutputText value="{!rfc.Company__c}"/>
+				        </apex:column>
+				        <apex:column >
+					       <apex:facet name="header">Account Found</apex:facet>
+					       <apex:OutputField value="{!rfc.Account_Associated__c}"/>
+					    </apex:column>
+				     </apex:pageBlockTable>
+				 </div>
+		     </apex:pageBlock>
+		 </apex:outputPanel>
+     </apex:form>
+</apex:page>

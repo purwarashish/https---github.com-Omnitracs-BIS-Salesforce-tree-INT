@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Annual_Unit_Discount_Entered_As__c</fullName>
+    <description>User can enter the discount as either a currency amount or a percentage. The other value will be calculated and stored in the record. Calculations should be done using the value the user enters, and the UI should display only the value they enter back to the user.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Annual Unit Discount Amount for subscription. One-time unit discount amount for perpetual.</inlineHelpText>
+    <label>Annual Unit Discount Entered As</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Amount</fullName>
+                <default>false</default>
+                <label>Amount</label>
+            </value>
+            <value>
+                <fullName>Percentage</fullName>
+                <default>false</default>
+                <label>Percentage</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

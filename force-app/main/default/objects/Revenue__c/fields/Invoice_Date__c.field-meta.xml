@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invoice_Date__c</fullName>
+    <description>Converts Fiscal Period / Fiscal Year to date (assuming first day of the month)</description>
+    <externalId>false</externalId>
+    <formula>DATE(if(Fiscal_Period__c &lt; 4, Fiscal_Year__c - 1,Fiscal_Year__c),if(Fiscal_Period__c &lt; 4, Fiscal_Period__c + 9, Fiscal_Period__c -3),1)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Converts Fiscal Period / Fiscal Year to date (assuming first day of the month)</inlineHelpText>
+    <label>Invoice Date</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

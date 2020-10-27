@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Call_Report_Product</fullName>
+    <availability>online</availability>
+    <description>Replace the New button with new &quot;New&quot; button to pass values and return to originating object.</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>/a0p/e?CF00N50000001caCS={!Call_Report__c.Name}&amp;CF00N50000001caCS_lkid={!Call_Report__c.Id}&amp;retURL=%2F{!Call_Report__c.Id}&amp;saveURL=%2F{!Call_Report__c.Id}&amp;cancelURL=%2F{!Call_Report__c.Id}</url>
+</WebLink>

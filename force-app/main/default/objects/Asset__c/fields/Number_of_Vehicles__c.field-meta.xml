@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Number_of_Vehicles__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF
+(
+	License_Metric__c == &quot;Vehicles&quot;,
+	License_Metric_Quantity__c -  ( IF (ISNULL(Number_of_Mobile_Assets__c), 0, Number_of_Mobile_Assets__c) ),
+	null
+ )</formula>
+    <inlineHelpText>Roadnet only.</inlineHelpText>
+    <label># Vehicles</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

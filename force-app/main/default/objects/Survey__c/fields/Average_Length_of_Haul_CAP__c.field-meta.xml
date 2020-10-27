@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Average_Length_of_Haul_CAP__c</fullName>
+    <description>Used for CAP data collection.</description>
+    <externalId>false</externalId>
+    <label>Average Length of Haul (CAP)</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Local (Less than 100 miles)</fullName>
+                <default>false</default>
+                <label>Local (Less than 100 miles)</label>
+            </value>
+            <value>
+                <fullName>Regional (100-500 miles)</fullName>
+                <default>false</default>
+                <label>Regional (100-500 miles)</label>
+            </value>
+            <value>
+                <fullName>Long-haul (More than 500 miles)</fullName>
+                <default>false</default>
+                <label>Long-haul (More than 500 miles)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,585 @@
+<apex:page controller="MassScheduleExceptionController">
+<apex:includeScript value="{!URLFOR($Resource.PAS_JS_CSS, 'jquery-1.12.1.min.js')}"/>
+<script>
+
+  var j$ = jQuery.noConflict();
+  j$(document).ready(function()                       
+  {   
+      
+      jQuery('[id$=Contact]').attr('disabled','disabled');
+    
+      lstAssignSize='{!lstSize}';
+       setFocus();
+  });
+  function setFocus()
+   {
+     document.getElementById("fromDate").focus();
+   } 
+  
+  function oncmpltgetAssignment(issuccess)
+  {
+      if(issuccess)
+      {
+          jQuery('[id$=facetCheckBox]').val('false');
+          jQuery('[id$=sunday]').val('0.0');
+          jQuery('[id$=monday]').val('0.0');
+          jQuery('[id$=tuesday]').val('0.0');
+          jQuery('[id$=wednesday]').val('0.0');
+          jQuery('[id$=thrusday]').val('0.0');
+          jQuery('[id$=friday]').val('0.0');
+          jQuery('[id$=saturday]').val('0.0');
+      }
+  }
+  
+  function validateResource()
+  {
+      var frmFlag = true;
+      var resource = jQuery('[id$=Contact]').val().trim();
+      var assignstdate = jQuery('[id$=assignstdate]').val();
+      var assignenddate = jQuery('[id$=assignenddate]').val();
+      var date1 = new Date(assignstdate);
+      var date2 = new Date(assignenddate);
+      
+      if(resource == null || resource == '')
+      {
+          frmFlag = false;
+          j$("#attachError_resource").show();
+          j$(".FileError_resource").html('<div style="color:#CC0000" class="messages-inline">Error: You must enter a value</div>');                             
+      }
+      else{
+          j$("#attachError_resource").hide(); 
+      }
+      
+      if(assignstdate == null || assignstdate == '')
+      {
+          frmFlag = false;
+          j$("#attachError_stdate").show();
+          j$(".FileError_stdate").html('<div style="color:#CC0000" class="messages-inline">Error: You must enter a value</div>');                             
+      }
+      else{
+          j$("#attachError_stdate").hide(); 
+      }
+
+      if(assignenddate == null || assignenddate == '')
+      {
+          frmFlag = false;
+          j$("#attachError_endate").show();
+          j$(".FileError_endate").html('<div style="color:#CC0000" class="messages-inline">Error: You must enter a value</div>');                             
+      }
+      else if((assignstdate != null && assignstdate != '') && (assignenddate != null && assignenddate != '') && ( date2 < date1))
+      {          
+          frmFlag = false;
+          j$("#attachError_endate").show();
+          j$(".FileError_endate").html('<div style="color:#CC0000" class="messages-inline">Error: End Date can not be less than Start Date</div>'); 
+      }
+      else{
+          j$("#attachError_endate").hide(); 
+      }
+        
+      if(frmFlag)
+      {         
+          getActiveAssignment();
+          enableblockUI();
+      }     
+      else 
+       return false;
+  }
+  
+  function validateException()
+  {
+      var frmFlag = true;
+
+      var startDate = jQuery('[id$=startDate]').val().trim();
+      var endDate = jQuery('[id$=endDate]').val().trim();
+      var sunday = jQuery('[id$=sunday]').val().trim();
+      var monday = jQuery('[id$=monday]').val().trim();
+      var tuesday = jQuery('[id$=tuesday]').val().trim();
+      var wednesday = jQuery('[id$=wednesday]').val().trim();
+      var thrusday = jQuery('[id$=thrusday]').val().trim();
+      var friday = jQuery('[id$=friday]').val().trim();
+      var saturday = jQuery('[id$=saturday]').val().trim();
+      var assignCheckbox = jQuery('[id$=checkedone]').val();
+      
+      var sDate = new Date(startDate);
+      var eDate = new Date(endDate);
+       
+
+      if(startDate == null || startDate == '')
+      {
+          frmFlag = false;        
+          j$("#attachError_startDate").show();
+          j$(".FileError_startDate").html('<div style="color:#CC0000" class="messages-inline">Error: You must enter a value</div>');    
+      }
+      else
+      {
+          j$("#attachError_startDate").hide();                 
+      }
+      if(endDate == null || endDate == '')
+      {
+          frmFlag = false;
+          j$("#attachError_endDate").show();
+          j$(".FileError_endDate").html('<div style="color:#CC0000" class="messages-inline">Error: You must enter a value</div>');                  
+      }
+      else
+      {
+        j$("#attachError_endDate").hide();               
+      }
+      
+      if(eDate < sDate )
+      {  
+          frmFlag = false;
+          if(endDate == null || endDate == ''){ 
+              j$("#attachError_less").hide();
+          }
+          else{        
+              j$("#attachError_less").show();
+              j$(".FileError_less").html('<div style="color:#CC0000" class="messages-inline">Error: End Date can not be less than Start Date</div>');
+          }
+      }
+      else
+      {
+          j$("#attachError_less").hide();                  
+      }
+         
+      if(sunday == null || sunday == '')
+      {
+          frmFlag = false;          
+          j$("#attachError_sunday").show();
+          j$(".FileError_sunday").html('<div style="color:#CC0000" class="messages-inline">Error: You must enter a value</div>');    
+      }
+      else if(sunday > 12 || sunday > 12.0)
+      {
+          frmFlag = false;          
+          j$("#attachError_sunday").show();
+          j$(".FileError_sunday").html('<div style="color:#CC0000" class="messages-inline">Error: Work Effort Can not be more than 12 hours</div>');
+      }
+      else if(sunday < 0 || sunday < 0.0)
+      {
+          frmFlag = false;          
+          j$("#attachError_sunday").show();
+          j$(".FileError_sunday").html('<div style="color:#CC0000" class="messages-inline">Error: Please enter non-negetive Work Effort</div>');
+      }
+      else
+      {
+          j$("#attachError_sunday").hide();                 
+      }
+      
+      if(monday == null || monday == '')
+      {
+          frmFlag = false;
+          j$("#attachError_monday").show();
+          j$(".FileError_monday").html('<div style="color:#CC0000" class="messages-inline">Error: You must enter a value</div>');
+      }
+      else if(monday > 12 || monday > 12.0)
+      {
+          frmFlag = false;
+          j$("#attachError_monday").show();
+          j$(".FileError_monday").html('<div style="color:#CC0000" class="messages-inline">Error: Work Effort Can not be more than 12 hours</div>');
+      }
+      else if(monday < 0 || monday < 0.0)
+      {
+          frmFlag = false;          
+          j$("#attachError_monday").show();
+          j$(".FileError_monday").html('<div style="color:#CC0000" class="messages-inline">Error: Please enter non-negetive Work Effort</div>');
+      }
+      else{
+          j$("#attachError_monday").hide();
+                
+      }
+      
+      if(tuesday == null || tuesday == '')
+      {
+          frmFlag = false;         
+          j$("#attachError_tuesday").show();
+          j$(".FileError_tuesday").html('<div style="color:#CC0000" class="messages-inline">Error: You must enter a value</div>');    
+      }
+      else if(tuesday > 12 || tuesday > 12.0)
+      {
+          rmFlag = false;         
+          j$("#attachError_tuesday").show();
+          j$(".FileError_tuesday").html('<div style="color:#CC0000" class="messages-inline">Error:  Work Effort Can not be more than 12 hours</div>');
+      }
+      else if(tuesday < 0 || tuesday < 0.0)
+      {
+          frmFlag = false;          
+          j$("#attachError_tuesday").show();
+          j$(".FileError_tuesday").html('<div style="color:#CC0000" class="messages-inline">Error: Please enter non-negetive Work Effort</div>');
+      }
+      else
+      {
+          j$("#attachError_tuesday").hide();                  
+      }
+      
+      if(wednesday == null || wednesday == '')
+      {
+          frmFlag = false;
+          j$("#attachError_wednesday").show();
+          j$(".FileError_wednesday").html('<div style="color:#CC0000" class="messages-inline">Error: You must enter a value</div>');
+      }
+      else if(wednesday > 12 || wednesday > 12.0)
+      {
+           frmFlag = false;
+          j$("#attachError_wednesday").show();
+          j$(".FileError_wednesday").html('<div style="color:#CC0000" class="messages-inline">Error: Work Effort Can not be more than 12 hours</div>');
+      }
+      else if(wednesday < 0 || wednesday < 0.0)
+      {
+          frmFlag = false;          
+          j$("#attachError_wednesday").show();
+          j$(".FileError_wednesday").html('<div style="color:#CC0000" class="messages-inline">Error: Please enter non-negetive Work Effort</div>');
+      }
+      else{
+          j$("#attachError_wednesday").hide();
+                
+      }
+      
+      if(thrusday == null || thrusday == '')
+      {
+          frmFlag = false;  
+          j$("#attachError_thrusday").show();
+          j$(".FileError_thrusday").html('<div style="color:#CC0000" class="messages-inline">Error: You must enter a value</div>');    
+      }
+      else if(thrusday > 12 || thrusday > 12.0)
+      {
+          frmFlag = false;  
+          j$("#attachError_thrusday").show();
+          j$(".FileError_thrusday").html('<div style="color:#CC0000" class="messages-inline">Error: Work Effort Can not be more than 12 hours</div>');
+      }
+      else if(thrusday < 0 || thrusday < 0.0)
+      {
+          frmFlag = false;          
+          j$("#attachError_thrusday").show();
+          j$(".FileError_thrusday").html('<div style="color:#CC0000" class="messages-inline">Error: Please enter non-negetive Work Effort</div>');
+      }
+      else
+      {
+          j$("#attachError_thrusday").hide();                  
+      }
+      
+      if(friday == null || friday == '')
+      {
+          frmFlag = false;
+          j$("#attachError_friday").show();
+          j$(".FileError_friday").html('<div style="color:#CC0000" class="messages-inline">Error: You must enter a value</div>');
+      }
+      else if(friday > 12 || friday > 12.0)
+      {
+          frmFlag = false;
+          j$("#attachError_friday").show();
+          j$(".FileError_friday").html('<div style="color:#CC0000" class="messages-inline">Error: Work Effort Can not be more than 12 hours</div>');
+      }
+      else if(friday < 0 || friday < 0.0)
+      {
+          frmFlag = false;          
+          j$("#attachError_friday").show();
+          j$(".FileError_friday").html('<div style="color:#CC0000" class="messages-inline">Error: Please enter non-negetive Work Effort</div>');
+      }
+      else{
+          j$("#attachError_friday").hide();
+                
+      }
+      
+      if(saturday == null || saturday == '')
+      {
+          frmFlag = false;          
+          j$("#attachError_saturday").show();
+          j$(".FileError_saturday").html('<div style="color:#CC0000" class="messages-inline">Error: You must enter a value</div>');    
+      }
+      if(saturday > 12 || saturday > 12.0)
+      {
+          frmFlag = false;          
+          j$("#attachError_saturday").show();
+          j$(".FileError_saturday").html('<div style="color:#CC0000" class="messages-inline">Error: Work Effort Can not be more than 12 hours</div>');    
+      }
+      else if(saturday < 0 || saturday < 0.0)
+      {
+          frmFlag = false;          
+          j$("#attachError_saturday").show();
+          j$(".FileError_saturday").html('<div style="color:#CC0000" class="messages-inline">Error: Please enter non-negetive Work Effort</div>');
+      }
+      else
+      {
+          j$("#attachError_saturday").hide();                 
+      }
+        
+      if(frmFlag)
+      {
+          var x = confirm("Are you sure you want to Save?");
+           if(x)
+           {
+              getscheduleInfo();
+              enableblockUI();
+           }
+          return false;
+      }
+      else
+       return false;            
+  }  
+       
+  
+  function openLookup(baseURL, width, modified, searchParam){
+    
+    var originalbaseURL = baseURL;
+    var originalwidth = width;
+    var originalmodified = modified;
+    var originalsearchParam = searchParam;
+
+    var lookupType = baseURL.substr(baseURL.length-3, 3);
+    if (modified == '1') baseURL = baseURL + searchParam;
+
+    var isCustomLookup = false;
+
+    // Following "003" is the lookup type for Contact object
+    if(lookupType == "003")
+    {
+      var urlArr = baseURL.split("&");
+      var txtId = '';
+      if(urlArr.length > 2)
+      {
+          urlArr = urlArr[1].split('=');
+          txtId = urlArr[1];
+      }
+
+      // Following is the url of Custom Lookup page.
+      baseURL = "/apex/CustomResourceLookup?txt=" + txtId;
+
+      // Following is the id of apex:form control "myForm".
+      baseURL = baseURL + "&frm=" + escapeUTF("{!$Component.myForm}");
+      if (modified == '1') {
+        baseURL = baseURL + "&lksearch=" + searchParam;
+      }
+
+      // Following is the ID of inputField that is the lookup to be customized as custom lookup
+      if(txtId.indexOf('Contact') > -1 ){
+        isCustomLookup = true;
+      }
+    }
+
+    if(isCustomLookup == true){
+      openPopup(baseURL, "lookup", 350, 480, "width="+width+",height=480,toolbar=no,status=no,directories=no,menubar=no,resizable=yes,scrollable=no", true);
+    }
+    else {
+      if (modified == '1') originalbaseURL = originalbaseURL + originalsearchParam;
+      openPopup(originalbaseURL, "lookup", 350, 480, "width="+originalwidth+",height=480,toolbar=no,status=no,directories=no,menubar=no,resizable=yes,scrollable=no", true);
+    } 
+  }
+
+  function checkAll(cb)
+  {
+      var inputElem = document.getElementsByTagName("input");
+      for(var i=0; i<inputElem.length; i++)
+      {
+          if(inputElem[i].id.indexOf("checkedone")!=-1)
+          inputElem[i].checked = cb.checked;
+      }
+  }
+   
+  function enableblockUI()
+  {  
+    j$("#overlay").show();
+  }
+  function disableBlockUI()
+  {   
+    j$("#overlay").hide();   
+  }
+     
+</script>
+<style>
+#overlay 
+{
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 999;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width:100%;
+    height:100%;
+    display:none;
+    background-image: url('/img/loading32.gif');
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: 3%, 3%, 3%; 
+} 
+</style>
+
+<apex:Form id="myForm">
+<div id="overlay"></div>
+      <apex:actionRegion >
+      <apex:PageBlock Title="Mass Schedule Exception" >
+          <apex:PageBlockSection columns="3">
+                   
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Resource" />
+                <apex:outputPanel styleClass="requiredInput" layout="block" id="contactPanel"  >
+                    <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                    <apex:Inputfield id="Contact" value="{!assignment.pse__Resource__c}" /> 
+                    <div id="attachError_resource" class="FileError_resource"></div> 
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="StartDate" />
+                <apex:outputPanel styleClass="requiredInput" layout="block" id="stdatePanel">
+                  <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                  <apex:Inputfield id="assignstdate" value="{!datefilterScheduler.pse__Start_Date__c}" required="false"/>                  
+                  <div id="attachError_stdate" class="FileError_stdate"></div> 
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="EndDate" />
+                <apex:outputPanel styleClass="requiredInput" layout="block" id="enddatePanel">
+                  <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                  <apex:Inputfield id="assignenddate" value="{!datefilterScheduler.pse__End_Date__c}" required="false"/>                  
+                  <div id="attachError_endate" class="FileError_endate"></div>
+                </apex:outputPanel>   
+            </apex:pageBlockSectionItem>
+          
+          </apex:PageBlockSection>
+          <br/><br/>
+          <center><input type="button" value="Get Active Assignments" id="getAssignment" onclick="validateResource();"/></center>
+           
+          <apex:outputPanel layout="block" id="noresult">
+          <apex:outputText rendered="{!IF((isnoresult == true && listActiveAssignmentWrapper.size == 0), TRUE, FALSE)}" ><p style="color: red;">Sorry! no results to display, Please choose any other Resource or different date range </p></apex:outputText>  
+          </apex:outputPanel>
+
+          <apex:outputPanel id="activeAssignmentList" style="{!IF(listActiveAssignmentWrapper.size <4,'margin:10px;height:200px','margin:10px;height:300px')}; overflow-Y:auto;" layout="block">               
+          <apex:pageBlockSection columns="1" rendered="{!flag}" title="Assignments" >
+          
+            <apex:pageBlockTable id="assignmentlisttable" value="{!listActiveAssignmentWrapper}" var="as">
+            
+              <apex:column >
+                <apex:facet name="header"> 
+                  <apex:inputCheckbox id="facetCheckBox" onclick="checkAll(this)"></apex:inputCheckbox>
+                </apex:facet>
+                <apex:inputCheckbox id="checkedone" value="{!as.selectedWR}"></apex:inputCheckbox>
+              </apex:column>
+              
+              <apex:column headerValue="Assignment Name">
+                <apex:outputLink target="_blank" value="/{!as.assignmentWR.Id}" id="assignmentLink"> <apex:outputField value="{!as.assignmentWR.Name}"/> </apex:outputLink>
+              </apex:column>
+              <apex:column headerValue="Project Name">
+                <apex:outputLink target="_blank" value="/{!as.assignmentWR.pse__Project__c}" id="projectLink"> <apex:outputField value="{!as.assignmentWR.pse__Project__r.Name}"/> </apex:outputLink>
+              </apex:column>
+              <apex:column headerValue="Assignment Start Date">
+                <apex:outputField value="{!as.assignmentWR.pse__Schedule__r.pse__Start_Date__c}"/>
+              </apex:column>
+              <apex:column headerValue="Assignment End Date">
+                <apex:outputField value="{!as.assignmentWR.pse__Schedule__r.pse__End_Date__c}"/>
+              </apex:column>
+            
+            </apex:pageBlockTable>
+
+           </apex:pageBlockSection>  
+          </apex:outputPanel>          
+          
+        </apex:PageBlock>
+        </apex:actionRegion>
+        
+        <apex:actionRegion >        
+        <apex:outputPanel layout="none" id="createExceptionpanel">
+        <apex:PageBlock rendered="{!flag}" Title="Schedule Exception">
+          <apex:pageMessages escape="false"/>
+
+          <apex:pageBlockButtons id="pb1">
+            <input type="button" value="Save" onclick="validateException();"/> 
+                  
+          </apex:pageBlockButtons>
+            
+          <apex:pageBlockSection id="pb2" columns="2">      
+
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Start Date" />
+                <apex:outputPanel styleClass="requiredInput" layout="block" id="sdPanel" >
+                    <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                    <apex:inputField id="startDate" value="{!scheduleException.pse__Date__c}" required="false"/>
+                    <div id="attachError_startDate" class="FileError_startDate"></div>
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+                        
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="End Date" />
+                <apex:outputPanel styleClass="requiredInput" layout="block" id="edPanel" >
+                    <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                      <apex:inputField id="endDate" value="{!scheduleException.pse__End_Date__c}" /> 
+                      <div id="attachError_endDate" class="FileError_endDate"></div>
+                      <div id="attachError_less" class="FileError_less"></div>
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>            
+                        
+            <apex:inputCheckbox id="moveEndDate" value="{!MoveEndDate}" label="Move Assignment End Date"/>
+            <apex:inputCheckbox id="Overlap" value="{!autoAdjustOverlappingException}" label="Auto Adjust Overlapping Exception"/>
+
+            <apex:pageBlockSectionItem >Pattern
+              <apex:pageBlockTable value="{!scheduleException}" var="se">
+              
+                <apex:column headerValue="Sun">
+                  <apex:outputPanel styleClass="requiredInput" layout="block" id="sundayPanel" >
+                   <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                     <apex:inputField id="sunday" value="{!se.pse__Sunday_Hours__c}" style="width:35px;"/>
+                     <div id="attachError_sunday" class="FileError_sunday"></div>
+                  </apex:outputPanel>
+                </apex:column>
+                
+                <apex:column headerValue="Mon">
+                <apex:outputPanel styleClass="requiredInput" layout="block" id="mondayPanel" >
+                   <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                     <apex:inputField id="monday" value="{!se.pse__Monday_Hours__c}" style="width:35px;"/>
+                     <div id="attachError_monday" class="FileError_monday"></div>
+                  </apex:outputPanel> 
+                </apex:column>
+                               
+                <apex:column headerValue="Tue">
+                  <apex:outputPanel styleClass="requiredInput" layout="block" id="tuesdayPanel" >
+                   <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                      <apex:inputField id="tuesday" value="{!se.pse__Tuesday_Hours__c}" style="width:35px;"/>
+                      <div id="attachError_tuesday" class="FileError_tuesday"></div>
+                  </apex:outputPanel> 
+                </apex:column>
+                          
+                <apex:column headerValue="Wed">
+                 <apex:outputPanel styleClass="requiredInput" layout="block" id="wednesdayPanel" >
+                   <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                      <apex:inputField id="wednesday" value="{!se.pse__Wednesday_Hours__c}" style="width:35px;"/>
+                      <div id="attachError_wednesday" class="FileError_wednesday"></div>
+                  </apex:outputPanel> 
+                </apex:column>
+                                
+                <apex:column headerValue="Thu">
+                <apex:outputPanel styleClass="requiredInput" layout="block" id="thrusdayPanel" >
+                   <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                     <apex:inputField id="thrusday" value="{!se.pse__Thursday_Hours__c}" style="width:35px;"/>
+                     <div id="attachError_thrusday" class="FileError_thrusday"></div>
+                  </apex:outputPanel>
+                </apex:column>
+                
+                <apex:column headerValue="Fri">
+                <apex:outputPanel styleClass="requiredInput" layout="block" id="fridayPanel" >
+                   <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                     <apex:inputField id="friday" value="{!se.pse__Friday_Hours__c}" style="width:35px;"/>
+                     <div id="attachError_friday" class="FileError_friday"></div>
+                  </apex:outputPanel>
+                </apex:column>                               
+                
+                <apex:column headerValue="Sat">
+                <apex:outputPanel styleClass="requiredInput" layout="block" id="satdayPanel" >
+                   <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                      <apex:inputField id="saturday" value="{!se.pse__Saturday_Hours__c}" style="width:35px;"/>
+                      <div id="attachError_saturday" class="FileError_saturday"></div>
+                  </apex:outputPanel>
+                </apex:column>
+                                            
+             </apex:pageBlockTable>
+            </apex:pageBlockSectionItem>
+                  
+          </apex:pageBlockSection>
+                            
+        </apex:PageBlock>
+        </apex:outputPanel>
+        </apex:actionRegion>
+      
+      <apex:actionFunction name="getActiveAssignment" id="getActiveAssignment" action="{!ActiveAssignments}"  reRender="activeAssignmentList, createExceptionpanel, noresult" oncomplete="oncmpltgetAssignment({!issuccess});disableBlockUI();"/>
+      <apex:actionFunction name="getscheduleInfo" id="getscheduleInfo" action="{!verifySchedule}"  reRender="activeAssignmentList, createExceptionpanel" oncomplete="oncmpltgetAssignment({!issuccess});disableBlockUI();"/>
+                   
+  </apex:Form>
+</apex:page>

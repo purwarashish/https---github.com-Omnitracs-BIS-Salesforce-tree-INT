@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_VPN</fullName>
+    <columns>NAME</columns>
+    <columns>NMC_Account__c</columns>
+    <columns>Connection_Status__c</columns>
+    <columns>CI_Type__c</columns>
+    <columns>Connection_Type__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Connection_Type__c</field>
+        <operation>equals</operation>
+        <value>VPN</value>
+    </filters>
+    <filters>
+        <field>Connection_Status__c</field>
+        <operation>contains</operation>
+        <value>Active</value>
+    </filters>
+    <filters>
+        <field>Connection_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Inactive</value>
+    </filters>
+    <label>Active VPN</label>
+    <language>en_US</language>
+    <sharedTo>
+        <allInternalUsers/>
+    </sharedTo>
+</ListView>

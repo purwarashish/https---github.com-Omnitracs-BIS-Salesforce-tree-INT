@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pricing_Procedure_Sequence__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Pricing Procedure Sequence</label>
+    <referenceTo>VCG_CPQ_Pricing_Procedure_Sequence__c</referenceTo>
+    <relationshipLabel>VCG CPQ Quote Product Pricing Results</relationshipLabel>
+    <relationshipName>VCG_CPQ_Quote_Product_Pricing_Results</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

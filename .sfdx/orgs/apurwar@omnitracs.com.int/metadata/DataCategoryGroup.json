@@ -1,0 +1,70 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "datacategorygroups/Hardware_Platform.datacategorygroup",
+      "fullName": "Hardware_Platform",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": "DataCategoryGroup"
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "datacategorygroups/Internal_Access.datacategorygroup",
+      "fullName": "Internal_Access",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": "DataCategoryGroup"
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "datacategorygroups/Applications.datacategorygroup",
+      "fullName": "Applications",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": "DataCategoryGroup"
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "datacategorygroups/Network_System.datacategorygroup",
+      "fullName": "Network_System",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": "DataCategoryGroup"
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "datacategorygroups/MIBOS.datacategorygroup",
+      "fullName": "MIBOS",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": "DataCategoryGroup"
+    }
+  ]
+}

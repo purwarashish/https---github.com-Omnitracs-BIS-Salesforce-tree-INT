@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Monthly_Unit_Discount_Percentage__c</fullName>
+    <description>Discretionary Discount entered by the user. In the UI, user can enter a currency amount or a percentage. If they enter a currency amount, the amount gets converted to a percentage before being stored.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Technically this is the &quot;Monthly Unit Discount&quot;, but a percentage is the same whether it is monthly, annual, or one-time (i.e. for perpetual products)</inlineHelpText>
+    <label>Unit Discount Percentage</label>
+    <precision>5</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

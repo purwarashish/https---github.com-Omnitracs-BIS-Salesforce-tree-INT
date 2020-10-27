@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RN_Product_Concatenation__c</fullName>
+    <description>Owned by Sales (Hy Mixson/Dean Bikle) and PM (Casey Crawford). Required as part of the MBO to track RTS to RNA Product Migrations.</description>
+    <externalId>false</externalId>
+    <formula>IF(Active_Alert__c = TRUE, &quot;AA &quot;, &quot;&quot;)&amp;&quot;&quot;&amp; 
+IF(Fleet_Loader__c = TRUE, &quot;FL &quot;, &quot;&quot;)&amp;&quot;&quot;&amp; 
+IF(Mobilecast__c = TRUE, &quot;MC &quot;, &quot;&quot;)&amp;&quot;&quot;&amp; 
+IF(Roadnet__c = TRUE, &quot;RN &quot;, &quot;&quot;)&amp;&quot;&quot;&amp;
+IF(Roadnet_Performance_Dashboard__c = TRUE, &quot;RPD &quot;, &quot;&quot;)&amp;&quot;&quot;&amp;
+IF(Scheduler__c = TRUE, &quot;NS &quot;, &quot;&quot;)&amp;&quot;&quot;&amp; 
+IF(Mobilecast_Phone__c = TRUE, &quot;PH &quot;, &quot;&quot;)&amp;&quot;&quot;&amp; 
+IF(Territory_Planner__c = TRUE , &quot;TP &quot;, &quot;&quot;)&amp;&quot;&quot;&amp; 
+IF(X3rd_Party_Mobile__c = TRUE , &quot;3PM &quot;, &quot;&quot;)&amp;&quot;&quot;&amp;
+IF(XRS_Standalone_XRS_S__c = TRUE , &quot;XRS-S &quot;, &quot;&quot;)&amp;&quot;&quot;&amp;
+IF(XRS_XRS__c = TRUE , &quot;XRS &quot;, &quot;&quot;)&amp;&quot;&quot;&amp;
+IF(Telematics_Adapter_TA__c = TRUE , &quot;TA &quot;, &quot;&quot;)&amp;&quot;&quot;&amp;
+IF(Bridge_Dispatch__c = TRUE , &quot;BD &quot;, &quot;&quot;)&amp;&quot;&quot;&amp;
+IF(Bridge_Insight__c = TRUE , &quot;BI &quot;, &quot;&quot;)&amp;&quot;&quot;&amp;
+IF(Bridge_Telematics__c = TRUE , &quot;BT &quot;, &quot;&quot;)</formula>
+    <inlineHelpText>Formulaic display used for reporting, based on which products the customer is using.</inlineHelpText>
+    <label>RN Product Concatenation</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

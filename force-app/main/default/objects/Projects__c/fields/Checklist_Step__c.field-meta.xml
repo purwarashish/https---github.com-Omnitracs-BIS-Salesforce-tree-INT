@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Checklist_Step__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE ( Percent_Complete_Score__c , 20, &quot;1 - Estimate Delivered (1 of 5)&quot;, 40, &quot;2 - Estimate Accepted (2 of 5)&quot;, 60, &quot;3 - Work Completed (3 of 5)&quot;, 80, &quot;4 - Final Acceptance (4 of 5)&quot;, 100, &quot;5 -  Submitted for Billing (5 of 5)&quot;, &quot;0 - Not started (0 of 5)&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Checklist Step</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,104 @@
+<!---------------------------------------------------------------------------------------------------
+Name : showIdeasAccount
+Author : Shruti Karn
+Date : 31 January 2011
+
+Usage : Page for displaying all Accounts related to the Idea and also to link new Accounts to the Idea.
+    
+
+----------------------------------------------------------------------------------------------------->
+
+<apex:page controller="ShowIdeasAccountController" tabStyle="Idea" id="IdeaAccountPage">
+<script language="Javascript">
+    function Verify()
+    {
+        var answer = confirm('Are you sure?');
+        if(answer)
+        {
+    
+          return true;
+        }
+       else
+       {
+            return false;
+       }
+    }
+    
+    function changeOrder(objId)
+    {
+        //alert(objId);
+        selectedValue.value=objId;
+        Change();
+    }
+
+</script>
+  <apex:form id="form">
+      <apex:actionFunction name="Ordering" action="{!alphabetOrdering}" />
+      <apex:actionFunction name="Change" action="{!changeOrder}" />
+      <apex:sectionHeader title="" subtitle="Linked Accounts - {!ideaTitle}"/>
+      <apex:pageBlock id="ideapgblk">
+          <apex:pageBlockButtons >
+              <apex:commandButton value="New" action="/a1Q/e?retURL=/apex/showIdeasAccount?Id={!IdeaId}&CF00N50000002WZN1={!ideaTitle}&CF00N50000002WZN1_lkid={!IdeaId}"/>
+               <apex:commandButton value="Cancel" action="/ideas/viewIdea.apexp?id={!IdeaId}"/>
+          </apex:pageBlockButtons>
+          <apex:include pageName="Alphabet_Ordering_Ideas" />
+          <apex:pageblockTable value="{!lstAccountIdea}" var="acct" id="pgblktbl">
+              <apex:column headerValue="Action" width="10%">
+                  <apex:outputPanel style="width:20%;">
+                            <apex:commandLink value="Edit"
+                                action="/apex/NewAccountIdeaLink?Id={!acct.Id}" rendered="true" />&nbsp;<apex:outputText value="|" />&nbsp;<apex:commandLink value="Del" onclick="javascript: return Verify();"
+                                action="/setup/own/deleteredirect.jsp?delID={!acct.Id}&retURL=/apex/showIdeasAccount?Id={!acct.Idea__c}" />
+                  </apex:outputPanel>
+              </apex:column>
+              <apex:column id="CI">
+                <apex:facet name="header">
+                      <apex:outputPanel id="CIpanel" style="width:40%" >
+                          <apex:commandLink id="Name" style="font-weight:bold;word-wrap:break-word;"  value="CI #" rerender="CIpanel,pgblktbl" onclick="javascript:changeOrder('Name');" >
+                              <apex:image value="../img/sort_asc_arrow.gif" rendered="{!AND(asce,if(current_value == 'Name',true,false))}" />
+                              <apex:image value="../img/sort_desc_arrow.gif" rendered="{!AND(NOT(asce),if(current_value == 'Name',true,false))}" />
+                          </apex:commandLink>
+                      </apex:outputPanel>
+                  </apex:facet>
+                  <apex:outputField value="{!acct.Name}"/>
+                  
+              </apex:column> 
+              <apex:column width="25%" id="account"> 
+                  <apex:facet name="header">
+                      <apex:outputPanel id="panel1" style="width:40%" >
+                          <apex:commandLink id="Acct" style="font-weight:bold;word-wrap:break-word;"  value="Account Name" rerender="panel1,pgblktbl" onclick="javascript:changeOrder('Account__r.Name');" >
+                              <apex:image value="../img/sort_asc_arrow.gif" rendered="{!AND(asce,if(current_value == 'Account__r.Name',true,false))}" />
+                              <apex:image value="../img/sort_desc_arrow.gif" rendered="{!AND(NOT(asce),if(current_value == 'Account__r.Name',true,false))}" />
+                          </apex:commandLink>
+                      </apex:outputPanel>
+                  </apex:facet>
+                  <apex:outputField value="{!acct.Account__c}"/>
+              </apex:column>
+              <apex:column headerValue="Committed ?">
+                  <apex:outputField value="{!acct.Committed__c}"/>
+              </apex:column>
+              <apex:column headerValue="# of Trucks">
+                  <apex:outputField value="{!acct.Number_of_Trucks__c}"/>
+              </apex:column>
+              <apex:column headerValue="Value">
+                  <apex:outputField value="{!acct.Value__c}"/>
+              </apex:column>
+          </apex:pageblockTable>
+          <apex:panelGrid columns="2"> 
+                <apex:commandLink action="{!previous}" rendered="{!NOT(if(currentPage== 1,true,false))}">Previous</apex:commandlink> 
+                <apex:commandLink action="{!next}"  rendered="{!NOT(if(currentPage== totalPages,true,false))}">Next</apex:commandlink> 
+           </apex:panelGrid>
+
+          <br/>
+          <!--<center>
+             
+               
+          </center>-->
+      </apex:pageBlock>
+     
+      <apex:inputhidden value="{!current_Value}" id="selectedValue" />
+      <script> var selectedValue= document.getElementById('{!$Component.selectedValue}'); </script>
+      <apex:inputhidden value="{!alphabet}" id="selectedalpha" />
+      <script> var selectedalpha= document.getElementById('{!$Component.selectedalpha}'); </script>
+      
+  </apex:form>
+</apex:page>

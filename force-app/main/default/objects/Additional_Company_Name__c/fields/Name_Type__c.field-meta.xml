@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Name_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Name Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ERP Name</fullName>
+                <default>false</default>
+                <label>ERP Name</label>
+            </value>
+            <value>
+                <fullName>Also Known As</fullName>
+                <default>false</default>
+                <label>Also Known As</label>
+            </value>
+            <value>
+                <fullName>Formerly Known As</fullName>
+                <default>false</default>
+                <label>Formerly Known As</label>
+            </value>
+            <value>
+                <fullName>Doing Business As</fullName>
+                <default>false</default>
+                <label>Doing Business As</label>
+            </value>
+            <value>
+                <fullName>Nickname</fullName>
+                <default>false</default>
+                <label>Nickname</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

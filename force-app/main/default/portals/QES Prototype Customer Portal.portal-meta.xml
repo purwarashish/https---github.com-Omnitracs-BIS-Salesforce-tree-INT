@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Portal xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <admin>qesadmin@qualcomm.com</admin>
+    <description>Prototype Customer Portal</description>
+    <emailSenderAddress>omnitracs.sfdc.noreply@omnitracs.com</emailSenderAddress>
+    <emailSenderName>Omnitracs Support</emailSenderName>
+    <enableSelfCloseCase>true</enableSelfCloseCase>
+    <forgotPassTemplate>All_Email_Templates/ChangePwdEmail</forgotPassTemplate>
+    <isSelfRegistrationActivated>false</isSelfRegistrationActivated>
+    <newPassTemplate>All_Email_Templates/ChangePwdEmail</newPassTemplate>
+    <newUserTemplate>All_Email_Templates/NewUserEmail</newUserTemplate>
+    <selfRegUserTemplate>All_Email_Templates/SelfRegUserEmail</selfRegUserTemplate>
+    <showActionConfirmation>true</showActionConfirmation>
+    <type>CustomerSuccess</type>
+</Portal>

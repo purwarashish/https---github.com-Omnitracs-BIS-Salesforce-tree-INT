@@ -1,0 +1,32 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "00550000003jZ7KAAU",
+      "createdByName": "Christian Cunningham",
+      "createdDate": "2019-08-21T13:37:47.000Z",
+      "fileName": "contentassets/echosign_dev1__Adobe_Sign_logo_1024px.asset",
+      "fullName": "echosign_dev1__Adobe_Sign_logo_1024px",
+      "id": "03S1T0000004CkTUAU",
+      "lastModifiedById": "00550000003jZ7KAAU",
+      "lastModifiedByName": "Christian Cunningham",
+      "lastModifiedDate": "2019-08-21T13:37:47.000Z",
+      "manageableState": "installed",
+      "namespacePrefix": "echosign_dev1",
+      "type": "ContentAsset"
+    },
+    {
+      "createdById": "00550000003jZ7KAAU",
+      "createdByName": "Christian Cunningham",
+      "createdDate": "2019-10-30T15:30:24.000Z",
+      "fileName": "contentassets/Omnitracs_Logo_No_Tagline.asset",
+      "fullName": "Omnitracs_Logo_No_Tagline",
+      "id": "03S1T0000004CpxUAE",
+      "lastModifiedById": "00550000003jZ7KAAU",
+      "lastModifiedByName": "Christian Cunningham",
+      "lastModifiedDate": "2019-10-30T15:30:24.000Z",
+      "manageableState": "unmanaged",
+      "type": "ContentAsset"
+    }
+  ]
+}

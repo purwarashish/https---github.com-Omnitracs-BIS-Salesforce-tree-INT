@@ -1,0 +1,53 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "00550000003hXhLAAU",
+      "createdByName": "Mark Malanowski",
+      "createdDate": "2014-12-06T19:51:30.000Z",
+      "fileName": "networkBranding/cbPartner_Community.networkBranding",
+      "fullName": "cbPartner_Community",
+      "id": "07W500000004CKkEAM",
+      "lastModifiedById": "00550000003hXhLAAU",
+      "lastModifiedByName": "Mark Malanowski",
+      "lastModifiedDate": "2014-12-06T19:51:30.000Z",
+      "type": "NetworkBranding"
+    },
+    {
+      "createdById": "00550000004cCkhAAE",
+      "createdByName": "Sripathi Gullapalli",
+      "createdDate": "2017-07-26T17:50:21.000Z",
+      "fileName": "networkBranding/cbCustomer_Community.networkBranding",
+      "fullName": "cbCustomer_Community",
+      "id": "07W50000000PBf4EAG",
+      "lastModifiedById": "00550000004cCkhAAE",
+      "lastModifiedByName": "Sripathi Gullapalli",
+      "lastModifiedDate": "2017-07-26T17:50:21.000Z",
+      "type": "NetworkBranding"
+    },
+    {
+      "createdById": "00550000003h5fCAAQ",
+      "createdByName": "Casey Keeling",
+      "createdDate": "2017-04-06T15:21:07.000Z",
+      "fileName": "networkBranding/cbPRM.networkBranding",
+      "fullName": "cbPRM",
+      "id": "07W50000000L5NUEA0",
+      "lastModifiedById": "00550000003h5fCAAQ",
+      "lastModifiedByName": "Casey Keeling",
+      "lastModifiedDate": "2017-04-06T15:21:07.000Z",
+      "type": "NetworkBranding"
+    },
+    {
+      "createdById": "00550000003hXhLAAU",
+      "createdByName": "Mark Malanowski",
+      "createdDate": "2014-12-06T19:41:02.000Z",
+      "fileName": "networkBranding/cbUnified_Support_Portal.networkBranding",
+      "fullName": "cbUnified_Support_Portal",
+      "id": "07W500000004CKfEAM",
+      "lastModifiedById": "00550000003hXhLAAU",
+      "lastModifiedByName": "Mark Malanowski",
+      "lastModifiedDate": "2014-12-06T19:41:02.000Z",
+      "type": "NetworkBranding"
+    }
+  ]
+}

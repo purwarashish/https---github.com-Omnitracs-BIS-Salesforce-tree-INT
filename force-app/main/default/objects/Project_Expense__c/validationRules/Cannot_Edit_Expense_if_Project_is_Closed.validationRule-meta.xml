@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Edit_Expense_if_Project_is_Closed</fullName>
+    <active>true</active>
+    <description>Do not allow creation or editing of  Expense record if the associated Project is Completed or Cancelled.</description>
+    <errorConditionFormula>OR(ISPICKVAL( Projects__r.Project_Stage__c , &quot;Cancelled&quot;), ISPICKVAL(Projects__r.Project_Stage__c , &quot;Completed&quot;))</errorConditionFormula>
+    <errorMessage>Expense records cannot be edited or created if the associated Project is Completed or Cancelled. Please contact QES Salesforce Support if you need to edit this Expense record.</errorMessage>
+</ValidationRule>

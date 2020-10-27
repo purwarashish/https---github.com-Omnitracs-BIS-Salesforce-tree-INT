@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AuthProvider xmlns="http://soap.sforce.com/2006/04/metadata">
+    <consumerKey>3MVG9lJB4lV8F4Sj4BMy9Qz.xVWDfzmC6g08jz08dqQI5ny8HzmCd6iHbY2ckg3OLh4NvCih1NV2AHG7pGMzS</consumerKey>
+    <consumerSecret>1NMq+wzhuV2M9P3QG6T/o5nVx6wxgl6gXV5Y77ufwugIBj2t2/ZTE7OvavHxkWf39jkKscJeUc64ejLE/cBrjnBBGPdiC2rX</consumerSecret>
+    <friendlyName>SF UAT</friendlyName>
+    <includeOrgIdInIdentifier>true</includeOrgIdInIdentifier>
+    <providerType>Salesforce</providerType>
+    <sendAccessTokenInHeader>false</sendAccessTokenInHeader>
+    <sendClientCredentialsInHeader>false</sendClientCredentialsInHeader>
+    <sendSecretInApis>true</sendSecretInApis>
+</AuthProvider>

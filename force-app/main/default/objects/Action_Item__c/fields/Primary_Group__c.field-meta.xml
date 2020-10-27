@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Group__c</fullName>
+    <externalId>false</externalId>
+    <label>Primary Group</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Contracts Carve Out Team</fullName>
+                <default>false</default>
+                <label>Contracts Carve Out Team</label>
+            </value>
+            <value>
+                <fullName>MIBOS Consultants</fullName>
+                <default>false</default>
+                <label>MIBOS Consultants</label>
+            </value>
+            <value>
+                <fullName>Omnitracs Business</fullName>
+                <default>false</default>
+                <label>Omnitracs Business</label>
+            </value>
+            <value>
+                <fullName>Omnitracs IT</fullName>
+                <default>false</default>
+                <label>Omnitracs IT</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

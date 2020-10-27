@@ -1,0 +1,31 @@
+<!--gives a summary of all the case events assoicated with caseEventExtensionV2-->
+<apex:page standardController="Case" extensions="CaseEventSummaryExtension" sidebar="false" showheader="false" >
+    <apex:form >
+
+            <apex:pageBlock title="{!caseTitle}">
+            <apex:pageMessages />
+                <apex:pageblockButtons >
+                    <apex:commandbutton action="{!redirectToEmail}" value="Email This Summary"/>
+                </apex:pageblockButtons>
+                <b>Case #:</b> <apex:outputtext value="{!c.casenumber}"/>
+                <p></p>
+                <b>Created Date:</b> <apex:outputtext value="{!caseCreatedDateFormated}"/>
+                <p></p>
+                <b>Opened By:</b> <apex:outputtext value="{!c.CreatedBy.Name}"/>
+                <p></p>
+                <b>Case Origin:</b> <apex:outputtext value="{!c.Origin}"/>
+                <p></p>
+                <b>Subject:</b> &nbsp;<apex:outputText value="{!c.subject}"/>
+                <p></p>
+                <b>Details:</b> &nbsp;<apex:outputText value="{!c.Description}"/>
+                <p></p>
+                <b>Solution:</b> &nbsp;<apex:outputText value="{!c.Solution_long__c}"/>
+                <p></p>                
+                
+            <apex:datalist value="{!summary}" var="sum">
+                <apex:outputtext escape="false" value="{!sum}"/>
+            </apex:datalist>
+        </apex:pageBlock>
+       
+   </apex:form>
+</apex:page>

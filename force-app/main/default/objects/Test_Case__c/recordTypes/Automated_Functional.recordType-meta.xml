@@ -1,0 +1,1590 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Automated_Functional</fullName>
+    <active>true</active>
+    <description>Case used for automatically run functional tests</description>
+    <label>Automated Functional</label>
+    <picklistValues>
+        <picklist>Automated_Test_Function__c</picklist>
+        <values>
+            <fullName>3%2EX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Active Alert</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Adjust Route Times</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto Arrive%2FDepart</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cease Dispatch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Create Routes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Day in the Life</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Distance by Jurisdiction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dual Device</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Geocoding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Import</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maintenance Entity</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Mobile Route</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Plot Routes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS Bridges</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Remove Stop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reports</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reset Route</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resource Assignment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Road Restrictions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Route Delays</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Route Exceptions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Route Manipulation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Route Property Tester</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Send Orders</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Time Updater</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Session Handling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stationary Events</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Suggest Route</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transit Matrix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unarrive Stop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unload Route</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Update Actuals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Update ETAs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User Authentication</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User Interface</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Earliest_Version_PL__c</picklist>
+        <values>
+            <fullName>Apex-1%2E0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Apex-1%2E1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Apex-1%2E2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Apex-Future</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CAIR-5%2E0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CAIR-5%2E1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CAIR-5%2E2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CAIR-6%2E0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA-2%2E0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA-2%2E1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA-2%2E2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA-2%2E3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA-2%2E4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA-2%2E5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA-2%2E6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA-2%2E7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA-2%2E8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA-2%2E9</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA-3%2E0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA-3%2E1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA-3%2E2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA-3%2E3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA-DEV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RMC-1%2E0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RMC-1%2E1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RMC-2%2E0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RMC-2%2E1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RNT-5%2E5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-3%2E00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-3%2E10</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-3%2E20</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-3%2E30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-3%2E40</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-3%2E50</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-3%2E6%2E1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-3%2E6%2E2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-3%2E6%2E3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-3%2E6%2E4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-3%2E6%2E5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-3%2E6%2E6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-3%2E6%2E7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-3%2E6%2E8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-3%2E60</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-3%2Exx</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-DEV</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Enabled__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Function_PL__c</picklist>
+        <values>
+            <fullName>Admin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Calculations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Transfer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deployment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dispatching</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Framework</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Geocoder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Latitude</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loading</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maintenance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maps</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Perspective</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Planning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RIC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RPD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reporting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Routing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scheduling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Security</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tools</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority__c</picklist>
+        <values>
+            <fullName>1 - Run Once</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 - Full Regression Test</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 - Certification Test</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 - Smoke Test</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Area_PL__c</picklist>
+        <values>
+            <fullName>Active Alert</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Admin Module</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Algorithms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CAIR Biztalk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CAIR Database</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CAIR Mobile</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CAIR Web Application</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dispatcher</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FleetLoader</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GIS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Geocoder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Help and Documentation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Importer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Install</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interface</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maintenance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mapping</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobile</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MobileCast Management Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MobileCast Mobile</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MobileCast Server</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NetScheduler</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA Dispatch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA History</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA Mobile</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA Planning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS Connect - SAP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reports</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roadnet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roadnet Info Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roadnet Performance Dashboard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Route History</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Server</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telematics Adapter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Territory Planner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WPF Client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web Services</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Family_PL__c</picklist>
+        <values>
+            <fullName>CAIR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RN Telematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS Management Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roadnet Anywhere</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roadnet Apex</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roadnet Transportation Suite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salesforce</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Subfunction_PL__c</picklist>
+        <values>
+            <fullName>Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Active Alert</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Adjust Service Time</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Admin Website</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alerts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Algo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Application Perspective</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto Arrive%2FDepart</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Average Cost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Breaks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bridges</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Building Delivery Sequence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Unit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancel Stops</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Canned Text Messages</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cease Dispatch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cell Sets</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cells</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change Phase</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Color Picker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Column Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compute Pallet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Configuration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consignees</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Context</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Continuous Optimization</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Controls - Misc</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Create Routes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom Objects %28FUDS%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom Properties %28FUDS%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Transfer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Database Conversion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Database Updater</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Daylight Savings Time</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delivery Window Metrics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Depot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Desktop Deliveries</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Device Actions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Distance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driver Communications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driver Directions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driver Surveys</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driver%2FDevice Scorecards</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Equipment Cost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Equipment Type</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Error Handling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Event API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exceptions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Export</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fees</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>File Grabber</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Functionality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GPS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hardware</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Help</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hours of Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INRIX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Import</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Import Onboard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Install</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interactive Geocoder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kill Route</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lasso</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Layout Perspective</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Layouts%2FConfiguration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Layover Location</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Layovers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legacy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Licensing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>List View Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Live Daily Scoreboard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Localization</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lock Orders</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Logging</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Login</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manifest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Map Control</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Map Edits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Map Resource Tracking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mapping</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mid-Route Sourcing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mix and Stack Rules</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobile Device Setup</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobile Devices</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MobileCast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Optimize</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Options</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Order Class</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Order Status</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Orders</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Orders - Unassigned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Orders%2FLine Items</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Package Type</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pass Templates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Passes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Password %2F Policy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Permissions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Plot Info</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Position History</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Printing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Purchasable Options</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quantities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RPD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reason Codes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recalculate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recipient Types</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Record Permissions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recurring Orders</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Region</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Region Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Regional</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reloads</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Report Groups</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reports</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Restricted Service Location</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roadnet Mobile View</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roles</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Route Actions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Route Directions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Route During Import</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Route History Populator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Route Integrator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Route Manipulation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Route Notes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Route Properties</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Route Scroll</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Route Template Override</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Route Templates%2FSets</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Run Time</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rush Hour</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SKU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scanning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scorecard Board</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Search</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Send Orders</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sequence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service History</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Location</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Location Category</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Location Substitutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Monitor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Pattern</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Pattern Analyzer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Pattern Set</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Time</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Time Type</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Time Updater</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Window Type</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Windows</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sessions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Speed Assign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Static Routes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stationary Events</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stop Actions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>StrategicRoutingPass</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>StrategicRoutingPassTemplate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>StrategicRoutingSession</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Suggest Route</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Suggest Territory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telematics Devices</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Temporary Geocode</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Territories</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Time of Day Restrictions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Timeline</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Total Cost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transit Matrix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TransitMatrix Builder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Travel Time</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Uninstall</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Update</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Update Actuals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User Defined Fields</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User Groups</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle Restrictions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>View Configuration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Views</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wave Attributes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Worker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Worker Cost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Worker Type</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zones</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sunset_Version_PL__c</picklist>
+        <values>
+            <fullName>Apex-1%2E0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Apex-1%2E1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Apex-1%2E2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Apex-Future</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CAIR-5%2E0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CAIR-5%2E1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CAIR-5%2E2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CAIR-6%2E0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA-2%2E0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA-2%2E1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA-2%2E2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA-2%2E3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA-2%2E4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA-2%2E5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA-2%2E6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA-2%2E7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA-2%2E8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA-2%2E9</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA-3%2E0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA-3%2E1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA-3%2E2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA-3%2E3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA-3%2E4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA-3%2E5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA-DEV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RMC-1%2E0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RMC-1%2E1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RMC-2%2E0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RMC-2%2E1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RNT-5%2E5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-3%2E00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-3%2E10</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-3%2E20</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-3%2E30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-3%2E40</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-3%2E50</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-3%2E6%2E1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-3%2E6%2E2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-3%2E6%2E3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-3%2E6%2E4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-3%2E6%2E5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-3%2E6%2E6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-3%2E6%2E7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-3%2E6%2E8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-3%2E6%2E9</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-3%2E60</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-3%2E7%2E1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-3%2Exx</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS-DEV</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

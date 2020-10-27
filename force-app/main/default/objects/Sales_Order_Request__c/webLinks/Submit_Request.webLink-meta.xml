@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Submit_Request</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Submit Request</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!requireScript(&quot;/soap/ajax/14.0/connection.js&quot;)};
+{!requireScript(&quot;/js/functions.js&quot;)};
+
+
+function format00(num) {
+if (num &gt; 9) {
+return num.toString();
+} else {
+var sign = (num &lt; 0) ? &quot;-&quot; : &quot;&quot;;
+return sign + &quot;0&quot; + Math.abs(num);
+}
+}
+
+//function OrderItemExists(){
+var reqId = &apos;{!Sales_Order_Request__c.Id}&apos;;
+var itemQuery=&quot;SELECT Id FROM Order_Item__c WHERE Sales_Order_Request__c = &apos;&quot; + reqId + &quot;&apos;&quot;;
+var itemResults=sforce.connection.query(itemQuery);
+var itemResult=itemResults.getArray(&quot;records&quot;);
+
+if (itemResult != null &amp;&amp; itemResult.length != 0){
+var itemExists = &quot;true&quot;;}
+else {
+var itemExists = &quot;false&quot;;}
+
+
+if(itemExists==&quot;false&quot;){
+alert(&apos;At least one order line must be entered before a Sales Order Request can be submitted.&apos;);}
+else {
+submitSalesOrderRequest();}
+//} //end function OrderItemExists
+
+//submitSalesOrderRequest();
+
+function submitSalesOrderRequest(){
+var acct_id=&apos;{!Sales_Order_Request__c.AccountId__c}&apos;;
+var _requestId = &apos;{!Sales_Order_Request__c.Id}&apos;;
+var requestToUpdate = new sforce.SObject(&quot;Sales_Order_Request__c&quot;);
+
+requestToUpdate.Id = _requestId ;
+requestToUpdate.Sales_Order_Request_Status__c = &apos;Submitted&apos;;
+var now = new Date();
+var year = now.getFullYear();
+var month = format00(now.getMonth() + 1);
+var day = format00(now.getDate());
+var CurrDateTime = [year, month, day].join(&quot;-&quot;);
+requestToUpdate.Date_Submitted__c = CurrDateTime;
+
+try{
+
+//=== Find the Sales Admin on the Account record and set on the Sales Order Request if assigned, or assign to queue
+var userQuery=&quot;SELECT Id, Sales_Administrator__c FROM Account WHERE Id = &apos;&quot; + acct_id + &quot;&apos;&quot;;
+var userResults=sforce.connection.query(userQuery);
+var userResult=userResults.getArray(&quot;records&quot;);
+if (userResult != null &amp;&amp; userResult.length != 0){
+var userRecord = userResult[0];
+var SalesAdminId = userRecord .Sales_Administrator__c;
+// alert(&quot;Sales Admin Id is: &quot; + SalesAdminId)
+
+//if (SalesAdminId == null){
+//requestToUpdate.OwnerId = &quot;00G500000018zyh&quot;;} // assign to sales admin queue
+//else {
+//requestToUpdate.OwnerId = SalesAdminId; }
+//requestToUpdate.Sales_Administrator__c = SalesAdminId; 
+}
+
+var result = sforce.connection.update([requestToUpdate]);
+
+if(result[0].success==&quot;true&quot;){
+window.location.reload();
+} else {
+alert(&apos;Error updating status of Sales Order Request: &apos; + result);
+}
+} catch(e){
+alert(&quot;Error submitting sales order request: &quot; + e);
+}
+} //end function submitSalesOrderRequest</url>
+</WebLink>

@@ -1,0 +1,55 @@
+<apex:page cache="true" sidebar="false" showHeader="false" controller="SrArticleModeler">
+  
+    <apex:include pageName="cssandjs"/>
+    <apex:include pageName="supportGoogleAnalytics"/>
+    <apex:stylesheet value="{!URLFor($Resource.QESUnityCSSAndJS, 'Html/css/mainstyle.css')}" />
+    <apex:stylesheet value="{!URLFor($Resource.QESUnityCSSAndJS, 'Html/css/customer.css')}"  />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <style>
+        .versioningPanel {
+            display:none !important;
+        }
+        ul, li, img, span, p, input, textarea, h1, h2, h3, h4, h5, h6, a {
+            list-style-type: inherit;
+        }
+        body a {
+            text-decoration:underline !important; 
+            color:blue !important;
+        }
+    </style>
+    <div id="bodyWrapper">
+        <div class="breadcumWrp">
+            <h1 style="display: normal">{!artType}</h1>
+            <hr width="910px" align="center" style="height:1px;border:1px;color:#dadce0;background-color:#dadce0;" />
+        </div>
+        <div id="middle-container">
+            <apex:variable var="articleType" value="{!if(artType == 'Product Information',piArticle,
+                                                                                if(artType == 'Glossary', glossaryArticle,
+                                                                                if(artType == 'Documentation',docArticle,
+                                                                                if(artType == 'How To',howtoArticle,
+                                                                                if(artType == 'Technical Bulletin',tbArticle,
+                                                                                if(artType == 'Solution',solutionArticle,kiArticle))))))}"/>
+            <div class="recentCasesBoxTopMargin">
+                <div class="articleTxtArea clr">
+                    <h4 class="articleTitle fll">{!articleType.Title}</h4>
+                </div>
+            </div>
+            <div id="articleDecription" class="articleTxt sfdc_richtext">   
+                <apex:outputText escape="false" value="{!description}" />   
+            </div>
+            <div style="{!if(lstAttachment.size > 0, 'display:normal', 'display:none')};" class="fileAttachmentArea">
+                <h4 class="articleAttachment">Attachments</h4>
+                <br/>
+                <apex:dataList value="{!lstAttachment}" var="attachmntslist" rendered="{!if(lstAttachment.size > 0,true,false)}">
+                     <apex:image value="{!$Resource.AttachmentImage}" height="20" width="20" />
+                     <apex:outputLink value="/servlet/fileField?retURL=/apex/srsupportarticle?type={!artType}%26id={!articleType.id}&entityId={!articleType.id}&field={!attachmntslist.fieldName}">  
+                         <span style="color: #315BA7;">{!attachmntslist.attachmentName}</span>
+                     </apex:outputLink>
+                     <span style="padding-left:60%;">
+                          {!attachmntslist.attachmentContentType}
+                     </span>                                     
+                </apex:dataList>
+            </div>
+        </div>
+    </div>   
+</apex:page>

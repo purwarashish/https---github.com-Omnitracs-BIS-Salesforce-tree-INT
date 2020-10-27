@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Severity_Copy__c</fullName>
+    <description>Displays value &apos;Medium&apos; for severity &apos;Yellow&apos; and &apos;Critical&apos; for &apos;Red&apos;. This is used in email templates. This field can be removed if business agrees to change Severity values to Critical and Medium.</description>
+    <externalId>false</externalId>
+    <formula>CASE(Severity__c, &apos;Yellow&apos;, &apos;Medium&apos;, &apos;Red&apos;, &apos;Critical&apos;,&apos;&apos;)</formula>
+    <label>Severity Copy</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

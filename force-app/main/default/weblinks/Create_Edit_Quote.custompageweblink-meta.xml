@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPageWebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <availability>online</availability>
+    <description>This standard operating procedure (SOP) explains how to create and edit a quote in SFDC. All quotes are created from an opportunity and after the quote is saved, the products specified in the quote appear in a section of the Opportunity screen called Quote Products. This SOP also explains how to add notes and attachments to a quote.</description>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>true</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>true</hasToolbar>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Create/Edit Quote</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>true</showsLocation>
+    <showsStatus>true</showsStatus>
+    <url>/sfc/#version?selectedDocumentId=06950000001PjEhAAK</url>
+</CustomPageWebLink>

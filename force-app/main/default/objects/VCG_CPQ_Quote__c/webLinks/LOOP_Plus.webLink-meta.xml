@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LOOP_Plus</fullName>
+    <availability>online</availability>
+    <description>add &apos;&amp;hidecontact=true&apos; to hide the contact from the DDP page.</description>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Generate Output</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/31.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/31.0/apex.js&quot;)} 
+
+if (&apos;{!VCG_CPQ_Quote__c.Status__c}&apos; == &apos;Draft&apos; 
+||&apos;{!VCG_CPQ_Quote__c.Status__c}&apos; == &apos;Pending Approval&apos; 
+||&apos;{!VCG_CPQ_Quote__c.Status__c}&apos; == &apos;Approved&apos;) 
+{ 
+//set up the contract document Ids associated with the Quote Products 
+try{ 
+var qtId =&apos;{!VCG_CPQ_Quote__c.Id}&apos;; 
+
+var primaryBU = &apos;{!VCG_CPQ_Quote__c.Primary_Business_Unit__c}&apos;; 
+ 
+var result = sforce.apex.execute(&quot;QuoteUtility&quot; 
+, &quot;generateContractDocumentIds&quot; 
+, {quoteId:qtId}); 
+if(result != &apos;SUCCESS&apos;) 
+{ 
+alert(result); 
+} 
+else 
+{ 
+if (primaryBU ==&apos;Roadnet&apos;) 
+{ 
+var RNquoteStatus = &apos;&apos;; 
+if (&apos;{!VCG_CPQ_Quote__c.Status__c}&apos; == &apos;Draft&apos;) 
+{ 
+RNquoteStatus = &apos;RN_Draft&apos;; 
+} 
+if (&apos;{!VCG_CPQ_Quote__c.Status__c}&apos; == &apos;Pending Approval&apos;) 
+{ 
+RNquoteStatus = &apos;RN_Pending_Approval&apos;; 
+} 
+if (&apos;{!VCG_CPQ_Quote__c.Status__c}&apos; == &apos;Approved&apos;) 
+{ 
+RNquoteStatus = &apos;RN_Approved&apos;; 
+} 
+window.location = &quot;{!$Site.Prefix}/apex/loop__looplus?sessionId= {!$Api.Session_ID}&amp;eid={!VCG_CPQ_Quote__c.Id}&amp;contactId={!VCG_CPQ_Quote__c.ContactId__c}&amp;accountId={!VCG_CPQ_Quote__c.AccountId__c}&amp;instance=na3&amp;filter=&quot;+RNquoteStatus+&quot;&amp;retURL={!URLENCODE($Site.Prefix &amp; &apos;/&apos; &amp; VCG_CPQ_Quote__c.Id)}&quot;; 
+} 
+else 
+{ 
+window.location = &quot;{!$Site.Prefix}/apex/loop__looplus?sessionId= {!$Api.Session_ID}&amp;eid={!VCG_CPQ_Quote__c.Id}&amp;contactId={!VCG_CPQ_Quote__c.ContactId__c}&amp;accountId={!VCG_CPQ_Quote__c.AccountId__c}&amp;instance=na3&amp;filter={!VCG_CPQ_Quote__c.Status__c}&amp;retURL={!URLENCODE($Site.Prefix &amp; &apos;/&apos; &amp; VCG_CPQ_Quote__c.Id)}&quot;; 
+} 
+} 
+} 
+catch(err){ 
+txt=&quot;There was an error on this page.\n\n&quot;; 
+txt+=&quot;Error description: &quot; + err.description + &quot;\n\n&quot;; 
+alert(txt); 
+} 
+
+} 
+else 
+alert(&apos;You cannot generate a quote unless the Opportunity Stage is Draft, Pending Approval or Closed Won.&apos;);</url>
+</WebLink>

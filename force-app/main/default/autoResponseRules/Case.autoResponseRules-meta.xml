@@ -1,0 +1,982 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutoResponseRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <autoResponseRule>
+        <fullName>Email Processing</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>contains</operation>
+                <value>out of the office</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Qforce_Case_Number__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Omnitracs Do Not Reply</senderName>
+            <template>QESAutomatedMessages/CaseAutoreplyGeneric</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.SuppliedEmail</field>
+                <operation>equals</operation>
+                <value>support@salesforce.com</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Qforce_Case_Number__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Omnitracs Do Not Reply</senderName>
+            <template>QESAutomatedMessages/CaseAutoreplyGeneric</template>
+        </ruleEntry>
+        <ruleEntry>
+            <booleanFilter>1 AND 2 AND 3 AND 4</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - Sales Administration</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>notContain</operation>
+                <value>Out of Office</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Qforce_Case_Number__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <notifyCcRecipients>true</notifyCcRecipients>
+            <replyToEmail>omnitracs-orders@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Omnitracs Orders</senderName>
+            <template>QESAutomatedMessages/Case_Autoreply_Roadnet_Orders</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - XRS Sales Administration</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>xrs-orders@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>XRS Orders</senderName>
+            <template>QESAutomatedMessages/Case_Autoreply_Roadnet_Orders</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-iQ</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>notContain</operation>
+                <value>iQ Health Check Support Request</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Qforce_Case_Number__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>sfdc.iq.ov.case@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Omnitracs Customer Support</senderName>
+            <template>QESAutomatedMessages/CaseAutoreplyiQwwwopsa</template>
+        </ruleEntry>
+        <ruleEntry>
+            <booleanFilter>1 AND (2 OR 3) AND 4</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-HubRequest</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>notContain</operation>
+                <value>Out of Office</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>notContain</operation>
+                <value>out of the office</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Qforce_Case_Number__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <senderEmail>www-hubsters@omnitracs.com</senderEmail>
+            <senderName>Hub Operations</senderName>
+            <template>QESAutomatedMessages/CaseAutoreplyHubOps</template>
+        </ruleEntry>
+        <ruleEntry>
+            <booleanFilter>1 AND (2 OR 3 OR 4) AND 5 AND 6</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-ETS</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>notContain</operation>
+                <value>Out of Office</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>notContain</operation>
+                <value>Reporting Services Access Requested</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>notContain</operation>
+                <value>Auto Reply</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Qforce_Case_Number__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>ets.support@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Engineering Technical Support</senderName>
+            <template>QESAutomatedMessages/Case_Autoreply_ETS</template>
+        </ruleEntry>
+        <ruleEntry>
+            <booleanFilter>1 AND (2 OR 3) AND 4 AND 5</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-HubAdmin</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>notContain</operation>
+                <value>I am out of the office</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>notContain</operation>
+                <value>Reporting Level Change</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Qforce_Case_Number__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>csn-administration@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>CSN Administration</senderName>
+            <template>QESAutomatedMessages/CaseAutoreplyHubAdmin</template>
+        </ruleEntry>
+        <ruleEntry>
+            <booleanFilter>1 AND 2 AND 3 AND 4</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-Technical Support</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>notContain</operation>
+                <value>Out of Office</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Qforce_Case_Number__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>csn-customer-support@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Omnitracs Technical Support</senderName>
+            <template>QESAutomatedMessages/CaseAutoreplyTechnicalSupport</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-QC Transfer</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Qforce_Case_Number__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>omnitracs-transfers@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Omnitrcas Transfers</senderName>
+            <template>QESAutomatedMessages/CaseAutoreplyQCTransfer</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-Xtrasupport</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Qforce_Case_Number__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>xtrasupport.mail@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Omnitracs Customer Support</senderName>
+            <template>QESAutomatedMessages/CaseAutoreplyGeneric</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-Product Support</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Qforce_Case_Number__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>omnitracs-returns@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Omnitracs Returns</senderName>
+            <template>QESAutomatedMessages/CaseAutoreplyProductSupport</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - XRS Product Support</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>xrs-returns@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>XRS Returns</senderName>
+            <template>QESAutomatedMessages/Case_Autoreply_RN_prodsupp_Cases</template>
+        </ruleEntry>
+        <ruleEntry>
+            <booleanFilter>(1 OR 3) AND 2 AND 4</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-CP IT Support,Email-CEMS,Email-BillOps,Email-BI/DW IT,Email-DMA,Email - Infrastructure,Email - HOS Infrastructure,Email - Windows Infrastructure,Email - Network,Email - iAdmin,Email - SSG,Email - VMS Admin,Email-Engineering Tools</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Qforce_Case_Number__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-Account Admin</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>true</notifyCcRecipients>
+            <replyToEmail>sfdc.support@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Omnitracs Customer Support</senderName>
+            <template>Automated_Messages/Case_Open_Message_Omnitracs</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - Datacenter</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>dc.infra.support.tx@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Datacenter Support</senderName>
+            <template>Automated_Messages/Case_Open_Message_Omnitracs</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - DBA</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>dba.support.tx@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Omnitracs IT</senderName>
+            <template>Automated_Messages/Case_Open_Message_DBA_Support</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-CNR IT</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Qforce_Case_Number__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>itsupport@omnitracs.mx</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>CNR IT Support</senderName>
+            <template>Automated_Messages/Case_Open_Message_Omnitracs</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - Employee Portal</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <senderEmail>noreply@salesforce.com</senderEmail>
+            <senderName>Employee Portal Support</senderName>
+            <template>Automated_Messages/Case_Open_Message_Omnitracs</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-OTS</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>OTS Requests</senderName>
+            <template>Automated_Messages/Case_Autoreply_OTS</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-VMS Request</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>VMS Request</senderName>
+            <template>Automated_Messages/Case_Autoreply_VMS</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Training Case</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>training-requests@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Training Team</senderName>
+            <template>Automated_Messages/Case_Open_Message_Training_Team</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - UNIX-Resolvers</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>unix.admin.tx@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Omnitracs Customer Support</senderName>
+            <template>UNIX_Resolvers_Automated_Email_Templates/UNIX_Resolvers_Case_Open_Message_to_Requestor</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - Channel Support</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>channel.support@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Omnitracs Customer Support</senderName>
+            <template>Channel_Support_Automated_Email_Template/Channel_Support_Case_Open_Message_to_Requestor</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - PTA Support</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>pta.support@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Omnitracs Customer Support</senderName>
+            <template>PTA_Support_Automated_Email_Templates/PTA_Support_Case_Open_Message_to_Requestor</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - XRS Tier 2</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>xrs-tier2-support@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>XRS Tier 2 Support</senderName>
+            <template>QESAutomatedMessages/CaseAutoreplyGeneric</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - Oracle Middleware</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Oracle Middleware</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>true</notifyCcRecipients>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Omnitracs Noreply</senderName>
+            <template>IAM_Automated_Email_Templates/Oracle_Middleware_Case_Open_Message_to_Requestor</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - XRS Fuel Tax</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>omnitracs.sfdc.noreply@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>XRS Fuel Tax</senderName>
+            <template>Automated_Messages/CaseAutoreplyFuelTax</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - Lab Support</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>omnitracs.sfdc.noreply@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Omnitracs No Reply</senderName>
+            <template>Automated_Messages/CaseAutoreplyLabSupport</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - XRS Tier 1</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>omnitracs.sfdc.noreply@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>XRS Support</senderName>
+            <template>QESAutomatedMessages/Case_Autoreply_XRS_pordsupp_Cases</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email -OT Navigation Driver Feedback</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Case_Queue__c</field>
+                <operation>contains</operation>
+                <value>Navigation Driver Feedback Support</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>true</notifyCcRecipients>
+            <replyToEmail>omnitracs.sfdc.noreply@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Omnitracs No Reply</senderName>
+            <template>QESAutomatedMessages/Case_Open_Message_OT_Navigation_Driver_Feedback</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - Oracle DBA Team</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Omnitracs No Reply</senderName>
+            <template>QESAutomatedMessages/Case_Open_Message_Oracle_DBA_Team</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - Omni Finance Pricing</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Case_Queue__c</field>
+                <operation>contains</operation>
+                <value>Omni Finance Pricing Queue</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>true</notifyCcRecipients>
+            <replyToEmail>omnitracs.sfdc.noreply@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Omnitracs No Reply</senderName>
+            <template>QESAutomatedMessages/Case_Open_Message_Omni_Finance_Pricing</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - Customer Setup</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Customer Setup</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>true</notifyCcRecipients>
+            <replyToEmail>omnitracs.sfdc.noreply@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Omnitracs No Reply</senderName>
+            <template>QESAutomatedMessages/Case_Open_Message_Customer_Setup</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - CPQ Operations</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Case_Queue__c</field>
+                <operation>equals</operation>
+                <value>CPQ Operations</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>true</notifyCcRecipients>
+            <replyToEmail>omnitracs.sfdc.noreply@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Omnitracs No Reply</senderName>
+            <template>Automated_Messages/Case_Open_Message_Omnitracs</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - ERP,Email - ERP Support</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Case_Queue__c</field>
+                <operation>equals</operation>
+                <value>ERP Support</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>true</notifyCcRecipients>
+            <replyToEmail>omnitracs.sfdc.noreply@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Omnitracs No Reply</senderName>
+            <template>QESAutomatedMessages/Case_Open_Message_ERP_Support</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - Sales.Ops</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>notContain</operation>
+                <value>out of office</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>sales.ops@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Omnitracs Sales Operations</senderName>
+            <template>QESAutomatedMessages/Case_Autoreply_Generic_SalesOps_v3</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - Omnitracs NAV Support</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Case_Queue__c</field>
+                <operation>equals</operation>
+                <value>Omnitracs NAV Support</value>
+            </criteriaItems>
+            <notifyCcRecipients>true</notifyCcRecipients>
+            <replyToEmail>omnitracs.sfdc.noreply@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Omnitracs No Reply</senderName>
+            <template>Automated_Messages/Case_Open_Message_Omnitracs</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - Agile Support</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Case_Queue__c</field>
+                <operation>equals</operation>
+                <value>Agile Support</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>true</notifyCcRecipients>
+            <replyToEmail>omnitracs.sfdc.noreply@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Omnitracs No Reply</senderName>
+            <template>QESAutomatedMessages/CaseAutoreplyGeneric</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - Carrier Notifications</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>sfdc.support@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Omnitracs No Reply</senderName>
+            <template>Automated_Messages/Case_Open_Message_Carrier_Notifications</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - Roadnet Telematics</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Omnitracs No Reply</senderName>
+            <template>Automated_Messages/Case_Open_Message_Roadnet_Telematics</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - Roadnet Product Support</value>
+            </criteriaItems>
+            <notifyCcRecipients>true</notifyCcRecipients>
+            <replyToEmail>roadnet-returns@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Roadnet Returns</senderName>
+            <template>QESAutomatedMessages/Case_Autoreply_RN_prodsupp_Cases</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-Omnitracs Canada Orders</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>omnitracs-canada-orders@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Omnitracs Canada Orders</senderName>
+            <template>Automated_Messages/CaseAutoreplyOTCOrders</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-Omnitracs Canada Returns</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>omnitracs-canada-returns@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Omnitracs Canada Returns</senderName>
+            <template>Automated_Messages/CaseAutoreplyOTCReturns</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-Omnitracs Canada Transfers</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>omnitracs-canada-transfers@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Omnitracs Canada Transfers</senderName>
+            <template>Automated_Messages/CaseAutoreplyOTCTransfers</template>
+        </ruleEntry>
+        <ruleEntry>
+            <booleanFilter>1 AND 2 AND (3 OR 4 OR 5)</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-Omnitracs Canada Support</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>notContain</operation>
+                <value>Out of Office</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>notContain</operation>
+                <value>out of the office</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>notContain</operation>
+                <value>Delivery Status Notification (Failure)</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Omnitracs Canada Support</senderName>
+            <template>Automated_Messages/Case_Autoreply_Omnitracs_Canada_Support</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - OT Tech 3PAD</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>OT Tech 3PAD</senderName>
+            <template>QESAutomatedMessages/CaseAutoreplyGeneric</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Suporte Omnitracs Brasil</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Suporte Omnitracs Brasil</senderName>
+            <template>Automated_Messages/Case_Assigned_Message_Brasil</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Soporte Omnitracs México</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Soporte Omnitracs México</senderName>
+            <template>Automated_Messages/Case_Assigned_Message_Mexico</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Confluence,JIRA,JIRA Admin,Perforce,Service Center Support</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>sfdc.support@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Omnitracs Customer Support</senderName>
+            <template>Automated_Messages/Case_Open_Message_Omnitracs</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - RN Sales Administration</value>
+            </criteriaItems>
+            <notifyCcRecipients>true</notifyCcRecipients>
+            <replyToEmail>roadnet-orders@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Roadnet Orders</senderName>
+            <template>QESAutomatedMessages/Case_Autoreply_Roadnet_Orders</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - Sylectus Support</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>true</notifyCcRecipients>
+            <replyToEmail>sylectus.techsupport@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Omnitracs Sylectus Support</senderName>
+            <template>Automated_Messages/Case_Open_Message_Sylectus_Support</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-SFDC</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>User.Bypass_Workflows__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <notifyCcRecipients>true</notifyCcRecipients>
+            <replyToEmail>sfdc.support@omnitracs.com</replyToEmail>
+            <senderEmail>omnitracs.sfdc.noreply@omnitracs.com</senderEmail>
+            <senderName>Omnitracs Customer Support</senderName>
+            <template>Automated_Messages/Case_Open_Message_Omnitracs_Revised</template>
+        </ruleEntry>
+    </autoResponseRule>
+</AutoResponseRules>

@@ -1,0 +1,16 @@
+{
+  "status": 0,
+  "result": {
+    "createdById": "00550000004cCkhAAE",
+    "createdByName": "Sripathi Gullapalli",
+    "createdDate": "2017-10-14T03:09:27.000Z",
+    "fileName": "samlssoconfigs/Migrated_SAML_Config.samlssoconfig",
+    "fullName": "Migrated_SAML_Config",
+    "id": "0LE50000000PBoCGAW",
+    "lastModifiedById": "00550000006mu7mAAA",
+    "lastModifiedByName": "Yasir Arafat",
+    "lastModifiedDate": "2020-06-08T02:02:57.000Z",
+    "manageableState": "unmanaged",
+    "type": "SamlSsoConfig"
+  }
+}

@@ -1,0 +1,59 @@
+<!--/*******************************************************************************
+ * File:  UpgradeOpportunity.Page
+ * Date:  March 15th, 2013
+ * Author:  Joseph Hutchins
+ *
+ * The use, disclosure, reproduction, modification, transfer, or transmittal of
+ * this work for any purpose in any form or by any means without the written 
+ * permission of United Parcel Service is strictly prohibited.
+ *
+ * Confidential, unpublished property of United Parcel Service.
+ * Use and distribution limited solely to authorized personnel.
+ *
+ * Copyright 2009, UPS Logistics Technologies, Inc.  All rights reserved.
+ *  *******************************************************************************/-->
+<apex:page standardcontroller="Case" extensions="UpgradeOpportunityExtension" action="{!checkIfOneAlreadyCreated}">
+   <!--  Stops the account name from having focus when page loads. -->
+   <script>
+      function setFocusOnLoad(){}
+   </script>  
+   <apex:form >
+       <apex:pageMessage title="Please confirm you want to create an upgrade opportunity for this case."  severity="confirm" strength="2"/>
+       <apex:pageBlock title="Create Opportunity for {!theCase.Account.name}">
+       <apex:pageMessages />
+       <apex:pageblocksection columns="1" showheader="false">
+           <apex:pageblocksectionitem >
+	           <apex:outputlabel value="Case #"/>
+	           <apex:outputfield value="{!theCase.CaseNumber}"/>
+           </apex:pageblocksectionitem>
+           <apex:pageblocksectionitem >
+	           <apex:outputlabel value="Subject"/>
+	           <apex:outputfield value="{!theCase.Subject}"/>
+           </apex:pageblocksectionitem>
+           <apex:pageblocksectionitem >
+	           <apex:outputlabel value="Details"/>
+	           <apex:outputfield value="{!theCase.Description}"/>
+           </apex:pageblocksectionitem>
+           <apex:pageblocksectionitem rendered="{!isUserSupport}" >
+           		<apex:outputlabel value="Pick Opportunity RecordType"/>
+           		 <apex:outputPanel layout="block" styleClass="requiredInput">
+                     <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                     <apex:selectlist size="1" value="{!opptRecTypeSelection}">
+                     	<apex:selectoptions value="{!opptrecTypesPickist}"/>
+                     </apex:selectlist>
+                 </apex:outputpanel>
+                      
+           </apex:pageblocksectionitem>
+           <apex:pageblocksectionitem >
+               <apex:outputlabel value=""/>
+	           <apex:outputpanel >
+		           <apex:commandbutton value="{!createUpgradeOpptButtonLabel}" action="{!createUpgradeOppt}"/>
+		           
+		           <apex:commandbutton value="Cancel" action="{!cancel}"/>
+	           </apex:outputpanel>
+           </apex:pageblocksectionitem>
+       </apex:pageblocksection>
+       
+       </apex:pageblock>
+   </apex:form>
+ </apex:page>

@@ -1,0 +1,56 @@
+<apex:page tabStyle="Case" standardController="Idea" >
+ <script language="Javascript">
+ function toggleAllUsers(button, alphabet) {
+isAscending=false;
+if(button != null){
+allUserToggle = button;
+alpha = null;
+} else if(alphabet != null) {
+alpha = alphabet;
+}
+//alert('alpha:'+alpha);
+selectedalpha.value = alpha;
+Ordering();
+}
+</script>
+
+
+  <center>
+<!--<apex:panelGrid rendered="{!isAlphaBar}" >-->
+
+<table class="alpBar">
+<tr>
+<td><a href="#" onclick="toggleAllUsers(null, 'A');">A |</a></td>
+<td><a href="#" onclick="toggleAllUsers(null, 'B');">B </a>|</td>
+<td><a href="#" onclick="toggleAllUsers(null, 'C');">C </a>|</td>
+<td><a href="#" onclick="toggleAllUsers(null, 'D');">D</a> |</td>
+<td><a href="#" onclick="toggleAllUsers(null, 'E');">E</a> |</td>
+<td><a href="#" onclick="toggleAllUsers(null, 'F');">F</a> |</td>
+<td><a href="#" onclick="toggleAllUsers(null, 'G');">G </a>|</td>
+<td><a href="#" onclick="toggleAllUsers(null, 'H');">H </a>|</td>
+<td><a href="#" onclick="toggleAllUsers(null, 'I');">I</a> |</td>
+<td><a href="#" onclick="toggleAllUsers(null, 'J');">J</a> |</td>
+<td><a href="#" onclick="toggleAllUsers(null, 'K');">K</a> |</td>
+<td><a href="#" onclick="toggleAllUsers(null, 'L');">L</a> |</td>
+<td><a href="#" onclick="toggleAllUsers(null, 'M');">M</a> |</td>
+<td><a href="#" onclick="toggleAllUsers(null, 'N');">N</a> |</td>
+<td><a href="#" onclick="toggleAllUsers(null, 'O');">O</a> |</td>
+<td><a href="#" onclick="toggleAllUsers(null, 'P');">P</a> |</td>
+<td><a href="#" onclick="toggleAllUsers(null, 'Q');">Q </a>|</td>
+<td><a href="#" onclick="toggleAllUsers(null, 'R');">R</a> |</td>
+<td><a href="#" onclick="toggleAllUsers(null, 'S');">S </a>|</td>
+<td><a href="#" onclick="toggleAllUsers(null, 'T');">T </a>|</td>
+<td><a href="#" onclick="toggleAllUsers(null, 'U');">U </a>|</td>
+<td><a href="#" onclick="toggleAllUsers(null, 'V');">V</a> |</td>
+<td><a href="#" onclick="toggleAllUsers(null, 'W');">W</a> |</td>
+<td><a href="#" onclick="toggleAllUsers(null, 'X');">X</a> |</td>
+<td><a href="#" onclick="toggleAllUsers(null, 'Y');">Y</a> |</td>
+<td><a href="#" onclick="toggleAllUsers(null, 'Z');">Z</a> |</td>
+<td><a href="#" onclick="toggleAllUsers(null, 'All');">All</a> |</td>
+
+</tr>
+</table>
+<!--</apex:panelGrid>-->
+</center>
+
+</apex:page>

@@ -1,0 +1,41 @@
+<!-- 
+ *******************************************************************************
+ * File:  MapCoverageKeyGenerationPage.page
+ * Date:  March 19, 2009
+ * Author:  Charlie Heaps
+ *
+ * The use, disclosure, reproduction, modification, transfer, or transmittal of
+ * this work for any purpose in any form or by any means without the written 
+ * permission of United Parcel Service is strictly prohibited.
+ *
+ * Confidential, unpublished property of United Parcel Service.
+ * Use and distribution limited solely to authorized personnel.
+ *
+ * Copyright 2009, UPS Logistics Technologies, Inc.  All rights reserved.
+ *
+ * Purpose: 
+ *   VF page used to generate a Roadnet Transportation Suite Map Coverage Key 
+ *   Ord File from Salesforce. Displays the coverage ord file to the user and then 
+ *   allows the user to send the file to an email address.
+ *******************************************************************************/
+ -->
+<apex:page standardcontroller="Map_Set__c" extensions="MapCoverageKeyGenerationExtension" >
+    <apex:pageBlock title="Map Coverage Ord File">    
+        <apex:outputText escape="false" value="{!coverageKeyHtml}">
+        </apex:outputText>
+    </apex:pageBlock>
+    <apex:pageBlock >
+        <apex:form >
+            <apex:outputLabel value="To receive the Map Coverage Ord file by email, enter your email address and an optional comment below and press Send Coverage Ord File."/><br/><br/>
+            <apex:outputLabel value="Email Address  "/><br/>
+            <apex:inputText value="{!email}" size="50"/><br/><br/>
+            <apex:outputLabel value="Optional Comment "/><br/>
+            <apex:inputTextArea value="{!comment}" cols="80"/><br/><br/>
+            <apex:outputLabel value="Coverage Key Name "/><br/>
+            <apex:inputText value="{!defaultKeyFilename}" size="80"/><br/><br/>
+            <apex:commandButton value="Send Coverage Ord File" action="{!sendEmail}"/>
+            <apex:commandButton value="Return to Map Set" action="{!cancelEmail}"/>
+        </apex:form>
+    </apex:pageBlock> 
+    <apex:pageMessages />
+</apex:page>

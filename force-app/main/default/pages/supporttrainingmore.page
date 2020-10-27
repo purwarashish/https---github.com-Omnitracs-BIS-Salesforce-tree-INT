@@ -1,0 +1,199 @@
+<apex:page id="pageId" showHeader="false" sidebar="false" 
+           controller="MainController" action="{!tpm_initSingleton}" cache="true">
+<apex:include id="mainpage" pageName="mainPage" />
+<style>
+ul.searchArticleList2 li a{
+display:inline !important;
+}
+    
+a.monitor {visibility:{!CASE(standalone,'1', 'hidden', standalone,'0' , '' )}; display:{!CASE(standalone,'1', 'none', standalone,'0' , '' )};}
+            
+a.manage {visibility:{!CASE(standalone,'1', 'hidden', standalone,'0' , '' )}; display:{!CASE(standalone,'1', 'none', standalone,'0' , '' )};}
+    
+a.shop {visibility:{!CASE(standalone,'1', 'hidden', standalone,'0' , '' )}; display:{!CASE(standalone,'1', 'none', standalone,'0' , '' )};}
+ 
+ul.drop2 {visibility:{!CASE(standalone,'1', 'hidden', standalone,'0' , '' )}; display:{!CASE(standalone,'1', 'none', standalone,'0' , '' )};}
+
+ul.drop3 {visibility:{!CASE(standalone,'1', 'hidden', standalone,'0' , '' )}; display:{!CASE(standalone,'1', 'none', standalone,'0' , '' )};}
+    
+</style>
+<script>
+    var pagename = 'supporttrainingmore';
+   
+     $(document).ready(function(){            
+            selectedRec({!tpm.wscm.trainingList.size});
+            if({!tpm.wscm.trainingList.size}>{!tpm.intInternalRows})
+            {
+                $('[id*=next]').show();
+            }
+            else{
+                 $('[id*=next]').hide();
+            }
+            
+           
+          $('a.bcklnk').each(function(){
+          
+          var text = '{!tpm.returnURL}';
+          
+              $(this).attr('href', text);
+          });
+       
+        $('a.artlink').click(
+            function(e)
+            {
+               redir1($(this).attr('href'),e);
+            }
+        );
+
+        function redir1(rUrl,e)
+        {
+            e.preventDefault();
+            e.stopPropagation();
+            $("#pageId\\:form1\\:hiddenInputField").val(rUrl);
+            $("#pageId\\:form1\\:hiddencmdlink").click();
+            return false;
+        }
+    
+        function selectedRec(obj)
+        {
+            selRec.value = obj;
+        }
+        
+         $('a.bcklnk').click
+         (
+            function(e)
+            {
+               redir($(this).attr('href'),e);
+            }
+         );
+        function redir(rUrl,e)
+        {
+            e.preventDefault();
+            e.stopPropagation();
+            $("#pageId\\:form1\\:hiddenInputField").val(rUrl);
+            $("#pageId\\:form1\\:hiddencmdlink1").click();
+            return false;
+        }
+        });
+    
+    
+    $('a.searchTitle').click(
+        function(e)
+        {
+          e.preventDefault();
+          e.stopPropagation();
+          var URL = $(this).attr('href');
+          window.open(URL,'', 'height=550,width=1024,location=no,resizable=yes,toolbar=no,status=no,menubar=no,scrollbars=yes');
+        });
+    </script>
+    
+    <script type="text/javascript">
+	window.onload = function() {
+	    var links = document.getElementsByTagName('a');
+		for(var i=0; i<links.length; i++) {
+		  if(links[i].href == 'http://customer.int.omnitracs.com/'){
+		  	links[i].href = 'https://login.int.omnitracs.com/go.jsp?d=home';
+		  }
+		  else if(links[i].href == 'http://customer.omnitracs.com/'){
+		  	links[i].href = 'https://login.omnitracs.com/go.jsp?d=home';
+		  }
+		}
+	};
+</script>
+
+<apex:variable value="{!tpm.returnURL=='support'}" var="blnRender"/>
+<!-- <apex:variable value="{!tpm.returnURL=='supportplatformsapps?name={!pam.strName}'}" var="blnRender"/> -->
+<div id="bodyWrapper" >
+    <div class="breadcumWrp">
+    <ul>
+        <li>
+            <a href="https://login.{!$Label.CPURL}go.jsp?d=home" class="">Home</a><span>|</span>
+            <a class="breadcumlink" href="/apex/support">Support</a><span>|</span>
+            Training Page
+         </li>
+     </ul>
+     
+    <h1 style="display: normal">Training Page</h1>
+    <hr width="910px" align="center" style="height:1px;border:1px;color:#dadce0;background-color:#dadce0;" />
+    </div>
+    <div id="middle-container">
+    <div class="custom-search-right fll" style="width:100%">
+    <apex:form id="form1" >
+    <script>
+        if({!tpm.wscm.trainingList.size}-{!tpm.intFirst}<{!tpm.intInternalRows})
+            {
+             $('[id*=next]').hide();   
+            }
+    </script>
+    <div class="searchResultInnerLeft fll" style="width:100%" >
+            <div>         
+                  <a href = "#"  class = "bcklnk buttonSet newButton12 fll">Back</a>
+            </div> 
+            <div class="clr">
+                <img width="1" height="20" border="0" alt="" src="{!URLFOR($Resource.QESCustomerSupporCaseView, 'Html/images/customer/spacer.png')}" />
+            </div>    
+    <div style="margin-bottom:10px;">
+        
+    </div>
+    <div class="MenuBoxHeader">
+            <h3>
+                <span class="floatL">Training</span>
+                <span class="traRightSpace30 floatR"></span>
+            </h3>
+            <div style="margin-top: 16px;">
+                <apex:messages style="color: grey;font-weight: bold;text-align:center"
+                             id="errMsg" />
+            </div>
+            <apex:dataList rows="{!tpm.intInternalRows}"   first="{!tpm.intFirst}" id="trainingDoc" var="training" value="{!tpm.wscm.trainingList}" styleClass="searchArticleList2">
+                <script>
+                
+                $(document).ready(function(){
+                   
+                   if({!tpm.intFirst}==0){
+                        $('[id*=previous]').hide();
+                    }
+                    else{
+                        $('[id*=previous]').show();
+                    }
+                     
+                        
+                    
+                });
+                </script>
+                <a href="{!training.linkUrl}" style="display: table-cell !important;" >{!training.title}</a>                
+                <div id="{!training.myInternalId}">
+                    <script>
+                        $('#{!training.myInternalId}').append('{!training.body}');
+                    </script>
+                </div>
+                </apex:dataList> 
+            
+             <apex:inputhidden value="{!tpm.trainingListSize}" id="lstTrainingSize" />
+                <script> var selRec= document.getElementById('{!$Component.lstTrainingSize}'); </script>
+            
+                       
+           <apex:commandLink styleClass="buttonSet newButton4" 
+                             style="float: right; display: block;"
+                              id="next" value="Next" action="{!tpm.next}"   
+                               status="showstatus" reRender="form1" />&nbsp;&nbsp;
+            
+            <apex:commandLink styleClass="buttonSet newButton5"
+                              style="float: left; display: block;"
+                              id="previous" action="{!tpm.previous}"   value="Previous" status="showstatus" reRender="form1" />
+            
+            
+            
+            <br/><br/>
+        
+        
+    </div>
+    </div>
+    <apex:commandLink id="hiddencmdlink"  target="_blank" styleclass="hiddencmdlink" value="" action="{!menuHeaderRedirectTo}" />
+    <apex:commandLink id="hiddencmdlink1"  styleclass="hiddencmdlink1" value="" action="{!menuHeaderRedirectTo}" />
+    <apex:inputHidden id="hiddenInputField" value="{!hiddenInputField}"/> 
+    </apex:form>
+    </div>
+    </div>
+    <apex:include pageName="UnityFooter" />
+</div>
+</apex:page>

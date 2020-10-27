@@ -1,0 +1,670 @@
+<!-- /*******************************************************************************
+ * File:  CaseEventPage.cls
+ * Date:  October 14th, 2009
+ * Author:  Joseph Hutchins
+ * Sandbox:  RN
+ * The use, disclosure, reproduction, modification, transfer, or transmittal of
+ * this work for any purpose in any form or by any means without the written 
+ * permission of United Parcel Service is strictly prohibited.
+ *
+ * Confidential, unpublished property of United Parcel Service.
+ * Use and distribution limited solely to authorized personnel.
+ *
+ * Copyright 2009, UPS Logistics Technologies, Inc.  All rights reserved.
+ *  *******************************************************************************/
+<apex:page standardController="Case_Event__c" extensions="CaseEventExtension" action="{!redirectUserToCaseAlreadyClosedScreen}">
+    <apex:includeScript value="{!$Resource.EnableDisableButton}"/>
+    
+    <script>
+       function setFocusOnLoad(){}
+    </script>
+    <script>
+    function openLogMeInPinWinwodw()
+    {
+        window.open("/apex/logmein__rescuerequestpincode?CField0={!theCase.ContactFirstName__c}&CField1={!theCase.ContactLastName__c}&CField2={!theCase.Email__c}&CField3={!theCase.CaseNumber}", "rescuepin",
+        "menubar=0, status=1, toolbar=1, resizable=1, width=440, height=280");
+    }
+    </script>  
+    <apex:form id="theForm" >
+    <apex:pagemessages />
+        <apex:pageblock title="Case Event Detail" >
+            <apex:pageBlockbuttons location="top" >
+            
+                <apex:commandbutton action="{!save}" value="Save" status="saveButtonStatus"  id="saveButton"/>
+                <apex:actionStatus id="saveButtonStatus" onstart="DisableButton('{!$Component.saveButton}')" onstop="EnableButton('{!$Component.saveButton}')" ></apex:actionStatus>
+                
+                <apex:commandbutton action="{!saveAndNew}" value="Save & New" status="saveAndNewButtonStatus" id="saveAndNewButton"/>
+                <apex:actionStatus id="saveAndNewButtonStatus" onstart="DisableButton('{!$Component.saveAndNewButton}')" onstop="EnableButton('{!$Component.saveAndNewButton}')" ></apex:actionStatus>
+                
+                <apex:commandbutton action="{!saveAndClose}" value="Save & Close Case"  id="saveAndCloseButton" status="saveAndCloseButtonStatus"/>
+                <apex:actionStatus id="saveAndCloseButtonStatus" onstart="DisableButton('{!$Component.saveAndCloseButton}')" onstop="EnableButton('{!$Component.saveAndCloseButton}')" ></apex:actionStatus>
+                
+                <apex:commandbutton rendered="true"  value="Rescue Pin" action="{!doNothing}" onclick="openLogMeInPinWinwodw()"/>
+                
+                <apex:commandbutton action="{!cancel}" value="Cancel"/>
+            </apex:pageblockButtons>
+            <apex:pageBlockSection title="Event Information" columns="2" id="informationSectionId">
+                <apex:pageblocksectionitem rendered="{!showAccountField}">
+                    <apex:outputlabel value="Account"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                         <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                         <apex:inputfield value="{!theCase.AccountId}">
+                            <apex:actionsupport event="onblur" action="{!doNothing}"/>
+                         </apex:inputfield>
+                    </apex:outputPanel>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem rendered="{!showAccountField}">
+                    <apex:outputlabel value=""/>
+                    <apex:outputtext value=""/>
+                </apex:pageblocksectionitem>
+                
+                <apex:outputfield value="{!caseEvent.Case__c}"/>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Case Event Number"/>                
+                    <apex:outputtext value="{!caseEvent.Name}" />
+                </apex:pageblocksectionitem>
+                                 
+                <apex:pageBlockSEctionItem >
+                    <apex:outputlabel value="Contact Name"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                         <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                             <apex:selectlist size="1" value="{!userChoiceContactField}">
+                                <apex:selectoptions value="{!contactsOfCase}"/>
+                                <apex:actionsupport event="onchange" action="{!contactPicklistOnchange}"/>
+                             </apex:selectlist>
+                         </apex:outputPanel>
+                </apex:pageBlockSEctionItem>
+                
+                <apex:pageBlockSEctionItem >
+                    <apex:outputlabel value="Contact Email"/>
+                     <apex:outputtext value="{!contactEmail}"/>
+                </apex:pageBlockSEctionItem>
+
+                <apex:pageBlockSEctionItem >
+                    <apex:outputlabel value="Contact Phone"/>
+                     <apex:outputtext value="{!contactPhone}"/>
+                </apex:pageBlockSEctionItem>
+                
+                <apex:pageBlockSEctionItem >
+                    <apex:outputlabel value="Contact's Extension"/>
+                     <apex:inputtext value="{!theCase.Contact_Extension__c}"/>
+                </apex:pageBlockSEctionItem>
+
+                
+                <apex:inputfield value="{!caseEvent.Assisting_Technician__c}"/>
+                
+              
+                <apex:pageblocksectionItem rendered="{!!isPortalUser}" >
+                    <apex:outputlabel value="{!isVisibleInSelfServiceFieldLabel}"/>
+                    <apex:inputfield value="{!caseEvent.Display_in_Customer_Portal__c}"/>
+                </apex:pageblocksectionItem>
+                                
+                 <apex:pageblocksectionitem rendered="{!isTimeSpentRequired}">
+                    <apex:outputlabel value="Case Status"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                         <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                         <apex:selectlist size="1" value="{!userChoiceStatusField}">
+                            <apex:selectoptions value="{!statusPicklist}"/>
+                         </apex:selectlist>
+                     </apex:outputPanel>
+                </apex:pageblocksectionitem>                                
+                <apex:pageBlockSectionItem >
+                     <apex:outputLabel value="Contact Method"/>
+                     <apex:outputPanel layout="block" styleClass="requiredInput">
+                         <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                         <apex:inputfield value="{!caseEvent.Communication_Type__c}"/>
+                     </apex:outputPanel>
+                 </apex:pageBlockSectionItem>
+                <apex:pageblocksectionitem rendered="{!showWorkEffortField}">
+                    <apex:outputlabel value="Case Work Effort"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                         <apex:outputPanel layout="block" styleClass="requiredBlock" rendered="{!isTimeSpentRequired}" />
+                            <apex:inputfield value="{!caseEvent.Time_Spent__c}"/>
+                        </apex:outputPanel>
+                </apex:pageblocksectionitem>
+                                
+            </apex:pageblocksection>
+               
+            <apex:pageblocksection title="Case Event Subject/Details"  columns="1">
+                <apex:pageblocksectionItem >
+                    <apex:outputlabel value="Subject"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputtextArea value="{!caseEvent.Subject__c}" cols="150" rows="2"/>                              
+                    </apex:outputPanel>
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem >
+                    <apex:outputlabel value="Details"/>
+                    <apex:inputtextarea value="{!caseEvent.Details__c}" cols="150" rows="10"/>
+                </apex:pageblocksectionItem>
+           </apex:pageblocksection>
+           <apex:pageblocksection title="Master Case Details" columns="1" rendered="{!isTimeSpentRequired}">
+                <apex:pageblocksectionItem rendered="{!isTimeSpentRequired}">
+                    <apex:outputlabel value="Master Case Subject"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                         <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                         <apex:inputtextarea rows="3" cols="150" value="{!theCase.subject}"/>
+                     </apex:outputPanel>
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem rendered="{!isTimeSpentRequired}">
+                    <apex:outputlabel value="Master Case Solution"/>
+                    <apex:inputtextarea rows="3" cols="150" value="{!theCase.Solution__c}" id="caseSolutionFieldId"/>
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem rendered="{!isTimeSpentRequired}">
+                    <apex:outputlabel value="Product"/>
+                    <apex:inputfield value="{!theCase.Product_PL__c}"/>
+                </apex:pageblocksectionItem>
+                
+               
+                <apex:pageblocksectionItem rendered="{!AND(isTimeSpentRequired, AreReasonFieldsRequired)}">
+                    <apex:outputlabel value="Case Reason"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputfield value="{!theCase.Case_Reason_PL__c}"/>
+                     </apex:outputPanel>
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem rendered="{!AND(isTimeSpentRequired, AreReasonFieldsRequired)}">
+                     <apex:outputlabel value="Sub Reason"/>
+                     <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputfield value="{!theCase.Sub_Reason_PL__c}"/>
+                    </apex:outputPanel>
+                </apex:pageblocksectionItem>
+                
+                
+                
+                <apex:pageblocksectionItem rendered="{!AND(isTimeSpentRequired, !AreReasonFieldsRequired)}">
+                    <apex:outputlabel value="Case Reason"/>
+                     <apex:inputfield value="{!theCase.Case_Reason_PL__c}"/>
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem rendered="{!AND(isTimeSpentRequired, !AreReasonFieldsRequired)}">
+                     <apex:outputlabel value="Sub Reason"/>
+                     <apex:inputfield value="{!theCase.Sub_Reason_PL__c}"/>
+                </apex:pageblocksectionItem>
+            </apex:pageBlockSection>
+        </apex:pageblock>
+    </apex:form>
+    <script>
+    function showMinutesSave(startTimeFieldId, endTimeFieldId)
+    {
+        if ({!!isTimeSpentRequired})//  the start time and time arent required so just save the event
+        {
+            save();
+            return;
+        }
+        
+        //  alright, so we pass the ids of the start time and end time fields
+        //  i think before we add nullness checks lets just make sure the basic part of it works
+        //  with the ids, we grab the actaul fields
+        //  then we can pass the to another method that does the subtraction
+        
+        var startTime = document.getElementById(startTimeFieldId).value;
+        var endTime = document.getElementById(endTimeFieldId).value
+        
+        if (startTime == '')
+        {
+            alert('Start Time needs to be set.');
+            return;
+        }
+        if (endTime == '')
+        {
+            alert('End Time needs to be set');
+            return;
+        }
+        
+        var seconds = (new Date(endTime) - new Date(startTime)) / 1000;
+        var minutes = seconds / 60;
+        
+        if (minutes < 1)
+        {
+            minutes = 1;
+        }
+        
+        var msg = 'Time Spent on Case Event:  ' + minutes + ' minute(s).  If this is not correct, hit cancel and adjust start or end time.';
+        try
+        {
+            if (window.confirm(msg))
+            {
+                save();
+            }
+        }
+        catch(err)
+        {
+            save();
+        }
+    }
+    function showMinutesSaveAndNew(startTimeFieldId, endTimeFieldId)
+    {
+        if ({!!isTimeSpentRequired})//  the start time and time arent required so just save the event
+        {
+            saveAndNew();
+            return;
+        }
+        
+        //  alright, so we pass the ids of the start time and end time fields
+        //  i think before we add nullness checks lets just make sure the basic part of it works
+        //  with the ids, we grab the actaul fields
+        //  then we can pass the to another method that does the subtraction
+        
+        var startTime = document.getElementById(startTimeFieldId).value;
+        var endTime = document.getElementById(endTimeFieldId).value
+        
+        if (startTime == '')
+        {
+            alert('Start Time needs to be set.');
+            return;
+        }
+        if (endTime == '')
+        {
+            alert('End Time needs to be set');
+            return;
+        }
+        
+        var seconds = (new Date(endTime) - new Date(startTime)) / 1000;
+        var minutes = seconds / 60;
+        if (minutes < 1)
+        {
+            minutes = 1;
+        }    
+        var msg = 'Time Spent on Case Event:  ' + minutes + ' minute(s).  If this is not correct, hit cancel and adjust start or end time.';
+        
+        try
+        {
+            if (window.confirm(msg))
+            {
+                saveAndNew();
+            }
+        }
+        catch(err)
+        {
+            saveAndNew();
+        }
+            
+    }
+    function showMinutesSaveAndClose(startTimeFieldId, endTimeFieldId)
+    {
+        if ({!!isTimeSpentRequired})//  the start time and time arent required so just save the event
+        {
+            saveAndClose();
+            return;
+        }
+        
+        //  alright, so we pass the ids of the start time and end time fields
+        //  i think before we add nullness checks lets just make sure the basic part of it works
+        //  with the ids, we grab the actaul fields
+        //  then we can pass the to another method that does the subtraction
+        
+        var startTime = document.getElementById(startTimeFieldId).value;
+        var endTime = document.getElementById(endTimeFieldId).value
+        
+        if (startTime == '')
+        {
+            alert('Start Time needs to be set.');
+            return;
+        }
+        if (endTime == '')
+        {
+            alert('End Time needs to be set');
+            return;
+        }
+        
+        var seconds = (new Date(endTime) - new Date(startTime)) / 1000;
+        var minutes = seconds / 60;
+        
+        if (minutes < 1)
+        {
+            minutes = 1;
+        }    
+        var msg = 'Time Spent on Case Event:  ' + minutes + ' minute(s).  If this is not correct, hit cancel and adjust start or end time.';
+        try
+        {
+            if (window.confirm(msg))
+            {
+                saveAndClose();
+            }
+        }
+        catch(err)    
+        {
+            saveAndClose();
+        }
+    }
+    </script>
+</apex:page>-->
+
+<!-- /*******************************************************************************
+ * File:  CaseEventPage.cls
+ * Date:  October 14th, 2009
+ * Author:  Joseph Hutchins
+ * Sandbox:  Mibos
+ * The use, disclosure, reproduction, modification, transfer, or transmittal of
+ * this work for any purpose in any form or by any means without the written 
+ * permission of United Parcel Service is strictly prohibited.
+ *
+ * Confidential, unpublished property of United Parcel Service.
+ * Use and distribution limited solely to authorized personnel.
+ *
+ * Removed "reOpenCaseIfClosed" action on Page load - Abhishek - 29th May
+ * Copyright 2009, UPS Logistics Technologies, Inc.  All rights reserved.
+ *  *******************************************************************************/ -->
+<apex:page standardController="Case_Event__c" extensions="CaseEventExtension">
+    <apex:includeScript value="{!$Resource.EnableDisableButton}"/>
+    
+    <script>
+       function setFocusOnLoad(){}
+    </script>
+    <script>
+    function openLogMeInPinWinwodw()
+    {
+       window.open("/apex/logmein__rescuerequestpincode?CField0={!theCase.Contact.FirstName}&CField1={!theCase.Contact.LastName}&CField2={!theCase.Contact.Email}&CField3={!theCase.CaseNumber}&CField4={!theCase.Id}&CField5={!theCase.ContactId}", "rescuepin",
+        "menubar=0, status=1, toolbar=1, resizable=1, width=440, height=280");
+    }
+    </script>  
+    <apex:form id="theForm" >
+    <apex:pagemessages />
+        <apex:pageblock title="Case Event Detail" >
+            <apex:pageBlockbuttons location="top" >
+            
+                <apex:commandbutton action="{!save}" value="Save" status="saveButtonStatus"  id="saveButton"/>
+                <apex:actionStatus id="saveButtonStatus" onstart="DisableButton('{!$Component.saveButton}')" onstop="EnableButton('{!$Component.saveButton}')" ></apex:actionStatus>
+                
+                <apex:commandbutton action="{!saveAndNew}" value="Save & New" status="saveAndNewButtonStatus" id="saveAndNewButton"/>
+                <apex:actionStatus id="saveAndNewButtonStatus" onstart="DisableButton('{!$Component.saveAndNewButton}')" onstop="EnableButton('{!$Component.saveAndNewButton}')" ></apex:actionStatus>
+                
+                <apex:commandbutton action="{!saveAndClose}" value="Save & Close Case"  id="saveAndCloseButton" status="saveAndCloseButtonStatus"/>
+                <apex:actionStatus id="saveAndCloseButtonStatus" onstart="DisableButton('{!$Component.saveAndCloseButton}')" onstop="EnableButton('{!$Component.saveAndCloseButton}')" ></apex:actionStatus>
+                
+                <apex:commandbutton rendered="true"  value="Rescue Pin" action="{!doNothing}" onclick="openLogMeInPinWinwodw()"/>
+                
+                <apex:commandbutton action="{!cancel}" value="Cancel"/>
+            </apex:pageblockButtons>
+            <apex:pageBlockSection title="Event Information" columns="2" id="informationSectionId">
+                <apex:pageblocksectionitem rendered="{!showAccountField}">
+                    <apex:outputlabel value="Account"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                         <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                         <apex:inputfield value="{!theCase.AccountId}">
+                            <apex:actionsupport event="onblur" action="{!doNothing}"/>
+                         </apex:inputfield>
+                    </apex:outputPanel>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem rendered="{!showAccountField}">
+                    <apex:outputlabel value=""/>
+                    <apex:outputtext value=""/>
+                </apex:pageblocksectionitem>
+                
+                <apex:inputfield value="{!theCase.OwnerId}"/>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value=""/> 
+                    <apex:outputtext value=""/>
+                </apex:pageblocksectionitem>
+                
+                <apex:outputfield value="{!caseEvent.Case__c}"/>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Case Event Number"/>                
+                    <apex:outputtext value="{!caseEvent.Name}" />
+                </apex:pageblocksectionitem>
+                                 
+                <apex:pageBlockSEctionItem >
+                    <apex:outputlabel value="Contact Name"/>
+                         <apex:selectlist size="1" value="{!userChoiceContactField}">
+                            <apex:selectoptions value="{!contactsOfCase}"/>
+                            <apex:actionsupport event="onchange" action="{!contactPicklistOnchange}"/>
+                         </apex:selectlist>
+                </apex:pageBlockSEctionItem>
+                
+                <apex:pageBlockSEctionItem >
+                    <apex:outputlabel value="Contact Email"/>
+                     <apex:inputtext value="{!contactEmail}"/>
+                </apex:pageBlockSEctionItem>
+
+                <apex:pageBlockSEctionItem >
+                    <apex:outputlabel value="Contact Phone"/>
+                     <apex:inputtext value="{!contactPhone}"/>
+                </apex:pageBlockSEctionItem>
+                
+                <apex:pageBlockSEctionItem >
+                    <apex:outputlabel value="Contact's Extension"/>
+                     <apex:inputtext value="{!contactExtension}"/>
+                </apex:pageBlockSEctionItem>
+                
+                
+                <apex:inputfield value="{!caseEvent.Assisting_Technician__c}"/>
+                <apex:pageBlockSectionItem >
+                     <apex:outputLabel value="Contact Method"/>
+                     <apex:outputPanel layout="block" styleClass="requiredInput">
+                         <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                         <apex:inputfield value="{!caseEvent.Communication_Type__c}"/>
+                     </apex:outputPanel>
+                 </apex:pageBlockSectionItem>
+                 
+                               
+                 <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Case Status"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                         <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                         <apex:inputfield value="{!theCase.Status}"/>
+                     </apex:outputPanel>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value=""/>
+                    <apex:outputtext value=""/>
+                </apex:pageblocksectionitem>
+                
+                <apex:inputfield value="{!theCase.Substatus__c}"/>
+                 <apex:inputfield value="{!caseEvent.Send_email_notification_to_contact__c}"/>
+                 
+                <apex:pageblocksectionitem rendered="{!showWorkEffortField}">
+                    <apex:outputlabel value="Case Work Effort"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                         <apex:outputPanel layout="block" styleClass="requiredBlock" rendered="{!isTimeSpentRequired}" />
+                            <apex:inputfield value="{!caseEvent.Time_Spent__c}"/>
+                        </apex:outputPanel>
+                </apex:pageblocksectionitem>
+               
+                
+            </apex:pageblocksection>
+               
+            <apex:pageblocksection title="Case Event Subject/Details"  columns="1">
+                <apex:pageblocksectionItem >
+                    <apex:outputlabel value="Subject"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputtextArea value="{!caseEvent.Subject__c}" cols="150" rows="2"/>                              
+                    </apex:outputPanel>
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem >
+                    <apex:outputlabel value="Details"/>
+                    <apex:inputtextarea value="{!caseEvent.Details__c}" cols="150" rows="10"/>
+                </apex:pageblocksectionItem>
+           </apex:pageblocksection>
+           <apex:pageblocksection title="Master Case Details" columns="1" >
+                <apex:pageblocksectionItem >
+                    <apex:outputlabel value="Master Case Subject"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                         <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                         <apex:inputtextarea rows="3" cols="150" value="{!theCase.subject}"/>
+                     </apex:outputPanel>
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem >
+                    <apex:outputlabel value="Master Case Solution"/>
+                    <apex:inputtextarea rows="3" cols="150" value="{!theCase.Solution_long__c}" id="caseSolutionFieldId"/>
+                </apex:pageblocksectionItem>
+                
+                 <apex:pageblocksectionItem >
+                    <apex:outputlabel value="Business Unit"/>
+                     <apex:inputfield value="{!theCase.Business_Unit__c}"/>
+                </apex:pageblocksectionItem>
+                
+                <apex:pageblocksectionItem >
+                    <apex:outputlabel value="Category Level 1"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputfield value="{!theCase.Category__c}"/>
+                     </apex:outputPanel>
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem >
+                     <apex:outputlabel value="Type Level 2"/>
+                     <apex:inputfield value="{!theCase.Type_Level_2__c}"/>
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionitem >
+                <apex:outputlabel value="Area Level 3"/>
+                <apex:inputfield value="{!theCase.Area_Level_3__c}"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                <apex:outputlabel value="Resolution"/>
+                <apex:outputPanel layout="block">
+                <apex:inputtextarea rows="10" cols="150" value="{!theCase.Resolution__c}" id="caseSolutionFieldId"/>
+                </apex:outputPanel>
+                </apex:pageblocksectionitem>
+                
+                
+                
+            </apex:pageBlockSection>
+        </apex:pageblock>
+    </apex:form>
+    <script>
+    function showMinutesSave(startTimeFieldId, endTimeFieldId)
+    {
+        if ({!!isTimeSpentRequired})//  the start time and time arent required so just save the event
+        {
+            save();
+            return;
+        }
+        
+        //  alright, so we pass the ids of the start time and end time fields
+        //  i think before we add nullness checks lets just make sure the basic part of it works
+        //  with the ids, we grab the actaul fields
+        //  then we can pass the to another method that does the subtraction
+        
+        var startTime = document.getElementById(startTimeFieldId).value;
+        var endTime = document.getElementById(endTimeFieldId).value
+        
+        if (startTime == '')
+        {
+            alert('Start Time needs to be set.');
+            return;
+        }
+        if (endTime == '')
+        {
+            alert('End Time needs to be set');
+            return;
+        }
+        
+        var seconds = (new Date(endTime) - new Date(startTime)) / 1000;
+        var minutes = seconds / 60;
+        
+        if (minutes < 1)
+        {
+            minutes = 1;
+        }
+        
+        var msg = 'Time Spent on Case Event:  ' + minutes + ' minute(s).  If this is not correct, hit cancel and adjust start or end time.';
+        try
+        {
+            if (window.confirm(msg))
+            {
+                save();
+            }
+        }
+        catch(err)
+        {
+            save();
+        }
+    }
+    function showMinutesSaveAndNew(startTimeFieldId, endTimeFieldId)
+    {
+        if ({!!isTimeSpentRequired})//  the start time and time arent required so just save the event
+        {
+            saveAndNew();
+            return;
+        }
+        
+        //  alright, so we pass the ids of the start time and end time fields
+        //  i think before we add nullness checks lets just make sure the basic part of it works
+        //  with the ids, we grab the actaul fields
+        //  then we can pass the to another method that does the subtraction
+        
+        var startTime = document.getElementById(startTimeFieldId).value;
+        var endTime = document.getElementById(endTimeFieldId).value
+        
+        if (startTime == '')
+        {
+            alert('Start Time needs to be set.');
+            return;
+        }
+        if (endTime == '')
+        {
+            alert('End Time needs to be set');
+            return;
+        }
+        
+        var seconds = (new Date(endTime) - new Date(startTime)) / 1000;
+        var minutes = seconds / 60;
+        if (minutes < 1)
+        {
+            minutes = 1;
+        }    
+        var msg = 'Time Spent on Case Event:  ' + minutes + ' minute(s).  If this is not correct, hit cancel and adjust start or end time.';
+        
+        try
+        {
+            if (window.confirm(msg))
+            {
+                saveAndNew();
+            }
+        }
+        catch(err)
+        {
+            saveAndNew();
+        }
+            
+    }
+    function showMinutesSaveAndClose(startTimeFieldId, endTimeFieldId)
+    {
+        if ({!!isTimeSpentRequired})//  the start time and time arent required so just save the event
+        {
+            saveAndClose();
+            return;
+        }
+        
+        //  alright, so we pass the ids of the start time and end time fields
+        //  i think before we add nullness checks lets just make sure the basic part of it works
+        //  with the ids, we grab the actaul fields
+        //  then we can pass the to another method that does the subtraction
+        
+        var startTime = document.getElementById(startTimeFieldId).value;
+        var endTime = document.getElementById(endTimeFieldId).value
+        
+        if (startTime == '')
+        {
+            alert('Start Time needs to be set.');
+            return;
+        }
+        if (endTime == '')
+        {
+            alert('End Time needs to be set');
+            return;
+        }
+        
+        var seconds = (new Date(endTime) - new Date(startTime)) / 1000;
+        var minutes = seconds / 60;
+        
+        if (minutes < 1)
+        {
+            minutes = 1;
+        }    
+        var msg = 'Time Spent on Case Event:  ' + minutes + ' minute(s).  If this is not correct, hit cancel and adjust start or end time.';
+        try
+        {
+            if (window.confirm(msg))
+            {
+                saveAndClose();
+            }
+        }
+        catch(err)    
+        {
+            saveAndClose();
+        }
+    }
+    </script>
+</apex:page>

@@ -1,0 +1,80 @@
+<apex:page standardController="Account" extensions="AssetSummary_Ctrl">
+
+    <apex:pageBlock title="Active Contracted Asset Summary">
+        
+        <apex:pageBlockTable value="{!assetList}" var="a">
+
+            <apex:column >
+                <apex:facet name="header">Product</apex:facet>
+                <apex:outputLink value="/{!a.asset.Id}" target="_top">{!a.Name}</apex:outputLink>
+            </apex:column> 
+            <apex:column value="{!a.Bundle}">
+                <apex:facet name="header">Bundle Name</apex:facet>
+            </apex:column> 
+            <apex:column value="{!a.quantity}"> 
+                <apex:facet name="header">Contracted Licenses</apex:facet>
+            </apex:column>
+            <!-- <apex:column value="{!a.numberFulfilledLicenses}"> 
+                <apex:facet name="header">Fulfilled Licenses</apex:facet>
+            </apex:column> -->
+            
+           <!-- <apex:column >
+                <apex:facet name="header">ARR</apex:facet>
+                <apex:outputText value="{0,number,currency}">
+                    <apex:param value="{!a.arr}"/>
+                </apex:outputText> 
+            </apex:column> -->
+            <apex:column value="{!a.ins}" rendered="{!Account.Primary_Business_Unit__c = 'Roadnet'}">
+                <apex:facet name="header"># Instances</apex:facet>
+            </apex:column>
+            <apex:column value="{!a.numberOfMobileAssets}" rendered="{!Account.Primary_Business_Unit__c = 'Roadnet'}">
+                <apex:facet name="header"># Mobile Assets</apex:facet>
+            </apex:column>
+            <apex:column value="{!a.numberOfMultiShiftVehicles}" rendered="{!Account.Primary_Business_Unit__c = 'Roadnet'}">
+                <apex:facet name="header"># Multi Shift Vehicles</apex:facet>
+            </apex:column>
+            <apex:column value="{!a.NumberOfLicensedVehicles}" rendered="{!Account.Primary_Business_Unit__c = 'Roadnet'}">
+                <apex:facet name="header"># Licensed Vehicles</apex:facet>
+            </apex:column>
+            <apex:column value="{!a.numberOfDcs}" rendered="{!Account.Primary_Business_Unit__c = 'Roadnet'}">
+                <apex:facet name="header"># DCs</apex:facet>
+            </apex:column>
+            <apex:column value="{!a.numberOfUsers}" rendered="{!Account.Primary_Business_Unit__c = 'Roadnet'}">
+                <apex:facet name="header"># Users</apex:facet>
+            </apex:column>
+            <apex:column value="{!a.eval}" rendered="{!Account.Primary_Business_Unit__c = 'Roadnet'}">
+                <apex:facet name="header">Eval?</apex:facet>
+            </apex:column>
+            <apex:column >
+                <apex:facet name="header">Asset's Owner</apex:facet>
+                <apex:outputLink value="/{!a.asset.Account__c}" target="_top">{!a.asset.account__r.name}</apex:outputLink>
+            </apex:column> 
+        </apex:pageBlockTable> 
+        <apex:pageblocksection title="Map Set">
+            <apex:pageblocksectionitem > 
+                <apex:outputlabel value="Database Platform"/>
+                <apex:outputtext value="{!databasePlatform}"/>
+            </apex:pageblocksectionitem>
+            <!--apex:pageblocksectionitem >
+                <apex:outputlabel value="Co-Pilot Version #"/>
+                <apex:outputtext value="{!coPilotVersion}"/>
+            </apex:pageblocksectionitem-->
+            
+            <apex:pageblocksectionItem >
+                <apex:outputlabel value="Map Set"/>
+                <apex:outputlink value="{!$Site.OriginalUrl}/{!mostCurrentMapSet.id}" 
+                    target="_blank" title="Go To Lastest Map Set">{!LatestMapSetPurchased}</apex:outputlink> 
+            </apex:pageblocksectionItem>
+            <apex:pageblocksectionitem >
+                <apex:outputlabel value="Map Set Licensed Vehicles"/>
+                <apex:outputfield value="{!mostCurrentMapSet.Number_of_Licensed_Vehicles__c}"/>
+            </apex:pageblocksectionitem>
+            
+            <apex:pageblocksectionItem >
+               <apex:outputlabel value="Historical Traffic Data Inrix"/>
+               <apex:outputfield value="{!mostCurrentMapSet.Historical_Traffic_Data_Inrix__c}"/>
+            </apex:pageblocksectionItem>
+            
+        </apex:pageblocksection>
+    </apex:pageBlock> 
+</apex:page>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Co_Op_Earned__c</fullName>
+    <description>The earned % applied to the revenue. Used for accrual based budgets</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The earned % applied to the revenue. Used for accrual based budgets</inlineHelpText>
+    <label>Co-Op Earned %</label>
+    <precision>12</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

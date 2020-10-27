@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Execute_Batch</fullName>
+    <availability>online</availability>
+    <description>Execute Transaction Log Batch</description>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Execute Batch</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/apex.js&quot;)}
+
+var apexClassArray = sforce.connection.query(&quot;SELECT Id FROM ApexClass WHERE Name =&apos;TxnLogBatch&apos;&quot;);
+var recordsClassId = apexClassArray.getArray(&quot;records&quot;);
+var checkBatchRunningRecords = sforce.connection.query(&quot;SELECT ApexClassId, status FROM AsyncApexJob WHERE ApexClassId =&apos;&quot; + recordsClassId[0].Id + &quot;&apos; AND Status NOT IN (&apos;Completed&apos;,&apos;Aborted&apos;,&apos;Failed&apos;)&quot;);
+var records = checkBatchRunningRecords.getArray(&quot;records&quot;);
+
+if (records.length &gt; 0) {
+	window.alert(&quot;The batch job is currently executing. Please wait for it to complete.&quot;);
+} else {
+	var batchId = sforce.apex.execute(&quot;WebServiceExecution&quot;, &quot;ExecuteTxnLogBatch&quot;, {});
+	window.alert(&apos;The TXN Log batch job &apos; + batchId + &apos; has started.&apos;);
+
+}</url>
+</WebLink>

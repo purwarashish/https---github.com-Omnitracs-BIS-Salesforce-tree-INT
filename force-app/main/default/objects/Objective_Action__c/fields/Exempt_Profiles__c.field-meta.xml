@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exempt_Profiles__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Profile ID(s) exempt from required Actions. To specify multiple Profile ID&apos;s, use a tilde as a delimiter (e.g. ID1~ID2~ID3)</inlineHelpText>
+    <label>Exempt Profiles</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

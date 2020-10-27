@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PS_Total_Score__c</fullName>
+    <externalId>false</externalId>
+    <formula>(PS_Courteous_and_Professional_num__c + PS_Had_Product_Knowledge_num__c + PS_Identified_Goals_and_Objectives_num__c + PS_Overall_Satisfied_num__c + PS_Timely_Follow_Up_num__c)
+/
+(IF(PS_Courteous_and_Professional_num__c = 0, 0, 1) + IF(PS_Had_Product_Knowledge_num__c = 0, 0, 1) + IF(PS_Identified_Goals_and_Objectives_num__c = 0, 0, 1) + IF(PS_Overall_Satisfied_num__c = 0, 0, 1) + IF(PS_Timely_Follow_Up_num__c = 0, 0, 1))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>PS Average Score</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

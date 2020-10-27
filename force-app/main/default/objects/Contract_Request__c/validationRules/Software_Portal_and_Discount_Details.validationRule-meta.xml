@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Software_Portal_and_Discount_Details</fullName>
+    <active>true</active>
+    <description>If other option is selected under software then it is required to fill in the &quot;Software/Portal and Discount Details&quot; text box</description>
+    <errorConditionFormula>AND( ISPICKVAL( Software__c , &apos;Other&apos;), Time_Limited_or_Other_Software_Discounts__c =&apos; &apos;)</errorConditionFormula>
+    <errorDisplayField>Time_Limited_or_Other_Software_Discounts__c</errorDisplayField>
+    <errorMessage>If &quot;Other&quot; is selected under Software/Portal then you should fill this section.</errorMessage>
+</ValidationRule>

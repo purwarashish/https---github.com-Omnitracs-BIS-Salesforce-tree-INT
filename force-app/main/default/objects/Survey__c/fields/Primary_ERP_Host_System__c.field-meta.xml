@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_ERP_Host_System__c</fullName>
+    <externalId>false</externalId>
+    <label>Primary ERP (Host) System</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>1C: Enterprise 8</fullName>
+                <default>false</default>
+                <label>1C: Enterprise 8</label>
+            </value>
+            <value>
+                <fullName>ABS</fullName>
+                <default>false</default>
+                <label>ABS</label>
+            </value>
+            <value>
+                <fullName>Absolute</fullName>
+                <default>false</default>
+                <label>Absolute</label>
+            </value>
+            <value>
+                <fullName>Activant</fullName>
+                <default>false</default>
+                <label>Activant</label>
+            </value>
+            <value>
+                <fullName>ADAM</fullName>
+                <default>false</default>
+                <label>ADAM</label>
+            </value>
+            <value>
+                <fullName>ADDS</fullName>
+                <default>false</default>
+                <label>ADDS</label>
+            </value>
+            <value>
+                <fullName>ADP</fullName>
+                <default>false</default>
+                <label>ADP</label>
+            </value>
+            <value>
+                <fullName>Advantage Route Systems</fullName>
+                <default>false</default>
+                <label>Advantage Route Systems</label>
+            </value>
+            <value>
+                <fullName>AFS</fullName>
+                <default>false</default>
+                <label>AFS</label>
+            </value>
+            <value>
+                <fullName>Alliant</fullName>
+                <default>false</default>
+                <label>Alliant</label>
+            </value>
+            <value>
+                <fullName>Amplexus</fullName>
+                <default>false</default>
+                <label>Amplexus</label>
+            </value>
+            <value>
+                <fullName>Andrews Software, Inc. (Veri-Shred)</fullName>
+                <default>false</default>
+                <label>Andrews Software, Inc. (Veri-Shred)</label>
+            </value>
+            <value>
+                <fullName>Aplus</fullName>
+                <default>false</default>
+                <label>Aplus</label>
+            </value>
+            <value>
+                <fullName>Apprise</fullName>
+                <default>false</default>
+                <label>Apprise</label>
+            </value>
+            <value>
+                <fullName>AS 400</fullName>
+                <default>false</default>
+                <label>AS 400</label>
+            </value>
+            <value>
+                <fullName>Aspen Systems Canopy</fullName>
+                <default>false</default>
+                <label>Aspen Systems Canopy</label>
+            </value>
+            <value>
+                <fullName>AWE</fullName>
+                <default>false</default>
+                <label>AWE</label>
+            </value>
+            <value>
+                <fullName>Basis (Coca-Cola)</fullName>
+                <default>false</default>
+                <label>Basis (Coca-Cola)</label>
+            </value>
+            <value>
+                <fullName>BDS</fullName>
+                <default>false</default>
+                <label>BDS</label>
+            </value>
+            <value>
+                <fullName>Blue Cow</fullName>
+                <default>false</default>
+                <label>Blue Cow</label>
+            </value>
+            <value>
+                <fullName>Bonafide</fullName>
+                <default>false</default>
+                <label>Bonafide</label>
+            </value>
+            <value>
+                <fullName>Bpix</fullName>
+                <default>false</default>
+                <label>Bpix</label>
+            </value>
+            <value>
+                <fullName>Brightree</fullName>
+                <default>false</default>
+                <label>Brightree</label>
+            </value>
+            <value>
+                <fullName>Care Centric (MestaMed)</fullName>
+                <default>false</default>
+                <label>Care Centric (MestaMed)</label>
+            </value>
+            <value>
+                <fullName>Cargas Systems</fullName>
+                <default>false</default>
+                <label>Cargas Systems</label>
+            </value>
+            <value>
+                <fullName>CAU</fullName>
+                <default>false</default>
+                <label>CAU</label>
+            </value>
+            <value>
+                <fullName>Cerner (Etreby)</fullName>
+                <default>false</default>
+                <label>Cerner (Etreby)</label>
+            </value>
+            <value>
+                <fullName>Charisma</fullName>
+                <default>false</default>
+                <label>Charisma</label>
+            </value>
+            <value>
+                <fullName>Computers Unlimited (TIMS)</fullName>
+                <default>false</default>
+                <label>Computers Unlimited (TIMS)</label>
+            </value>
+            <value>
+                <fullName>CPR+</fullName>
+                <default>false</default>
+                <label>CPR+</label>
+            </value>
+            <value>
+                <fullName>Custom</fullName>
+                <default>false</default>
+                <label>Custom</label>
+            </value>
+            <value>
+                <fullName>Custom - Legacy</fullName>
+                <default>false</default>
+                <label>Custom - Legacy</label>
+            </value>
+            <value>
+                <fullName>Custom - Windows Based</fullName>
+                <default>false</default>
+                <label>Custom - Windows Based</label>
+            </value>
+            <value>
+                <fullName>DBEV</fullName>
+                <default>false</default>
+                <label>DBEV</label>
+            </value>
+            <value>
+                <fullName>DCI</fullName>
+                <default>false</default>
+                <label>DCI</label>
+            </value>
+            <value>
+                <fullName>DDI Systems</fullName>
+                <default>false</default>
+                <label>DDI Systems</label>
+            </value>
+            <value>
+                <fullName>Desert Micro</fullName>
+                <default>false</default>
+                <label>Desert Micro</label>
+            </value>
+            <value>
+                <fullName>DeYoung</fullName>
+                <default>false</default>
+                <label>DeYoung</label>
+            </value>
+            <value>
+                <fullName>DHS Worldwide Software Solutions</fullName>
+                <default>false</default>
+                <label>DHS Worldwide Software Solutions</label>
+            </value>
+            <value>
+                <fullName>DM2</fullName>
+                <default>false</default>
+                <label>DM2</label>
+            </value>
+            <value>
+                <fullName>DMSI</fullName>
+                <default>false</default>
+                <label>DMSI</label>
+            </value>
+            <value>
+                <fullName>Docudata Software</fullName>
+                <default>false</default>
+                <label>Docudata Software</label>
+            </value>
+            <value>
+                <fullName>Dynamic Energy (MedAct)</fullName>
+                <default>false</default>
+                <label>Dynamic Energy (MedAct)</label>
+            </value>
+            <value>
+                <fullName>Eclipse</fullName>
+                <default>false</default>
+                <label>Eclipse</label>
+            </value>
+            <value>
+                <fullName>Edible</fullName>
+                <default>false</default>
+                <label>Edible</label>
+            </value>
+            <value>
+                <fullName>Encompass</fullName>
+                <default>false</default>
+                <label>Encompass</label>
+            </value>
+            <value>
+                <fullName>Entrée</fullName>
+                <default>false</default>
+                <label>Entrée</label>
+            </value>
+            <value>
+                <fullName>eoStar (Rutherford)</fullName>
+                <default>false</default>
+                <label>eoStar (Rutherford)</label>
+            </value>
+            <value>
+                <fullName>Epicor</fullName>
+                <default>false</default>
+                <label>Epicor</label>
+            </value>
+            <value>
+                <fullName>Everest Software</fullName>
+                <default>false</default>
+                <label>Everest Software</label>
+            </value>
+            <value>
+                <fullName>Excel Spreadsheet</fullName>
+                <default>false</default>
+                <label>Excel Spreadsheet</label>
+            </value>
+            <value>
+                <fullName>EZ Shred</fullName>
+                <default>false</default>
+                <label>EZ Shred</label>
+            </value>
+            <value>
+                <fullName>FACTS</fullName>
+                <default>false</default>
+                <label>FACTS</label>
+            </value>
+            <value>
+                <fullName>Fast Track</fullName>
+                <default>false</default>
+                <label>Fast Track</label>
+            </value>
+            <value>
+                <fullName>FoodConnex</fullName>
+                <default>false</default>
+                <label>FoodConnex</label>
+            </value>
+            <value>
+                <fullName>Foundation Systems</fullName>
+                <default>false</default>
+                <label>Foundation Systems</label>
+            </value>
+            <value>
+                <fullName>Fuel Data (Factor)</fullName>
+                <default>false</default>
+                <label>Fuel Data (Factor)</label>
+            </value>
+            <value>
+                <fullName>Geac / JBA</fullName>
+                <default>false</default>
+                <label>Geac / JBA</label>
+            </value>
+            <value>
+                <fullName>GERS</fullName>
+                <default>false</default>
+                <label>GERS</label>
+            </value>
+            <value>
+                <fullName>HighFlex</fullName>
+                <default>false</default>
+                <label>HighFlex</label>
+            </value>
+            <value>
+                <fullName>High Jump/3M (formerly - Global Bev., BSI &amp; Microvane)</fullName>
+                <default>false</default>
+                <label>High Jump/3M (formerly - Global Bev., BSI &amp; Microvane)</label>
+            </value>
+            <value>
+                <fullName>IDS</fullName>
+                <default>false</default>
+                <label>IDS</label>
+            </value>
+            <value>
+                <fullName>Infor (includes SSA Global, Baan)</fullName>
+                <default>false</default>
+                <label>Infor (includes SSA Global, Baan)</label>
+            </value>
+            <value>
+                <fullName>Insight</fullName>
+                <default>false</default>
+                <label>Insight</label>
+            </value>
+            <value>
+                <fullName>Intuit (Quickbooks)</fullName>
+                <default>false</default>
+                <label>Intuit (Quickbooks)</label>
+            </value>
+            <value>
+                <fullName>JD Edwards (now Oracle)</fullName>
+                <default>false</default>
+                <label>JD Edwards (now Oracle)</label>
+            </value>
+            <value>
+                <fullName>K&amp;K</fullName>
+                <default>false</default>
+                <label>K&amp;K</label>
+            </value>
+            <value>
+                <fullName>Keystroke</fullName>
+                <default>false</default>
+                <label>Keystroke</label>
+            </value>
+            <value>
+                <fullName>Kronos</fullName>
+                <default>false</default>
+                <label>Kronos</label>
+            </value>
+            <value>
+                <fullName>Lawson</fullName>
+                <default>false</default>
+                <label>Lawson</label>
+            </value>
+            <value>
+                <fullName>MAS 90</fullName>
+                <default>false</default>
+                <label>MAS 90</label>
+            </value>
+            <value>
+                <fullName>Maytag</fullName>
+                <default>false</default>
+                <label>Maytag</label>
+            </value>
+            <value>
+                <fullName>MayTech</fullName>
+                <default>false</default>
+                <label>MayTech</label>
+            </value>
+            <value>
+                <fullName>Mediware</fullName>
+                <default>false</default>
+                <label>Mediware</label>
+            </value>
+            <value>
+                <fullName>MFG/Pro</fullName>
+                <default>false</default>
+                <label>MFG/Pro</label>
+            </value>
+            <value>
+                <fullName>Microsoft Business Solutions (Great Plains, etc.)</fullName>
+                <default>false</default>
+                <label>Microsoft Business Solutions (Great Plains, etc.)</label>
+            </value>
+            <value>
+                <fullName>Microsoft Open Source ERP (Axapta)</fullName>
+                <default>false</default>
+                <label>Microsoft Open Source ERP (Axapta)</label>
+            </value>
+            <value>
+                <fullName>Mincron</fullName>
+                <default>false</default>
+                <label>Mincron</label>
+            </value>
+            <value>
+                <fullName>NDS</fullName>
+                <default>false</default>
+                <label>NDS</label>
+            </value>
+            <value>
+                <fullName>NECS (Entrée)</fullName>
+                <default>false</default>
+                <label>NECS (Entrée)</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>O&apos;Neil</fullName>
+                <default>false</default>
+                <label>O&apos;Neil</label>
+            </value>
+            <value>
+                <fullName>Oracle</fullName>
+                <default>false</default>
+                <label>Oracle</label>
+            </value>
+            <value>
+                <fullName>Oracle (JD Edwards)</fullName>
+                <default>false</default>
+                <label>Oracle (JD Edwards)</label>
+            </value>
+            <value>
+                <fullName>Oracle (Peoplesoft)</fullName>
+                <default>false</default>
+                <label>Oracle (Peoplesoft)</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Pacware</fullName>
+                <default>false</default>
+                <label>Pacware</label>
+            </value>
+            <value>
+                <fullName>Priority</fullName>
+                <default>false</default>
+                <label>Priority</label>
+            </value>
+            <value>
+                <fullName>Procom</fullName>
+                <default>false</default>
+                <label>Procom</label>
+            </value>
+            <value>
+                <fullName>Produce Man</fullName>
+                <default>false</default>
+                <label>Produce Man</label>
+            </value>
+            <value>
+                <fullName>Produce Pro</fullName>
+                <default>false</default>
+                <label>Produce Pro</label>
+            </value>
+            <value>
+                <fullName>Program Systems</fullName>
+                <default>false</default>
+                <label>Program Systems</label>
+            </value>
+            <value>
+                <fullName>Prophet 21</fullName>
+                <default>false</default>
+                <label>Prophet 21</label>
+            </value>
+            <value>
+                <fullName>QS1</fullName>
+                <default>false</default>
+                <label>QS1</label>
+            </value>
+            <value>
+                <fullName>Quasimodo</fullName>
+                <default>false</default>
+                <label>Quasimodo</label>
+            </value>
+            <value>
+                <fullName>RCC</fullName>
+                <default>false</default>
+                <label>RCC</label>
+            </value>
+            <value>
+                <fullName>Retailix</fullName>
+                <default>false</default>
+                <label>Retailix</label>
+            </value>
+            <value>
+                <fullName>Ross</fullName>
+                <default>false</default>
+                <label>Ross</label>
+            </value>
+            <value>
+                <fullName>Sage</fullName>
+                <default>false</default>
+                <label>Sage</label>
+            </value>
+            <value>
+                <fullName>SAP</fullName>
+                <default>false</default>
+                <label>SAP</label>
+            </value>
+            <value>
+                <fullName>SCT Adage</fullName>
+                <default>false</default>
+                <label>SCT Adage</label>
+            </value>
+            <value>
+                <fullName>SFDC</fullName>
+                <default>false</default>
+                <label>SFDC</label>
+            </value>
+            <value>
+                <fullName>Shining Brow</fullName>
+                <default>false</default>
+                <label>Shining Brow</label>
+            </value>
+            <value>
+                <fullName>Siebel</fullName>
+                <default>false</default>
+                <label>Siebel</label>
+            </value>
+            <value>
+                <fullName>Silver Creek Visual Produce</fullName>
+                <default>false</default>
+                <label>Silver Creek Visual Produce</label>
+            </value>
+            <value>
+                <fullName>SKP</fullName>
+                <default>false</default>
+                <label>SKP</label>
+            </value>
+            <value>
+                <fullName>Softeon</fullName>
+                <default>false</default>
+                <label>Softeon</label>
+            </value>
+            <value>
+                <fullName>Solunix</fullName>
+                <default>false</default>
+                <label>Solunix</label>
+            </value>
+            <value>
+                <fullName>SRS</fullName>
+                <default>false</default>
+                <label>SRS</label>
+            </value>
+            <value>
+                <fullName>SSA (includes Baan)</fullName>
+                <default>false</default>
+                <label>SSA (includes Baan)</label>
+            </value>
+            <value>
+                <fullName>Stanpak Systems</fullName>
+                <default>false</default>
+                <label>Stanpak Systems</label>
+            </value>
+            <value>
+                <fullName>Starcom</fullName>
+                <default>false</default>
+                <label>Starcom</label>
+            </value>
+            <value>
+                <fullName>Step One</fullName>
+                <default>false</default>
+                <label>Step One</label>
+            </value>
+            <value>
+                <fullName>Suburban Software</fullName>
+                <default>false</default>
+                <label>Suburban Software</label>
+            </value>
+            <value>
+                <fullName>Sx/Nx Trend/Enterprise</fullName>
+                <default>false</default>
+                <label>Sx/Nx Trend/Enterprise</label>
+            </value>
+            <value>
+                <fullName>Target Data</fullName>
+                <default>false</default>
+                <label>Target Data</label>
+            </value>
+            <value>
+                <fullName>Team DME</fullName>
+                <default>false</default>
+                <label>Team DME</label>
+            </value>
+            <value>
+                <fullName>Textile Technologies</fullName>
+                <default>false</default>
+                <label>Textile Technologies</label>
+            </value>
+            <value>
+                <fullName>TexWare</fullName>
+                <default>false</default>
+                <label>TexWare</label>
+            </value>
+            <value>
+                <fullName>Thyme (Foxglove Bravo)</fullName>
+                <default>false</default>
+                <label>Thyme (Foxglove Bravo)</label>
+            </value>
+            <value>
+                <fullName>Thyme (Fresh Software Solutions)</fullName>
+                <default>false</default>
+                <label>Thyme (Fresh Software Solutions)</label>
+            </value>
+            <value>
+                <fullName>TireMaster (ASA Tire Systems)</fullName>
+                <default>false</default>
+                <label>TireMaster (ASA Tire Systems)</label>
+            </value>
+            <value>
+                <fullName>TMW Systems</fullName>
+                <default>false</default>
+                <label>TMW Systems</label>
+            </value>
+            <value>
+                <fullName>Total Recall</fullName>
+                <default>false</default>
+                <label>Total Recall</label>
+            </value>
+            <value>
+                <fullName>Trimble</fullName>
+                <default>false</default>
+                <label>Trimble</label>
+            </value>
+            <value>
+                <fullName>Turille &amp; Assoc.</fullName>
+                <default>false</default>
+                <label>Turille &amp; Assoc.</label>
+            </value>
+            <value>
+                <fullName>TurningPoint Systems</fullName>
+                <default>false</default>
+                <label>TurningPoint Systems</label>
+            </value>
+            <value>
+                <fullName>Universal Business Systems (PaperMaster)</fullName>
+                <default>false</default>
+                <label>Universal Business Systems (PaperMaster)</label>
+            </value>
+            <value>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+                <label>Unknown</label>
+            </value>
+            <value>
+                <fullName>UXIX</fullName>
+                <default>false</default>
+                <label>UXIX</label>
+            </value>
+            <value>
+                <fullName>VAI</fullName>
+                <default>false</default>
+                <label>VAI</label>
+            </value>
+            <value>
+                <fullName>Vertrax</fullName>
+                <default>false</default>
+                <label>Vertrax</label>
+            </value>
+            <value>
+                <fullName>VIP</fullName>
+                <default>false</default>
+                <label>VIP</label>
+            </value>
+            <value>
+                <fullName>Visual Produce</fullName>
+                <default>false</default>
+                <label>Visual Produce</label>
+            </value>
+            <value>
+                <fullName>WizPro</fullName>
+                <default>false</default>
+                <label>WizPro</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

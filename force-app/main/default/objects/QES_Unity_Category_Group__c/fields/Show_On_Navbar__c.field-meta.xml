@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Show_On_Navbar__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicate if this category to be displayed on navbar for quick search</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicate if this category to be displayed on navbar for quick search</inlineHelpText>
+    <label>Show On Navbar</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

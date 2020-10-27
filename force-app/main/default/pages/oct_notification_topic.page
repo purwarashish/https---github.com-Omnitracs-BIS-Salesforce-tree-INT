@@ -1,0 +1,18 @@
+<apex:page controller="OutageContactToolController" tabStyle="Contact">
+  <apex:sectionHeader title="Outage Contact Tool" subtitle="Step 1 of 3"/>
+    <apex:form >
+      <apex:pageBlock title="Notification Topic" >
+        <apex:panelGrid columns="2">
+            <apex:selectRadio layout="pageDirection" required="true" value="{!notification_topic}">
+		        <apex:selectOption itemValue="{!HARDWARE_VALUE}" itemLabel="{!HARDWARE_VALUE}"/>
+		        <apex:selectOption itemValue="{!PORTAL_AND_SERVICES_VALUE}" itemLabel="{!PORTAL_AND_SERVICES_VALUE}"/>
+		        <apex:selectOption itemValue="{!NMC_SYSTEM_VALUE}" itemLabel="{!NMC_SYSTEM_VALUE}"/>
+		        <apex:selectOption itemValue="{!CUSTOM_SEARCH}" itemLabel="{!CUSTOM_SEARCH}"/>
+            </apex:selectRadio>
+       </apex:panelGrid>
+       <apex:pageBlockButtons >
+        <apex:commandButton action="{!submitNotificationTopicPage}" value="Next"/>
+       </apex:pageBlockButtons>
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

@@ -1,0 +1,125 @@
+<apex:page standardController="Street_Area__c" extensions="StreetAreaExtension">
+    <apex:form >
+    <apex:pagemessages />
+        <apex:pageBlock title="New Street Area" mode="edit">
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!save}" value="Save"/>
+                <apex:commandButton action="{!cancel}" value="Cancel"/>
+            </apex:pageBlockButtons>
+            <apex:outputpanel id="everything">
+                <apex:pageBlockSection columns="1" >
+                   <apex:pageblocksectionItem rendered="{!!isVFPageInNewMode}">
+                        <apex:outputlabel value="Street Area Name"/>
+                        <apex:outputfield value="{!streetArea.name}"/>
+                    </apex:pageblocksectionItem> 
+
+                    <apex:pageblocksectionItem >
+                        <apex:outputlabel value="Map Set"/>                              
+                        <apex:outputfield value="{!streetArea.Map_Set__c}"/>
+                    </apex:pageblocksectionItem>
+                    
+                    <apex:pageblocksectionItem >
+                        <apex:outputlabel value="Map Nation"/>                              
+                        <apex:selectList value="{!streetArea.Map_Nation__c}" size="1">
+                        <apex:actionSupport event="onchange" action="{!refreshData}"  rerender="everything"
+                                status="statusForEverything"/>
+                           <apex:selectoptions value="{!NationList}"/>
+                        </apex:selectList>
+                    </apex:pageblocksectionItem>
+                    
+                    <apex:pageblocksectionItem >
+                        <apex:outputlabel value="Is State Specified"/>
+                        <apex:inputCheckbox value="{!streetArea.IsMapStateSpecified__c}">
+                            <apex:actionSupport event="onclick" action="{!didIsMapStateSpecifiedFieldOnChange}"
+                                rerender="everything"
+                                status="statusForEverything"/>
+                        </apex:inputCheckBox>
+                    </apex:pageblocksectionItem>
+                    <apex:pageblocksectionItem rendered="{!streetArea.IsMapStateSpecified__c}">
+                         <apex:outputlabel value="Selecting Multiple States?"/>
+                         <apex:inputCheckbox value="{!isSelectingMultipleStates}">
+                            <apex:actionSupport event="onclick" 
+                                    action="{!didIsSelectingMultipleStatesFieldOnChange}"
+                                    rerender="everything"
+                                    status="statusForEverything"/>
+                         </apex:inputCheckBox>
+                    </apex:pageblocksectionItem>
+                </apex:pageBlockSection>
+	            <!-- start section of multi state select -->
+	            <apex:pageblockSection rendered="{!isSelectingMultipleStates}">
+	                <apex:pageBlockSection >
+	                    <apex:pageblocksectionitem >
+	                         <apex:outputlabel value="Select Multiple States: "/>
+	                         <apex:selectList value="{!stateObject.userSelectedItemsToAdd}" size="5" multiselect="true" >
+	                             <apex:selectoptions value="{!stateObject.sourceList}"/>
+	                         </apex:selectList>
+	                   </apex:pageblocksectionitem>
+	                   <apex:pageBlockSectionItem >
+	                      <apex:outputlabel value="Your Selections: "/>
+	                      <apex:selectList value="{!stateObject.userSelectedItemsToRemove}" size="5" multiselect="true" >
+	                         <apex:selectoptions value="{!stateObject.selectedItemsList}"/>
+	                      </apex:selectList>
+	                   </apex:pageBlockSectionItem>
+	               </apex:pageblockSection> 
+	               <p><!-- extra spaceing per maryann's request -->
+	                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	                <apex:commandButton action="{!stateObject.addItemsToList}" value="Add States" rerender="everything"/>
+	                <apex:commandbutton action="{!stateObject.removeItemsFromList}" value="Remove States" rerender="everything"/>
+	               </p>
+	            </apex:pageBlockSection>
+	            <!--   end section of multi state select -->
+	            
+	            <!--  if not selecting multiple states, display the single state and county list -->           
+                <apex:pageblockSection columns="1" 
+                    rendered="{! AND(isSelectingMultipleStates == false, streetArea.IsMapStateSpecified__c)  }">
+                    <apex:pageblocksectionItem >
+                        <apex:outputlabel value="Map State"/>                              
+                        <apex:selectList value="{!streetArea.Map_State__c}" size="1" >
+                            <apex:actionSupport event="onchange" 
+                                action="{!refreshData}"
+                                rerender="everything"
+                                status="statusForEverything"/>
+                           <apex:selectoptions value="{!stateList}"/>
+                        </apex:selectList>
+                    </apex:pageblocksectionItem>
+                    <apex:pageblocksectionItem >
+                        <apex:outputlabel value="Is County Specified"/>
+                        <apex:inputCheckbox value="{!streetArea.IsMapCountySpecified__c}">
+                            <apex:actionSupport event="onclick" 
+                                    action="{!didIsMapCountySpecifiedFieldOnChange}"
+                                    rerender="everything"
+                                    status="statusForEverything"/>
+                        </apex:inputCheckBox>
+                    </apex:pageblocksectionItem>
+                </apex:pageBlockSection>
+				<!-- we will allow the user to select multiple counties here, they can select only one if they want -->
+				<apex:pageBlockSection columns="2" rendered="{!AND(streetArea.IsMapCountySpecified__c, isSelectingMultipleStates == false, streetArea.IsMapStateSpecified__c)}">
+				    <apex:pageblocksectionItem >
+				        <apex:outputlabel value="Select Counties"/>                              
+				        <apex:selectList value="{!countyObject.userSelectedItemsToAdd}" size="5" multiselect="true">
+				           <apex:selectoptions value="{!countyObject.sourceList}"/>
+				        </apex:selectList>
+				    </apex:pageblocksectionItem>
+				    <apex:pageblocksectionItem >
+				        <apex:outputlabel value="Your Selections"/>                              
+				        <apex:selectList value="{!countyObject.userSelectedItemsToRemove}" size="5" multiselect="true">
+				           <apex:selectoptions value="{!countyObject.selectedItemsList}"/>
+				        </apex:selectList>
+				    </apex:pageblocksectionItem>
+                    <!-- extra spaceing per maryann's request -->
+                    <apex:commandButton action="{!countyObject.addItemsToList}" value="Add Counties" rerender="everything"/>
+                    <apex:commandbutton action="{!countyObject.removeItemsFromList}" value="Remove Counties" rerender="everything"/>
+                </apex:pageBlockSection>
+
+                </apex:outputpanel>
+            </apex:pageBlock>
+        <apex:actionStatus startText="Requesting data from server...." id="statusForEverything"/>    
+    </apex:form> 
+</apex:page>

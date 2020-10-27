@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Platform_and_Top_Application_Ordinal__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>Platform and top application ordinal</description>
+    <externalId>false</externalId>
+    <label>Platform and Top Application Ordinal</label>
+    <length>50</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

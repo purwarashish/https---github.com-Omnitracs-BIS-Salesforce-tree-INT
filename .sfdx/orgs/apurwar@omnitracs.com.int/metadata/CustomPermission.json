@@ -1,0 +1,33 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "00550000001biZKAAY",
+      "createdByName": "Deployment User",
+      "createdDate": "2018-06-30T15:20:56.000Z",
+      "fileName": "customPermissions/SBQQ__CPQStandardPerm.customPermission",
+      "fullName": "SBQQ__CPQStandardPerm",
+      "id": "0CP50000000L7LQGA0",
+      "lastModifiedById": "00550000001biZKAAY",
+      "lastModifiedByName": "Deployment User",
+      "lastModifiedDate": "2018-06-30T15:20:56.000Z",
+      "manageableState": "installed",
+      "namespacePrefix": "SBQQ",
+      "type": "CustomPermission"
+    },
+    {
+      "createdById": "00550000004cCkhAAE",
+      "createdByName": "Sripathi Gullapalli",
+      "createdDate": "2017-05-10T16:38:56.000Z",
+      "fileName": "customPermissions/SBQQ__HideGlobalHeader.customPermission",
+      "fullName": "SBQQ__HideGlobalHeader",
+      "id": "0CP50000000TRYvGAO",
+      "lastModifiedById": "00550000004cCkhAAE",
+      "lastModifiedByName": "Sripathi Gullapalli",
+      "lastModifiedDate": "2017-05-10T16:38:56.000Z",
+      "manageableState": "installed",
+      "namespacePrefix": "SBQQ",
+      "type": "CustomPermission"
+    }
+  ]
+}

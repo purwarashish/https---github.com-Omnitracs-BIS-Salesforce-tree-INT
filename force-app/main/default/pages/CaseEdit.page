@@ -1,0 +1,16 @@
+<apex:page standardController="Case" extensions="ShowSupportAlertController" >
+  <script text="text/javascript"> 
+window.onload = function() {
+
+    selected();
+} 
+</script>
+
+  <!--<body onload='onLoadRedirect();'>-->
+  <apex:form >
+      <apex:actionFunction action="{!redirectionOnEdit}" name="selected">
+      </apex:actionFunction>
+      <b>Redirecting.. Please wait</b>
+  </apex:form>
+
+</apex:page>

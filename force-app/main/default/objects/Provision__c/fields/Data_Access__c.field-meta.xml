@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Data_Access__c</fullName>
+    <description>Created for Contract Management.</description>
+    <externalId>false</externalId>
+    <label>Data Access</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>John Deere</fullName>
+                <default>false</default>
+                <label>John Deere</label>
+            </value>
+            <value>
+                <fullName>John Deere and Dealers</fullName>
+                <default>false</default>
+                <label>John Deere and Dealers</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>Vermeer</fullName>
+                <default>false</default>
+                <label>Vermeer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

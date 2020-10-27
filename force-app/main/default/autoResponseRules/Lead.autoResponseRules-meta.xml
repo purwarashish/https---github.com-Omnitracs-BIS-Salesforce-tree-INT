@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutoResponseRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <autoResponseRule>
+        <fullName>Web Leads</fullName>
+        <active>false</active>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Lead.Market__c</field>
+                <operation>equals</operation>
+                <value>Sylectus</value>
+            </criteriaItems>
+            <senderEmail>sales@sylectus.com</senderEmail>
+            <senderName>Sylectus</senderName>
+            <template>QESAutomatedMessages/Sylectus_web_to_lead</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Lead.Market__c</field>
+                <operation>equals</operation>
+                <value>Mexico Sales</value>
+            </criteriaItems>
+            <senderEmail>mkt@qualcomm.mx</senderEmail>
+            <senderName>Omnitracs México</senderName>
+            <template>CNR_Email_Templates/CNR_web_to_lead</template>
+        </ruleEntry>
+    </autoResponseRule>
+</AutoResponseRules>

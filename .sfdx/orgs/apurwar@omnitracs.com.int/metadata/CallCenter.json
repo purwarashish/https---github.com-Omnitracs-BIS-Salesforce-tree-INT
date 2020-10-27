@@ -1,0 +1,161 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "00550000003jZ7KAAU",
+      "createdByName": "Christian Cunningham",
+      "createdDate": "2019-03-18T15:23:23.000Z",
+      "fileName": "callCenters/OmnitracsSSO.callCenter",
+      "fullName": "OmnitracsSSO",
+      "id": "04v1T000000GnssQAC",
+      "lastModifiedById": "00550000003jZ7KAAU",
+      "lastModifiedByName": "Christian Cunningham",
+      "lastModifiedDate": "2019-03-18T15:24:20.000Z",
+      "type": "CallCenter"
+    },
+    {
+      "createdById": "00550000001biZKAAY",
+      "createdByName": "Deployment User",
+      "createdDate": "2015-05-14T18:10:53.000Z",
+      "fileName": "callCenters/NewTier1Config.callCenter",
+      "fullName": "NewTier1Config",
+      "id": "04v50000000CcZmAAK",
+      "lastModifiedById": "00550000004fEIIAA2",
+      "lastModifiedByName": "Cody Worth",
+      "lastModifiedDate": "2016-03-14T13:37:27.000Z",
+      "type": "CallCenter"
+    },
+    {
+      "createdById": "00550000001biZKAAY",
+      "createdByName": "Deployment User",
+      "createdDate": "2015-03-10T06:41:17.000Z",
+      "fileName": "callCenters/SimpliCTIT0.callCenter",
+      "fullName": "SimpliCTIT0",
+      "id": "04v50000000CcX2AAK",
+      "lastModifiedById": "00550000004fEIIAA2",
+      "lastModifiedByName": "Cody Worth",
+      "lastModifiedDate": "2016-03-14T13:37:07.000Z",
+      "type": "CallCenter"
+    },
+    {
+      "createdById": "00550000003jZ7KAAU",
+      "createdByName": "Christian Cunningham",
+      "createdDate": "2019-02-26T16:32:14.000Z",
+      "fileName": "callCenters/Five9Adapter.callCenter",
+      "fullName": "Five9Adapter",
+      "id": "04v1T000000GnsiQAC",
+      "lastModifiedById": "00550000003jZ7KAAU",
+      "lastModifiedByName": "Christian Cunningham",
+      "lastModifiedDate": "2019-02-26T16:32:14.000Z",
+      "type": "CallCenter"
+    },
+    {
+      "createdById": "00550000003jZ7KAAU",
+      "createdByName": "Christian Cunningham",
+      "createdDate": "2019-03-18T15:22:13.000Z",
+      "fileName": "callCenters/OmnitracsNonSSO.callCenter",
+      "fullName": "OmnitracsNonSSO",
+      "id": "04v1T000000GnsnQAC",
+      "lastModifiedById": "00550000003jZ7KAAU",
+      "lastModifiedByName": "Christian Cunningham",
+      "lastModifiedDate": "2019-03-18T15:24:53.000Z",
+      "type": "CallCenter"
+    },
+    {
+      "createdById": "00550000003h5fCAAQ",
+      "createdByName": "Casey Keeling",
+      "createdDate": "2015-11-15T03:52:09.000Z",
+      "fileName": "callCenters/ClickToCall.callCenter",
+      "fullName": "ClickToCall",
+      "id": "04v50000000L3iPAAS",
+      "lastModifiedById": "00550000003h5fCAAQ",
+      "lastModifiedByName": "Casey Keeling",
+      "lastModifiedDate": "2015-11-15T03:52:09.000Z",
+      "type": "CallCenter"
+    },
+    {
+      "createdById": "00550000003h5fCAAQ",
+      "createdByName": "Casey Keeling",
+      "createdDate": "2016-10-24T15:15:43.000Z",
+      "fileName": "callCenters/ClickToCallLightning.callCenter",
+      "fullName": "ClickToCallLightning",
+      "id": "04v50000000GnmVAAS",
+      "lastModifiedById": "00550000003h5fCAAQ",
+      "lastModifiedByName": "Casey Keeling",
+      "lastModifiedDate": "2016-10-24T15:15:43.000Z",
+      "type": "CallCenter"
+    },
+    {
+      "createdById": "00550000001biZKAAY",
+      "createdByName": "Deployment User",
+      "createdDate": "2015-05-20T17:35:07.000Z",
+      "fileName": "callCenters/NewETSConfig.callCenter",
+      "fullName": "NewETSConfig",
+      "id": "04v50000000Cca6AAC",
+      "lastModifiedById": "00550000004fEIIAA2",
+      "lastModifiedByName": "Cody Worth",
+      "lastModifiedDate": "2016-03-14T13:37:57.000Z",
+      "type": "CallCenter"
+    },
+    {
+      "createdById": "00550000003jZ7KAAU",
+      "createdByName": "Christian Cunningham",
+      "createdDate": "2019-03-18T15:37:29.000Z",
+      "fileName": "callCenters/OmnitracsLightningNonSSO.callCenter",
+      "fullName": "OmnitracsLightningNonSSO",
+      "id": "04v1T000000GnsxQAC",
+      "lastModifiedById": "00550000003jZ7KAAU",
+      "lastModifiedByName": "Christian Cunningham",
+      "lastModifiedDate": "2019-03-18T15:38:04.000Z",
+      "type": "CallCenter"
+    },
+    {
+      "createdById": "00550000003h5fCAAQ",
+      "createdByName": "Casey Keeling",
+      "createdDate": "2016-10-24T15:15:43.000Z",
+      "fileName": "callCenters/ClickToCallbeta.callCenter",
+      "fullName": "ClickToCallbeta",
+      "id": "04v50000000GnmWAAS",
+      "lastModifiedById": "00550000003h5fCAAQ",
+      "lastModifiedByName": "Casey Keeling",
+      "lastModifiedDate": "2016-10-24T15:15:43.000Z",
+      "type": "CallCenter"
+    },
+    {
+      "createdById": "00550000003jZ7KAAU",
+      "createdByName": "Christian Cunningham",
+      "createdDate": "2019-03-18T15:38:23.000Z",
+      "fileName": "callCenters/OmnitracsLightningSSO.callCenter",
+      "fullName": "OmnitracsLightningSSO",
+      "id": "04v1T000000Gnt2QAC",
+      "lastModifiedById": "00550000003jZ7KAAU",
+      "lastModifiedByName": "Christian Cunningham",
+      "lastModifiedDate": "2019-03-18T15:38:40.000Z",
+      "type": "CallCenter"
+    },
+    {
+      "createdById": "00550000003hCi3AAE",
+      "createdByName": "Rittu Roy",
+      "createdDate": "2016-02-04T17:12:29.000Z",
+      "fileName": "callCenters/SimpliCTIRoadnet.callCenter",
+      "fullName": "SimpliCTIRoadnet",
+      "id": "04v50000000PBPIAA4",
+      "lastModifiedById": "00550000004fEIIAA2",
+      "lastModifiedByName": "Cody Worth",
+      "lastModifiedDate": "2016-03-14T13:22:46.000Z",
+      "type": "CallCenter"
+    },
+    {
+      "createdById": "005500000026ebyAAA",
+      "createdByName": "Amrita Ganguly",
+      "createdDate": "2014-07-02T20:13:37.000Z",
+      "fileName": "callCenters/EnvoxPhoneLinkCTI4771290PRDT1.callCenter",
+      "fullName": "EnvoxPhoneLinkCTI4771290PRDT1",
+      "id": "04v50000000L3hWAAS",
+      "lastModifiedById": "00550000001d1yqAAA",
+      "lastModifiedByName": "Nicole Beaulieu",
+      "lastModifiedDate": "2017-10-19T14:14:38.000Z",
+      "type": "CallCenter"
+    }
+  ]
+}

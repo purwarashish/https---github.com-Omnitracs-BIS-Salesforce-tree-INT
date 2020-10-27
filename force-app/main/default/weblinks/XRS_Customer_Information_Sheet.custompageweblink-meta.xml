@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPageWebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <availability>online</availability>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>true</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>true</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>XRS Customer Information Sheet</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>true</showsLocation>
+    <showsStatus>true</showsStatus>
+    <url>https://omnitracs.sharepoint.com/:x:/r/teams/Sales/_layouts/15/Doc.aspx?sourcedoc=%7BD2488C2C-56B2-4371-AF71-5A83B30D239E%7D&amp;file=XRS%20Customer%20Setup%20v19.xlsx&amp;action=default&amp;mobileredirect=true</url>
+</CustomPageWebLink>

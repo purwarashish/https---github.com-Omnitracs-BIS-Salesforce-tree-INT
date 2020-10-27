@@ -1,0 +1,64 @@
+<!---------------------------------------------------------------------------------------------------
+Name : OutageNotificationType
+Author : Shruti Karn
+Date : 11 August 2010
+
+Usage : This page is the Step 1 for Outage Contact Wizard
+    
+----------------------------------------------------------------------------------------------------->
+
+<apex:page controller="OutageContactWizardController" tabStyle="Campaign" id="pageId" wizard="false" showHeader="true" sidebar="true">
+    <script language="Javascript">
+        function showErrorMsg()
+        {
+            
+            var value = document.getElementById('pageId:contactNotificationForm:contactInfo:pgblksect:notificationtypepgblk:contact_notification_type').value;
+            
+            if(value == '')
+            {
+                alert('Please choose a Notification Type\n');
+                return false;
+            }
+            else
+                return true;
+            
+        }
+    </script>
+    <apex:sectionHeader title="Outage Contact Tool" subtitle="Step 1 of 6"/>
+    <apex:form id="contactNotificationForm">
+    <apex:messages style="color:rgb(204,0,0);font-weight: bold;text-align:center"/> 
+    <apex:pageBlock title="Step 1. Select Notification Information" id="contactInfo">
+        <apex:pageBlockSection collapsible="false" columns="1" id="pgblksect">
+            <apex:pageBlockSectionItem >
+              <apex:outputPanel >
+                  <div style="text-align:right">
+                      <apex:commandButton value="Next"  action="{!redirectToStep2}" onclick="javscript:return showErrorMsg();"/> 
+                      <apex:commandLink value="Cancel" action="/home/home.jsp"/>
+                  </div>
+              </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+               Please Select the Notification Information
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem id="notificationtypepgblk">
+                 Contact Notification Type:
+                 <apex:panelGrid columns="1">
+                 <apex:selectList id="contact_notification_type" value="{!lstSelected_contact_types}" multiselect="true" size="4">
+                     <apex:selectOptions value="{!ContactTypes}"/> 
+                 </apex:selectList>
+                 Use Control to select multiple items
+                 </apex:panelGrid>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputPanel >
+                    <div style="text-align:right">
+                        <apex:commandButton value="Next" action="{!redirectToStep2}" onclick="javscript:return showErrorMsg();"/> 
+                        <apex:commandLink value="Cancel" action="/home/home.jsp"/>
+                    </div>
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection> 
+    </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

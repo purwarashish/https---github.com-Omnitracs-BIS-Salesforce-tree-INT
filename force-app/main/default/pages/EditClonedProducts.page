@@ -1,0 +1,36 @@
+<!---------------------------------------------------------------------------------------------------
+Name : EditclonedProducts
+Author : Shruti Karn
+Date : 29 July 2011
+
+Usage : Page for editing the product chosen in 'CloneOpportunityProduct' page.
+
+CR # 35396
+----------------------------------------------------------------------------------------------------->
+
+<apex:page title="Edit Products" tabStyle="OpportunityLineItem" controller="CloneOpportunityProductController" id="opp1">
+    <apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockButtons >
+            <apex:commandButton value="Save" action="{!save}"/>
+            <apex:commandButton value="Cancel" action="/{!oppID}"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockTable value="{!newLstoppLineItem}" var="newProd">
+        <apex:column value="{!newProd.PricebookEntry.Name}"/>
+        <apex:column headerValue="Quantity">
+            <apex:inputField value="{!newProd.Quantity}"/>
+        </apex:column>
+        <apex:column headerValue="Sales Price">
+            <apex:inputField value="{!newProd.UnitPrice}"/>
+        </apex:column>
+        <apex:column headerValue="Ship Date">
+            <apex:inputField value="{!newProd.ServiceDate}"/>
+        </apex:column>
+        <apex:column headerValue="Description">
+            <apex:inputField value="{!newProd.Description}"/>
+        </apex:column>
+        </apex:pageBlockTable>
+        
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

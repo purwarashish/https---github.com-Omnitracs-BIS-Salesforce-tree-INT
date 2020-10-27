@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PKB_Site_Setup__c</fullName>
+    <description>Associated main PKB object</description>
+    <externalId>false</externalId>
+    <label>PKB Site Setup</label>
+    <referenceTo>PKBSiteSetup__c</referenceTo>
+    <relationshipLabel>Site Translations</relationshipLabel>
+    <relationshipName>PKB_translations</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

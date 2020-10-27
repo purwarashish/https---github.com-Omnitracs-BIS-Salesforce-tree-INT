@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Proof_of_Performance__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Outline the details you expect to submit after the activity to support the proof of performing the activity</inlineHelpText>
+    <label>Proof of Performance</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

@@ -1,0 +1,135 @@
+<apex:page cache="true" sidebar="false" showHeader="false"
+    controller="ArticleModeler">
+    <apex:include pageName="cssandjs" />
+    <apex:include pageName="supportGoogleAnalytics" />
+    <apex:stylesheet value="{!URLFor($Resource.QESUnityCSSAndJS, 'Html/css/mainstyle.css')}" />
+    <apex:stylesheet value="{!URLFor($Resource.QESUnityCSSAndJS, 'Html/css/customer.css')}" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <style>
+.versioningPanel {
+    display: none !important;
+}
+
+ul,li,img,span,p,input,textarea,h1,h2,h3,h4,h5,h6,a {
+    list-style-type: inherit;
+}
+        
+label.submitACasePrecedingText {visibility:{!CASE(standalone,'1', 'hidden', standalone,'0' , '' )}; display:{!CASE(standalone,'1', 'none', standalone,'0' , '' )};}
+a.flr {visibility:{!CASE(standalone,'1', 'hidden', standalone,'0' , '' )}; display:{!CASE(standalone,'1', 'none', standalone,'0' , '' )};}
+        
+</style>
+
+    <!--apex:include id="mainpage" pageName="mainPage" /-->
+    <div id="bodyWrapper">
+        <div class="breadcumWrp">
+            <!--
+            <ul>
+                <li>
+                    <a href="#" class="bcklnk">Home</a><span>|</span>
+                    <a class="bcklnk" href="/apex/support">Support</a><span>|</span>
+                    Answers
+                 </li>
+             </ul>
+        -->
+            <h1 style="display: normal">Documentation</h1>
+            <hr align="center" style="height:1px;border:1px;color:#dadce0;background-color:#dadce0;" width="910px" />
+        </div>
+        <div id="middle-container">
+            <apex:iframe height="28px"
+                src="/apex/supportArticleTBIframe?id={!$CurrentPage.parameters.id}" />
+            <div class="recentCasesBoxTopMargin">
+                <div class="articleTxtArea clr">
+                    <h4 class="articleTitle fll">{!docArticle.Title}</h4>
+                </div>
+            </div>
+
+            <div id="articleDescription" class="articleTxt sfdc_richtext">
+                <apex:outputText escape="false" value="{!description}" />
+                <apex:outputText rendered="false"> {!docArticle.Urlname}</apex:outputText>
+            </div>
+
+            <!-- /*Change for  CR 00083883*/ -->
+            <div class="clr">
+                <apex:form >
+                    <apex:outputPanel rendered="{!IF (ISPICKVAL($User.UserType, 'Standard'), True, False)}">
+                        <p>
+                            <b>Internal Use Only: </b>
+                            <apex:inputCheckbox value="{!IsInternalUseOnly}" disabled="true" />
+                        </p>
+                    </apex:outputPanel>
+                </apex:form>
+            </div>
+
+            <apex:variable var="attachment1Present"
+                value="{!docArticle.Attachment_1__Name__s != null}" />
+            <apex:variable var="attachment2Present"
+                value="{!docArticle.Attachment_2__Name__s != null}" />
+            <apex:variable var="attachment3Present"
+                value="{!docArticle.Attachment_3__Name__s != null}" />
+            <apex:variable var="attachment4Present"
+                value="{!docArticle.Attachment_4__Name__s != null}" />
+            <apex:variable var="attachmentPresent"
+                value="{!docArticle.Attachment_1__Name__s != null
+                                                            || docArticle.Attachment_2__Name__s != null
+                                                            || docArticle.Attachment_3__Name__s != null
+                                                            || docArticle.Attachment_4__Name__s != null}" />
+
+
+            <div style="{!if(attachmentPresent, 'display:normal', 'display:none')};" class="fileAttachmentArea">
+                <h4 class="articleAttachment">Attachments</h4>
+                <ul class="attachList">
+                    <li style=""><apex:outputLink value="{!URLFOR($Action.Documentation__kav.FileFieldDownload,
+                                                    docArticle.id,
+                                                    ['field'=$ObjectType.Documentation__kav.fields.Attachment_1__Body__s.name])}"
+                            rendered="{!docArticle.Attachment_1__Name__s!=''}">
+                            <span>{!docArticle.Attachment_1__Name__s}</span>
+                        </apex:outputLink> <span> {!docArticle.Attachment_1__ContentType__s} <span></span>
+                    </span></li>
+
+                    <li style=""><apex:outputLink value="{!URLFOR($Action.Documentation__kav.FileFieldDownload,
+                                                    docArticle.id,
+                                                    ['field'=$ObjectType.Documentation__kav.fields.Attachment_2__Body__s.name])}"
+                            rendered="{!docArticle.Attachment_2__Name__s!=''}">
+                            <span>{!docArticle.Attachment_2__Name__s}</span>
+                        </apex:outputLink> <span> {!docArticle.Attachment_2__ContentType__s} <span></span>
+                    </span></li>
+
+                    <li style=""><apex:outputLink value="{!URLFOR($Action.Documentation__kav.FileFieldDownload,
+                                                    docArticle.id,
+                                                    ['field'=$ObjectType.Documentation__kav.fields.Attachment_3__Body__s.name])}"
+                            rendered="{!docArticle.Attachment_3__Name__s!=''}">
+                            <span>{!docArticle.Attachment_3__Name__s}</span>
+                        </apex:outputLink> <span> {!docArticle.Attachment_3__ContentType__s} <span></span>
+                    </span></li>
+
+                    <li style=""><apex:outputLink value="{!URLFOR($Action.Documentation__kav.FileFieldDownload,
+                                                    docArticle.id,
+                                                    ['field'=$ObjectType.Documentation__kav.fields.Attachment_4__Body__s.name])}"
+                            rendered="{!docArticle.Attachment_4__Name__s!=''}">
+                            <span>{!docArticle.Attachment_4__Name__s}</span>
+                        </apex:outputLink> <span> {!docArticle.Attachment_4__ContentType__s} <span></span>
+                    </span></li>
+
+                </ul>
+            </div>
+            <apex:outputText rendered="{!caseCreationAllowed}">
+                <div class="clr supportToolTopMargin flr" style="width: 735px">
+                    <apex:form rendered="{!$CurrentPage.parameters.display}">
+                        <apex:commandLink value="Create a Case"
+                            styleclass="buttonSet newButton6 flr"
+                            action="/apex/supportcasesubmit?retURL=/apex/supportArticleDocumentation&type=Documentation&id={!$CurrentPage.parameters.id}" />
+                        <label class="submitACasePrecedingText">If this doesn’t
+                            answer your question, <a style="text-decoration: underline"
+                            href="/apex/supportanswers">search again</a> or create a case</label>
+                    </apex:form>
+                </div>
+            </apex:outputText>
+            <div class="clr"></div>
+
+        </div>
+        <!--apex:include pageName="UnityFooter"/-->
+    </div>
+    <script>
+        var pagename = "supportarticleDocumentation";
+    </script>
+</apex:page>

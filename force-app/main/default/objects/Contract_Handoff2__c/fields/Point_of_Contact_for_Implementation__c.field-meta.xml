@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Point_of_Contact_for_Implementation__c</fullName>
+    <description>Please give contact detail, and any pertinent background information.
+
+Point of Contact Name - 
+Point of Contact Email -
+Point of Contact Phone # -</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Please give contact detail, and any pertinent background information.
+
+Point of Contact Name - 
+Point of Contact Email -
+Point of Contact Phone # -</inlineHelpText>
+    <label>Point of Contact for Implementation</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

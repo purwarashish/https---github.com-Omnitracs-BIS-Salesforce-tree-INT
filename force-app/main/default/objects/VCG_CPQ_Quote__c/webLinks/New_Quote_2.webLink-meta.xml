@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Quote_2</fullName>
+    <availability>online</availability>
+    <description>Custom New Quote button that takes user to the CPQ Tool</description>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>New Quote</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/apex.js&quot;)}
+
+var blockUserEditingOppty = &apos;false&apos;;
+var userId = &apos;{!$User.Id}&apos;;
+var profileId = &apos;{!$User.ProfileId}&apos;;
+
+//Check if user is allowed to edit closed opportunity
+if (&apos;{!Opportunity.StageName}&apos; == &apos;Closed Won&apos; || &apos;{!Opportunity.StageName}&apos; == &apos;Closed Lost&apos;){
+blockUserEditingOppty = sforce.apex.execute(&quot;Apex_UserInfo&quot;,&quot;validateUserForOpptyLock&quot;,{userId :userId,profileId:profileId});
+}
+
+if (blockUserEditingOppty == &apos;true&apos;){
+alert(&apos;Closed Opportunity cannot be edited&apos;);
+}else{
+window.location.href=&apos;/apex/VCG_CPQ_QuoteAddress?oppid={!Opportunity.Id}&apos;;
+}</url>
+</WebLink>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPageWebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <availability>online</availability>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Create new Case from Template</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/servlet/servlet.Integration?lid=00b50000000ozbs&amp;eid=&amp;ic=1&amp;wrapMassAction=1&amp;retURL=%2F500%3Ffcf%3D00B500000036aPe&amp;scontrolCaching=1</url>
+</CustomPageWebLink>

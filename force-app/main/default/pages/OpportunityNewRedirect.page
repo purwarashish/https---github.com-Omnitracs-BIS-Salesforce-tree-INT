@@ -1,0 +1,6 @@
+<apex:page standardController="Opportunity" extensions="OpportunityNewRedirectExtn" action="{!urlRedirect}">
+<apex:form >
+<apex:inputHidden value="{!Opportunity.RecordTypeId}"/>
+
+</apex:form>
+</apex:page>

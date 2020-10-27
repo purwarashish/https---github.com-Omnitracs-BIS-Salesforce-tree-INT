@@ -1,0 +1,76 @@
+<!---------------------------------------------------------------------------------------------------
+Name : ShowSupportAlerts
+Author : Shruti Karn
+Date : 7 March 2011
+
+Usage : in-line VF page to show support alerts 
+
+Dependencies:  Static Resource -> JQuery
+    
+CR # 23403
+----------------------------------------------------------------------------------------------------->
+<apex:page id="page1" standardController="Case" extensions="ShowSupportAlertController" showHeader="true" sidebar="true" tabStyle="Case">
+    <apex:includeScript value="{!URLFOR($Resource.JQuery, 'jquery.js')}" /> 
+    <apex:includeScript value="{!URLFOR($Resource.JQuery, 'jquery.simpledialog.0.1.js')}" /> 
+    <apex:stylesheet value="{!URLFOR($Resource.JQuery, 'jquery.simpledialog.0.1.css')}"/> 
+
+   <script type="text/javascript">
+   
+   function findAcctId()
+   {
+      
+      //var accountId = document.getElementById('{!$Component.form1.pgblk.pgblksectn1.acctID}_lkid').value;
+      findSuppAlert('{!Case.accountId}');
+              
+   }
+         
+    $(document).ready(function () {
+    
+        $('.simpledialog').simpleDialog();
+       
+     
+           
+    });
+    
+    showData = function() {
+//    alert('$( window.parent):'+$(window.parent.document));
+       
+        $('#proxyAnchor').submit();
+        $('#proxyAnchor').click();
+    }   
+   </script>
+   
+  <apex:form id="form1" >
+  <apex:actionFunction name="refreshAcctField" reRender="pgblksectn1,msg,form1,supp" immediate="true" oncomplete="javascript:findAcctId();" />
+  <apex:actionFunction name="findSuppAlert" action="{!findSupportAlert}" reRender="form1,msg1,supp" immediate="true">
+      <apex:param name="a" value="" assignTo="{!acctId}"/>
+  </apex:actionFunction>
+      <apex:outputLink style="color:rgb(204,0,0);font-weight: bold;" target="_blank" value="/{!accSupportAlert}"  >
+           {!acctName}
+      </apex:outputLink> 
+        
+        <div style="overflow: auto; height: 180px;">
+        <apex:pageBlock id="supp">
+        <apex:pageBlockTable value="{!lstSupportAlert}" var="suppAlert" >
+            <apex:column headerValue="Support Alert Name">
+                <apex:outputText value="{!suppAlert.Name}"/>
+            </apex:column>
+            <apex:column headerValue="Critical">
+                <apex:outputText value="{!suppAlert.Critical__c}"/>
+            </apex:column>
+            <apex:column headerValue="Description" width="50%">
+                <apex:outputText style="word-wrap:break-word; text-align: left;"  value="{!suppAlert.Description__c}"/>
+            </apex:column>
+            <apex:column headerValue="Summary" width="50%">
+                <apex:outputText style="word-wrap:break-word; text-align: left;" value="{!suppAlert.Summary__c}"/>
+            </apex:column>
+            <apex:column headerValue="End Date">
+                <apex:outputText value="{!suppAlert.End_Date__c}"/>
+            </apex:column>
+        </apex:pageBlockTable> 
+        </apex:pageBlock>
+        </div>
+        </apex:form>
+ 
+ <script>findAcctId()</script>   
+</apex:page>

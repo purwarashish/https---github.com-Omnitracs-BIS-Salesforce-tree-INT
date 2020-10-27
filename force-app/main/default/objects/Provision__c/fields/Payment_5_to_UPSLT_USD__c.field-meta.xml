@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payment_5_to_UPSLT_USD__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Payment #5&apos;s USD due to RTI after the Total Software amount has been divided into the RTI and VAR portions and converted to USD using the exchange rate</inlineHelpText>
+    <label>Payment #5 to RTI (USD)</label>
+    <precision>9</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

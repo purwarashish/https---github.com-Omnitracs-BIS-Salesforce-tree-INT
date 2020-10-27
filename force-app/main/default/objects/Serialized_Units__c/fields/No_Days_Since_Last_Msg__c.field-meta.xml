@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_Days_Since_Last_Msg__c</fullName>
+    <description>Number of days since the Last Message Date of the Serialized Unit. This is a formula field that calculates the number of days from Today to the Last Message Date.</description>
+    <externalId>false</externalId>
+    <formula>TODAY() - Last_Message_Date__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Number of days since the Last Message Date of the Serialized Unit</inlineHelpText>
+    <label># Days Since Last Msg</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

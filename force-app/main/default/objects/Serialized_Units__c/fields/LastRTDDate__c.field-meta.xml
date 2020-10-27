@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LastRTDDate__c</fullName>
+    <description>Last RTD Date from the iQ / Oracle Fleet Profile interface</description>
+    <externalId>false</externalId>
+    <inlineHelpText>For all products except OVM this value represents the Last Position Time. For OVM it represents the last Message Time. This value is updated via the iQ/Oracle Fleet Profile interface.</inlineHelpText>
+    <label>Last RTD Date</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

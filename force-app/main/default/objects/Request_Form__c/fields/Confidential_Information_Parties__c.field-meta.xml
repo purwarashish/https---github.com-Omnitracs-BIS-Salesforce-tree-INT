@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Confidential_Information_Parties__c</fullName>
+    <externalId>false</externalId>
+    <label>Confidential Information Parties</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Just Omnitracs</fullName>
+                <default>false</default>
+                <label>Just Omnitracs</label>
+            </value>
+            <value>
+                <fullName>Both/All Parties</fullName>
+                <default>false</default>
+                <label>Both/All Parties</label>
+            </value>
+            <value>
+                <fullName>Just the other party</fullName>
+                <default>false</default>
+                <label>Just the other party</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

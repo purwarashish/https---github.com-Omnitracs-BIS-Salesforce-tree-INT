@@ -1,0 +1,22 @@
+<apex:page standardController="Account" extensions="AccountContentController" >
+  <apex:form >
+      <apex:pageBlock >
+        <apex:pageBlockSection >
+            <apex:outputField value="{!file.Account__c}"/> 
+            <apex:outputText ></apex:outputText>
+            <!--
+             <apex:inputField value="{!file.Execution_Information__c}" /> 
+             <apex:inputfield value="{!file.Effective_Date__c}" />
+             <apex:inputfield value="{!file.End_Date__c}" />
+             -->
+             <apex:inputField value="{!file.Document_Category__c}" /> 
+             
+            
+        </apex:pageBlockSection>
+        <apex:pageBlockSection >
+        <apex:inputFile value="{!file.versionData}" fileName="{!file.pathOnClient}" />
+        <apex:commandbutton action="{!go}" value="Upload Content"/>
+        </apex:pageBlockSection>
+      </apex:pageBlock>  
+    </apex:form>
+</apex:page>

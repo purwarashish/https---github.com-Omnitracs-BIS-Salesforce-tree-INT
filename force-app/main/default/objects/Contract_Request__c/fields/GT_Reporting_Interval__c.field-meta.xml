@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GT_Reporting_Interval__c</fullName>
+    <externalId>false</externalId>
+    <label>GT Reporting Interval</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Product__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Daily</fullName>
+                <default>false</default>
+                <label>Daily</label>
+            </value>
+            <value>
+                <fullName>Weekly</fullName>
+                <default>false</default>
+                <label>Weekly</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>GlobalTRACS &amp; GlobalTRACS Lite</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS Lite</controllingFieldValue>
+            <valueName>Daily</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GlobalTRACS &amp; GlobalTRACS Lite</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS Lite</controllingFieldValue>
+            <valueName>Weekly</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GlobalTRACS &amp; GlobalTRACS Lite</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS Lite</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

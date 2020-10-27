@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Reported_Defects_Resolved__c</fullName>
+    <description>Source of Data: SFDC - Jira Tasks Closed Report</description>
+    <externalId>false</externalId>
+    <label>Customer Reported Defects Resolved</label>
+    <precision>4</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

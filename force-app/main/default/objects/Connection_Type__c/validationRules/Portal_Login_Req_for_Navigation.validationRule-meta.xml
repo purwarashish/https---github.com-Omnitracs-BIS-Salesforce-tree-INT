@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Portal_Login_Req_for_Navigation</fullName>
+    <active>true</active>
+    <description>When Navigation is selected as a Connection Type for Web Products, make Portal Login required.</description>
+    <errorConditionFormula>AND (
+ISPICKVAL( Connection_Type__c ,&quot;Navigation&quot;), 
+Portal_Login__c  =&quot;&quot;,
+$RecordType.Name = &quot;Web Product&quot;
+)</errorConditionFormula>
+    <errorDisplayField>Portal_Login__c</errorDisplayField>
+    <errorMessage>Portal Login is required when Navigation is selected as the Connection Type.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Submit_to_Contract_Team</fullName>
+    <availability>online</availability>
+    <description>Subit the request to the contract team</description>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Submit to Contract Team</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>//Change the status to Submitted and workflow rules will trigger from there...
+{!requireScript(&quot;/soap/ajax/11.0/connection.js&quot;)}; 
+
+CONTRACT_REQ_ID=&apos;{!Contract_Request__c.Id}&apos;;
+ACCOUNT_ID=&apos;{!Contract_Request__c.AccountId__c}&apos;;
+
+//=== Setup the Contract Request object to update based on the ID 
+var reqToSubmit= new sforce.SObject(&quot;Contract_Request__c&quot;); 
+reqToSubmit.Id = CONTRACT_REQ_ID; 
+reqToSubmit.Request_Status__c = &apos;Submitted&apos;; 
+
+  try{
+    
+   //=== Find the Contract Administrator on the Account record and set on the Contract Request if assigned
+   var userQuery=&quot;SELECT Id, Contracts_Administrator__c FROM Account WHERE Id = &apos;&quot; + ACCOUNT_ID + &quot;&apos;&quot;;
+   var userResults=sforce.connection.query(userQuery);
+   var userResult=userResults.getArray(&quot;records&quot;);
+   if (userResult != null &amp;&amp; userResult.length != 0){
+     var userRecord = userResult[0];  
+     var contractAdminId = userRecord .Contracts_Administrator__c;
+//     alert (&quot;contract admin user id is : &quot; + contractAdminId );
+     reqToSubmit.Assigned_To__c = contractAdminId ;
+   }
+
+     //=== Update the Contract Request
+     var result = sforce.connection.update([reqToSubmit]); 
+
+     if(result[0].success==&quot;true&quot;){ 
+        //Reload the Contract Request Detail Screen
+        window.location.reload(); 
+        //window.location.assign(&apos;/&apos;+CONTRACT_REQ_ID);
+     } else { 
+        alert(&apos;Error submitting Contract Request: &apos; + result); 
+     }
+
+ } catch(e){
+    alert(&quot;Error submitting contract request: &quot; + e);
+ }</url>
+</WebLink>

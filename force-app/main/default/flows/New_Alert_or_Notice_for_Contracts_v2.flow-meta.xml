@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <choices>
+        <name>Certificate_of_Insurance_Notice</name>
+        <choiceText>Certificate of Insurance Notice</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Certificate of Insurance Notice</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Contract_Expiration_Auto_Renew</name>
+        <choiceText>Contract Expiration (Auto-Renew)</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Auto</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Contract_Expiration_Fixed</name>
+        <choiceText>Contract Expiration (Fixed)</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Fixed</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Create_Alert_due_to_Contract_Expiration</name>
+        <choiceText>Create Alert due to Contract Expiration</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Alert</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Create_Contract_Notice</name>
+        <choiceText>Create Contract Notice</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Notice</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Deliverable_Due_to_Customer</name>
+        <choiceText>Deliverable Due to Customer</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Deliverable Due to Customer</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Deliverable_Due_to_Omnitracs</name>
+        <choiceText>Deliverable Due to Omnitracs</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Deliverable Due to Omnitracs</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Exit_out_of_this_menu</name>
+        <choiceText>Exit out of this menu</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Exit</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Indemnity_Request_Status</name>
+        <choiceText>Indemnity Request Status</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Indemnity Request Status</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>NDA_Expiration</name>
+        <choiceText>NDA Expiration</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>NDA Expiration</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>No_Template_Just_add_Comments_below</name>
+        <choiceText>No Template</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Notice</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Omni_Legal_Omni_Canada_Contracts</name>
+        <choiceText>Omni-Legal/Omni-Canada Contracts</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Omni-Legal/Omni-Canada Contracts</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Omni_Procurement</name>
+        <choiceText>Omni-Procurement</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Omni-Procurement</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>tleast1</name>
+        <choiceText>tleast1</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>tleast1</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>tleast2</name>
+        <choiceText>tleast2</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>tleast2</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>tleast3</name>
+        <choiceText>tleast3</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>tleast3</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>TLSAM_Bauckman</name>
+        <choiceText>TLSAM-Bauckman</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>TLSAM-Bauckman</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>TLSAM_Coop</name>
+        <choiceText>TLSAM-Coop</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>TLSAM-Coop</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>X120_Days</name>
+        <choiceText>120 Days</choiceText>
+        <dataType>Number</dataType>
+        <value>
+            <numberValue>120.0</numberValue>
+        </value>
+    </choices>
+    <choices>
+        <name>X1_Year</name>
+        <choiceText>1 Year</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>365</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>X30_Days</name>
+        <choiceText>30 Days</choiceText>
+        <dataType>Number</dataType>
+        <value>
+            <numberValue>30.0</numberValue>
+        </value>
+    </choices>
+    <choices>
+        <name>X45_Days</name>
+        <choiceText>45 Days</choiceText>
+        <dataType>Number</dataType>
+        <value>
+            <numberValue>45.0</numberValue>
+        </value>
+    </choices>
+    <choices>
+        <name>X60_Days</name>
+        <choiceText>60 Days</choiceText>
+        <dataType>Number</dataType>
+        <value>
+            <numberValue>60.0</numberValue>
+        </value>
+    </choices>
+    <choices>
+        <name>X90_Days</name>
+        <choiceText>90 Days</choiceText>
+        <dataType>Number</dataType>
+        <value>
+            <numberValue>90.0</numberValue>
+        </value>
+    </choices>
+    <constants>
+        <name>SubjectText_Expiration</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Contract Expiration Alert</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>TaskRecordTypeID</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>01250000000E58vAAC</stringValue>
+        </value>
+    </constants>
+    <decisions>
+        <name>First_Decision</name>
+        <label>First Decision</label>
+        <locationX>582</locationX>
+        <locationY>260</locationY>
+        <defaultConnectorLabel>No Selection</defaultConnectorLabel>
+        <rules>
+            <name>Create_Expiration_Alert</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ChoiceWhatToCreate</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Alert</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Expiration_Input</targetReference>
+            </connector>
+            <label>Create Expiration Alert</label>
+        </rules>
+        <rules>
+            <name>Create_Notice</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ChoiceWhatToCreate</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Notice</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Notice_Input</targetReference>
+            </connector>
+            <label>Create Notice</label>
+        </rules>
+        <rules>
+            <name>Exit</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ChoiceWhatToCreate</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Exit</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Exit</label>
+        </rules>
+    </decisions>
+    <description>v1.3</description>
+    <formulas>
+        <name>AlertExpDate</name>
+        <dataType>Date</dataType>
+        <expression>{!EndDate} - {!Alert_Days}</expression>
+    </formulas>
+    <formulas>
+        <name>ExpAlertFullComment</name>
+        <dataType>String</dataType>
+        <expression>CASE({!ExpirationNoticeChoice},
+{!NDA_Expiration}, {!NDACommentFullText},
+{!Contract_Expiration_Auto_Renew}, {!AutoRenewFullText},
+{!Contract_Expiration_Fixed}, {!FixedFullText}, &quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>NoticeFullComment</name>
+        <dataType>String</dataType>
+        <expression>CASE({!Notice_Message},
+{!Deliverable_Due_to_Customer}, {!DeliverableDuetoCustomer},
+{!Deliverable_Due_to_Omnitracs}, {!DeliverableDuetoOmnitracs},
+{!Indemnity_Request_Status}, {!IndemnityRequestStatus},
+{!Certificate_of_Insurance_Notice}, {!CertificateofInsuranceNotice},
+{!Notice_Comments})</expression>
+    </formulas>
+    <label>New Alert or Notice for Contracts v2</label>
+    <processType>Flow</processType>
+    <recordCreates>
+        <name>Create_Notice_Task</name>
+        <label>Create Notice Task</label>
+        <locationX>862</locationX>
+        <locationY>421</locationY>
+        <assignRecordIdToReference>ExpTaskID</assignRecordIdToReference>
+        <connector>
+            <targetReference>Complete_Flow_0</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>ActivityDate</field>
+            <value>
+                <elementReference>Alert_Date</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Contract_Expiration_Task__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <elementReference>NoticeFullComment</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Priority</field>
+            <value>
+                <stringValue>Normal</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>TaskRecordTypeID</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Not Started</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <elementReference>Notice_Message</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhatId</field>
+            <value>
+                <elementReference>varID</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+    </recordCreates>
+    <recordCreates>
+        <name>CreateExpirationTask</name>
+        <label>CreateExpirationTask</label>
+        <locationX>582</locationX>
+        <locationY>573</locationY>
+        <assignRecordIdToReference>ExpTaskID</assignRecordIdToReference>
+        <connector>
+            <targetReference>Complete_Flow</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>ActivityDate</field>
+            <value>
+                <elementReference>AlertExpDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Contract_Expiration_Task__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <elementReference>ExpAlertFullComment</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Priority</field>
+            <value>
+                <stringValue>High</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>TaskRecordTypeID</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Not Started</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <elementReference>SubjectText_Expiration</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhatId</field>
+            <value>
+                <elementReference>varID</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+    </recordCreates>
+    <recordLookups>
+        <name>LookupContract</name>
+        <label>LookupContract</label>
+        <locationX>577</locationX>
+        <locationY>8</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>ChoiceMenu</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varID</elementReference>
+            </value>
+        </filters>
+        <object>Contract</object>
+        <outputAssignments>
+            <assignToReference>vAccountID</assignToReference>
+            <field>AccountId</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>EndDate</assignToReference>
+            <field>EndDate</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>vOwnerId</assignToReference>
+            <field>OwnerId</field>
+        </outputAssignments>
+    </recordLookups>
+    <screens>
+        <name>ChoiceMenu</name>
+        <label>Choices</label>
+        <locationX>584</locationX>
+        <locationY>135</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>First_Decision</targetReference>
+        </connector>
+        <fields>
+            <name>ChoiceWhatToCreate</name>
+            <choiceReferences>Create_Alert_due_to_Contract_Expiration</choiceReferences>
+            <choiceReferences>Create_Contract_Notice</choiceReferences>
+            <choiceReferences>Exit_out_of_this_menu</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>What would you like to do?</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Complete_Flow</name>
+        <label>Complete Flow</label>
+        <locationX>579</locationX>
+        <locationY>681</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Complete</name>
+            <fieldText>&lt;SPAN ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:14px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;&lt;B&gt;A new Task was created for your review.  Click Finish to make changes and/or Complete.&lt;/B&gt;&lt;/FONT&gt;&lt;/SPAN&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Complete_Flow_0</name>
+        <label>Complete Flow</label>
+        <locationX>863</locationX>
+        <locationY>560</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Complete_0</name>
+            <fieldText>&lt;SPAN ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:14px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;&lt;B&gt;A new Task was created for your review.  Click Finish to make changes and/or Complete.&lt;/B&gt;&lt;/FONT&gt;&lt;/SPAN&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Expiration_Input</name>
+        <label>Expiration Input</label>
+        <locationX>583</locationX>
+        <locationY>434</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>CreateExpirationTask</targetReference>
+        </connector>
+        <fields>
+            <name>CurrentExpDate</name>
+            <fieldText>Current Expiration Date:   {!EndDate}</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Alert_Days</name>
+            <choiceReferences>X30_Days</choiceReferences>
+            <choiceReferences>X45_Days</choiceReferences>
+            <choiceReferences>X60_Days</choiceReferences>
+            <choiceReferences>X90_Days</choiceReferences>
+            <choiceReferences>X120_Days</choiceReferences>
+            <dataType>Number</dataType>
+            <defaultSelectedChoiceReference>X120_Days</defaultSelectedChoiceReference>
+            <fieldText>Alert Days Prior to Expiration Date</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>false</isRequired>
+            <scale>0</scale>
+        </fields>
+        <fields>
+            <name>ExpirationNoticeChoice</name>
+            <choiceReferences>NDA_Expiration</choiceReferences>
+            <choiceReferences>Contract_Expiration_Auto_Renew</choiceReferences>
+            <choiceReferences>Contract_Expiration_Fixed</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Expiration Notice Message</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Notice_Input</name>
+        <label>Notice Input</label>
+        <locationX>863</locationX>
+        <locationY>263</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Create_Notice_Task</targetReference>
+        </connector>
+        <fields>
+            <name>Notice_Date</name>
+            <dataType>Date</dataType>
+            <fieldText>Notice Date</fieldText>
+            <fieldType>InputField</fieldType>
+            <helpText>Due date of Task</helpText>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Alert_Date</name>
+            <dataType>Date</dataType>
+            <fieldText>Alert Date</fieldText>
+            <fieldType>InputField</fieldType>
+            <helpText>Date the Email will be sent out</helpText>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Notice_Message</name>
+            <choiceReferences>Deliverable_Due_to_Customer</choiceReferences>
+            <choiceReferences>Deliverable_Due_to_Omnitracs</choiceReferences>
+            <choiceReferences>Indemnity_Request_Status</choiceReferences>
+            <choiceReferences>Certificate_of_Insurance_Notice</choiceReferences>
+            <choiceReferences>No_Template_Just_add_Comments_below</choiceReferences>
+            <dataType>String</dataType>
+            <defaultSelectedChoiceReference>No_Template_Just_add_Comments_below</defaultSelectedChoiceReference>
+            <fieldText>Notice Message</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Notice_Comments</name>
+            <fieldText>Notice Comments</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <helpText>Add any additional Comments or Notes here</helpText>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <startElementReference>LookupContract</startElementReference>
+    <status>Active</status>
+    <textTemplates>
+        <name>AutoRenewFullText</name>
+        <text>The purpose of this notification is to let you know that the current term of the Agreement referenced below will expire on {!EndDate}.
+
+Please work with your Contracts Administrator to take ONE of the following actions:
+
+ 
+
+1. NO ACTION:  allow the agreement to auto-renew (roll into evergreen)
+
+2. EXTEND/RENEW the agreement
+
+3. TERMINATE
+
+ 
+
+Termination Notice must be received/sent by {!EndDate} in order to terminate at the end of the current term.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>CertificateofInsuranceNotice</name>
+        <text>This alert is being sent to you to remind you that the Certificate of Insurance required under this contract is expiring.  Please follow up on the receipt of a current Certificate of Insurance if one is still required.
+
+ {!Notice_Comments}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>DeliverableDuetoCustomer</name>
+        <text>A deliverable is due to this customer for the contract referenced below on {!Notice_Date}.  Please determine if we will be timely or if an extension is needed.  When delivered, contact Finance as required for any applicable invoicing that needs to go to customer.
+
+{!Notice_Comments}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>DeliverableDuetoOmnitracs</name>
+        <text>A deliverable is due to Omnitracs for the contract referenced below on {!Notice_Date}.  This requires confirmation that the deliverable is received as required by the contract and satisfactory to Omnitracs.
+
+ {!Notice_Comments}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>FixedFullText</name>
+        <text>The purpose of this notification is to let you know that the Term of the Agreement referenced below will expire on {!EndDate}.  Please advise your Contract Administrator if you want to extend the term of this agreement.
+
+ 
+
+NO ACTION WILL RESULT IN THE EXIRATION OF THE AGREEMENT.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>IndemnityRequestStatus</name>
+        <text>Please review any actions and/or correspondence that have taken place regarding this request and update this profile accordingly.  Any correspondence that have been sent and/or received must be uploaded as supplemental documentation in the documents tab.  Any actions and/or resolutions must be updated in the description field.
+
+ {!Notice_Comments}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>NDACommentFullText</name>
+        <text>The below-referenced NDA will expire in 30 days. You are receiving this e-mail because you or your department is listed as the NDA&apos;s original requestor.
+ 
+
+THIS NDA WILL EXPIRE IF YOU DO NOT TAKE ACTION. If it is necessary to keep this NDA active, please forward the following information to the OMNITRACS NDA Department (nda@omnitracs.com):
+
+ 
+
+(1) the current complete legal name of the company,
+
+(2) the current address of company,
+
+(3) your current contact at the company,
+
+(4) your current contact&apos;s email address,
+
+(5) your current contact&apos;s phone number, and
+
+(6) your current contact&apos;s fax number.
+
+ 
+
+Thank You
+
+ 
+
+OMNITRACS NDA Department
+
+nda@omnitracs.com</text>
+    </textTemplates>
+    <variables>
+        <name>AccountID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>EndDate</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>ExpTaskID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>NoticeTaskID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>OwnerID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>vAccountID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <elementReference>AccountID</elementReference>
+        </value>
+    </variables>
+    <variables>
+        <name>varID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>vOwnerId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Desired_Outcome__c</fullName>
+    <description>Have the partner state what they want to accomplish from this request/ marketing activity</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Describe the outcome you are expecting to receive from the activity</inlineHelpText>
+    <label>Desired Outcome</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

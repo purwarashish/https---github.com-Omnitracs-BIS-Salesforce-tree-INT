@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Priority__c</fullName>
+    <externalId>false</externalId>
+    <label>Priority</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1 - Run Once</fullName>
+                <default>false</default>
+                <label>1 - Run Once</label>
+            </value>
+            <value>
+                <fullName>2 - Full Regression Test</fullName>
+                <default>false</default>
+                <label>2 - Full Regression Test</label>
+            </value>
+            <value>
+                <fullName>3 - Certification Test</fullName>
+                <default>false</default>
+                <label>3 - Certification Test</label>
+            </value>
+            <value>
+                <fullName>4 - Smoke Test</fullName>
+                <default>false</default>
+                <label>4 - Smoke Test</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

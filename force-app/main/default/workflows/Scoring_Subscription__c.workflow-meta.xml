@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Account_Scoring_Unique_ID</fullName>
+        <field>Account_Scoring_Unique_ID__c</field>
+        <formula>Account__r.Id +&quot;-&quot; + Scoring_Model__r.Id</formula>
+        <name>Account Scoring Unique ID</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>Account Scoring Unique ID</fullName>
+        <actions>
+            <name>Account_Scoring_Unique_ID</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Scoring_Subscription__c.CreatedDate</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

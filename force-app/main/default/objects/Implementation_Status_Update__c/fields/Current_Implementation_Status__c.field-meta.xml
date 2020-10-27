@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_Implementation_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( ISPICKVAL( Account__r.Implementation_Status__c, &apos;Introduction and Registration Phase&apos;), &apos;Introduction and Registration Phase&apos;,
+if( ISPICKVAL( Account__r.Implementation_Status__c, &apos;Ordering and Configuration Phase&apos;), &apos;Ordering and Configuration Phase&apos;,
+if( ISPICKVAL( Account__r.Implementation_Status__c, &apos;Installation &amp; Training Phase&apos;), &apos;Installation &amp; Training Phase&apos;,
+if( ISPICKVAL( Account__r.Implementation_Status__c, &apos;Implemented &amp; Maintaining Phase&apos;), &apos;Implemented &amp; Maintaining Phase&apos;,
+if( ISPICKVAL( Account__r.Implementation_Status__c, &apos;Final Decision Phase&apos;), &apos;Final Decision Phase&apos;,
+if( ISPICKVAL( Account__r.Implementation_Status__c, &apos;Complete- Implementation Handoff&apos;), &apos;Complete- Implementation Handoff&apos;,
+&apos;none&apos;))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Current Implementation Status Update</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project_Age_Days__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISNULL(Actual_Start_Date__c),ROUND(NOW()- CreatedDate,0), ROUND(TODAY() - Actual_Start_Date__c,0))</formula>
+    <inlineHelpText>If the Project has started, number of days from Actual Start Date, otherwise number of days from Created Date.</inlineHelpText>
+    <label>Project Age (Days)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PCHKLIST_Submitted_For_Billing_Date_Chk</fullName>
+    <active>true</active>
+    <description>Submitted for Billing date cannot be earlier than Estimate Delivered Date</description>
+    <errorConditionFormula>Submitted_for_Billing_Date__c &lt; Estimate_Delivered_Date__c</errorConditionFormula>
+    <errorDisplayField>Submitted_for_Billing_Date__c</errorDisplayField>
+    <errorMessage>The Submitted for Billing Date cannot be earlier than the Estimate Delivered Date.</errorMessage>
+</ValidationRule>

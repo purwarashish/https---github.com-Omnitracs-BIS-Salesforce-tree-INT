@@ -1,0 +1,201 @@
+<!--
+ *******************************************************************************
+ * File:  TestRunEditPage
+ * Date:  June 4th, 2010
+ * Author:  Evan Hartig
+ *
+ * The use, disclosure, reproduction, modification, transfer, or transmittal of
+ * this work for any purpose in any form or by any means without the written 
+ * permission of United Parcel Service is strictly prohibited.
+ *
+ * Confidential, unpublished property of United Parcel Service.
+ * Use and distribution limited solely to authorized personnel.
+ *
+ * Copyright 2009, UPS Logistics Technologies, Inc.  All rights reserved.
+ *
+ * Purpose: 
+ *   VF page for creating and editing Test Run objects
+ *******************************************************************************
+ -->
+
+<apex:page standardController="Test_Run__c" extensions="TestRunExtension" title="Test Run Edit">
+    
+    <script>
+       function setFocusOnLoad(){}
+    </script>
+
+    <apex:sectionHeader title="Test Run Edit" subtitle="{!testRun.Name}" rendered="{!isExistingRecord}" />
+    <apex:sectionHeader title="" subtitle="Rerunning Failed Case" rendered="{!runBeingResolved}" />
+
+    <apex:form >
+        <apex:pageMessages />
+        <apex:pageBlock id="pageBlock" title="Test Run Edit" rendered="{!testCaseExists}">
+            <apex:pageBlockButtons id="buttonPanel" >
+                <apex:commandButton action="{!saveTestRun}" value="Save" />
+                <apex:commandButton action="{!cancel}" value="Cancel" />
+            </apex:pageBlockButtons>
+
+            <apex:pageBlockSection title="Test Case Info" showHeader="true" columns="1" >
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Functions" />
+                    <apex:outputText value="{!testCase.Function_PL__c} - {!testCase.Subfunction_PL__c}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Objective" />
+                    <apex:outputField value="{!testCase.Test_Objective__c}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Prerequisites" />
+                    <apex:outputField value="{!testCase.Prerequisites__c}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Test Case Notes" />
+                    <apex:outputField value="{!testCase.Notes__c}" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection title="Steps/Results" showHeader="true" columns="2" >
+                <apex:pageBlockSectionItem >
+                    <h1>Steps</h1>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <h1>Expected Results</h1>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputField value="{!testCase.Steps__c}"  />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputField value="{!testCase.Expected_Result__c}" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <!-- 
+                <apex:pageBlockSection title="Test Configurations" showHeader="true" columns="1" rendered="{!showPerformanceConfigs}">
+                <apex:pageBlockTable title="Test Configurations"  value="{!performanceConfigData}" var="config" >
+                    <apex:column value="{!config.Name}" />
+                    <apex:column value="{!config.Parameters__c}" />
+                    <apex:column value="{!config.Notes__c}" />
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+-->
+            <apex:pageBlockSection title="Run Info" showHeader="true" columns="2">
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputlabel id="lblTestCase" value="Test Case" />
+                    <apex:outputlink id="txtTestCase" value="/{!testCase}" style="width: 20%" >{!testCase.Name}</apex:outputlink>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:actionStatus id="updateStatus" startText="Updating..." stopText="" />
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem rendered="{!OnPlan}">
+                    <apex:outputlabel id="lblTestPlan" value="Test Plan Instance" />
+                    <apex:outputlink id="txtTestPlan" value="/{!PlanInstance}" >{!PlanInstance.Name}</apex:outputLink>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem rendered="{!OnPlan}">
+                    <apex:outputlabel />
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputlabel id="lblVersion" value="Version"/>
+                    <apex:outputfield value="{!testRun.Product_Version_PL__c}"/>
+                    <!-- apex:selectList id="listVersions" value="{!selectedVersion}" size="1" style="width: 40%">
+                        <apex:selectOptions value="{!productVersions}" />
+                    </apex:selectList>-->
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputlabel id="lblAssignedTo" value="Assigned To"/>
+                    <apex:inputField id="txtAssignedTo" value="{!testRun.Assigned_To__c}"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputlabel id="lblPatch" value="Build Number" />
+                    <apex:inputField value="{!testRun.Product_Patch__c}"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel id="lblDeviceVersion" value="Mobile Device Version" rendered="{!CONTAINS(testCase.Function_PL__c,'Dispatching')}"/>
+                    <apex:inputField value="{!testRun.Mobile_Device_Version__c}" rendered="{!CONTAINS(testCase.Function_PL__c,'Dispatching')}"/>
+                </apex:pageBlockSectionItem>
+                    
+                <apex:pageBlockSectionItem >
+                    <apex:outputlabel id="lblResult" value="Result" />
+                    <apex:selectList id="listResult" value="{!selectedResult}" size="1" style="width: 40%">
+                        <apex:selectOptions value="{!resultOptions}" />
+                        <apex:actionSupport action="{!updateResult}" event="onchange" rerender="pageBlock" status="updateStatus" />
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputlabel id="lblResolved" value="Failure resolved" rendered="{!runFailed}"/>
+                    <apex:inputField id="cbxResolved" value="{!testRun.Resolved__c}" rendered="{!runFailed}"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem rendered="{!runNeedsResolve}">
+                    <apex:outputlabel id="lbl"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem rendered="{!runNeedsResolve}">
+                    <apex:outputlabel id="lblResolveBtn" />
+                    <apex:commandButton id="btnResolved" value="Resolve & Rerun" action="{!resolveFailedRun}" />
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputlabel id="lblCompletionDate" value="Target Completion Date" />
+                    <apex:inputField id="datePicker" value="{!testRun.Target_Completion_Date__c}" />
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel id="lblRelatedCR" value="Related CR" />
+                    <apex:outputtext value=""/> 
+                   <!--  <apex:inputField id="txtRelatedCR" value="{!testRun.Change_Request__c}"/>-->
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputlabel id="lblNotes" value="Result Notes" />
+                    <apex:inputfield id="txtNotes" value="{!testRun.Notes__c}" style="width: 95%" />
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputlabel id="lblRunParams" value="Run Parameters" />
+                    <apex:inputfield id="txtRunParams" value="{!testRun.Parameters__c}" style="width: 95%" />
+                </apex:pageBlockSectionItem>
+                
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Performance Run Info" rendered="{!showPerformanceConfigs}" columns="1">
+                <!-- <apex:pageBlockSectionItem rendered="{!showPerformanceConfigs}">
+                    <apex:outputlabel id="lblPerfConfig" value="Performance Test Configuration #" />
+                    <apex:selectList id="listPerfConfig" value="{!testRun.Performance_Test_Configuration__c}" style="width: 20%" size="1">
+                        <apex:selectOptions value="{!performanceConfigOptions}" />
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>-->
+                
+                <apex:pageBlockSectionItem rendered="{!showPerformanceConfigs}">
+                    <apex:outputlabel id="lblTestEnvironment" value="Test Environment" />
+                    <apex:inputField id="txtTestEnvironment" value="{!testRun.Test_Environment__c}" style="width: 55%"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem rendered="{!showPerformanceConfigs}">
+                    <apex:outputlabel id="lblMetrics" value="Captured Metrics"/>
+                    <apex:inputfield id="txtMetrics" value="{!testRun.Captured_Metrics__c}" style="width: 55%" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+        <apex:pageBlock title="New Test Run" rendered="{!NOT(testCaseExists)}">
+            <apex:pageBlockSection title="Specify Test Case">
+                <apex:pageBlockSectionItem >
+                    <apex:outputlabel id="lblTestCaseInput" value="Test Case" />
+                    <apex:inputfield id="txtTestCaseInput" value="{!testRun.Test_Case__c}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem />
+                <apex:pageBlockSectionItem >
+                    <apex:outputlabel value="" />
+                    <apex:commandbutton value="Create Test Run" action="{!continueToNewTestRun}" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

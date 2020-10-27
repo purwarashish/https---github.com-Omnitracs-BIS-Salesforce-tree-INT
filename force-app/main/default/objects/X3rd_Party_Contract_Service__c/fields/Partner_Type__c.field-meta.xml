@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Partner Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Dispatch Provider</fullName>
+                <default>false</default>
+                <label>Dispatch Provider</label>
+            </value>
+            <value>
+                <fullName>Fuel Tax</fullName>
+                <default>false</default>
+                <label>Fuel Tax</label>
+            </value>
+            <value>
+                <fullName>Hardware</fullName>
+                <default>false</default>
+                <label>Hardware</label>
+            </value>
+            <value>
+                <fullName>Routing Software</fullName>
+                <default>false</default>
+                <label>Routing Software</label>
+            </value>
+            <value>
+                <fullName>Services</fullName>
+                <default>false</default>
+                <label>Services</label>
+            </value>
+            <value>
+                <fullName>Maintenance</fullName>
+                <default>false</default>
+                <label>Maintenance</label>
+            </value>
+            <value>
+                <fullName>Reseller - Hardware</fullName>
+                <default>false</default>
+                <label>Reseller - Hardware</label>
+            </value>
+            <value>
+                <fullName>Reseller - Software</fullName>
+                <default>false</default>
+                <label>Reseller - Software</label>
+            </value>
+            <value>
+                <fullName>Reseller - Partner</fullName>
+                <default>false</default>
+                <label>Reseller - Partner</label>
+            </value>
+            <value>
+                <fullName>Data Share</fullName>
+                <default>false</default>
+                <label>Data Share</label>
+            </value>
+            <value>
+                <fullName>Service Supplier</fullName>
+                <default>false</default>
+                <label>Service Supplier</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

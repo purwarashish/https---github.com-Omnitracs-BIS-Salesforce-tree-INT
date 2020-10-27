@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Oracle_Sales_Order_Required</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+(ISPICKVAL( Sales_Order_Request_Status__c , &quot;Order Placed&quot;)),
+(Oracle_Sales_Order__c =&quot;&quot; ))</errorConditionFormula>
+    <errorDisplayField>Oracle_Sales_Order__c</errorDisplayField>
+    <errorMessage>Oracle Sales order #  is required when an Order is placed</errorMessage>
+</ValidationRule>

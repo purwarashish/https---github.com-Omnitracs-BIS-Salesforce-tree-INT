@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Parent__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Parent system of a subsystem</description>
+    <externalId>false</externalId>
+    <label>Parent</label>
+    <referenceTo>System_Master__c</referenceTo>
+    <relationshipLabel>System Master</relationshipLabel>
+    <relationshipName>System_Master</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

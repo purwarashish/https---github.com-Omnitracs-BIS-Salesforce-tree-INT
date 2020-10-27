@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_Scorecard__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>Indicates whether the Partner Scorecard for a Account is the current one or not</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Enable this check-box to make the values of this Scorecard visible on the Account detail page</inlineHelpText>
+    <label>Current Scorecard</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

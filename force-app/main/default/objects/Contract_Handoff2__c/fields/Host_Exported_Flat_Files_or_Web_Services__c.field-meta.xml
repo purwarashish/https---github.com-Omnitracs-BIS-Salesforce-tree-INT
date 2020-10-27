@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Host_Exported_Flat_Files_or_Web_Services__c</fullName>
+    <description>Web Services/Flat File Creation - Has the need for a Space Delimited (NOT CSV) format been explained?  How do they anticipate begin able to create this file?  Please indicate any potential pitfalls with file creation.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Web Services/Flat File Creation - Has the need for a Space Delimited (NOT CSV) format been explained?  How do they anticipate begin able to create this file?  Please indicate any potential pitfalls with file creation.</inlineHelpText>
+    <label>Host Exported Flat Files or Web Services</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

@@ -1,0 +1,39 @@
+<apex:page tabstyle="Campaign" sidebar="false" showHeader="false">
+  <script>
+  function exportAsExcel()
+  {
+      //alert( 'hi');
+      var account = document.getElementById('accountCheck').checked;
+      var contact= document.getElementById('contactCheck').checked;
+      // 
+      //window.open('/apex/OutageContactsExportToExcel?isaccount='+account+'&iscontact='+contact); 
+      var url = '/apex/OutageContactsExportToExcel?isaccount='+account+'&iscontact='+contact;
+            setTimeout('self.close()',5000);
+     // alert(url);
+     //alert(window.opener.parent.location);
+      //window.location.href=url;
+      window.opener.parent.location.href = url;
+      window.close();
+
+      
+      
+  }
+  function test()
+  {
+  alert('test');
+  setTimeout('window.close()',5000);
+  
+  }
+  
+  
+  </script>
+  <apex:form style="padding-left:50px;padding-top:50px" >
+      <div>Please select additional export criteria (if any)</div>     
+      <input id="accountCheck" type="checkbox"/> Account ID <br/>
+      <input id="contactCheck" type="checkbox"/> Contact ID <br/>
+      <center>
+     <apex:commandButton value="OK" onclick="javascript:exportAsExcel();" />
+      <!--<apex:commandButton value="OK" action="/apex/OutageContactsExportToExcel" onclick="javascript:test();" oncomplete="javascript:test();"/>-->
+      </center>
+  </apex:form>
+</apex:page>

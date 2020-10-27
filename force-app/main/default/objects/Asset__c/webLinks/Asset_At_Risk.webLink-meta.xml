@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Asset_At_Risk</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Asset At Risk</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/a6M/e?CF00N50000003DUBx={!Asset__c.Name}&amp;CF00N50000003DUBx_lkid={!Asset__c.Id}&amp;CF00N50000003DUAY={!Asset__c.Account__c}&amp;CF00N50000003DUAY_lkid={!Asset__c.AccountId__c}&amp;00N50000003DUC6=Open&amp;00N50000003DUC7=Product%2FApplication&amp;CF00N50000003DUBw_lkid={!Asset__c.ProductId__c}&amp;CF00N50000003DUBw={!Asset__c.Product__c}&amp;retURL=/{!Asset__c.Id}</url>
+</WebLink>

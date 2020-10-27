@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fail_Reason__c</fullName>
+    <externalId>false</externalId>
+    <label>Fail Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Data</fullName>
+                <default>false</default>
+                <label>Data</label>
+            </value>
+            <value>
+                <fullName>Config</fullName>
+                <default>false</default>
+                <label>Config</label>
+            </value>
+            <value>
+                <fullName>Config (advanced)</fullName>
+                <default>false</default>
+                <label>Config (advanced)</label>
+            </value>
+            <value>
+                <fullName>Code</fullName>
+                <default>false</default>
+                <label>Code</label>
+            </value>
+            <value>
+                <fullName>Process Not Defined</fullName>
+                <default>false</default>
+                <label>Process Not Defined</label>
+            </value>
+            <value>
+                <fullName>User Scenario Not Valid</fullName>
+                <default>false</default>
+                <label>User Scenario Not Valid</label>
+            </value>
+            <value>
+                <fullName>User Error</fullName>
+                <default>false</default>
+                <label>User Error</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

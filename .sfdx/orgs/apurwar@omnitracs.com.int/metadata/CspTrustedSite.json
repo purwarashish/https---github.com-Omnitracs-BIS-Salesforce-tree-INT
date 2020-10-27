@@ -1,0 +1,31 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "00550000006mu7mAAA",
+      "createdByName": "Yasir Arafat",
+      "createdDate": "2020-09-11T23:04:37.000Z",
+      "fileName": "cspTrustedSites/SFProd.cspTrustedSite",
+      "fullName": "SFProd",
+      "id": "08y3F0000008YGMQA2",
+      "lastModifiedById": "00550000006mu7mAAA",
+      "lastModifiedByName": "Yasir Arafat",
+      "lastModifiedDate": "2020-09-11T23:04:37.000Z",
+      "manageableState": "unmanaged",
+      "type": "CspTrustedSite"
+    },
+    {
+      "createdById": "00550000006mu7mAAA",
+      "createdByName": "Yasir Arafat",
+      "createdDate": "2020-09-06T19:49:42.000Z",
+      "fileName": "cspTrustedSites/UAT_Attachment_URL.cspTrustedSite",
+      "fullName": "UAT_Attachment_URL",
+      "id": "08y3F0000008YCOQA2",
+      "lastModifiedById": "00550000006mu7mAAA",
+      "lastModifiedByName": "Yasir Arafat",
+      "lastModifiedDate": "2020-09-06T19:49:42.000Z",
+      "manageableState": "unmanaged",
+      "type": "CspTrustedSite"
+    }
+  ]
+}

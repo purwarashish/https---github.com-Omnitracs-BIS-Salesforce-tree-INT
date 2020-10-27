@@ -1,0 +1,101 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "00550000004fEIIAA2",
+      "createdByName": "Cody Worth",
+      "createdDate": "2017-02-23T19:51:47.000Z",
+      "fileName": "liveChatButtons/Automated_Invitation.liveChatButton",
+      "fullName": "Automated_Invitation",
+      "id": "57350000000GptWAAS",
+      "lastModifiedById": "00550000003h5fCAAQ",
+      "lastModifiedByName": "Casey Keeling",
+      "lastModifiedDate": "2019-03-07T10:32:43.000Z",
+      "type": "LiveChatButton"
+    },
+    {
+      "createdById": "00550000001biZKAAY",
+      "createdByName": "Deployment User",
+      "createdDate": "2017-10-09T19:44:58.000Z",
+      "fileName": "liveChatButtons/LA_HOS.liveChatButton",
+      "fullName": "LA_HOS",
+      "id": "57350000000032jAAA",
+      "lastModifiedById": "00550000004cCkhAAE",
+      "lastModifiedByName": "Sripathi Gullapalli",
+      "lastModifiedDate": "2017-10-10T17:21:11.000Z",
+      "type": "LiveChatButton"
+    },
+    {
+      "createdById": "00550000001biZKAAY",
+      "createdByName": "Deployment User",
+      "createdDate": "2017-10-09T19:44:58.000Z",
+      "fileName": "liveChatButtons/Automated_Invitation_Support.liveChatButton",
+      "fullName": "Automated_Invitation_Support",
+      "id": "57350000000032hAAA",
+      "lastModifiedById": "00550000001biZKAAY",
+      "lastModifiedByName": "Deployment User",
+      "lastModifiedDate": "2017-10-09T19:44:58.000Z",
+      "type": "LiveChatButton"
+    },
+    {
+      "createdById": "00550000001d1yqAAA",
+      "createdByName": "Nicole Beaulieu",
+      "createdDate": "2017-07-27T22:36:19.000Z",
+      "fileName": "liveChatButtons/Support_Chat_Button.liveChatButton",
+      "fullName": "Support_Chat_Button",
+      "id": "573500000008PdvAAE",
+      "lastModifiedById": "00550000001biZKAAY",
+      "lastModifiedByName": "Deployment User",
+      "lastModifiedDate": "2017-10-09T19:44:58.000Z",
+      "type": "LiveChatButton"
+    },
+    {
+      "createdById": "00550000001biZKAAY",
+      "createdByName": "Deployment User",
+      "createdDate": "2017-10-09T19:44:58.000Z",
+      "fileName": "liveChatButtons/LA_Customer_Portal.liveChatButton",
+      "fullName": "LA_Customer_Portal",
+      "id": "57350000000032iAAA",
+      "lastModifiedById": "00550000004cCkhAAE",
+      "lastModifiedByName": "Sripathi Gullapalli",
+      "lastModifiedDate": "2017-10-10T17:19:49.000Z",
+      "type": "LiveChatButton"
+    },
+    {
+      "createdById": "00550000004fEIIAA2",
+      "createdByName": "Cody Worth",
+      "createdDate": "2017-02-23T20:25:58.000Z",
+      "fileName": "liveChatButtons/Chat_Button.liveChatButton",
+      "fullName": "Chat_Button",
+      "id": "57350000000GptbAAC",
+      "lastModifiedById": "00550000004fEIIAA2",
+      "lastModifiedByName": "Cody Worth",
+      "lastModifiedDate": "2017-02-23T20:25:58.000Z",
+      "type": "LiveChatButton"
+    },
+    {
+      "createdById": "00550000001biZKAAY",
+      "createdByName": "Deployment User",
+      "createdDate": "2017-10-09T19:44:58.000Z",
+      "fileName": "liveChatButtons/catchall.liveChatButton",
+      "fullName": "catchall",
+      "id": "57350000000032lAAA",
+      "lastModifiedById": "00550000004cCkhAAE",
+      "lastModifiedByName": "Sripathi Gullapalli",
+      "lastModifiedDate": "2017-10-10T17:17:52.000Z",
+      "type": "LiveChatButton"
+    },
+    {
+      "createdById": "00550000001biZKAAY",
+      "createdByName": "Deployment User",
+      "createdDate": "2017-10-09T19:44:58.000Z",
+      "fileName": "liveChatButtons/LA_Hardware.liveChatButton",
+      "fullName": "LA_Hardware",
+      "id": "57350000000032kAAA",
+      "lastModifiedById": "00550000004cCkhAAE",
+      "lastModifiedByName": "Sripathi Gullapalli",
+      "lastModifiedDate": "2017-10-10T17:20:35.000Z",
+      "type": "LiveChatButton"
+    }
+  ]
+}

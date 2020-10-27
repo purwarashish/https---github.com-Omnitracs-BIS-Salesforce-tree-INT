@@ -1,0 +1,10 @@
+<apex:page showHeader="false" sidebar="false" 
+           standardController="Partner_Support_Information__c" extensions="LogoPreviewController">
+
+    <img src="/servlet/servlet.FileDownload?file={!masterRecord.Logo__c}" height="42"
+         style="display:{!IF( (masterRecord.logo_orientation__c == 'Square'), 'normal', 'none')};" />
+    <img src="/servlet/servlet.FileDownload?file={!masterRecord.Logo__c}" height="42"
+         style="display:{!IF( (masterRecord.logo_orientation__c == 'Portrait'), 'normal', 'none')};" />
+    <img src="/servlet/servlet.FileDownload?file={!masterRecord.Logo__c}" width="200" 
+         style="display:{!IF( (masterRecord.logo_orientation__c == 'Landscape'), 'normal', 'none')};" />        
+</apex:page>

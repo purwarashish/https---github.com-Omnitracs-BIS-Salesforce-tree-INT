@@ -1,0 +1,56 @@
+<apex:page cache="true">
+<!-- Flicker issue fix -->
+<meta http-equiv="Page-Enter" content="blendTrans(Duration=.01)" />
+<meta http-equiv="Page-Exit" content="blendTrans(Duration=.01)" />
+<meta http-equiv="Page-Enter" content="revealtrans(duration=0.0)" />
+<meta http-equiv="Page-Exit" content="revealtrans(duration=0.0)" />
+
+<meta http-equiv="Site-Enter" content="blendTrans(Duration=.01)" />
+<meta http-equiv="Site-Exit" content="blendTrans(Duration=.01)" />
+<meta http-equiv="Site-Enter" content="revealtrans(duration=0.0)" />
+<meta http-equiv="Site-Exit" content="revealtrans(duration=0.0)" />
+
+<!-- All CSS -->
+<apex:stylesheet value="{!URLFor($Resource.QESUnityCSSAndJS, 'Html/css/mainstyle.css')}" />
+<apex:stylesheet value="{!URLFor($Resource.QESUnityCSSAndJS, 'Html/css/jquery.jcarousel.css')}" />
+<apex:stylesheet value="{!URLFor($Resource.QESUnityCSSAndJS, 'Html/css/customer.css')}"  />
+<!-- link rel="stylesheet" href="{!URLFor($Resource.QESUnityCSSAndJS, 'Html/css/style.css')}" type="text/css" media="screen, projection"/ -->
+<apex:stylesheet value="{!URLFor($Resource.QESUnityCSSAndJS, 'Html/css/ie.css')}" />
+<apex:stylesheet value="{!URLFor($Resource.QESUnityCSSAndJS, 'Html/css/style.css')}"  />   
+
+<!-- All javascripts to be included -->     
+<apex:includeScript value="{!URLFor($Resource.QESUnityCSSAndJS, 'Html/scripts/jquery-1.7.1.min.js')}" />
+<apex:includeScript value="{!URLFor($Resource.QESUnityCSSAndJS, 'Html/scripts/jquery.tinycarousel.min.js')}" />
+<apex:includeScript value="{!URLFor($Resource.QESUnityCSSAndJS, 'Html/scripts/menu.js')}" />
+<apex:includeScript value="{!URLFor($Resource.QESUnityCSSAndJS, 'Html/scripts/jquery.bxSlider.min3.js')}" />
+<apex:includeScript value="{!URLFor($Resource.QESUnityCSSAndJS, 'Html/scripts/jquery.dropdown.js')}" />
+<apex:includeScript value="{!URLFor($Resource.QESUnityCSSAndJS, 'Html/scripts/jquery.dropdownPlain.js')}" />
+<apex:includeScript value="{!URLFor($Resource.QESUnityCSSAndJS, 'Html/scripts/jquery.dropdown2.js')}" />
+<apex:includeScript value="{!URLFor($Resource.QESUnityCSSAndJS, 'Html/scripts/jquery.dropdownPlain2.js')}" />
+<apex:includeScript value="{!URLFor($Resource.QESUnityCSSAndJS, 'Html/scripts/jquery.dropdown3.js')}" />
+<apex:includeScript value="{!URLFor($Resource.QESUnityCSSAndJS, 'Html/scripts/jquery.dropdownPlain3.js')}" />
+<apex:includeScript value="{!URLFor($Resource.QESUnityCSSAndJS, 'Html/scripts/hoverIntent.js')}" />
+<apex:includeScript value="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/scripts/combobox3.js')}" />
+<!-- apex:includeScript value="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/scripts/headerLinksRedirect.js')}" / -->
+<!--script src="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/scripts/combobox3.js')}" type="text/javascript"/-->
+<!-- apex:includeScript value="{!URLFor($Resource.QESUnityCSSAndJS, 'Html/scripts/xml2json.js')}" / -->
+
+ <apex:includeScript value="{!URLFOR($Resource.DataTablesPaginationJquery, 'DataTables-1.7.6/media/js/jquery.js')}"/>
+ <apex:includeScript value="{!URLFOR($Resource.DataTablesPaginationJquery, 'DataTables-1.7.6/media/js/jquery.dataTables.js')}"/>
+ <apex:includeScript value="{!URLFOR($Resource.DataTablesPaginationJquery, 'DataTables-1.7.6/extras/TableTools/media/js/TableTools.min.js')}"/>
+ <apex:includeScript value="{!URLFOR($Resource.DataTablesPaginationJquery, 'DataTables-1.7.6/extras/ColVis/media/js/ColVis.js')}"/>
+ <apex:includeScript value="{!URLFOR($Resource.DataTablesPaginationJquery, 'DataTables-1.7.6/extras/ColReorder/media/js/ColReorder.min.js')}"/>
+ <apex:includeScript value="{!URLFOR($Resource.DataTablesPaginationJquery, 'DataTables-1.7.6/media/js/jquery.dataTables.columnFilter.js')}"/>
+
+ <apex:stylesheet value="{!URLFOR($Resource.DataTablesPaginationJquery, 'DataTables-1.7.6/examples/examples_support/themes/ui-lightness/jquery-ui-1.8.4.custom.css')}"/ >
+ 
+ <apex:includeScript value="{!URLFor($Resource.QESUnityCSSAndJS, 'Html/scripts/checked.js')}" />
+
+ 
+<!-- apex:includeScript value="{!URLFor($Resource.CPResources,'scripts/xml2json.js')}" / -->
+<!-- CP resources End --> 
+<!-- Including CSS for Unity Provisioning -->
+<apex:stylesheet value="{!URLFor($Resource.CustomerUnityProvisioning, 'Provising/css/admin.css')}"/>
+<apex:stylesheet value="{!URLFor($Resource.CustomerUnityProvisioning, 'Provising/css/ie.css')}"/>
+ 
+</apex:page>

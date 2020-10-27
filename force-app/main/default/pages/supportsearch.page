@@ -1,0 +1,238 @@
+<apex:page id="pageId" showHeader="false" sidebar="false" 
+           controller="MainController" action="{!gsm_initSingleton}" cache="true">
+<apex:include id="mainpage" pageName="mainPage" />
+<script>
+        var pagename="supportsearch";
+        function documentReady() {
+             $('a.artlink').click(
+                function(e){
+                   redir1($(this).attr('href'),e);
+                }
+              );
+             $('a.breadcumlink').click(
+                function(e){
+                   redir($(this).attr('href'),e);
+                }
+              );
+             $('a.searchTitle').click(
+                function(e){
+                  e.preventDefault();
+                  e.stopPropagation();
+                  var URL = $(this).attr('href');
+                  window.open(URL,'', 'height=550,width=1024,location=no,resizable=yes,toolbar=no,status=no,menubar=no,scrollbars=yes');
+                }
+               );        
+        }
+        $(document).ready(
+            function(){
+                 documentReady();
+            }
+        );
+    
+      function redir1(rUrl,e)
+      {
+         e.preventDefault();
+         e.stopPropagation();
+         $("#pageId\\:form1\\:hiddenInputField").val(rUrl);
+         $("#pageId\\:form1\\:hiddencmdlink").click();
+         return false;
+     }
+
+      function redir(rUrl,e)
+        {
+         e.preventDefault();
+         e.stopPropagation();
+         $("#pageId\\:form1\\:hiddenInputField").val(rUrl);
+         $("#pageId\\:form1\\:hiddencmdlink1").click();
+         return false;
+        }
+</script>
+
+<script type="text/javascript">
+	window.onload = function() {
+	    var links = document.getElementsByTagName('a');
+		for(var i=0; i<links.length; i++) {
+		  if(links[i].href == 'http://customer.int.omnitracs.com/'){
+		  	links[i].href = 'https://login.int.omnitracs.com/go.jsp?d=home';
+		  }
+		  else if(links[i].href == 'http://customer.omnitracs.com/'){
+		  	links[i].href = 'https://login.omnitracs.com/go.jsp?d=home';
+		  }
+		}
+	};
+</script>
+
+<div id="bodyWrapper" >
+<div class="breadcumWrp">
+<ul>
+    <li>
+        <a href="https://login.{!$Label.CPURL}go.jsp?d=home">Home</a><span>|</span>
+        <a class="breadcumlink" href="/apex/support">Support</a><span>|</span>
+        Search Result
+    </li>
+</ul>
+<h1 style="display: normal">Search Result</h1>
+<hr width="910px" align="center" style="height:1px;border:1px;color:#dadce0;background-color:#dadce0;" />
+</div>
+<div id="middle-container">
+<div class="custom-search-right fll" style="width:100%">
+<apex:form id="form1" >
+    <div class="searchResultInnerLeft fll" style="width:100%" >
+    <!--<a href = "{!gsm.retURL}" onclick = "javascript:history.go(-1); return false;" class = "artlink">Back</a>-->
+        <center><h4 class="sdfcBottomSpace10" style="color:#4f4649">Search Results for {!gsm.searchValue}</h4></center>
+        <div class="MenuBoxHeader">
+            <h3>
+                <span class="floatL">Documentation</span>
+                <span class="traRightSpace30 floatR"></span>
+            </h3>
+            <apex:outputPanel rendered="{!gsm.blnshowErr }">
+            <div style="margin-top: 16px;">
+                <h4 style="color: grey">
+                    <center>No documents found matching your  selections. Please modify your search.</center>
+                </h4>                                            
+           </div>
+           </apex:outputPanel>
+            <apex:dataList rows="5" value="{!gsm.lstContent}"  var="doc"  styleClass="searchArticleList2" id="doc" >
+            <div class="boxBody--">
+                <div style="display:inline-block !important;">
+                <!-- apex:commandLink styleClass="fll " style="display: table-cell !important;" target="_blank"   action="/apex/supportdocDetail?id={!doc.ContentDocumentid}" value="{!LEFT(doc.title,26)}..." rendered = "{!LEN(doc.title) > 26}"></apex:commandLink -->
+                <a href="/apex/supportdocDetail?id={!doc.ContentDocumentid}" class="fll searchTitle" style="display: table-cell !important;">
+                    <apex:outputText value="{!LEFT(doc.title,47)}..." rendered = "{!LEN(doc.title) > 50}" style = "color:{!IF(doc.Internal_Use_Only__c, 'black', '')}">
+                    </apex:outputText>
+                </a>
+                <!-- apex:commandLink styleClass="fll " style="display: table-cell !important;" target="_blank"  action="/apex/supportdocDetail?id={!doc.ContentDocumentid}" value="{!doc.title}" rendered="{!LEN(doc.title) <= 26}"></apex:commandLink -->
+                <a href="/apex/supportdocDetail?id={!doc.ContentDocumentid}" class="fll searchTitle" style="display: table-cell !important;">
+                    <apex:outputText value="{!doc.title}" rendered="{!LEN(doc.title) <= 50}" style="color:{!IF(doc.Internal_Use_Only__c, 'black', '')}">
+                    </apex:outputText>
+                </a>
+                </div> 
+                <div style="display:inline-block !important;float:right !important;">          
+                <apex:outputLink styleClass="sfLinkTxt fll" rendered="{!doc.Orderable__c}" value="{!$Label.Product_Catalog_Link}">Product Catalog</apex:outputLink>
+                </div>
+                <br/>
+                <apex:outputText value="{!LEFT(doc.description,197)}..." rendered="{!LEN(doc.description) > 200}" ></apex:outputText>
+                <apex:outputText value="{!doc.description}" rendered="{!LEN(doc.description) <= 200}" ></apex:outputText>
+           </div>
+            </apex:dataList>
+            <br/>
+            <script>
+                $(document).ready(
+                    function()
+                    {
+                     var linkId=document.getElementById('{!$Component.doc}');
+                     linkId.oncontextmenu=function(){return false;}
+                     if({!gsm.lstContent.size}<6)
+                     {
+                       $('[id*=next]').hide();  
+                     }
+                     else
+                     {
+                       $('[id*=next]').show();    
+                     }  
+                     }
+               );
+            </script>
+            <apex:commandLink styleClass="buttonSet newButton2 flr" id="next1" value="More" action="/apex/supportsearchdocs?searchText={!gsm.searchValue}&retURL=supportsearch?searchText={!gsm.searchValue}"  />&nbsp;&nbsp;
+            <br/><br/>
+        </div>
+        <div class="MenuBoxHeader sdfcTopSpace15" style="width:100%">
+            <h3>
+                <span class="floatL">Answers</span>
+                <span class="traRightSpace30 floatR"></span>
+            </h3>
+            <apex:variable var="anyDocument" value="false" />
+            <apex:variable var="oddrow" value="True" />
+            <apex:variable var="hasMoreValue" value="false" />
+            <knowledge:articleList id="outpanel2"  articleVar="article" keyword="{!gsm.searchValue }" hasMoreVar="hasMore" pageNumber="{!gsm.CurrentPageNumber}" pageSize="5">
+            <script>                                                
+                $(document).ready(function()
+                {
+                 var linkId=document.getElementById('{!$Component.outpanel2}');
+                 linkId.oncontextmenu=function(){return false;}
+                 if({!hasMore}!= true)
+                 {
+                    $('[id*=next]').hide();
+                 }
+                 else
+                 {
+                    $('[id*=next]').show();
+                 }
+                 }
+                );
+                                                    
+               </script>
+               <!-- Render search header only when results are found -->
+               <apex:outputPanel rendered="{!oddrow='True'}"
+                                                    style="margin-left:0;width:667;">
+                                                    <ul class="searchArticleList2" style="margin-left: 0">
+                                                    <li style="margin-left: 0">
+                                                <a class="searchTitle" href="/apex/supportarticle{!Left(article.articleTypeName,
+                                                                         LEN(article.articleTypeName)-5)
+                                                                         }?type={!Left(article.articleTypeName,
+                                                                         LEN(article.articleTypeName)-5)
+                                                                         }&&id={!article.id}"
+                                                                         style="display:inline !important">
+                                                    
+                                                    <apex:outputtext rendered="{!LEN(article.summary) <= 50}">{!article.title}</apex:outputtext>
+                                                    <apex:outputtext rendered="{!LEN(article.summary) > 50}">{!Left(article.title,47)}...</apex:outputtext>
+                                                    
+                                                </a>                                                  
+                                                <div>
+                                                <apex:outputText rendered="{!LEN(article.summary) > 200}"> {!Left(article.summary,197)}...
+                                                </apex:outputText>
+                                                <apex:outputText rendered="{!LEN(article.summary) <= 200}"> {!article.summary}
+                                                </apex:outputText>
+                                                </div>
+                                                </li>
+                                                </ul>
+                                                </apex:outputPanel>
+
+                                                <apex:outputPanel rendered="{!oddrow='False'}"
+                                                    style="margin-left:0;width:667;">
+                                                                                       
+                                                    <ul class="searchArticleList2" style="margin-left: 0">
+                                                        <li class="even" style="margin-left: 0">
+                                                     <a class="searchTitle" href="/apex/supportarticle{!Left(article.articleTypeName,
+                                                                         LEN(article.articleTypeName)-5)
+                                                                         }?type={!Left(article.articleTypeName,
+                                                                         LEN(article.articleTypeName)-5)
+                                                                         }&&id={!article.id}"
+                                                                         style="display:inline !important">
+                                                     <apex:outputtext rendered="{!LEN(article.summary) <= 50}">{!article.title}</apex:outputtext>
+                                                     <apex:outputtext rendered="{!LEN(article.summary) > 50}">{!Left(article.title,47)}...</apex:outputtext>
+                                                 </a>
+                                                <div>
+                                                    <apex:outputText rendered="{!LEN(article.summary) > 200}"> {!Left(article.summary,197)}...
+                                                    </apex:outputText>
+                                                    <apex:outputText rendered="{!LEN(article.summary) <= 200}"> {!article.summary}
+                                                    </apex:outputText>
+                                                 </div>
+                                                    </li>   
+                                                    </ul>
+                                                </apex:outputPanel>
+
+                                                <apex:variable var="oddrow"
+                                                    value="{!IF(oddrow='True','False','True')}" />
+                                                
+                                                <apex:variable var="anyDocument" value="true" />
+                                            </knowledge:articleList>
+      <br/>
+      <apex:outputPanel rendered="{!anyDocument=='false'}">
+        <div style="margin-top: 16px;">
+        <h4 style="color: grey">
+            <center>No articles found matching your  selections. Please modify your search.</center>
+        </h4>                                            
+        </div>
+     </apex:outputPanel>
+     <apex:commandLink id="next2" styleClass="buttonSet newButton2 flr"  value="More" action="/apex/supportsearcharticles?searchText={!gsm.searchValue}&retURL=supportsearch?searchText={!gsm.searchValue}"/>
+</div>
+</div>
+<apex:commandLink id="hiddencmdlink"  target="_blank" styleclass="hiddencmdlink" value="" action="{!gsm.redirectToArticles}" />
+<apex:commandLink id="hiddencmdlink1"  styleclass="hiddencmdlink1" value="" action="{!gsm.redirectToArticles}" />
+<apex:inputHidden id="hiddenInputField" value="{!gsm.hiddenInputField}"/>
+</apex:form>
+</div>
+</div>
+<apex:include pageName="UnityFooter" />
+</div>
+</apex:page>

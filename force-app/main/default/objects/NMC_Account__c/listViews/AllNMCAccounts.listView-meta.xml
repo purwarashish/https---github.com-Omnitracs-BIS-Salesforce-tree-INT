@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllNMCAccounts</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>NMC_Account_Type__c</columns>
+    <columns>NMC_System__c</columns>
+    <columns>NMC_Units__c</columns>
+    <columns>Customer_Interface__c</columns>
+    <columns>Inactive__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <label>All NMC Accounts</label>
+    <language>en_US</language>
+</ListView>

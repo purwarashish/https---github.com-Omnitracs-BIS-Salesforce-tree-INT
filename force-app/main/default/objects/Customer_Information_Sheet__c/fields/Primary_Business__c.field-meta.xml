@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Business__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(Account__r.Primary_Business__c, &quot;Bulk Food&quot;), &quot;Bulk Food&quot;,
+IF(ISPICKVAL(Account__r.Primary_Business__c, &quot;Bulk Freight&quot;), &quot;Bulk Freight&quot;,
+IF(ISPICKVAL(Account__r.Primary_Business__c, &quot;Bulk Tank&quot;), &quot;Bulk Tank&quot;,
+IF(ISPICKVAL(Account__r.Primary_Business__c, &quot;Containers&quot;), &quot;Containers&quot;,
+IF(ISPICKVAL(Account__r.Primary_Business__c, &quot;Delivery Service/Gen Com&quot;), &quot;Delivery Service/Gen Com&quot;,
+IF(ISPICKVAL(Account__r.Primary_Business__c, &quot;Distribution/Short Haul&quot;), &quot;Distribution/Short Haul&quot;,
+IF(ISPICKVAL(Account__r.Primary_Business__c, &quot;Dry Bulk Commodities&quot;), &quot;Dry Bulk Commodities&quot;,
+IF(ISPICKVAL(Account__r.Primary_Business__c, &quot;Dry Van Freight&quot;), &quot;Dry Van Freight&quot;,
+IF(ISPICKVAL(Account__r.Primary_Business__c, &quot;Flatbed Loads&quot;), &quot;Flatbed Loads&quot;,
+IF(ISPICKVAL(Account__r.Primary_Business__c, &quot;Garbage&quot;), &quot;Garbage&quot;,
+IF(ISPICKVAL(Account__r.Primary_Business__c, &quot;General Commodities&quot;), &quot;General Commodities&quot;,
+IF(ISPICKVAL(Account__r.Primary_Business__c, &quot;General Dry Freight&quot;), &quot;General Dry Freight&quot;,
+IF(ISPICKVAL(Account__r.Primary_Business__c, &quot;General Freight&quot;), &quot;General Freight&quot;,
+IF(ISPICKVAL(Account__r.Primary_Business__c, &quot;Hazardous Materials&quot;), &quot;Hazardous Materials&quot;,
+IF(ISPICKVAL(Account__r.Primary_Business__c, &quot;Hazardous Products&quot;), &quot;Hazardous Products&quot;,
+IF(ISPICKVAL(Account__r.Primary_Business__c, &quot;Hazmat&quot;), &quot;Hazmat&quot;,
+IF(ISPICKVAL(Account__r.Primary_Business__c, &quot;Hazmat Hauler&quot;), &quot;Hazmat Hauler&quot;,
+IF(ISPICKVAL(Account__r.Primary_Business__c, &quot;Heavy Haul&quot;), &quot;Heavy Haul&quot;,
+IF(ISPICKVAL(Account__r.Primary_Business__c, &quot;Liquid Bulk&quot;), &quot;Liquid Bulk&quot;,
+IF(ISPICKVAL(Account__r.Primary_Business__c, &quot;Livestock&quot;), &quot;Livestock&quot;,
+IF(ISPICKVAL(Account__r.Primary_Business__c, &quot;Oilfield Services&quot;), &quot;Oilfield Services&quot;,
+IF(ISPICKVAL(Account__r.Primary_Business__c, &quot;Petroleum&quot;), &quot;Petroleum&quot;,
+IF(ISPICKVAL(Account__r.Primary_Business__c, &quot;Pizza delivery&quot;), &quot;Pizza delivery&quot;,
+IF(ISPICKVAL(Account__r.Primary_Business__c, &quot;Prisoners Transportation&quot;), &quot;Prisoners Transportation&quot;,
+IF(ISPICKVAL(Account__r.Primary_Business__c, &quot;Refrigerated Freight&quot;), &quot;Refrigerated Freight&quot;,
+IF(ISPICKVAL(Account__r.Primary_Business__c, &quot;Sand&quot;), &quot;Sand&quot;,
+IF(ISPICKVAL(Account__r.Primary_Business__c, &quot;Service&quot;), &quot;Service&quot;,
+&quot;Other&quot;)))))))))))))))))))))))))))</formula>
+    <inlineHelpText>This field displays the value selected in the Primary Business field on the account</inlineHelpText>
+    <label>Primary Business</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

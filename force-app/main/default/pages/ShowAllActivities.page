@@ -1,0 +1,70 @@
+<apex:page controller="ShowAllActivitiesControllerr">
+ 
+ <apex:pageBlock title="Activity History" tabStyle="Lead" rendered="{!AND(NOT(ISNULL(selectedLead)),typeOfData ='AH')}" >
+ 		<a style="color:#015ba7" href="/apex/LimitedAccountOrLeadView?id={!id}">Lead: {!selectedLead.Name} </a>
+        <div id ="ActHis">
+        <apex:pageBlockTable id="HistoryTable" value="{!selectedLead.ActivityHistories}" var="History" rendered="{!selectedLead.ActivityHistories.size > 0}">
+        
+            <apex:column headerValue="Subject" value="{!History.Subject} "/>                          
+            <apex:column headerValue="Task"  value="{!History.IsTask}"/>
+            <apex:column headerValue="Due Date"  value="{!History.ActivityDate}"/>
+            <apex:column headerValue="Assigned To"  value="{!History.OwnerId}"/>
+            <apex:column headerValue="Last Modified Date/Time"  value="{!History.LastModifiedDate}"/>
+        </apex:pageBlockTable>
+        </div> 
+    </apex:pageBlock> 
+    
+    <apex:pageBlock title="Open Activities" tabStyle="Lead" rendered="{!AND(NOT(ISNULL(selectedLead)),typeOfData ='OA')}" >
+    	<a style="color:#015ba7" href="/apex/LimitedAccountOrLeadView?id={!id}">Lead: {!selectedLead.Name} </a>
+        <div id ="OpenAct">
+        <apex:pageBlockTable id="OpenActTable" value="{!selectedLead.OpenActivities}" var="OpenAct" rendered="{!selectedLead.OpenActivities.size > 0}">
+        
+            <apex:column headerValue="Subject" value="{!OpenAct.Subject}"/>                            
+            <apex:column headerValue="Task"  value="{!OpenAct.IsTask}"/>
+            <apex:column headerValue="Due Date"  value="{!OpenAct.ActivityDate}"/>
+            <apex:column headerValue="Status"  value="{!OpenAct.Status}"/>
+            <apex:column headerValue="Priority"  value="{!OpenAct.Priority}"/>
+            
+            <apex:column headerValue="Assigned To"  value="{!OpenAct.OwnerId}"/>
+            
+        </apex:pageBlockTable>
+        </div>
+    </apex:pageBlock>
+  
+      
+    <apex:pageBlock title="Activity History" tabStyle="Account" rendered="{!AND(NOT(ISNULL(selectedAcc)),typeOfData ='AH')}" >
+    	<a style="color:#015ba7" href="/apex/LimitedAccountOrLeadView?id={!id}">Account: {!selectedAcc.Name} </a>
+        <div id ="ActHis">
+        <apex:pageBlockTable id="HistoryTable" value="{!selectedAcc.ActivityHistories}" var="History"  rendered="{!selectedAcc.ActivityHistories.size > 0}">
+        
+            <apex:column headerValue="Subject" value="{!History.Subject} "/>            
+            <apex:column headerValue="Name"  value="{!History.WhoId}"/>       
+            <apex:column headerValue="Task"  value="{!History.IsTask}"/>
+            <apex:column headerValue="Due Date"  value="{!History.ActivityDate}"/>
+            
+            <apex:column headerValue="Assigned To"  value="{!History.OwnerId}"/>
+            <apex:column headerValue="Last Modified Date/Time"  value="{!History.LastModifiedDate}"/>
+        </apex:pageBlockTable>
+        </div>
+    </apex:pageBlock> 
+    
+    <apex:pageBlock title="Open Activities" tabStyle="Account" rendered="{!AND(NOT(ISNULL(selectedAcc)),typeOfData ='OA')}" >
+    	<a style="color:#015ba7" href="/apex/LimitedAccountOrLeadView?id={!id}">Account: {!selectedAcc.Name} </a>
+        <div id ="OpenAct">
+        <apex:pageBlockTable id="OpenActTable" value="{!selectedAcc.OpenActivities}" var="OpenAct" rendered="{!selectedAcc.OpenActivities.size > 0}">
+        
+            <apex:column headerValue="Subject" value="{!OpenAct.Subject} "/>
+              
+            <apex:column headerValue="Name"  value="{!OpenAct.WhoId}"/>
+            <apex:column headerValue="Task"  value="{!OpenAct.IsTask}"/>
+            <apex:column headerValue="Due Date"  value="{!OpenAct.ActivityDate}"/>
+            <apex:column headerValue="Status"  value="{!OpenAct.Status}"/>
+            <apex:column headerValue="Priority"  value="{!OpenAct.Priority}"/>
+            
+            <apex:column headerValue="Assigned To"  value="{!OpenAct.OwnerId}"/>
+
+            
+        </apex:pageBlockTable>
+        </div>
+    </apex:pageBlock>
+</apex:page>

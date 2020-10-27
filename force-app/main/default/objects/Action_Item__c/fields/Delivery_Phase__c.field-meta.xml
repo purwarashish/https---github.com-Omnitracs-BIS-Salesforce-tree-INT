@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delivery_Phase__c</fullName>
+    <externalId>false</externalId>
+    <label>Delivery Phase</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Phase 1 - 1.0 Scope</fullName>
+                <default>false</default>
+                <label>Phase 1 - 1.0 Scope</label>
+            </value>
+            <value>
+                <fullName>Phase 1 - 1.5 Scope</fullName>
+                <default>false</default>
+                <label>Phase 1 - 1.5 Scope</label>
+            </value>
+            <value>
+                <fullName>Phase 1.5</fullName>
+                <default>false</default>
+                <label>Phase 1.5</label>
+            </value>
+            <value>
+                <fullName>Phase 2</fullName>
+                <default>false</default>
+                <label>Phase 2</label>
+            </value>
+            <value>
+                <fullName>CPQ Admin</fullName>
+                <default>false</default>
+                <label>CPQ Admin</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

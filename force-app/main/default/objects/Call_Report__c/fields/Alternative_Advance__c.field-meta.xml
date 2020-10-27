@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Alternative_Advance__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>What is the ADVANCE you are planning to achieve? (Use the SMART criteria to strengthen an Advance)</inlineHelpText>
+    <label>Alternative Advance</label>
+    <length>32000</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>5</visibleLines>
+</CustomField>

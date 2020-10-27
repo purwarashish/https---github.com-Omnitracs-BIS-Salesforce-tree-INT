@@ -1,0 +1,74 @@
+<!---------------------------------------------------------------------------------------------------
+Name : ShowSupportAlerts
+Author : Shruti Karn
+Date : 7 March 2011
+
+Usage : in-line VF page to show support alerts 
+
+Dependencies:  Static Resource -> JQuery
+    
+CR # 23403
+----------------------------------------------------------------------------------------------------->
+<apex:page id="page1" standardController="Case" extensions="ShowSupportAlertController" showHeader="true" sidebar="true" tabStyle="Case">
+    <apex:includeScript value="{!URLFOR($Resource.JQuery, 'jquery.js')}" /> 
+    <apex:includeScript value="{!URLFOR($Resource.JQuery, 'jquery.simpledialog.0.1.js')}" /> 
+    <apex:stylesheet value="{!URLFOR($Resource.JQuery, 'jquery.simpledialog.0.1.css')}"/> 
+
+   <script type="text/javascript">
+   
+   function findAcctId()
+   {
+      
+      //var accountId = document.getElementById('{!$Component.form1.pgblk.pgblksectn1.acctID}_lkid').value;
+      findSuppAlert('{!Case.accountId}');
+              
+   }
+         
+    $(document).ready(function () {
+    
+        $('.simpledialog').simpleDialog();
+       
+     
+           
+    });
+    
+    showData = function() {
+//    alert('$( window.parent):'+$(window.parent.document));
+       
+        $('#proxyAnchor').submit();
+        $('#proxyAnchor').click();
+    }   
+   </script>
+          
+        <apex:form id="form1">
+            <apex:actionFunction name="findSuppAlert" action="{!findSupportAlert}" rerender="form1" immediate="true">
+                <apex:param name="a" value="" assignTo="{!acctId}"/>
+            </apex:actionFunction>
+   
+        <div id="leftc" style="float:left; width:40%; textalign=left;" title="Contact Information">
+            <font size="2px"><b>Contact Name: </b><apex:outputText value="{!Case.Contact.Name}" /><br />
+            <b>Account Name: </b><apex:outputText value="{!Case.Account.Name}" /><br />
+            <b>Contact Phone: </b><apex:outputText value="{!Case.Contact.Phone}" /><br /></font> 
+        </div>
+        
+        <div id="rightc" style="float:right; width:15%; textalign=left;" title="Case Information">
+            <font size="2px"><b>Severity: </b><apex:outputText value="{!Case.Priority}" /><br />
+            <b>Category (Level 1): </b><apex:outputText value="{!Case.Category__c}" /><br />
+            <b>Type (Level 2): </b><apex:outputText value="{!Case.Type_Level_2__c}" /><br />
+            <b>Area (Level 3): </b><apex:outputText value="{!Case.Area_Level_3__c}" /><br /></font> 
+        </div>
+        
+        <div id="rightd" style="float:left; width:45%; textalign=right;" title="Support Alerts">
+            <apex:outputText style="color:rgb(204,0,0);font-weight: bold;font-size:14px;" value="Support Alert on" ></apex:outputText>
+            <apex:outputLink style="color:rgb(204,0,0);font-weight: bold;font-size:14px;" target="_blank" value="/{!accSupportAlert}"  >
+                {!acctName}
+            </apex:outputLink>
+            <br/>
+            <font size="2px">{!totalSuppAlert} Support Alert(s) on Account - <apex:outputText style="color:rgb(204,0,0);font-weight: bold;font-size:14px;" value=" {!critSupportAlert} Critical"/>
+            <br/>
+            Please check Account for details.</font>   
+        </div>
+        </apex:form>
+
+<script>findAcctId()</script>             
+</apex:page>

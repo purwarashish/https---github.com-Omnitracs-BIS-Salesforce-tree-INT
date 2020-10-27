@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ServicesPortalConnectionTypes</fullName>
+    <columns>NMC_Account__c</columns>
+    <columns>Connection_Type__c</columns>
+    <columns>NAME</columns>
+    <columns>User_ID_Login_Aux_ID__c</columns>
+    <columns>Password__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>Company_ID__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Connection_Type__c</field>
+        <operation>contains</operation>
+        <value>Services Portal</value>
+    </filters>
+    <label>Services Portal Connection Types</label>
+    <language>en_US</language>
+</ListView>

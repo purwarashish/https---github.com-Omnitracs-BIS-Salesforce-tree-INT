@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Scenarios__c</fullName>
+    <description>Were you able to uncover any workarounds? If yes, please provide details.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Were you able to uncover any workarounds? If yes, please provide details.</inlineHelpText>
+    <label>Scenarios</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

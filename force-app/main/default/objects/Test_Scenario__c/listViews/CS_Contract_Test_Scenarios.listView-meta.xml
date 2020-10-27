@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CS_Contract_Test_Scenarios</fullName>
+    <booleanFilter>1 OR 2 OR 3 OR 4 OR 5 OR 6 OR 7 OR 8 OR 9 OR 10</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Scenario__c</columns>
+    <columns>Status__c</columns>
+    <columns>Verification_User__c</columns>
+    <columns>Assigned_To__c</columns>
+    <columns>Testing_Suggestions_Variations__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Verification_User__c</field>
+        <operation>equals</operation>
+        <value>Laura Hughes</value>
+    </filters>
+    <filters>
+        <field>Verification_User__c</field>
+        <operation>equals</operation>
+        <value>Jeanette Alban</value>
+    </filters>
+    <filters>
+        <field>Verification_User__c</field>
+        <operation>equals</operation>
+        <value>Kathy James</value>
+    </filters>
+    <filters>
+        <field>Verification_User__c</field>
+        <operation>equals</operation>
+        <value>Roxanne Ree</value>
+    </filters>
+    <filters>
+        <field>Assigned_To__c</field>
+        <operation>equals</operation>
+        <value>Laura Hughes</value>
+    </filters>
+    <filters>
+        <field>Assigned_To__c</field>
+        <operation>equals</operation>
+        <value>Jeanette Alban</value>
+    </filters>
+    <filters>
+        <field>Assigned_To__c</field>
+        <operation>equals</operation>
+        <value>Kathy James</value>
+    </filters>
+    <filters>
+        <field>Assigned_To__c</field>
+        <operation>equals</operation>
+        <value>Roxanne Ree</value>
+    </filters>
+    <filters>
+        <field>Verification_User__c</field>
+        <operation>equals</operation>
+        <value>Robert Blackard</value>
+    </filters>
+    <filters>
+        <field>Assigned_To__c</field>
+        <operation>equals</operation>
+        <value>Robert Blackard</value>
+    </filters>
+    <label>CS Contract Test Scenarios</label>
+    <language>en_US</language>
+</ListView>

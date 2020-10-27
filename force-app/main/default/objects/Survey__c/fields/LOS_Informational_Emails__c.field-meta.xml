@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LOS_Informational_Emails__c</fullName>
+    <externalId>false</externalId>
+    <label>LOS - Informational Emails</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Very Satisfied</fullName>
+                <color>#0B6FCE</color>
+                <default>false</default>
+                <label>Very Satisfied</label>
+            </value>
+            <value>
+                <fullName>Satisfied</fullName>
+                <color>#78C953</color>
+                <default>false</default>
+                <label>Satisfied</label>
+            </value>
+            <value>
+                <fullName>Somewhat Satisfied</fullName>
+                <color>#FF9900</color>
+                <default>false</default>
+                <label>Somewhat Satisfied</label>
+            </value>
+            <value>
+                <fullName>Not Satisfied At All</fullName>
+                <color>#FF0000</color>
+                <default>false</default>
+                <label>Not Satisfied At All</label>
+            </value>
+            <value>
+                <fullName>Not Applicable</fullName>
+                <color>#F3D904</color>
+                <default>false</default>
+                <label>Not Applicable</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

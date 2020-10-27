@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ROI_Document</fullName>
+    <active>true</active>
+    <description>Document sent to the prospect that outlines the ROI of the deal; sent during Prove; required for Negotiate</description>
+    <label>ROI Document</label>
+</RecordType>

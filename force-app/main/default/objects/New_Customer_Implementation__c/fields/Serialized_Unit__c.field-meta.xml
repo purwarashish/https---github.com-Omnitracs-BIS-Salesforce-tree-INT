@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Serialized_Unit__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>The unit that triggered the 1st message received date</description>
+    <externalId>false</externalId>
+    <label>Serialized Unit</label>
+    <referenceTo>Serialized_Units__c</referenceTo>
+    <relationshipLabel>New Customer Implementation</relationshipLabel>
+    <relationshipName>R00N50000001eccTEAQ</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

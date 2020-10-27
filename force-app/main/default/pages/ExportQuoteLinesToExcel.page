@@ -1,0 +1,70 @@
+<apex:page controller="UploadCSVAssetsController" contentType="application/vnd.ms-excel#MigratedQuoteLines.xls">
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!insertQuoteLineList}" var="iQuoteLine">
+           <apex:column headerValue="SBQQ__Quote__c">
+                {!iQuoteLine.SBQQ__Quote__c}
+           </apex:column>
+           <apex:column headerValue="SBQQ__Quantity__c">
+                {!iQuoteLine.SBQQ__Quantity__c}
+           </apex:column>
+           <apex:column headerValue="SBQQ__Product__c">
+                {!iQuoteLine.SBQQ__Product__c}
+           </apex:column>
+           <apex:column headerValue="SBQQ__Number__c">
+                {!iQuoteLine.SBQQ__Number__c}
+           </apex:column>
+           <apex:column headerValue="From_Asset_Migration__c">
+                {!iQuoteLine.From_Asset_Migration__c}
+           </apex:column>
+           <apex:column headerValue="isWrapper__c">
+                {!iQuoteLine.isWrapper__c}
+           </apex:column>
+           <apex:column headerValue="Migrated_ARR__c">
+                {!iQuoteLine.Migrated_ARR__c}
+           </apex:column>
+           <apex:column headerValue="SBQQ__OriginalPrice__c">
+                {!iQuoteLine.SBQQ__OriginalPrice__c}
+           </apex:column>
+           <apex:column headerValue="SBQQ__ListPrice__c">
+                {!iQuoteLine.SBQQ__ListPrice__c}
+           </apex:column>
+           <apex:column headerValue="Test_Quote_Line_Wrapper__c">
+                {!iQuoteLine.Test_Quote_Line_Wrapper__c}
+           </apex:column>
+           <apex:column headerValue="Migrate_Contracted_Asset__c">
+                {!iQuoteLine.Migrate_Contracted_Asset__c}
+           </apex:column>
+           <!--<apex:column headerValue="Migrated_Product_Option_ID__c">
+                {!iQuoteLine.Migrated_Product_Option_ID__c}
+           </apex:column>-->
+           <apex:column headerValue="SBQQ__ProductOption__c">
+                {!iQuoteLine.SBQQ__ProductOption__c}
+           </apex:column>
+           <apex:column headerValue="SBQQ__SubscriptionPricing__c">
+                {!iQuoteLine.SBQQ__SubscriptionPricing__c}
+           </apex:column>
+           <apex:column headerValue="Business_Unit__c">
+                {!iQuoteLine.Business_Unit__c}
+           </apex:column>
+           <apex:column headerValue="Business_Unit_Wrapper__c">
+                {!iQuoteLine.Business_Unit_Wrapper__c}
+           </apex:column>
+           <apex:column headerValue="Default_Billing_Frequency__c">
+                {!iQuoteLine.Default_Billing_Frequency__c}
+           </apex:column>
+           <apex:column headerValue="Product_Group__c">
+                {!iQuoteLine.Product_Group__c}
+           </apex:column>
+           <apex:column headerValue="Product_Line__c">
+                {!iQuoteLine.Product_Line__c}
+           </apex:column>
+           <apex:column headerValue="Product_Type__c">
+                {!iQuoteLine.Product_Type__c}
+           </apex:column>
+           <apex:column headerValue="License_Type__c">
+                {!iQuoteLine.License_Type__c}
+           </apex:column>
+           <apex:column headerValue="SBQQ__OptionLevel__c ">1</apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

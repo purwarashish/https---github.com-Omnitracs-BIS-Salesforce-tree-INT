@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Problem_Area_value_required</fullName>
+    <active>true</active>
+    <description>Other problem Area is required if Problem Area = Other.</description>
+    <errorConditionFormula>AND(OR(Text(Application__c)=&quot;Other&quot;,Text(Product__c)=&quot;Other&quot;,Text(Alert_Type__c )=&quot;Other&quot;), ISBLANK( Other_Problem_Area__c))</errorConditionFormula>
+    <errorDisplayField>Other_Problem_Area__c</errorDisplayField>
+    <errorMessage>When Alert Type, Product, or Application equals &quot;Other&quot; then Other Problem Area is required.</errorMessage>
+</ValidationRule>

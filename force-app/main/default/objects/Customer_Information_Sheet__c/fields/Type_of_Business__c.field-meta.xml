@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_of_Business__c</fullName>
+    <externalId>false</externalId>
+    <label>Type of Business</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Building Materials</fullName>
+                <default>false</default>
+                <label>Building Materials</label>
+            </value>
+            <value>
+                <fullName>Bulk Commodities</fullName>
+                <default>false</default>
+                <label>Bulk Commodities</label>
+            </value>
+            <value>
+                <fullName>Cement Hauler</fullName>
+                <default>false</default>
+                <label>Cement Hauler</label>
+            </value>
+            <value>
+                <fullName>Forest Products</fullName>
+                <default>false</default>
+                <label>Forest Products</label>
+            </value>
+            <value>
+                <fullName>Household Goods</fullName>
+                <default>false</default>
+                <label>Household Goods</label>
+            </value>
+            <value>
+                <fullName>Auto Haulers</fullName>
+                <default>false</default>
+                <label>Auto Haulers</label>
+            </value>
+            <value>
+                <fullName>Freight Delivery (LTL)</fullName>
+                <default>false</default>
+                <label>Freight Delivery (LTL)</label>
+            </value>
+            <value>
+                <fullName>Refrigerated Liquids</fullName>
+                <default>false</default>
+                <label>Refrigerated Liquids</label>
+            </value>
+            <value>
+                <fullName>Tank Truck</fullName>
+                <default>false</default>
+                <label>Tank Truck</label>
+            </value>
+            <value>
+                <fullName>Food &amp; Bev Distribution</fullName>
+                <default>false</default>
+                <label>Food &amp; Bev Distribution</label>
+            </value>
+            <value>
+                <fullName>General Freight (TL)</fullName>
+                <default>false</default>
+                <label>General Freight (TL)</label>
+            </value>
+            <value>
+                <fullName>Hazardous Products</fullName>
+                <default>false</default>
+                <label>Hazardous Products</label>
+            </value>
+            <value>
+                <fullName>Heavy Hauling</fullName>
+                <default>false</default>
+                <label>Heavy Hauling</label>
+            </value>
+            <value>
+                <fullName>Petroleum Products</fullName>
+                <default>false</default>
+                <label>Petroleum Products</label>
+            </value>
+            <value>
+                <fullName>Refrigerated Solids</fullName>
+                <default>false</default>
+                <label>Refrigerated Solids</label>
+            </value>
+            <value>
+                <fullName>Food Products (Grocery)</fullName>
+                <default>false</default>
+                <label>Food Products (Grocery)</label>
+            </value>
+            <value>
+                <fullName>Mfg. &amp; Processing</fullName>
+                <default>false</default>
+                <label>Mfg. &amp; Processing</label>
+            </value>
+            <value>
+                <fullName>Petroleum Production &amp; Distribution</fullName>
+                <default>false</default>
+                <label>Petroleum Production &amp; Distribution</label>
+            </value>
+            <value>
+                <fullName>Retail/Wholesale</fullName>
+                <default>false</default>
+                <label>Retail/Wholesale</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Product Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Dispatch Provider</fullName>
+                <default>false</default>
+                <label>Dispatch Provider</label>
+            </value>
+            <value>
+                <fullName>Fuel Tax</fullName>
+                <default>false</default>
+                <label>Fuel Tax</label>
+            </value>
+            <value>
+                <fullName>Hardware</fullName>
+                <default>false</default>
+                <label>Hardware</label>
+            </value>
+            <value>
+                <fullName>Routing Software</fullName>
+                <default>false</default>
+                <label>Routing Software</label>
+            </value>
+            <value>
+                <fullName>Services</fullName>
+                <default>false</default>
+                <label>Services</label>
+            </value>
+            <value>
+                <fullName>Maintenance</fullName>
+                <default>false</default>
+                <label>Maintenance</label>
+            </value>
+            <value>
+                <fullName>Reseller - Hardware</fullName>
+                <default>false</default>
+                <label>Reseller - Hardware</label>
+            </value>
+            <value>
+                <fullName>Reseller - Software</fullName>
+                <default>false</default>
+                <label>Reseller - Software</label>
+            </value>
+            <value>
+                <fullName>Reseller - Partner</fullName>
+                <default>false</default>
+                <label>Reseller - Partner</label>
+            </value>
+            <value>
+                <fullName>Data Share</fullName>
+                <default>false</default>
+                <label>Data Share</label>
+            </value>
+            <value>
+                <fullName>Service Supplier</fullName>
+                <default>false</default>
+                <label>Service Supplier</label>
+            </value>
+            <value>
+                <fullName>Trailer Utilization Software</fullName>
+                <default>false</default>
+                <label>Trailer Utilization Software</label>
+            </value>
+            <value>
+                <fullName>Vehicle Utilization Software</fullName>
+                <default>false</default>
+                <label>Vehicle Utilization Software</label>
+            </value>
+            <value>
+                <fullName>Driver Utilization Software</fullName>
+                <default>false</default>
+                <label>Driver Utilization Software</label>
+            </value>
+            <value>
+                <fullName>Compliance Software</fullName>
+                <default>false</default>
+                <label>Compliance Software</label>
+            </value>
+            <value>
+                <fullName>Logistics Software</fullName>
+                <default>false</default>
+                <label>Logistics Software</label>
+            </value>
+            <value>
+                <fullName>Dispatch Software</fullName>
+                <default>false</default>
+                <label>Dispatch Software</label>
+            </value>
+            <value>
+                <fullName>Oil Field Support Software</fullName>
+                <default>false</default>
+                <label>Oil Field Support Software</label>
+            </value>
+            <value>
+                <fullName>Vehicle Safety Software</fullName>
+                <default>false</default>
+                <label>Vehicle Safety Software</label>
+            </value>
+            <value>
+                <fullName>Freight Services Software</fullName>
+                <default>false</default>
+                <label>Freight Services Software</label>
+            </value>
+            <value>
+                <fullName>Maintenance Software</fullName>
+                <default>false</default>
+                <label>Maintenance Software</label>
+            </value>
+            <value>
+                <fullName>Payment Solutions Software</fullName>
+                <default>false</default>
+                <label>Payment Solutions Software</label>
+            </value>
+            <value>
+                <fullName>Electric Utility Software</fullName>
+                <default>false</default>
+                <label>Electric Utility Software</label>
+            </value>
+            <value>
+                <fullName>Traffic Congestion Software</fullName>
+                <default>false</default>
+                <label>Traffic Congestion Software</label>
+            </value>
+            <value>
+                <fullName>Fuel Optimization Software</fullName>
+                <default>false</default>
+                <label>Fuel Optimization Software</label>
+            </value>
+            <value>
+                <fullName>Route Optimization Software</fullName>
+                <default>false</default>
+                <label>Route Optimization Software</label>
+            </value>
+            <value>
+                <fullName>Fuel Tax Software</fullName>
+                <default>false</default>
+                <label>Fuel Tax Software</label>
+            </value>
+            <value>
+                <fullName>Supply Chain Software</fullName>
+                <default>false</default>
+                <label>Supply Chain Software</label>
+            </value>
+            <value>
+                <fullName>Navigation Software</fullName>
+                <default>false</default>
+                <label>Navigation Software</label>
+            </value>
+            <value>
+                <fullName>Document Management Software</fullName>
+                <default>false</default>
+                <label>Document Management Software</label>
+            </value>
+            <value>
+                <fullName>Fuel Management Software</fullName>
+                <default>false</default>
+                <label>Fuel Management Software</label>
+            </value>
+            <value>
+                <fullName>Vehicle Speed Coaching Software</fullName>
+                <default>false</default>
+                <label>Vehicle Speed Coaching Software</label>
+            </value>
+            <value>
+                <fullName>Spill Management Software</fullName>
+                <default>false</default>
+                <label>Spill Management Software</label>
+            </value>
+            <value>
+                <fullName>Drayage Software</fullName>
+                <default>false</default>
+                <label>Drayage Software</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

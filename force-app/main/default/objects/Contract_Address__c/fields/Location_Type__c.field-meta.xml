@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Location_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Location Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Additional Party Notice Address - cc</fullName>
+                <default>false</default>
+                <label>Additional Party Notice Address - cc</label>
+            </value>
+            <value>
+                <fullName>Additional Party Notice Address - Primary</fullName>
+                <default>false</default>
+                <label>Additional Party Notice Address - Primary</label>
+            </value>
+            <value>
+                <fullName>Billing Address</fullName>
+                <default>false</default>
+                <label>Billing Address</label>
+            </value>
+            <value>
+                <fullName>Contract Specific Address</fullName>
+                <default>false</default>
+                <label>Contract Specific Address</label>
+            </value>
+            <value>
+                <fullName>Express Mail Address</fullName>
+                <default>false</default>
+                <label>Express Mail Address</label>
+            </value>
+            <value>
+                <fullName>Invoice Address</fullName>
+                <default>false</default>
+                <label>Invoice Address</label>
+            </value>
+            <value>
+                <fullName>Notice Address - cc</fullName>
+                <default>false</default>
+                <label>Notice Address - cc</label>
+            </value>
+            <value>
+                <fullName>Notice Address - Primary</fullName>
+                <default>false</default>
+                <label>Notice Address - Primary</label>
+            </value>
+            <value>
+                <fullName>Pricing Notice Address</fullName>
+                <default>false</default>
+                <label>Pricing Notice Address</label>
+            </value>
+            <value>
+                <fullName>Government Specific Address</fullName>
+                <default>false</default>
+                <label>Government Specific Address</label>
+            </value>
+            <value>
+                <fullName>Remit to Address</fullName>
+                <default>false</default>
+                <label>Remit to Address</label>
+            </value>
+            <value>
+                <fullName>Shipping Address</fullName>
+                <default>false</default>
+                <label>Shipping Address</label>
+            </value>
+            <value>
+                <fullName>Corporate HQ</fullName>
+                <default>false</default>
+                <label>Corporate HQ</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

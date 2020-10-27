@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Server_Function__c</fullName>
+    <description>Server Function</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Choose the server&apos;s function.</inlineHelpText>
+    <label>Server Function</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Database Server</fullName>
+                <default>false</default>
+                <label>Database Server</label>
+            </value>
+            <value>
+                <fullName>Application Server</fullName>
+                <default>false</default>
+                <label>Application Server</label>
+            </value>
+            <value>
+                <fullName>BDC (Backup Domain Controller)</fullName>
+                <default>false</default>
+                <label>BDC (Backup Domain Controller)</label>
+            </value>
+            <value>
+                <fullName>Citrix Application Server</fullName>
+                <default>false</default>
+                <label>Citrix Application Server</label>
+            </value>
+            <value>
+                <fullName>Citrix Web Interface Server</fullName>
+                <default>false</default>
+                <label>Citrix Web Interface Server</label>
+            </value>
+            <value>
+                <fullName>Clustered Server</fullName>
+                <default>false</default>
+                <label>Clustered Server</label>
+            </value>
+            <value>
+                <fullName>Domain Controller</fullName>
+                <default>false</default>
+                <label>Domain Controller</label>
+            </value>
+            <value>
+                <fullName>File Server</fullName>
+                <default>false</default>
+                <label>File Server</label>
+            </value>
+            <value>
+                <fullName>Firewall Server</fullName>
+                <default>false</default>
+                <label>Firewall Server</label>
+            </value>
+            <value>
+                <fullName>Java Config Server</fullName>
+                <default>false</default>
+                <label>Java Config Server</label>
+            </value>
+            <value>
+                <fullName>MC Server</fullName>
+                <default>false</default>
+                <label>MC Server</label>
+            </value>
+            <value>
+                <fullName>MC Services Server</fullName>
+                <default>false</default>
+                <label>MC Services Server</label>
+            </value>
+            <value>
+                <fullName>RIC Server</fullName>
+                <default>false</default>
+                <label>RIC Server</label>
+            </value>
+            <value>
+                <fullName>Route History Server</fullName>
+                <default>false</default>
+                <label>Route History Server</label>
+            </value>
+            <value>
+                <fullName>SuperMatrix Server</fullName>
+                <default>false</default>
+                <label>SuperMatrix Server</label>
+            </value>
+            <value>
+                <fullName>Terminal Server</fullName>
+                <default>false</default>
+                <label>Terminal Server</label>
+            </value>
+            <value>
+                <fullName>VMWare Server</fullName>
+                <default>false</default>
+                <label>VMWare Server</label>
+            </value>
+            <value>
+                <fullName>Web Server</fullName>
+                <default>false</default>
+                <label>Web Server</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

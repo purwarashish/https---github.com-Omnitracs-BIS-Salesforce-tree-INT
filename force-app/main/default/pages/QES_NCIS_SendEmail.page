@@ -1,0 +1,2 @@
+<apex:page standardController="Customer_Information_Sheet__c" extensions="QES_NCIS_SendEmail" action="{!updateEmailFields}">
+</apex:page>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Category_1__c</fullName>
+    <externalId>false</externalId>
+    <label>Contract Category 1</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Asset Tracking</fullName>
+                <default>false</default>
+                <label>Asset Tracking</label>
+            </value>
+            <value>
+                <fullName>Click-Thru Global Apps</fullName>
+                <default>false</default>
+                <label>Click-Thru Global Apps</label>
+            </value>
+            <value>
+                <fullName>Critical Event Video</fullName>
+                <default>false</default>
+                <label>Critical Event Video</label>
+            </value>
+            <value>
+                <fullName>Dom. Perpetual</fullName>
+                <default>false</default>
+                <label>Dom. Perpetual</label>
+            </value>
+            <value>
+                <fullName>Dom. Term</fullName>
+                <default>false</default>
+                <label>Dom. Term</label>
+            </value>
+            <value>
+                <fullName>Global Application Terms</fullName>
+                <default>false</default>
+                <label>Global Application Terms</label>
+            </value>
+            <value>
+                <fullName>IVG</fullName>
+                <default>false</default>
+                <label>IVG</label>
+            </value>
+            <value>
+                <fullName>Master</fullName>
+                <default>false</default>
+                <label>Master</label>
+            </value>
+            <value>
+                <fullName>MCP100S</fullName>
+                <default>false</default>
+                <label>MCP100S</label>
+            </value>
+            <value>
+                <fullName>MCP100S (UVP)</fullName>
+                <default>false</default>
+                <label>MCP100S (UVP)</label>
+            </value>
+            <value>
+                <fullName>MCP100T</fullName>
+                <default>false</default>
+                <label>MCP100T</label>
+            </value>
+            <value>
+                <fullName>MCP100T (UVP)</fullName>
+                <default>false</default>
+                <label>MCP100T (UVP)</label>
+            </value>
+            <value>
+                <fullName>MCP110</fullName>
+                <default>false</default>
+                <label>MCP110</label>
+            </value>
+            <value>
+                <fullName>MCP110 (UVP)</fullName>
+                <default>false</default>
+                <label>MCP110 (UVP)</label>
+            </value>
+            <value>
+                <fullName>MCP200</fullName>
+                <default>false</default>
+                <label>MCP200</label>
+            </value>
+            <value>
+                <fullName>MCP200 (UVP)</fullName>
+                <default>false</default>
+                <label>MCP200 (UVP)</label>
+            </value>
+            <value>
+                <fullName>MCP50</fullName>
+                <default>false</default>
+                <label>MCP50</label>
+            </value>
+            <value>
+                <fullName>PPS (Predictive Performance Service)</fullName>
+                <default>false</default>
+                <label>PPS (Predictive Performance Service)</label>
+            </value>
+            <value>
+                <fullName>Product Evaluation</fullName>
+                <default>false</default>
+                <label>Product Evaluation</label>
+            </value>
+            <value>
+                <fullName>Pro Svcs</fullName>
+                <default>false</default>
+                <label>Pro Svcs</label>
+            </value>
+            <value>
+                <fullName>RN SaaS</fullName>
+                <default>false</default>
+                <label>RN SaaS</label>
+            </value>
+            <value>
+                <fullName>RN Telematics/SaaS (Lease)</fullName>
+                <default>false</default>
+                <label>RN Telematics/SaaS (Lease)</label>
+            </value>
+            <value>
+                <fullName>RN Telematics/SaaS (Purchase)</fullName>
+                <default>false</default>
+                <label>RN Telematics/SaaS (Purchase)</label>
+            </value>
+            <value>
+                <fullName>RN Telematics (Lease)</fullName>
+                <default>false</default>
+                <label>RN Telematics (Lease)</label>
+            </value>
+            <value>
+                <fullName>RN Telematics (Purchase)</fullName>
+                <default>false</default>
+                <label>RN Telematics (Purchase)</label>
+            </value>
+            <value>
+                <fullName>Satellite</fullName>
+                <default>false</default>
+                <label>Satellite</label>
+            </value>
+            <value>
+                <fullName>Sylectus</fullName>
+                <default>false</default>
+                <label>Sylectus</label>
+            </value>
+            <value>
+                <fullName>TT150</fullName>
+                <default>false</default>
+                <label>TT150</label>
+            </value>
+            <value>
+                <fullName>TT210</fullName>
+                <default>false</default>
+                <label>TT210</label>
+            </value>
+            <value>
+                <fullName>Untethered Asset Management</fullName>
+                <default>false</default>
+                <label>Untethered Asset Management</label>
+            </value>
+            <value>
+                <fullName>Virtual Load View</fullName>
+                <default>false</default>
+                <label>Virtual Load View</label>
+            </value>
+            <value>
+                <fullName>XRS</fullName>
+                <default>false</default>
+                <label>XRS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

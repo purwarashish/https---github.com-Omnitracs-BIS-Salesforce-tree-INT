@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>If_RDC_then_cant_send_email</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISPICKVAL(Host_Product__c, &apos;RDC&apos;), Email_Sent__c == true)</errorConditionFormula>
+    <errorMessage>Email cannot be sent if Host Product is RDC.</errorMessage>
+</ValidationRule>

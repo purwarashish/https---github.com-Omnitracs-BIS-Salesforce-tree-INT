@@ -1,0 +1,3 @@
+<apex:page standardcontroller="Opportunity">
+  <b>Opportunities can only be created from a contact record or upon lead conversion.</b>
+</apex:page>

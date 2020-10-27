@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Row_Display_Limit__c</fullName>
+    <description>Will keep track of how many rows are displayed for the developer home page and maybe tester page.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Will keep track of how many rows are displayed for the developer home page and maybe tester page.</inlineHelpText>
+    <label>Row Display Limit</label>
+    <precision>3</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

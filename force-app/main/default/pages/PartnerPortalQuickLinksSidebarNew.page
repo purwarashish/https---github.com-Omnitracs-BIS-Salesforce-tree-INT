@@ -1,0 +1,120 @@
+<apex:page showheader="false" controller="PartnerPortalWelcomeController" sidebar="false" showHeader="false">
+<apex:includeScript value="{!URLFOR($Resource.JQueryTable, 'DataTables-1.7.6/media/js/jquery.js')}"/>
+
+    <style type="text/css">
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        .cmComponent {
+            font-size:12px;
+            font-family:arial,verdana,sans-serif;
+            color: #3f383b;
+        }
+        
+        .cmComponent table {
+            margin-left:-2px;
+        }
+        
+        a {
+
+            color: #315BA7;
+            font-size:12px;         
+            text-decoration:none;
+
+        }
+
+        a:hover {
+
+            text-decoration: underline;
+
+        }
+        
+        a#logout {
+        
+            font-size:12px;
+            color: #3f383b;
+        }
+        
+        a:hover#logout {
+
+            text-decoration: underline;
+
+        }
+        table, tr, td {
+            margin:0;padding:0;
+            font-size:12px;
+        }
+        
+        td.statvalue {
+            padding-left:2px;
+            text-align:right;
+            font-weight:bold;
+        }
+        
+        ul {
+            list-style-type:none;
+            margin:0;padding:0;
+        }
+        
+        ul li {
+            margin:0;padding:0;
+            line-height:1.3;
+            border-bottom: 1px solid #d6d6d6;
+        }
+        
+        .title {
+            display:block;
+            font-weight:bold;
+            font-size:12px;
+            padding: 10px 0 5px 0;
+            border-bottom: 1px solid #d6d6d6;
+        }
+        
+        
+        .clearfloats {
+            clear:both;
+        }
+        .sidebarlinks {
+            padding: 3px 0;
+            display: block;
+        }
+
+    </style>
+
+    <div class="cmComponent">
+    <span  id="myLeads"  class="title">My Leads </span> 
+    <apex:dataList value="{!lstLeadQuicklinks}" var="link" rendered="{!IF(lstLeadQuicklinks.size > 0,true,false)}">
+        <apex:outputLink target="_top" styleclass="sidebarlinks" value="{!link.URL__c}">{!link.name}</apex:outputLink>
+    </apex:dataList>
+    
+    <span id="mdf" class="title">MDF </span> 
+    <apex:dataList value="{!lstMDFQuicklinks}" var="link" rendered="{!IF(lstMDFQuicklinks.size> 0,true,false)}">
+        <apex:outputLink target="_top" styleclass="sidebarlinks" value="{!link.URL__c}">{!link.name}</apex:outputLink>
+    </apex:dataList>
+    
+    <span id="support" class="title">Support </span> 
+    <apex:dataList value="{!lstSupportQuicklinks}" var="link" rendered="{!IF(lstSupportQuicklinks.size > 0,true,false)}">
+        <apex:outputLink target="_top" styleclass="sidebarlinks" value="{!link.URL__c}">{!link.name}</apex:outputLink>
+    </apex:dataList>
+</div>
+<script>
+    var j$=jQuery.noConflict();
+    j$(document).ready(function(){
+        
+        if({!isShowMDF}==false)
+        {
+            j$('[id*=mdf]').hide();
+        }
+        if({!isShowLeads}==false)
+        {
+            j$('[id*=myLeads]').hide();
+        }
+        if({!isShowSupport}==false)
+        {
+            j$('[id*=support]').hide();
+        }
+       
+    });
+</script>
+</apex:page>

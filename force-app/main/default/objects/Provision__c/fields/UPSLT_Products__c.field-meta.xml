@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UPSLT_Products__c</fullName>
+    <externalId>false</externalId>
+    <label>RTI Products</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Maps (TeleAtlas/GDT)</fullName>
+                <default>false</default>
+                <label>Maps (TeleAtlas/GDT)</label>
+            </value>
+            <value>
+                <fullName>Maps (Navteq)</fullName>
+                <default>false</default>
+                <label>Maps (Navteq)</label>
+            </value>
+            <value>
+                <fullName>Maps (Other)</fullName>
+                <default>false</default>
+                <label>Maps (Other)</label>
+            </value>
+            <value>
+                <fullName>Roadnet</fullName>
+                <default>false</default>
+                <label>Roadnet</label>
+            </value>
+            <value>
+                <fullName>RIC</fullName>
+                <default>false</default>
+                <label>RIC</label>
+            </value>
+            <value>
+                <fullName>T Planner</fullName>
+                <default>false</default>
+                <label>T Planner</label>
+            </value>
+            <value>
+                <fullName>MCast - Phone</fullName>
+                <default>false</default>
+                <label>MCast - Phone</label>
+            </value>
+            <value>
+                <fullName>MCast - Server Only</fullName>
+                <default>false</default>
+                <label>MCast - Server Only</label>
+            </value>
+            <value>
+                <fullName>MCast - POD</fullName>
+                <default>false</default>
+                <label>MCast - POD</label>
+            </value>
+            <value>
+                <fullName>RTS (All Products)</fullName>
+                <default>false</default>
+                <label>RTS (All Products)</label>
+            </value>
+            <value>
+                <fullName>RTS Web Services</fullName>
+                <default>false</default>
+                <label>RTS Web Services</label>
+            </value>
+            <value>
+                <fullName>Add Phones</fullName>
+                <default>false</default>
+                <label>Add Phones</label>
+            </value>
+            <value>
+                <fullName>Add Vehicles</fullName>
+                <default>false</default>
+                <label>Add Vehicles</label>
+            </value>
+            <value>
+                <fullName>Additional Users</fullName>
+                <default>false</default>
+                <label>Additional Users</label>
+            </value>
+            <value>
+                <fullName>FleetLoader</fullName>
+                <default>false</default>
+                <label>FleetLoader</label>
+            </value>
+            <value>
+                <fullName>License Transfer</fullName>
+                <default>false</default>
+                <label>License Transfer</label>
+            </value>
+            <value>
+                <fullName>License Reinstatement</fullName>
+                <default>false</default>
+                <label>License Reinstatement</label>
+            </value>
+            <value>
+                <fullName>Web Services (integration)</fullName>
+                <default>false</default>
+                <label>Web Services (integration)</label>
+            </value>
+            <value>
+                <fullName>Web Services (netScheduler)</fullName>
+                <default>false</default>
+                <label>Web Services (netScheduler)</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>Maps (TeleAtlas)</fullName>
+                <default>false</default>
+                <label>Maps (TeleAtlas)</label>
+            </value>
+            <value>
+                <fullName>Territory Planner</fullName>
+                <default>false</default>
+                <label>Territory Planner</label>
+            </value>
+            <value>
+                <fullName>MobileCast - Phone</fullName>
+                <default>false</default>
+                <label>MobileCast - Phone</label>
+            </value>
+            <value>
+                <fullName>MobileCast - Server</fullName>
+                <default>false</default>
+                <label>MobileCast - Server</label>
+            </value>
+            <value>
+                <fullName>MobileCast - POD</fullName>
+                <default>false</default>
+                <label>MobileCast - POD</label>
+            </value>
+            <value>
+                <fullName>Additional Phones</fullName>
+                <default>false</default>
+                <label>Additional Phones</label>
+            </value>
+            <value>
+                <fullName>Additional Vehicles</fullName>
+                <default>false</default>
+                <label>Additional Vehicles</label>
+            </value>
+            <value>
+                <fullName>WS - Interfaces</fullName>
+                <default>false</default>
+                <label>WS - Interfaces</label>
+            </value>
+            <value>
+                <fullName>WS - NetScheduler</fullName>
+                <default>false</default>
+                <label>WS - NetScheduler</label>
+            </value>
+            <value>
+                <fullName>Merchandiser</fullName>
+                <default>false</default>
+                <label>Merchandiser</label>
+            </value>
+            <value>
+                <fullName>RTS Connect-SAP</fullName>
+                <default>false</default>
+                <label>RTS Connect-SAP</label>
+            </value>
+            <value>
+                <fullName>Performance Dashboard</fullName>
+                <default>false</default>
+                <label>Performance Dashboard</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

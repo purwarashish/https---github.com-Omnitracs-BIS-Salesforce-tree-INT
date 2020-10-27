@@ -1,0 +1,1359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <alerts>
+        <fullName>ContractRequest14DayApprovalReminder</fullName>
+        <ccEmails>Contracts@omnitracs.com</ccEmails>
+        <description>Contract Request - 14 Day Approval Reminder</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Manager APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Owner APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Contract Admin APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside CSR</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside CSR APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <field>Assigned_To__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Director__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/Contract_Request_14_Day_Reminder</template>
+    </alerts>
+    <alerts>
+        <fullName>ContractRequest21DayApprovalReminder</fullName>
+        <description>Contract Request - 3 Day Approval Reminder</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Manager APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Owner APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Contract Admin APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside CSR</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside CSR APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <field>Assigned_To__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Director__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/Contract_Request_21_Day_Reminder</template>
+    </alerts>
+    <alerts>
+        <fullName>ContractRequest7DayAppReminder</fullName>
+        <ccEmails>Contracts@omnitracs.com</ccEmails>
+        <description>Contract Request - 7 Day Approval Reminder</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Manager APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Owner APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Contract Admin APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside CSR</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside CSR APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <field>Assigned_To__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/Contract_Request_7_Day_Reminder</template>
+    </alerts>
+    <alerts>
+        <fullName>ContractRequestDistributed</fullName>
+        <description>Contract Request - Distributed</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>weisheit@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/ContractRequestStatusChange</template>
+    </alerts>
+    <alerts>
+        <fullName>ContractRequestEmailNotificationforAlphaBetaCR</fullName>
+        <ccEmails>contracts@omnitracs.com</ccEmails>
+        <description>Contract Request - Email Notification for Master Test Agreement CR</description>
+        <protected>false</protected>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/ContractRequestSubmittedAlphaBeta</template>
+    </alerts>
+    <alerts>
+        <fullName>ContractRequestFRAapproved</fullName>
+        <description>Contract Request FRA - approved</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <field>Assigned_To__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>FRA_Account_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/ContractRequestApproved</template>
+    </alerts>
+    <alerts>
+        <fullName>ContractRequestFRArejected</fullName>
+        <description>Contract Request FRA - rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <field>Assigned_To__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>FRA_Account_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/ContractRequestRejected</template>
+    </alerts>
+    <alerts>
+        <fullName>ContractRequestFRAsubmitted</fullName>
+        <description>Contract Request FRA - submitted</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <field>Assigned_To__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>FRA_Account_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/ContractRequestSubmitted</template>
+    </alerts>
+    <alerts>
+        <fullName>ContractRequestNoContractsAdminonAccount</fullName>
+        <ccEmails>contracts@omnitracs.com</ccEmails>
+        <description>Contract Request - No Contracts Admin on Account</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/ContractRequestNoContractAdmin</template>
+    </alerts>
+    <alerts>
+        <fullName>ContractRequestapproved</fullName>
+        <description>Contract Request - approved</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Inside CSR</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/ContractRequestApproved</template>
+    </alerts>
+    <alerts>
+        <fullName>ContractRequestinFinancialHold2</fullName>
+        <ccEmails>contracts@omnitracs.com</ccEmails>
+        <description>Contract Request in Financial Hold - 2 days</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/ContractRequestinFinancialHold</template>
+    </alerts>
+    <alerts>
+        <fullName>ContractRequestinFinancialHold4</fullName>
+        <ccEmails>contracts@omnitracs.com</ccEmails>
+        <description>Contract Request in Financial Hold - 4 days</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/ContractRequestinFinancialHold</template>
+    </alerts>
+    <alerts>
+        <fullName>ContractRequestinFinancialHold7</fullName>
+        <ccEmails>contracts@omnitracs.com</ccEmails>
+        <description>Contract Request in Financial Hold - 7 days</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/ContractRequestinFinancialHold</template>
+    </alerts>
+    <alerts>
+        <fullName>ContractRequestinHoldNeedsApproval14</fullName>
+        <ccEmails>contracts@omnitracs.com</ccEmails>
+        <description>Contract Request in Hold: Needs Approval - 14 days</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/ContractRequestinHoldNeedsApproval</template>
+    </alerts>
+    <alerts>
+        <fullName>ContractRequestinHoldNeedsApproval30</fullName>
+        <ccEmails>contracts@omnitracs.com</ccEmails>
+        <description>Contract Request in Hold: Needs Approval - 3 days</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/ContractRequestinHoldNeedsApproval</template>
+    </alerts>
+    <alerts>
+        <fullName>ContractRequestinHoldNeedsApproval7</fullName>
+        <ccEmails>contracts@omnitracs.com</ccEmails>
+        <description>Contract Request in Hold: Needs Approval - 7 days</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/ContractRequestinHoldNeedsApproval</template>
+    </alerts>
+    <alerts>
+        <fullName>ContractRequestinHoldSeeNotes30</fullName>
+        <ccEmails>contracts@omnitracs.com</ccEmails>
+        <description>Contract Request in Hold: See Notes - 3 days</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/ContractRequestinHoldSeeNotes</template>
+    </alerts>
+    <alerts>
+        <fullName>ContractRequestinHoldSeeNotes714</fullName>
+        <ccEmails>contracts@omnitracs.com</ccEmails>
+        <description>Contract Request in Hold: See Notes - 7 and 14 days</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/ContractRequestinHoldSeeNotes</template>
+    </alerts>
+    <alerts>
+        <fullName>ContractRequestrejected</fullName>
+        <ccEmails>contracts@omnitracs.com</ccEmails>
+        <description>Contract Request - rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Assigned_To__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/ContractRequestRejected</template>
+    </alerts>
+    <alerts>
+        <fullName>ContractRequestsetupcompleted</fullName>
+        <ccEmails>Custsetup@qualcomm.com</ccEmails>
+        <description>Contract Request - setup completed</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside CSR</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/ContractRequestStatusChange</template>
+    </alerts>
+    <alerts>
+        <fullName>ContractRequeststatuschange</fullName>
+        <description>Contract Request - status change (with acct team)</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/ContractRequestStatusChange</template>
+    </alerts>
+    <alerts>
+        <fullName>ContractRequeststatuschange_nocase</fullName>
+        <description>Contract Request - status change (with acct team)_ no case</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/ContractRequestStatusChange</template>
+    </alerts>
+    <alerts>
+        <fullName>ContractRequeststillpendingCustomerssignature</fullName>
+        <description>Contract Request still pending Customer&apos;s signature</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/ContractPendingCustomerSignature</template>
+    </alerts>
+    <alerts>
+        <fullName>ContractRequestsubmitted</fullName>
+        <description>Contract Request - submitted</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Assigned_To__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>contracts@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/ContractRequestSubmitted</template>
+    </alerts>
+    <alerts>
+        <fullName>Contract_Request_Pending_3_Days</fullName>
+        <description>Contract Request Pending</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/Contract_Request_Pending_3_Days_V1</template>
+    </alerts>
+    <alerts>
+        <fullName>Contract_Request_on_Hold_24_Hour_reminder</fullName>
+        <ccEmails>contracts@omnitracs.com</ccEmails>
+        <description>Contract Request on Hold - 24 Hour reminder</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/Contract_Request_Credit_Approval_Hold</template>
+    </alerts>
+    <alerts>
+        <fullName>Eval_Conversions_Notification</fullName>
+        <ccEmails>Omni.finance.pricing@omnitracs.com, omni.collectors@omnitracs.com, custsetup@omnitracs.com</ccEmails>
+        <description>Eval Conversions Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Account Manager APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/Eval_Conversions_Email_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>FRA_Contract_Request_Email_Status_Alert</fullName>
+        <description>FRA Contract Request Email Status Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <field>FRA_Account_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/FRA_Contract_Request_Status_Change</template>
+    </alerts>
+    <alerts>
+        <fullName>FRA_Contract_Request_Set_up_Complete</fullName>
+        <description>FRA Contract Request - Set up Complete</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <field>Assigned_To__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>FRA_Account_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/FRA_Contract_Request_Status_Change</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>ContractRequestPendingApproval</fullName>
+        <field>Request_Status__c</field>
+        <literalValue>Pending Approval</literalValue>
+        <name>Contract Request - Pending Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ContractRequestSetAssignedDate</fullName>
+        <field>Assigned__c</field>
+        <formula>TODAY()</formula>
+        <name>Contract Request - Set Assigned Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ContractRequestclearAssignedDate</fullName>
+        <field>Assigned__c</field>
+        <name>Contract Request - clear Assigned Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ContractRequestclearContractRecv</fullName>
+        <field>Contract_Received__c</field>
+        <name>Contract Request - clear Contract Recv</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ContractRequestclearDistributed</fullName>
+        <field>Distributed__c</field>
+        <name>Contract Request - clear Distributed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ContractRequestclearFinancialHold</fullName>
+        <field>Financial_Hold__c</field>
+        <name>Contract Request - clear Financial Hold</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ContractRequestclearHoldApproval</fullName>
+        <field>Hold_Needs_Approval__c</field>
+        <name>Contract Request - clear Hold Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ContractRequestclearHoldSeeNotes</fullName>
+        <field>Hold_See_Notes__c</field>
+        <name>Contract Request - clear Hold See Notes</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ContractRequestclearPendingNMC</fullName>
+        <field>Pending_NMC_Setup__c</field>
+        <name>Contract Request - clear Pending NMC</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ContractRequestclearSenttoCust</fullName>
+        <field>Sent_to_Customer__c</field>
+        <name>Contract Request - clear Sent to Cust</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ContractRequestclearSetupComplete</fullName>
+        <field>Set_up_Complete__c</field>
+        <name>Contract Request - clear Setup Complete</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ContractRequestclearSignedbyQC</fullName>
+        <field>Signed_by_Qualcomm__c</field>
+        <name>Contract Request - clear Signed by QC</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ContractRequestclearSubmittedDate</fullName>
+        <field>Submitted_Submitted_for_Approval__c</field>
+        <name>Contract Request - clear Submitted Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ContractRequestownerContractsQueue</fullName>
+        <description>Assign ownership of the Contract Request to the Contracts Queue</description>
+        <field xsi:nil="true"/>
+        <name>Contract Request owner - Contracts Queue</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ContractRequestsetAssignedstatus</fullName>
+        <description>set status to Assigned</description>
+        <field>Request_Status__c</field>
+        <literalValue>Assigned</literalValue>
+        <name>Contract Request - set Assigned status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ContractRequestsetCRPendingstatus</fullName>
+        <field>Request_Status__c</field>
+        <literalValue>Contract Request Pending</literalValue>
+        <name>Contract Request - set CR Pending status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ContractRequestsetRejectedstatus</fullName>
+        <field>Request_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Contract Request - set Rejected status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>DateContractreceived</fullName>
+        <field>Contract_Received__c</field>
+        <formula>TODAY()</formula>
+        <name>Date Contract received</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>DateSenttoCustomer</fullName>
+        <field>Sent_to_Customer__c</field>
+        <formula>TODAY()</formula>
+        <name>Date Sent to Customer</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>DateSignedbyOmnitracs</fullName>
+        <field>Signed_by_Qualcomm__c</field>
+        <formula>TODAY()</formula>
+        <name>Date Signed by Omnitracs</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>DateSignedbyQualcomm</fullName>
+        <field>Signed_by_Qualcomm__c</field>
+        <formula>TODAY()</formula>
+        <name>Date Signed by Qualcomm</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>DateSubmitted</fullName>
+        <field>Submitted_Submitted_for_Approval__c</field>
+        <formula>TODAY()</formula>
+        <name>Date Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>DateonFinancialHold</fullName>
+        <field>Financial_Hold__c</field>
+        <formula>TODAY()</formula>
+        <name>Date on Financial Hold</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Distributed</fullName>
+        <field>Distributed__c</field>
+        <formula>Today()</formula>
+        <name>Distributed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>HoldNeedsApproval</fullName>
+        <field>Hold_Needs_Approval__c</field>
+        <formula>Today()</formula>
+        <name>Hold: Needs Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>HoldSeeNotes</fullName>
+        <field>Hold_See_Notes__c</field>
+        <formula>Today()</formula>
+        <name>Hold: See Notes</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Is_Approval_Process_false</fullName>
+        <field>SystemIsApprovalProcess__c</field>
+        <literalValue>0</literalValue>
+        <name>Is Approval Process = false</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Is_Approval_Process_true</fullName>
+        <field>SystemIsApprovalProcess__c</field>
+        <literalValue>1</literalValue>
+        <name>Is Approval Process = true</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SetAssigned</fullName>
+        <field>Assigned__c</field>
+        <formula>TODAY()</formula>
+        <name>Set Assigned</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SetupComplete</fullName>
+        <field>Set_up_Complete__c</field>
+        <formula>Today()</formula>
+        <name>Set-up Complete</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>UpdateIsapprovalProcessFalse</fullName>
+        <description>Set SystemIsApprovalProcess flag to false</description>
+        <field>SystemIsApprovalProcess__c</field>
+        <literalValue>0</literalValue>
+        <name>UpdateIsapprovalProcessFalse</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>UpdatePendingNMCSetupDate</fullName>
+        <field>Pending_NMC_Setup__c</field>
+        <formula>TODAY()</formula>
+        <name>Update Pending NMC Setup Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>Contract Request - Contract Signed by Customer</fullName>
+        <actions>
+            <name>ContractRequeststatuschange</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>DateContractreceived</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract_Request__c.Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Contract received - OT signature pending</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract_Request__c.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>FleetRisk Advisors Agreement</value>
+        </criteriaItems>
+        <description>The contract has been returned signed by the customer.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contract Request - FRA Sent or Received</fullName>
+        <actions>
+            <name>FRA_Contract_Request_Email_Status_Alert</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Email alerts for FleetRisk Advisor contract requests Contract Sent to Customer and Contract Received.</description>
+        <formula>AND(  RecordTypeId =&quot;01250000000QcVq&quot;,  OR(  ISPICKVAL(Request_Status__c, &quot;Contract Sent to Customer&quot;),  ISPICKVAL(Request_Status__c,&quot;Contract Received - QC Signature Pending&quot;)),  ISCHANGED( Request_Status__c ))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contract Request - FRA Set Up Complete</fullName>
+        <actions>
+            <name>FRA_Contract_Request_Set_up_Complete</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Email alerts for FleetRisk Advisor contract requests - Set up Complete</description>
+        <formula>AND(  RecordTypeId =&quot;01250000000QcVq&quot;,  OR(  ISPICKVAL(Request_Status__c, &quot;Set-up Complete&quot;)),   ISCHANGED( Request_Status__c ))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contract Request - No Contracts Admin</fullName>
+        <actions>
+            <name>ContractRequestNoContractsAdminonAccount</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.Contracts_Administrator__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract_Request__c.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>FleetRisk Advisors Agreement</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contract Request - Pending NMC Setup</fullName>
+        <actions>
+            <name>UpdatePendingNMCSetupDate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract_Request__c.Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Pending NMC Setup</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract_Request__c.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>FleetRisk Advisors Agreement</value>
+        </criteriaItems>
+        <description>The contract status has changed - pending NMC setup</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contract Request - Reset Date Fields</fullName>
+        <actions>
+            <name>ContractRequestclearAssignedDate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>ContractRequestclearContractRecv</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>ContractRequestclearDistributed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>ContractRequestclearFinancialHold</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>ContractRequestclearHoldApproval</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>ContractRequestclearHoldSeeNotes</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>ContractRequestclearSenttoCust</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>ContractRequestclearSetupComplete</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>ContractRequestclearSignedbyQC</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>ContractRequestclearSubmittedDate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract_Request__c.Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Contract Request Pending</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract_Request__c.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>FleetRisk Advisors Agreement</value>
+        </criteriaItems>
+        <description>Reset request date fields when a request is cloned.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contract Request - Reset Date Fields2</fullName>
+        <actions>
+            <name>ContractRequestclearPendingNMC</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract_Request__c.Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Contract Request Pending</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract_Request__c.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>FleetRisk Advisors Agreement</value>
+        </criteriaItems>
+        <description>Reset additional request date fields when a request is cloned.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contract Request - Send Notification for Master Test Agreement CR</fullName>
+        <actions>
+            <name>ContractRequestEmailNotificationforAlphaBetaCR</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract_Request__c.Request_Type__c</field>
+            <operation>equals</operation>
+            <value>Master Test Agreement</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract_Request__c.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>FleetRisk Advisors Agreement</value>
+        </criteriaItems>
+        <description>Send an additional email to a specified user on for Master Test Agreement.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contract Request - Sent to Customer</fullName>
+        <actions>
+            <name>ContractRequeststatuschange_nocase</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>DateSenttoCustomer</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract_Request__c.Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Contract sent to Customer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract_Request__c.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>FleetRisk Advisors Agreement</value>
+        </criteriaItems>
+        <description>Contract Request status changed to &quot;Sent to Customer&quot;</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>ContractRequeststillpendingCustomerssignature</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>7</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>ContractRequeststillpendingCustomerssignature</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>14</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>ContractRequeststillpendingCustomerssignature</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>30</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Contract Request - Signed by Omnitracs</fullName>
+        <actions>
+            <name>ContractRequeststatuschange_nocase</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>DateSignedbyOmnitracs</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>DateSignedbyQualcomm</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract_Request__c.Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Signed by Omnitracs</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract_Request__c.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>FleetRisk Advisors Agreement</value>
+        </criteriaItems>
+        <description>The contract status has changed - it has been fully approved and signed.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contract Request - Submitted and Assigned</fullName>
+        <actions>
+            <name>ContractRequestsetAssignedstatus</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract_Request__c.Assigned_To__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract_Request__c.Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Submitted</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract_Request__c.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>FleetRisk Advisors Agreement</value>
+        </criteriaItems>
+        <description>A submitted request that is already assigned to a Contract Admin user.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contract Request Approval Reminers</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract_Request__c.System_Status__c</field>
+            <operation>equals</operation>
+            <value>Pending Approval</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract_Request__c.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>FleetRisk Advisors Agreement</value>
+        </criteriaItems>
+        <description>Triggers approval reminders at 7, 14 and 21 days</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>ContractRequest7DayAppReminder</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>7</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>ContractRequest14DayApprovalReminder</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>14</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>ContractRequest21DayApprovalReminder</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>3</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Contract Request Credit Approval Hold Reminder</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract_Request__c.Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Credit Approval Hold</value>
+        </criteriaItems>
+        <description>Triggers approval reminders if the CR is on hold for more than 24 hours.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Contract_Request_on_Hold_24_Hour_reminder</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>24</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Contract Request Pending %3E 1 Day</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract_Request__c.Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Contract Request Pending</value>
+        </criteriaItems>
+        <description>Used to notify users when a Contract Request has been in the Pending status for more than 1 day</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Contract_Request_Pending_3_Days</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Contract Request waiting Distribution</fullName>
+        <actions>
+            <name>ContractRequestDistributed</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Distributed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract_Request__c.Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Distributed</value>
+        </criteriaItems>
+        <description>The date the contract request went into Distributed</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contract Request waiting Financial Hold</fullName>
+        <actions>
+            <name>ContractRequeststatuschange</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>DateonFinancialHold</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract_Request__c.Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Finance Hold</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract_Request__c.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>FleetRisk Advisors Agreement</value>
+        </criteriaItems>
+        <description>The date the contract request went into a waiting on financial hold</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>ContractRequestinFinancialHold7</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>7</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>ContractRequestinFinancialHold2</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>2</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>ContractRequestinFinancialHold4</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>4</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Contract Request waiting Hold%3A Needs Approval</fullName>
+        <actions>
+            <name>ContractRequeststatuschange</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>HoldNeedsApproval</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract_Request__c.Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Hold: Needs Approval</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract_Request__c.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>FleetRisk Advisors Agreement</value>
+        </criteriaItems>
+        <description>The date the contract request went into Hold: Needs Approval</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>ContractRequestinHoldNeedsApproval30</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>3</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>ContractRequestinHoldNeedsApproval7</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>7</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>ContractRequestinHoldNeedsApproval14</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>14</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Contract Request waiting Hold%3A See Notes</fullName>
+        <actions>
+            <name>HoldSeeNotes</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract_Request__c.Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Hold: See Notes</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract_Request__c.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>FleetRisk Advisors Agreement</value>
+        </criteriaItems>
+        <description>The date the contract request went into Hold: See Notes</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>ContractRequestinHoldSeeNotes714</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>7</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>ContractRequestinHoldSeeNotes714</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>14</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>ContractRequestinHoldSeeNotes30</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>3</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Contract Request waiting Set-up Complete %28non-ORMM%29</fullName>
+        <actions>
+            <name>ContractRequestsetupcompleted</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>SetupComplete</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract_Request__c.Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Set-up Complete</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.District__c</field>
+            <operation>notContain</operation>
+            <value>ORMM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract_Request__c.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>FleetRisk Advisors Agreement</value>
+        </criteriaItems>
+        <description>The date the contract request went into Set-up Complete</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Eval Conversion Email-to-Case</fullName>
+        <actions>
+            <name>Eval_Conversions_Notification</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract_Request__c.Eval_Conversion__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract_Request__c.Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Set-up Complete</value>
+        </criteriaItems>
+        <description>When a contract is requested in Salesforce through a Contract Request, there is a field called ‘Eval Conversion’ (yes/no) which is used to specify if the customer has eval units to be converted.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>UpdateSystemIsApprovalProcess</fullName>
+        <actions>
+            <name>UpdateIsapprovalProcessFalse</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract_Request__c.SystemIsApprovalProcess__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Updates field to ensure all workflows fire during approval processes</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

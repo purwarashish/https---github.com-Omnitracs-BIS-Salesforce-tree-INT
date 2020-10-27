@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NonBillableTime</fullName>
+    <columns>NAME</columns>
+    <columns>SFDC_Projects__c</columns>
+    <columns>SFDC_Resource__c</columns>
+    <columns>Date__c</columns>
+    <columns>Type__c</columns>
+    <columns>Hours__c</columns>
+    <columns>Billable__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Billable__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Non-Billable Time</label>
+    <language>en_US</language>
+</ListView>

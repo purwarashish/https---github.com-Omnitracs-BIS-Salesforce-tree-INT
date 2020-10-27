@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>NCICustomerFullySetup</fullName>
+        <description>NCI - Customer Fully Setup</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>qesadmin@qualcomm.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/NCICustomerSetupComplete</template>
+    </alerts>
+    <alerts>
+        <fullName>NCINotifyFinancethatweneedAccountsetupconfirmation</fullName>
+        <ccEmails>custsetup@omnitracs.com</ccEmails>
+        <description>NCI - Notify Finance that we need Account setup confirmation</description>
+        <protected>false</protected>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/NCINMCAccountSetup</template>
+    </alerts>
+    <rules>
+        <fullName>NCI - Account fully setup</fullName>
+        <actions>
+            <name>NCICustomerFullySetup</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>New_Customer_Implementation__c.Customer_Fully_Setup__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>New_Customer_Implementation__c.orderPlacedDate__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>New Customer Implementation - the customer setup is complete and is ready for sales orders.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>NCI - NMC Account Setup</fullName>
+        <actions>
+            <name>NCINotifyFinancethatweneedAccountsetupconfirmation</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>New_Customer_Implementation__c.customerNMCSetupCompleteDate__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>New_Customer_Implementation__c.Customer_Fully_Setup__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>Fired when the NMC_Account setup date for a new customer becomes populated. We now need confirmation that the customer is completely setup and ready for orders (i.e. Oracle pricing setup is complete).</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

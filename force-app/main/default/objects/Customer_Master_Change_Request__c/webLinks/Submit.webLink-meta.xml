@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Submit</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Submit</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!requireScript(&quot;/soap/ajax/11.0/connection.js&quot;)};
+
+CM_REQ_ID=&apos;{!Customer_Master_Change_Request__c.Id}&apos;;
+ACCOUNT_ID=&apos;{!Customer_Master_Change_Request__c.Account_NameId__c}&apos;;
+
+//=== Setup the Customer Master Change Request object to update based on the ID
+var reqToSubmit= new sforce.SObject(&quot;Customer_Master_Change_Request__c&quot;);
+reqToSubmit.Id = CM_REQ_ID;
+reqToSubmit.Request_Status__c = &apos;Submitted&apos;;
+
+try{
+
+//=== Update the Customer Master Change Request
+var result = sforce.connection.update([reqToSubmit]);
+
+if(result[0].success==&quot;true&quot;){
+//Reload the CM Change Request Detail Screen
+window.location.reload();
+//window.location.assign(&apos;/&apos;+CM_REQ_ID);
+} else {
+alert(&apos;Error submitting Customer Master Change Request: &apos; + result);
+}
+
+} catch(e){
+alert(&quot;Error submitting Customer Master Change Request: &quot; + e);
+}</url>
+</WebLink>

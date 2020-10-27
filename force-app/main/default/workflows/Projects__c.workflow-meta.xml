@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Default_Health_to_Green</fullName>
+        <field>Commercial_Release_Health_RYG__c</field>
+        <literalValue>Green</literalValue>
+        <name>Default Health to Green</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RecTypeCompCancelled</fullName>
+        <description>Change the Project Record TYpe to Completed/Cancelled if the Project is completed or Cancelled.</description>
+        <field>RecordTypeId</field>
+        <lookupValue>CompletedCancelled</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Rec Type Comp/Cancelled</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RecTypeInProgress</fullName>
+        <description>Change the Project Record Type to In Progress if the Project is not completed or Cancelled.</description>
+        <field>RecordTypeId</field>
+        <lookupValue>InProgress</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Rec Type In Progress</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SetProjectStagetoCompleted</fullName>
+        <description>Set the Project Stage field to Completed.</description>
+        <field>Project_Stage__c</field>
+        <literalValue>Completed</literalValue>
+        <name>Set Project Stage to Completed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Release_Health_to_Green</fullName>
+        <field>Commercial_Release_Health_RYG__c</field>
+        <literalValue>Green</literalValue>
+        <name>Update Release Health to Green</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Release_Health_to_Red</fullName>
+        <field>Commercial_Release_Health_RYG__c</field>
+        <literalValue>Red</literalValue>
+        <name>Update Release Health to Red</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Release_Health_to_Yellow</fullName>
+        <field>Commercial_Release_Health_RYG__c</field>
+        <literalValue>Yellow</literalValue>
+        <name>Update Release Health to Yellow</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>Close Project WF</fullName>
+        <actions>
+            <name>SetProjectStagetoCompleted</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Projects__c.Submitted_for_Billing__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Projects__c.Project_Stage__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Projects__c.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>PM Project</value>
+        </criteriaItems>
+        <description>Automatically close the project when the Submitted for Billing Date and Checklist step are completed.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>PM Project - Default Health to Green</fullName>
+        <actions>
+            <name>Default_Health_to_Green</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Projects__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>PM Project</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Projects__c.Commercial_Release_Health_RYG__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>PRJ-Change Rec Type to Completed</fullName>
+        <actions>
+            <name>RecTypeCompCancelled</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Projects__c.Project_Stage__c</field>
+            <operation>equals</operation>
+            <value>Cancelled,Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Projects__c.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>PM Project,Partner Projects</value>
+        </criteriaItems>
+        <description>Change the Project Record Type to Completed/Cancelled when the Project Status is Completed or Cancelled</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>PRJ-Change Rec Type to In Progress</fullName>
+        <actions>
+            <name>RecTypeInProgress</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Projects__c.Project_Stage__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled,Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Projects__c.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>PM Project,Partner Projects</value>
+        </criteriaItems>
+        <description>Change the Project Record Type to In Progress when the Project Status is not Completed or Cancelled</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Release Health - Green</fullName>
+        <actions>
+            <name>Update_Release_Health_to_Green</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>AND( 
+$RecordType.Name = &quot;PM Project&quot; , 
+ISCHANGED( Release_Updated_Date_Time__c ), 
+NOT(ISPICKVAL( Commercial_Release_Health_RYG__c , &quot;Green&quot;)), 
+Schedule_Health_Rank__c = 1 
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Release Health - Red</fullName>
+        <actions>
+            <name>Update_Release_Health_to_Red</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>AND( 
+$RecordType.Name = &quot;PM Project&quot; , 
+ISCHANGED( Release_Updated_Date_Time__c ), 
+NOT(ISPICKVAL( Commercial_Release_Health_RYG__c , &quot;Red&quot;)), 
+Schedule_Health_Rank__c = 3 
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Release Health - Yellow</fullName>
+        <actions>
+            <name>Update_Release_Health_to_Yellow</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>AND( 
+$RecordType.Name = &quot;PM Project&quot; , 
+ISCHANGED( Release_Updated_Date_Time__c ), 
+NOT(ISPICKVAL( Commercial_Release_Health_RYG__c , &quot;Yellow&quot;)), 
+Schedule_Health_Rank__c = 2 
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

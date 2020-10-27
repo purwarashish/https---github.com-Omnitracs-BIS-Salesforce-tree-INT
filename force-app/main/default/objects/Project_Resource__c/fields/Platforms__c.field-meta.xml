@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Platforms__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Platform skills for this Resource</inlineHelpText>
+    <label>Platforms</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AS400</fullName>
+                <default>false</default>
+                <label>AS400</label>
+            </value>
+            <value>
+                <fullName>Win</fullName>
+                <default>false</default>
+                <label>Win</label>
+            </value>
+            <value>
+                <fullName>Web</fullName>
+                <default>false</default>
+                <label>Web</label>
+            </value>
+            <value>
+                <fullName>UNIX</fullName>
+                <default>false</default>
+                <label>UNIX</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>6</visibleLines>
+</CustomField>

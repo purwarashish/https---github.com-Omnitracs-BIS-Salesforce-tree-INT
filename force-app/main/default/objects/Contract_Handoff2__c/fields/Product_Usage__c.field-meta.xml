@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Usage__c</fullName>
+    <description>How will they be using the software?  Please note any special usage - such as MC without RN or other outside product integration.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>How will they be using the software?  Please note any special usage - such as MC without RN or other outside product integration.</inlineHelpText>
+    <label>Product Usage</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

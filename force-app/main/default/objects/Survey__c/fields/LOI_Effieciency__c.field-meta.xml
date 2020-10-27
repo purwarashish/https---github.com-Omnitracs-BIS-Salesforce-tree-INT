@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LOI_Effieciency__c</fullName>
+    <externalId>false</externalId>
+    <label>LOI - Efficiency</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Very Interested</fullName>
+                <color>#0B6FCE</color>
+                <default>false</default>
+                <label>Very Interested</label>
+            </value>
+            <value>
+                <fullName>Somewhat Interested</fullName>
+                <color>#78C953</color>
+                <default>false</default>
+                <label>Somewhat Interested</label>
+            </value>
+            <value>
+                <fullName>Neutral</fullName>
+                <color>#FF9900</color>
+                <default>false</default>
+                <label>Neutral</label>
+            </value>
+            <value>
+                <fullName>Not Very Interested</fullName>
+                <color>#FF0000</color>
+                <default>false</default>
+                <label>Not Very Interested</label>
+            </value>
+            <value>
+                <fullName>Not At All Interested</fullName>
+                <color>#F3D904</color>
+                <default>false</default>
+                <label>Not At All Interested</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

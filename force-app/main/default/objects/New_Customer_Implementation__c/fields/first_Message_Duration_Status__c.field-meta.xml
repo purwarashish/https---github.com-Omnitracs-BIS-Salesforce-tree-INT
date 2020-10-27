@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>first_Message_Duration_Status__c</fullName>
+    <description>The status of when the 1st message is received after 1st shipment.  A duration more than 10 calendar days is red-flagged.</description>
+    <externalId>false</externalId>
+    <formula>IF (ISNULL(firstMessageDuration__c), &quot;&quot;, IF (firstMessageDuration__c &gt; 10, IMAGE(&quot;/img/samples/light_red.gif&quot;,&quot;Red&quot;), IMAGE(&quot;/img/samples/light_green.gif&quot;, &quot;Green&quot;)))</formula>
+    <label>First Message Duration Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

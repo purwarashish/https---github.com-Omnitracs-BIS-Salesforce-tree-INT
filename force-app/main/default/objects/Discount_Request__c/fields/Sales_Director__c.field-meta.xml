@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Director__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Specifies Sales Director field value on account for which the discount request is created</description>
+    <externalId>false</externalId>
+    <label>Sales Director</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Discount_Requests2</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

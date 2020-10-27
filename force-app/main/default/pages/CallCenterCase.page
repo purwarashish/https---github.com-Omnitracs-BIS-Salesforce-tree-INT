@@ -1,0 +1,207 @@
+<!---------------------------------------------------------------------------------------------------
+Name : CallCenterCase
+Author : Shruti Karn
+Date : 27 December 2010
+
+Usage : Page for New Case when "Call Center" record type is chosen 
+
+Dependencies:  Static Resource -> JQuery
+    
+CR # 23403
+----------------------------------------------------------------------------------------------------->
+<apex:page id="page1" standardController="Case" extensions="ShowSupportAlertController" showHeader="true" sidebar="true" tabStyle="Case">
+    <apex:includeScript value="{!URLFOR($Resource.JQuery, 'jquery.js')}" /> 
+    <apex:includeScript value="{!URLFOR($Resource.JQuery, 'jquery.simpledialog.0.1.js')}" /> 
+    <apex:stylesheet value="{!URLFOR($Resource.JQuery, 'jquery.simpledialog.0.1.css')}"/> 
+
+   <script type="text/javascript">
+   
+   function checkAccount()
+   {
+       
+       if((document.getElementById('{!$Component.form1.pgblk.pgblksectn1.acctID}_lkid').value) != null || (document.getElementById('{!$Component.form1.pgblk.pgblksectn1.acctID}_lkid').value) != '000000000000000')
+       {
+       
+       findAcctId();
+       }
+   }   
+   
+   function findAcctId()
+   {
+      
+      var accountId = document.getElementById('{!$Component.form1.pgblk.pgblksectn1.acctID}_lkid').value;
+      findSuppAlert(accountId);
+              
+   }
+   function refreshAccount()
+   {
+       refreshAcctField();
+   }
+      
+    function refreshContact()
+   {
+       refreshContField();
+   }
+    
+   function findContId()
+   {
+     // alert('hi');
+      var contactId = document.getElementById('{!$Component.form1.pgblk.pgblksectn1.contID}_lkid').value;
+      findRelAccount(contactId);
+              
+   } 
+    
+    $(document).ready(function () {
+        $('.simpledialog').simpleDialog();
+      
+    });
+    
+    showData = function() {
+        $('#proxyAnchor').submit();
+        $('#proxyAnchor').click();
+    }
+     
+  </script>
+  <apex:outputPanel id="setCont">
+  
+      <script type="text/javascript">
+          function setcontact()
+             {
+                 //alert('inside setcnt:'+'{!acctName}');
+                 document.getElementById('page1:form1:pgblk:pgblksectn1:acctID').value = '{!acctName}';
+                 
+             }   
+     
+          
+       </script>
+  </apex:outputPanel>
+  <a rel="dialog_content" class="simpledialog" href="#" id="proxyAnchor" />
+      <div id="dialog_content" style="display:none;padding-left:10%; text-align: left;"> 
+        <!--<apex:outputText escape="false" value="Working"/> -->
+        <apex:pageBlock id="supp">
+        <apex:pageBlockTable value="{!lstSupportAlert}" var="suppAlert" >
+            <apex:column headerValue="Support Alert Name">
+                <apex:outputText value="{!suppAlert.Name}"/>
+            </apex:column>
+            <apex:column headerValue="Critical">
+                <apex:image url="/servlet/servlet.FileDownload?file=01550000000FzO7" rendered="{!if(suppAlert.Critical__c,true,false)}"/>
+                <apex:image url="/servlet/servlet.FileDownload?file=01550000000FzOM" rendered="{!if(suppAlert.Critical__c,false,true)}"/>
+            </apex:column>
+            <apex:column headerValue="Description" width="50%" style="text-align:left">
+                <apex:outputText style="word-wrap:break-word;text-align:left;"  value="{!suppAlert.Description__c}"/>
+            </apex:column>
+            <apex:column headerValue="Summary" width="50%" style="text-align:left">
+                <apex:outputText style="word-wrap:break-word;text-align:left;" value="{!suppAlert.Summary__c}"/>
+            </apex:column>
+            <apex:column headerValue="End Date">
+                <apex:outputText value="{!suppAlert.End_Date__c}"/>
+            </apex:column>
+        </apex:pageBlockTable> 
+        <apex:outputLink onclick="openIntegration('/apex/ShowAllSupportAlert?AccountId={!acctId}&ic=1', 'height=600,width=810,location=no,resizable=yes,toolbar=no,status=no,menubar=no,scrollbars=1', 1); return false;" value="#" rendered="{!showAll}" >Go To List</apex:outputLink>
+        </apex:pageBlock>
+     </div> 
+  
+  <apex:form id="form1" >
+  <apex:messages />
+  <apex:actionFunction name="refreshAcctField" reRender="pgblksectn1,msg,form1,supp" immediate="true" oncomplete="javascript:findAcctId();" />
+  <apex:actionFunction name="refreshContField" reRender="pgblksectn1,msg,form1,supp" immediate="true" oncomplete="javascript:findContId();" />
+  <apex:actionFunction name="findSuppAlert" action="{!findSupportAlert}" reRender="acctId,setCont,supp,msg1,isSuppalert,account,tstout" immediate="true">
+      <apex:param name="a" value="" assignTo="{!acctId}"/>
+  </apex:actionFunction>
+  <apex:actionFunction name="findRelAccount" action="{!findRelAccount}" oncomplete="javascript:setcontact();" reRender="acctId,acct,setCont,supp,account,msg1,tstout"  immediate="true">
+      <apex:param name="a" value="" assignTo="{!contId}"/>
+  </apex:actionFunction>
+      <apex:sectionHeader title="Case Edit" subtitle="New Case" rendered="{!if(currCase.Id == null,true,false)}" /><!-- Check for Edit or New-->
+      <apex:sectionHeader title="Case Edit" subtitle="{!currCase.CaseNumber}" rendered="{!if(currCase.Id == null,false,true)}" /><!-- Check for Edit or New-->
+      <apex:pageBlock title="Case Edit" mode="Edit" id="pgblk">
+      
+      <apex:outputPanel id="msg1">
+      <apex:outputPanel rendered="{!IF(isSuppAlert, TRUE, FALSE)}">
+          <apex:outputText style="color:rgb(204,0,0);font-weight: bold;" value="Support Alert on" ></apex:outputText>
+          
+          <apex:outputLink style="color:rgb(204,0,0);font-weight: bold;" target="_blank" value="/{!accSupportAlert}" onmouseover="showData();" >
+               {!acctName}
+          </apex:outputLink>          
+          
+    
+          <br/>
+           {!totalSuppAlert} Support Alert(s) on Account - <apex:outputText style="color:rgb(204,0,0);font-weight: bold;" value=" {!critSupportAlert} Critical"/>
+           <br/>
+           Please check Account for details.<br/>
+       
+       </apex:outputPanel>
+       </apex:outputPanel>
+       
+          <apex:pageBlockButtons location="both">
+              <apex:commandButton value="Save" action="{!save}" />
+              <apex:commandButton value="Save & New" action="{!SaveandNew}"/>
+              <apex:commandButton value="Cancel" action="{!cancel}"/>
+          </apex:pageBlockButtons>
+          <apex:pageBlockSection title="Case Information" collapsible="false" id="pgblksectn1">
+              <apex:inputField value="{!Case.AccountID}"  id="acctID" onchange="javascript:refreshAccount();" />
+              <apex:inputField value="{!Case.NMC_Account__c}"/>
+              <apex:inputField value="{!Case.ContactId}" id="contID" onchange="javascript:refreshContact();"/>
+              <apex:inputField value="{!Case.System__c}"/>
+              <apex:inputField value="{!Case.Call_Back__c}"/>
+              <apex:inputField value="{!Case.CI__c}"/>
+              <apex:inputField value="{!Case.Category__c}" required="true"/>
+              <apex:inputField value="{!Case.RMA_Requested__c}" required="true"/>
+              <apex:inputField value="{!Case.Type_Level_2__c}" />
+              <apex:inputField value="{!Case.RMA_Serial__c}"/>              
+              <apex:inputField value="{!Case.Area_Level_3__c}"/>
+              <apex:inputField value="{!Case.RMA__c}"/>
+              <apex:inputField value="{!Case.Status}" required="true"/>
+              <apex:inputField value="{!Case.Priority}" required="true"/>
+              <apex:inputField value="{!Case.Substatus__c}" required="true"/>
+              <apex:inputField value="{!Case.Serial__c}"/>
+              <br/>
+              <apex:inputField value="{!Case.Firmware__c}"/>
+              <br/>
+              <apex:inputField value="{!Case.Equipment_ID__c}"/>
+              <br/>
+              <apex:inputField value="{!Case.Model_Year__c}"/>
+              <br/>
+              <apex:inputField value="{!Case.Engine__c}"/>
+              <br/>
+              <apex:inputField value="{!Case.Make__c}"/>
+          </apex:pageBlockSection>
+          <apex:pageBlockSection title="Hub Info" collapsible="false">
+              <apex:inputField value="{!Case.Telecom_Provider__c}"/>
+              <apex:inputField value="{!Case.Shift_Report__c}"/>
+              <apex:inputField value="{!Case.Circuit_ID__c}"/>
+              <br/>
+              <apex:inputField value="{!Case.Telecom_Ticket__c}"/>
+              <apex:inlineEditSupport event="ondblClick" showOnEdit="saveButton,cancelButton" hideOnEdit="editButton" />
+          </apex:pageBlockSection>
+          <apex:pageBlockSection title="Description Information" collapsible="false" columns="1">
+              <apex:inputField value="{!Case.Subject}" required="true" style="width:80%"/>
+              <apex:inputField value="{!Case.Description}" required="true" style="width:80%;height:120px;"/>
+              <apex:inputField value="{!Case.Resolution__c}" style="width:80%" />
+              <apex:inputField value="{!Case.Engineering_Tracking__c}" style="width:80%"/>
+              <apex:inlineEditSupport event="ondblClick" showOnEdit="saveButton,cancelButton" hideOnEdit="editButton" />
+          </apex:pageBlockSection>
+          <apex:pageBlockSection title="Additional Information" collapsible="false">
+              <apex:inputField value="{!Case.Technical_Tip__c}"/>
+              <apex:inputField value="{!Case.Customer_Complaint__c}"/>
+              <apex:inputField value="{!Case.Beta_Case__c}"/>
+              <apex:inputField value="{!Case.Human_Interest__c}"/>
+              <apex:inlineEditSupport event="ondblClick" showOnEdit="saveButton,cancelButton" hideOnEdit="editButton" />
+          </apex:pageBlockSection>
+          <apex:pageBlockSection title="System Information" collapsible="false">
+              <apex:inputField value="{!Case.Origin}" required="true"/>
+              <apex:inputField value="{!Case.Opened_Date_Time_Actual__c}"/>
+              <br/>
+              <apex:inputField value="{!Case.Created_by_Queue__c}"/>
+              <br/>              
+              <apex:outputField value="{!currCase.RecordTypeId}"/>
+              <br/>
+              <apex:inputField value="{!Case.SR__c}"/>                            
+          </apex:pageBlockSection>
+          <apex:pageBlockSection title=" Self-Service Information" >
+             <apex:outputField value="{!Case.OwnerId}"/>
+          </apex:pageBlockSection>
+      </apex:pageBlock>
+  </apex:form>
+ <script>checkAccount()</script>
+ 
+</apex:page>

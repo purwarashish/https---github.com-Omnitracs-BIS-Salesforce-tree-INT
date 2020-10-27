@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PCHKLIST_Estimate_Delivered</fullName>
+    <active>true</active>
+    <description>Estimate Delivered fields must be populated if the Estimate has been delivered.</description>
+    <errorConditionFormula>OR(AND ( Estimate_Delivered__c , ISNULL( Estimate_Delivered_Date__c )), AND(Estimate_Delivered__c &lt;&gt; True, NOT(ISNULL(Estimate_Delivered_Date__c))))</errorConditionFormula>
+    <errorDisplayField>Estimate_Delivered__c</errorDisplayField>
+    <errorMessage>Estimate Delivered checkbox AND Estimate Delivered Date must be populated if the Estimate has been delivered.</errorMessage>
+</ValidationRule>

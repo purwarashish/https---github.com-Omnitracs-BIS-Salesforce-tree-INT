@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Meeting_Summary</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND ( $Profile.Name &lt;&gt; &quot;QWBS Interface&quot;, 
+ISPICKVAL(  Status__c , &quot;Completed&quot;), 
+(   Meeting_Summary__c =&quot;&quot; ) ,
+$RecordType.Name &lt;&gt; &quot;Call Plans&quot;,
+$RecordType.Name &lt;&gt; &quot;Inside Sales Call Report&quot;,
+$RecordType.Name &lt;&gt; &quot;Product Mgmt Call Report&quot;
+)</errorConditionFormula>
+    <errorDisplayField>Meeting_Summary__c</errorDisplayField>
+    <errorMessage>Meeting Summary is required once a call report is completed.</errorMessage>
+</ValidationRule>

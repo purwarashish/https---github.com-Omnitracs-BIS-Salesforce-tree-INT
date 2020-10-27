@@ -1,0 +1,238 @@
+<apex:page cache="true" sidebar="false" showHeader="false"
+    controller="ContentVersionModeler">
+
+
+    <link
+        href="/sCSS/28.0/1371760580000/PortalDefault/default/gc/contentStandard.css"
+        rel="stylesheet" type="text/css" />
+    
+    <script type="text/javascript" src="/static/121310/js/functions.js"></script>
+    <script src="/EXT/ext-3.0.0/ext.js" type="text/javascript"></script>
+    <script src="/jslibrary/1341513998000/sfdc/main.js"
+        type="text/javascript"></script>
+    <script src="/jslibrary/1341513998000/sfdc/Chatter.js"
+        type="text/javascript"></script>
+    <script src="/jslibrary/1341513998000/sfdc/ChatterFiles.js"
+        type="text/javascript"></script>
+    <script src="/jslibrary/labels/1342034628000/en_US.js"
+        type="text/javascript"></script>
+    <script type="text/javascript"
+        src="/static/121310/desktop/desktopAjax.js"></script>
+    <script type="text/javascript"
+        src="/static/121310/sfc/javascript/lib/AC_OETags.js"></script>
+    
+    <script type="text/javascript" src="/static/101812/sfc/javascript/lib/prototype.js"></script>
+    <script type="text/javascript" src="/EXT/ext-3.3.3/ext.js"></script>
+    
+    <script src="/jslibrary/1367256616000/sfdc/GuidedTour.js"></script>
+    <script src="/jslibrary/1367256616000/sfdc/ShepherdBootstrap.js"></script>
+    <script src="/jslibrary/1371165276000/sfdc/Chatter.js"></script>
+    
+    <script type="text/javascript"
+        src="/static/101812/sfc/javascript/lib/scriptaculous/scriptaculous.js"></script>
+    <script type="text/javascript"
+        src="https://qes--forceint.cs2.my.salesforce.com/static/101812/sfc/javascript/lib/scriptaculous/builder.js"></script>
+    <script type="text/javascript"
+        src="https://qes--forceint.cs2.my.salesforce.com/static/101812/sfc/javascript/lib/scriptaculous/effects.js"></script>
+    <script type="text/javascript"
+        src="https://qes--forceint.cs2.my.salesforce.com/static/101812/sfc/javascript/lib/scriptaculous/dragdrop.js"></script>
+    <script type="text/javascript"
+        src="https://qes--forceint.cs2.my.salesforce.com/static/101812/sfc/javascript/lib/scriptaculous/controls.js"></script>
+    <script type="text/javascript" src="/static/101812/js/picklist.js"></script>
+
+    
+    <script>
+        var pagename = "ContentVersionDetails";
+    </script>
+
+
+    <style>
+a.caseSubmitButton:hover {
+    text-decoration: none;
+}
+</style>
+    <apex:include pageName="cssandjs" />
+    <apex:include pageName="supportGoogleAnalytics" />
+    <apex:stylesheet value="{!URLFor($Resource.QESUnityCSSAndJS, 'Html/css/mainstyle.css')}" />
+    <apex:stylesheet value="{!URLFor($Resource.QESUnityCSSAndJS, 'Html/css/customer.css')}" />
+    <!--apex:include pageName="mainPage" /-->
+    <apex:variable var="renderArticle"
+        value="{!OR(ISPICKVAL($User.UserType, 'Standard'),NOT(contentDetails.Internal_Use_Only__c))}" />
+
+    <apex:outputPanel rendered="{!renderArticle}">
+        <div id="bodyWrapper">
+            <div class="breadcumWrp"></div>
+            <div id="middle-container">
+                <!-- div class="submitButtonHolder">
+                 <apex:form >
+                    <apex:commandLink id="backLink" value="Back"
+                                      styleclass="clearFilter backAlign fll" 
+                              accesskey=""        action="/apex/{!$CurrentPage.parameters.retURL}?prodtype={!$CurrentPage.parameters.prodtype}&&doctype={!$CurrentPage.parameters.doctype}&&headerType={!$CurrentPage.parameters.headerType}"/>
+                    <apex:outputLink id="backopLink" 
+                                     styleclass="clearFilter backAlign fll" 
+                                     value="{!$CurrentPage.parameters.retURL}?prodtype={!$CurrentPage.parameters.prodtype}&&doctype={!$CurrentPage.parameters.doctype}&&headerType={!$CurrentPage.parameters.headerType}" >
+                        Back
+                    </apex:outputLink> 
+                 </apex:form>
+            </div -->
+
+            <div class="recentCasesBoxTopMargin">
+                <div class="articleTxtArea clr">
+                    <h4 class="articleTitle fll">{!contentDetails.Title}</h4>
+                </div>
+            </div>
+
+                <table width="100%">
+                    <tr>
+                        <td width="60%" valign="top">
+                            <div class="articleTxt">
+                                <h4>Description:</h4>
+                                <p>
+                                    <apex:outputText style="font-size:12px; text-indent:50px;"
+                                        value="{!contentDetails.description}" />
+                                </p>
+                                <p>
+                                    <b>Size: </b>
+                                    <apex:outputText style="font-size:12px; text-indent:50px;"
+                                        value="{!contentSize}" />
+                                </p>
+                                <p>
+                                    <b>Last Modified: </b>
+                                    <apex:outputText style="font-size:12px; text-indent:50px;"
+                                        value="{!contentDetails.ContentModifiedDate}" />
+                                </p>
+                                <!-- /*Change for  CR 00083883*/ -->
+                                <apex:outputPanel rendered="{!IF (ISPICKVAL($User.UserType, 'Standard'), True, False)}">
+                                    <p>
+                                        <b>Internal Use Only: </b>
+                                        <apex:outputField value="{!contentDetails.Internal_Use_Only__c}" />
+                                    </p>
+                                </apex:outputPanel>
+                                <!-- p>
+                                <b>Product: </b>
+                                <apex:outputText style="font-size:12px; text-indent:50px;" 
+                                                 value="{!contentDetails.Product__c}" />
+                            </p>
+                            <p>
+                                <b>Document Type: </b>
+                                <apex:outputText style="font-size:12px; text-indent:50px;" 
+                                                 value="{!contentDetails.Type__c}" />
+                            </p -->
+
+                                <br /> <br />
+
+                                <apex:form >
+                                    <a href="{!downloadLink}" class="buttonSet newButton4" style="" target="_blank">Download</a>
+                                    <!-- Added as per Case- 01515306-->
+                                    
+                                    &nbsp; &nbsp;
+                                    
+                                    <!-- Display View button based on file type other than URL. Content URL field will not be populated for those data-->
+                                    <apex:outputLink styleClass="buttonSet newButton4" rendered="{!if(contentDetails.ContentUrl = null, true, false)}" value="{!downloadLink}" target="_blank">View</apex:outputLink>
+                                    <!-- Display View button based on URL file type -->
+                                    <apex:outputLink styleClass="buttonSet newButton4" rendered="{!if(contentDetails.ContentUrl != null, true, false)}" value="{!downloadLink}" target="_blank">View</apex:outputLink>
+                                    
+                                    <!-- <a href="/{!contentDetails.id}"
+                                        class="buttonSet newButton4" style="">View</a> -->
+                                    <!--apex:commandButton styleClass="caseSubmitButton" value="Download"  action="{!downloadLink}"/-->
+                                </apex:form>
+                            </div>
+                        </td>
+                        <td valign="top">
+                            <div id="contentPreviewPane" class="articleTxt"
+                                style="height: 300px;">
+                                <p>
+                                    <b>Preview:</b>
+                                </p>
+
+                                <script>
+                                    var isFlashInstalled = false;
+                                    if (navigator.appName == "Microsoft Internet Explorer"
+                                            && navigator.appVersion
+                                                    .indexOf("Mac") == -1
+                                            && navigator.appVersion
+                                                    .indexOf("3.1") == -1) {
+                                        if (window.ActiveXObject) {
+                                            var control = null;
+                                            try {
+                                                control = new ActiveXObject(
+                                                        'ShockwaveFlash.ShockwaveFlash');
+                                            } catch (e) {
+                                            }
+                                            if (control) {
+                                                isFlashInstalled = true;
+                                            }
+                                        }
+                                    } else {
+                                        /* detecting flash installed or not for non-IE browsers */
+                                        if (navigator.plugins
+                                                && navigator.plugins["Shockwave Flash"]
+                                                || navigator.mimeTypes["application/x-shockwave-flash"]) {
+                                            isFlashInstalled = true;
+                                        }
+                                    }
+                                    if (false == isFlashInstalled) {
+                                        $('#contentPreviewPane')
+                                                .append(
+                                                        '<p style="text-align:center;color:red"><b>Adobe Flash Player is required for this feature.'
+                                                                + '</b></p><br\>'
+                                                                + '<div slign = "center" class="submitAcase" style="text-align=center;margin-left:67px;width:223px;"><a target="blank" href="http://www.adobe.com/' +
+                                        'go/getflashplayer">Download Adobe Flash Player</a></div>');
+                                    } else {
+                                        OpenDoc('{!contentDetails.Id}');
+                                    }
+
+                                    function OpenDoc(docId) {
+                                        var htmlString = '<div id="chatterFileViewerPanel" class="chatterFileViewerPanel"><br/><br/> <embed height="90%" width="100%" align="middle" type="application/x-shockwave-flash" wmode="transparent" pluginspage="http://www.adobe.com/go/getflashplayer" allowfullscreen="true" allowscriptaccess="sameDomain" '
+                                                + 'name="renditionLarge" bgcolor="#f3f3f3" quality="high" id="renditionLarge" '
+                                                + 'flashvars="shepherd_prefix=/sfc/servlet.shepherd&amp;v='
+                                                + docId
+                                                + '&amp;mode=chatterfilepreview&amp;in_tests=false" src="/static/121310/sfc/flex/DocViewer.swf" /> </div> ';
+
+                                        $('#contentPreviewPane').append(
+                                                htmlString);
+                                        PrepareFlexComponent(docId);
+                                    }
+
+                                    function PrepareFlexComponent(docId) {
+                                        insertFlexComponent(
+                                                '/static/121310/sfc/flex/DocViewer',
+                                                'shepherd_prefix=/sfc/servlet.shepherd&v='
+                                                        + docId
+                                                        + '&mode=chatterfilepreview&amp;in_tests=false',
+                                                '100%',
+                                                '90%',
+                                                '#f3f3f3',
+                                                'chatterFileViewerPanel',
+                                                'renditionLarge',
+                                                false,
+                                                {
+                                                    adobeFlashVersionLbl : 'You must enable or download Adobe Flash Player version 9.0.115 or later to use this feature.',
+                                                    downloadAdobeLbl : 'Download Adobe Flash Player',
+                                                    downloadAdobeLinkLbl : 'Click the link below to download the Adobe Flash Player:',
+                                                    closeDialogLbl : 'Cancel'
+                                                });
+
+                                        Ninja.Flex.ContentStaticResourcesBase = '/static/121310/sfc';
+                                        Ninja.Flex.ShepherdController = '/sfc/servlet.shepherd';
+                                    }
+                                </script>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+            
+            
+
+            <!--apex:include pageName="UnityFooter"/-->
+
+        </div>
+    </apex:outputPanel>
+
+    <apex:outputPanel rendered="{!NOT(renderArticle)}"
+        style="color:red; font-size: 20px; padding: 0 0 0 50px">
+    You do not have access to view this document.    
+    </apex:outputPanel>
+</apex:page>

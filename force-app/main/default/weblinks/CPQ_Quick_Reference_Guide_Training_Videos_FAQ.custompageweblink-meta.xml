@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPageWebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <availability>online</availability>
+    <description>Walk Through of Opportunity Scenarios</description>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>CPQ Quick Reference Guide</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>https://omnitracs.sharepoint.com/:x:/r/teams/Sales/_layouts/15/Doc.aspx?sourcedoc=%7B289D6C13-7D85-4E60-B5CF-4E07FBB19540%7D&amp;file=Quick%20Ref%20Guide.xlsx&amp;action=default&amp;mobileredirect=true</url>
+</CustomPageWebLink>

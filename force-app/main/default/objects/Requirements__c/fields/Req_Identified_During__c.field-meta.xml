@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Req_Identified_During__c</fullName>
+    <externalId>false</externalId>
+    <label>Req. Identified During</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pre-Kickoff</fullName>
+                <default>false</default>
+                <label>Pre-Kickoff</label>
+            </value>
+            <value>
+                <fullName>Kickoff</fullName>
+                <default>false</default>
+                <label>Kickoff</label>
+            </value>
+            <value>
+                <fullName>Working Model</fullName>
+                <default>false</default>
+                <label>Working Model</label>
+            </value>
+            <value>
+                <fullName>Pre-UAT1</fullName>
+                <default>false</default>
+                <label>Pre-UAT1</label>
+            </value>
+            <value>
+                <fullName>UAT1</fullName>
+                <default>false</default>
+                <label>UAT1</label>
+            </value>
+            <value>
+                <fullName>Pre UAT2</fullName>
+                <default>false</default>
+                <label>Pre UAT2</label>
+            </value>
+            <value>
+                <fullName>UAT2</fullName>
+                <default>false</default>
+                <label>UAT2</label>
+            </value>
+            <value>
+                <fullName>Pre UAT3</fullName>
+                <default>false</default>
+                <label>Pre UAT3</label>
+            </value>
+            <value>
+                <fullName>UAT3</fullName>
+                <default>false</default>
+                <label>UAT3</label>
+            </value>
+            <value>
+                <fullName>Pre-Go-Live</fullName>
+                <default>false</default>
+                <label>Pre-Go-Live</label>
+            </value>
+            <value>
+                <fullName>Go-Live</fullName>
+                <default>false</default>
+                <label>Go-Live</label>
+            </value>
+            <value>
+                <fullName>Post-Go-Live</fullName>
+                <default>false</default>
+                <label>Post-Go-Live</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

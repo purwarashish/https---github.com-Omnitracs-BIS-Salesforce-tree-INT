@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Past_Due_61_90_Days__c</fullName>
+    <description>Amount of accounts receivable that are 61-90 days past due.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Amount of accounts receivable that are 61-90 days past due</inlineHelpText>
+    <label>61-90 Days Past Due</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

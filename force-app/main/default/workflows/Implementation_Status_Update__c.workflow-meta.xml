@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>ISU_Created_Notification</fullName>
+        <ccEmails>pta.team@omnitracs.com</ccEmails>
+        <description>ISU Created Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Inside CSR</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside CSR APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Partner Account Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Partner Agent</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/Implementation_Created</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Update_ISU_Status</fullName>
+        <field>Implementation_Status_text__c</field>
+        <formula>if( ISPICKVAL( Account__r.Implementation_Status__c, &apos;Introduction and Registration Phase&apos;), &apos;Introduction and Registration Phase&apos;,
+if( ISPICKVAL( Account__r.Implementation_Status__c, &apos;Ordering and Configuration Phase&apos;), &apos;Ordering and Configuration Phase&apos;,
+if( ISPICKVAL( Account__r.Implementation_Status__c, &apos;Installation &amp; Training Phase&apos;), &apos;Installation &amp; Training Phase&apos;,
+if( ISPICKVAL( Account__r.Implementation_Status__c, &apos;Implemented &amp; Maintaining Phase&apos;), &apos;Implemented &amp; Maintaining Phase&apos;,
+if( ISPICKVAL( Account__r.Implementation_Status__c, &apos;Final Decision Phase (EVAL only)&apos;), &apos;Final Decision Phase (EVAL only)&apos;,
+if( ISPICKVAL( Account__r.Implementation_Status__c, &apos;Complete- EVAL Converted to Contract&apos;), &apos;Complete- EVAL Converted to Contract&apos;,
+if( ISPICKVAL( Account__r.Implementation_Status__c, &apos;Complete- End-of-EVAL without Conversion&apos;), &apos;Complete- End-of-EVAL without Conversion&apos;,
+if( ISPICKVAL( Account__r.Implementation_Status__c, &apos;Complete- Contract Implemented&apos;), &apos;Complete- Contract Implemented&apos;,
+if( ISPICKVAL( Account__r.Implementation_Status__c, &apos;Partner Managed Implementation&apos;), &apos;Partner Managed Implementation&apos;,
+if( ISPICKVAL( Account__r.Implementation_Status__c, &apos;Omnitracs Managed Implementation&apos;), &apos;Omnitracs Managed Implementation&apos;,
+&apos;none&apos;))))))))))</formula>
+        <name>Update ISU Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>ISU Creation Notification</fullName>
+        <actions>
+            <name>ISU_Created_Notification</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Implementation_Status_Update__c.CreatedById</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Notifies selected group when a new Implementation Status record is created</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update ISU Status</fullName>
+        <actions>
+            <name>Update_ISU_Status</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.Implementation_Status__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Update the ISU Status with the Account status when record first created</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

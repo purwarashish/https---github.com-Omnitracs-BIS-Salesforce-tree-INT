@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vehicle_List__c</fullName>
+    <description>Is there a vehicle list available?  If not, when will it be available?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Is there a vehicle list available?  If not, when will it be available?</inlineHelpText>
+    <label>Vehicle List</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

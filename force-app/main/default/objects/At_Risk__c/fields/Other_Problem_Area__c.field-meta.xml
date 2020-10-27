@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Problem_Area__c</fullName>
+    <description>Provide a brief title for the issue if Alert Type, Product, or Application equals &quot;Other&quot; (50 character limit).</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Provide a brief title for the issue if Alert Type, Product, or Application equals &quot;Other&quot; (50 character limit).</inlineHelpText>
+    <label>Other Problem Area</label>
+    <length>50</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Request_Sent_to_Customer_Duration_Days__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF (ISNULL(Sent_to_Customer__c), null, IF (ISNULL( Contract_Received__c ), Today() - Sent_to_Customer__c ,  Contract_Received__c - Sent_to_Customer__c))</formula>
+    <inlineHelpText>If the Contract Received Date is blank, the field is calculated by Today minus the Sent to Customer Date.
+If the Contract Received date is populated, the field is calculated by the Contract Received minus the Sent to Customer date.</inlineHelpText>
+    <label>Request Sent to Customer Duration (Days)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

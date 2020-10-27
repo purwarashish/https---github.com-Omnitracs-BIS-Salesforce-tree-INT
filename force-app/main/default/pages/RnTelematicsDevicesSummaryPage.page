@@ -1,0 +1,22 @@
+<apex:page standardController="RN_Telematics_Devices__c" extensions="RnTelematicsDeviceSummaryExtension" >
+    <apex:form >
+        <apex:pageblock >
+		    <apex:pageblocksection columns="2">
+			    <apex:pageblocksectionitem >
+			       <apex:outputlabel value="Total RN Devices"/>
+			       <apex:outputtext value="{!devicesAssoicatedCustomer}"/>
+			    </apex:pageblocksectionitem>                
+			    
+			    <apex:pageblocksectionitem >
+			       <apex:outputlabel value="Total RN Devices Activated"/>
+			       <apex:outputtext value="{!activeDevices}"/>
+			    </apex:pageblocksectionitem>
+			    
+			    <apex:pageblocksectionitem >
+			       <apex:outputlabel value="Total RN Devices Installed"/>
+			       <apex:outputtext value="{!devicesWithInstallDates}"/>
+			    </apex:pageblocksectionitem>
+	        </apex:pageblocksection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

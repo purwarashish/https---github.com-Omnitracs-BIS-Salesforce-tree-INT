@@ -1,0 +1,400 @@
+<apex:page id="pgId" standardController="Case" extensions="OmnitracsCreateCaseController" showHeader="false" sidebar="false">
+    <apex:includeScript value="{!URLFOR($Resource.JQueryTable, 'DataTables-1.7.6/media/js/jquery.js')}"/>
+    <apex:include pageName="homePage" />
+    <Style>
+        #middle-container{
+            margin: 0 auto;
+        
+        }
+         .credInput {
+             display: inline-block;
+             width: 40%;
+             border: 1px solid #CCCCCC;
+         }
+         .labelCred{
+            margin-right: 10px;
+            text-align: right;
+            width: 97px;
+            font-weight: bold;
+            font-size: 10px;
+        }
+        .requiredMarker{
+            color: #FF0000;
+            display: inline;
+            font-size: 17px;
+            font-weight: bold;
+            
+            width: 2px;
+        }
+        .input-horz{margin-bottom:1.2em;}
+        .input-horz label{width:5em; margin-right:10px; font-size:1.0em; font-weight:bold;}
+        input[type="text"]{
+            border:1px solid #ccc;
+        }
+        .credInput input[type="text"]:focus{
+            
+             border-color:#69c;
+             -webkit-box-shadow: 0 0 3px #99ccff;
+             -moz-box-shadow: 0 0 3px #99ccff;
+             box-shadow: 0 0 3px #99ccff;
+        }
+        .headerStyle{
+            font-size: 2em;
+            margin-bottom: 28px;
+            margin-left: 263px;
+        }
+        textarea {
+            height: 114px !important;   
+        }
+         .requiredBlock {
+            background-color: #CC0000;
+            bottom: 1px;
+            left: -4px;
+            position: absolute;
+            top: 1px;
+            width: 3px;
+        }
+        
+    </Style>
+    <Script>
+        var $jq=jQuery.noConflict();
+        $jq(document).ready(function(){
+               
+               
+               $jq('[id*=impactedSysId] option').each(function(){
+                   if($jq(this).val()==''){
+                       $jq(this).remove();
+                   }
+               });
+                
+               $jq('select[id=WhoIsImpactedId]').css('border-left','3px solid red !important');
+
+               if($jq('[id*=requestypeId]').val() == 'Project Request'){
+                    $jq('[id*=projectInfoId]').show();
+                    //$jq('[id*=reqPhnId]').hide();
+                    $jq('[id*=divimpacId]').hide();
+                    $jq('[id*=piroId]').hide();
+                    $jq('[id*=descId]').hide();
+                    $jq('[id*=subId]').hide();
+                    
+                }
+                else{
+                    $jq('[id*=projectInfoId]').hide();
+                    //$jq('[id*=reqPhnId]').show();
+                    $jq('[id*=divimpacId]').show();
+                    $jq('[id*=piroId]').show();
+                    $jq('[id*=descId]').show();
+                    $jq('[id*=subId]').show();
+                    
+                }
+                
+                    
+                if($jq('[id*=chkBox1]').is(':checked') == true){
+                     $jq('[id*=changeRelatedId]').show();
+                 }
+                 else{
+                     $jq('[id*=changeRelatedId]').hide();    
+                 }
+                 
+                 if($jq('[id*=chkBox2]').is(':checked') == true){
+                 
+                     $jq('[id*=EstimatedDateValId1]').show();
+                     $jq('[id*=EstimatedDateValId]2').show();
+                 }
+                 else{
+                     $jq('[id*=EstimatedDateValId1]').hide(); 
+                     $jq('[id*=EstimatedDateValId2]').hide();    
+                 }
+             
+             
+            });
+        function showProjectSection(picklstVal){
+            
+            if($jq('[id*=requestypeId]').val() == 'Project Request'){
+                    $jq('[id*=projectInfoId]').show();
+                    //$jq('[id*=reqPhnId]').hide();
+                    $jq('[id*=divimpacId]').hide();
+                    $jq('[id*=piroId]').hide();
+                    $jq('[id*=descId]').hide();
+                    $jq('[id*=subId]').hide();
+                    
+                }
+                else{
+                    $jq('[id*=projectInfoId]').hide();
+                    //$jq('[id*=reqPhnId]').show();
+                    $jq('[id*=divimpacId]').show();
+                    $jq('[id*=piroId]').show();
+                    $jq('[id*=descId]').show();
+                    $jq('[id*=subId]').show();
+                    
+                }
+                                     
+                if($jq('[id*=chkBox1]').is(':checked') == true){
+                     $jq('[id*=changeRelatedId]').show();
+                 }
+                 else{
+                     $jq('[id*=changeRelatedId]').hide();    
+                 }
+                 
+                 if($jq('[id*=chkBox2]').is(':checked') == true){
+                 
+                     $jq('[id*=EstimatedDateValId1]').show();
+                     $jq('[id*=EstimatedDateValId]2').show();
+                 }
+                 else{
+                     $jq('[id*=EstimatedDateValId1]').hide(); 
+                     $jq('[id*=EstimatedDateValId2]').hide();    
+                 }
+                 
+                 $jq('.multiSelectPicklistTable' ).first('select').css('border-left','3px solid red');
+                        
+        }
+    
+         function relatedDateInfo(relatedDateVar){
+             
+             if(relatedDateVar == true){
+                 $jq('[id*=changeRelatedId]').show();
+             }
+             else{
+                 $jq('[id*=changeRelatedId]').hide();    
+             }
+         }
+         
+         
+         function displayDefineDateInfo(relateBusinessInfo){
+             
+             if(relateBusinessInfo == true){
+                 $jq('[id*=EstimatedDateValId]').show();
+             }
+             else{
+                 $jq('[id*=EstimatedDateValId]').hide();    
+             }
+         }
+         
+         
+    </script>
+    <div id="outer-container">
+        <div>
+               
+        </div>
+        <apex:form id="formId">
+            <div>
+                <h1></h1>
+            </div>
+            <div id="middle-container">
+                <div class="headerStyle">
+                    Create a Case or Project
+                </div>
+                <div>
+                    <apex:pageBlock mode="edit" >
+                        <apex:pageBlockButtons >
+                            <apex:commandButton value="Submit" action="{!createCase}" onclick="return validateForm();"/>
+                            <apex:commandButton value="Cancel" action="{!clear}"/>
+                        </apex:pageBlockButtons>
+                        <apex:pageMessages />
+                        
+                        <div> 
+                           <div class="input-horz">   
+                                <apex:outputLabel styleClass="labelCred">Please select request type: </apex:outputLabel>
+                                <br/>
+                                <div>
+                                    
+                                    <apex:selectList style="border-left: 3px solid red;" id="requestypeId" value="{!reqestType}" size="1"  onchange="javascript:showProjectSection($jq(this).val());" >
+                                        <apex:selectOptions value="{!lstRequestType}"/>
+                                    </apex:selectList>
+                                    <apex:image value="{!$Resource.OmnitracshelpIcon}" title="Select case request for change to existing functionality. Select project request for others. " />
+                               </div>
+                               
+                            </div>
+                            <div class="input-horz">  
+                                <apex:outputLabel styleClass="labelCred" >Requester name: </apex:outputLabel><br/>
+                                <div>
+                                
+                                <apex:inputText styleClass="credInput" style="border-left: 3px solid red;" value="{!requestorName}"/>
+                                <apex:image value="{!$Resource.OmnitracshelpIcon}" title="Request submitter name." />
+                                
+                            </div></div>
+                            <div class="input-horz">
+                                <apex:outputLabel styleClass="labelCred" >Requester email: </apex:outputLabel>
+                                
+                                <br/>
+                                <div>
+                                
+                                <apex:inputText styleClass="credInput" style="border-left: 3px solid red;" value="{!requestorEmail}"/>
+                                <apex:image value="{!$Resource.OmnitracshelpIcon}" title="Request submitter email. " />
+                                </div>
+                            </div>
+                            
+                            <div class="input-horz" id="reqPhnId" >
+                                <apex:outputLabel styleClass="labelCred" >Requester phone: </apex:outputLabel>
+                                
+                                <br/>
+                                <div>
+                               
+                                <apex:inputText styleClass="credInput" style="border-left: 3px solid red;" value="{!requestorPhone}"/>
+                                <apex:image value="{!$Resource.OmnitracshelpIcon}" title="Request submitter phone." />
+                                </div>
+                            </div>
+                            
+                            <div class="input-horz" id="subId">
+                                <apex:outputLabel styleClass="labelCred" >Subject: </apex:outputLabel>
+                                
+                             <div>   
+                                    <apex:inputText styleClass="credInput" style="border-left: 3px solid red;" value="{!newCase.Subject}"/>
+                                    <apex:image value="{!$Resource.OmnitracshelpIcon}" title="Please provide a one-liner about the request. " />
+                                </div> 
+                            </div>
+                            
+                            <div class="input-horz" id="descId">
+                                <apex:outputLabel styleClass="labelCred" style="height:143px !important;" >Description: </apex:outputLabel>
+                               
+                                <div class="requiredInput">
+                                   
+                                    <apex:inputTextArea styleClass="credInput" style="border-left: 3px solid red;" value="{!newCase.Description}"/>
+                                    <apex:image value="{!$Resource.OmnitracshelpIcon}" title="Fully explain the business problem that needs to be solved and the impact." />
+                                </div>
+                            </div>
+                            
+                            <div class="input-horz" id="piroId">
+                                <apex:outputLabel styleClass="labelCred"  >Priority: </apex:outputLabel>
+                                <br/>
+                                <div>
+                                    <apex:inputField style="border-left: 3px solid red;" styleClass="credInput" value="{!newcase.Priority}"/>
+                                    <apex:image value="{!$Resource.OmnitracshelpIcon}" title="Criticality/severity of the request." />
+                                </div> 
+                            </div>
+                            
+                            <div class="input-horz" id="divimpacId">   
+                                <apex:outputLabel styleClass="labelCred">Please select impacted system: </apex:outputLabel>
+                               <br/>
+                                <div>
+                                    
+                                    <apex:inputField id="impactedSysId" style="border-left: 3px solid red;" styleClass="credInput" value="{!newcase.Case_Queue__c}"/>
+                                     <apex:image value="{!$Resource.OmnitracshelpIcon}" title="Helps in assigning the request to appropriate queue. Select others if not sure." />
+                                </div>
+                               
+                            </div>
+                        </div>    
+                 
+                    
+                    
+                    
+                        <div id="projectInfoId">    
+                            <div class="pbSubheader brandTertiaryBgr first tertiaryPalette" style="margin-bottom: 35px;">
+                                <h3> Additional Information</h3>
+                            </div>
+                                                       
+                            <div class="input-horz">
+                                <apex:outputLabel styleClass="labelCred" value="What is the business need?" />
+                                <br/>
+                                
+                               
+                                <apex:inputField style="border-left: 3px solid red;" styleClass="credInput" value="{!newCase.What_is_the_business_need__c}" />
+                                <apex:image value="{!$Resource.OmnitracshelpIcon}" title="Fully explain the business problem that needs to be solved and the impact. Include relevant background info." />
+                                
+                            </div>
+                            
+                            <div class="input-horz">
+                                <apex:outputLabel styleClass="labelCred" value="Is this a production issue?" />
+                                
+                                <br/>
+                                <apex:inputField styleClass="credInput" value="{!newCase.Is_this_a_production_issue__c}"/>
+                                <apex:image value="{!$Resource.OmnitracshelpIcon}" />
+                            </div>
+
+                            
+                           <div class="input-horz">
+                                <apex:outputLabel styleClass="labelCred" value="Upon implementation who is impacted by this project request ( select all that apply )" />
+                                <br/>
+                                <apex:inputField id="WhoIsImpactedId" value="{!newCase.Who_is_impacted_by_this_request_when_imp__c}"  />
+                            </div>
+                            
+                            <div class="input-horz">
+                                <apex:outputLabel styleClass="labelCred" value="Which internal teams are impacted (please list)" />
+                                
+                                <br/>
+                                <apex:inputField styleClass="credInput" value="{!newCase.Which_internal_teams_are_impacted__c}" />
+                                <apex:image value="{!$Resource.OmnitracshelpIcon}" title="List the impacted internal teams." />
+                            </div>                          
+                            
+                            
+                            <div class="input-horz">
+                                <apex:outputLabel styleClass="labelCred" value="What are the business benefits to this project?" />
+                                
+                                <br/>
+                                <apex:inputField style="border-left: 3px solid red;" styleClass="credInput" value="{!newCase.What_are_the_expected_specific_benefits__c}" />
+                            </div>
+                            <div class="input-horz">
+                                <apex:outputLabel styleClass="labelCred" value="What should this project accomplish?" />
+                                
+                                <br/>
+                                <apex:inputField style="border-left: 3px solid red;" styleClass="credInput" value="{!newCase.What_do_you_want_it_to_do__c}" />
+                                <apex:image value="{!$Resource.OmnitracshelpIcon}" title="Describe the functional changes you are requesting in as much detail as possible." />
+                            </div>
+                            <div class="input-horz">
+                                <apex:outputLabel styleClass="labelCred" value="Do this project request align with a related other business initiative?" />
+                                
+                                <br/>
+                                <apex:inputField id="chkBox1" value="{!newCase.Change_related_other_business_initiative__c}" onchange="javascript:relatedDateInfo($jq(this).is(':checked'));"/>
+                                <apex:image value="{!$Resource.OmnitracshelpIcon}" title="Select if there is a business initiative similar to the request." />
+                            </div>
+                             
+                            <div class="input-horz" id="changeRelatedId" >
+                                <apex:outputLabel styleClass="labelCred" value="Description of similar initiative" />
+                                
+                                <br/>
+                                <apex:inputField styleClass="credInput" value="{!newCase.Description_Of_Similar_initiative__c}" />
+                                <apex:image value="{!$Resource.OmnitracshelpIcon}" title="Do this project request align with a related other business initiative?if yes,explain. " />
+                            </div>
+                                                    
+                            
+
+                            <div class="input-horz">
+                                <apex:outputLabel styleClass="labelCred" value="Is there a defined need by date?" />
+                                
+                                <br/>
+                                <apex:inputField id="chkBox2" value="{!newCase.Is_there_a_defined_need_by_date__c}" onchange="javascript:displayDefineDateInfo($jq(this).is(':checked'));" />
+                                <apex:image value="{!$Resource.OmnitracshelpIcon}" title="Select if there is defined need by date." />
+                            </div>
+                            
+                             <div class="input-horz" id="EstimatedDateValId1">
+                                    <apex:outputLabel styleClass="labelCred" value="Defined need by date" />
+                                    
+                                    <br/>
+                                    <apex:inputField styleClass="credInput" value="{!newCase.Defined_Need_By_Date__c}" />
+                                    <apex:image value="{!$Resource.OmnitracshelpIcon}" title="Please enter the date needed by. " />
+                              </div>
+                                
+                              <div class="input-horz" id="EstimatedDateValId2">
+                                    <apex:outputLabel styleClass="labelCred" value="Defined need by date justification" />
+                                    
+                                    <br/>
+                                    <apex:inputField styleClass="credInput" value="{!newCase.Defined_Need_By_Date_Justification__c}" />
+                                    <apex:image value="{!$Resource.OmnitracshelpIcon}" title="If there is a defined need by date, please provide specific details and justification. " />
+                              </div>
+                            
+                            <div class="input-horz">
+                                <apex:outputLabel styleClass="labelCred" value="Suggested system to implement this project?" />
+                                <apex:image value="{!$Resource.OmnitracshelpIcon}" title="Include any suggestions for where in the Portal/SFDC this change should appear. Attach screenshots, if helpful." />
+                                <br/>
+                                <apex:inputField value="{!newCase.Recommended_UI__c}"/>
+                                
+                            </div>
+                            
+                        </div> 
+                 
+                        <br/>
+                        <br/>
+                        <apex:pageBlockSection title="Attachment">
+                            <apex:inputFile fileName="{!filename}" value="{!fileBody}"></apex:inputFile><br/>
+                            <apex:inputFile fileName="{!filenameSec}" value="{!fileBodySec}"></apex:inputFile><br/>
+                            <apex:inputFile fileName="{!filenameThrd}" value="{!fileBodyThrd }"></apex:inputFile><br/>
+                        </apex:pageBlockSection>
+                    </apex:pageBlock> 
+                </div>                
+            </div> 
+           
+        </apex:form>
+    </div> 
+    
+</apex:page>

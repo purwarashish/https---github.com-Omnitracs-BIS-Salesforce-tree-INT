@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Additional_Products__c</fullName>
+    <externalId>false</externalId>
+    <label>Additional Products</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <controllingField>Product__c</controllingField>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>7-way Diagnostic Tool</fullName>
+                <default>false</default>
+                <label>7-way Diagnostic Tool</label>
+            </value>
+            <value>
+                <fullName>External Panel Mount</fullName>
+                <default>false</default>
+                <label>External Panel Mount</label>
+            </value>
+            <value>
+                <fullName>Internal Panel Mount</fullName>
+                <default>false</default>
+                <label>Internal Panel Mount</label>
+            </value>
+            <value>
+                <fullName>Low Profile Antenna</fullName>
+                <default>false</default>
+                <label>Low Profile Antenna</label>
+            </value>
+            <value>
+                <fullName>Media Display Unit (MDU)</fullName>
+                <default>false</default>
+                <label>Media Display Unit (MDU)</label>
+            </value>
+            <value>
+                <fullName>Mounts</fullName>
+                <default>false</default>
+                <label>Mounts</label>
+            </value>
+            <value>
+                <fullName>Optional Cargo Sensor</fullName>
+                <default>false</default>
+                <label>Optional Cargo Sensor</label>
+            </value>
+            <value>
+                <fullName>Optional Door Sensor</fullName>
+                <default>false</default>
+                <label>Optional Door Sensor</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Trailer Tracks 210</controllingFieldValue>
+            <controllingFieldValue>T2 System</controllingFieldValue>
+            <valueName>Optional Cargo Sensor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trailer Tracks 210</controllingFieldValue>
+            <controllingFieldValue>T2 System</controllingFieldValue>
+            <valueName>Optional Door Sensor</valueName>
+        </valueSettings>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

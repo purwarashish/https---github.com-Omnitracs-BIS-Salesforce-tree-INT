@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ActiveBudgets</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Start_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <columns>Approved_Requests__c</columns>
+    <columns>Available_Budget__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Active Budgets</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>PartnerManagement</group>
+        <group>PartnerPortalResellerGroupShared</group>
+        <group>SystemAdministrator</group>
+    </sharedTo>
+</ListView>

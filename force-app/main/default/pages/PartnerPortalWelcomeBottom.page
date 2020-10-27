@@ -1,0 +1,426 @@
+<!--
+/*********************************************************************
+Author  : Avinash Kaltari
+Date    : Oct 20, 2011
+
+Usage   : This new page is used as the Bootom section in the QES Partner Portal 
+        Home Page (below standard Lead Inbox component)
+    
+Dependencies : PartnerPortalWelcomeController class (controller)
+
+*********************************************************************/
+-->
+
+<apex:page controller="PartnerPortalWelcomeController" sidebar="false" showHeader="false">
+
+
+<!-- apex:variable var="isAdmin" value="{!$User.ProfileId == ''}"/>
+<apex:variable var="isAgent" value="{!$User.ProfileId == '00eP0000000HjHTIA0' || $User.ProfileId == '00eP0000000HjHYIA0 '}"/ -->
+
+<!--  Don't Edit unless you're familiar with CSS and JavaScript -->
+
+<script type="text/javascript">
+
+// please don't touch. used for the partner lead inbox.
+var lead_id = "{!$CurrentPage.parameters.lead_id}";
+if(lead_id != null && lead_id != ""){
+    window.top.top.top.top.top.top.top.top.location.href="/"+lead_id;
+}
+
+// dates used for marketing event dates so events are always in the future during your demo
+var date1 = '{!TODAY() - 7}';
+var date2 = '{!TODAY() + 5}';
+var date3 = '{!TODAY() + 17}';
+</script>
+
+<!--  Don't Edit the Style tags unless you're familiar with CSS -->
+<!--  Start Style Tags -->
+<style>
+
+.bPageBlock .pbHeader {
+  background-color: #3F393B;
+}
+
+html, body {
+    overflow-x: hidden;
+    font-size: 12px;
+    font-family: Arial,Helvetica,sans-serif;
+    color: #353032;
+}
+#container {
+    /* uncomment and edit this section if your customer's web site layout has a fixed width.
+    If you edit this section, you also need to specify a fixed width for the header table in your customer portal header HTML file.
+    margin-left:auto;margin-right:auto;
+    width:850px;
+    */
+}
+a {
+    color: #315BA7;        
+    text-decoration:none;
+}
+a:hover {
+    color: #315BA7 !important;
+    text-decoration: underline;
+}
+#title {
+    float:left;
+    padding:5px 12px;
+    font-size:18px;
+    font-weight:bold;
+    background: #3F393B;
+    display:block;
+    color: #fff;
+    width: 100%;
+}
+#welcome {
+    width:100%;
+    margin-top:5px;
+    overflow: auto;
+}
+#welcome .col {
+    width:32%;
+    padding:10px 0;
+    float: left;
+    font-size: 12px;
+    color: #4E4649;
+}
+#welcome .col.two {
+    margin-left: 2%;
+}
+#welcome .col.three {
+    float: right;
+}
+#welcome .col .welcome_marketingheaderimage {
+    background: #e9e8e6;
+}
+#welcome .col .content {
+    margin-top: 15px;
+}
+#welcome .col .welcome_marketingheaderimage img {
+    display:block;
+    _text-align:center;
+    text-align:center;
+    margin-left:auto; margin-right:auto;
+}
+#welcome .col h2 {
+    display: block;
+    padding: 10px 0;
+    border-top: 1px solid #d6d6d6;
+    border-bottom: 1px solid #d6d6d6;
+    line-height: 1.6;
+}
+#welcome .col p, #welcome .col ul li {
+    line-height: 1.8;
+}
+#welcome .col ul {
+    padding:0;
+    margin:0;
+    border:0;
+}
+#welcome .col ul li {
+    padding-left:10px;
+    border:0;
+}
+#components {
+
+}
+#components img {
+    display:block;
+    float:left;
+    padding-top:1px;
+    padding-right:5px;
+}
+span {
+    display:block;
+    padding-top:2px;
+}
+.clearfloats {
+    clear:both;
+}
+  td.statvalue {
+            padding-left:3px;
+            text-align:right;
+            font-weight:bold;
+        }
+
+.bPageBlock .pbHeader .pbTitle {
+    font-size: 14px;
+    padding: 8px 10px 7px 10px;
+}
+#stats {
+    width: 100%;
+}
+#stats td {
+    border-right: 1px solid #d6d6d6;
+    padding-left: 20px;
+}
+#stats td.last {
+    border-right: none 0;
+}
+#stats p {
+    margin: 0;
+}
+#stats a {
+    display: block;
+    font-size: 18px;
+}
+#stats td:hover a {
+    text-decoration: underline;
+}
+#stats a.label, #stats td:hover a.label, #stats a.label:hover {
+    font-size: 12px;
+    color: #4E4649 !important;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+</style>
+<!--  End Style Tags -->
+
+
+<!-- Start Container to hold other layout div tags. Used to switch between fixed and liquid layouts. -->
+<div id="container">
+
+<!-- Start Messages & Alerts. If you do not want to display Messages & Alerts in your portal, remove this section -->
+<!-- 
+    Notes:
+    This section displays the Messages/Alerts field from the Partner Portal Message record.
+    This is editable only by Admins/QES Marketing Admin users
+ -->
+ 
+<!-- apex:form > 
+<apex:pageBlock title="Messages & Alerts" rendered="{!isAdmin || (PPMsg.Message_Alert__c != '' || PPMsg.Message_Alert__c != null)}">
+
+    <apex:outputField rendered="{!!isAdmin}" value="{!PPMsg.Message_Alert__c}"/>
+    <apex:inputField style="width:100%" rendered="{!isAdmin}" value="{!PPMsg.Message_Alert__c}"/><br/><br/>
+    <apex:commandButton rendered="{!isAdmin}" value="Save" action="{!customSave}" oncomplete="alert('Message/Alert Saved');"/>
+</apex:pageBlock>
+</apex:form>
+
+<!-- End Messages & Alerts. If you do not want to display Messages & Alerts in your portal, remove this section -->
+
+
+
+
+<div class="clearfloats"/>
+
+<!--  start the welcome marketing messages. If you don't want to show this, remove from this tag to where it says "End Welcome Marketing Messages"  -->
+
+<!--  end welcome marketing messages. -->
+
+<div class="clearfloats"/>
+
+<!--  Start components visualforce code -->
+<div id="components">
+
+<!-- Start Lead Inbox. If you do not want to display Lead Inbox in your portal, remove this section -->
+<!--
+    Notes:
+    If you want to take out a column from this table, delete it below. It looks like this: <apex:column >some other tags</apex:column>
+    If you want to add columns to this table with other standard or custom fields, you need to:
+        1) add an <apex:column > tag for it with the correct merge field. Use the existing column markup for examples.
+        2) add this field to the SOQL select query in the controller. It should look something like this: LeadInbox = [select id,Name...etc]; You need to add the api name for this field.
+-->
+
+<!-- apex:form >
+<apex:pageBlock title="Lead Inbox">
+<apex:image id="messageIcon" value="{!$Resource.icon_information}" rendered="{!NOT(ShowLeadInbox)}" /> <span><apex:outputText value="{!LeadInboxMessage}" rendered="{!NOT(ShowLeadInbox)}"></apex:outputText></span>
+    
+<apex:actionStatus id="status" startText="Loading..."/>
+<apex:pageBlockTable value="{!LeadInbox}" var="lead" rendered="{!ShowLeadInbox}" >
+    <apex:column >
+        <apex:outputField value="{!lead.Name}" />
+        <apex:facet name="header">Lead Name</apex:facet>
+    </apex:column>
+    <apex:column >
+        <apex:outputField value="{!lead.Title}" />
+        <apex:facet name="header">Title</apex:facet>
+    </apex:column>
+    <apex:column >
+        <apex:outputField value="{!lead.Company}" />
+        <apex:facet name="header">Company</apex:facet>
+    </apex:column>
+    <apex:column >
+        <apex:outputField value="{!lead.LeadSource}" />
+        <apex:facet name="header">Lead Source</apex:facet>
+    </apex:column>
+    <apex:column >
+        <apex:commandButton immediate="true" value="Accept Lead" action="{!AcceptLead}" reRender="redirect" status="Loading...">
+            <apex:param name="LeadId" value="{!lead.id}" />
+        </apex:commandButton>
+    </apex:column>
+</apex:pageBlockTable>
+</apex:pageBlock>
+</apex:form -->
+
+<!--  End Lead Inbox. If you do not want to display Lead Inbox in your portal, remove this section -->
+
+<!-- Start Approval Requests. If you do not want to display Approval Requests in your portal, remove this section -->
+<!-- 
+    Notes:
+    If you want to take out a column from this table, delete it below. It looks like this: <apex:column >some other tags</apex:column>
+    If you want to add columns to this table with other standard or custom fields, you need to:
+        1) add an <apex:column > tag for it with the correct merge field. Use the existing column markup for examples.
+        2) add this field to the SOQL select query in the controller. It should look something like this: Solution = [select id,SolutionName...etc]; You need to add the api name for this field.
+ -->
+ 
+ 
+<apex:pageBlock title="Approval Requests">
+
+    <apex:image id="messageIcon" value="{!$Resource.icon_information}" rendered="{!NOT(ShowApprovalRequests)}" /> <span><apex:outputText value="{!ApprovalRequestsMessage}" rendered="{!NOT(ShowApprovalRequests)}"></apex:outputText></span>
+    <apex:pageBlockTable value="{!ApprovalRequests}" var="req" rendered="{!ShowApprovalRequests}">
+        
+        <apex:column ><apex:outputLink value="/{!req.pi.ProcessInstance.TargetObjectId}" target="_top">{!req.label}</apex:outputLink>
+            <apex:facet name="header">Related To</apex:facet>
+        </apex:column>
+        
+        <apex:column ><apex:outputLink value="/{!req.pi.ProcessInstance.TargetObjectId}" target="_top">{!req.TargetObjectName}</apex:outputLink>
+            <apex:facet name="header">Name</apex:facet>
+        </apex:column>
+        <apex:column >
+            <apex:facet name="header">Submitted Date</apex:facet>
+                {!req.SubmittedDate}
+        </apex:column>
+        <apex:column >
+            <apex:facet name="header">Status</apex:facet>
+                {!req.pi.ProcessInstance.Status}
+        </apex:column>
+    </apex:pageBlockTable>
+</apex:pageBlock>
+
+<!-- End Approval Requests. If you do not want to display Approval Requests in your portal, remove this section -->
+
+
+<!-- 
+    Notes:
+    If you want to take out a column from this table, delete it below. It looks like this: <apex:column >some other tags</apex:column>
+    If you want to add columns to this table with other standard or custom fields, you need to:
+        1) add an <apex:column > tag for it with the correct merge field. Use the existing column markup for examples.
+        2) add this field to the SOQL select query in the controller. It should look something like this: Solution = [select id,SolutionName...etc]; You need to add the api name for this field.
+ -->
+ 
+ <!-- Start My Stats. If you do want to display My Status in your portal, remove this section -->
+ <apex:pageBlock title="My Stats ({!$User.FirstName} {!$User.LastName})">
+ <!-- <span class="title">My Stats:</span> -->
+        
+        <table id="stats">
+        <tr>
+        <td>
+            <!-- Replace URL with the URL to the list view you want --> 
+            <p><a href="/00Q?fcf=00B50000005lNYw" target="_parent">{!ActiveLeads}</a></p>
+            <p><a class="label" href="/00Q?fcf=00B50000005lNYw" target="_parent">My Active Leads</a></p>
+        </td>
+        <td>
+            <!-- Replace URL with the URL to the list view you want --> 
+            <p><a href="/00Q?fcf=00B500000030DzM" target="_parent">{!ActiveLeadsExp7Days}</a></p>
+            <p><a class="label" href="/00Q?fcf=00B500000030DzM" target="_parent">Leads Expiring this Week</a></p>
+        </td>
+        
+        <!-- The following two Table cells were commented as they are not required anymore -->
+        <!-- td>
+            <p><a href="/006?fcf=00B50000005lNZG" target="_parent">{!ActiveDeals}</a></p>
+            <p><a class="label" href="/006?fcf=00B50000005lNZG" target="_parent">Active Deals</a></p>
+        </td>
+        <td class="last">
+            <p><a href="/006?fcf=00B50000005lNZB" target="_parent">{!ExpiringDealRegs}</a></p>
+            <p><a class="label" href="/006?fcf=00B50000005lNZB" target="_parent">Deals Expiring in the Next 30 Days</a></p>
+        </td -->
+        
+        </tr>
+        </table>
+        <!-- END PARTNER STATS. IF YOU DON'T WANT TO SHOW THIS SECTION, COMMENT IT OUT OR DELETE IT -->
+   
+ </apex:pageBlock>
+ <!-- End My Stats -->
+ 
+ 
+ <!-- Start Quick Links to Customer Portal. If you do want to display Quick Links to Customer Portal in your portal, remove this section -->
+ <!-- apex:pageBlock title="Quick Links to Customer Portal" rendered="{!!isAgent}">
+
+    <apex:pageBlockSection columns="2" collapsible="false">
+        <apex:pageblockSectionItem >
+            <apex:outputLink value="http://asqestst.qualcomm.com/qwbs/ngiq/faces/iq/oe/products/OrderProducts.jspx" target="_blank">Buy Hardware</apex:outputLink>
+        </apex:pageblockSectionItem>
+        
+        <apex:pageblockSectionItem >
+            <apex:outputLink value="http://asqestst.qualcomm.com/qwbs/ngiq/faces/iq/xfr/TransferSearch.jspx" target="_blank">Unit Transfers - Transfer Search</apex:outputLink>
+        </apex:pageblockSectionItem>
+        
+        <apex:pageblockSectionItem >
+            <apex:outputLink value="http://asqestst.qualcomm.com/qwbs/ngiq/faces/iq/xfr/TransferDashboard.jspx" target="_blank">Unit Transfers - Transfer Dashboard</apex:outputLink>
+        </apex:pageblockSectionItem>
+        
+        <apex:pageblockSectionItem >
+            <apex:outputLink value="http://asqestst.qualcomm.com/qwbs/ngiq/faces/iq/fin/index.jspx" target="_blank">Account Status</apex:outputLink>
+        </apex:pageblockSectionItem>
+        
+        <apex:pageblockSectionItem >
+            <apex:outputLink target="_blank">Manage My Portal Users</apex:outputLink>
+        </apex:pageblockSectionItem>
+        
+        <apex:pageblockSectionItem >
+            <apex:outputLink value="http://asqestst.qualcomm.com/qwbs/ngiq/faces/iq/rma/index.jspx" target="_blank">Return Hardware (RMA)</apex:outputLink>
+        </apex:pageblockSectionItem>
+        
+        <apex:pageblockSectionItem >
+            <apex:outputLink value="http://asqestst.qualcomm.com/qwbs/ngiq/faces/iq/svc/fleet/HealthCheck.jspx" target="_blank">My Units Health Check</apex:outputLink>
+        </apex:pageblockSectionItem>
+        
+        <apex:pageblockSectionItem >
+            <apex:outputLink value="http://asqestst.qualcomm.com/qwbs/ngiq/faces/iq/svc/index.jspx" target="_blank">Unit Health Checks</apex:outputLink>
+        </apex:pageblockSectionItem>
+        
+        <apex:pageblockSectionItem >
+            <apex:outputLink target="_blank">Manage Service Plans</apex:outputLink>
+        </apex:pageblockSectionItem>
+        
+        <apex:pageblockSectionItem >
+            <apex:outputLink value="https://myqualcomm.forcedev.cs4.force.com/demo/sitelogin1?un=singh.jaspreet@tcs.com&&pwd=QESUnity@2011&&pi=3" target="_blank">Report an Issue</apex:outputLink>
+        </apex:pageblockSectionItem>
+        
+    </apex:pageBlockSection>
+    
+</apex:pageBlock>
+ 
+ 
+
+<!-- Start Popular Solutions. If you do not want to display Solutions in your portal, remove this section -->
+<!--
+    Notes:
+    If you want to take out a column from this table, delete it below. It looks like this: <apex:column >some other tags</apex:column>
+    If you want to add columns to this table with other standard or custom fields, you need to:
+        1) add an <apex:column > tag for it with the correct merge field. Use the existing column markup for examples.
+        2) add this field to the SOQL select query in the controller. It should look something like this: Solution = [select id,SolutionName...etc]; You need to add the api name for this field.
+-->
+<!-- 
+<apex:pageBlock title="Popular Solutions">
+
+    <apex:image id="messageIcon" value="{!$Resource.icon_information}" rendered="{!NOT(ShowTopSolutions)}" /> <span><apex:outputText value="{!TopSolutionsMessage}" rendered="{!NOT(ShowTopSolutions)}"></apex:outputText></span>
+      <apex:pageBlockTable value="{!TopSolutions}" var="solution" rendered="{!ShowTopSolutions}">
+         <apex:column ><apex:outputLink value="/{!solution.Id}" target="_top">{!solution.SolutionName}</apex:outputLink>
+             <apex:facet name="header">Solution Name</apex:facet>
+         </apex:column> 
+      </apex:pageBlockTable>
+       
+</apex:pageBlock>
+-->
+<!-- End Popular Solutions. If you do not want to display Solutions in your portal, remove this section -->
+
+
+</div>
+<!--  End components visualforce code -->
+
+</div>
+<!-- End Container to hold other layout div tags. Used to switch between fixed and liquid layouts. -->
+
+<apex:pageBlock title="Quick Links to Customer Portal" rendered="{!showSection}" >
+    <apex:pageBlockSection columns="2">
+        <apex:repeat value="{!lstDynamicUrl}" var="link">
+            <apex:pageblockSectionItem >
+                <apex:outputLink target="_blank" styleclass="sidebarlinks" value="{!link.URL__c}">{!link.name}</apex:outputLink> 
+            </apex:pageblockSectionItem>
+        </apex:repeat>
+    </apex:pageBlockSection>
+</apex:pageBlock>
+
+</apex:page>

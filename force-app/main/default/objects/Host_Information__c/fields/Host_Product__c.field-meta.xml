@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Host_Product__c</fullName>
+    <description>Host Product</description>
+    <externalId>false</externalId>
+    <label>Host Product</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>XRS</fullName>
+                <default>false</default>
+                <label>XRS</label>
+            </value>
+            <value>
+                <fullName>Turnpike</fullName>
+                <default>false</default>
+                <label>Turnpike</label>
+            </value>
+            <value>
+                <fullName>Xatanet</fullName>
+                <default>false</default>
+                <label>Xatanet</label>
+            </value>
+            <value>
+                <fullName>RDC</fullName>
+                <default>false</default>
+                <label>RDC</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

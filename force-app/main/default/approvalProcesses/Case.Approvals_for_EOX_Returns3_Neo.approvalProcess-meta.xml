@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <submitter>QueueProductSupport</submitter>
+        <type>group</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>CaseNumber</field>
+        <field>Account</field>
+        <field>Category__c</field>
+        <field>Type_Level_2__c</field>
+        <field>Subject</field>
+        <field>Credit_Amount__c</field>
+        <field>Unused_In_Original_Package__c</field>
+        <field>Charge_15_Restocking_Fee__c</field>
+        <field>Waive_Restock_Fee_Explanation__c</field>
+        <field>Sales_Order_Number__c</field>
+        <field>Owner</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>EOX_Owner_to_Sales_CS</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>EOX_Queue_to_Sales_CS</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>AR</name>
+                <type>queue</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Enter this, if there is sales approval. In this case, after approval in this step the owner and queue will be updated to Sales Queue.</description>
+        <entryCriteria>
+            <formula>AND( 
+AND(Customer_Service_Rep__r.Id &lt;&gt; CreatedById, 
+Account_Manager__r.Id &lt;&gt; CreatedById, 
+Inside_CSR__r.Id &lt;&gt; CreatedById), 
+
+OR(Customer_Service_Rep__c &lt;&gt;&quot;&quot;,Inside_CSR__c&lt;&gt;&quot;&quot;,Account_Manager__c &lt;&gt;&quot;&quot;) 
+)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>AR Approval (Next: Sales Approval)</label>
+        <name>AR_Approval</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>EOX_Owner_to_Finance</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>EOX_Queue_to_Finance</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>AR</name>
+                <type>queue</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Enter this, if there is no sales approval. In this case, after approval in this step the owner and queue will be updated to Finance Queue.</description>
+        <entryCriteria>
+            <formula>AND(NOT(AND( 
+AND(Customer_Service_Rep__r.Id &lt;&gt; CreatedById, 
+Account_Manager__r.Id &lt;&gt; CreatedById, 
+Inside_CSR__r.Id &lt;&gt; CreatedById), 
+
+OR(Customer_Service_Rep__c &lt;&gt;&quot;&quot;,Inside_CSR__c&lt;&gt;&quot;&quot;,Account_Manager__c &lt;&gt;&quot;&quot;) 
+)) 
+, Credit_Amount__c &gt;0 
+)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>AR Approval (Next: Finance Approval)</label>
+        <name>AR_Approval2</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>AR</name>
+                <type>queue</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Enter this, if there is no sales and finance approval. In this case, this will be final step for the approval process.</description>
+        <entryCriteria>
+            <formula>AND(NOT(AND( 
+AND(Customer_Service_Rep__r.Id &lt;&gt; CreatedById, 
+Account_Manager__r.Id &lt;&gt; CreatedById, 
+Inside_CSR__r.Id &lt;&gt; CreatedById), 
+
+OR(Customer_Service_Rep__c &lt;&gt;&quot;&quot;,Inside_CSR__c&lt;&gt;&quot;&quot;,Account_Manager__c &lt;&gt;&quot;&quot;) 
+)), OR(ISBLANK(Credit_Amount__c), NOT(Credit_Amount__c &gt;0)) 
+)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>AR Approval</label>
+        <name>AR_Approval3</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>EOX_Owner_to_Finance</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>EOX_Queue_to_Finance</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>Account_Manager__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Customer_Service_Rep__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Enter this, if there is Sales approval. After approval in this step the owner and queue will be updated to Finance Queue. 
+
+This approval can be skipped if the case is created by the CSR/ Inside CSR/ Account Manager.
+
+No Inside CSR</description>
+        <entryCriteria>
+            <formula>AND(AND( 
+AND(Customer_Service_Rep__r.Id &lt;&gt; CreatedById, 
+Account_Manager__r.Id &lt;&gt; CreatedById, 
+Inside_CSR__r.Id &lt;&gt; CreatedById), 
+
+AND(Customer_Service_Rep__c &lt;&gt;&quot;&quot;,Account_Manager__c &lt;&gt;&quot;&quot;, OR(Inside_CSR__c = &quot;&quot;,ISNULL(Inside_CSR__c))) 
+),Credit_Amount__c &gt;0)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Sales Approval (Next: Finance Approval)</label>
+        <name>Sales_Approval_Next_Finance_Approval1</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>EOX_Owner_to_Finance</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>EOX_Queue_to_Finance</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>Inside_CSR__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Account_Manager__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Customer_Service_Rep__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Enter this, if there is Sales approval. After approval in this step the owner and queue will be updated to Finance Queue. 
+
+This approval can be skipped if the case is created by the CSR/ Inside CSR/ Account Manager.</description>
+        <entryCriteria>
+            <formula>AND(AND( 
+AND(Customer_Service_Rep__r.Id &lt;&gt; CreatedById, 
+Account_Manager__r.Id &lt;&gt; CreatedById, 
+Inside_CSR__r.Id &lt;&gt; CreatedById), 
+
+AND(Customer_Service_Rep__c &lt;&gt;&quot;&quot;,Inside_CSR__c&lt;&gt;&quot;&quot;,Account_Manager__c &lt;&gt;&quot;&quot;) 
+),Credit_Amount__c &gt;0)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Sales Approval (Next: Finance Approval)</label>
+        <name>Sales_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Account_Manager__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Customer_Service_Rep__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Enter this, if there is no finance approval. In this case, this is the final step in the approval process.
+
+No Inside CSR</description>
+        <entryCriteria>
+            <formula>AND(AND( 
+AND(Customer_Service_Rep__r.Id &lt;&gt; CreatedById, 
+Account_Manager__r.Id &lt;&gt; CreatedById, 
+Inside_CSR__r.Id &lt;&gt; CreatedById), 
+
+OR(Customer_Service_Rep__c &lt;&gt;&quot;&quot;,Account_Manager__c &lt;&gt;&quot;&quot;, OR(Inside_CSR__c = &quot;&quot;,ISNULL(Inside_CSR__c))) 
+), OR(ISBLANK(Credit_Amount__c), NOT(Credit_Amount__c &gt;0)) 
+)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Sales Approval</label>
+        <name>Sales_Approval1</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Customer_Service_Rep__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Account_Manager__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Inside_CSR__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Enter this, if there is no finance approval. In this case, this is the final step in the approval process.</description>
+        <entryCriteria>
+            <formula>AND(AND( 
+AND(Customer_Service_Rep__r.Id &lt;&gt; CreatedById, 
+Account_Manager__r.Id &lt;&gt; CreatedById, 
+Inside_CSR__r.Id &lt;&gt; CreatedById), 
+
+AND(Customer_Service_Rep__c &lt;&gt;&quot;&quot;,Inside_CSR__c&lt;&gt;&quot;&quot;,Account_Manager__c &lt;&gt;&quot;&quot;) 
+), OR(ISBLANK(Credit_Amount__c), NOT(Credit_Amount__c &gt;0)) 
+)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Sales Approval</label>
+        <name>Sales_Approval2</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Finance</name>
+                <type>queue</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Credit_Amount__c</field>
+                <operation>greaterThan</operation>
+                <value>USD 0</value>
+            </criteriaItems>
+        </entryCriteria>
+        <label>Finance Approval</label>
+        <name>Finance_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <emailTemplate>QESAutomatedMessages/EOXRequestApprovalRequired</emailTemplate>
+    <enableMobileDeviceAccess>true</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>AND(
+ISPICKVAL(Category__c ,&quot;EOX Return&quot;),
+(Approval_Flag__c = false),
+NOT(ISPICKVAL(Status, &quot;Closed&quot;)),
+NOT(ISPICKVAL(Substatus__c , &quot;Pending Approval&quot;)),
+OR(ISPICKVAL( Type_Level_2__c , &quot;End of Evaluation&quot;),ISPICKVAL( Type_Level_2__c , &quot;End of Loan&quot;),ISPICKVAL( Type_Level_2__c , &quot;End of Rental&quot;),ISPICKVAL( Type_Level_2__c , &quot;End of Sale - Qualcomm&quot;), ISPICKVAL( Type_Level_2__c , &quot;End of Sale - Install by QC&quot;)
+)
+)</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>EOX_Check_Approval_Flag</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>EOX_New_Unassigned_Status</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>EOX_Null_Substatus</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>EOX_Owner_to_Prod_Support</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>EOX_Queue_to_Prod_Support</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>EOX_Closed_Status</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>EOX_Declined_Substatus</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>EOX_Return_Request_Rejected</name>
+            <type>Alert</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>true</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>EOX_Open_Status</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>EOX_Owner_to_AR</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>EOX_Pending_Approval_Substatus</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>EOX_Queue_to_AR</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>EOX_Uncheck_Approval_Flag</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Approvals for EOX Returns3 Neo</label>
+    <processOrder>3</processOrder>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CancelledContractRequests</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Contact__c</columns>
+    <columns>Request_Type__c</columns>
+    <columns>Request_Status__c</columns>
+    <columns>Assigned_To__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Requested_Completion_Date__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Request_Status__c</field>
+        <operation>equals</operation>
+        <value>Cancelled</value>
+    </filters>
+    <label>Cancelled Contract Requests</label>
+    <language>en_US</language>
+</ListView>

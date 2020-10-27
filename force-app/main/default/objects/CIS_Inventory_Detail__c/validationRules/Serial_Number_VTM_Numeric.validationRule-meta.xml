@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Serial_Number_VTM_Numeric</fullName>
+    <active>true</active>
+    <description>Serial Number VTM should be numeric</description>
+    <errorConditionFormula>NOT(ISNUMBER( Serial_VTM__c ))</errorConditionFormula>
+    <errorDisplayField>Serial_VTM__c</errorDisplayField>
+    <errorMessage>Serial# VTM should be numeric only</errorMessage>
+</ValidationRule>

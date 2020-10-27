@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reconciled__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Used by the batch Customer Asset forecast update process to determine whether this record needs to be processed to update the Customer Asset actuals or to create an addon Amendment. If checked, it means that this record has already been reconciled with Customer Asset actuals.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If checked, this record has already been reconciled with Customer Asset actuals.</inlineHelpText>
+    <label>Reconciled</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

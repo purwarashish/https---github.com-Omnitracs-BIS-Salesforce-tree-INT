@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>License_Type__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Choose the type of license this Contract is for - if it&apos;s an additional license, choose what the new license will be (not &quot;Add-On&quot;).</inlineHelpText>
+    <label>License Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Professional Edition</fullName>
+                <default>false</default>
+                <label>Professional Edition</label>
+            </value>
+            <value>
+                <fullName>Professional Edition Plus</fullName>
+                <default>false</default>
+                <label>Professional Edition Plus</label>
+            </value>
+            <value>
+                <fullName>Enterprise Edition</fullName>
+                <default>false</default>
+                <label>Enterprise Edition</label>
+            </value>
+            <value>
+                <fullName>Subscription</fullName>
+                <default>false</default>
+                <label>Subscription</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

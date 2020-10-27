@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rescue_Pin</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Rescue Pin (Case Event)</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>window.open(&quot;/apex/logmein__rescuerequestpincode?caseid={!Case.Id}&amp;cfield0={!Case_Event__c.AccountName__c}&quot;, &quot;rescuepin&quot;, 
+&quot;menubar=0, status=1, toolbar=1, resizable=1, width=440, height=280&quot;);</url>
+</WebLink>

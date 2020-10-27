@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reference_Applications__c</fullName>
+    <externalId>false</externalId>
+    <label>Reference Applications</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Co-Pilot Truck</fullName>
+                <default>false</default>
+                <label>Co-Pilot Truck</label>
+            </value>
+            <value>
+                <fullName>Critical Event Reporting</fullName>
+                <default>false</default>
+                <label>Critical Event Reporting</label>
+            </value>
+            <value>
+                <fullName>Driver Workflow</fullName>
+                <default>false</default>
+                <label>Driver Workflow</label>
+            </value>
+            <value>
+                <fullName>Exact Fuel</fullName>
+                <default>false</default>
+                <label>Exact Fuel</label>
+            </value>
+            <value>
+                <fullName>Extended Productivity</fullName>
+                <default>false</default>
+                <label>Extended Productivity</label>
+            </value>
+            <value>
+                <fullName>HOS</fullName>
+                <default>false</default>
+                <label>HOS</label>
+            </value>
+            <value>
+                <fullName>In-Cab Scanning</fullName>
+                <default>false</default>
+                <label>In-Cab Scanning</label>
+            </value>
+            <value>
+                <fullName>Media Manager</fullName>
+                <default>false</default>
+                <label>Media Manager</label>
+            </value>
+            <value>
+                <fullName>Performance Monitoring</fullName>
+                <default>false</default>
+                <label>Performance Monitoring</label>
+            </value>
+            <value>
+                <fullName>Telogis Navigo</fullName>
+                <default>false</default>
+                <label>Telogis Navigo</label>
+            </value>
+            <value>
+                <fullName>Trip Manager</fullName>
+                <default>false</default>
+                <label>Trip Manager</label>
+            </value>
+            <value>
+                <fullName>Vehicle Diagnostics</fullName>
+                <default>false</default>
+                <label>Vehicle Diagnostics</label>
+            </value>
+            <value>
+                <fullName>VIR</fullName>
+                <default>false</default>
+                <label>VIR</label>
+            </value>
+            <value>
+                <fullName>Virtual Load View</fullName>
+                <default>false</default>
+                <label>Virtual Load View</label>
+            </value>
+            <value>
+                <fullName>Web Browsing</fullName>
+                <default>false</default>
+                <label>Web Browsing</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

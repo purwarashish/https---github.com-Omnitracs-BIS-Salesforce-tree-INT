@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Deal_Desk_Approval_status_Notification</fullName>
+        <description>Deal Desk Approval status Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CPQ_2nd_Level_Approver_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>CPQ_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Opportunity_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/Deal_Desk_Approval_Status_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Deal_Desk_Creation_Notification</fullName>
+        <ccEmails>Dealdesk@omnitracs.com</ccEmails>
+        <description>Deal Desk Creation Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CPQ_2nd_Level_Approver_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>CPQ_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Opportunity_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>mhearn@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>npham@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>usyed@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/Deal_Desk_Creation_Notification</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>CPQ_2nd_Level_approver</fullName>
+        <description>CPQ 2nd Level Approver</description>
+        <field>CPQ_2nd_Level_Approver_Email__c</field>
+        <formula>Opportunity_Name__r.Owner.CPQ_Manager__r.CPQ_Manager__r.Email</formula>
+        <name>CPQ 2nd Level approver</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CPQ_Manager_Email</fullName>
+        <field>CPQ_Manager_Email__c</field>
+        <formula>Opportunity_Name__r.Owner.CPQ_Manager__r.Email</formula>
+        <name>CPQ Manager Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opportunity_Owner_email</fullName>
+        <description>Update opportunity owner email</description>
+        <field>Opportunity_Owner_Email__c</field>
+        <formula>Opportunity_Name__r.Owner.Email</formula>
+        <name>Opportunity Owner email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>Deal Desk Field Automation</fullName>
+        <actions>
+            <name>CPQ_2nd_Level_approver</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>CPQ_Manager_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Opportunity_Owner_email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Deal_Desk__c.CreatedDate</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Email fields Automation</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

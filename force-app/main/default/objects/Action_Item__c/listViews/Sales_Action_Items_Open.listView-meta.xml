@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Action_Items_Open</fullName>
+    <columns>NAME</columns>
+    <columns>Type__c</columns>
+    <columns>Priority__c</columns>
+    <columns>Name__c</columns>
+    <columns>Due_Date__c</columns>
+    <columns>Status__c</columns>
+    <columns>Track__c</columns>
+    <columns>Primary_Owner__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Track__c</field>
+        <operation>includes</operation>
+        <value>Sales</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Open,In Progress</value>
+    </filters>
+    <filters>
+        <field>Delivery_Phase__c</field>
+        <operation>equals</operation>
+        <value>Phase 1 - 1.0 Scope,Phase 1 - 1.5 Scope,Phase 1.5,CPQ Admin</value>
+    </filters>
+    <label>Sales Action Items-Open</label>
+    <language>en_US</language>
+</ListView>

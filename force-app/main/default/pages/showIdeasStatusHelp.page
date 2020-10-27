@@ -1,0 +1,47 @@
+<apex:page >
+<style type="text/css">
+tr.d0 td {
+    background-color:#a9a19d; color: black;
+}
+tr.d1 td {
+    background-color: #f5f5f5; color: black;
+}
+</style>
+<p>
+<h1><font>Refer to the table below for idea status definitions</font></h1>
+</p>
+<table>
+<tr class="d0">
+    <td><b>Status</b></td>
+    <td><b>Definition</b></td>
+</tr>
+<tr class="d1">
+    <td>New</td>
+    <td>New idea to be considered by Product Management team.</td>
+</tr>
+<tr class="d1">
+    <td>Under Consideration</td>
+    <td>Idea has merit, Product Management researching, building business case and working to get approved for development. No commitments that this will be done.</td>
+</tr>
+<tr class="d1">
+    <td>Planned for Development</td>
+    <td>Idea has been approved and funded. Product Requirements to be finalized. There is no commitment date for delivery.</td>
+</tr>
+<tr class="d1">
+    <td>In Development</td>
+    <td>Engineering is working on the project and there should be a release planned.</td>
+</tr>
+<tr class="d1">
+    <td>Implemented</td>
+    <td>Idea has been commercially released.</td>
+</tr>
+<tr class="d1">
+    <td>Reviewed, Not a priority at this time</td>
+    <td>This idea is interesting; it has been reviewed but deemed not a priority at this time. This is the backlog.</td>
+</tr>
+<tr class="d1">
+    <td>Cancelled</td>
+    <td>This idea has been reviewed. It is determined that we will not move forward with this idea.</td>
+</tr>
+</table>
+ </apex:page>

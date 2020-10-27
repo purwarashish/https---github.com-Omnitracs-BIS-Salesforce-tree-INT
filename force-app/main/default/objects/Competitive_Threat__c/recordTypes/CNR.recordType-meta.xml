@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CNR</fullName>
+    <active>true</active>
+    <description>Used for CNR Competitors</description>
+    <label>CNR</label>
+    <picklistValues>
+        <picklist>Competitor_Status__c</picklist>
+        <values>
+            <fullName>Existing Account %E2%80%93 Competitor Soliciting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing Account - Competitor Eliminated from Consideration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing Account - Evaluating Competitor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing Account - Lost Business to Competitor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing Account - Meeting with Competitor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing Account - Reviewing Contracts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing Account - Talking to Competitor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect - Contract Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect - Evaluating with Omnitracs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect - Lost Opportunity - Stayed with Competitor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect - Meeting with Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect - Talking to Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect - Won Opportunity</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Entire_Fleet__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Has_Product_Solution_Today__c</picklist>
+        <values>
+            <fullName>Don%27t Know</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Solution_Offered__c</picklist>
+        <values>
+            <fullName>AFC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Analytics Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CEV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hours of Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IFTA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IVG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Imp_Services_Safety_Model_Workers_Comp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In-cab Navigation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In-cab Scanning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In-cab Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kit T2 para Caja Seca</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kit T2 para Plataforma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kit TMCI Básico Nuevo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kit TMCI Básico Remanufacturado</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kit TMCI Logístico Nuevo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kit TMCI Logístico Remanufacturado</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP100</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP200</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP50</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Navigation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Omnitracs One</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Per Diem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Performance Monitoring with Fuel Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RNA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sylectus Alliance Connect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sylectus Alliance Pro</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sylectus Alliance Virtual Fleet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weigh Station Bypass</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Workflow%2FTrip Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XRS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>QES_Product_Solution_Offered__c</picklist>
+        <values>
+            <fullName>AEF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AEF Armor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FS Connect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FS Cost Control</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FS Elite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FS Security</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kit T2 para Caja Seca</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kit T2 para Plataforma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kit TMCI Básico Nuevo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kit TMCI Básico Remanufacturado</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kit TMCI Logístico Nuevo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kit TMCI Logístico Remanufacturado</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OT Light</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OmniTRACS Shield</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TT210 dry goods</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TT210 refrigerated</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Satisfaction_Level__c</picklist>
+        <values>
+            <fullName>Dissatisfied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neutral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Satisfied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Very Dissatisfied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Very Satisfied</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

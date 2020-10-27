@@ -1,0 +1,149 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "005500000011zaQAAQ",
+      "createdByName": "Kasia Dinen",
+      "createdDate": "2011-05-27T03:17:10.000Z",
+      "fileName": "communities/OES Ideas.community",
+      "fullName": "OES Ideas",
+      "id": "09a50000000LYbyAAG",
+      "lastModifiedById": "00550000004fEIIAA2",
+      "lastModifiedByName": "Cody Worth",
+      "lastModifiedDate": "2015-11-13T17:13:48.000Z",
+      "type": "Community"
+    },
+    {
+      "createdById": "00550000003hXhLAAU",
+      "createdByName": "Mark Malanowski",
+      "createdDate": "2014-12-06T10:12:19.000Z",
+      "fileName": "communities/Sylectus Ideas Zone.community",
+      "fullName": "Sylectus Ideas Zone",
+      "id": "09a500000008dGeAAI",
+      "lastModifiedById": "00550000003hXhLAAU",
+      "lastModifiedByName": "Mark Malanowski",
+      "lastModifiedDate": "2014-12-06T10:12:19.000Z",
+      "type": "Community"
+    },
+    {
+      "createdById": "00550000003hXhLAAU",
+      "createdByName": "Mark Malanowski",
+      "createdDate": "2014-12-06T10:12:19.000Z",
+      "fileName": "communities/Roadnet Partner Ideas.community",
+      "fullName": "Roadnet Partner Ideas",
+      "id": "09a500000008dGdAAI",
+      "lastModifiedById": "00550000003hXiJAAU",
+      "lastModifiedByName": "Derick Santiago",
+      "lastModifiedDate": "2014-12-07T00:00:32.000Z",
+      "type": "Community"
+    },
+    {
+      "createdById": "00550000003hXhLAAU",
+      "createdByName": "Mark Malanowski",
+      "createdDate": "2014-12-06T10:12:17.000Z",
+      "fileName": "communities/XRS Ideas Zone.community",
+      "fullName": "XRS Ideas Zone",
+      "id": "09a500000008dGZAAY",
+      "lastModifiedById": "00550000003jZ7KAAU",
+      "lastModifiedByName": "Christian Cunningham",
+      "lastModifiedDate": "2016-02-22T17:48:11.000Z",
+      "type": "Community"
+    },
+    {
+      "createdById": "00550000000vfNuAAI",
+      "createdByName": "Omnitracs Admin",
+      "createdDate": "2008-05-18T03:43:31.000Z",
+      "fileName": "communities/Internal Ideas.community",
+      "fullName": "Internal Ideas",
+      "id": "09a5000000007AFAAY",
+      "lastModifiedById": "005500000011zaQAAQ",
+      "lastModifiedByName": "Kasia Dinen",
+      "lastModifiedDate": "2011-05-27T03:13:05.000Z",
+      "type": "Community"
+    },
+    {
+      "createdById": "00550000003hXhLAAU",
+      "createdByName": "Mark Malanowski",
+      "createdDate": "2014-12-06T10:12:19.000Z",
+      "fileName": "communities/Sylectus Internal Ideas.community",
+      "fullName": "Sylectus Internal Ideas",
+      "id": "09a500000008dGfAAI",
+      "lastModifiedById": "00550000003hXhLAAU",
+      "lastModifiedByName": "Mark Malanowski",
+      "lastModifiedDate": "2014-12-06T10:12:19.000Z",
+      "type": "Community"
+    },
+    {
+      "createdById": "00550000000vfOcAAI",
+      "createdByName": "Mark Silber",
+      "createdDate": "2009-03-28T13:11:11.000Z",
+      "fileName": "communities/Customer Portal Ideas.community",
+      "fullName": "Customer Portal Ideas",
+      "id": "09a500000008aK5AAI",
+      "lastModifiedById": "005500000011zaQAAQ",
+      "lastModifiedByName": "Kasia Dinen",
+      "lastModifiedDate": "2011-05-27T03:12:05.000Z",
+      "type": "Community"
+    },
+    {
+      "createdById": "00550000003hCi3AAE",
+      "createdByName": "Rittu Roy",
+      "createdDate": "2015-07-08T21:26:49.000Z",
+      "fileName": "communities/XRS Internal Ideas.community",
+      "fullName": "XRS Internal Ideas",
+      "id": "09a500000008dJsAAI",
+      "lastModifiedById": "00550000003hCi3AAE",
+      "lastModifiedByName": "Rittu Roy",
+      "lastModifiedDate": "2015-07-08T21:26:49.000Z",
+      "type": "Community"
+    },
+    {
+      "createdById": "00550000003hXhLAAU",
+      "createdByName": "Mark Malanowski",
+      "createdDate": "2014-12-06T10:12:18.000Z",
+      "fileName": "communities/Ideas Omnitracs Mexico.community",
+      "fullName": "Ideas Omnitracs Mexico",
+      "id": "09a500000008dGaAAI",
+      "lastModifiedById": "00550000003jZ7KAAU",
+      "lastModifiedByName": "Christian Cunningham",
+      "lastModifiedDate": "2016-03-30T16:18:12.000Z",
+      "type": "Community"
+    },
+    {
+      "createdById": "00550000003hXhLAAU",
+      "createdByName": "Mark Malanowski",
+      "createdDate": "2014-12-06T10:12:18.000Z",
+      "fileName": "communities/Roadnet Internal Ideas.community",
+      "fullName": "Roadnet Internal Ideas",
+      "id": "09a500000008dGcAAI",
+      "lastModifiedById": "00550000003hXhLAAU",
+      "lastModifiedByName": "Mark Malanowski",
+      "lastModifiedDate": "2014-12-06T10:12:18.000Z",
+      "type": "Community"
+    },
+    {
+      "createdById": "00550000003hXhLAAU",
+      "createdByName": "Mark Malanowski",
+      "createdDate": "2014-12-06T10:12:18.000Z",
+      "fileName": "communities/Roadnet Customer Ideas.community",
+      "fullName": "Roadnet Customer Ideas",
+      "id": "09a500000008dGbAAI",
+      "lastModifiedById": "00550000003hXiJAAU",
+      "lastModifiedByName": "Derick Santiago",
+      "lastModifiedDate": "2014-12-07T00:00:18.000Z",
+      "type": "Community"
+    },
+    {
+      "createdById": "00550000000vfNuAAI",
+      "createdByName": "Omnitracs Admin",
+      "createdDate": "2008-05-18T03:43:31.000Z",
+      "fileName": "communities/Portal Ideas %28Not Used%29.community",
+      "fullName": "Portal Ideas %28Not Used%29",
+      "id": "09a5000000007UFAAY",
+      "lastModifiedById": "00550000003h5fCAAQ",
+      "lastModifiedByName": "Casey Keeling",
+      "lastModifiedDate": "2016-03-14T15:37:18.000Z",
+      "type": "Community"
+    }
+  ]
+}

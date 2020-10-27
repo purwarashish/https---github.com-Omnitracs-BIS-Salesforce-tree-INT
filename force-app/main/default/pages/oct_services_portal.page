@@ -1,0 +1,136 @@
+<apex:page controller="OutageContactToolController" tabStyle="Contact" Id="check">
+   <script src="/soap/ajax/14.0/connection.js" type="text/javascript"></script>
+   <script src="/soap/ajax/14.0/apex.js" type="text/javascript"></script>
+   <apex:includeScript value="{!$Resource.outageContactTool}"/>
+   <apex:sectionHeader title="Outage Contact Tool" subtitle="Step 2 of 3"/>
+   <apex:form id="myForm">
+    <apex:outputText id="jsProgressMsg" value="" style="font-weight:bold; color:red;"  rendered="true"></apex:outputText>
+    <div id="myDIV" style="font-weight:bold; color:red;"  />
+      <apex:outputText value="{!userMessage}" style="font-weight:bold; color:red;"  rendered="true"></apex:outputText>
+      <apex:actionstatus id="serverProcessingStatus" startText="Processing request..." startStyle="font-weight:bold;color:red;"  stopStyle="font-weight:bold;color:red;"/>
+      <!--  =================================== DISPLAY ============================================= -->
+      <apex:pageBlock title="Portal/Services and NMC System Info" mode="edit" id="pageblock">
+         <apex:pageBlockSection id="pageblocksection">
+	          <apex:pageBlockSectionItem >
+	              Portal/Services:
+	               <apex:selectCheckboxes id="portal_and_services"  value="{!selected_portal_and_services}" layout="pageDirection">
+	               <apex:selectOptions id="connection_types" value="{!ConnectionTypes}"/>
+	               </apex:selectCheckboxes>
+	          </apex:pageBlockSectionItem>
+	          <apex:pageBlockSectionItem id="NMCs">
+	          <b> NMC Systems:</b>
+		          <apex:selectCheckboxes id="nmc_system" value="{!selected_nmc_system}" layout="pageDirection">
+		          <apex:selectOptions value="{!NMCSystems}" id="abc" />
+		          </apex:selectCheckboxes>
+	          </apex:pageBlockSectionItem>
+				<table>
+				<tr>
+				<td>
+				    <table>
+				          <tr>
+							<td align="left">
+							  <apex:inputField value="{!Newcampaign.Generate_Campaign__c}" id="generateCampaignCheckBox" onclick="javascript:toggleCampaignSection(this.checked)"/>
+							</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+				         </tr>
+				     </table>
+				   </td>
+				 </tr>
+				  <tr>
+				     <td>
+						<table id="campaignBox" >
+							<tr>
+								<td>
+									<apex:inputField id="NewcampaignName" value="{!Newcampaign.Name}" />
+								</td>
+							</tr>
+
+							<tr>
+								<td>
+									<apex:pageblockSectionItem id="p1">
+									<apex:outputLabel value="Campaign Market" for="NewcampaignMarket"/>
+									<apex:outputPanel styleclass="requiredInput" layout="block">
+									<apex:outputPanel styleClass="requiredBlock" layout="block"/>
+									<apex:inputField id="NewcampaignMarket" value="{!Newcampaign.Market__c}"/>
+									</apex:outputPanel>
+									</apex:pageblockSectionItem>
+								</td>
+							</tr>
+
+							<tr>
+								<td>
+									<apex:pageblockSectionItem id="p2">
+									<apex:outputLabel value="Campaign Type" for="NewcampaignType"/>
+									<apex:outputPanel styleclass="requiredInput" layout="block">
+									<apex:outputPanel styleClass="requiredBlock" layout="block"/>
+									<apex:inputField id="NewcampaignType" value="{!Newcampaign.Type}" />
+									</apex:outputPanel>
+									</apex:pageblockSectionItem>
+
+								</td>
+							</tr>
+
+							<tr>
+								<td>
+									<apex:pageblockSectionItem id="p3" >
+									<apex:outputLabel value="Campaign Status" for="NewcampaignStatus"/>
+									<apex:outputPanel styleclass="requiredInput" layout="block">
+									<apex:outputPanel styleClass="requiredBlock" layout="block"/>
+									<apex:inputField id="NewcampaignStatus" value="{!Newcampaign.Status}"/>
+									</apex:outputPanel>
+									</apex:pageblockSectionItem>
+								</td>
+							</tr>
+
+							<tr>
+								<td>
+									<apex:pageblockSectionItem id="p4">
+									<apex:outputLabel value="Start Date" for="NewcampaignStartDate"/>
+									<apex:outputPanel styleclass="requiredInput" layout="block">
+									<apex:outputPanel styleClass="requiredBlock" layout="block"/>
+									<apex:inputField id="NewcampaignStartDate" value="{!Newcampaign.StartDate}"/>
+									</apex:outputPanel>
+									</apex:pageblockSectionItem>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<apex:pageblockSectionItem id="p5">
+									<apex:outputLabel value="End Date" for="NewcampaignEndDate"/>
+									<apex:outputPanel styleclass="requiredInput" layout="block">
+									<apex:outputPanel styleClass="requiredBlock" layout="block"/>
+									<apex:inputField id="NewcampaignEndDate" value="{!Newcampaign.EndDate}"/>
+									</apex:outputPanel>
+									</apex:pageblockSectionItem>
+								</td>
+							</tr>
+
+							<tr>
+								<td>
+									<apex:pageblockSectionItem id="p6">
+									<apex:outputLabel value="Active" for="NewcampaignActive"/>
+									<apex:outputPanel styleclass="requiredInput" layout="block">
+									<apex:outputPanel styleClass="requiredBlock" layout="block"/>
+									<apex:inputField id="NewcampaignActive" value="{!Newcampaign.isActive}"/>
+									</apex:outputPanel>
+									</apex:pageblockSectionItem>
+								</td>
+							</tr>
+						</table>
+					 </td>
+				  </tr>
+				</table>
+			<script>
+			toggleCampaignSection(document.getElementById('check:myForm:pageblock:pageblocksection:generateCampaignCheckBox').checked);
+			</script>
+     </apex:pageBlockSection>
+     <!--  =================================== BUTTONS ============================================= -->
+      <apex:pageBlockButtons >
+        <apex:commandButton value="Cancel" action="{!cancelRequest}" id="can" onclick="toggleCampaignSection(false);"/>
+        <apex:commandButton value="Next"  action="{!submitNotificationTopicPage}" id="abcd" onclick="return validateForm2();"/>
+        <input type="button" onclick="selectAllServicesPortals();" value="Select All Services Portals" class="btn"/>
+      </apex:pageBlockButtons>
+    </apex:pageBlock>
+   </apex:form>
+</apex:page>

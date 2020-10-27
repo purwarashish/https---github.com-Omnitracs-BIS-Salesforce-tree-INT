@@ -1,0 +1,144 @@
+<apex:page cache="true" sidebar="false" showHeader="false" controller="ArticleModeler">
+
+    <apex:include pageName="cssandjs"/>
+    <apex:include pageName="supportGoogleAnalytics"/>
+    <apex:stylesheet value="{!URLFor($Resource.QESUnityCSSAndJS, 'Html/css/mainstyle.css')}" />
+    <apex:stylesheet value="{!URLFor($Resource.QESUnityCSSAndJS, 'Html/css/customer.css')}"  />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <style>
+        .versioningPanel {
+            display:none !important;
+        }
+        ul, li, img, span, p, input, textarea, h1, h2, h3, h4, h5, h6, a {
+            list-style-type: inherit;
+        }        
+    </style>
+            
+    <!--apex:include id="mainpage" pageName="mainPage" /-->
+    <div id="bodyWrapper">
+        <div class="breadcumWrp">
+              <h1 style="display: normal">Known Issue</h1>
+              <hr width="910px" align="center" style="height:1px;border:1px;color:#dadce0;background-color:#dadce0;" />
+         </div>
+            <div id="middle-container">
+                <apex:iframe height="28px" src="/apex/supportArticleTBIframe?id={!$CurrentPage.parameters.id}"/>
+                <div class="recentCasesBoxTopMargin">
+                    <div class="articleTxtArea clr">
+                        <h4 class="articleTitle fll">{!kiArticle.Title}</h4>
+
+                    </div>
+                </div>
+
+                
+                <div id="articleDecription" class="articleTxt sfdc_richtext">
+                    <apex:outputText escape="false" value="{!description}" />   
+                    <apex:outputText rendered="false"> {!kiArticle.UrlName}></apex:outputText>
+
+                </div>   
+                
+                 <!-- /*Change for  CR 00083883*/ -->
+                <div class="clr">
+                <apex:form >                
+                                <apex:outputPanel rendered="{!IF (ISPICKVAL($User.UserType, 'Standard'), True, False)}">
+                                    <p>
+                                        <b>Internal Use Only: </b>
+                                        <apex:inputCheckbox value="{!IsInternalUseOnly}" disabled="true"/>
+                                    </p>
+                                </apex:outputPanel>
+                </apex:form>
+                </div>             
+
+
+                <apex:variable var="attachment1Present" value="{!kiArticle.Attachment_1__Name__s != null}"/>
+                <apex:variable var="attachment2Present" value="{!kiArticle.Attachment_2__Name__s != null}"/>
+                <apex:variable var="attachment3Present" value="{!kiArticle.Attachment_3__Name__s != null}"/>
+                <apex:variable var="attachment4Present" value="{!kiArticle.Attachment_4__Name__s != null}"/>
+
+                <apex:variable var="attachmentPresent" value="{!kiArticle.Attachment_1__Name__s != null
+                                                                || kiArticle.Attachment_2__Name__s != null
+                                                                || kiArticle.Attachment_3__Name__s != null
+                                                                || kiArticle.Attachment_4__Name__s != null}"/>
+
+
+                <div style="{!if(attachmentPresent, 'display:normal', 'display:none')};" class="fileAttachmentArea">
+                    <h4 class="articleAttachment">Attachments</h4>
+                    <ul class="attachList">
+                        <li style="{!if(attachment1Present, 'display:normal', 'display:none')};">
+                            <apex:outputLink value="{!URLFOR($Action.Known_Issue__kav.FileFieldDownload,
+                                                        kiArticle.id,
+                                                        ['field'=$ObjectType.Known_Issue__kav.fields.Attachment_1__Body__s.name])}"
+                                                        rendered="{!kiArticle.Attachment_1__Name__s!=''}">
+                                <span>{!kiArticle.Attachment_1__Name__s}</span>
+                            </apex:outputLink>
+
+                            <span>
+                                {!kiArticle.Attachment_1__ContentType__s}
+                                <span></span>
+                            </span>
+                        </li>
+
+                        <li style="{!if(attachment2Present, 'display:normal', 'display:none')};">
+                            <apex:outputLink value="{!URLFOR($Action.Known_Issue__kav.FileFieldDownload,
+                                                        kiArticle.id,
+                                                        ['field'=$ObjectType.Known_Issue__kav.fields.Attachment_2__Body__s.name])}"
+                                                        rendered="{!kiArticle.Attachment_2__Name__s!=''}">
+                                <span>{!kiArticle.Attachment_2__Name__s}</span>
+                            </apex:outputLink>
+
+                            <span>
+                                {!kiArticle.Attachment_2__ContentType__s}
+                                <span></span>
+                            </span>
+                        </li>
+
+                        <li style="{!if(attachment3Present, 'display:normal', 'display:none')};">
+                            <apex:outputLink value="{!URLFOR($Action.Known_Issue__kav.FileFieldDownload,
+                                                        kiArticle.id,
+                                                        ['field'=$ObjectType.Known_Issue__kav.fields.Attachment_3__Body__s.name])}"
+                                                        rendered="{!kiArticle.Attachment_3__Name__s!=''}">
+                                <span>{!kiArticle.Attachment_3__Name__s}</span>
+                            </apex:outputLink>
+
+                            <span>
+                                {!kiArticle.Attachment_3__ContentType__s}
+                                <span></span>
+                            </span>
+                        </li>
+
+                        <li style="{!if(attachment4Present, 'display:normal', 'display:none')};">
+                            <apex:outputLink value="{!URLFOR($Action.Known_Issue__kav.FileFieldDownload,
+                                                        kiArticle.id,
+                                                        ['field'=$ObjectType.Known_Issue__kav.fields.Attachment_4__Body__s.name])}"
+                                                        rendered="{!kiArticle.Attachment_4__Name__s!=''}">
+                                <span>{!kiArticle.Attachment_4__Name__s}</span>
+                            </apex:outputLink>
+
+                            <span>
+                                {!kiArticle.Attachment_4__ContentType__s}
+                                <span></span>
+                            </span>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <apex:outputText rendered="{!caseCreationAllowed}">
+                    <div class="clr supportToolTopMargin flr" style="width:735px">
+                        <apex:form rendered="{!$CurrentPage.parameters.display}">
+                             <apex:commandLink value="Create a Case" styleclass="buttonSet newButton6 flr" action="/apex/supportcasesubmit?retURL=/apex/supportArticleKnown_Issue&type=Known_Issue&id={!$CurrentPage.parameters.id}"  />
+                            <!-- apex:commandButton value="Create a Case" styleclass="buttonSet newButton6 flr" action="/apex/supportcasesubmit" /-->
+                            <label class="submitACasePrecedingText">If this doesn’t answer your question, <a style="text-decoration:underline" href="/apex/supportanswers">search again</a> or create a case</label>
+                            <!--apex:commandLink action="{!menuHeaderRedirectTo}" value="" styleClass="hiddencmdlink"/-->
+                        </apex:form>
+                    </div>
+                </apex:outputText>
+                <div class="clr"></div>
+            </div>
+            <!--apex:include pageName="UnityFooter"/-->
+    </div>
+    
+<script>    
+     var pagename="supportarticleKnown_Issue";    
+</script>
+    
+</apex:page>

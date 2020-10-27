@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lock_Quote_Product_for_approved_Quotes</fullName>
+    <active>true</active>
+    <description>Quote product cannot be edited if parent Quote approval status is &apos;Approved&apos;</description>
+    <errorConditionFormula>IF(($Profile.Id==&apos;00e50000000p9Wk&apos; || $Profile.Id==&apos;00e50000000olrf&apos; || $Profile.Id==&apos;00e50000000oerO&apos; || 
+$Profile.Id==&apos;00e50000000oum8&apos; || 
+$Profile.Id==&apos;00e50000000p9Md&apos; || 
+$Profile.Id==&apos;00e500000018kiu&apos; || 
+$Profile.Id==&apos;00e50000000p0CZ&apos; ||
+$Profile.Id==&apos;00e500000018kiz&apos;) &amp;&amp; (ISCHANGED(Sum_of_Shipment_Quantity__c) || ISCHANGED(Number_of_Open_Shipments__c) || ISCHANGED(Number_of_Shipment_Forecasts__c) || ISCHANGED(First_Shipped_Date__c)), 
+false, 
+(ISPICKVAL(Quote__r.Approval_Status__c,&apos;Approved&apos;)&amp;&amp; $Profile.Id != &apos;00e50000000mzNu&apos; &amp;&amp; $Profile.Id != &apos;00e50000000owzT&apos; &amp;&amp; $Profile.Id != &apos;00e50000001FiHZ&apos;&amp;&amp; $Profile.Id != &apos;00e50000000p9Wk&apos; &amp;&amp; $Profile.Id != &apos;00e50000000p0CZ&apos;) 
+)</errorConditionFormula>
+    <errorDisplayField>Dollar_Per_Load__c</errorDisplayField>
+    <errorMessage>Quote Product cannot be edited if parent Quote is Approved</errorMessage>
+</ValidationRule>

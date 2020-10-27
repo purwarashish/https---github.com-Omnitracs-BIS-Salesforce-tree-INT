@@ -1,0 +1,48 @@
+<apex:page >
+
+<!-- <apex:page showHeader="true" standardController="User_Story__c" >
+    <apex:pageBlock title="User Stories">
+        <apex:pageBlockTable value="{!User_Story__c}" var="item">
+            <apex:column value="{!item.name}"/> 
+            <apex:column value="{!item.I_Am_A__c}"/>
+        </apex:pageBlockTable> 
+    </apex:pageBlock> 
+
+-->
+
+
+</apex:page>
+
+ <!--
+<apex:page showHeader="true" tabstyle="User_Story__c">
+    <apex:ListViews type="User_Story__c" />
+-->
+ 
+
+  <!-- Begin Default Content REMOVE THIS 
+  <h1>User Stories</h1>
+
+  <ul>User Stories capture initial, high-level objectives and outcomes that are desired. </ul>
+  <ul>User Stories captures what a user does or needs to do as part of his or her job function. </ul>
+  <ul>User Stories captures the 'who', 'what' and 'why' of a requirement in a simple, concise way. </ul>
+  <ul>User Stories serve as the foundation from which all requirements will be built off of.</ul>
+-->
+
+<!--    <apex:ListViews type="User_Story__c" /> -->
+  
+  <!-- End Default Content REMOVE THIS -->
+
+<!--
+<apex:page standardController="User_Story__c">
+    <apex:form>
+        <apex:pageBlock title="User Story" mode="edit">
+            <apex:pageBlockButtons>
+                <apex:commandButton action="{!save}" value="Save"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="User Story" columns="2">
+                <apex:inputField value="{!User_Story__c.name}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+
+    </apex:form>
+</apex:page> -->

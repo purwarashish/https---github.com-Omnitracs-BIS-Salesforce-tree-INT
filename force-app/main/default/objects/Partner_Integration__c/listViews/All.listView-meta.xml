@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>Integration_Partner_Account__c</columns>
+    <columns>Product_List__c</columns>
+    <columns>Certified_Units__c</columns>
+    <columns>Partner_Version_Req__c</columns>
+    <columns>Other_Req__c</columns>
+    <columns>Comments__c</columns>
+    <columns>Tech_Brief__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>QESTechnicalServices</group>
+        <group>SystemAdministrator</group>
+    </sharedTo>
+</ListView>

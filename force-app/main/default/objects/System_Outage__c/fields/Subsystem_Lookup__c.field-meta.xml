@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Subsystem_Lookup__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Lookup to Master. This will be mapped to subsystem picklist on the page</description>
+    <externalId>false</externalId>
+    <label>Subsystem</label>
+    <referenceTo>System_Master__c</referenceTo>
+    <relationshipLabel>System Outages (Subsystem)</relationshipLabel>
+    <relationshipName>System_Outages1</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

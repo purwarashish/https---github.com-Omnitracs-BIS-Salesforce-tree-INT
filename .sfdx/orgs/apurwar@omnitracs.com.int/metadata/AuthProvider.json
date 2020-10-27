@@ -1,0 +1,15 @@
+{
+  "status": 0,
+  "result": {
+    "createdById": "0053F000006SgquQAC",
+    "createdByName": "Ashish Purwar",
+    "createdDate": "2020-08-06T16:06:47.000Z",
+    "fileName": "authproviders/SF_UAT.authprovider",
+    "fullName": "SF_UAT",
+    "id": "0SO3F00000006AFWAY",
+    "lastModifiedById": "0053F000006SgquQAC",
+    "lastModifiedByName": "Ashish Purwar",
+    "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+    "type": "AuthProvider"
+  }
+}

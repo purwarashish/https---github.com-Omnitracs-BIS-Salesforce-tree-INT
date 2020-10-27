@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Plan_Request</fullName>
+    <active>true</active>
+    <description>Used to request discount on service plans</description>
+    <label>Plan Request</label>
+    <picklistValues>
+        <picklist>Application__c</picklist>
+        <values>
+            <fullName>ALK CoPilot Truck</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Automated Arrival and Departure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CER Add-on - Forward Collision Warning and Follow Time Violation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CER Add-on - Stability Control and Lane Departure Warning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Critical Event Reporting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driver Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driver Games</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fault Monitoring %28prev%2E VM%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In-Cab Scanning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In-Cab Video Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maptuit NaviGo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobile Computing Platform Screen Lock</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NaviGo Compliance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NaviGo Fuel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NaviGo Hazmat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Odometer Positions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open Wi-Fi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Performance Monitoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualcomm Mobility Services for Handheld</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>State Miles Counter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tethered Trailer Tracking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tire Pressure Monitoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trailer Tire Inflation Alerts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trip Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle Diagnostics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web Browser</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Fleet_Size__c</picklist>
+        <values>
+            <fullName>1-50</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1001-2500</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2501-5000</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5001%2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>51-1000</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Justification__c</picklist>
+        <values>
+            <fullName>Competitive Threat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet Size</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>PlanRequest__c</picklist>
+        <values>
+            <fullName>test</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Platform__c</picklist>
+        <values>
+            <fullName>IVG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP110</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP200</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP50</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ServiceHardwareType__c</picklist>
+        <values>
+            <fullName>All</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>MCP50</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

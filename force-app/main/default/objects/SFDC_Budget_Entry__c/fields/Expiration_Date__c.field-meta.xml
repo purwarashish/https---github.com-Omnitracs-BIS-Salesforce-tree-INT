@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expiration_Date__c</fullName>
+    <defaultValue>if( $RecordType.Id = &apos;012300000001reU&apos;, TODAY() + 180, null)</defaultValue>
+    <description>Used to track when funds added to a budget expire and are no longer considered part of the available budget</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Set a date in the future for when funds added to the budget expire, and are no longer part of the available budget</inlineHelpText>
+    <label>Expiration Date</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Update_Customer_Asset_Hidden__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Update Customer Asset (Hidden), to be used to trigger the Process Builder Flow to update the Financial Fields</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Update Customer Asset (Hidden), to be used to trigger the Process Builder Flow to update the Financial Fields</inlineHelpText>
+    <label>Update Customer Asset (Hidden)</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

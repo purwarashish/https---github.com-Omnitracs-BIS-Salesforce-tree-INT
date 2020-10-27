@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCategoryGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <dataCategory>
+        <dataCategory>
+            <label>NMC</label>
+            <name>NMC</name>
+        </dataCategory>
+        <dataCategory>
+            <label>QDC</label>
+            <name>QDC</name>
+        </dataCategory>
+        <dataCategory>
+            <label>LDC.C</label>
+            <name>LDC_C</name>
+        </dataCategory>
+        <dataCategory>
+            <label>LDC.T</label>
+            <name>LDC_T</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Fido</label>
+            <name>Fido</name>
+        </dataCategory>
+        <dataCategory>
+            <label>nPhase</label>
+            <name>nPhase</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Provisioning Hub</label>
+            <name>Provisioning_Hub</name>
+        </dataCategory>
+        <dataCategory>
+            <label>GRSM</label>
+            <name>GRSM</name>
+        </dataCategory>
+        <dataCategory>
+            <label>GPRS</label>
+            <name>GPRS</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Carrier</label>
+            <name>Carrier</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Mongoose</label>
+            <name>Mongoose</name>
+        </dataCategory>
+        <label>All</label>
+        <name>All</name>
+    </dataCategory>
+    <label>Network System</label>
+    <objectUsage>
+        <object>KnowledgeArticleVersion</object>
+    </objectUsage>
+</DataCategoryGroup>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_cannot_be_changed</fullName>
+    <active>true</active>
+    <description>Status cannot be changed once it reaches &quot;In Negotiation&quot; stage</description>
+    <errorConditionFormula>AND( 
+TEXT(PRIORVALUE( SAA_Status__c ) )=&apos;In Negotiation&apos;,
+NOT(CONTAINS(TEXT( SAA_Status__c ),&apos;In Negotiation&apos;))
+
+)</errorConditionFormula>
+    <errorDisplayField>SAA_Status__c</errorDisplayField>
+    <errorMessage>Status cannot be changed once it reaches &quot;In Negotiation&quot; stage</errorMessage>
+</ValidationRule>

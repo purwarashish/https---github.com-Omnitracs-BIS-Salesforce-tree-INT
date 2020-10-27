@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_the_Big_Day_16_hour_exception_used__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Is the &quot;Big Day&quot; 16-hour exception used?</description>
+    <externalId>false</externalId>
+    <label>Is the &quot;Big Day&quot; 16-hour exception used?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

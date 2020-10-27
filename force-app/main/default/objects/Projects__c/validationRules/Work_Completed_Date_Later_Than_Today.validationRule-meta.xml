@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Work_Completed_Date_Later_Than_Today</fullName>
+    <active>true</active>
+    <description>The Work Completed Date cannot be later than today.</description>
+    <errorConditionFormula>Work_Completed_Date__c  &gt; TODAY()</errorConditionFormula>
+    <errorDisplayField>Work_Completed_Date__c</errorDisplayField>
+    <errorMessage>The Work Completed Date cannot be later than today.</errorMessage>
+</ValidationRule>

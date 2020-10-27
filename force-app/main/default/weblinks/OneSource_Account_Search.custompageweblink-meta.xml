@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPageWebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <availability>online</availability>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>OneSource Account Search</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>https://api.onesource.com/SForce/AcctLookup.aspx?Company=&amp;AcctID=0015000000Gx43m&amp;OSKeyID=&amp;SFSessionID={!$Api.Session_ID}&amp;ServerURL=https://na3.salesforce.com/services/Soap/u/6.0/470700D3F000000AFMi&amp;SForgID=00D3F000000AFMi&amp;SFUserID=00550000000vfOc&amp;IsPostBack=false&amp;Country=&amp;Y=0&amp;StateOrProvince=&amp;S=0&amp;City=&amp;C=0&amp;PostalCode=&amp;P=0&amp;SearchCompany=&amp;loaded=true</url>
+</CustomPageWebLink>

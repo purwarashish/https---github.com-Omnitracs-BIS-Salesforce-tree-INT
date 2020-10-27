@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Missing_Product_Information</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+Active_Alert__c = FALSE,
+Fleet_Loader__c = FALSE,
+Mobilecast__c = FALSE,
+Mobilecast_Phone__c = FALSE,
+Roadnet__c = FALSE,
+Roadnet_Performance_Dashboard__c = FALSE,
+Scheduler__c = FALSE,
+Territory_Planner__c = FALSE)</errorConditionFormula>
+    <errorMessage>You must identify the Customer&apos;s product usage. Please indicate which RTS Products the customer is currently using in the RTS Products Used Section.</errorMessage>
+</ValidationRule>

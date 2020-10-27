@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Parent_Check_For_Subsystems</fullName>
+    <active>true</active>
+    <description>Validation to ensure each subsystem at level 1 and below have a parent</description>
+    <errorConditionFormula>AND 
+( ISBlank(Parent__c ), 
+OR ( 
+ISPICKVAL( Level__c, &quot;Level - 1&quot;), 
+ISPICKVAL( Level__c, &quot;Level - 2&quot;), 
+ISPICKVAL( Level__c, &quot;Level - 3&quot;)) 
+)</errorConditionFormula>
+    <errorDisplayField>Level__c</errorDisplayField>
+    <errorMessage>Parent is required for systems at level 1, 2 and 3</errorMessage>
+</ValidationRule>

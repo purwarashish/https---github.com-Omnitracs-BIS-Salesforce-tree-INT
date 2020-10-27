@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Alert_when_SpeedGauge_Opportunity_is_Closed_Won</fullName>
+        <ccEmails>csn-admin@omnitracs.com,</ccEmails>
+        <ccEmails>omni.billing.team@omnitracs.com,</ccEmails>
+        <ccEmails>xrsbilling@omnitracs.com</ccEmails>
+        <description>Alert when SpeedGauge Opportunity is Closed Won</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/Speedgauge_Opportunity_Closed_Won</template>
+    </alerts>
+    <alerts>
+        <fullName>CAD_VLV_Setup_Is_Required2</fullName>
+        <ccEmails>ckeeling@omnitracs.com</ccEmails>
+        <description>CAD VLV Setup Is Required2</description>
+        <protected>false</protected>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Automated_Messages/CAD_VLV_Setup_Is_Required</template>
+    </alerts>
+    <alerts>
+        <fullName>Expired_Opportunity_Line_1st_notice</fullName>
+        <description>Expired Opportunity Line - 1st notice</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Opportunity_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/ExpiredOpportunityLineAlert1stMsg</template>
+    </alerts>
+    <alerts>
+        <fullName>Expired_Opportunity_Line_2nd_notice</fullName>
+        <description>Expired Opportunity Line - 2nd notice</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Account Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Manager APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside CSR</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside CSR APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside Sales Rep</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside Sales Rep APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <field>Opportunity_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/ExpiredOpportunityLineAlert2ndMsg</template>
+    </alerts>
+    <alerts>
+        <fullName>Expired_Opportunity_Line_2nd_notice_partner</fullName>
+        <description>Expired Opportunity Line - 2nd notice (partner)</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Opportunity_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/ExpiredOpportunityLineAlert2ndMsg</template>
+    </alerts>
+    <alerts>
+        <fullName>Professional_Services_Alert_when_Opportunity_contains_Professional_Services</fullName>
+        <ccEmails>services-scope-request@omnitracs.com</ccEmails>
+        <description>Professional Services Alert when Opportunity contains Professional Services</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Opportunity Owner</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Professional_Services/Opportunity_contains_Professional_Services</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>ARR_Override_Stamp</fullName>
+        <field>ARR_Override__c</field>
+        <formula>SBQQ__QuoteLine__r.Final_Unit_Price__c* Quantity</formula>
+        <name>ARR Override Stamp</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CAD_VLV_Quoted_True</fullName>
+        <description>CAD VLV Quoted = True</description>
+        <field>CAD_VLV_Quoted__c</field>
+        <literalValue>1</literalValue>
+        <name>CAD VLV Quoted = True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <targetObject>OpportunityId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Legacy_Product_Stamp</fullName>
+        <description>Updates Legacy Product Stamp field</description>
+        <field>Legacy_Product_Stamp__c</field>
+        <literalValue>1</literalValue>
+        <name>Legacy Product Stamp</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Net_Final_Unit_Price_Calculation</fullName>
+        <field>Net_Final_Unit_Price__c</field>
+        <formula>Quantity*Final_Unit_Price__c</formula>
+        <name>Net Final Unit Price Calculation</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Net_Unit_Price_Calculation</fullName>
+        <field>Net_Unit_Price__c</field>
+        <formula>Quantity*Unit_Price__c</formula>
+        <name>Net Unit Price Calculation</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>OmnitracsOne_Product_Stamp</fullName>
+        <description>OmnitracsOne Product Stamp update</description>
+        <field>OmnitracsOne_Product_Stamp__c</field>
+        <literalValue>1</literalValue>
+        <name>OmnitracsOne Product Stamp</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RDC_MTA_Quoted_TRUE</fullName>
+        <field>RDC_MTA_Quoted__c</field>
+        <literalValue>1</literalValue>
+        <name>RDC MTA Quoted = TRUE</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <targetObject>OpportunityId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Standard_Cost</fullName>
+        <description>Copies the Product2.Standard_Cost_new__c field over to the Opportunity Product Standard_Cost_new__c field</description>
+        <field>Standard_Cost_new__c</field>
+        <formula>Product2.Standard_Cost_new__c</formula>
+        <name>Set Standard Cost</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Opportunity_product</fullName>
+        <description>Update the opportunity product name field</description>
+        <field>Product_name__c</field>
+        <literalValue>XRS</literalValue>
+        <name>Update Opportunity product</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <targetObject>OpportunityId</targetObject>
+    </fieldUpdates>
+    <rules>
+        <fullName>ARR Override for RN Maint%2E</fullName>
+        <actions>
+            <name>ARR_Override_Stamp</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6</booleanFilter>
+        <criteriaItems>
+            <field>OpportunityLineItem.Business_Unit__c</field>
+            <operation>equals</operation>
+            <value>Roadnet</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>OpportunityLineItem.Product_Type__c</field>
+            <operation>equals</operation>
+            <value>Maintenance</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>OpportunityLineItem.Product_Sub_Type__c</field>
+            <operation>equals</operation>
+            <value>Maintenance</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>OpportunityLineItem.License_Type__c</field>
+            <operation>equals</operation>
+            <value>Perpetual</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>OpportunityLineItem.Quote_Line_Type__c</field>
+            <operation>equals</operation>
+            <value>Decommission</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>notEqual</operation>
+            <value>Closed Won,Closed Lost</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Check for CAD VLV</fullName>
+        <actions>
+            <name>CAD_VLV_Quoted_True</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Check for CAD VLV</description>
+        <formula>Product2.Product_Id__c = &apos;01t500000053RtP&apos;  &amp;&amp; 
+Quote_Line_Type__c = &apos;New&apos;</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Check for RDC MTA</fullName>
+        <actions>
+            <name>RDC_MTA_Quoted_TRUE</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>Product2.Product_Id__c = &apos;01t50000002t0mN&apos; &amp;&amp; 
+Quote_Line_Type__c = &apos;New&apos;</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Expired Opportunity Product Line</fullName>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3</booleanFilter>
+        <criteriaItems>
+            <field>OpportunityLineItem.Shipped__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>Partner Opportunity (Reseller)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>notEqual</operation>
+            <value>Closed Lost,Closed/Lost</value>
+        </criteriaItems>
+        <description>Send alert when an opportunity is open and a line ship date has passed and the line has not been flagged as shipped. Do not send if Opp Stage is Closed/Lost.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Expired_Opportunity_Line_1st_notice</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>OpportunityLineItem.ServiceDate</offsetFromField>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Expired_Opportunity_Line_2nd_notice</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>OpportunityLineItem.ServiceDate</offsetFromField>
+            <timeLength>7</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Legacy Product Stamp</fullName>
+        <actions>
+            <name>Legacy_Product_Stamp</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>OpportunityLineItem.Legacy_Product__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Workflow updates the field Legacy Product stamp in opportunity product</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>OmnitracsOne Product Stamp</fullName>
+        <actions>
+            <name>OmnitracsOne_Product_Stamp</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>OpportunityLineItem.OmnitracsOne_Product__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Owner: Sales Ops
+Description: Stamps the Omnitracs One Product checkbox</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opportunity%3A Change Product Name</fullName>
+        <actions>
+            <name>Update_Opportunity_product</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>&quot;Products, Services and Maintenance&quot;,Eval,Renewal Only,Partner Opportunity (Reseller)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Business_Unit__c</field>
+            <operation>equals</operation>
+            <value>XRS Corporation,Inactive - XRS</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Product_name__c</field>
+            <operation>notEqual</operation>
+            <value>XRS</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>OpportunityLineItem.Business_Unit__c</field>
+            <operation>equals</operation>
+            <value>XRS Corporation</value>
+        </criteriaItems>
+        <description>Opportunity: Change Product Name</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Opp Product Financial Values</fullName>
+        <actions>
+            <name>Net_Final_Unit_Price_Calculation</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Net_Unit_Price_Calculation</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Set_Standard_Cost</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Sets values on the Opportunity Product</description>
+        <formula>1=1</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>SpeedGauge opp Closed Won</fullName>
+        <actions>
+            <name>Alert_when_SpeedGauge_Opportunity_is_Closed_Won</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Order_Type__c</field>
+            <operation>equals</operation>
+            <value>New,Decommission</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>OpportunityLineItem.ProductCode</field>
+            <operation>equals</operation>
+            <value>XRS-SDM,XRS-SDM-ME,C-3030424,C-3030425,C-3130424,C-3130425,C-3230424,C-3230425,C-3330424,C-3330425,C-3430424,C-3430425,C-3530424,C-3530425</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <description>Workflow is executed when the Speed Gauge opportunity becomes closed won</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

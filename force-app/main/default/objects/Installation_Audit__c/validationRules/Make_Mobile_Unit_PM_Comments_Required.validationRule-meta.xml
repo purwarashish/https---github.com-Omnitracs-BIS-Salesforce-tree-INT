@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Make_Mobile_Unit_PM_Comments_Required</fullName>
+    <active>true</active>
+    <description>Make Mobile Unit PM Comments required if Mobile Unit PM is No.</description>
+    <errorConditionFormula>AND( 
+ISBLANK( Mobile_Unit_PM_Comments__c ), 
+ISPICKVAL( Mobile_Unit_PM__c , &quot;No&quot;) 
+)</errorConditionFormula>
+    <errorDisplayField>Mobile_Unit_PM_Comments__c</errorDisplayField>
+    <errorMessage>Mobile Unit PM Comments is required if Mobile Unit PM is &quot;No&quot;</errorMessage>
+</ValidationRule>

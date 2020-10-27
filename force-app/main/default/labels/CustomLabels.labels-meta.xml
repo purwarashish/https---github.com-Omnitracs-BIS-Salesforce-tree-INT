@@ -1,0 +1,901 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>AES256EncryptionKey</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AES256EncryptionKey</shortDescription>
+        <value>WDUzenNFa0w1a0hmaC8zcmVYY0hrND0=</value>
+    </labels>
+    <labels>
+        <fullName>AUX_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AUX_ID</shortDescription>
+        <value>Aux ID</value>
+    </labels>
+    <labels>
+        <fullName>AccountScoringHistoryReportID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountScoringHistoryReportID</shortDescription>
+        <value>00O500000059Ghw</value>
+    </labels>
+    <labels>
+        <fullName>Account_Int_Partner_RecType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Account_Int_Partner_RecType</shortDescription>
+        <value>01250000000DT0o</value>
+    </labels>
+    <labels>
+        <fullName>Account_Other_RecType</fullName>
+        <categories>Record Type Id</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Account_Other_RecType</shortDescription>
+        <value>01250000000DTCp</value>
+    </labels>
+    <labels>
+        <fullName>Account_Record_Type_Partner_Referral</fullName>
+        <categories>Account Record Type</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Account Record Type Partner Referral</shortDescription>
+        <value>Partner Referral</value>
+    </labels>
+    <labels>
+        <fullName>Action_Header_on_Custom_Related_List</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Action_Header_on_Custom_Related_List</shortDescription>
+        <value>Action</value>
+    </labels>
+    <labels>
+        <fullName>Activate_Summation_of_Open_Activity</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Activate Summation of Open Activity</shortDescription>
+        <value>true</value>
+    </labels>
+    <labels>
+        <fullName>Advance_Opportunity_Stage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Advance Opportunity Stage</shortDescription>
+        <value>Advance Opportunity Stage</value>
+    </labels>
+    <labels>
+        <fullName>Advancement_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Advancement Error</shortDescription>
+        <value>You must complete all advancement criteria before you can move to the next stage.</value>
+    </labels>
+    <labels>
+        <fullName>Agreement_Owner_Profile</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity Owner Profile</shortDescription>
+        <value>00e500000018kizAAA</value>
+    </labels>
+    <labels>
+        <fullName>Agreement_Record_Type</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Agreement Record Type</shortDescription>
+        <value>01250000000E5Rf</value>
+    </labels>
+    <labels>
+        <fullName>All_Discount_Record_type</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>All Discount Record type</shortDescription>
+        <value>01250000000QmNi</value>
+    </labels>
+    <labels>
+        <fullName>CALL_CENTER_RECORDTYPEID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CALL CENTER RECORDTYPEID</shortDescription>
+        <value>01250000000DT5t</value>
+    </labels>
+    <labels>
+        <fullName>COMPANY_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPANY_ID</shortDescription>
+        <value>Company ID</value>
+    </labels>
+    <labels>
+        <fullName>CPInviteURL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CPInviteURL</shortDescription>
+        <value>https://customer.int.omnitracs.com/portal/pages/provisioning/inviteCustomer.jsp</value>
+    </labels>
+    <labels>
+        <fullName>CPURL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CPURL</shortDescription>
+        <value>int.omnitracs.com/</value>
+    </labels>
+    <labels>
+        <fullName>CUSTOM_SEARCH</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CUSTOM_SEARCH</shortDescription>
+        <value>Custom Search</value>
+    </labels>
+    <labels>
+        <fullName>CUST_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CUST_ID</shortDescription>
+        <value>Cust ID</value>
+    </labels>
+    <labels>
+        <fullName>Case_Create_Notify_Contact_Template_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case Create Notify Contact Template Id</shortDescription>
+        <value>00X50000001MkOz</value>
+    </labels>
+    <labels>
+        <fullName>Case_Request</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case Request</shortDescription>
+        <value>01250000000Qz8C</value>
+    </labels>
+    <labels>
+        <fullName>ConnectionAccountId</fullName>
+        <categories>Qualcomm Consumer Services (QCS)</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ConnectionAccountId</shortDescription>
+        <value>0015000000aF1bNAAS</value>
+    </labels>
+    <labels>
+        <fullName>Contact_Duplicate_Email_Grp</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contact Duplicate Email Grp</shortDescription>
+        <value>Duplicate Contact Email Admins</value>
+    </labels>
+    <labels>
+        <fullName>Contact_Record_Type_Partner</fullName>
+        <categories>Record Type Id</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contact Record Type - Partner</shortDescription>
+        <value>01250000000QjBI</value>
+    </labels>
+    <labels>
+        <fullName>Contact_Record_Type_Sales</fullName>
+        <categories>Record Type Id</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contact Record Type - Sales</shortDescription>
+        <value>01250000000DQCh</value>
+    </labels>
+    <labels>
+        <fullName>ContentUrl</fullName>
+        <categories>Unity</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ContentUrl</shortDescription>
+        <value>https://omnitracs--int.cs92.my.salesforce.com/apex/supportdocDetail?id=</value>
+    </labels>
+    <labels>
+        <fullName>Customer_Portal_Content_Users</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Customer Portal Content Users</shortDescription>
+        <value>00G50000001gwKNEAY</value>
+    </labels>
+    <labels>
+        <fullName>DiscountRequestRecTypeDevName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DiscountRequestRecTypeDevName</shortDescription>
+        <value>Pending_Discount_Request</value>
+    </labels>
+    <labels>
+        <fullName>Discount_Request_Notification_Template</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Discount Request Notification Template</shortDescription>
+        <value>Discount_Workflow_Reminder_notification_to_approver</value>
+    </labels>
+    <labels>
+        <fullName>Discount_Request_OrgWideId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Discount Request OrgWideId</shortDescription>
+        <value>omnitracs.sfdc.noreply@omnitracs.com</value>
+    </labels>
+    <labels>
+        <fullName>Email</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email address for PMO</shortDescription>
+        <value>https://qes--int.cs92.my.salesforce.com/</value>
+    </labels>
+    <labels>
+        <fullName>Email_Interface_ProfileId</fullName>
+        <categories>Id</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email Interface ProfileId</shortDescription>
+        <value>00e50000000onjp</value>
+    </labels>
+    <labels>
+        <fullName>Error_Creating_Leads_or_Tasks</fullName>
+        <categories>Mass edit error message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error Creating Leads or Tasks</shortDescription>
+        <value>Error: Occurred when creating tasks or updating leads. Please contact System Administrator.</value>
+    </labels>
+    <labels>
+        <fullName>Error_Creating_Opptys_or_Tasks</fullName>
+        <categories>Mass edit error message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error Creating Opptys or Tasks</shortDescription>
+        <value>Error: Occurred when creating tasks or updating opportunities. Please contact System Administrator.</value>
+    </labels>
+    <labels>
+        <fullName>Error_Email_Address</fullName>
+        <categories>Error Handling</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error Email Address</shortDescription>
+        <value>JWajer@roadnet.com</value>
+    </labels>
+    <labels>
+        <fullName>EscalateCase_FldLbl_CaseOwner</fullName>
+        <categories>Pages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EscalateCase_FldLbl_CaseOwner</shortDescription>
+        <value>Case Owner</value>
+    </labels>
+    <labels>
+        <fullName>EscalateCase_FldLbl_EscComments</fullName>
+        <categories>Pages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EscalateCase_FldLbl_EscComments</shortDescription>
+        <value>Escalation Comments</value>
+    </labels>
+    <labels>
+        <fullName>EscalateCase_FldLbl_EscTo</fullName>
+        <categories>Pages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EscalateCase_FldLbl_EscTo</shortDescription>
+        <value>Escalate To</value>
+    </labels>
+    <labels>
+        <fullName>EscalateCase_FldLbl_EscToUser</fullName>
+        <categories>Pages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EscalateCase_FldLbl_EscToUser</shortDescription>
+        <value>Escalate Case To</value>
+    </labels>
+    <labels>
+        <fullName>EscalateCase_SecHdr_CaseInfo</fullName>
+        <categories>Pages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EscalateCase_SecHdr_CaseInfo</shortDescription>
+        <value>Escalate Case</value>
+    </labels>
+    <labels>
+        <fullName>Existing_Key_Player</fullName>
+        <categories>Key Players/Influencers</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Existing Key Player</shortDescription>
+        <value>The Contact already exist as a Key Player/Influencer of the Opportunity. Please update existing record.</value>
+    </labels>
+    <labels>
+        <fullName>HARDWARE_VALUE</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HARDWARE_VALUE</shortDescription>
+        <value>Hardware/Systems</value>
+    </labels>
+    <labels>
+        <fullName>HUBADMIN_OWNER_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HUBADMIN OWNER ID</shortDescription>
+        <value>00G500000018rhx</value>
+    </labels>
+    <labels>
+        <fullName>HUB_RECORDTYPE_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HUB RECORDTYPE ID</shortDescription>
+        <value>01250000000DT5y</value>
+    </labels>
+    <labels>
+        <fullName>Hardware_Discount_Request_Limit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Hardware Discount Request Limit</shortDescription>
+        <value>1</value>
+    </labels>
+    <labels>
+        <fullName>IVG_image_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>IVG image ID</shortDescription>
+        <value>00P5000000a0H1x</value>
+    </labels>
+    <labels>
+        <fullName>Instance_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Instance URL</shortDescription>
+        <value>https://login.int.omnitracs.com</value>
+    </labels>
+    <labels>
+        <fullName>Lead_Mass_Edit_Title</fullName>
+        <categories>Mass edit labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Lead Mass Edit Title</shortDescription>
+        <value>Lead Mass Edit</value>
+    </labels>
+    <labels>
+        <fullName>Lead_Title_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Lead Title Name</shortDescription>
+        <value>Lead re-assignment</value>
+    </labels>
+    <labels>
+        <fullName>MCP110_image_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MCP110 image ID</shortDescription>
+        <value>00P50000008s8mR</value>
+    </labels>
+    <labels>
+        <fullName>MCP200_image_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MCP200 image ID</shortDescription>
+        <value>00P50000008s8tB</value>
+    </labels>
+    <labels>
+        <fullName>MCP50_image_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MCP50 image ID</shortDescription>
+        <value>00P50000008s8tV</value>
+    </labels>
+    <labels>
+        <fullName>Mass_Edit_Activity_Label</fullName>
+        <categories>Mass edit label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mass Edit Activity Label</shortDescription>
+        <value>Activity</value>
+    </labels>
+    <labels>
+        <fullName>Mass_Edit_Oppty_LineItem_Notification</fullName>
+        <categories>Mass edit notifications</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mass Edit Oppty LineItem Notification</shortDescription>
+        <value>Note: To edit the Opportunity Product Lines, click on the Opportunity Quantity link for each opportunity.Do not use this for mass changing opportunities to &quot;CLOSED LOST&quot;.</value>
+    </labels>
+    <labels>
+        <fullName>Mass_Edit_Return_Button</fullName>
+        <categories>Mass edit buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mass Edit Return Button</shortDescription>
+        <value>Return</value>
+    </labels>
+    <labels>
+        <fullName>Mass_Edit_Save_Button</fullName>
+        <categories>Mass edit buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mass Edit Save Button</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>Mass_Edit_Unsaved_Information_Lost</fullName>
+        <categories>Mass edit notifications</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mass Edit Unsaved Information Lost</shortDescription>
+        <value>Note: All modifications made on the page will be lost if Return button is clicked without clicking the Save button first.</value>
+    </labels>
+    <labels>
+        <fullName>NMC_ACCOUNT</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NMC_ACCOUNT</shortDescription>
+        <value>NMC Account #</value>
+    </labels>
+    <labels>
+        <fullName>NMC_SYSTEM_VALUE</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NMC_SYSTEM_VALUE</shortDescription>
+        <value>NMC System Value</value>
+    </labels>
+    <labels>
+        <fullName>Next_Button</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Next-OpportunityAdvanceStage</shortDescription>
+        <value>Next</value>
+    </labels>
+    <labels>
+        <fullName>No_Commited_Actions</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Commited Actions</shortDescription>
+        <value>There are currently no committed actions for this objective.</value>
+    </labels>
+    <labels>
+        <fullName>No_Objectives</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Objectives</shortDescription>
+        <value>There are no objectives or actions associated with this opportunity record type and/or order type.</value>
+    </labels>
+    <labels>
+        <fullName>OmniTRACS</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OmniTRACS</shortDescription>
+        <value>00P50000008s8tp</value>
+    </labels>
+    <labels>
+        <fullName>OmnitracsHouseAccountUser</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OmnitracsHouseAccountUserS2S</shortDescription>
+        <value>00550000006n9HwAAI</value>
+    </labels>
+    <labels>
+        <fullName>Omnitracs_Account_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Omnitracs Account Id</shortDescription>
+        <value>0015000000LGKdn</value>
+    </labels>
+    <labels>
+        <fullName>OpportunityStageAdvancement_NotReady</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity Stage Advancement - Not Ready</shortDescription>
+        <value>The advancement criteria for the {0} stage have not been met. Please complete these advancement criteria before attempting to move to the {1} stage.</value>
+    </labels>
+    <labels>
+        <fullName>OpportunityStageAdvancement_Ready</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity Stage Advancement - Ready</shortDescription>
+        <value>The advancement criteria for the {0} stage have been met. Please click &apos;Next&apos; to move to the {1} stage.</value>
+    </labels>
+    <labels>
+        <fullName>Opportunity_Line_Items</fullName>
+        <categories>Mass edit labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity Line Items</shortDescription>
+        <value>Opportunity Line Item(s)</value>
+    </labels>
+    <labels>
+        <fullName>Opportunity_Mass_Edit_Title</fullName>
+        <categories>Mass edit labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity Mass Edit Title</shortDescription>
+        <value>Opportunity Mass Edit</value>
+    </labels>
+    <labels>
+        <fullName>Opportunity_Product_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity Product Name</shortDescription>
+        <value>Dummy</value>
+    </labels>
+    <labels>
+        <fullName>Opportunity_Transportation_Logistic</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity Transportation &amp; Logistic</shortDescription>
+        <value>01250000000DT4M</value>
+    </labels>
+    <labels>
+        <fullName>OpptyLock_BlockedProfiles</fullName>
+        <categories>Profiles</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OpptyLock_BlockedProfiles</shortDescription>
+        <value>TL Regional Sales Profile,TL Regional Sales Profile - Outlook,TL Strategic Sales Profile,TL Sales Manager,TL Sales Manager - Outlook,Sales - Domestic AR,Sales - Domestic Sales Manager,Sales - Domestic SE,Sales/Marketing,CNR Sales Management Profile,CNR Sales Profile,TL Strategic Sales Profile - Outlook,CNR Sales Management Profile,FRA Sales/CS Profile,Sales - Domestic AR,Sales - Domestic Sales Manager,TL Regional Sales Profile - Outlook w Customer Health,Sylectus Sales User,Sales - Inside Quick,Sales - International Sales Manager</value>
+    </labels>
+    <labels>
+        <fullName>PKB_All_Article_Types</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Article types list</shortDescription>
+        <value>Article Types:</value>
+    </labels>
+    <labels>
+        <fullName>PKB_Language</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Language picklist label</shortDescription>
+        <value>Language</value>
+    </labels>
+    <labels>
+        <fullName>PKB_Last_Updated</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recently Updated articles list</shortDescription>
+        <value>Recently Updated</value>
+    </labels>
+    <labels>
+        <fullName>PKB_MostPopular</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Most Viewed articles list</shortDescription>
+        <value>Most Viewed</value>
+    </labels>
+    <labels>
+        <fullName>PKB_Next10</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Forward pagination</shortDescription>
+        <value>Next 10</value>
+    </labels>
+    <labels>
+        <fullName>PKB_No_Result</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No articles in the selected category</shortDescription>
+        <value>No articles</value>
+    </labels>
+    <labels>
+        <fullName>PKB_Previous10</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back pagination</shortDescription>
+        <value>Previous 10</value>
+    </labels>
+    <labels>
+        <fullName>PKB_Search_Button</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search Button</shortDescription>
+        <value>Search</value>
+    </labels>
+    <labels>
+        <fullName>PKB_Search_NoFilter</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No filter in category drop-down</shortDescription>
+        <value>-- No filter --</value>
+    </labels>
+    <labels>
+        <fullName>PKB_Search_No_Result</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No search result</shortDescription>
+        <value>No articles found containing</value>
+    </labels>
+    <labels>
+        <fullName>PKB_Search_Result</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Successful search result</shortDescription>
+        <value>Search Results for</value>
+    </labels>
+    <labels>
+        <fullName>PKB_Search_Support</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Category filter label</shortDescription>
+        <value>Category</value>
+    </labels>
+    <labels>
+        <fullName>PKB_Tab_Home</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Home tab</shortDescription>
+        <value>Home</value>
+    </labels>
+    <labels>
+        <fullName>PKB_Tab_Product</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Product tab</shortDescription>
+        <value>Product</value>
+    </labels>
+    <labels>
+        <fullName>PKB_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Browser title</shortDescription>
+        <value>Public Knowledge Base</value>
+    </labels>
+    <labels>
+        <fullName>PORTAL_AND_SERVICES_VALUE</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PORTAL_AND_SERVICES_VALUE</shortDescription>
+        <value>Portal/Services/Systems</value>
+    </labels>
+    <labels>
+        <fullName>PRM_Support_Email_Group</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PRM Support Email Group</shortDescription>
+        <value>PRMsupport@omnitracs.com</value>
+    </labels>
+    <labels>
+        <fullName>Partner_Master_Owner_Profile</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Partner Master Owner Profile</shortDescription>
+        <value>00e500000018pOe</value>
+    </labels>
+    <labels>
+        <fullName>Partner_Reseller_Lead</fullName>
+        <categories>Record Type</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Partner Reseller Lead</shortDescription>
+        <value>01250000000QjAy</value>
+    </labels>
+    <labels>
+        <fullName>Partner_login_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Partner login URL</shortDescription>
+        <value>https://omnitracs--int.cs92.my.salesforce.com/secur/login_portal.jsp?orgId=00D3F000000AFMi&amp;portalId=06050000000002l</value>
+    </labels>
+    <labels>
+        <fullName>Plan_Discount_Request_Limit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Plan Discount Request Limit</shortDescription>
+        <value>1</value>
+    </labels>
+    <labels>
+        <fullName>Processing</fullName>
+        <categories>Mass edit status text</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Processing</shortDescription>
+        <value>Processing</value>
+    </labels>
+    <labels>
+        <fullName>Product_Catalog_Link</fullName>
+        <categories>Unity</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Product Catalog Link</shortDescription>
+        <value>https://transactions.int.omnitracs.com/unity-iq/faces/UnityIQ?page=ProductCatalog</value>
+    </labels>
+    <labels>
+        <fullName>Project_Request</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Project Request</shortDescription>
+        <value>01250000000Qz8D</value>
+    </labels>
+    <labels>
+        <fullName>QES_INTERFACE_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>QES INTERFACE ID</shortDescription>
+        <value>00550000001cfONAAY</value>
+    </labels>
+    <labels>
+        <fullName>QES_UNITY_Customer_Portal_User_SSO</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>QES UNITY Customer Portal User (SSO)</shortDescription>
+        <value>00e500000018o1O</value>
+    </labels>
+    <labels>
+        <fullName>Qualcomm_Account_Id</fullName>
+        <categories>Account</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Qualcomm Account Id</shortDescription>
+        <value>0015000000NK6x6</value>
+    </labels>
+    <labels>
+        <fullName>RecordTypeId</fullName>
+        <categories>Opportunity,Record type</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RecordTypeId</shortDescription>
+        <value>01250000000QjITAA0</value>
+    </labels>
+    <labels>
+        <fullName>RecursiveTriggerCount</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RecursiveTriggerCount</shortDescription>
+        <value>1</value>
+    </labels>
+    <labels>
+        <fullName>S2S_Connection_Name</fullName>
+        <categories>Qualcomm Consumer Services (QCS)</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>S2S Connection Name</shortDescription>
+        <value>Qualcomm Consumer Services (QCS)</value>
+    </labels>
+    <labels>
+        <fullName>S2S_User_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>S2S User Id</shortDescription>
+        <value>00550000001b4gPAAQ</value>
+    </labels>
+    <labels>
+        <fullName>SalesforceDocViewer</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SalesforceDocViewer</shortDescription>
+        <value>/_swf/121310/sfc/flex/DocViewer.swf</value>
+    </labels>
+    <labels>
+        <fullName>ScoringModelFieldID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ScoringModelFieldID</shortDescription>
+        <value>CF00N50000007ExwJ_lkid</value>
+    </labels>
+    <labels>
+        <fullName>Show_Hide_Actions</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Show_Hide_Actions</shortDescription>
+        <value>Show/Hide Actions</value>
+    </labels>
+    <labels>
+        <fullName>Stage_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Stage_Error</shortDescription>
+        <value>You may only move to a previous stage or the immediate next stage.</value>
+    </labels>
+    <labels>
+        <fullName>TIS_Trigger_For_Lead_And_Opp</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TIS Trigger For Lead And Opp</shortDescription>
+        <value>true</value>
+    </labels>
+    <labels>
+        <fullName>T_L_Lead</fullName>
+        <categories>Record Type Id</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>T&amp;L Lead</shortDescription>
+        <value>01250000000DSzH</value>
+    </labels>
+    <labels>
+        <fullName>T_L_Sales_Accounts_RecType_Id</fullName>
+        <categories>Record Type Id</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>T&amp;L Sales Accounts RecType Id</shortDescription>
+        <value>01250000000DQBA</value>
+    </labels>
+    <labels>
+        <fullName>Task_Default_Subject</fullName>
+        <categories>Mass edit task default subject</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Task Default Subject</shortDescription>
+        <value>Mass Update Created Activity</value>
+    </labels>
+    <labels>
+        <fullName>Task_Status_Completed</fullName>
+        <categories>Mass edit task status values</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Task Status Completed</shortDescription>
+        <value>Completed</value>
+    </labels>
+    <labels>
+        <fullName>UnamePwdLinkWebservice</fullName>
+        <categories>Username and Password for Unity Superlink and Admin Link services</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>UnamePwdLinkWebservice</shortDescription>
+        <value>sf_integration_nonprod:t@LLg1@ssH2O</value>
+    </labels>
+    <labels>
+        <fullName>UnityAdminServiceEndpoint</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>UnityAdminServiceEndpoint</shortDescription>
+        <value>https://wsgw.int.omnitracs.com/unity/adminservices_v1_0</value>
+    </labels>
+    <labels>
+        <fullName>UnityDomain</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>UnityDomain</shortDescription>
+        <value>int.omnitracs.com</value>
+    </labels>
+    <labels>
+        <fullName>UnitySuperLinkServiceEndpoint</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>UnitySuperLinkServiceEndpoint</shortDescription>
+        <value>https://wsgw.int.omnitracs.com/unity/linkservices_v1_0</value>
+    </labels>
+    <labels>
+        <fullName>Unsaved_Overlay</fullName>
+        <categories>Mass edit notifications</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Unsaved Overlay</shortDescription>
+        <value>Have you saved your changes?  If you have not saved your changes, please hit cancel and click Save.</value>
+    </labels>
+    <labels>
+        <fullName>Update_Plan</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Update Plan</shortDescription>
+        <value>Update Plan</value>
+    </labels>
+    <labels>
+        <fullName>UserIdsToAssignAcctToDirectSales</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>User who can assign accounts to direct sales</shortDescription>
+        <value>00550000000wT1J,00550000000w0OA,005500000011qgh,00550000001bizh,005500000011qiC,00550000000vtgQ,00550000001bitK,005500000012s0V,005500000011qgf,0055000000242KU,00550000001ahPZ</value>
+    </labels>
+    <labels>
+        <fullName>View_All_Actions</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>View All Actions</shortDescription>
+        <value>View All Actions</value>
+    </labels>
+    <labels>
+        <fullName>View_Committed_Actions</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>View Committed Actions</shortDescription>
+        <value>View Committed Actions</value>
+    </labels>
+    <labels>
+        <fullName>XRS_Sales_order_Support</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Used in CreateXRSOpportunityEmailToCase class</shortDescription>
+        <value>xrs-sales-admin@omnitracs.com</value>
+    </labels>
+    <labels>
+        <fullName>partner_account_reseller</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Partner Account Reseller RecordType</shortDescription>
+        <value>01250000000QjAK</value>
+    </labels>
+</CustomLabels>

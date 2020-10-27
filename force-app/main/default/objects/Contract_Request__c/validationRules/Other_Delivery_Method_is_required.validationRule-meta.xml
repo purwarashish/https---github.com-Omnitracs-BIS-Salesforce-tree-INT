@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Delivery_Method_is_required</fullName>
+    <active>true</active>
+    <description>If &quot;Other&quot; option is selected as the contract delivery method then it is required to fill in the &quot;Other Delivery Method&quot; text  box</description>
+    <errorConditionFormula>AND(ISPICKVAL(Send_via_EchoSign__c , &apos;Other&apos;), ISBLANK(Other_Delivery_Method__c) )</errorConditionFormula>
+    <errorDisplayField>Other_Delivery_Method__c</errorDisplayField>
+    <errorMessage>Other Delivery Method should be filled If Contract Delivery Method is &quot;Other&quot;.</errorMessage>
+</ValidationRule>

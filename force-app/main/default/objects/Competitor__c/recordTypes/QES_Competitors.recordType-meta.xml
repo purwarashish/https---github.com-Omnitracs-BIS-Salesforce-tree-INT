@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QES_Competitors</fullName>
+    <active>true</active>
+    <description>Used for QES Competitors</description>
+    <label>Omnitracs Competitors</label>
+    <picklistValues>
+        <picklist>Competitor_Name__c</picklist>
+        <values>
+            <fullName>AT%26T</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Apacheta</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Big Roads</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cadec</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CarrierWeb</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cooltrax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DSi Mobile</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Discrete Wireless</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dispatch Track</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fastercom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Garmin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Geotab</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GreenMile</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>I%2ED%2E Systems %28formerly%2C GE Asset Intelligence%2C Terion%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International Telematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JJ Keller</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Logisteam</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MiX Telematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Navman Wireless</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Networkfleet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Orbcomm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PAR Logistics Management Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PeopleNet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roadnet Telematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Routific</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SageQuest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SkyBitz</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sprint</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Teletrac</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trailer Tracking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TransCore</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trimble</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U-Drove</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Verizon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vnomics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WebTech Wireless</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wireless Matrix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wise Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XATA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XATA Turnpike</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zonar Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>iGlobal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

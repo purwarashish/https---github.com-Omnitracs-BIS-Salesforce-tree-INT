@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>SBQQ_Quote__c</columns>
+    <columns>SBQQ_ListPrice__c</columns>
+    <columns>SBQQ_OriginalPrice__c</columns>
+    <columns>SBQQ_SubscriptionPricing__c</columns>
+    <columns>isWrapper__c</columns>
+    <columns>Batch__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Batch__c</field>
+        <operation>equals</operation>
+        <value>4</value>
+    </filters>
+    <label>All</label>
+    <language>en_US</language>
+</ListView>

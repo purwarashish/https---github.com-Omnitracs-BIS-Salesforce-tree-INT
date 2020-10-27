@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Industry_Served_CAP__c</fullName>
+    <description>Used for CAP survey data collection.</description>
+    <externalId>false</externalId>
+    <label>Primary Industry Served (CAP)</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Agricultural Commodities</fullName>
+                <default>false</default>
+                <label>Agricultural Commodities</label>
+            </value>
+            <value>
+                <fullName>Beverage</fullName>
+                <default>false</default>
+                <label>Beverage</label>
+            </value>
+            <value>
+                <fullName>Construction or Mining</fullName>
+                <default>false</default>
+                <label>Construction or Mining</label>
+            </value>
+            <value>
+                <fullName>Service Fleet (Services)</fullName>
+                <default>false</default>
+                <label>Service Fleet (Services)</label>
+            </value>
+            <value>
+                <fullName>Food Products</fullName>
+                <default>false</default>
+                <label>Food Products</label>
+            </value>
+            <value>
+                <fullName>Petroleum Production &amp; Distribution</fullName>
+                <default>false</default>
+                <label>Petroleum Production &amp; Distribution</label>
+            </value>
+            <value>
+                <fullName>General Freight</fullName>
+                <default>false</default>
+                <label>General Freight</label>
+            </value>
+            <value>
+                <fullName>Hazardous Products</fullName>
+                <default>false</default>
+                <label>Hazardous Products</label>
+            </value>
+            <value>
+                <fullName>Healthcare Medical</fullName>
+                <default>false</default>
+                <label>Healthcare Medical</label>
+            </value>
+            <value>
+                <fullName>Mfg &amp; Processing</fullName>
+                <default>false</default>
+                <label>Mfg &amp; Processing</label>
+            </value>
+            <value>
+                <fullName>Office Products or Paper</fullName>
+                <default>false</default>
+                <label>Office Products or Paper</label>
+            </value>
+            <value>
+                <fullName>Retail / Wholesale</fullName>
+                <default>false</default>
+                <label>Retail / Wholesale</label>
+            </value>
+            <value>
+                <fullName>Waste (Sanitation)</fullName>
+                <default>false</default>
+                <label>Waste (Sanitation)</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

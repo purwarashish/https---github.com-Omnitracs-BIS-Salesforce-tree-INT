@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Result__c</fullName>
+    <externalId>false</externalId>
+    <label>Result</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pass</fullName>
+                <color>#33FF33</color>
+                <default>false</default>
+                <label>Pass</label>
+            </value>
+            <value>
+                <fullName>Fail</fullName>
+                <color>#FF0000</color>
+                <default>false</default>
+                <label>Fail</label>
+            </value>
+            <value>
+                <fullName>Not yet run</fullName>
+                <color>#FFFF66</color>
+                <default>true</default>
+                <label>Not yet run</label>
+            </value>
+            <value>
+                <fullName>Blocked</fullName>
+                <color>#CC33CC</color>
+                <default>false</default>
+                <label>Blocked</label>
+            </value>
+            <value>
+                <fullName>Expected fail</fullName>
+                <color>#FF9900</color>
+                <default>false</default>
+                <label>Expected fail</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

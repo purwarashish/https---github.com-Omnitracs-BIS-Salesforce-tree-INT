@@ -1,0 +1,263 @@
+<apex:page id="themainpage" controller="MainController" sidebar="false" showheader="false" cache="true">
+
+<apex:include pageName="homePage" />
+<apex:include pageName="supportGoogleAnalytics" />
+
+<meta http-equiv="Page-Enter" content="blendTrans(Duration=.01)" />
+<meta http-equiv="Page-Exit" content="blendTrans(Duration=.01)" />
+<meta http-equiv="Page-Enter" content="revealtrans(duration=0.0)" />
+<meta http-equiv="Page-Exit" content="revealtrans(duration=0.0)" />
+
+<meta http-equiv="Site-Enter" content="blendTrans(Duration=.01)" />
+<meta http-equiv="Site-Exit" content="blendTrans(Duration=.01)" />
+<meta http-equiv="Site-Enter" content="revealtrans(duration=0.0)" />
+<meta http-equiv="Site-Exit" content="revealtrans(duration=0.0)" />
+
+
+<apex:form id="theLinkForm">
+    <apex:commandLink id="headerMenuRedirectHiddenCmdLink" 
+                      value="HiddenCmdLink"  
+                      action="{!menuHeaderRedirectTo}" 
+                      style="display:none"  />
+    <apex:commandLink id="globalSearchHiddenCmdLink" 
+                      styleclass="globalSearchHiddenCmdLink" 
+                      value="HiddenCmdLink"  
+                      action="{!globalSearchRedirectTo}" 
+                      style="display:none"  />
+    <apex:inputHidden id="hiddenInputField" value="{!hiddenInputField}"/>
+    <script>
+        function temp()
+        {
+            var searchText = $('[id*=globalSearchTextBox]').val();
+            if( ('Search' == searchText) || ('' == searchText) ) {
+                 return false;
+            }
+            var searchURL = $('#gsOptions').val();
+            $('[id*=theLinkForm\\:hiddenInputField]').val(searchURL);
+            $("[id*=theLinkForm\\:searchCommandButtonHidden]").click();
+            return false;
+        }
+    </script>
+    <style>
+    .subMenuList li, .subMnuHead {
+    line-height:normal !important;
+    }
+    
+    .sub_menu{
+    padding-left:0px !important;
+    }
+    .sub_menu li{
+    margin-left:0px;
+    }
+    ul.drop3 ul
+    {
+    width:133px;
+    }
+    ul.drop3 li
+    {
+    margin:0; 
+    }
+    ul.drop li a {
+    color:rgb(255,209,9);
+    }
+
+    ul.drop3 ul li
+    {
+     background-color:#E7E7E7 !important;
+    }
+    ul.drop3 ul li:hover
+    {
+     background-color:#FFFFFF !important;
+    }
+    
+    .mainNavBtn {
+        width: auto;
+    }
+    ul li a:hover {
+        cursor:pointer !important;
+        text-decoration: none !important;
+    }
+    .breadcumWrp li a:hover,ul.topSupportList li a:hover, ul.supportTools li a:hover{
+     text-decoration: underline !important;
+    }
+    #arrowImg3 {
+        background: url("{!URLFor($Resource.QESUnityCSSAndJS, 'Html/images/customer/customer-arrows.png')}") no-repeat 0 0 !important;
+        width: 16px !important;
+        height: 20px !important;
+        z-index: 10000 !important;
+        display: inline-block !important;
+        margin: 7px 0 0 11px !important;
+        padding: 0 !important;
+    }
+    div.selectME4 ul li a:hover {background:#ADADAD url("{!URLFor($Resource.QESUnityCSSAndJS, 'Html/images/customer/list-box-bg-drop.png')}") repeat-x !important;}
+    div.selectME9 ul li a:hover {background:#ADADAD url("{!URLFor($Resource.QESUnityCSSAndJS, 'Html/images/customer/list-box-bg-drop.png')}") repeat-x !important;}
+    div.flr
+    {
+    float:right !important;
+    }
+    
+    
+
+    </style>    
+    
+    <script>
+       if (/MSIE (\d+\.\d+);/.test(navigator.userAgent)){ //test for MSIE x.x;
+        var ieversion=new Number(RegExp.$1)
+        if(ieversion >= 6)
+        {
+        //alert(ieversion + ' : IE');
+         try
+        {
+            //alert('IE : ' + ieversion  );
+            document.execCommand("BackgroundImageCache", false, true);
+        }
+    
+        catch(err) {}
+        }
+        }                
+    </script>
+    
+<div id="bodyWrapper">
+  <!--Body Content Wrapper start Here-->
+  <div id="header-customer">
+    <!--preHeader Content Wrapper start Here-->
+    <div class="preHeader">
+        
+        <!--My Cart-->
+        <!-- <div class="mycart fll">
+        <span class="mycartTxt fll">My Cart</span>
+        <span class="mycartCount"></span>
+
+        </div> -->
+        <!--My Cart ENDS-->
+        <!--preHeader RIGHT Side-->
+        <div class="flr preHeaderRight">
+        
+        <span class="fll txt1 welcometxt">Welcome</span>
+        <!--USER link-->
+        <ul class="fll drop">
+            <li><a href="#"><span class="dropTxt">{!Left(wscm.userNameFromUnity,9)}..</span></a>
+                <ul id="user_profile" class="sub_menu">
+                <!--
+                    <li><a href="#">My Account</a></li>
+                    <li><a href="#">Sign Out</a></li>
+                -->
+                </ul>
+            </li>
+        </ul>
+        <!--USER link ENDS-->
+
+
+
+        <ul class="fll drop2">
+        <!--  li><a href="#"><span style="">Quicklinks</span></a>
+            <ul class="sub_menu2">
+        <li><a href="#">Unit Health Check</a></li>
+        <li><a href="#">Mobile Reset</a></li>
+        <li><a href="#">Temporary De/Re Activation</a></li>
+        <li style="border-bottom:none"><a href="#">Ops Profiles</a></li>
+        </ul>
+        </li -->
+        </ul>
+
+
+        <!--SEARCH-->
+        
+        <!--SEARCH Ends-->
+
+        </div>
+    </div>
+
+    <div class="mainNavWrp">
+      <!--Main Navigation start-->
+      <div class="logo">
+       
+       
+       <!-- part modified as CP Support Site Rebranding requirements -->
+          <a href="http://customer.{!$Label.CPURL}"><img src="{!URLFor($Resource.CPResources,'images/logo.png')}" alt="Omnitracs" title="Omnitracs" /></a>
+        
+     
+      
+      <!-- <img src="{!URLFor($Resource.OmnitracsQualcommlogo,'attachmentsnew1/omnitracs-logo-175x50-color.png')}" alt="Qualcomm" title="Qualcomm" /> -->
+      
+      
+      <!-- img src="{!$Resource.OmnitracsQualcommlogo}" width="177" height="39" alt="Qualcomm" title="Qualcomm" width="111" height="33" / -->
+     
+      </div>
+      <div class="mainNavBtn" id="mainNavBtn">
+        <ul id="drop3" class="drop3">
+           
+        <!-- Dynamic objects are created here -->
+
+        </ul>
+        </div>
+        <!-- h1 style="color:black">{!i}, {!wscm.whichUchData} </h1 -->
+      <!--Main Navigation End-->
+       </div>
+
+ </div>
+
+
+</div>
+</apex:form>
+
+<script>         
+    ( function($) {
+        $("#drop3").append('{!wscm.menuLinks}');
+        $("ul.drop2").append('{!wscm.Quicklinks}');
+        $("#user_profile").append('{!wscm.userProfileLinks}');
+        $("#gsOptions").append('{!wscm.globalSearchOptions}');
+   
+        function redir(rUrl,e)
+        {
+            e.preventDefault();
+            e.stopPropagation();
+           
+            $('[id*=theLinkForm\\:hiddenInputField]').val(rUrl);
+            
+            $('[id*=theLinkForm\\:headerMenuRedirectHiddenCmdLink]').click();
+            return false;
+        }         
+
+        $(document).ready(
+        function()
+        {        
+            $('[id*=linkGroupLinkList]').click(
+                function(e) {
+                       e.preventDefault();
+                       e.stopPropagation();
+                       redir($(this).attr('href'),e);
+                       return false;
+                }
+            );
+            
+            $('.searchglobal1').keypress(
+            function(e)
+                {
+                    if(navigator.appName == "Microsoft Internet Explorer" )
+                    {
+
+                     if(event.keyCode == 13) {
+                        $('.globalSearchCmdBtn1').click();
+                        return false;                        
+                    }
+                } 
+               }
+            );
+            
+            $('li.trngLi').each(
+                function(){
+                  if(navigator.appName == "Microsoft Internet Explorer")
+                  {
+                   
+                   //$('.trngLi').css('line-height','0px');
+                   //$('.trngLi').css('padding-bottom','8px');
+                   //$('.trngLi').css('padding-top','8px');
+                  }  
+                }
+            );    
+        }
+        );
+    } ) ( jQuery );   
+</script>
+</apex:page>

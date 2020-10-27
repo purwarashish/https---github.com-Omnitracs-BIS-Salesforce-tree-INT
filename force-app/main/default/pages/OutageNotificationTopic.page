@@ -1,0 +1,82 @@
+<!---------------------------------------------------------------------------------------------------
+Name : OutageNotificationTopic
+Author : Shruti Karn
+Date : 12 August 2010
+
+Usage : This page is the Step 2 for Outage Contact Wizard
+    
+----------------------------------------------------------------------------------------------------->
+<apex:page controller="OutageContactWizardController" tabStyle="Campaign" id="notificationTopic" wizard="false" showHeader="true" sidebar="true">
+    <script language="Javascript">
+        function showErrorMsg()
+        {
+            var value = document.getElementById('notificationTopic:contactNotificationForm:contactInfo:pgblksec:pgblksectnitm:notificationOption').rows.length;
+            //alert(value.);
+            var isError = true;
+            for(var i=0;i<value;i++)
+            {
+                var checkboxValue = document.getElementById('notificationTopic:contactNotificationForm:contactInfo:pgblksec:pgblksectnitm:notificationOption:'+i).checked;
+                if(checkboxValue == true)
+                {
+                    isError = false;
+                    break;
+                }
+                                
+            }
+            if(isError == true)
+                {
+                    alert('Please select a Notification Topic\n');
+                    return false;
+                }
+                 else
+                     return true;  
+        }
+    </script>
+    <apex:sectionHeader title="Outage Contact Tool" subtitle="Step 2 of 6"/>
+    <apex:includeScript value="{!$Resource.OutageTool}"/>
+
+    <apex:form id="contactNotificationForm">
+    <apex:messages style="color:rgb(204,0,0);font-weight: bold;text-align:center"/> 
+    <apex:pageBlock title="Step 2. Select Notification Topic" id="contactInfo">
+        <apex:pageBlockSection collapsible="false" columns="1" id="pgblksec">
+            <apex:pageBlockSectionItem >
+                <apex:outputPanel >
+                    <div style="text-align:right">
+                      <apex:commandButton value="Previous" action="{!redirectToStep1}"/>
+                      <apex:commandButton value="Next" action="{!redirectToStep3}" onclick="javascript:return showErrorMsg();" status="loadingStatusAdd"/>
+                      <apex:commandLink value="Cancel" action="/home/home.jsp"/> 
+                    </div>
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem > 
+               Please Select the Notification Topic
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem id="pgblksectnitm">
+                <apex:panelGrid columns="2" id="pnlgrid">
+                    <apex:selectRadio layout="pageDirection" value="{!strNotification_topic}" id="notificationOption">  
+                        <apex:selectOption itemValue="{!$Label.HARDWARE_VALUE}" itemLabel="{!$Label.HARDWARE_VALUE}" />
+                        <apex:selectOption itemValue="{!$Label.PORTAL_AND_SERVICES_VALUE}" itemLabel="{!$Label.PORTAL_AND_SERVICES_VALUE}"/>
+                        <apex:selectOption itemValue="{!$Label.NMC_SYSTEM_VALUE}" itemLabel="{!$Label.NMC_SYSTEM_VALUE}"/>
+                        <apex:selectOption itemValue="{!$Label.CUSTOM_SEARCH}" itemLabel="{!$Label.CUSTOM_SEARCH}"/>
+                    </apex:selectRadio>
+                </apex:panelGrid>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputPanel >
+                    <div style="text-align:right">
+                        <apex:commandButton value="Previous" action="{!redirectToStep1}"/>
+                        <apex:commandButton value="Next" action="{!redirectToStep3}" status="loadingStatusAdd" onclick="javascript:return showErrorMsg();"/>
+                        <apex:commandLink value="Cancel" action="/home/home.jsp"/>
+                    </div>
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+        <apex:actionStatus id="loadingStatusAdd">
+            <apex:facet name="start">
+                <c:loadingStatus id="loadingStatusAddComponent" BackColor="#efefef" borderColor="#336699" borderSize="3" height="50px" width="150px" ImageUrl="/img/loading.gif" Message="Processing..." BluryBackGround_DivId="bbgd1" SalesforceStatusBox_DivId="ssbd1" messageStyle="color:darkred;font-size:11pt;font-weight:bold;"/>
+            </apex:facet>
+        </apex:actionStatus>
+    </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

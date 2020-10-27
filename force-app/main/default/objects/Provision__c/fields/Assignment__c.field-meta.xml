@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Assignment__c</fullName>
+    <description>Created for Contract Management.</description>
+    <externalId>false</externalId>
+    <label>Assignment</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>All parties&apos; consent</fullName>
+                <default>false</default>
+                <label>All parties&apos; consent</label>
+            </value>
+            <value>
+                <fullName>All parties with exception</fullName>
+                <default>false</default>
+                <label>All parties with exception</label>
+            </value>
+            <value>
+                <fullName>By OMNI&apos;s consent only</fullName>
+                <default>false</default>
+                <label>By OMNI&apos;s consent only</label>
+            </value>
+            <value>
+                <fullName>Other party&apos;s consent only</fullName>
+                <default>false</default>
+                <label>Other party&apos;s consent only</label>
+            </value>
+            <value>
+                <fullName>Yes</fullName>
+                <default>false</default>
+                <label>Yes</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

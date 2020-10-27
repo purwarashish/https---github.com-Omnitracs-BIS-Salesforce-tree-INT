@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Output_Footnote__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( AND(NOT(ISBLANK( Dollar_Per_Load__c )),NOT(ISBLANK( Dollar_Per_Truck__c ))),
+    
+&quot;Monthly Fees: $&quot; + TEXT(Dollar_Per_Truck__c) + &quot; Per Truck, $&quot; + TEXT(Dollar_Per_Load__c) + &quot; Per Load&quot;,
+
+if( AND(Product__r.Is_Maintenance__c = TRUE, (Asset_Term_End_Date__c - Asset_Term_Start_Date__c) &lt; 365),
+
+&quot;Pro-rated maintenance term, estimated &quot; + TEXT(Asset_Term_Start_Date__c) + &quot; thru &quot; + TEXT(Asset_Term_End_Date__c) + &quot;. Annual maintenance amount is $&quot; + TEXT(Sales_Price__c) + &quot; and subject to change according to the terms of the Contract.&quot;,
+
+NULL)
+
+)</formula>
+    <label>Output Footnote</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

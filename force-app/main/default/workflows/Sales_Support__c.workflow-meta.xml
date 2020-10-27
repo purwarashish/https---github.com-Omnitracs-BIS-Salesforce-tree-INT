@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>New_Sales_Support_Request_MX</fullName>
+        <description>New Sales Support Request - MX</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jpaulo@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>vdelrazo@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>MarketingTemplates/MIBOS_New_Sales_Support_Roadnet</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Sales_Support_Request_Roadnet</fullName>
+        <description>New Sales Support Request - Roadnet</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>chusak@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>gimirie@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Support_new/Sales_Support_Activity_Creation_New</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Sales_Support_Request_Roadnet_John_Anderson_Omni_Xrs</fullName>
+        <description>New Sales Support Request - John Anderson - Omni/Xrs</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>johna@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>MarketingTemplates/MIBOS_New_Sales_Support_Omni_Xrs</template>
+    </alerts>
+    <alerts>
+        <fullName>SSA_Email_Notification_John_Anderson</fullName>
+        <description>SSA Email Notification to John Anderson</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>johna@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Support_new/Sales_Support_Activity_Creation_New</template>
+    </alerts>
+    <alerts>
+        <fullName>SSA_Email_Notification_to_Carisa_Husak</fullName>
+        <description>SSA Email Notification to Carisa Husak</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>chusak@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jtrevino@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Support_new/Sales_Support_Activity_Creation_New</template>
+    </alerts>
+    <alerts>
+        <fullName>SSA_Email_Notification_to_Gina_Imirie_and_Cyndi_Brandt</fullName>
+        <description>SSA Email Notification to Gina Imirie and Cyndi Brandt</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>cbrandt@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>gimirie@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Support_new/Sales_Support_Activity_Creation_New</template>
+    </alerts>
+    <alerts>
+        <fullName>SSA_Email_Notification_to_Gina_Imirie_and_Kristen_Maloney</fullName>
+        <description>SSA Email Notification to Gina Imirie and Kristen Maloney</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>gimirie@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Support_new/Sales_Support_Activity_Creation_New</template>
+    </alerts>
+    <alerts>
+        <fullName>SSA_Email_Notification_to_Gina_Imirie_and_Navin_Badrinarayan</fullName>
+        <description>SSA Email Notification to Gina Imirie and Navin Badrinarayan</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>gimirie@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>navinb@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Support_new/Sales_Support_Activity_Creation_New</template>
+    </alerts>
+    <alerts>
+        <fullName>SSA_Email_Notification_to_Irtiza_Zaida_and_Carisa_Husak</fullName>
+        <description>SSA Email Notification to Irtiza Zaida and Carisa Husak</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>chusak@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>izaidi@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Support_new/Sales_Support_Activity_Creation_New</template>
+    </alerts>
+    <alerts>
+        <fullName>SSA_Email_Notification_to_Jason_Melody_and_Carisa_Husak</fullName>
+        <description>SSA Email Notification to Jason Melody and Carisa Husak</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>chusak@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jmelody@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Support_new/Sales_Support_Activity_Creation_New</template>
+    </alerts>
+    <alerts>
+        <fullName>SSA_Email_Notification_to_Jesus_Trevino_and_Carisa_Husak</fullName>
+        <description>SSA Email Notification to Jesus Trevino and Carisa Husak</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>chusak@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jtrevino@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Support_new/Sales_Support_Activity_Creation_New</template>
+    </alerts>
+    <alerts>
+        <fullName>SSA_Email_Notification_to_John_Anderson_and_Carisa_Husak</fullName>
+        <description>SSA Email Notification to John Anderson and Carisa Husak</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>chusak@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>johna@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Support_new/Sales_Support_Activity_Creation_New</template>
+    </alerts>
+    <alerts>
+        <fullName>SSA_Email_Notification_to_Luciano_Fontes</fullName>
+        <description>SSA Email Notification to Luciano Fontes</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>lfontes@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Support_new/Sales_Support_Activity_Creation_New</template>
+    </alerts>
+    <alerts>
+        <fullName>SSA_Email_Notification_to_Navin_Badrinarayan</fullName>
+        <description>SSA Email Notification to Navin Badrinarayan</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>navinb@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Support_new/Sales_Support_Activity_Creation_New</template>
+    </alerts>
+    <alerts>
+        <fullName>SSA_Email_Notification_to_Tim_Carlquist_and_Carisa_Husak</fullName>
+        <description>SSA Email Notification to Tim Carlquist and Carisa Husak</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>chusak@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>tcarlqui@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Support_new/Sales_Support_Activity_Creation_New</template>
+    </alerts>
+    <alerts>
+        <fullName>SSA_Email_Notification_to_Tim_Carlquist_and_Jason_Melody_and_Carisa_Husak</fullName>
+        <description>SSA Email Notification to Tim Carlquist and Jason Melody and Carisa Husak</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>chusak@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jmelody@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>tcarlqui@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Support_new/Sales_Support_Activity_Creation_New</template>
+    </alerts>
+    <alerts>
+        <fullName>SSA_Email_Notification_to_Victor_Del_Razo</fullName>
+        <description>SSA Email Notification to Victor Del Razo</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>vdelrazo@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Support_new/Sales_Support_Activity_Creation_New</template>
+    </alerts>
+    <alerts>
+        <fullName>Sales_Support_Activity_Created_Edited</fullName>
+        <description>Sales Support Activity Created/Edited</description>
+        <protected>false</protected>
+        <recipients>
+            <field>SE_User__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>SR_User__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Support_new/Sales_Support_Activity_Creation_New</template>
+    </alerts>
+    <alerts>
+        <fullName>Sales_Support_Alert_John_Anderson_Fleet_500</fullName>
+        <description>Sales Support Alert John Anderson Fleet &gt; 500</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>johna@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>MarketingTemplates/MIBOS_New_Sales_Support_Omni_Xrs</template>
+    </alerts>
+    <alerts>
+        <fullName>Sales_Support_Assigned2_Roadnet</fullName>
+        <description>Sales Support Assigned2 - Roadnet</description>
+        <protected>false</protected>
+        <recipients>
+            <field>SE_User__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>SR_User__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Secondary_Managed_By__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>MarketingTemplates/MIBOS_Sales_Support_Assigned2_Roadnet</template>
+    </alerts>
+    <alerts>
+        <fullName>Sales_Support_Assigned2_Secondary_Managed_By_Omni_Xrs</fullName>
+        <description>Sales Support Assigned2 Secondary Managed By - Omni/Xrs</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Secondary_Managed_By__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>MarketingTemplates/MIBOS_Sales_Support_Assigned2_Omni_XrsMIBOS_Sales_Support_Assigned2_Omni_Xrs</template>
+    </alerts>
+    <alerts>
+        <fullName>Sales_Support_Assigned2_Secondary_Managed_By_Roadnet</fullName>
+        <description>Sales Support Assigned2 Secondary Managed By - Roadnet</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Secondary_Managed_By__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>MarketingTemplates/MIBOS_Sales_Support_Assigned2_Roadnet</template>
+    </alerts>
+    <alerts>
+        <fullName>Sales_Support_Assigned_Evaluation_SSA</fullName>
+        <description>Sales Support Assigned - Evaluation SSA</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CSM_Assigned__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>PS_Resource_Assigned__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>SE_User__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>SR_User__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Secondary_Managed_By__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Support_new/Sales_Support_Activity_Creation_Evaluation_New</template>
+    </alerts>
+    <alerts>
+        <fullName>Sales_Support_Assigned_Roadnet</fullName>
+        <description>Sales Support Assigned - Roadnet</description>
+        <protected>false</protected>
+        <recipients>
+            <field>SE_User__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>SR_User__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Secondary_Managed_By__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Support_new/Sales_Support_Activity_Creation_New</template>
+    </alerts>
+    <alerts>
+        <fullName>Sales_Support_Assigned_Secondary_Managed_By_Omni_XRs</fullName>
+        <description>Sales Support Assigned Secondary Managed By - Omni/XRs</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Secondary_Managed_By__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>MarketingTemplates/MIBOS_Sales_Support_Assigned_Omni_Xrs</template>
+    </alerts>
+    <alerts>
+        <fullName>Sales_Support_Assigned_Secondary_Managed_By_Roadnet</fullName>
+        <description>Sales Support Assigned Secondary Managed By Roadnet</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Secondary_Managed_By__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>MarketingTemplates/MIBOS_Sales_Support_Assigned_Roadnet</template>
+    </alerts>
+    <alerts>
+        <fullName>Secondary_Managed_By_Alert</fullName>
+        <description>Secondary Managed By Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <field>SE_User__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Support_new/Secondary_Sales_Support</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_email_to_PS_for_change_in_status</fullName>
+        <description>Send email to PS for change in status</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>aferrarese@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>ajara@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Support_new/Sales_Support_Activity_Creation_New</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Add_AF_as_primary_to_ve_assist</fullName>
+        <field>SE_User__c</field>
+        <lookupValue>afaridi@omnitracs.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>Add AF as primary to ve assist</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Add_JM_as_primary_to_arch_scope</fullName>
+        <field>SE_User__c</field>
+        <lookupValue>jmelody@roadnet.omnitracs.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>Add JM as primary to arch/scope</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Add_SE_as_primary_to_evals_pilot</fullName>
+        <field>SE_User__c</field>
+        <lookupValue>chusak@roadnet.omnitracs.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>Add SE as primary to evals/pilot</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Assign_Amine_as_Secondary_Managed_By</fullName>
+        <description>Update econdary Managed by field with Amine Faridi</description>
+        <field>Secondary_Managed_By__c</field>
+        <lookupValue>afaridi@omnitracs.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>Assign Amine as Secondary Managed By</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Assign_Carisa_as_Secondary_Managed_By</fullName>
+        <field>Secondary_Managed_By__c</field>
+        <lookupValue>chusak@roadnet.omnitracs.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>Assign Carisa as Secondary Managed By</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Auto_Assign_John_Anderson_Primary_Manage</fullName>
+        <field>SE_User__c</field>
+        <lookupValue>johna@omnitracs.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>Auto Assign John Anderson Primary Manage</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>MX_add_VDR_as_primary</fullName>
+        <field>SE_User__c</field>
+        <lookupValue>jpaulo@omnitracs.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>MX - add VDR as primary</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Primary_Managed_by_Imirie</fullName>
+        <description>Updates the pmb to Gina Imirie</description>
+        <field>SE_User__c</field>
+        <lookupValue>gimirie@roadnet.omnitracs.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>Primary Managed by = Imirie</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sales_Support_Activity_Cloned_Record</fullName>
+        <description>Updates the cloned record field if the record is cloned</description>
+        <field>Cloned_Record__c</field>
+        <literalValue>1</literalValue>
+        <name>Sales Support Activity Cloned Record</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sales_Support_Auto_Assign_John_Secondary</fullName>
+        <field>Secondary_Managed_By__c</field>
+        <lookupValue>johna@omnitracs.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>Sales Support Auto Assign John Secondary</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>All -  notify when either managed by changes</fullName>
+        <actions>
+            <name>Sales_Support_Assigned_Roadnet</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Any BU - When either of the the Managed By fields change, send an email to the Managed By users and the Sales rep</description>
+        <formula>OR(ISCHANGED( Secondary_Managed_By__c ),
+ISCHANGED(SE_User__c))
+
+&amp;&amp; $User.Bypass_Workflows__c = false</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>All -  notify when either managed by changes Evaluation Record Type</fullName>
+        <actions>
+            <name>Sales_Support_Assigned_Evaluation_SSA</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Evaluation Record Type- When either of the the Managed By fields change, send an email to the Managed By users and the Sales rep</description>
+        <formula>OR(ISCHANGED( Secondary_Managed_By__c ),
+ISCHANGED(SE_User__c), ISCHANGED(CSM_Assigned__c), ISCHANGED(PS_Resource_Assigned__c))
+
+&amp;&amp; $User.Bypass_Workflows__c = false</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Clone Record Updated</fullName>
+        <actions>
+            <name>Sales_Support_Activity_Cloned_Record</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Clone Record Updated</description>
+        <formula>ISClone()</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>RN - notify for DV rt when submitted or cancelled selected</fullName>
+        <actions>
+            <name>Send_email_to_PS_for_change_in_status</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <criteriaItems>
+            <field>Sales_Support__c.Status__c</field>
+            <operation>contains</operation>
+            <value>Cancelled,Submitted to PS</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Sales_Support__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Data Validation</value>
+        </criteriaItems>
+        <description>RN - on data validation activity, when submitted to PS 1 or 2 or cancelled are selected send email to Bralon, Anne, and Alejandra</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RN - on DV rt alert prim %26 sales rep for discount%2C cancel%2C return</fullName>
+        <actions>
+            <name>Sales_Support_Activity_Created_Edited</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Sales_Support__c.Status__c</field>
+            <operation>equals</operation>
+            <value>10% Discount Approved,5% Discount Approved,Cancelled,Returned for Correction</value>
+        </criteriaItems>
+        <description>For data validation, emails primary and sales rep when 10% Discount Approved, 5% Discount Approved, Cancelled, or Returned for Correction are selected</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Method_of_Shipment__c</fullName>
+    <externalId>false</externalId>
+    <label>Method of Shipment</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Product__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Ground Shipping (5-7 days)</fullName>
+                <default>false</default>
+                <label>Ground Shipping (5-7 days)</label>
+            </value>
+            <value>
+                <fullName>2 Business Days</fullName>
+                <default>false</default>
+                <label>2 Business Days</label>
+            </value>
+            <value>
+                <fullName>Next Business Day - A.M. Delivery</fullName>
+                <default>false</default>
+                <label>Next Business Day - A.M. Delivery</label>
+            </value>
+            <value>
+                <fullName>Next Business Day - P.M. Delivery</fullName>
+                <default>false</default>
+                <label>Next Business Day - P.M. Delivery</label>
+            </value>
+            <value>
+                <fullName>Customer Pickup</fullName>
+                <default>false</default>
+                <label>Customer Pickup</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>SFM</controllingFieldValue>
+            <valueName>Ground Shipping (5-7 days)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SFM</controllingFieldValue>
+            <valueName>2 Business Days</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SFM</controllingFieldValue>
+            <valueName>Next Business Day - A.M. Delivery</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SFM</controllingFieldValue>
+            <valueName>Next Business Day - P.M. Delivery</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SFM</controllingFieldValue>
+            <valueName>Customer Pickup</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

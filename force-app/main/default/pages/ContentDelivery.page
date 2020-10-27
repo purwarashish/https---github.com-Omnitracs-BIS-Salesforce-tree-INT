@@ -1,0 +1,87 @@
+<apex:page standardController="Contract" extensions="ContentDeliveryController" tabStyle="Contract">
+     <apex:includeScript value="{!URLFOR($Resource.JQuery, 'js/jquery-1.4.2.min.js')}"/>
+     <script type="text/javascript">
+          function confirmCancel() {
+              var isCancel = confirm("Are you sure you wish to cancel?");
+              if (isCancel) return true;
+          
+             return false;
+          }  
+          
+        function toggleRadio(checkbox) { 
+            var inputElem = document.getElementsByTagName("input"); 
+            for (var i=0; i<inputElem.length; i++) { 
+                if (inputElem[i] == checkbox) inputElem[i].checked = true; else inputElem[i].checked = false; } 
+        } 
+  </script>
+    <apex:form >
+    <apex:sectionHeader title="Create Content Delivery" subtitle="Content Delivery Wizard">
+        <center><apex:image url="{!$Resource.ContentDeliveryStep1}" width="1266" height="43"/></center>
+        <br/><br/><br/>
+    </apex:sectionHeader>
+        <apex:pageBlock title="Create Content Delivery">
+             <apex:pageBlockButtons >
+                    <apex:commandButton action="{!step2}" value="Next" style="margin-top:8px;"/>﻿
+                    <apex:commandButton action="{!Cancel}" value="Cancel" style="margin-top:8px;" onclick="return confirmCancel()" immediate="true"/>
+              </apex:pageBlockButtons>
+            <b><apex:outputLabel value="Search for content"/></b><br/><br/>
+            <apex:outputLabel value="Search In "/>
+           
+             <apex:selectList id="cworkspaceList" value="{!selectedOpt}" multiselect="false" size="1">
+   
+                <apex:selectOptions value="{!workSpaceOptions}"/>
+            </apex:selectList>
+            &nbsp;
+            <apex:outputLabel value="for "/>
+            &nbsp;
+            <apex:outputText value="{!contNum}"/>
+            &nbsp;
+            <apex:commandButton value="Search files" action="{!Search}"/><br/><br/>
+            <apex:outputPanel id="refreshPanel" rendered="{!IF(isResultShow==true,true,false)}">               
+                <apex:pageBlockTable value="{!conDocL}" var="conDL" id="Documents">
+                        <apex:column headerValue="Selected" width="1%" > 
+                                <apex:InputCheckbox id="looped"  value="{!conDL.Orderable__c}"  onchange="javascript:toggleRadio(this);" >
+                                    <apex:actionSupport event="onclick" rerender="refreshPanel, Documents"/>
+                                </apex:InputCheckbox>    
+                        </apex:column>  
+                        <apex:column value="{!conDL.Title}" headerValue="Search Results: [{!conDocL.size} files]" />     
+                         <!--
+                         <apex:column width="10%">
+                            <apex:commandButton value="Preview" action="{!Preview}" style="float-left:10%"/>
+                        </apex:column>    -->                                        
+                </apex:pageBlockTable> 
+                 
+                
+            </apex:outputPanel>
+           
+        </apex:pageBlock>
+    </apex:form>
+
+
+<!--<apex:sectionHeader title="Contract Content Delivery" subtitle="Step 1 of 4"/>-->
+
+    <!--<apex:form title="Deliver Content">-->
+    <!--    This feature will follow the same pattern as the content delivery OOB.  It will end with an email template with the URL generated in the body to send to the customer. <br/><br/>-->
+    <!--        1) Give the user all the documents that are associated with the contract from the parent down <br/><br/>-->
+    <!--            - Allow the user to preview the documents as they are selecting them  <br/><br/>-->
+    <!--        2) Allow the user to select the documents to be delivered including content packs <br/><br/>-->
+    <!--            - Default the directory to Content Document and the for to the contract you started from <br/><br/>-->
+    <!--        3) Move to next page in the wizard  <br/><br/>-->
+    <!--        4) Recreate the content delivery screen with all the options  <br/><br/>-->
+    <!--        5) Move to next page in wizard  <br/><br/>-->
+    <!--        6) Generate the URL for the content delivery and save it to the appropriate objects  <br/><br/>-->
+    <!--        7) Move to next page in wizard  <br/><br/>-->
+    <!--        8) Create a VF email template or call the stardard email template and prepopulate the URL  <br/><br/>-->
+    <!--        9) Allow the user to send the email and return to the contracts page  <br/><br/>-->
+            
+    <!--     Please ensure that the contract ID is part of the content delivery process so the link can be made back to it.   Content delivery is now available via the api version 32.-->
+  
+    <!--      <apex:pageBlock title="Contract Content">-->
+    <!--           <apex:facet name="footer">-->
+    <!--            <apex:commandButton action="{!step2}" value="Next"-->
+    <!--                        styleClass="btn"/>-->
+    <!--          </apex:facet>-->
+    <!--      </apex:pageBlock> -->
+    <!--</apex:form>  -->
+<!--<script>function getRecordIds(keyPrefix) { return [] }</script>-->
+</apex:page>

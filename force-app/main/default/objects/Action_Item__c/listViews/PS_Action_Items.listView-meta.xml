@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PS_Action_Items</fullName>
+    <columns>NAME</columns>
+    <columns>Due_Date__c</columns>
+    <columns>Status__c</columns>
+    <columns>Type__c</columns>
+    <columns>Description__c</columns>
+    <columns>Primary_Owner__c</columns>
+    <columns>Priority__c</columns>
+    <columns>Requirements__c</columns>
+    <columns>User_Story__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Track__c</field>
+        <operation>equals</operation>
+        <value>Professional Services</value>
+    </filters>
+    <label>PS Action Items</label>
+    <language>en_US</language>
+</ListView>

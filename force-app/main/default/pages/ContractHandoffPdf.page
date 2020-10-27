@@ -1,0 +1,186 @@
+<apex:page standardController="Contract_Handoff2__c" extensions="ContractHandoffExtension"  sidebar="false" showheader="false" renderas="pdf">
+    
+    <apex:pageMessages />
+    <br /><br />
+   <p ALIGN="CENTER"><font style="font-size: 1.25em; face:MONOSPACE;"><b>Roadnet Technologies</b></font></p>
+    <p ALIGN="CENTER"><font style="font-size: 1.00em; face:MONOSPACE;"><b>Sales Handoff Document</b></font></p>
+    
+    <apex:form >
+        
+        <apex:pageblock title="Sales Handoff for {!account.name}">
+           
+            <apex:pageblocksection title="Overview" columns="1">
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Sales Handoff Report For:"/>
+                    <apex:outputfield value="{!contractHandoff.Account__c}"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Opportunity"/>
+                    <apex:outputfield value="{!contractHandoff.Opportunity__c}"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Date of project handoff report:"/>
+                    <apex:outputfield value="{!contractHandoff.CreatedDate}"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Sales Representattive (Report Author)"/>
+                    <apex:outputtext value="{!contractHandoff.Createdby.name}"/>
+                </apex:pageblocksectionitem>
+                
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Attachments:"/>
+                    <apex:inputtextarea value="{!contracthandoff.Attachments__c}" rows="5" cols="100"/>
+                </apex:pageblocksectionitem>
+            </apex:pageblocksection>
+            
+            <apex:pageblocksection columns="1" title="1. Project Background Overview / Project Definition">
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="1.1 Project Overview"/>
+                    <apex:inputtextarea value="{!contractHandoff.Project_Overview__c}" rows="5" cols="100"/>
+                </apex:pageblocksectionitem>
+
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="1.2 Project Organization"/>
+                    <apex:inputtextarea value="{!contractHandoff.Project_Overview__c}" rows="5" cols="100"/>
+                </apex:pageblocksectionitem>
+                
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="1.3 Point of Contact for Implementation"/>
+                    <apex:inputtextarea value="{!contractHandoff.Point_of_Contact_for_Implementation__c}" rows="5" cols="100"/>
+                </apex:pageblocksectionitem>
+                
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="1.4 Target Schedule Information"/>
+                    <apex:inputtextarea value="{!contractHandoff.Target_Schedule_Information__c}" rows="5" cols="100"/>
+                </apex:pageblocksectionitem>
+                
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="1.5 Company Background"/>
+                    <apex:inputtextarea value="{!contractHandoff.Company_Background__c}" rows="5" cols="100"/>
+                </apex:pageblocksectionitem>
+            </apex:pageblocksection>
+            
+            <apex:pageblocksection columns="1" title="2. Transportation Information">
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="2.1 Host System"/>
+                    <apex:inputtextarea value="{!contractHandoff.Host_System__c}" rows="5" cols="100"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="2.2 Host Exported Flat Files or Web Services"/>
+                    <apex:inputtextarea value="{!contractHandoff.Host_Exported_Flat_Files_or_Web_Services__c}" rows="5" cols="100"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="2.3 Contract Information"/>
+                    <apex:inputtextarea value="{!contractHandoff.Contract_Information__c}" rows="5" cols="100"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="2.4 Scenarios"/>
+                    <apex:inputtextarea value="{!contractHandoff.Scenarios__c}" rows="5" cols="100"/>
+                </apex:pageblocksectionitem>
+            </apex:pageblocksection>
+            
+            <apex:pageblocksection columns="1" title="3. Roadnet Products">
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="3.1 Products"/>
+                    <apex:inputtextarea value="{!contractHandoff.Products_question__c}" rows="5" cols="100"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="3.2 Product Usage"/>
+                    <apex:inputtextarea value="{!contractHandoff.Product_Usage__c}" rows="5" cols="100"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="3.3 Product Goals"/>
+                    <apex:inputtextarea value="{!contractHandoff.Product_Goals__c}" rows="5" cols="100"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="3.4 Product Drivers"/>
+                    <apex:inputtextarea value="{!contractHandoff.Product_Drivers__c}" rows="5" cols="100"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="3.5 Roadnet"/>
+                    <apex:inputtextarea value="{!contractHandoff.Roadnet__c}" rows="5" cols="100"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="3.5 Territory Planner"/>
+                    <apex:inputtextarea value="{!contractHandoff.Terrority_Planner_question__c}" rows="5" cols="100"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="3.5 Mobile Cast"/>
+                    <apex:inputtextarea value="{!contractHandoff.MobileCast__c}" rows="5" cols="100"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="3.6 Telematics"/>
+                    <apex:inputtextarea value="{!contractHandoff.Telematics__c}" rows="5" cols="100"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="3.7 Route Test or RFP"/>
+                    <apex:inputtextarea value="{!contractHandoff.Route_Test_or_RFP__c}" rows="5" cols="100"/>
+                </apex:pageblocksectionitem>
+                
+            </apex:pageblocksection>
+            <apex:pageblocksection title="4. Telematics Vehicle List">
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="4.1 Vehicle List"/>
+                    <apex:inputtextarea value="{!contractHandoff.Vehicle_List__c}" rows="5" cols="100"/>
+                </apex:pageblocksectionitem>
+            </apex:pageblocksection>
+            
+            
+            <apex:pageblocksection title="Account Information">
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Account"/>
+                    <apex:outputfield value="{!contractHandoff.Account__c}"/> 
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value=""/>
+                    <apex:outputtext value=""/> 
+                </apex:pageblocksectionitem>
+                                
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Champion"/>
+                    <apex:outputfield value="{!contractHandoff.Champion__c}"/> 
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Blocker"/>
+                    <apex:outputfield value="{!contractHandoff.Blocker__c}"/> 
+                </apex:pageblocksectionitem>
+            
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Primary ERP (Host) System"/>
+                    <apex:outputtext value="{!hostSystem}"/> 
+                </apex:pageblocksectionitem>
+            <!-- <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Multi-day Routes?"/>
+                    <apex:outputtext value="{!multiDayCheckbox}"/> 
+                </apex:pageblocksectionitem> -->
+                
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Industry"/>
+                    <apex:outputtext value="{!account.Industry}"/> 
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Fleet Size"/>
+                    <apex:outputtext value="{!account.Fleetsize__c}"/> 
+                </apex:pageblocksectionitem>
+
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Number of Depots"/>
+                    <apex:outputfield value="{!account.Number_of_Depots__c}"/> 
+                </apex:pageblocksectionitem>
+            <!--<apex:pageblocksectionitem >
+                    <apex:outputlabel value="Geographic Area"/>
+                    <apex:outputtext value="{!account.Servicearea__c}"/> 
+                </apex:pageblocksectionitem>-->
+                
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Request For Proposal (RFP)"/>                    
+                    <apex:outputlink value="{!$Site.OriginalUrl}/{!rfp.id}" 
+                         target="_blank" title="{!rfp.name}">{!rfp.name}</apex:outputlink>
+                </apex:pageblocksectionitem>
+            </apex:pageblocksection>
+            
+            
+        </apex:pageblock>
+        
+    </apex:form>
+</apex:page>

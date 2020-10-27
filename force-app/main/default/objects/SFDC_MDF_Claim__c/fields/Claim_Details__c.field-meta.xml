@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Claim_Details__c</fullName>
+    <description>High level information about the fund claim</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Outline the specific actions taken for this activity.  Address the items described in the MDF fund request Proof of Performance.</inlineHelpText>
+    <label>Claim Details</label>
+    <length>1000</length>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>4</visibleLines>
+</CustomField>

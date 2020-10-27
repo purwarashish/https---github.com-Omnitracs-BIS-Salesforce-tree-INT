@@ -1,0 +1,10 @@
+<apex:page Controller="TaskFlowController" standardStylesheets="false" tabStyle="Contract">
+<!--<apex:page standardcontroller="task" extensions="TaskFlowController" standardStylesheets="false"> -->
+   <apex:outputPanel id="flow" > 
+    <flow:interview name="New_Alert_or_Notice_for_Contracts_v2" interview="{!Taskflow}" finishLocation="{!CreateTask}">
+        <apex:param name="varID" value="{!ContractId}"/>
+    </flow:interview>
+   
+   </apex:outputPanel> 
+   
+</apex:page>

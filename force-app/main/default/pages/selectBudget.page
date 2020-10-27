@@ -1,0 +1,60 @@
+<apex:page controller="SelectBudgetController" title="Select Budget Title" 
+    showHeader="true" id="selectBudgetPage" tabStyle="SFDC_MDF__c">
+
+<apex:sectionHeader title="Assign Budget" rendered="{!IF(error = 0, false, true)}" />
+<apex:sectionHeader title="Assign Budget" 
+        description="Click 'Assign Budget' to assign the budget to the Fund Request." rendered="{!IF(error = 0, true, false)}" />
+
+    <apex:form id="selectBudgetForm" >
+        <apex:pageBlock title="Available Budgets" id="pageBlock" rendered="{!IF(error = 0, true, false)}">
+            <apex:pageBlockTable value="{!budgetList}" var="item" id="budgetList">
+                <apex:column headerValue="Account">
+                    <apex:outputLink value="/{!item.Account__c}" target="_blank">
+                        <apex:outputField value="{!item.Account__c}"/>
+                    </apex:outputLink>
+                </apex:column>
+                <apex:column headerValue="Budget Name">
+                    <apex:outputLink value="/{!item.Id}" target="_blank">
+                        <apex:outputField value="{!item.Name}"/>
+                    </apex:outputLink>
+                </apex:column>
+                <apex:column headerValue="Total Active Budget" headerClass="CurrencyElement" styleClass="CurrencyElement">
+                    <apex:outputField value="{!item.Total_Active_Budget__c}"/>
+                </apex:column>
+                <apex:column headerValue="Approved Request" headerClass="CurrencyElement" styleClass="CurrencyElement">
+                    <apex:outputField value="{!item.Approved_Requests__c}"/>
+                </apex:column>
+                <apex:column headerValue="Available Budget" headerClass="CurrencyElement" styleClass="CurrencyElement">
+                    <apex:outputField value="{!item.Available_Budget__c}"/>
+                </apex:column>
+                <apex:column headerValue="Approved Claims" headerClass="CurrencyElement" styleClass="CurrencyElement">
+                    <apex:outputField value="{!item.Approved_Claims__c}"/>
+                </apex:column>
+                <apex:column headerValue="Start Date">
+                    <apex:outputField value="{!item.Start_Date__c}"/>
+                </apex:column>
+                <apex:column headerValue="End Date">
+                    <apex:outputField value="{!item.End_Date__c}"/>
+                </apex:column>
+                <apex:column headerValue="Assign Budget">
+                    <apex:commandLink action="{!assignBudget}" value="Assign Budget">
+                        <apex:param name="budgetId" value="{!item.id}"/>
+                    </apex:commandLink>
+                </apex:column>
+            </apex:pageBlockTable>
+            </apex:pageBlock>
+            <apex:pageBlock title="" id="errorBlock" mode="view" rendered="{!IF(error = 1, true, false)}">
+                <apex:pageBlockButtons >
+                    <apex:commandButton value="Ok" action="{!cancel}" />
+                </apex:pageBlockButtons>
+                <apex:pageMessages showDetail="false"/> 
+            </apex:pageBlock>
+            <apex:pageBlock title="" id="confirmationBlock" mode="view" rendered="{!IF(error = 2, true, false)}">
+                <apex:pageBlockButtons >
+                    <apex:commandButton value="Yes" action="{!confirmAssignment}" />
+                    <apex:commandButton value="No" action="{!cancel}" />
+                </apex:pageBlockButtons>
+                <apex:pageMessages showDetail="false"/> 
+            </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Proposal_Details__c</fullName>
+    <description>Owned by Sales Ops to support Deal Desk functionality. 09/2018</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Please describe the details of the proposal for this customer, including details for each product, list price, % discount and sales price you’re offering.</inlineHelpText>
+    <label>Proposal Details</label>
+    <length>131072</length>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>10</visibleLines>
+</CustomField>

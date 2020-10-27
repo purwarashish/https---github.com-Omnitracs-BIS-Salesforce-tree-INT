@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Employee Prod VF Page</label>
+    <motif>Custom89: Saxophone</motif>
+    <page>EmployeeProd</page>
+</CustomTab>

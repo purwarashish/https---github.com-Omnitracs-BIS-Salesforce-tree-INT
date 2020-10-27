@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Automated_Test_Function__c</fullName>
+    <externalId>false</externalId>
+    <label>Automated Test Function</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>3.X</fullName>
+                <default>false</default>
+                <label>3.X</label>
+            </value>
+            <value>
+                <fullName>Active Alert</fullName>
+                <default>false</default>
+                <label>Active Alert</label>
+            </value>
+            <value>
+                <fullName>Adjust Route Times</fullName>
+                <default>false</default>
+                <label>Adjust Route Times</label>
+            </value>
+            <value>
+                <fullName>Auto Arrive/Depart</fullName>
+                <default>false</default>
+                <label>Auto Arrive/Depart</label>
+            </value>
+            <value>
+                <fullName>Cease Dispatch</fullName>
+                <default>false</default>
+                <label>Cease Dispatch</label>
+            </value>
+            <value>
+                <fullName>Create Routes</fullName>
+                <default>false</default>
+                <label>Create Routes</label>
+            </value>
+            <value>
+                <fullName>Day in the Life</fullName>
+                <default>false</default>
+                <label>Day in the Life</label>
+            </value>
+            <value>
+                <fullName>Distance by Jurisdiction</fullName>
+                <default>false</default>
+                <label>Distance by Jurisdiction</label>
+            </value>
+            <value>
+                <fullName>Dual Device</fullName>
+                <default>false</default>
+                <label>Dual Device</label>
+            </value>
+            <value>
+                <fullName>Geocoding</fullName>
+                <default>false</default>
+                <label>Geocoding</label>
+            </value>
+            <value>
+                <fullName>Import</fullName>
+                <default>false</default>
+                <label>Import</label>
+            </value>
+            <value>
+                <fullName>Maintenance Entity</fullName>
+                <default>false</default>
+                <label>Maintenance Entity</label>
+            </value>
+            <value>
+                <fullName>Mobile Route</fullName>
+                <default>false</default>
+                <label>Mobile Route</label>
+            </value>
+            <value>
+                <fullName>Plot Routes</fullName>
+                <default>false</default>
+                <label>Plot Routes</label>
+            </value>
+            <value>
+                <fullName>Remove Stop</fullName>
+                <default>false</default>
+                <label>Remove Stop</label>
+            </value>
+            <value>
+                <fullName>Reports</fullName>
+                <default>false</default>
+                <label>Reports</label>
+            </value>
+            <value>
+                <fullName>Reset Route</fullName>
+                <default>false</default>
+                <label>Reset Route</label>
+            </value>
+            <value>
+                <fullName>Resource Assignment</fullName>
+                <default>false</default>
+                <label>Resource Assignment</label>
+            </value>
+            <value>
+                <fullName>Road Restrictions</fullName>
+                <default>false</default>
+                <label>Road Restrictions</label>
+            </value>
+            <value>
+                <fullName>Route Delays</fullName>
+                <default>false</default>
+                <label>Route Delays</label>
+            </value>
+            <value>
+                <fullName>Route Exceptions</fullName>
+                <default>false</default>
+                <label>Route Exceptions</label>
+            </value>
+            <value>
+                <fullName>Route Manipulation</fullName>
+                <default>false</default>
+                <label>Route Manipulation</label>
+            </value>
+            <value>
+                <fullName>Route Property Tester</fullName>
+                <default>false</default>
+                <label>Route Property Tester</label>
+            </value>
+            <value>
+                <fullName>RTS Bridges</fullName>
+                <default>false</default>
+                <label>RTS Bridges</label>
+            </value>
+            <value>
+                <fullName>Send Orders</fullName>
+                <default>false</default>
+                <label>Send Orders</label>
+            </value>
+            <value>
+                <fullName>Service Time Updater</fullName>
+                <default>false</default>
+                <label>Service Time Updater</label>
+            </value>
+            <value>
+                <fullName>Session Handling</fullName>
+                <default>false</default>
+                <label>Session Handling</label>
+            </value>
+            <value>
+                <fullName>Stationary Events</fullName>
+                <default>false</default>
+                <label>Stationary Events</label>
+            </value>
+            <value>
+                <fullName>Suggest Route</fullName>
+                <default>false</default>
+                <label>Suggest Route</label>
+            </value>
+            <value>
+                <fullName>Telematics</fullName>
+                <default>false</default>
+                <label>Telematics</label>
+            </value>
+            <value>
+                <fullName>Transit Matrix</fullName>
+                <default>false</default>
+                <label>Transit Matrix</label>
+            </value>
+            <value>
+                <fullName>Unarrive Stop</fullName>
+                <default>false</default>
+                <label>Unarrive Stop</label>
+            </value>
+            <value>
+                <fullName>Unload Route</fullName>
+                <default>false</default>
+                <label>Unload Route</label>
+            </value>
+            <value>
+                <fullName>Update Actuals</fullName>
+                <default>false</default>
+                <label>Update Actuals</label>
+            </value>
+            <value>
+                <fullName>Update ETAs</fullName>
+                <default>false</default>
+                <label>Update ETAs</label>
+            </value>
+            <value>
+                <fullName>User Authentication</fullName>
+                <default>false</default>
+                <label>User Authentication</label>
+            </value>
+            <value>
+                <fullName>User Interface</fullName>
+                <default>false</default>
+                <label>User Interface</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

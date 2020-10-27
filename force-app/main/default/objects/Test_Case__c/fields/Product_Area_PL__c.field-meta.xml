@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Area_PL__c</fullName>
+    <externalId>false</externalId>
+    <label>Product Area</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Active Alert</fullName>
+                <default>false</default>
+                <label>Active Alert</label>
+            </value>
+            <value>
+                <fullName>Admin Module</fullName>
+                <default>false</default>
+                <label>Admin Module</label>
+            </value>
+            <value>
+                <fullName>Algorithms</fullName>
+                <default>false</default>
+                <label>Algorithms</label>
+            </value>
+            <value>
+                <fullName>CAIR Biztalk</fullName>
+                <default>false</default>
+                <label>CAIR Biztalk</label>
+            </value>
+            <value>
+                <fullName>CAIR Database</fullName>
+                <default>false</default>
+                <label>CAIR Database</label>
+            </value>
+            <value>
+                <fullName>CAIR Mobile</fullName>
+                <default>false</default>
+                <label>CAIR Mobile</label>
+            </value>
+            <value>
+                <fullName>CAIR Web Application</fullName>
+                <default>false</default>
+                <label>CAIR Web Application</label>
+            </value>
+            <value>
+                <fullName>Dispatcher</fullName>
+                <default>false</default>
+                <label>Dispatcher</label>
+            </value>
+            <value>
+                <fullName>FleetLoader</fullName>
+                <default>false</default>
+                <label>FleetLoader</label>
+            </value>
+            <value>
+                <fullName>Geocoder</fullName>
+                <default>false</default>
+                <label>Geocoder</label>
+            </value>
+            <value>
+                <fullName>GIS</fullName>
+                <default>false</default>
+                <label>GIS</label>
+            </value>
+            <value>
+                <fullName>Help and Documentation</fullName>
+                <default>false</default>
+                <label>Help and Documentation</label>
+            </value>
+            <value>
+                <fullName>Importer</fullName>
+                <default>false</default>
+                <label>Importer</label>
+            </value>
+            <value>
+                <fullName>Install</fullName>
+                <default>false</default>
+                <label>Install</label>
+            </value>
+            <value>
+                <fullName>Interface</fullName>
+                <default>false</default>
+                <label>Interface</label>
+            </value>
+            <value>
+                <fullName>Maintenance</fullName>
+                <default>false</default>
+                <label>Maintenance</label>
+            </value>
+            <value>
+                <fullName>Mapping</fullName>
+                <default>false</default>
+                <label>Mapping</label>
+            </value>
+            <value>
+                <fullName>Marketing Center</fullName>
+                <default>false</default>
+                <label>Marketing Center</label>
+            </value>
+            <value>
+                <fullName>Mobile</fullName>
+                <default>false</default>
+                <label>Mobile</label>
+            </value>
+            <value>
+                <fullName>MobileCast Management Center</fullName>
+                <default>false</default>
+                <label>MobileCast Management Center</label>
+            </value>
+            <value>
+                <fullName>MobileCast Mobile</fullName>
+                <default>false</default>
+                <label>MobileCast Mobile</label>
+            </value>
+            <value>
+                <fullName>MobileCast Server</fullName>
+                <default>false</default>
+                <label>MobileCast Server</label>
+            </value>
+            <value>
+                <fullName>NetScheduler</fullName>
+                <default>false</default>
+                <label>NetScheduler</label>
+            </value>
+            <value>
+                <fullName>RA Dispatch</fullName>
+                <default>false</default>
+                <label>RA Dispatch</label>
+            </value>
+            <value>
+                <fullName>RA History</fullName>
+                <default>false</default>
+                <label>RA History</label>
+            </value>
+            <value>
+                <fullName>RA Mobile</fullName>
+                <default>false</default>
+                <label>RA Mobile</label>
+            </value>
+            <value>
+                <fullName>RA Planning</fullName>
+                <default>false</default>
+                <label>RA Planning</label>
+            </value>
+            <value>
+                <fullName>Reports</fullName>
+                <default>false</default>
+                <label>Reports</label>
+            </value>
+            <value>
+                <fullName>Roadnet</fullName>
+                <default>false</default>
+                <label>Roadnet</label>
+            </value>
+            <value>
+                <fullName>Roadnet Info Center</fullName>
+                <default>false</default>
+                <label>Roadnet Info Center</label>
+            </value>
+            <value>
+                <fullName>Roadnet Performance Dashboard</fullName>
+                <default>false</default>
+                <label>Roadnet Performance Dashboard</label>
+            </value>
+            <value>
+                <fullName>Route History</fullName>
+                <default>false</default>
+                <label>Route History</label>
+            </value>
+            <value>
+                <fullName>RTS Connect - SAP</fullName>
+                <default>false</default>
+                <label>RTS Connect - SAP</label>
+            </value>
+            <value>
+                <fullName>Server</fullName>
+                <default>false</default>
+                <label>Server</label>
+            </value>
+            <value>
+                <fullName>Telematics Adapter</fullName>
+                <default>false</default>
+                <label>Telematics Adapter</label>
+            </value>
+            <value>
+                <fullName>Territory Planner</fullName>
+                <default>false</default>
+                <label>Territory Planner</label>
+            </value>
+            <value>
+                <fullName>Web Services</fullName>
+                <default>false</default>
+                <label>Web Services</label>
+            </value>
+            <value>
+                <fullName>WPF Client</fullName>
+                <default>false</default>
+                <label>WPF Client</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

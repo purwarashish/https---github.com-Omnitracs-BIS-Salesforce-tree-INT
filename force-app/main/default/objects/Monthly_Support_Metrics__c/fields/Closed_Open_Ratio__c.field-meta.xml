@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Open_Ratio__c</fullName>
+    <description>Source of Data: Calculation of Total Cases Close/Total Cases Opened</description>
+    <externalId>false</externalId>
+    <label>Closed/Open Ratio</label>
+    <precision>5</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

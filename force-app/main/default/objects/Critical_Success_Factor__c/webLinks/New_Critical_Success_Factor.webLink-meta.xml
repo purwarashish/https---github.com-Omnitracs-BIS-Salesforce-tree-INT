@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Critical_Success_Factor</fullName>
+    <availability>online</availability>
+    <description>New button to automatically return to the parent object when saving. Replaces the original New button in the related list.</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>/a0I/e?CF00N50000001caCe={!Strategic_Account_Profile__c.Name}&amp;CF00N50000001caCe_lkid={!Strategic_Account_Profile__c.Id}&amp;retURL=%2F{!Strategic_Account_Profile__c.Id}&amp;saveURL=%2F{!Strategic_Account_Profile__c.Id}&amp;cancelURL=%2F{!Strategic_Account_Profile__c.Id}</url>
+</WebLink>

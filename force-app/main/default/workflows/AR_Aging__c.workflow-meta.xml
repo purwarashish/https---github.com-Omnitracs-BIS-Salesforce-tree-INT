@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Update_Is_Problematic_Aging_Fld_False</fullName>
+        <field>Is_Problematic_Aging__c</field>
+        <literalValue>0</literalValue>
+        <name>Update Is Problematic Aging Fld = False</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <targetObject>Account__c</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Is_Problematic_Aging_Fld_True</fullName>
+        <field>Is_Problematic_Aging__c</field>
+        <literalValue>1</literalValue>
+        <name>Update Is Problematic Aging Fld = True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <targetObject>Account__c</targetObject>
+    </fieldUpdates>
+    <rules>
+        <fullName>Update Is Problematic Aging Fld %3D False</fullName>
+        <actions>
+            <name>Update_Is_Problematic_Aging_Fld_False</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>AR_Aging__c.Flag__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>AR_Aging__c.Most_Recent__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Is Problematic Aging Fld %3D True</fullName>
+        <actions>
+            <name>Update_Is_Problematic_Aging_Fld_True</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>AR_Aging__c.Flag__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>AR_Aging__c.Most_Recent__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

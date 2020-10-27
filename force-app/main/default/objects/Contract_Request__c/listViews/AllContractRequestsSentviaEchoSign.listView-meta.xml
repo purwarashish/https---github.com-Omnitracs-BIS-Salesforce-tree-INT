@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllContractRequestsSentviaEchoSign</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Contact__c</columns>
+    <columns>Request_Type__c</columns>
+    <columns>Request_Status__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Requested_Completion_Date__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Sent_to_Customer__c</columns>
+    <columns>Signed_by_Qualcomm__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>EchoSigned__c</field>
+        <operation>equals</operation>
+        <value>Yes</value>
+    </filters>
+    <label>All Contract Requests Sent via EchoSign</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>ContractsStaff</group>
+        <group>ContractsStaffmgrs</group>
+        <group>QESAllDomesticStrategicIntern</group>
+        <group>QESContractsSalesAdmin</group>
+        <group>QESDomestic</group>
+        <group>QESDomesticStrategic</group>
+        <group>QESExecutives</group>
+        <group>QESSalesManagement</group>
+        <group>QESVPDivisionCounsel</group>
+        <group>TLAllAccounts</group>
+        <group>TLEasternRegion</group>
+        <group>TLEasternSales</group>
+        <group>TLInsideSales</group>
+        <group>TLMgrs</group>
+        <group>TLSalesManagement</group>
+        <group>TLStrategic</group>
+        <group>TLStrategicSales</group>
+        <group>TLUsers</group>
+        <group>TLWesternRegion</group>
+        <group>TLWesternSales</group>
+    </sharedTo>
+</ListView>

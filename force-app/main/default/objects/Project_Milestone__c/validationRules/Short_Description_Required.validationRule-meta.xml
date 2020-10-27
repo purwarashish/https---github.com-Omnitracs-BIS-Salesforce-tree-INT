@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Short_Description_Required</fullName>
+    <active>true</active>
+    <description>Short Description is required if Milestone Name is &quot;Other&quot;.</description>
+    <errorConditionFormula>AND( 
+ISPICKVAL( Milestone_Name__c , &quot;Other&quot;), 
+ISBLANK( Short_Description__c ) , 
+$RecordType.Name = &quot;PM Milestone&quot; 
+)</errorConditionFormula>
+    <errorDisplayField>Short_Description__c</errorDisplayField>
+    <errorMessage>Short Description is required if Milestone Name is &quot;Other&quot;.</errorMessage>
+</ValidationRule>

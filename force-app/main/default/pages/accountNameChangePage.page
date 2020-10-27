@@ -1,0 +1,6 @@
+<apex:page standardController="Account" extensions="accountNameChangeExt">
+    <flow:interview name="Account_Name_Change" interview="{!myflow}" finishLocation="{!OID}">
+        <apex:param name="varID" value="{!Account.Id}"/>
+        <apex:param name="Account_Legal_Name" value="{!Account.Legal_Name__c}"/>
+    </flow:interview>
+</apex:page>

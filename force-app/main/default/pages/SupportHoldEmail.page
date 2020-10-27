@@ -1,0 +1,61 @@
+<!--/*******************************************************************************
+ * File:  SupportHoldEmail.page
+ * Date:  July 7th, 2012
+ * Author:  Joseph Hutchins
+ *
+ * The use, disclosure, reproduction, modification, transfer, or transmittal of
+ * this work for any purpose in any form or by any means without the written 
+ * permission of United Parcel Service is strictly prohibited.
+ *
+ * Confidential, unpublished property of United Parcel Service.
+ * Use and distribution limited solely to authorized personnel.
+ *
+ * Copyright 2009, UPS Logistics Technologies, Inc.  All rights reserved.
+ *  *******************************************************************************/-->
+<apex:page standardController="Account" extensions="SupportHoldEmailExtension">
+    <apex:form id="theForm">
+        <apex:pagemessage strength="2" 
+            severity="confirm" title="Press Send Email to Set Account on Support Hold" detail="The account will NOT be placed on support hold until you click the Send Email button" />
+        <apex:pagemessage strength="2" 
+            severity="info" title="Only active contacts in the picklist below will have emails sent to them." detail="" />
+        
+        <apex:pageBlock title="Support Hold Email for {!account.name}">
+            <apex:pageMessages />
+            <apex:pageBlockButtons >
+                <apex:commandbutton action="{!sendEmail}" value="Send Email"/>         
+                <apex:commandbutton action="{!cancel}" value="Cancel"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="1" >
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Account Name"/>
+                    <apex:outputfield value="{!account.name}"/>
+                </apex:pageblocksectionitem>
+                
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Contact"/>
+	                <apex:outputpanel >
+	                    <apex:selectlist value="{!userChoiceContact}" multiselect="false" size="5">
+	                        <apex:selectoptions value="{!contactPicklist}"/>
+	                    </apex:selectlist>
+	                    <apex:commandbutton value="Add" action="{!addContact}"/>
+                    </apex:outputpanel>
+                    
+                </apex:pageblocksectionitem>
+                
+                
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="To Email"/>
+                    <apex:inputtextarea cols="100" rows="2" value="{!toEmail}"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="CC Email"/>
+                    <apex:inputtextarea cols="100" rows="2" value="{!ccEmail}"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="BCC Email"/>
+                    <apex:inputtextarea cols="100" rows="2" value="{!bccEmail}"/>
+                </apex:pageblocksectionitem>
+            </apex:pageblocksection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

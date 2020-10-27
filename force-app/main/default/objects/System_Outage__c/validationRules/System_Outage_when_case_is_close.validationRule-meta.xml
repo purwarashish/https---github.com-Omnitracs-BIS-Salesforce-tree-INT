@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>System_Outage_when_case_is_close</fullName>
+    <active>true</active>
+    <description>When System Outage is of Unplanned Downtime or Degraded Service the Case status has to be close.</description>
+    <errorConditionFormula>AND((Case__r.Event_Summary_and_Corrective_Action__c =&quot;&quot;), (Case__r.Customer_Impact__c =&quot;&quot;), (Case__r.High_Level_Timeline__c =&quot;&quot;),(ISPICKVAL(Case__r.Status ,&quot;Closed&quot;)),( Case__r.RecordTypeId =&quot;Hub&quot;),(OR( 
+(ISPICKVAL(Type__c ,&quot;Degraded Service&quot;)), 
+(ISPICKVAL(Type__c ,&quot;Unplanned Downtime&quot;)))))</errorConditionFormula>
+    <errorMessage>Event Summary and Root Cause,Customer Impact, High-Level Timeline must be filled in for the Case. Please enter the values in the above mentioned fields.</errorMessage>
+</ValidationRule>

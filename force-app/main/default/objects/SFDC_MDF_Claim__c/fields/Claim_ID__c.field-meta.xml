@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Claim_ID__c</fullName>
+    <description>A unique id assigned to the fund claim. Optionally useful for the partner as a means to identify the specific fund claim record.</description>
+    <displayFormat>{YY}{MM}{DD}-{0}</displayFormat>
+    <externalId>false</externalId>
+    <label>Claim ID</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>AutoNumber</type>
+</CustomField>

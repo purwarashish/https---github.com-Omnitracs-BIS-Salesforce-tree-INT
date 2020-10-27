@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Roll_Up_Assets__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>True if the assets from this account should be rolled up to the Customer Assets on the parent.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>True if the assets from this account should be rolled up to the Customer Assets on the parent.</inlineHelpText>
+    <label>Roll Up Assets</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

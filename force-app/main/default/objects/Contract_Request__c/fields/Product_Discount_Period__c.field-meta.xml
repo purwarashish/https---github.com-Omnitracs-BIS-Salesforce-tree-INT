@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Discount_Period__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Discounts longer than 36 months require approval.</inlineHelpText>
+    <label>Product Discount Period</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Product__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>6 months from schedule date</fullName>
+                <default>false</default>
+                <label>6 months from schedule date</label>
+            </value>
+            <value>
+                <fullName>12 months from schedule date</fullName>
+                <default>false</default>
+                <label>12 months from schedule date</label>
+            </value>
+            <value>
+                <fullName>18 months from schedule date</fullName>
+                <default>false</default>
+                <label>18 months from schedule date</label>
+            </value>
+            <value>
+                <fullName>24 months from schedule date</fullName>
+                <default>false</default>
+                <label>24 months from schedule date</label>
+            </value>
+            <value>
+                <fullName>36 months from schedule date</fullName>
+                <default>false</default>
+                <label>36 months from schedule date</label>
+            </value>
+            <value>
+                <fullName>Initial Term</fullName>
+                <default>false</default>
+                <label>Initial Term</label>
+            </value>
+            <value>
+                <fullName>Terminal Commitment</fullName>
+                <default>false</default>
+                <label>Terminal Commitment</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>Trailer Tracks 210</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS and OmniExpress</controllingFieldValue>
+            <controllingFieldValue>Refurbished MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>Refurbished OmniTRACS</controllingFieldValue>
+            <valueName>6 months from schedule date</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>Trailer Tracks 210</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS and OmniExpress</controllingFieldValue>
+            <controllingFieldValue>Refurbished MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>Refurbished OmniTRACS</controllingFieldValue>
+            <valueName>12 months from schedule date</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>Trailer Tracks 210</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS and OmniExpress</controllingFieldValue>
+            <controllingFieldValue>Refurbished MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>Refurbished OmniTRACS</controllingFieldValue>
+            <valueName>18 months from schedule date</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>Trailer Tracks 210</controllingFieldValue>
+            <controllingFieldValue>Refurbished MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <valueName>24 months from schedule date</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>Trailer Tracks 210</controllingFieldValue>
+            <controllingFieldValue>Refurbished MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <valueName>36 months from schedule date</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>Trailer Tracks 210</controllingFieldValue>
+            <controllingFieldValue>Refurbished MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <valueName>Initial Term</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>Trailer Tracks 210</controllingFieldValue>
+            <controllingFieldValue>Refurbished MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <valueName>Terminal Commitment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>Trailer Tracks 210</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS and OmniExpress</controllingFieldValue>
+            <controllingFieldValue>Refurbished MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>Refurbished OmniTRACS</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

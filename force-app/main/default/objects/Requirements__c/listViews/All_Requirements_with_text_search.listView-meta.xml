@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Requirements_with_text_search</fullName>
+    <columns>NAME</columns>
+    <columns>Title__c</columns>
+    <columns>Track__c</columns>
+    <columns>Area__c</columns>
+    <columns>Requirement_Status__c</columns>
+    <columns>Business_Owner__c</columns>
+    <columns>OBJECT_ID</columns>
+    <columns>ForceDev_SB_SF_ID__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Title__c</field>
+        <operation>contains</operation>
+        <value>dupe</value>
+    </filters>
+    <label>All Requirements with text search</label>
+    <language>en_US</language>
+</ListView>

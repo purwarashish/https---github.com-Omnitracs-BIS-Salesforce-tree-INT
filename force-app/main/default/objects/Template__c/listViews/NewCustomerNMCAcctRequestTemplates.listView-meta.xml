@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NewCustomerNMCAcctRequestTemplates</fullName>
+    <columns>NAME</columns>
+    <columns>IsActive__c</columns>
+    <columns>NumTotal__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>CreateCase__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>startsWith</operation>
+        <value>New Customer NMC Account Request</value>
+    </filters>
+    <label>New Customer NMC Acct Request Templates</label>
+    <language>en_US</language>
+</ListView>

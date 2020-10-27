@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Products_question__c</fullName>
+    <description>Provide a list of RTI Porudcts sold to the customer including the priority/order in which the customer expects the products to be delivered.  - RN, TP MC, FL, TM, RIC, etc</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Provide a list of RTI Porudcts sold to the customer including the priority/order in which the customer expects the products to be delivered.  - RN, TP MC, FL, TM, RIC, etc</inlineHelpText>
+    <label>Products (question)</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

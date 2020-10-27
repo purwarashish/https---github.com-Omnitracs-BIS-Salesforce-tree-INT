@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Account QWBS Statuses , Mainly used in AllAccountUtils Class.
+Please refer the AllAccountUtils class in case if you want to add something.</description>
+    <enableFeeds>false</enableFeeds>
+    <label>AccountQwbsCloseStatuses</label>
+    <visibility>Public</visibility>
+</CustomObject>

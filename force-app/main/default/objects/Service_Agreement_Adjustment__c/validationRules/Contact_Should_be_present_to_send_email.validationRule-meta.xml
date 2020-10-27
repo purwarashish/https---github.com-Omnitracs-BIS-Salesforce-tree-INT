@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_Should_be_present_to_send_email</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( PRIORVALUE(Email_Sent__c)&lt;&gt; Email_Sent__c ,Email_Sent__c = true ,Contact_Email__c = null)</errorConditionFormula>
+    <errorDisplayField>Email_Sent__c</errorDisplayField>
+    <errorMessage>Contact details should be present to send an email</errorMessage>
+</ValidationRule>

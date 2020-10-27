@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Time_Spent__c</fullName>
+    <externalId>false</externalId>
+    <formula>Absence_Time_Spent__c + Admin_Time_Spent__c + Consulting_Time_Spent__c + Meeting_Time_Spent__c + Project_Time_Spent__c + Training_Time_Spent__c + Bereavement_Time_Spent__c + Holiday_Time_Spent__c + In_Lieu_Days_Time_Spent__c + Jury_Duty_Time_Spent__c + Professional_Services_Work_Time_Spent__c + Sick_Time_Spent__c + Vacation_Time_Spent__c +Personal_Time_Spent__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total Time Spent</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

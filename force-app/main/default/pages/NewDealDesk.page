@@ -1,0 +1,3 @@
+<apex:page standardController="Deal_Desk__c" extensions="OppDealDeskController" action="{!PrePopulateData}" sidebar="false" showChat="false" showheader="false">
+<apex:pagemessages />
+</apex:page>

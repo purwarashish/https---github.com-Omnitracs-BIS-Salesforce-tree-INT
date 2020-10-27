@@ -1,0 +1,26 @@
+<apex:page standardController="Contact" extensions="SupportAlert">
+<apex:pageBlock >
+    <apex:pageBlockTable value="{!alerts}"
+                    var="a"
+                    cellPadding="4" border="1">
+      <apex:column title="Alert Name" headerValue="Support Alert Name">
+        {!a.Name}  
+      </apex:column>
+      <apex:column headerValue="Importance">
+      <apex:image id="theImage" Value="{!a.Importance__c}"/>      
+       </apex:column>
+      <apex:column title="Critical" headerValue="Critical">
+        {!a.Critical__c}
+      </apex:column>
+      <apex:column title="Description" headerValue="Description">
+        {!a.Description__c}
+      </apex:column>
+      <apex:column title="Summary" headerValue="Summary">
+        {!a.Summary__c}
+      </apex:column>
+      <apex:column title="End Date" headerValue="End Date">
+        {!a.End_Date__c}
+      </apex:column>
+    </apex:pageBlockTable>
+ </apex:pageBlock>
+</apex:page>

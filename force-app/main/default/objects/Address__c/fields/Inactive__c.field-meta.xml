@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inactive__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Used to denote if the address is active or not.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check this box if the address is no longer valid.Please coordinate with Contracs/Legal team &amp; Sales team before deactivating the addresses.</inlineHelpText>
+    <label>Inactive ?</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Annual_Recurring_Revenue__c</fullName>
+    <description>aka &quot;Annual Recurring Revenue&quot;. For Subscription products, ARR == Sales Price, for Perpetual products, ARR == X% of list (X is data lookup based on Product Type &amp; Product Family). Extended amount, not a per-unit amount.</description>
+    <externalId>false</externalId>
+    <label>ARR</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Support_Alert</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>/a09/e?CF00N50000001ca90={!Account.Name}&amp;CF00N50000001ca90_lkid={!Account.Id}&amp;retURL=%{!Account.Id}&amp;saveURL=%2F{!Account.Id}&amp;cancelURL=%2F{!Account.Id}</url>
+</WebLink>

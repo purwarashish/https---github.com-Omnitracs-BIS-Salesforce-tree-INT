@@ -1,0 +1,195 @@
+<apex:page id="OpportunityReport" controller="ReportOpty3rdPartyProjectController" showHeader="False" sidebar="False"  cache="true" action="{!ExporttoExcel}" language="english" contentType="application/vnd.ms-excel#Opty3rdPartyProject.xls">
+
+    <table  border="1" >
+       
+    <apex:repeat id="reportrepeat" value="{!excelList}" var="Master">   
+    <tr  bgcolor="#999999"  nowrap="nowrap">
+        <th >Account - {!Master.tempOppList.Account.Name}</th>
+    </tr>
+    <tr>
+        <td class="dataCell" >
+        
+        <table border="1" >
+        
+            <tr class="headerRow">
+                <th class="headerRow">
+                    CID 
+                </th>
+                <th class="headerRow">
+                    Account Name 
+                </th>
+                <th class="headerRow">
+                    Opportunity Name 
+                </th>
+                <th class="headerRow">
+                    Quantity 
+                </th>
+                <th class="headerRow">
+                    Forecast Demand %
+                </th>
+                <th class="headerRow">
+                    Stage
+                </th>
+                <th class="headerRow">
+                    Ship/Start Date 
+                </th>
+                <th class="headerRow" >
+                    Ranking
+                </th>
+            <!--    <th class="headerRow" width="100%" colspan="2">
+                    Dependencies
+                </th>-->
+            </tr> 
+            <tr>
+                <td class=" dataCell " colspan="1">
+                    <apex:outputText value="{!Master.tempOppList.Cust_ID__c}"></apex:outputText>
+                </td>
+                <td class=" dataCell " colspan="1">
+                    <apex:outputField value="{!Master.tempOppList.AccountId}"/>
+                </td>
+                <td class=" dataCell " colspan="1">
+                     <apex:outputField value="{!Master.tempOppList.Name}"/>
+                </td>
+                <td class=" dataCell " colspan="1">
+                    <apex:outputField value="{!Master.tempOppList.Oppty_Quantity__c}"/>
+                </td>
+                <td class=" dataCell " colspan="1">
+                    <apex:outputField value="{!Master.tempOppList.Forecast_Demand__c}"/>
+                </td>
+                <td class=" dataCell " colspan="1">
+                    <apex:outputField value="{!Master.tempOppList.StageName}"/>
+                </td>
+                <td class=" dataCell " colspan="1">
+                    <apex:outputField value="{!Master.tempOppList.Start_Date__c}"/>
+                </td>
+                <td class=" dataCell " colspan="1">
+                     <apex:outputField value="{!Master.tempOppList.Ranking__c}"/>
+                </td>
+           <!-- <td class=" dataCell " colspan="2">
+                    <apex:outputField value="{!Master.tempOppList.Dependencies__c}"/>
+                </td> -->
+            </tr>
+            <tr bgcolor="#95B9C7">
+                <td>
+                </td>
+                <td bgcolor="#95B9C7" nowrap="nowrap" colspan="9" >
+                    <b>Product Information</b>
+                </td>
+            </tr>
+             <tr class="headerRow">
+                <td></td>
+                <td class="headerRow"  >
+                   <apex:outputText value="Product Name"  ></apex:outputText>
+                </td>
+                <td class="headerRow" colspan="8" >
+                   <apex:outputText value="Line Description"  ></apex:outputText>
+                </td>
+            </tr>
+            <tr >
+                <td></td>
+                <td colspan="9" id="prodList">
+                   <apex:repeat value="{!Master.tempProdList}" var="prod" > 
+                       <tr>
+                       <td></td>
+                       <td >
+                       <apex:outputText value="{!prod.PricebookEntry.Name}" ></apex:outputText>
+                       </td>
+                       <td colspan="8">
+                       <apex:outputText value="{!prod.Description}" ></apex:outputText>
+                       </td>
+                       </tr>
+                   </apex:repeat>
+                </td>
+              
+            </tr>     
+            <tr bgcolor="#95B9C7" colspan="9">
+                 <td>
+                 </td>
+                 <td nowrap="nowrap" width="100%" colspan="9">
+                     <b> Project Information </b>
+                 </td>
+                 
+             </tr>
+             <tr class="headerRow" colspan="8">
+                 <td>
+                 </td>
+                 <th width="20%">Project Number</th>  
+                <th>Project Status</th>
+                <th>Stage</th>
+                <th>Actual Start Date</th>
+                <th>Actual Completion Date</th>
+                <th>Est. Billable Amount</th>
+                <th colspan="3">Project Manager</th>
+                 
+             </tr>  
+             <tr>
+                 <td>
+                 </td>
+                 <td colspan="9">
+                 <apex:repeat value="{!Master.tempProjList}" var="proj">
+                 <tr>
+                 <td></td>
+                 <td><apex:outputField value="{!proj.Name}" /></td>
+                <td><apex:outputField value="{!proj.Project_Status__c}" /></td>
+                <td><apex:outputField value="{!proj.Project_Stage__c}" /></td>
+                <td><apex:outputField value="{!proj.Actual_Start_Date__c}" /></td>
+                <td><apex:outputField value="{!proj.Actual_Completion_Date__c}" /></td>
+                <td><apex:outputField value="{!proj.Total_Estimated_Billable_Amount__c}" /></td>
+                <td colspan="3"><apex:outputField value="{!proj.Project_Manager__c}" /></td>  
+                </tr>
+                </apex:repeat>
+                </td>
+             </tr>   
+             <tr bgcolor="#95B9C7" width="100%" colspan="9">
+                <td>
+                </td>
+                <td nowrap="nowrap" colspan="9">
+                    <b>3rd Party Product Information</b>
+                </td>
+            </tr>
+             <tr class="headerRow" colspan="9">
+                <td></td>
+                
+                <th >Name</th>
+                <th >3rd Party</th>
+                <th >Comments</th>
+                <th >Partner Type</th>
+                <th >Product / Service</th>
+                <th >Created By</th>
+                <th >Created Date</th>
+                <th >Last Modified By</th>
+                <th >Last Modified Date</th> 
+            </tr>
+            <tr colspan="9">
+                <td></td>
+                <td >
+                   <apex:repeat value="{!Master.tempthirdParty}" var="party" > 
+                   <tr>
+                   <td></td>
+                 <td><apex:outputField value="{!party.Name}" /></td>
+                <td><apex:outputField value="{!party.X3rd_Party__c}" /></td>
+                <td><apex:outputField value="{!party.Comments__c}" /></td>
+                <td><apex:outputField value="{!party.Partner_Type__c}" /></td>
+                <td><apex:outputField value="{!party.Product_Service1__c}" /></td>
+                <td><apex:outputField value="{!party.CreatedById}" /></td>
+                <td><apex:outputField value="{!party.CreatedDate}" /></td>
+                <td><apex:outputField value="{!party.LastModifiedById}" /></td>
+                <td><apex:outputField value="{!party.LastModifiedDate}" /></td>
+                   </tr>
+                   </apex:repeat>
+                </td>
+              
+            </tr>    
+            </table>
+       </td>
+       </tr>
+       
+    </apex:repeat>
+    </table>
+        
+       
+     
+   
+    
+
+</apex:page>

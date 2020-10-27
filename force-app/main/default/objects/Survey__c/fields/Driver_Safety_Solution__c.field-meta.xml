@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Driver_Safety_Solution__c</fullName>
+    <description>Used for CAP survey data collection.</description>
+    <externalId>false</externalId>
+    <label>Driver Safety Solution</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Meritor Wabco</fullName>
+                <default>false</default>
+                <label>Meritor Wabco</label>
+            </value>
+            <value>
+                <fullName>Bendix</fullName>
+                <default>false</default>
+                <label>Bendix</label>
+            </value>
+            <value>
+                <fullName>Mobileye</fullName>
+                <default>false</default>
+                <label>Mobileye</label>
+            </value>
+            <value>
+                <fullName>Iteris</fullName>
+                <default>false</default>
+                <label>Iteris</label>
+            </value>
+            <value>
+                <fullName>None / In-house, Custom</fullName>
+                <default>false</default>
+                <label>None / In-house, Custom</label>
+            </value>
+            <value>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+                <label>Unknown</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>7</visibleLines>
+</CustomField>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source_System__c</fullName>
+    <externalId>false</externalId>
+    <label>Source System</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Excel</fullName>
+                <default>false</default>
+                <label>Excel</label>
+            </value>
+            <value>
+                <fullName>Great Plains</fullName>
+                <default>false</default>
+                <label>Great Plains</label>
+            </value>
+            <value>
+                <fullName>MS Access</fullName>
+                <default>false</default>
+                <label>MS Access</label>
+            </value>
+            <value>
+                <fullName>MS CRM</fullName>
+                <default>false</default>
+                <label>MS CRM</label>
+            </value>
+            <value>
+                <fullName>Oracle</fullName>
+                <default>false</default>
+                <label>Oracle</label>
+            </value>
+            <value>
+                <fullName>SFDC (Legacy)</fullName>
+                <default>false</default>
+                <label>SFDC (Legacy)</label>
+            </value>
+            <value>
+                <fullName>SFDC (New)</fullName>
+                <default>false</default>
+                <label>SFDC (New)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

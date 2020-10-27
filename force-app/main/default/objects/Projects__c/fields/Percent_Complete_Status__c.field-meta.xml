@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Percent_Complete_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE ( Percent_Complete_Score__c, 0, IMAGE(&quot;/servlet/servlet.FileDownload?file=01550000000IHWh&quot;,&quot;0&quot;),20, IMAGE(&quot;/servlet/servlet.FileDownload?file=01550000000IHWm&quot;,&quot;20&quot;), 40, IMAGE(&quot;/servlet/servlet.FileDownload?file=01550000000IHWr&quot;,&quot;40&quot;),60, IMAGE(&quot;/servlet/servlet.FileDownload?file=01550000000IHXB&quot;,&quot;60&quot;),80, IMAGE(&quot;/servlet/servlet.FileDownload?file=01550000000IHXG&quot;,&quot;80&quot;),100, IMAGE(&quot;/servlet/servlet.FileDownload?file=01550000000IHXL&quot;,&quot;100&quot;),&quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Checklist % Indicator</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

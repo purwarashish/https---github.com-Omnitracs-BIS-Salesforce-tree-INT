@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PS_Identified_Goals_and_Objectives__c</fullName>
+    <description>The Professional Services consultant worked with me to successfully identify goals and objectives.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The Professional Services consultant worked with me to successfully identify goals and objectives.</inlineHelpText>
+    <label>PS Identified Goals and Objectives</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1 - Strongly Disagree</fullName>
+                <default>false</default>
+                <label>1 - Strongly Disagree</label>
+            </value>
+            <value>
+                <fullName>2 - Somewhat Disagree</fullName>
+                <default>false</default>
+                <label>2 - Somewhat Disagree</label>
+            </value>
+            <value>
+                <fullName>3 - Neither Agree nor Disagree</fullName>
+                <default>false</default>
+                <label>3 - Neither Agree nor Disagree</label>
+            </value>
+            <value>
+                <fullName>4 - Somewhat Agree</fullName>
+                <default>false</default>
+                <label>4 - Somewhat Agree</label>
+            </value>
+            <value>
+                <fullName>5 - Strongly Agree</fullName>
+                <default>false</default>
+                <label>5 - Strongly Agree</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

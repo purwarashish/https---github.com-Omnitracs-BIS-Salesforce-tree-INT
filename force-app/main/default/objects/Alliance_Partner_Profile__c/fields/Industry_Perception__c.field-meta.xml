@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Industry_Perception__c</fullName>
+    <description>Owned by Strategic Alliance Team (Matt Martinez &amp; Joe Vastine)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>How are they perceived in the Industry?</inlineHelpText>
+    <label>Industry Perception</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>5</visibleLines>
+</CustomField>

@@ -1,0 +1,78 @@
+<apex:page standardController="lead" extensions="LeadOwnerReAssignmentController" 
+                                        sidebar="false" showHeader="false" standardStylesheets="true">
+                                    
+                                        
+<STYLE>
+.btnClass
+{
+color: #000000; 
+font-family: Arial,Helvetica,sans-serif;
+font-size: 75%;
+}
+.labelCol{
+padding-top: 2px;
+padding-right: 10px;
+padding-bottom: 2px;
+padding-left: 2px;
+text-align: right;
+font-size: 91%;
+font-weight: bold;
+width: 18%;
+}
+</STYLE>
+<script type="text/javascript">
+    window.sfdcPage = new EditPage();
+    function openRejectForm(){              
+        window.open('/apex/LeadRejection?id={!Lead.Id}&ic=1', 'Lead_Rejection', 'menubar=0,width=900,height=600,toolbar=0,location=0');
+    }
+    function chkOpenActivity1()
+    {
+        
+        if('{!isOpenActivity}' == 'true')
+            {
+                
+                var isRedirect = window.confirm("Open activities exist on this lead, do you want to continue?") 
+                if(isRedirect)
+                {
+                    openIntegration('/apex/LeadOwnerReAssignment?id={!Lead.Id}&ic=1','height=600,width=900,location=no,resizable=yes,toolbar=no,status=no,menubar=no,scrollbars=1', 1);      
+                }
+                else
+                {
+                    return false; 
+                }
+            }
+        else
+        {
+            openIntegration('/apex/LeadOwnerReAssignment?id={!Lead.Id}&ic=1','height=600,width=900,location=no,resizable=yes,toolbar=no,status=no,menubar=no,scrollbars=1', 1);    
+        }
+    }
+</script> 
+<apex:form rendered="{!isPortalUser}">
+    <table>
+    <tr>
+        <td class="dataCol col02" >
+
+            <apex:outputField value="{!Lead.Owner.Name}" />              
+            <apex:commandLink value="[Reassign]" onclick="chkOpenActivity1();" style="margin-right:10px; margin-left:10px"/>
+            <apex:commandLink value="[Reject]" onclick="openRejectForm();"/>
+            
+        </td>   
+    </tr> 
+    </table>
+</apex:form>
+
+<apex:form rendered="{!NOT(isPortalUser)}">
+<div>
+    <div style="margin-left:142px">
+	<table width="100%">
+    <tr>
+    	<td class="labelCol"></td>
+        <td class="dataCol col02">
+    	<apex:commandLink value="Reject" onclick="openRejectForm();" /> 
+    	</td>
+    </tr>
+    </table>
+    </div>
+    </div>
+</apex:form>
+</apex:page>

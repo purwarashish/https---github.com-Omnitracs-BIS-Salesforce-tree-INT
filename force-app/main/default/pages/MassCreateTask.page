@@ -1,0 +1,218 @@
+<apex:page title="Mass Create Task" id="masstask" extensions="MassCreateTaskController" standardController="Task" sidebar="true" showHeader="true">
+<script language="Javascript">
+
+    function add()
+    {
+        Change();
+    }
+
+    function remove()
+    {
+       
+        remUsers();
+    }
+
+
+    function changeValue(selectobj)
+    {
+        //alert('hi:'+document.getElementById('masstask:form1:pgblk:pgblksection:j_id52:tsk3_lktp').value);
+        var test = selectobj.options[selectobj.selectedIndex].value;
+        //alert('test:'+test);
+        document.getElementById('masstask:form1:pgblk:pgblksection:section3:tsk3_lktp').value = test;
+        //alert('after:'+document.getElementById('masstask:form1:pgblk:pgblksection:j_id52:tsk3_lktp').value);
+        
+    }
+    
+function saveRecord()
+{
+
+selectedrec.value=document.getElementById('tsk3_lkid').value;
+}
+
+</script>
+
+    <apex:form id="form1" >
+        <apex:actionFunction name="Change"  action="{!AddUsers}" />
+
+        <apex:actionFunction name="remUsers" action="{!RemoveUsers}"/>
+        <!--<apex:actionFunction name="changeObject" action="{!ChangeObj}"/>-->
+        <apex:sectionHeader title="Task" subtitle="Mass Create Task"/>
+        <apex:pageBlock id="pgblk" title="Task Details" mode="edit" >
+            <apex:pageBlockButtons location="both">
+                <apex:commandButton value="Save" action="{!Save}" onclick="javascript:saveRecord();"/>
+                <apex:commandButton value="Cancel" action="/home/home.jsp"/>
+            </apex:pageBlockButtons>
+            
+            <apex:Messages style="color:rgb(204,0,0);font-weight: bold;text-align:center" />
+
+
+            <apex:pageBlockSection id="pgblksection" title="Task Information" showHeader="true" columns="2">
+               
+               <apex:PageBlockSectionItem id="pgblkitem">
+                  
+                  <b>Assigned To</b>
+                  <apex:outputPanel >
+                      <apex:panelGrid columns="3">
+                          Search Users for:<apex:inputText value="{!search_value}" styleClass="requiredInput" />
+                          <apex:commandButton value="Find" action="{!search}"/>
+                      </apex:panelGrid>
+                      <br/>
+                      <apex:outputText rendered="{!displayMessage}" style="color:rgb(204,0,0);" value="{!msg}"> </apex:outputText>
+                      <br/>
+                      <!--<apex:panelGrid columns="2"  width="100%" >
+                          <b> Available Users </b>
+                          <apex:outputText style="font-weight:bold;padding-left:30%" value="Selected Users"></apex:outputText>                      
+                          </apex:panelGrid>-->
+                          <table width="100%" columns="3">
+                          <tr>
+                          <td align="center">
+                          <b> Available Users </b>
+                          </td>
+                          <td  align="center" > 
+                          <b> Selected Users </b>
+                          </td>
+                          </tr>
+                          </table>
+                      <br/>
+                      <apex:panelGrid id="panel3" columns="3">
+                                            <apex:selectList id="userslist" multiselect="true" value="{!selectedUsers}" size="10" style="width:200px" >
+                              <apex:selectOptions value="{!users}" />
+                          </apex:selectList>
+                          
+                        
+
+                          <apex:outputPanel >
+                              <table>
+                                  <tr>
+                                      <td valign="bottom" align="center" class="bodySmall">Add</td>
+                                  </tr>
+                                  <tr>
+                                      <td align="center"><apex:image value="/s.gif" style="cursor: pointer;" styleClass="rightArrowIcon" onclick="javascript:add();" /></td>
+                                  </tr>
+                                  <tr>
+                                      <td align="center"><apex:image value="/s.gif" style="cursor: pointer;"  styleClass="leftArrowIcon" onclick="javascript:remove();"/></td>
+                                  </tr>
+                                  <tr>
+                                      <td align="center" valign="top" class="bodySmall">Remove</td>
+                                  </tr>
+                              </table>
+                          </apex:outputPanel>
+                                                 
+                          <apex:selectList style="color:red" id="selectedusers"  multiselect="true" value="{!finallist}" size="10" style="width:200px">
+                              <apex:selectOptions value="{!options}" />
+                          </apex:selectList>
+
+                      </apex:panelGrid>
+
+                  </apex:outputPanel>
+
+               </apex:pageBlockSectionItem>
+               <br/>
+               <apex:pageblockSectionItem >
+               <b> Subject</b>
+               <apex:outputPanel >
+               <table width="100%">
+               <tr>
+                <td>
+                <!--<apex:selectList value="{!taskSubject}" multiselect="false" size="1" >
+                            <apex:selectOptions value="{!subjectList}">
+                            </apex:selectOptions>
+                        </apex:selectList>     -->     
+                        <div class="requiredInput">
+                     <div class="requiredBlock">
+                        </div>
+              
+                        <apex:inputField value="{!TaskNew.Subject}" />
+</div>
+                 </td>              
+                <td align="center">
+                   <!--<apex:inputText />-->
+                      
+                      <apex:outputText style="font-weight:bold;" value="Status"></apex:outputText>                      
+                       <!--<b>Status</b>-->
+                       </td>
+                       <td align="center">
+                       <apex:actionRegion >                        
+                       <!--<apex:inputField value="{!Task.Status}" />-->
+                       </apex:actionRegion>
+
+                       <apex:selectList value="{!taskStatus}" multiselect="false" size="1" >
+                            <apex:selectOptions value="{!statusList}">
+                            </apex:selectOptions>
+                        </apex:selectList>                        </td>
+                   </tr>
+                   </table>
+                        </apex:outputPanel>
+                   
+               </apex:pageblockSectionItem>
+               <br/>
+               <apex:pageBlockSectionItem >
+                   <b> Due Date</b>
+               <apex:outputPanel >
+               <table width="100%">
+               <tr>
+               <td width="45%">
+               <div class="requiredInput">
+                     <div class="requiredBlock">
+                        </div>
+               <apex:inputField value="{!TaskNew.ActivityDate}"  /></div>
+               </td>
+                        <td width="13%" >
+                         <apex:outputText style="font-weight:bold;" value="Priority"></apex:outputText>                      
+                          </td>  
+                        
+                       
+                       
+<!--<apex:inputField value="{!Task.Priority}" />-->
+
+
+<td>
+                        <apex:selectList value="{!taskPriority}" multiselect="false" size="1" >
+                            <apex:selectOptions value="{!priorityList}">
+                            </apex:selectOptions>
+                        </apex:selectList>
+                        </td>
+                        </tr>
+                        </table>
+               </apex:outputPanel>
+               </apex:pageBlockSectionItem>
+               <br/>
+               <apex:pageBlockSectionItem id="section3">
+               <apex:selectList id="tst123" value="{!ObjectType}" multiselect="false" size="1" onchange="javascript:changeValue(this);">
+                   <apex:selectOption itemValue="001" itemlabel="Account" />
+                   <apex:selectOption itemValue="006" itemlabel="Opportunity" />
+                   <apex:selectOption itemValue="500" itemlabel="Case" />
+                   <apex:selectOption itemValue="701" itemlabel="Campaign" />
+                   <apex:selectOption itemValue="800" itemlabel="Contract" />
+                   <apex:selectOption itemValue="501" itemlabel="Solution" />
+                   <apex:selectOption itemValue="01t" itemlabel="Product" />
+
+               </apex:selectList>
+               <apex:outputPanel >
+        
+
+<apex:inputHidden value="{!objectSel}" id="tsk3_lktp"/>
+<input type="hidden" name="tsk3_lkid" id="tsk3_lkid" value=""/>
+<input type="hidden" name="tsk3_lkold" id="tsk3_lkold" value="null"/>
+
+<input tabindex="12" maxlength="80" type="text" title="Related To" id="tsk3" size="20" name="tsk3"/>
+
+<apex:image value="/s.gif" style="cursor: pointer;" styleClass="lookupIcon" onclick="JavaScript: openLookup('/_ui/common/data/LookupPage?lknm=tsk3&lkfm=form1&lkrf=&sn=1&lktp=' +document.getElementById('masstask:form1:pgblk:pgblksection:section3:tsk3_lktp').value,670,1,'&lksrch=' + escapeUTF(document.getElementById('tsk3').value),'maxw')"/>
+
+</apex:outputPanel>
+
+
+               </apex:pageBlockSectionItem>
+
+            </apex:pageBlockSection>
+            <apex:inputhidden value="{!current_Value}" id="selectedid" />
+        <script> var selectedrec= document.getElementById('{!$Component.selectedid}'); </script>
+         <apex:pageBlockSection id="pgblksection2" title="Description Information" showHeader="true" columns="2">
+         <apex:PageBlockSectionItem id="pgblkitem">
+            Comments: <apex:inputTextarea value="{!comments}" cols="75" rows="6" />
+            </apex:PageBlockSectionItem>
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+       
+        </apex:form>
+</apex:page>

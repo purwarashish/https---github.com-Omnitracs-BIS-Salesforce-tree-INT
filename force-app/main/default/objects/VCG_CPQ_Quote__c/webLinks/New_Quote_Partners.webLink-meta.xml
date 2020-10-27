@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Quote_Partners</fullName>
+    <availability>online</availability>
+    <description>Custom New Quote button that takes Partners to the CPQ Tool</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New Partner Quote</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/partners/apex/VCG_CPQ_QuoteAddress?oppid={!Opportunity.Id}</url>
+</WebLink>

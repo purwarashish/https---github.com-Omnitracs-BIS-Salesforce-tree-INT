@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>URL__c</fullName>
+    <description>URL for the home page link</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Start with either &quot;http&quot;, &quot;htps&quot; or &quot;/&quot;</inlineHelpText>
+    <label>URL</label>
+    <length>32768</length>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>2</visibleLines>
+</CustomField>

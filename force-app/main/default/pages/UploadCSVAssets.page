@@ -1,0 +1,57 @@
+<apex:page controller="UploadCSVAssetsController" title="Contacts Uploader">
+    <style>
+        .controlPanel td{
+            width:200px;
+        }
+        .controlPanel{
+            margin-top:20px;
+        }
+    </style>    
+    <apex:form >                    
+        <apex:pageBlock id="controlPanel">                        
+            <table class="controlPanel fromFile">
+                <tr>
+                    <td colspan="2"><b>Upload a CSV file to save its contents as Contact records</b></td>
+                </tr>
+                <tr>
+                    <td>Upload CSV file</td><td><apex:inputFile value="{!csvFileBody}" accept="csv" contentType="text/csv" /></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td><td><apex:commandButton value="Upload CSV" action="{!readFromFile}"/></td>
+                </tr>
+            </table>                                                             
+        </apex:pageBlock>
+        <apex:pageBlock id="dataPanel" Title="Asset Data" >
+            <apex:pagemessages />
+            <!--<apex:commandButton value="Group Data" action="{!groupAssets}" rendered="{!readSuccess}" />-->
+            <apex:commandButton value="Create Opportunities" action="{!createOpportunities}" rendered="{!readSuccess}" />
+            <apex:commandButton value="Create Quotes" action="{!createQuotes}" rendered="{!showQuotes}" />
+            <!--<apex:commandButton value="Create Quote Line Groups" action="{!createQuoteLineGroups}" rendered="{!showGroups}" />-->
+			<apex:commandButton value="Create Quote Lines" action="{!createQuoteLines}" rendered="{!showQuoteLines}" />
+            &nbsp;&nbsp;&nbsp;<apex:commandButton value="Export Quotes To Excel" action="/apex/ExportOppsAndQuotesExcel" rendered="{!exportToExcel}" />
+            &nbsp;&nbsp;&nbsp;<apex:commandButton value="Export Quote Lines Groups To Excel" action="/apex/ExportQuoteLineGroupsToExcel" rendered="{!exportQLG}" />
+			<!--&nbsp;&nbsp;&nbsp;<apex:commandButton value="Export Quote Lines To Excel" action="/apex/ExportQuoteLinesToExcel" rendered="{!exportQLG}" />
+            <apex:commandButton value="Link Wrappers and Groups" action="{!linkWrappersAndGroups}" rendered="{!showLinkWrapper}" /> -->
+            &nbsp;
+            <apex:pageblocktable value="{!aDataList}" var="aData" >
+                <apex:column headerValue="Account ID" value="{!aData.AccountID}" />
+                <apex:column headerValue="Currency" value="{!aData.AssetCurrency}" />
+                <apex:column headerValue="Start Date" value="{!aData.startDate}" />
+                <apex:column headerValue="End Date" value="{!aData.endDate}" />
+                <apex:column headerValue="Term Length" value="{!aData.term}" />
+                <apex:column headerValue="Quantity" value="{!aData.quantity}" />
+                <apex:column headerValue="ARR" value="{!aData.arr}" />
+                <apex:column headerValue="Unit Price" value="{!aData.unitPrice}" />
+                <apex:column headerValue="Maintenance Unit Price" value="{!aData.maintUnitPrice}" />
+                <apex:column headerValue="Migrated Asset ID" value="{!aData.AssetId}" />
+                <apex:column headerValue="SKU" value="{!aData.sku}" />
+                <apex:column headerValue="Wrapper" value="{!aData.wrapper}" />
+                <apex:column headerValue="Is Perpetual" value="{!aData.isPerpetual}" />
+                <apex:column headerValue="Maintenance SKU" value="{!aData.maintSku}" />
+                <apex:column headerValue="Negotiation Type" value="{!aData.negotiationType}" />
+                <!--<apex:column headerValue="Non-Recuring Revenue" value="{!aData.nonRecRevenue}" />-->
+                <apex:column headerValue="Group" value="{!aData.mxGroup}" />
+            </apex:pageblocktable>
+        </apex:pageBlock>
+    </apex:form>        
+</apex:page>

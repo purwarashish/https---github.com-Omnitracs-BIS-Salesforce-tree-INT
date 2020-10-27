@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Software__c</fullName>
+    <externalId>false</externalId>
+    <label>Software/Portal</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Product__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Portal</fullName>
+                <default>false</default>
+                <label>Portal</label>
+            </value>
+            <value>
+                <fullName>QTRACS/400</fullName>
+                <default>false</default>
+                <label>QTRACS/400</label>
+            </value>
+            <value>
+                <fullName>QTRACS/Win</fullName>
+                <default>false</default>
+                <label>QTRACS/Win</label>
+            </value>
+            <value>
+                <fullName>QTRACS and TT210 400 software</fullName>
+                <default>false</default>
+                <label>QTRACS and TT210 400 software</label>
+            </value>
+            <value>
+                <fullName>QTRACS Portal</fullName>
+                <default>false</default>
+                <label>QTRACS Portal</label>
+            </value>
+            <value>
+                <fullName>SensorTRACS/400</fullName>
+                <default>false</default>
+                <label>SensorTRACS/400</label>
+            </value>
+            <value>
+                <fullName>SensorTRACS/Win</fullName>
+                <default>false</default>
+                <label>SensorTRACS/Win</label>
+            </value>
+            <value>
+                <fullName>Trailer Tracks Win</fullName>
+                <default>false</default>
+                <label>Trailer Tracks Win</label>
+            </value>
+            <value>
+                <fullName>TrailerTRACS/400</fullName>
+                <default>false</default>
+                <label>TrailerTRACS/400</label>
+            </value>
+            <value>
+                <fullName>TrailerTRACS/Portal</fullName>
+                <default>false</default>
+                <label>TrailerTRACS/Portal</label>
+            </value>
+            <value>
+                <fullName>TrailerTRACS/Win</fullName>
+                <default>false</default>
+                <label>TrailerTRACS/Win</label>
+            </value>
+            <value>
+                <fullName>Virtual Display Kit</fullName>
+                <default>false</default>
+                <label>Virtual Display Kit</label>
+            </value>
+            <value>
+                <fullName>Virtual EDU</fullName>
+                <default>false</default>
+                <label>Virtual EDU</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>Refurbished MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>Refurbished OmniTRACS</controllingFieldValue>
+            <valueName>Portal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>Refurbished MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>Refurbished OmniTRACS</controllingFieldValue>
+            <valueName>QTRACS Portal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>Refurbished MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>Refurbished OmniTRACS</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trailer Tracks 210</controllingFieldValue>
+            <controllingFieldValue>Refurbished MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>TT210 System</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>T2 System with integrated solar panel</controllingFieldValue>
+            <controllingFieldValue>T2 Reefer System</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniExpress</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>Refurbished OmniTRACS</controllingFieldValue>
+            <valueName>QTRACS/400</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trailer Tracks 210</controllingFieldValue>
+            <valueName>QTRACS and TT210 400 software</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trailer Tracks 210</controllingFieldValue>
+            <controllingFieldValue>TT210 System</controllingFieldValue>
+            <controllingFieldValue>T2 System with integrated solar panel</controllingFieldValue>
+            <controllingFieldValue>T2 Reefer System</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniExpress</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniTRACS</controllingFieldValue>
+            <valueName>TrailerTRACS/400</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trailer Tracks 210</controllingFieldValue>
+            <controllingFieldValue>TT210 System</controllingFieldValue>
+            <valueName>TrailerTRACS/Portal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trailer Tracks 210</controllingFieldValue>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>T2 System with integrated solar panel</controllingFieldValue>
+            <controllingFieldValue>T2 Reefer System</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniExpress</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>T2 System</controllingFieldValue>
+            <valueName>TrailerTRACS/Win</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TT210 System</controllingFieldValue>
+            <controllingFieldValue>T2 System with integrated solar panel</controllingFieldValue>
+            <controllingFieldValue>T2 Reefer System</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniExpress</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniTRACS</controllingFieldValue>
+            <valueName>QTRACS/Win</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TT210 System</controllingFieldValue>
+            <controllingFieldValue>T2 System with integrated solar panel</controllingFieldValue>
+            <controllingFieldValue>T2 Reefer System</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniExpress</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniTRACS</controllingFieldValue>
+            <valueName>Trailer Tracks Win</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Third Party Acquired OmniExpress</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniTRACS</controllingFieldValue>
+            <valueName>SensorTRACS/400</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Third Party Acquired OmniExpress</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniTRACS</controllingFieldValue>
+            <valueName>SensorTRACS/Win</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Third Party Acquired OmniExpress</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniTRACS</controllingFieldValue>
+            <valueName>Virtual EDU</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

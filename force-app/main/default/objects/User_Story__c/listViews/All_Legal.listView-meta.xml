@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Legal</fullName>
+    <columns>NAME</columns>
+    <columns>I_Am_A__c</columns>
+    <columns>I_Want__c</columns>
+    <columns>Because__c</columns>
+    <columns>Category__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Category__c</field>
+        <operation>equals</operation>
+        <value>Legal Counsel,Legal</value>
+    </filters>
+    <label>All Legal</label>
+    <language>en_US</language>
+</ListView>

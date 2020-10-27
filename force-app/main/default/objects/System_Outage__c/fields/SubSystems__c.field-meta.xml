@@ -1,0 +1,933 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SubSystems__c</fullName>
+    <externalId>false</externalId>
+    <label>SubSystems-old</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>System__c</controllingField>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>AA&amp;D</fullName>
+                <default>false</default>
+                <label>AA&amp;D</label>
+            </value>
+            <value>
+                <fullName>AAA</fullName>
+                <default>false</default>
+                <label>AAA</label>
+            </value>
+            <value>
+                <fullName>AmberWatch</fullName>
+                <default>false</default>
+                <label>AmberWatch</label>
+            </value>
+            <value>
+                <fullName>Asset Tracker</fullName>
+                <default>false</default>
+                <label>Asset Tracker</label>
+            </value>
+            <value>
+                <fullName>AT&amp;T – Frame Relay</fullName>
+                <default>false</default>
+                <label>AT&amp;T – Frame Relay</label>
+            </value>
+            <value>
+                <fullName>BGW (EU)</fullName>
+                <default>false</default>
+                <label>BGW (EU)</label>
+            </value>
+            <value>
+                <fullName>BGW (US)</fullName>
+                <default>false</default>
+                <label>BGW (US)</label>
+            </value>
+            <value>
+                <fullName>BGW200</fullName>
+                <default>false</default>
+                <label>BGW200</label>
+            </value>
+            <value>
+                <fullName>CARDIONET</fullName>
+                <default>false</default>
+                <label>CARDIONET</label>
+            </value>
+            <value>
+                <fullName>CDS - Content Delivery Service</fullName>
+                <default>false</default>
+                <label>CDS - Content Delivery Service</label>
+            </value>
+            <value>
+                <fullName>CER - Critical Event Reporting</fullName>
+                <default>false</default>
+                <label>CER - Critical Event Reporting</label>
+            </value>
+            <value>
+                <fullName>CNR OVM - AEF Portal</fullName>
+                <default>false</default>
+                <label>CNR OVM - AEF Portal</label>
+            </value>
+            <value>
+                <fullName>CS - Common Services</fullName>
+                <default>false</default>
+                <label>CS - Common Services</label>
+            </value>
+            <value>
+                <fullName>DE - Driver Email</fullName>
+                <default>false</default>
+                <label>DE - Driver Email</label>
+            </value>
+            <value>
+                <fullName>DN – Driver Notification</fullName>
+                <default>false</default>
+                <label>DN – Driver Notification</label>
+            </value>
+            <value>
+                <fullName>DW - Driver Workflow</fullName>
+                <default>false</default>
+                <label>DW - Driver Workflow</label>
+            </value>
+            <value>
+                <fullName>EGGW200</fullName>
+                <default>false</default>
+                <label>EGGW200</label>
+            </value>
+            <value>
+                <fullName>EMGW200 - GPRS</fullName>
+                <default>false</default>
+                <label>EMGW200 - GPRS</label>
+            </value>
+            <value>
+                <fullName>EOMNI200/EMGW200-GPRS</fullName>
+                <default>false</default>
+                <label>EOMNI200/EMGW200-GPRS</label>
+            </value>
+            <value>
+                <fullName>EOMNI200 - GPRS</fullName>
+                <default>false</default>
+                <label>EOMNI200 - GPRS</label>
+            </value>
+            <value>
+                <fullName>Europe200</fullName>
+                <default>false</default>
+                <label>Europe200</label>
+            </value>
+            <value>
+                <fullName>Europe200/EGGW200-GTE</fullName>
+                <default>false</default>
+                <label>Europe200/EGGW200-GTE</label>
+            </value>
+            <value>
+                <fullName>Fleetvisor (EU)</fullName>
+                <default>false</default>
+                <label>Fleetvisor (EU)</label>
+            </value>
+            <value>
+                <fullName>GGW200</fullName>
+                <default>false</default>
+                <label>GGW200</label>
+            </value>
+            <value>
+                <fullName>Ghos/Qhos/Guava</fullName>
+                <default>false</default>
+                <label>Ghos/Qhos/Guava</label>
+            </value>
+            <value>
+                <fullName>GlobalTRACS/Europe</fullName>
+                <default>false</default>
+                <label>GlobalTRACS/Europe</label>
+            </value>
+            <value>
+                <fullName>GlobalTRACSWeb</fullName>
+                <default>false</default>
+                <label>GlobalTRACSWeb</label>
+            </value>
+            <value>
+                <fullName>GSS</fullName>
+                <default>false</default>
+                <label>GSS</label>
+            </value>
+            <value>
+                <fullName>GSS - Geo Spatial Services</fullName>
+                <default>false</default>
+                <label>GSS - Geo Spatial Services</label>
+            </value>
+            <value>
+                <fullName>IES Mobile/ICC</fullName>
+                <default>false</default>
+                <label>IES Mobile/ICC</label>
+            </value>
+            <value>
+                <fullName>Inforouter</fullName>
+                <default>false</default>
+                <label>Inforouter</label>
+            </value>
+            <value>
+                <fullName>InGeo</fullName>
+                <default>false</default>
+                <label>InGeo</label>
+            </value>
+            <value>
+                <fullName>inGeo/BestBuy</fullName>
+                <default>false</default>
+                <label>inGeo/BestBuy</label>
+            </value>
+            <value>
+                <fullName>inGeo/Freightwatch</fullName>
+                <default>false</default>
+                <label>inGeo/Freightwatch</label>
+            </value>
+            <value>
+                <fullName>inGeo/Omnilink</fullName>
+                <default>false</default>
+                <label>inGeo/Omnilink</label>
+            </value>
+            <value>
+                <fullName>inGeo/Xora</fullName>
+                <default>false</default>
+                <label>inGeo/Xora</label>
+            </value>
+            <value>
+                <fullName>Inrix</fullName>
+                <default>false</default>
+                <label>Inrix</label>
+            </value>
+            <value>
+                <fullName>Integration/Event Sub Service</fullName>
+                <default>false</default>
+                <label>Integration/Event Sub Service</label>
+            </value>
+            <value>
+                <fullName>Integration/Event Sub Service (Mex)</fullName>
+                <default>false</default>
+                <label>Integration/Event Sub Service (Mex)</label>
+            </value>
+            <value>
+                <fullName>iQCONNECT</fullName>
+                <default>false</default>
+                <label>iQCONNECT</label>
+            </value>
+            <value>
+                <fullName>IQ Extranet</fullName>
+                <default>false</default>
+                <label>IQ Extranet</label>
+            </value>
+            <value>
+                <fullName>JMS Metro</fullName>
+                <default>false</default>
+                <label>JMS Metro</label>
+            </value>
+            <value>
+                <fullName>LDC.C</fullName>
+                <default>false</default>
+                <label>LDC.C</label>
+            </value>
+            <value>
+                <fullName>Maptuit</fullName>
+                <default>false</default>
+                <label>Maptuit</label>
+            </value>
+            <value>
+                <fullName>MCP200</fullName>
+                <default>false</default>
+                <label>MCP200</label>
+            </value>
+            <value>
+                <fullName>MCP Sat</fullName>
+                <default>false</default>
+                <label>MCP Sat</label>
+            </value>
+            <value>
+                <fullName>MCP Ter</fullName>
+                <default>false</default>
+                <label>MCP Ter</label>
+            </value>
+            <value>
+                <fullName>MGW200</fullName>
+                <default>false</default>
+                <label>MGW200</label>
+            </value>
+            <value>
+                <fullName>mPhone</fullName>
+                <default>false</default>
+                <label>mPhone</label>
+            </value>
+            <value>
+                <fullName>MUPS</fullName>
+                <default>false</default>
+                <label>MUPS</label>
+            </value>
+            <value>
+                <fullName>Navigo</fullName>
+                <default>false</default>
+                <label>Navigo</label>
+            </value>
+            <value>
+                <fullName>OGW200</fullName>
+                <default>false</default>
+                <label>OGW200</label>
+            </value>
+            <value>
+                <fullName>Omni200</fullName>
+                <default>false</default>
+                <label>Omni200</label>
+            </value>
+            <value>
+                <fullName>Omni201</fullName>
+                <default>false</default>
+                <label>Omni201</label>
+            </value>
+            <value>
+                <fullName>Omni202</fullName>
+                <default>false</default>
+                <label>Omni202</label>
+            </value>
+            <value>
+                <fullName>Omni203</fullName>
+                <default>false</default>
+                <label>Omni203</label>
+            </value>
+            <value>
+                <fullName>Omni204</fullName>
+                <default>false</default>
+                <label>Omni204</label>
+            </value>
+            <value>
+                <fullName>Omni205</fullName>
+                <default>false</default>
+                <label>Omni205</label>
+            </value>
+            <value>
+                <fullName>Omni206</fullName>
+                <default>false</default>
+                <label>Omni206</label>
+            </value>
+            <value>
+                <fullName>Omni207</fullName>
+                <default>false</default>
+                <label>Omni207</label>
+            </value>
+            <value>
+                <fullName>Omni208</fullName>
+                <default>false</default>
+                <label>Omni208</label>
+            </value>
+            <value>
+                <fullName>Omni209</fullName>
+                <default>false</default>
+                <label>Omni209</label>
+            </value>
+            <value>
+                <fullName>Omni210</fullName>
+                <default>false</default>
+                <label>Omni210</label>
+            </value>
+            <value>
+                <fullName>Omni211</fullName>
+                <default>false</default>
+                <label>Omni211</label>
+            </value>
+            <value>
+                <fullName>Omni212</fullName>
+                <default>false</default>
+                <label>Omni212</label>
+            </value>
+            <value>
+                <fullName>Omni213</fullName>
+                <default>false</default>
+                <label>Omni213</label>
+            </value>
+            <value>
+                <fullName>Omni214</fullName>
+                <default>false</default>
+                <label>Omni214</label>
+            </value>
+            <value>
+                <fullName>Omni215</fullName>
+                <default>false</default>
+                <label>Omni215</label>
+            </value>
+            <value>
+                <fullName>Omni216</fullName>
+                <default>false</default>
+                <label>Omni216</label>
+            </value>
+            <value>
+                <fullName>OmniAK</fullName>
+                <default>false</default>
+                <label>OmniAK</label>
+            </value>
+            <value>
+                <fullName>OnRoute/TMW</fullName>
+                <default>false</default>
+                <label>OnRoute/TMW</label>
+            </value>
+            <value>
+                <fullName>OOE - OmniOne Europe</fullName>
+                <default>false</default>
+                <label>OOE - OmniOne Europe</label>
+            </value>
+            <value>
+                <fullName>OV - Metro</fullName>
+                <default>false</default>
+                <label>OV - Metro</label>
+            </value>
+            <value>
+                <fullName>OVSP - InCab Scanning</fullName>
+                <default>false</default>
+                <label>OVSP - InCab Scanning</label>
+            </value>
+            <value>
+                <fullName>OVT - MCP100 Terrestrial</fullName>
+                <default>false</default>
+                <label>OVT - MCP100 Terrestrial</label>
+            </value>
+            <value>
+                <fullName>OXE</fullName>
+                <default>false</default>
+                <label>OXE</label>
+            </value>
+            <value>
+                <fullName>Panther II</fullName>
+                <default>false</default>
+                <label>Panther II</label>
+            </value>
+            <value>
+                <fullName>PositionPortal</fullName>
+                <default>false</default>
+                <label>PositionPortal</label>
+            </value>
+            <value>
+                <fullName>Qcomm+</fullName>
+                <default>false</default>
+                <label>Qcomm+</label>
+            </value>
+            <value>
+                <fullName>QDI - Qualcomm Driver Inventory</fullName>
+                <default>false</default>
+                <label>QDI - Qualcomm Driver Inventory</label>
+            </value>
+            <value>
+                <fullName>QTRACS</fullName>
+                <default>false</default>
+                <label>QTRACS</label>
+            </value>
+            <value>
+                <fullName>Qtracs/Web</fullName>
+                <default>false</default>
+                <label>Qtracs/Web</label>
+            </value>
+            <value>
+                <fullName>QTRACS (Mex)</fullName>
+                <default>false</default>
+                <label>QTRACS (Mex)</label>
+            </value>
+            <value>
+                <fullName>Regional Amber Alert</fullName>
+                <default>false</default>
+                <label>Regional Amber Alert</label>
+            </value>
+            <value>
+                <fullName>RI/Web</fullName>
+                <default>false</default>
+                <label>RI/Web</label>
+            </value>
+            <value>
+                <fullName>Schneider Handheld</fullName>
+                <default>false</default>
+                <label>Schneider Handheld</label>
+            </value>
+            <value>
+                <fullName>Service Fleet Manager</fullName>
+                <default>false</default>
+                <label>Service Fleet Manager</label>
+            </value>
+            <value>
+                <fullName>SES Americom</fullName>
+                <default>false</default>
+                <label>SES Americom</label>
+            </value>
+            <value>
+                <fullName>SHREK</fullName>
+                <default>false</default>
+                <label>SHREK</label>
+            </value>
+            <value>
+                <fullName>SNAPON</fullName>
+                <default>false</default>
+                <label>SNAPON</label>
+            </value>
+            <value>
+                <fullName>Sprint – Datalink</fullName>
+                <default>false</default>
+                <label>Sprint – Datalink</label>
+            </value>
+            <value>
+                <fullName>Sprint – Frame Relay</fullName>
+                <default>false</default>
+                <label>Sprint – Frame Relay</label>
+            </value>
+            <value>
+                <fullName>Sprint Hub Provisioning</fullName>
+                <default>false</default>
+                <label>Sprint Hub Provisioning</label>
+            </value>
+            <value>
+                <fullName>Sprint – Retail</fullName>
+                <default>false</default>
+                <label>Sprint – Retail</label>
+            </value>
+            <value>
+                <fullName>SSO</fullName>
+                <default>false</default>
+                <label>SSO</label>
+            </value>
+            <value>
+                <fullName>STRACS</fullName>
+                <default>false</default>
+                <label>STRACS</label>
+            </value>
+            <value>
+                <fullName>Stracs/Fuel Manager/Perf Manager</fullName>
+                <default>false</default>
+                <label>Stracs/Fuel Manager/Perf Manager</label>
+            </value>
+            <value>
+                <fullName>Stracs/FuelManager/Perf Manager (Mex)</fullName>
+                <default>false</default>
+                <label>Stracs/FuelManager/Perf Manager (Mex)</label>
+            </value>
+            <value>
+                <fullName>Stracs Web</fullName>
+                <default>false</default>
+                <label>Stracs Web</label>
+            </value>
+            <value>
+                <fullName>T2G200</fullName>
+                <default>false</default>
+                <label>T2G200</label>
+            </value>
+            <value>
+                <fullName>T2 QSP</fullName>
+                <default>false</default>
+                <label>T2 QSP</label>
+            </value>
+            <value>
+                <fullName>T2 QSP (Mex)</fullName>
+                <default>false</default>
+                <label>T2 QSP (Mex)</label>
+            </value>
+            <value>
+                <fullName>Telcel</fullName>
+                <default>false</default>
+                <label>Telcel</label>
+            </value>
+            <value>
+                <fullName>Telenor</fullName>
+                <default>false</default>
+                <label>Telenor</label>
+            </value>
+            <value>
+                <fullName>VCC – Vehicle Command and Control</fullName>
+                <default>false</default>
+                <label>VCC – Vehicle Command and Control</label>
+            </value>
+            <value>
+                <fullName>VDC – Vehicle Device Config/j1939</fullName>
+                <default>false</default>
+                <label>VDC – Vehicle Device Config/j1939</label>
+            </value>
+            <value>
+                <fullName>Verizon</fullName>
+                <default>false</default>
+                <label>Verizon</label>
+            </value>
+            <value>
+                <fullName>VIAWEB</fullName>
+                <default>false</default>
+                <label>VIAWEB</label>
+            </value>
+            <value>
+                <fullName>VM – Vehicle Maintenance</fullName>
+                <default>false</default>
+                <label>VM – Vehicle Maintenance</label>
+            </value>
+            <value>
+                <fullName>Vodafone</fullName>
+                <default>false</default>
+                <label>Vodafone</label>
+            </value>
+            <value>
+                <fullName>VQS - Vehicle Query Service</fullName>
+                <default>false</default>
+                <label>VQS - Vehicle Query Service</label>
+            </value>
+            <value>
+                <fullName>WFMC - Driver Workflow</fullName>
+                <default>false</default>
+                <label>WFMC - Driver Workflow</label>
+            </value>
+            <value>
+                <fullName>Xtra</fullName>
+                <default>false</default>
+                <label>Xtra</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>3rd Party Providers</controllingFieldValue>
+            <valueName>AT&amp;T – Frame Relay</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>3rd Party Providers</controllingFieldValue>
+            <valueName>Inrix</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>3rd Party Providers</controllingFieldValue>
+            <valueName>Maptuit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>3rd Party Providers</controllingFieldValue>
+            <valueName>SES Americom</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>3rd Party Providers</controllingFieldValue>
+            <valueName>Sprint – Datalink</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>3rd Party Providers</controllingFieldValue>
+            <valueName>Sprint – Frame Relay</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>3rd Party Providers</controllingFieldValue>
+            <valueName>Sprint – Retail</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>3rd Party Providers</controllingFieldValue>
+            <valueName>Telcel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>3rd Party Providers</controllingFieldValue>
+            <valueName>Telenor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>3rd Party Providers</controllingFieldValue>
+            <valueName>Verizon</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>3rd Party Providers</controllingFieldValue>
+            <valueName>Vodafone</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NMC - Hosted</controllingFieldValue>
+            <valueName>Europe200/EGGW200-GTE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NMC</controllingFieldValue>
+            <valueName>BGW200</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NMC</controllingFieldValue>
+            <valueName>GGW200</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NMC</controllingFieldValue>
+            <valueName>MCP200</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NMC</controllingFieldValue>
+            <valueName>MGW200</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NMC</controllingFieldValue>
+            <valueName>OGW200</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NMC</controllingFieldValue>
+            <valueName>Omni200</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NMC</controllingFieldValue>
+            <valueName>Omni202</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NMC</controllingFieldValue>
+            <valueName>Omni203</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NMC</controllingFieldValue>
+            <valueName>Omni204</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NMC</controllingFieldValue>
+            <valueName>Omni205</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NMC</controllingFieldValue>
+            <valueName>Omni206</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NMC</controllingFieldValue>
+            <valueName>Omni207</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NMC</controllingFieldValue>
+            <valueName>Omni208</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NMC</controllingFieldValue>
+            <valueName>Omni209</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NMC</controllingFieldValue>
+            <valueName>Omni210</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NMC</controllingFieldValue>
+            <valueName>Omni211</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NMC</controllingFieldValue>
+            <valueName>Omni212</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NMC</controllingFieldValue>
+            <valueName>Omni213</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NMC</controllingFieldValue>
+            <valueName>Omni214</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NMC</controllingFieldValue>
+            <valueName>Omni215</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NMC</controllingFieldValue>
+            <valueName>Omni216</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NMC</controllingFieldValue>
+            <valueName>T2G200</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>WEB</controllingFieldValue>
+            <valueName>AA&amp;D</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>WEB</controllingFieldValue>
+            <valueName>Ghos/Qhos/Guava</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>WEB</controllingFieldValue>
+            <valueName>GlobalTRACS/Europe</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>WEB</controllingFieldValue>
+            <valueName>GlobalTRACSWeb</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>WEB</controllingFieldValue>
+            <valueName>IQ Extranet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>WEB</controllingFieldValue>
+            <valueName>Qtracs/Web</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>WEB</controllingFieldValue>
+            <valueName>RI/Web</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>WEB</controllingFieldValue>
+            <valueName>Stracs Web</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>WEB</controllingFieldValue>
+            <valueName>VIAWEB</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>AAA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>AmberWatch</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>Asset Tracker</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>BGW (US)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>CARDIONET</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>CDS - Content Delivery Service</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>CER - Critical Event Reporting</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>CNR OVM - AEF Portal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>CS - Common Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>DE - Driver Email</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>DN – Driver Notification</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>Fleetvisor (EU)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>GSS - Geo Spatial Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>IES Mobile/ICC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>Inforouter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>InGeo</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>iQCONNECT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>JMS Metro</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>LDC.C</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>mPhone</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>MUPS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>OV - Metro</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>OVSP - InCab Scanning</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>PositionPortal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>Qcomm+</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>QDI - Qualcomm Driver Inventory</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>Regional Amber Alert</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>Schneider Handheld</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>SHREK</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>Sprint Hub Provisioning</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>VCC – Vehicle Command and Control</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>VDC – Vehicle Device Config/j1939</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>VM – Vehicle Maintenance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>VQS - Vehicle Query Service</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QDC</controllingFieldValue>
+            <valueName>WFMC - Driver Workflow</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QSP (US)</controllingFieldValue>
+            <valueName>Integration/Event Sub Service</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QSP (US)</controllingFieldValue>
+            <valueName>Panther II</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QSP (US)</controllingFieldValue>
+            <valueName>QTRACS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QSP (US)</controllingFieldValue>
+            <valueName>SSO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QSP (US)</controllingFieldValue>
+            <valueName>Stracs/Fuel Manager/Perf Manager</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QSP (US)</controllingFieldValue>
+            <valueName>T2 QSP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QSP (Mex)</controllingFieldValue>
+            <valueName>Integration/Event Sub Service (Mex)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QSP (Mex)</controllingFieldValue>
+            <valueName>QTRACS (Mex)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QSP (Mex)</controllingFieldValue>
+            <valueName>Stracs/FuelManager/Perf Manager (Mex)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QSP (Mex)</controllingFieldValue>
+            <valueName>T2 QSP (Mex)</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

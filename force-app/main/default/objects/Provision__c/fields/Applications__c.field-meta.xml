@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Applications__c</fullName>
+    <description>Created for Contract Management.</description>
+    <externalId>false</externalId>
+    <label>Applications</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>AA&amp;D</fullName>
+                <default>false</default>
+                <label>AA&amp;D</label>
+            </value>
+            <value>
+                <fullName>Additional Stored Positions</fullName>
+                <default>false</default>
+                <label>Additional Stored Positions</label>
+            </value>
+            <value>
+                <fullName>Advanced Mapping Interface</fullName>
+                <default>false</default>
+                <label>Advanced Mapping Interface</label>
+            </value>
+            <value>
+                <fullName>ALK CoPilot</fullName>
+                <default>false</default>
+                <label>ALK CoPilot</label>
+            </value>
+            <value>
+                <fullName>Amber Alert</fullName>
+                <default>false</default>
+                <label>Amber Alert</label>
+            </value>
+            <value>
+                <fullName>Analytics Manager</fullName>
+                <default>false</default>
+                <label>Analytics Manager</label>
+            </value>
+            <value>
+                <fullName>Content Delivery</fullName>
+                <default>false</default>
+                <label>Content Delivery</label>
+            </value>
+            <value>
+                <fullName>Critical Event Reporting</fullName>
+                <default>false</default>
+                <label>Critical Event Reporting</label>
+            </value>
+            <value>
+                <fullName>Cross Street Location</fullName>
+                <default>false</default>
+                <label>Cross Street Location</label>
+            </value>
+            <value>
+                <fullName>CSA Safety Performance</fullName>
+                <default>false</default>
+                <label>CSA Safety Performance</label>
+            </value>
+            <value>
+                <fullName>Data Sharing</fullName>
+                <default>false</default>
+                <label>Data Sharing</label>
+            </value>
+            <value>
+                <fullName>Driver Email</fullName>
+                <default>false</default>
+                <label>Driver Email</label>
+            </value>
+            <value>
+                <fullName>Driver Notification</fullName>
+                <default>false</default>
+                <label>Driver Notification</label>
+            </value>
+            <value>
+                <fullName>Driver Training</fullName>
+                <default>false</default>
+                <label>Driver Training</label>
+            </value>
+            <value>
+                <fullName>Driver Workflow</fullName>
+                <default>false</default>
+                <label>Driver Workflow</label>
+            </value>
+            <value>
+                <fullName>DTTS</fullName>
+                <default>false</default>
+                <label>DTTS</label>
+            </value>
+            <value>
+                <fullName>Exact Fuel</fullName>
+                <default>false</default>
+                <label>Exact Fuel</label>
+            </value>
+            <value>
+                <fullName>Extended Productivity</fullName>
+                <default>false</default>
+                <label>Extended Productivity</label>
+            </value>
+            <value>
+                <fullName>Fault Monitoring</fullName>
+                <default>false</default>
+                <label>Fault Monitoring</label>
+            </value>
+            <value>
+                <fullName>Fault Monitoring Extended Faults</fullName>
+                <default>false</default>
+                <label>Fault Monitoring Extended Faults</label>
+            </value>
+            <value>
+                <fullName>Hard Braking</fullName>
+                <default>false</default>
+                <label>Hard Braking</label>
+            </value>
+            <value>
+                <fullName>Hours of Service Macro</fullName>
+                <default>false</default>
+                <label>Hours of Service Macro</label>
+            </value>
+            <value>
+                <fullName>Hours of Service Mobile</fullName>
+                <default>false</default>
+                <label>Hours of Service Mobile</label>
+            </value>
+            <value>
+                <fullName>In-Cab Printing</fullName>
+                <default>false</default>
+                <label>In-Cab Printing</label>
+            </value>
+            <value>
+                <fullName>In-Cab Scanning</fullName>
+                <default>false</default>
+                <label>In-Cab Scanning</label>
+            </value>
+            <value>
+                <fullName>Machine Health Monitoring</fullName>
+                <default>false</default>
+                <label>Machine Health Monitoring</label>
+            </value>
+            <value>
+                <fullName>Media Manager Service</fullName>
+                <default>false</default>
+                <label>Media Manager Service</label>
+            </value>
+            <value>
+                <fullName>NaviGo</fullName>
+                <default>false</default>
+                <label>NaviGo</label>
+            </value>
+            <value>
+                <fullName>Panic Notification</fullName>
+                <default>false</default>
+                <label>Panic Notification</label>
+            </value>
+            <value>
+                <fullName>Per Diem Manager</fullName>
+                <default>false</default>
+                <label>Per Diem Manager</label>
+            </value>
+            <value>
+                <fullName>Performance Monitoring</fullName>
+                <default>false</default>
+                <label>Performance Monitoring</label>
+            </value>
+            <value>
+                <fullName>Premium Wi-Fi</fullName>
+                <default>false</default>
+                <label>Premium Wi-Fi</label>
+            </value>
+            <value>
+                <fullName>QTRACS/Portal</fullName>
+                <default>false</default>
+                <label>QTRACS/Portal</label>
+            </value>
+            <value>
+                <fullName>QTRACS/Web</fullName>
+                <default>false</default>
+                <label>QTRACS/Web</label>
+            </value>
+            <value>
+                <fullName>Service Fleet Manager</fullName>
+                <default>false</default>
+                <label>Service Fleet Manager</label>
+            </value>
+            <value>
+                <fullName>State Miles Counter</fullName>
+                <default>false</default>
+                <label>State Miles Counter</label>
+            </value>
+            <value>
+                <fullName>T2 Portal</fullName>
+                <default>false</default>
+                <label>T2 Portal</label>
+            </value>
+            <value>
+                <fullName>Terrestrial Browsing</fullName>
+                <default>false</default>
+                <label>Terrestrial Browsing</label>
+            </value>
+            <value>
+                <fullName>Terrestrial Data Plan</fullName>
+                <default>false</default>
+                <label>Terrestrial Data Plan</label>
+            </value>
+            <value>
+                <fullName>Trailer ABS Connect</fullName>
+                <default>false</default>
+                <label>Trailer ABS Connect</label>
+            </value>
+            <value>
+                <fullName>Trip Manager</fullName>
+                <default>false</default>
+                <label>Trip Manager</label>
+            </value>
+            <value>
+                <fullName>VCC</fullName>
+                <default>false</default>
+                <label>VCC</label>
+            </value>
+            <value>
+                <fullName>Vehicle Inspection Report</fullName>
+                <default>false</default>
+                <label>Vehicle Inspection Report</label>
+            </value>
+            <value>
+                <fullName>ViaWeb</fullName>
+                <default>false</default>
+                <label>ViaWeb</label>
+            </value>
+            <value>
+                <fullName>Virtual Load View</fullName>
+                <default>false</default>
+                <label>Virtual Load View</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

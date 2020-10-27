@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Connection_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Connection Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>ALK</fullName>
+                <default>false</default>
+                <label>ALK</label>
+            </value>
+            <value>
+                <fullName>AM</fullName>
+                <default>false</default>
+                <label>AM</label>
+            </value>
+            <value>
+                <fullName>Bill Back Dial In</fullName>
+                <default>false</default>
+                <label>Bill Back Dial In</label>
+            </value>
+            <value>
+                <fullName>CDS</fullName>
+                <default>false</default>
+                <label>CDS</label>
+            </value>
+            <value>
+                <fullName>CER</fullName>
+                <default>false</default>
+                <label>CER</label>
+            </value>
+            <value>
+                <fullName>Dial In 800</fullName>
+                <default>false</default>
+                <label>Dial In 800</label>
+            </value>
+            <value>
+                <fullName>Dial In LOCAL</fullName>
+                <default>false</default>
+                <label>Dial In LOCAL</label>
+            </value>
+            <value>
+                <fullName>Driver Email</fullName>
+                <default>false</default>
+                <label>Driver Email</label>
+            </value>
+            <value>
+                <fullName>Driver Notification</fullName>
+                <default>false</default>
+                <label>Driver Notification</label>
+            </value>
+            <value>
+                <fullName>Driver Workflow</fullName>
+                <default>false</default>
+                <label>Driver Workflow</label>
+            </value>
+            <value>
+                <fullName>Frame Relay</fullName>
+                <default>false</default>
+                <label>Frame Relay</label>
+            </value>
+            <value>
+                <fullName>GTracs/Web</fullName>
+                <default>false</default>
+                <label>GTracs/Web</label>
+            </value>
+            <value>
+                <fullName>InCab Scanning</fullName>
+                <default>false</default>
+                <label>InCab Scanning</label>
+            </value>
+            <value>
+                <fullName>MMS</fullName>
+                <default>false</default>
+                <label>MMS</label>
+            </value>
+            <value>
+                <fullName>MPLS</fullName>
+                <default>false</default>
+                <label>MPLS</label>
+            </value>
+            <value>
+                <fullName>Navigation</fullName>
+                <default>false</default>
+                <label>Navigation</label>
+            </value>
+            <value>
+                <fullName>OMNI1</fullName>
+                <default>false</default>
+                <label>OMNI1</label>
+            </value>
+            <value>
+                <fullName>PPP 800</fullName>
+                <default>false</default>
+                <label>PPP 800</label>
+            </value>
+            <value>
+                <fullName>PPP LOCAL</fullName>
+                <default>false</default>
+                <label>PPP LOCAL</label>
+            </value>
+            <value>
+                <fullName>PPTP</fullName>
+                <default>false</default>
+                <label>PPTP</label>
+            </value>
+            <value>
+                <fullName>QHOS Sub</fullName>
+                <default>false</default>
+                <label>QHOS Sub</label>
+            </value>
+            <value>
+                <fullName>QMASS</fullName>
+                <default>false</default>
+                <label>QMASS</label>
+            </value>
+            <value>
+                <fullName>QTRACS/Services Portal</fullName>
+                <default>false</default>
+                <label>QTRACS/Services Portal</label>
+            </value>
+            <value>
+                <fullName>QTracs/Web</fullName>
+                <default>false</default>
+                <label>QTracs/Web</label>
+            </value>
+            <value>
+                <fullName>RVG</fullName>
+                <default>false</default>
+                <label>RVG</label>
+            </value>
+            <value>
+                <fullName>Shared Frame Relay</fullName>
+                <default>false</default>
+                <label>Shared Frame Relay</label>
+            </value>
+            <value>
+                <fullName>STRACS/Services Portal</fullName>
+                <default>false</default>
+                <label>STRACS/Services Portal</label>
+            </value>
+            <value>
+                <fullName>T2/Services Portal</fullName>
+                <default>false</default>
+                <label>T2/Services Portal</label>
+            </value>
+            <value>
+                <fullName>Third Party</fullName>
+                <default>false</default>
+                <label>Third Party</label>
+            </value>
+            <value>
+                <fullName>TPMS</fullName>
+                <default>false</default>
+                <label>TPMS</label>
+            </value>
+            <value>
+                <fullName>TruckMail/Services Portal</fullName>
+                <default>false</default>
+                <label>TruckMail/Services Portal</label>
+            </value>
+            <value>
+                <fullName>TruckMail/Web</fullName>
+                <default>false</default>
+                <label>TruckMail/Web</label>
+            </value>
+            <value>
+                <fullName>TTIA</fullName>
+                <default>false</default>
+                <label>TTIA</label>
+            </value>
+            <value>
+                <fullName>VCC</fullName>
+                <default>false</default>
+                <label>VCC</label>
+            </value>
+            <value>
+                <fullName>VDC</fullName>
+                <default>false</default>
+                <label>VDC</label>
+            </value>
+            <value>
+                <fullName>Vehicle Maintenance</fullName>
+                <default>false</default>
+                <label>Vehicle Maintenance</label>
+            </value>
+            <value>
+                <fullName>ViaWeb</fullName>
+                <default>false</default>
+                <label>ViaWeb</label>
+            </value>
+            <value>
+                <fullName>VIR</fullName>
+                <default>false</default>
+                <label>VIR</label>
+            </value>
+            <value>
+                <fullName>VPN</fullName>
+                <default>false</default>
+                <label>VPN</label>
+            </value>
+            <value>
+                <fullName>VQS</fullName>
+                <default>false</default>
+                <label>VQS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

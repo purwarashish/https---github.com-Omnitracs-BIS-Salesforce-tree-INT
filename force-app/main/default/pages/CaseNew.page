@@ -1,0 +1,26 @@
+<!---------------------------------------------------------------------------------------------------
+Name : CaseNew
+Author : Shruti Karn
+Date : 27 December 2010
+
+Usage : Page for New Case when "Call Center" record type is chosen 
+    
+CR # 23403
+----------------------------------------------------------------------------------------------------->
+<apex:page standardController="Case" extensions="ShowSupportAlertController">
+  
+  <script text="text/javascript"> 
+window.onload = function() {
+    selected();
+} 
+</script>
+
+  <!--<body onload='onLoadRedirect();'>-->
+  <apex:form >
+      <apex:actionFunction action="{!redirectToNewCase}" name="selected"/>
+      <b>Redirecting.. Please wait</b>
+  </apex:form>
+ 
+  
+  
+</apex:page>

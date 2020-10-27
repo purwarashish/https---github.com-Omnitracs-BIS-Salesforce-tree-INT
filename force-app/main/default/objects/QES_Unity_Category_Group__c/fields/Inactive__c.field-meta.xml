@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inactive__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Active or inactive indicator. Only active records are used for rendering</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Active or inactive indicator. Only active records are used for rendering</inlineHelpText>
+    <label>Inactive</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

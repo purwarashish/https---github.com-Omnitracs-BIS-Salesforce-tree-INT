@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Service1__c</fullName>
+    <externalId>false</externalId>
+    <label>Product / Service - Old</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>465q Scanner</fullName>
+                <default>false</default>
+                <label>465q Scanner</label>
+            </value>
+            <value>
+                <fullName>AccessPlus</fullName>
+                <default>false</default>
+                <label>AccessPlus</label>
+            </value>
+            <value>
+                <fullName>ATLine</fullName>
+                <default>false</default>
+                <label>ATLine</label>
+            </value>
+            <value>
+                <fullName>Centerline</fullName>
+                <default>false</default>
+                <label>Centerline</label>
+            </value>
+            <value>
+                <fullName>CISiXp</fullName>
+                <default>false</default>
+                <label>CISiXp</label>
+            </value>
+            <value>
+                <fullName>Collision Avoidance</fullName>
+                <default>false</default>
+                <label>Collision Avoidance</label>
+            </value>
+            <value>
+                <fullName>e-BusinessiXp</fullName>
+                <default>false</default>
+                <label>e-BusinessiXp</label>
+            </value>
+            <value>
+                <fullName>FMSiXp</fullName>
+                <default>false</default>
+                <label>FMSiXp</label>
+            </value>
+            <value>
+                <fullName>IES</fullName>
+                <default>false</default>
+                <label>IES</label>
+            </value>
+            <value>
+                <fullName>IES Mobile</fullName>
+                <default>false</default>
+                <label>IES Mobile</label>
+            </value>
+            <value>
+                <fullName>iXp - Integration X Platform</fullName>
+                <default>false</default>
+                <label>iXp - Integration X Platform</label>
+            </value>
+            <value>
+                <fullName>Lane Departure</fullName>
+                <default>false</default>
+                <label>Lane Departure</label>
+            </value>
+            <value>
+                <fullName>LoadMaster (Character)</fullName>
+                <default>false</default>
+                <label>LoadMaster (Character)</label>
+            </value>
+            <value>
+                <fullName>LoadMaster Enterprise (JAVA)</fullName>
+                <default>false</default>
+                <label>LoadMaster Enterprise (JAVA)</label>
+            </value>
+            <value>
+                <fullName>MMSiXp</fullName>
+                <default>false</default>
+                <label>MMSiXp</label>
+            </value>
+            <value>
+                <fullName>OnRoute</fullName>
+                <default>false</default>
+                <label>OnRoute</label>
+            </value>
+            <value>
+                <fullName>PowerSuite</fullName>
+                <default>false</default>
+                <label>PowerSuite</label>
+            </value>
+            <value>
+                <fullName>QFlow</fullName>
+                <default>false</default>
+                <label>QFlow</label>
+            </value>
+            <value>
+                <fullName>Roll Over Sensor</fullName>
+                <default>false</default>
+                <label>Roll Over Sensor</label>
+            </value>
+            <value>
+                <fullName>TDPS2000</fullName>
+                <default>false</default>
+                <label>TDPS2000</label>
+            </value>
+            <value>
+                <fullName>Tire Monitoring</fullName>
+                <default>false</default>
+                <label>Tire Monitoring</label>
+            </value>
+            <value>
+                <fullName>TL2000</fullName>
+                <default>false</default>
+                <label>TL2000</label>
+            </value>
+            <value>
+                <fullName>TMWSuite</fullName>
+                <default>false</default>
+                <label>TMWSuite</label>
+            </value>
+            <value>
+                <fullName>Truckmate</fullName>
+                <default>false</default>
+                <label>Truckmate</label>
+            </value>
+            <value>
+                <fullName>TTS</fullName>
+                <default>false</default>
+                <label>TTS</label>
+            </value>
+            <value>
+                <fullName>WinStakeiXp</fullName>
+                <default>false</default>
+                <label>WinStakeiXp</label>
+            </value>
+            <value>
+                <fullName>Asset Maintenance - Windows</fullName>
+                <default>false</default>
+                <label>Asset Maintenance - Windows</label>
+            </value>
+            <value>
+                <fullName>Asset Maintenance - AS400</fullName>
+                <default>false</default>
+                <label>Asset Maintenance - AS400</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

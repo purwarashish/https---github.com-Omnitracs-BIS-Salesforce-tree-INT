@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Notification_OWD__c</fullName>
+    <description>Organisation Wide Default email address for the notification email</description>
+    <externalId>false</externalId>
+    <label>Notification OWD</label>
+    <length>199</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

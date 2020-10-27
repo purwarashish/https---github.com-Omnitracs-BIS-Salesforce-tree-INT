@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Fully_Setup__c</fullName>
+    <description>The customer is fully setup (Oracle, NMC, Pricing) and ready for orders.</description>
+    <externalId>false</externalId>
+    <label>Customer Fully Setup Date</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

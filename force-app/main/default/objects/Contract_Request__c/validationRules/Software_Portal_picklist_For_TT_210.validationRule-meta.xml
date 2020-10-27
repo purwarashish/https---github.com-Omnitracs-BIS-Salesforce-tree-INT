@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Software_Portal_picklist_For_TT_210</fullName>
+    <active>true</active>
+    <description>If product is Trailer Track 210  then software/portal picklist must have some value</description>
+    <errorConditionFormula>(RecordTypeId = &apos;01250000000QoXV&apos; || RecordTypeId =&apos;01250000000DiWm&apos; || RecordTypeId =&apos;01250000000DiWq&apos; || RecordTypeId = &apos;01250000000DiWr&apos; )&amp;&amp;ISPICKVAL( Product__c , &apos;Trailer Tracks 210&apos;) &amp;&amp; ISPICKVAL(Software__c , &apos;&apos;)</errorConditionFormula>
+    <errorMessage>Software/Portal must have some value if product selected is  &apos;Trailer Track 210&apos;</errorMessage>
+</ValidationRule>

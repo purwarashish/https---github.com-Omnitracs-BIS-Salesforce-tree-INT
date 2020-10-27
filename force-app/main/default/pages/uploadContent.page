@@ -1,0 +1,19 @@
+<apex:page standardController="Contract" extensions="ContentController" >
+  <apex:form >
+      <apex:pageBlock >
+        <apex:pageBlockSection >
+            <apex:outputField value="{!file.Contract__c}"/> 
+            <apex:outputText ></apex:outputText>
+             <apex:inputField value="{!file.Execution_Information__c}" /> 
+             <apex:outputText />
+             <!--<apex:inputfield value="{!file.Effective_Date__c}" /> -->
+             <apex:inputField value="{!file.Document_Category__c}" /> 
+            <!-- <apex:inputfield value="{!file.End_Date__c}" /> -->
+        </apex:pageBlockSection>
+        <apex:pageBlockSection >
+        <apex:inputFile value="{!file.versionData}" fileName="{!file.pathOnClient}" />
+        <apex:commandbutton action="{!go}" value="Upload Content"/>
+        </apex:pageBlockSection>
+      </apex:pageBlock>  
+    </apex:form>
+</apex:page>

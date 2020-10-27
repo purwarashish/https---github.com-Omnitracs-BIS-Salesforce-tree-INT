@@ -1,0 +1,10 @@
+<apex:page standardController="contract" tabStyle="Contract" sidebar="false" showHeader="false">
+    <apex:form >
+    <!--<br></br><br></br>     -->
+    <!--<b> View Contract Hierarchy: </b>-->
+    <!--<br></br><br></br>-->
+    <div style="height: 100%" class="bodyDiv" onclick="resizeFrame();">
+        <c:ContractHierarchyTreeComponent currentIdd="{!Contract.id}"/>
+    </div>
+    </apex:form>
+</apex:page>

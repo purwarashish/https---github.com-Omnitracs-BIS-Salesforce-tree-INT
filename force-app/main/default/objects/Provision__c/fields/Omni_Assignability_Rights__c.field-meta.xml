@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Omni_Assignability_Rights__c</fullName>
+    <description>Created for Contract Management.</description>
+    <externalId>false</externalId>
+    <label>Omni Assignability Rights</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Assign rights &amp; obligations in OMNI discretion</fullName>
+                <default>false</default>
+                <label>Assign rights &amp; obligations in OMNI discretion</label>
+            </value>
+            <value>
+                <fullName>Assign rights &amp; obligations with Customer consent</fullName>
+                <default>false</default>
+                <label>Assign rights &amp; obligations with Customer consent</label>
+            </value>
+            <value>
+                <fullName>Assign rights in OMNI discretion</fullName>
+                <default>false</default>
+                <label>Assign rights in OMNI discretion</label>
+            </value>
+            <value>
+                <fullName>Assign rights with customer consent</fullName>
+                <default>false</default>
+                <label>Assign rights with customer consent</label>
+            </value>
+            <value>
+                <fullName>Both parties&apos; written consent</fullName>
+                <default>false</default>
+                <label>Both parties&apos; written consent</label>
+            </value>
+            <value>
+                <fullName>No assignment of rights or obligations</fullName>
+                <default>false</default>
+                <label>No assignment of rights or obligations</label>
+            </value>
+            <value>
+                <fullName>OMNI&apos;s written consent</fullName>
+                <default>true</default>
+                <label>OMNI&apos;s written consent</label>
+            </value>
+            <value>
+                <fullName>Other party&apos;s written consent</fullName>
+                <default>false</default>
+                <label>Other party&apos;s written consent</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Severity__c</fullName>
+    <description>Color representation of the Alert Severity value.</description>
+    <externalId>false</externalId>
+    <formula>IMAGE( &quot;/servlet/servlet.FileDownload?file=&quot;&amp; 
+IF(TEXT(Alert_Severity__c)=&quot;Red&quot;,&quot;01550000000FzO7&quot;,
+IF(TEXT(Alert_Severity__c)=&quot;Yellow&quot;,&quot;01550000000FzOC&quot;,
+&quot;01550000000FzOM&quot;)), &quot;Health&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Color representation of the Alert Severity value.</inlineHelpText>
+    <label>Severity</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

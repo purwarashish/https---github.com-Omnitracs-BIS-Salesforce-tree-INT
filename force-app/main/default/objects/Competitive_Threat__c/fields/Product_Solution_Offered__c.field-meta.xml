@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Solution_Offered__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>For existing customers, select the products at risk or product being sold. For prospects, select the products being proposed. If a solution is missing from the list, please email sfdc.support@omnitracs.com.</inlineHelpText>
+    <label>Omnitracs Product/Solution Offered</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>In-cab Scanning</fullName>
+                <default>false</default>
+                <label>In-cab Scanning</label>
+            </value>
+            <value>
+                <fullName>MCP100</fullName>
+                <default>false</default>
+                <label>MCP100</label>
+            </value>
+            <value>
+                <fullName>MCP200</fullName>
+                <default>false</default>
+                <label>MCP200</label>
+            </value>
+            <value>
+                <fullName>MCP50</fullName>
+                <default>false</default>
+                <label>MCP50</label>
+            </value>
+            <value>
+                <fullName>IVG</fullName>
+                <default>false</default>
+                <label>IVG</label>
+            </value>
+            <value>
+                <fullName>XRS</fullName>
+                <default>false</default>
+                <label>XRS</label>
+            </value>
+            <value>
+                <fullName>RDC</fullName>
+                <default>false</default>
+                <label>RDC</label>
+            </value>
+            <value>
+                <fullName>RNA</fullName>
+                <default>false</default>
+                <label>RNA</label>
+            </value>
+            <value>
+                <fullName>Navigation</fullName>
+                <default>false</default>
+                <label>Navigation</label>
+            </value>
+            <value>
+                <fullName>CEV</fullName>
+                <default>false</default>
+                <label>CEV</label>
+            </value>
+            <value>
+                <fullName>Per Diem</fullName>
+                <default>false</default>
+                <label>Per Diem</label>
+            </value>
+            <value>
+                <fullName>Weigh Station Bypass</fullName>
+                <default>false</default>
+                <label>Weigh Station Bypass</label>
+            </value>
+            <value>
+                <fullName>Workflow/Trip Management</fullName>
+                <default>false</default>
+                <label>Workflow/Trip Management</label>
+            </value>
+            <value>
+                <fullName>IFTA</fullName>
+                <default>false</default>
+                <label>IFTA</label>
+            </value>
+            <value>
+                <fullName>Analytics Manager</fullName>
+                <default>false</default>
+                <label>Analytics Manager</label>
+            </value>
+            <value>
+                <fullName>Hours of Service</fullName>
+                <default>false</default>
+                <label>Hours of Service</label>
+            </value>
+            <value>
+                <fullName>Imp_Services_Safety_Model_Workers_Comp</fullName>
+                <default>false</default>
+                <label>Implementation Svs: Safety Model Wk Comp</label>
+            </value>
+            <value>
+                <fullName>In-cab Navigation</fullName>
+                <default>false</default>
+                <label>In-cab Navigation</label>
+            </value>
+            <value>
+                <fullName>In-cab Training</fullName>
+                <default>false</default>
+                <label>In-cab Training</label>
+            </value>
+            <value>
+                <fullName>Kit T2 para Caja Seca</fullName>
+                <default>false</default>
+                <label>Kit T2 para Caja Seca</label>
+            </value>
+            <value>
+                <fullName>Kit T2 para Plataforma</fullName>
+                <default>false</default>
+                <label>Kit T2 para Plataforma</label>
+            </value>
+            <value>
+                <fullName>Kit TMCI Básico Nuevo</fullName>
+                <default>false</default>
+                <label>Kit TMCI Básico Nuevo</label>
+            </value>
+            <value>
+                <fullName>Kit TMCI Básico Remanufacturado</fullName>
+                <default>false</default>
+                <label>Kit TMCI Básico Remanufacturado</label>
+            </value>
+            <value>
+                <fullName>Kit TMCI Logístico Nuevo</fullName>
+                <default>false</default>
+                <label>Kit TMCI Logístico Nuevo</label>
+            </value>
+            <value>
+                <fullName>Kit TMCI Logístico Remanufacturado</fullName>
+                <default>false</default>
+                <label>Kit TMCI Logístico Remanufacturado</label>
+            </value>
+            <value>
+                <fullName>Performance Monitoring with Fuel Manager</fullName>
+                <default>false</default>
+                <label>Performance Monitoring with Fuel Manager</label>
+            </value>
+            <value>
+                <fullName>Sylectus Alliance Connect</fullName>
+                <default>false</default>
+                <label>Sylectus Alliance Connect</label>
+            </value>
+            <value>
+                <fullName>Sylectus Alliance Pro</fullName>
+                <default>false</default>
+                <label>Sylectus Alliance Pro</label>
+            </value>
+            <value>
+                <fullName>Sylectus Alliance Virtual Fleet</fullName>
+                <default>false</default>
+                <label>Sylectus Alliance Virtual Fleet</label>
+            </value>
+            <value>
+                <fullName>FS</fullName>
+                <default>false</default>
+                <label>FS</label>
+            </value>
+            <value>
+                <fullName>AFC</fullName>
+                <default>false</default>
+                <label>AFC</label>
+            </value>
+            <value>
+                <fullName>Omnitracs One</fullName>
+                <default>false</default>
+                <label>Omnitracs One</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

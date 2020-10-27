@@ -1,0 +1,17 @@
+{
+  "status": 0,
+  "result": {
+    "createdById": "00550000007EGCiAAO",
+    "createdByName": "Distribution Engine",
+    "createdDate": "2020-02-28T01:49:16.000Z",
+    "fileName": "cachePartitions/n2de__de.cachePartition",
+    "fullName": "n2de__de",
+    "id": "0Er1T0000008OItSAM",
+    "lastModifiedById": "00550000007EGCiAAO",
+    "lastModifiedByName": "Distribution Engine",
+    "lastModifiedDate": "2020-02-28T01:49:16.000Z",
+    "manageableState": "installed",
+    "namespacePrefix": "n2de",
+    "type": "PlatformCachePartition"
+  }
+}

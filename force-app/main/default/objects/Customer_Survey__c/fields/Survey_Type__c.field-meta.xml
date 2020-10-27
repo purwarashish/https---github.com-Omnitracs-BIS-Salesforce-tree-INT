@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Survey_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Survey Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CERSurvey</fullName>
+                <default>false</default>
+                <label>CERSurvey</label>
+            </value>
+            <value>
+                <fullName>PSEProjectSurvey</fullName>
+                <default>false</default>
+                <label>PSEProjectSurvey</label>
+            </value>
+            <value>
+                <fullName>ODOnsiteTraining</fullName>
+                <default>false</default>
+                <label>ODOnsiteTraining</label>
+            </value>
+            <value>
+                <fullName>ODTrainingWebinar</fullName>
+                <default>false</default>
+                <label>ODTrainingWebinar</label>
+            </value>
+            <value>
+                <fullName>ODPSProjectClosure</fullName>
+                <default>false</default>
+                <label>ODPSProjectClosure</label>
+            </value>
+            <value>
+                <fullName>NPS</fullName>
+                <default>false</default>
+                <label>NPS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

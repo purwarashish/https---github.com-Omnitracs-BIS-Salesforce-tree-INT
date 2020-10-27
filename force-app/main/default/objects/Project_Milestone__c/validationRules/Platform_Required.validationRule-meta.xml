@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Platform_Required</fullName>
+    <active>true</active>
+    <description>Platform is required for certain PM Milestones.</description>
+    <errorConditionFormula>AND( 
+OR( 
+ISPICKVAL( Milestone_Name__c , &quot;Beta Start&quot;), 
+ISPICKVAL( Milestone_Name__c , &quot;Beta Complete&quot;), 
+ISPICKVAL( Milestone_Name__c , &quot;Commercial Release&quot;)), 
+ISBLANK( Platform__c ) , 
+$RecordType.Name = &quot;PM Milestone&quot; 
+)</errorConditionFormula>
+    <errorDisplayField>Platform__c</errorDisplayField>
+    <errorMessage>Platform is required if Milestone Name is Beta Start, Beta Complete, or Commercial Release.</errorMessage>
+</ValidationRule>

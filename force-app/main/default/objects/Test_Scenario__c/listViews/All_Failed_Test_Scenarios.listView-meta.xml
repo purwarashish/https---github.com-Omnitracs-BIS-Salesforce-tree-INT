@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Failed_Test_Scenarios</fullName>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>Assigned_To__c</columns>
+    <columns>Area__c</columns>
+    <columns>Track_From_Requirement__c</columns>
+    <columns>Requirement_Title__c</columns>
+    <columns>Scenario__c</columns>
+    <columns>Expected_Result__c</columns>
+    <columns>Fail_Reason__c</columns>
+    <columns>Test_Case_Step__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Failed</value>
+    </filters>
+    <label>All Failed Test Scenarios</label>
+    <language>en_US</language>
+</ListView>

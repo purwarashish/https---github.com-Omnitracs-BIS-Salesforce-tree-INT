@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NMC_Account_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>NMC Account Type</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>BluMASS</fullName>
+                <default>false</default>
+                <label>BluMASS</label>
+            </value>
+            <value>
+                <fullName>Eval</fullName>
+                <default>false</default>
+                <label>Eval</label>
+            </value>
+            <value>
+                <fullName>Master</fullName>
+                <default>false</default>
+                <label>Master</label>
+            </value>
+            <value>
+                <fullName>QMASS</fullName>
+                <default>false</default>
+                <label>QMASS</label>
+            </value>
+            <value>
+                <fullName>Sub Account</fullName>
+                <default>false</default>
+                <label>Sub Account</label>
+            </value>
+            <value>
+                <fullName>Test</fullName>
+                <default>false</default>
+                <label>Test</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

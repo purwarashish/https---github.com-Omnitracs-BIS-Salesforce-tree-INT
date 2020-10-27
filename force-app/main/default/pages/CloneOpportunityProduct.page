@@ -1,0 +1,50 @@
+<!---------------------------------------------------------------------------------------------------
+Name : CloneOpportunityProduct
+Author : Shruti Karn
+Date : 29 July 2011
+
+Usage : Page for for Cloning Products related to a Opportunity. This page is called form 'Clone' button on Products
+
+Dependencies:  Static Resource -> JQuery
+    
+CR # 35396
+----------------------------------------------------------------------------------------------------->
+<apex:page title="Clone Products" tabStyle="OpportunityLineItem" controller="CloneOpportunityProductController" id="opp1">
+  <script>
+      
+      function selected(objID)
+      {
+        selectedrec.value = objID;
+      }
+      
+  </script>
+  <apex:form id="form1">
+  <apex:sectionHeader subtitle="Products for {!OppName}"/>
+ 
+  <apex:commandLink action="/{!oppId}" value="Back to {!OppName}"/><br/><br/>
+  <c:JQueryTable filter="true" jqueryUI="false" pbTable="opp1:form1:pgblk:pgblktbl"> </c:JQueryTable>
+      <apex:pageblock id="pgblk" >
+      <apex:pageBlockButtons >
+          <apex:commandButton value="Clone" action="{!cloneObj}"/>
+      </apex:pageBlockButtons>
+          <apex:pageBlockTable value="{!mapOppLineItem}" var="prod" id="pgblktbl">
+              <apex:column id="col1" >
+                  <input type = "radio" name = "primary" id="InptCheckbx" onclick="javascript:selected('{!mapOppLineItem[prod].ID}');"/>
+                  
+              </apex:column>
+              <apex:column value="{!mapOppLineItem[prod].PricebookEntry.Name}"/>
+              <apex:column value="{!mapOppLineItem[prod].Quantity}"/>
+              <apex:column value="{!mapOppLineItem[prod].UnitPrice}"/>
+              <apex:column value="{!mapOppLineItem[prod].ServiceDate}"/>
+              <apex:column value="{!mapOppLineItem[prod].ListPrice}"/>
+              <apex:column value="{!mapOppLineItem[prod].Description}"/>
+              <apex:column value="{!mapOppLineItem[prod].Product_Description__c}"/>
+                 
+          </apex:pageBlockTable>
+          
+      </apex:pageblock>
+      <apex:inputhidden value="{!strSelProdIDs}" id="selectedid" />
+      <script> var selectedrec= document.getElementById('{!$Component.selectedid}'); </script>
+      
+  </apex:form>
+</apex:page>

@@ -1,0 +1,41 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "00550000003wOijAAE",
+      "createdByName": "Integration",
+      "createdDate": "2015-02-06T18:24:46.000Z",
+      "fileName": "connectedApps/MiBosDev.connectedApp",
+      "fullName": "MiBosDev",
+      "id": "09H500000008X5fEAE",
+      "lastModifiedById": "00550000003wOijAAE",
+      "lastModifiedByName": "Integration",
+      "lastModifiedDate": "2015-02-06T18:24:46.000Z",
+      "type": "ConnectedApp"
+    },
+    {
+      "createdById": "00550000003wOijAAE",
+      "createdByName": "Integration",
+      "createdDate": "2015-03-12T23:44:33.000Z",
+      "fileName": "connectedApps/UAT.connectedApp",
+      "fullName": "UAT",
+      "id": "09H500000008XMuEAM",
+      "lastModifiedById": "00550000003wOijAAE",
+      "lastModifiedByName": "Integration",
+      "lastModifiedDate": "2015-03-12T23:45:45.000Z",
+      "type": "ConnectedApp"
+    },
+    {
+      "createdById": "00550000006mu7mAAA",
+      "createdByName": "Yasir Arafat",
+      "createdDate": "2020-09-07T20:46:07.000Z",
+      "fileName": "connectedApps/ConnectToINT.connectedApp",
+      "fullName": "ConnectToINT",
+      "id": "09H3F0000001IHvUAM",
+      "lastModifiedById": "00550000006mu7mAAA",
+      "lastModifiedByName": "Yasir Arafat",
+      "lastModifiedDate": "2020-09-07T20:46:07.000Z",
+      "type": "ConnectedApp"
+    }
+  ]
+}

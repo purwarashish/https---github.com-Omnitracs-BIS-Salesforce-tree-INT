@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Make_Connection_Points_Comments_Required</fullName>
+    <active>true</active>
+    <description>Make Connection Points Comments required if Connection Points is No.</description>
+    <errorConditionFormula>AND( 
+ISBLANK( Connection_Points_Comments__c ), 
+ISPICKVAL( Connection_Points__c , &quot;No&quot;) 
+)</errorConditionFormula>
+    <errorDisplayField>Connection_Points_Comments__c</errorDisplayField>
+    <errorMessage>Connection Points Comments is required if Connection Points is &quot;No&quot;</errorMessage>
+</ValidationRule>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Survey__c</fullName>
+    <externalId>false</externalId>
+    <label>Customer Survey</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>The Customer Survey record must have a Survey Type of NPS.</errorMessage>
+        <filterItems>
+            <field>Customer_Survey__c.Survey_Type__c</field>
+            <operation>equals</operation>
+            <value>NPS</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Customer_Survey__c</referenceTo>
+    <relationshipLabel>NPS Survey Archives</relationshipLabel>
+    <relationshipName>NPS_Survey_Archives</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>If_other_out_of_cab_soln_please_specify__c</fullName>
+    <description>Used for CAP survey data collection.</description>
+    <externalId>false</externalId>
+    <label>If other out of cab soln, please specify</label>
+    <length>100</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

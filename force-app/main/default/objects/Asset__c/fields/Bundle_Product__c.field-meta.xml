@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bundle_Product__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>For Assets that are components of a SKU&apos;d bundle, this point to the bundle&apos;s product record. When the CPQ tool reads in an account&apos;s existing assets, it will convert assets referring to a SKU&apos;d bundle back into that bundle product so the bundle can be renewed/extended/decommissioned as a single product.</description>
+    <externalId>false</externalId>
+    <label>Bundle Product</label>
+    <referenceTo>Product2</referenceTo>
+    <relationshipLabel>Bundled Assets</relationshipLabel>
+    <relationshipName>Bundled_Assets</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

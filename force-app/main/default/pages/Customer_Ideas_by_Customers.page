@@ -1,0 +1,65 @@
+<!---------------------------------------------------------------------------------------------------
+Name : Customer Ideas (by Customers)
+Author : Shruti Karn
+Date : 8 August 2011
+
+Usage : Page to show the report for all Customer Ideas sorted by Customers .  
+
+Dependencies:  Static Resource -> JQuery. Visualforce Component -> JqueryTable
+    
+CR # 39183
+----------------------------------------------------------------------------------------------------->
+
+<apex:page controller="IdeaReportController" action="{!showIdeasByCustomers}" id="ideareport">
+    <apex:form id="form1">
+        <apex:pageBlock id="pgblk" >
+        <apex:sectionHeader title="Customer Ideas (by Customers)"/>
+        <div style="text-align:right">
+        <apex:commandButton value="Export to Excel" action="/apex/Customer_Ideas_by_Customers_Excel" style="text-align:center"/>
+        </div>
+        <apex:pageblockTable value="{!lstIdeaTotNumofTrucks}" var="lstIdea" id="pgblktbl">
+            <apex:column headerValue="Account">
+                <apex:outputLink value="/{!lstIdea.acctRec.Id}" id="acctLink">{!lstIdea.acctRec.Name}</apex:outputLink>
+                <br/>
+                <table width="100%">
+                    <tr>
+                        <td width="50%">
+                            <b>Idea</b>
+                        </td>
+                        <td>
+                            <b>Number of Trucks</b>
+                        </td>
+                        <!-- 
+                        <td>
+                            <b>Status</b>
+                        </td>
+                        -->
+                        <td>
+                            <apex:repeat value="{!lstIdea.lstRelCustomerIdea}" var="CustomerIdea">
+                                <tr>
+                                    <td width="50%">
+                                        <apex:outputField value="{!CustomerIdea.Idea__c}"/>
+                                    </td>
+                                    <td>
+                                        <apex:outputField value="{!CustomerIdea.Number_of_Trucks__c}"/>
+                                    </td>
+                                    <!-- 
+                                    <td>
+                                        <apex:outputText value="{!if(CustomerIdea.Account__r.QWBS_Status__c != 'Active Prospect','Customer','Prospect')}"/>
+                                    </td>
+                                    -->
+                                </tr>
+                            </apex:repeat>
+                        </td>
+                    </tr>
+                </table>
+                <br/><br/>     
+            </apex:column>
+            <apex:column headerValue="Total Number of Trucks">
+            	<apex:outputText value="{!lstIdea.totNumofTrucks}"/>         
+            </apex:column>
+        </apex:pageblockTable>
+        <c:JQueryTable filter="true" jqueryUI="true" pbTable="ideareport:form1:pgblk:pgblktbl"> </c:JQueryTable>
+        </apex:pageBlock> 
+    </apex:form>
+</apex:page>

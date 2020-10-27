@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Out_of_Guidelines_Pricing__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Outside price list and sales chips guidelines.</inlineHelpText>
+    <label>Out-of-Guidelines Pricing</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Request_Status__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No</fullName>
+                <default>false</default>
+                <label>No</label>
+            </value>
+            <value>
+                <fullName>Yes</fullName>
+                <default>false</default>
+                <label>Yes</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Distributed</controllingFieldValue>
+            <controllingFieldValue>Set-up Complete</controllingFieldValue>
+            <controllingFieldValue>Pending NMC Setup</controllingFieldValue>
+            <controllingFieldValue>Hold: Credit Approval</controllingFieldValue>
+            <controllingFieldValue>Contract received - OT signature pending</controllingFieldValue>
+            <controllingFieldValue>Signed by Omnitracs</controllingFieldValue>
+            <controllingFieldValue>Hold: Finance Approval</controllingFieldValue>
+            <controllingFieldValue>Hold: Needs Approval</controllingFieldValue>
+            <controllingFieldValue>Hold: See Notes</controllingFieldValue>
+            <valueName>No</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Distributed</controllingFieldValue>
+            <controllingFieldValue>Set-up Complete</controllingFieldValue>
+            <controllingFieldValue>Pending NMC Setup</controllingFieldValue>
+            <controllingFieldValue>Hold: Credit Approval</controllingFieldValue>
+            <controllingFieldValue>Contract received - OT signature pending</controllingFieldValue>
+            <controllingFieldValue>Signed by Omnitracs</controllingFieldValue>
+            <controllingFieldValue>Hold: Finance Approval</controllingFieldValue>
+            <controllingFieldValue>Hold: Needs Approval</controllingFieldValue>
+            <controllingFieldValue>Hold: See Notes</controllingFieldValue>
+            <valueName>Yes</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

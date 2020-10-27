@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Target_Schedule_Information__c</fullName>
+    <description>Please give schedule detail, and any hard cutoffs or pertinent issues we needs to know about and work around
+
+Target End Date - Please enter their Target End Date if applicable</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Please give schedule detail, and any hard cutoffs or pertinent issues we needs to know about and work around
+
+Target End Date - Please enter their Target End Date if applicable</inlineHelpText>
+    <label>Target Schedule Information</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

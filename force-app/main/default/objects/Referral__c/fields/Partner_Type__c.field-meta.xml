@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Partner Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Sales Referral</fullName>
+                <default>false</default>
+                <label>Sales Referral</label>
+            </value>
+            <value>
+                <fullName>Buying Group &amp; Trade Association</fullName>
+                <default>false</default>
+                <label>Buying Group &amp; Trade Association</label>
+            </value>
+            <value>
+                <fullName>Consulting Group</fullName>
+                <default>false</default>
+                <label>Consulting Group</label>
+            </value>
+            <value>
+                <fullName>Certified Solution Provider</fullName>
+                <default>false</default>
+                <label>Certified Solution Provider</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

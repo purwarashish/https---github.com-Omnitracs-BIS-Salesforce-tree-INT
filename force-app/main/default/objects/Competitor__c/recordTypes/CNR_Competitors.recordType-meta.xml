@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CNR_Competitors</fullName>
+    <active>false</active>
+    <description>Used for CNR Competitors</description>
+    <label>CNR Competitors</label>
+    <picklistValues>
+        <picklist>Competitor_Name__c</picklist>
+        <values>
+            <fullName>AMA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alda Digital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Astrum Satelital %28Proeza TI%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Central de Alarmas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Control Track</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Copiloto Satelital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Elitesat Networks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Encontrack</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleetrackers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Full Mar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Global Track</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Globalstar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ILSP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inmosat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LoJack</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loc-Jack</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MAS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Misanti</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MobileFinder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monsat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Navman Wireless</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pointer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Protectio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SIS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sepromex</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sky Angel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SkyWorld Protection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Smart Tracker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Soltrack</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Star911</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stop %26 Track</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tecnolider</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tecnologistik</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telnorm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TrackJack %28SkyPatrol S%2EA%2E de C%2EV%2E%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tracker GPS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tramigo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transportek</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UDA %28Tracking System de México%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UTS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UbicaMovil</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ubicacel Vehicular Iusacell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ubicalo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ubicaware</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unicomm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vectium %28Remora%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visualsat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WebTech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>iTrack</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,129 @@
+<apex:page >
+    <head>
+        <apex:includeScript value="{!$Resource.Overlay_Jquery_Tools}" />
+        
+        <style>
+                .modal {
+                    background-color: #fff;
+                    display: none;
+                    width: 85%;
+                    padding: 15px;
+                    text-align: left;
+                    border: 2px solid #333;
+                    opacity: 0.9;
+                    -moz-border-radius: 6px;
+                    -webkit-border-radius: 6px;
+                    -moz-box-shadow: 0 0 50px #ccc;
+                    -webkit-box-shadow: 0 0 50px #ccc;
+                }
+                
+                .modal h2 {
+                    margin: 0px;
+                    padding: 10px 0 10px 45px;
+                    border-bottom: 1px solid #333;
+                    font-size: 20px;
+                }
+                
+                .modal .close {
+                    background-image: url('{!$Resource.Overlay_Close}');
+                    position: absolute;
+                    right: 5px;
+                    top: 5px;
+                    cursor: pointer;
+                    height: 35px;
+                    width: 35px;
+                }
+                
+                /* use a semi-transparent image for the overlay */
+                /* container for external content. uses vertical scrollbar, if needed */
+                div.contentWrap {
+                    height: 100%;
+                    overflow-y: auto;
+                }
+          </style>
+    </head>
+
+    <script>
+           jQuery.noConflict();
+    
+           function setLeadId(object,leadID){
+              object.value=leadId;
+           }
+           
+           function getNextZIndex() {
+				var maxZindex = 10000; 
+				jQuery(".datePicker").each(function() {
+				   var zIndex = jQuery(this).css('z-index');
+				   if (zIndex != 'auto' && zIndex > maxZindex) { maxZindex = zIndex; }
+				});
+				maxZindex += 1;
+				return maxZindex;
+           }
+    
+           function computeZIndex(){
+              // Get the zIndex as a number
+              var topZIndex=getNextZIndex();
+              jQuery(".datePicker").css({'zIndex' : topZIndex});
+           }
+           
+          
+           jQuery(document).ready(function() {
+                var triggers = jQuery(".modalInput").overlay({
+         
+                               // some mask tweaks suitable for modal dialogs
+                               mask: {
+                                      color: '#ebecff',
+                                      loadSpeed: 200,
+                                      opacity: 0.9
+                               },
+          
+                               closeOnClick: false
+          
+                             });
+                             
+                 
+           });
+           
+           function updateOverlay(obj){
+             //  alert('===obj value===' + obj);
+               var hideOverlay=obj.value
+             //  alert('===hideOverlay====' + hideOverlay); 
+               if(hideOverlay!='false'){
+                   // close the overlay
+                   jQuery(".modalInput").each(function() {
+                          jQuery(this).overlay().close();
+                   });
+               }
+           }
+      
+           function resetOverlayHidden(obj){
+                  obj.value=false;
+           }
+  
+           function confirmCancel(message) {
+                  var isCancel = confirm(message);
+                  if (isCancel) 
+                      return true;
+                  return false;
+           }  
+           
+           function relocateDatePicker(obj){
+             jqueryObjRef = jQuery(obj);
+             var objRef=jqueryObjRef.offset();
+             objRef.top += (jqueryObjRef.outerHeight() * 3) - jqueryObjRef.position().top;
+             jQuery(".datePicker").animate({top:objRef.top+"px", left:objRef.left+"px"}, 10);
+
+           }
+        
+           function DisableSubmitButtons(processingText) { //Disable all the submit buttons when user click on any submit button
+                 jQuery(".btn").each(function () {
+                       jQuery(this).hide(); //hiding the actually clicked button
+                       jQuery(this).after('<input type="submit" disabled="disabled" value="' + processingText + '...." class="btnDisabled" />'); //Creating dummy button to same like clicked button
+                 });
+           }
+           
+               
+
+    
+    </script>
+</apex:page>

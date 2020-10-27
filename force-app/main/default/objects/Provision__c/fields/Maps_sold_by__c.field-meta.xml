@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Maps_sold_by__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This field will indicate who is selling the map databases and who is recogniziting the revenue allocation shown.</inlineHelpText>
+    <label>Maps Sold</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>VAR (all revenue to VAR)</fullName>
+                <default>false</default>
+                <label>VAR (all revenue to VAR)</label>
+            </value>
+            <value>
+                <fullName>VAR (all revenue to UPSLT)</fullName>
+                <default>false</default>
+                <label>VAR (all revenue to UPSLT)</label>
+            </value>
+            <value>
+                <fullName>VAR (50% revenue to UPSLT)</fullName>
+                <default>false</default>
+                <label>VAR (50% revenue to UPSLT)</label>
+            </value>
+            <value>
+                <fullName>UPSLT (all revenue to UPSLT)</fullName>
+                <default>false</default>
+                <label>UPSLT (all revenue to UPSLT)</label>
+            </value>
+            <value>
+                <fullName>UPSLT (all revenue to VAR)</fullName>
+                <default>false</default>
+                <label>UPSLT (all revenue to VAR)</label>
+            </value>
+            <value>
+                <fullName>UPSLT (50% revenue to VAR)</fullName>
+                <default>false</default>
+                <label>UPSLT (50% revenue to VAR)</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

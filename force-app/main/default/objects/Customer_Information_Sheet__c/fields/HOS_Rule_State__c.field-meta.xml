@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HOS_Rule_State__c</fullName>
+    <description>If &quot;State&quot; is chosen as the HOS Rule, please identify what state.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If &quot;State&quot; is chosen as the HOS Rule, please identify what state.</inlineHelpText>
+    <label>HOS Rule State</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>HOS_Rule__c</controllingField>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Alabama (AL)</fullName>
+                <default>false</default>
+                <label>Alabama (AL)</label>
+            </value>
+            <value>
+                <fullName>Alaska (AK)</fullName>
+                <default>false</default>
+                <label>Alaska (AK)</label>
+            </value>
+            <value>
+                <fullName>Arizona (AZ)</fullName>
+                <default>false</default>
+                <label>Arizona (AZ)</label>
+            </value>
+            <value>
+                <fullName>Arkansas (AR)</fullName>
+                <default>false</default>
+                <label>Arkansas (AR)</label>
+            </value>
+            <value>
+                <fullName>California (CA)</fullName>
+                <default>false</default>
+                <label>California (CA)</label>
+            </value>
+            <value>
+                <fullName>Colorado (CO)</fullName>
+                <default>false</default>
+                <label>Colorado (CO)</label>
+            </value>
+            <value>
+                <fullName>Connecticut (CT)</fullName>
+                <default>false</default>
+                <label>Connecticut (CT)</label>
+            </value>
+            <value>
+                <fullName>Delaware (DE)</fullName>
+                <default>false</default>
+                <label>Delaware (DE)</label>
+            </value>
+            <value>
+                <fullName>Florida (FL)</fullName>
+                <default>false</default>
+                <label>Florida (FL)</label>
+            </value>
+            <value>
+                <fullName>Georgia (GA)</fullName>
+                <default>false</default>
+                <label>Georgia (GA)</label>
+            </value>
+            <value>
+                <fullName>Hawaii (HI)</fullName>
+                <default>false</default>
+                <label>Hawaii (HI)</label>
+            </value>
+            <value>
+                <fullName>Idaho (ID)</fullName>
+                <default>false</default>
+                <label>Idaho (ID)</label>
+            </value>
+            <value>
+                <fullName>Illinois (IL)</fullName>
+                <default>false</default>
+                <label>Illinois (IL)</label>
+            </value>
+            <value>
+                <fullName>Indiana (IN)</fullName>
+                <default>false</default>
+                <label>Indiana (IN)</label>
+            </value>
+            <value>
+                <fullName>Iowa (IA)</fullName>
+                <default>false</default>
+                <label>Iowa (IA)</label>
+            </value>
+            <value>
+                <fullName>Kansas (KS)</fullName>
+                <default>false</default>
+                <label>Kansas (KS)</label>
+            </value>
+            <value>
+                <fullName>Kentucky (KY)</fullName>
+                <default>false</default>
+                <label>Kentucky (KY)</label>
+            </value>
+            <value>
+                <fullName>Louisiana (LA)</fullName>
+                <default>false</default>
+                <label>Louisiana (LA)</label>
+            </value>
+            <value>
+                <fullName>Maine (ME)</fullName>
+                <default>false</default>
+                <label>Maine (ME)</label>
+            </value>
+            <value>
+                <fullName>Maryland (MD)</fullName>
+                <default>false</default>
+                <label>Maryland (MD)</label>
+            </value>
+            <value>
+                <fullName>Massachusetts (MA)</fullName>
+                <default>false</default>
+                <label>Massachusetts (MA)</label>
+            </value>
+            <value>
+                <fullName>Michigan (MI)</fullName>
+                <default>false</default>
+                <label>Michigan (MI)</label>
+            </value>
+            <value>
+                <fullName>Minnesota (MN)</fullName>
+                <default>false</default>
+                <label>Minnesota (MN)</label>
+            </value>
+            <value>
+                <fullName>Mississippi (MS)</fullName>
+                <default>false</default>
+                <label>Mississippi (MS)</label>
+            </value>
+            <value>
+                <fullName>Missouri (MO)</fullName>
+                <default>false</default>
+                <label>Missouri (MO)</label>
+            </value>
+            <value>
+                <fullName>Montana (MT)</fullName>
+                <default>false</default>
+                <label>Montana (MT)</label>
+            </value>
+            <value>
+                <fullName>Nebraska (NE)</fullName>
+                <default>false</default>
+                <label>Nebraska (NE)</label>
+            </value>
+            <value>
+                <fullName>Nevada (NV)</fullName>
+                <default>false</default>
+                <label>Nevada (NV)</label>
+            </value>
+            <value>
+                <fullName>New Hampshire (NH)</fullName>
+                <default>false</default>
+                <label>New Hampshire (NH)</label>
+            </value>
+            <value>
+                <fullName>New Jersey (NJ)</fullName>
+                <default>false</default>
+                <label>New Jersey (NJ)</label>
+            </value>
+            <value>
+                <fullName>New Mexico (NM)</fullName>
+                <default>false</default>
+                <label>New Mexico (NM)</label>
+            </value>
+            <value>
+                <fullName>New York (NY)</fullName>
+                <default>false</default>
+                <label>New York (NY)</label>
+            </value>
+            <value>
+                <fullName>North Carolina (NC)</fullName>
+                <default>false</default>
+                <label>North Carolina (NC)</label>
+            </value>
+            <value>
+                <fullName>North Dakota (ND)</fullName>
+                <default>false</default>
+                <label>North Dakota (ND)</label>
+            </value>
+            <value>
+                <fullName>Ohio (OH)</fullName>
+                <default>false</default>
+                <label>Ohio (OH)</label>
+            </value>
+            <value>
+                <fullName>Oklahoma (OK)</fullName>
+                <default>false</default>
+                <label>Oklahoma (OK)</label>
+            </value>
+            <value>
+                <fullName>Oregon (OR)</fullName>
+                <default>false</default>
+                <label>Oregon (OR)</label>
+            </value>
+            <value>
+                <fullName>Pennsylvania (PA)</fullName>
+                <default>false</default>
+                <label>Pennsylvania (PA)</label>
+            </value>
+            <value>
+                <fullName>Rhode Island (RI)</fullName>
+                <default>false</default>
+                <label>Rhode Island (RI)</label>
+            </value>
+            <value>
+                <fullName>South Carolina (SC)</fullName>
+                <default>false</default>
+                <label>South Carolina (SC)</label>
+            </value>
+            <value>
+                <fullName>South Dakota (SD)</fullName>
+                <default>false</default>
+                <label>South Dakota (SD)</label>
+            </value>
+            <value>
+                <fullName>Tennessee (TN)</fullName>
+                <default>false</default>
+                <label>Tennessee (TN)</label>
+            </value>
+            <value>
+                <fullName>Texas (TX)</fullName>
+                <default>false</default>
+                <label>Texas (TX)</label>
+            </value>
+            <value>
+                <fullName>Utah (UT)</fullName>
+                <default>false</default>
+                <label>Utah (UT)</label>
+            </value>
+            <value>
+                <fullName>Vermont (VT)</fullName>
+                <default>false</default>
+                <label>Vermont (VT)</label>
+            </value>
+            <value>
+                <fullName>Virginia (VA)</fullName>
+                <default>false</default>
+                <label>Virginia (VA)</label>
+            </value>
+            <value>
+                <fullName>Washington (WA)</fullName>
+                <default>false</default>
+                <label>Washington (WA)</label>
+            </value>
+            <value>
+                <fullName>West Virginia (WV)</fullName>
+                <default>false</default>
+                <label>West Virginia (WV)</label>
+            </value>
+            <value>
+                <fullName>Wisconsin (WI)</fullName>
+                <default>false</default>
+                <label>Wisconsin (WI)</label>
+            </value>
+            <value>
+                <fullName>Wyoming (WY)</fullName>
+                <default>false</default>
+                <label>Wyoming (WY)</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Alabama (AL)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Alaska (AK)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Arizona (AZ)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Arkansas (AR)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>California (CA)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Colorado (CO)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Connecticut (CT)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Delaware (DE)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Florida (FL)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Georgia (GA)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Hawaii (HI)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Idaho (ID)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Illinois (IL)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Indiana (IN)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Iowa (IA)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Kansas (KS)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Kentucky (KY)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Louisiana (LA)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Maine (ME)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Maryland (MD)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Massachusetts (MA)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Michigan (MI)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Minnesota (MN)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Mississippi (MS)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Missouri (MO)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Montana (MT)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Nebraska (NE)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Nevada (NV)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>New Hampshire (NH)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>New Jersey (NJ)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>New Mexico (NM)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>New York (NY)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>North Carolina (NC)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>North Dakota (ND)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Ohio (OH)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Oklahoma (OK)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Oregon (OR)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Pennsylvania (PA)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Rhode Island (RI)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>South Carolina (SC)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>South Dakota (SD)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Tennessee (TN)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Texas (TX)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Utah (UT)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Vermont (VT)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Virginia (VA)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Washington (WA)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>West Virginia (WV)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Wisconsin (WI)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>Wyoming (WY)</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Record_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Opportunity Record Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>CNR Sales</fullName>
+                <default>false</default>
+                <label>CNR Sales</label>
+            </value>
+            <value>
+                <fullName>Data Migration</fullName>
+                <default>false</default>
+                <label>Data Migration</label>
+            </value>
+            <value>
+                <fullName>Eval</fullName>
+                <default>false</default>
+                <label>Eval</label>
+            </value>
+            <value>
+                <fullName>Fast Track</fullName>
+                <default>false</default>
+                <label>Fast Track</label>
+            </value>
+            <value>
+                <fullName>FleetRisk Advisors</fullName>
+                <default>false</default>
+                <label>FleetRisk Advisors</label>
+            </value>
+            <value>
+                <fullName>GSS Opportunity</fullName>
+                <default>false</default>
+                <label>GSS Opportunity</label>
+            </value>
+            <value>
+                <fullName>Indirect (Partner)</fullName>
+                <default>false</default>
+                <label>Indirect (Partner)</label>
+            </value>
+            <value>
+                <fullName>Partner Opportunity (Reseller)</fullName>
+                <default>false</default>
+                <label>Partner Opportunity (Reseller)</label>
+            </value>
+            <value>
+                <fullName>Products, Services and Maintenance</fullName>
+                <default>false</default>
+                <label>Products, Services and Maintenance</label>
+            </value>
+            <value>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+                <label>Renewal</label>
+            </value>
+            <value>
+                <fullName>Services Only</fullName>
+                <default>false</default>
+                <label>Services Only</label>
+            </value>
+            <value>
+                <fullName>Sylectus Opportunity</fullName>
+                <default>false</default>
+                <label>Sylectus Opportunity</label>
+            </value>
+            <value>
+                <fullName>Transportation &amp; Logistics</fullName>
+                <default>false</default>
+                <label>Transportation &amp; Logistics</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

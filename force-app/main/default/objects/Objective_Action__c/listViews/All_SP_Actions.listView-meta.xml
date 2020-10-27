@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_SP_Actions</fullName>
+    <columns>CREATED_DATE</columns>
+    <columns>NAME</columns>
+    <columns>Stage_Name__c</columns>
+    <columns>Action_Type__c</columns>
+    <columns>Exempt_Profiles__c</columns>
+    <columns>Stage_Objective__c</columns>
+    <columns>Opportunity_Record_Type__c</columns>
+    <columns>Opportunity_Type__c</columns>
+    <columns>Opportunity_Order_Type__c</columns>
+    <columns>Opportunity_Order_SubType__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All SP Actions</label>
+    <language>en_US</language>
+</ListView>

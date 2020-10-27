@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PCHKLIST_Work_Comp_Before_Est_Accept</fullName>
+    <active>true</active>
+    <description>Work Completed cannot be checked if Estimate Accepted is not checked.</description>
+    <errorConditionFormula>AND(  Work_Completed__c ,  Estimate_Accepted__c &lt;&gt;True)</errorConditionFormula>
+    <errorDisplayField>Work_Completed__c</errorDisplayField>
+    <errorMessage>Work Completed cannot be checked if Estimate Accepted is not checked.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PCHKLIST_Submitted_For_Billing</fullName>
+    <active>true</active>
+    <description>Submitted for Billing fields must be populated if the project has been submitted for billing.</description>
+    <errorConditionFormula>OR(AND ( Submitted_for_Billing__c , ISNULL( Submitted_for_Billing_Date__c)), AND(Submitted_for_Billing__c &lt;&gt; True, NOT(ISNULL(Submitted_for_Billing_Date__c))))</errorConditionFormula>
+    <errorDisplayField>Submitted_for_Billing__c</errorDisplayField>
+    <errorMessage>Sumitted for Billing checkbox AND Submitted for Billing Date must be populated if the Project has been submitted for billing.</errorMessage>
+</ValidationRule>

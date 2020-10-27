@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_of_Units_At_Risk_Required</fullName>
+    <active>true</active>
+    <description>Make # of Units At Risk required if Entire Fleet is no</description>
+    <errorConditionFormula>AND (
+ISPICKVAL( Entire_Fleet__c  ,&quot;No&quot;),
+ ISBLANK( of_Units_At_Risk__c)
+)</errorConditionFormula>
+    <errorDisplayField>of_Units_At_Risk__c</errorDisplayField>
+    <errorMessage># of Units At Risk is required if Entire Fleet is No.</errorMessage>
+</ValidationRule>

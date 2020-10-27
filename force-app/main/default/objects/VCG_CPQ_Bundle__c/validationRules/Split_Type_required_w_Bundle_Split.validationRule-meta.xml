@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Split_Type_required_w_Bundle_Split</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISBLANK(TEXT(Bundle_Split_Type__c)) &amp;&amp; !ISBLANK(Bundle_Split__c)</errorConditionFormula>
+    <errorDisplayField>Bundle_Split_Type__c</errorDisplayField>
+    <errorMessage>Bundle Split Type must be specified if Bundle Split is given.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Services__c</fullName>
+    <description>Services</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Choose the services running on this server</inlineHelpText>
+    <label>Services</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Event Processor</fullName>
+                <default>false</default>
+                <label>Event Processor</label>
+            </value>
+            <value>
+                <fullName>Handheld EQ 4.0</fullName>
+                <default>false</default>
+                <label>Handheld EQ 4.0</label>
+            </value>
+            <value>
+                <fullName>HH Comm Service (LAN)</fullName>
+                <default>false</default>
+                <label>HH Comm Service (LAN)</label>
+            </value>
+            <value>
+                <fullName>HH Com Service (WWAN)</fullName>
+                <default>false</default>
+                <label>HH Com Service (WWAN)</label>
+            </value>
+            <value>
+                <fullName>IP Server</fullName>
+                <default>false</default>
+                <label>IP Server</label>
+            </value>
+            <value>
+                <fullName>iTrak</fullName>
+                <default>false</default>
+                <label>iTrak</label>
+            </value>
+            <value>
+                <fullName>Jackson WMX Service</fullName>
+                <default>false</default>
+                <label>Jackson WMX Service</label>
+            </value>
+            <value>
+                <fullName>Java Communicator Service</fullName>
+                <default>false</default>
+                <label>Java Communicator Service</label>
+            </value>
+            <value>
+                <fullName>Multi User Lock Service</fullName>
+                <default>false</default>
+                <label>Multi User Lock Service</label>
+            </value>
+            <value>
+                <fullName>Route Exception Service</fullName>
+                <default>false</default>
+                <label>Route Exception Service</label>
+            </value>
+            <value>
+                <fullName>Route History Service</fullName>
+                <default>false</default>
+                <label>Route History Service</label>
+            </value>
+            <value>
+                <fullName>Stop Alerter</fullName>
+                <default>false</default>
+                <label>Stop Alerter</label>
+            </value>
+            <value>
+                <fullName>SuperMatrix</fullName>
+                <default>false</default>
+                <label>SuperMatrix</label>
+            </value>
+            <value>
+                <fullName>Web Services</fullName>
+                <default>false</default>
+                <label>Web Services</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fund_Request__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Note: This cannot be a master detail relationship if you plan to use approval workflow as the fund request will be locked (during approval and most likely post approval) and therefore any child claims cannot be saved</description>
+    <externalId>false</externalId>
+    <label>Fund Request</label>
+    <referenceTo>SFDC_MDF__c</referenceTo>
+    <relationshipLabel>Fund Claims</relationshipLabel>
+    <relationshipName>R00N30000002DjDcEAK</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

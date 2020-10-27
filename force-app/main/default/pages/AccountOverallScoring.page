@@ -1,0 +1,109 @@
+<apex:page standardcontroller="Account" extensions="AccountOverallScoring" showheader="false">
+ 
+ <apex:form >
+ 
+  <apex:pageMessages />
+  
+ <apex:pageBlock rendered="{!NOT(isManualScoring)}">
+  
+ <apex:pageBlockTable value="{!listAccountScoring}" var="s">
+ 
+ <apex:column >
+    <apex:facet name="header">
+        Scoring Model
+    </apex:facet>
+    <apex:outputLink target="_top" value="/apex/AccountLineItemsScoring?id={!s.Id}" ><apex:outputText value="{!s.Scoring_Model__c}" /></apex:outputLink> 
+ </apex:column>
+ 
+ <apex:column >
+    <apex:facet name="header">
+     Date Calculated Scoring
+    </apex:facet>
+    <apex:outputField value="{!s.Date__c}" />
+ </apex:column>
+ 
+  <apex:column >
+    <apex:facet name="header">
+     Date Manual Scoring
+    </apex:facet>
+    <apex:outputField value="{!s.Date_Manual_Scoring__c}" />
+ </apex:column>
+ 
+  <apex:column >
+    <apex:facet name="header">
+        Overall Score
+    </apex:facet>
+    <apex:outputPanel >
+    <apex:image value="{!URLFOR($Resource.AccountScoring, 'Green.JPG')}" title="{!s.Aggregate_Score__c}" rendered="{!IF(s.Display_Type__c == 'Green' && s.Is_Manual_Scoring__c == false, true, false)}"/>
+    <apex:image value="{!URLFOR($Resource.AccountScoring, 'Yellow.JPG')}" title="{!s.Aggregate_Score__c}" rendered="{!IF(s.Display_Type__c == 'Yellow'  && s.Is_Manual_Scoring__c == false, true, false)}"/>
+    <apex:image value="{!URLFOR($Resource.AccountScoring, 'Red.JPG')}" title="{!s.Aggregate_Score__c}" rendered="{!IF(s.Display_Type__c == 'Red'  && s.Is_Manual_Scoring__c == false, true, false)}"/>
+
+    <apex:image value="{!URLFOR($Resource.AccountScoring, 'Green.JPG')}" title="{!s.Aggregate_Score__c}" rendered="{!IF(s.Manual_Display_Type__c == 'Green' && s.Is_Manual_Scoring__c == true, true, false)}"/>
+    <apex:image value="{!URLFOR($Resource.AccountScoring, 'Yellow.JPG')}" title="{!s.Aggregate_Score__c}" rendered="{!IF(s.Manual_Display_Type__c == 'Yellow'  && s.Is_Manual_Scoring__c == true, true, false)}"/>
+    <apex:image value="{!URLFOR($Resource.AccountScoring, 'Red.JPG')}" title="{!s.Aggregate_Score__c}" rendered="{!IF(s.Manual_Display_Type__c == 'Red'  && s.Is_Manual_Scoring__c == true, true, false)}"/>    
+    
+    &nbsp;
+    <apex:outputField value="{!s.Aggregate_Score__c}" />
+    
+    </apex:outputPanel>
+ </apex:column>
+ 
+  <apex:column >
+    <apex:facet name="header">
+      Manual Scoring?
+    </apex:facet>
+    <apex:outputField value="{!s.Is_Manual_Scoring__c}" />
+ </apex:column>
+ 
+  <apex:column >
+    <apex:facet name="header">
+      &nbsp;
+    </apex:facet>
+    <apex:commandLink action="{!ManualScoring}" value="Enable Manual Scoring" rendered="{!NOT(s.Is_Manual_Scoring__c)}">
+        <apex:param name="SelectedAccountScoringId" assignTo="{!SelectedAccountScoringId}" value="{!s.Id}" />
+    </apex:commandLink> 
+    <apex:commandLink action="{!ManualScoringDisable}" value="Disable Manual Scoring" onclick="if(confirm('Are you sure you want to disable manual scoring? This can not be undone.')){return true;}else{return false;}" rendered="{!s.Is_Manual_Scoring__c}">
+        <apex:param name="SelectedAccountScoringId" assignTo="{!SelectedAccountScoringId}" value="{!s.Id}" />
+    </apex:commandLink> 
+ </apex:column>
+ 
+ <apex:column >
+    <apex:facet name="header">
+      &nbsp;
+    </apex:facet>
+    <apex:outputLink target="_top" value="/apex/AccountLineItemsScoring?id={!s.Id}" >View Details</apex:outputLink>
+ </apex:column>
+ 
+ </apex:pageBlockTable>
+ 
+ </apex:pageBlock>
+ 
+ 
+ <apex:pageBlock rendered="{!isManualScoring}">
+ 
+  <apex:pageBlockButtons location="top">
+    <apex:commandButton value="Save" action="{!DoSave}" />
+    <apex:commandButton value="Cancel" action="{!DoCancel}" immediate="true" />
+  </apex:pageBlockButtons>
+ 
+ <apex:pageBlockSection columns="1">
+     ***Before entering a value in the Manual Scoring field, carefully consider the ranges defined in the scoring model.
+    <apex:outputField value="{!CurrentAccountScoring.Is_Manual_Scoring__c}"  />
+    
+    <apex:pageBlockSectionItem HelpText="Carefully consider the ranges defined in the scoring model before entering a manual score.">
+    Manual Scoring: 
+    <apex:inputField value="{!CurrentAccountScoring.Manual_Score__c}" required="true"/>
+    </apex:pageBlockSectionItem>
+    <apex:inputField value="{!CurrentAccountScoring.Manual_Display_Type__c}" required="true"/>
+    
+    <apex:inputField value="{!CurrentAccountScoring.Manual_Scoring_Reason__c}" required="true"/>
+    
+    <apex:inputField value="{!CurrentAccountScoring.Manual_Scoring_Comments__c}" style="width:300px;height:60px;" required="true"/>
+    
+ </apex:pageBlockSection>
+ 
+ </apex:pageBlock>
+ 
+ </apex:form>
+ 
+</apex:page>

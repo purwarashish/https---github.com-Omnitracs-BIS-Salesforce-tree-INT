@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Spread_Sequences</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Spread Sequences</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>{!requireScript(&quot;/soap/ajax/20.0/connection.js&quot;)} 
+{!requireScript(&quot;/soap/ajax/20.0/apex.js&quot;)} 
+
+var ppId = &apos;{!VCG_CPQ_Pricing_Procedure__c.Id}&apos;;
+
+//alert(&apos;Pricing Procedure Id: &apos; + ppId);
+
+
+var retStr = sforce.apex.execute(
+                                  &quot;VCG_CPQ_PricingUtility&quot;,
+                                  &quot;SpreadConditionSeqsFor&quot;,
+                                  {ppId:ppId}
+                                );
+
+if (retStr == &apos;success&apos;) {
+//    alert(&apos;Success!&apos;);
+    document.location.reload();
+}
+else {
+    alert(&apos;The method returned: &apos; + retStr); 
+}</url>
+</WebLink>

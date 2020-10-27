@@ -1,0 +1,31 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "00550000005j5LOAAY",
+      "createdByName": "Kelly Gatling",
+      "createdDate": "2017-11-29T16:04:19.000Z",
+      "fileName": "campaignInfluenceModels/primaryModel.campaignInfluenceModel",
+      "fullName": "primaryModel",
+      "id": "03V50000000Gme1EAC",
+      "lastModifiedById": "00550000006ssMNAAY",
+      "lastModifiedByName": "Luis Esquivel",
+      "lastModifiedDate": "2017-12-04T22:48:51.000Z",
+      "manageableState": "unmanaged",
+      "type": "CampaignInfluenceModel"
+    },
+    {
+      "createdById": "00550000006ssMNAAY",
+      "createdByName": "Luis Esquivel",
+      "createdDate": "2017-12-04T22:43:34.000Z",
+      "fileName": "campaignInfluenceModels/MT_Attribution.campaignInfluenceModel",
+      "fullName": "MT_Attribution",
+      "id": "03V50000000GmeBEAS",
+      "lastModifiedById": "00550000006ssMNAAY",
+      "lastModifiedByName": "Luis Esquivel",
+      "lastModifiedDate": "2017-12-04T22:48:51.000Z",
+      "manageableState": "unmanaged",
+      "type": "CampaignInfluenceModel"
+    }
+  ]
+}

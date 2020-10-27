@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Agreement_Sub_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Agreement Sub-Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Acquired Legacy</fullName>
+                <default>false</default>
+                <label>Acquired Legacy</label>
+            </value>
+            <value>
+                <fullName>Advanced Mapping Interface</fullName>
+                <default>false</default>
+                <label>Advanced Mapping Interface</label>
+            </value>
+            <value>
+                <fullName>AMBER Alert</fullName>
+                <default>false</default>
+                <label>AMBER Alert</label>
+            </value>
+            <value>
+                <fullName>Analytics Manager</fullName>
+                <default>false</default>
+                <label>Analytics Manager</label>
+            </value>
+            <value>
+                <fullName>Assignment and Assumption</fullName>
+                <default>false</default>
+                <label>Assignment and Assumption</label>
+            </value>
+            <value>
+                <fullName>Canada Enhanced Cellular Roaming</fullName>
+                <default>false</default>
+                <label>Canada Enhanced Cellular Roaming</label>
+            </value>
+            <value>
+                <fullName>Canadian Reseller</fullName>
+                <default>false</default>
+                <label>Canadian Reseller</label>
+            </value>
+            <value>
+                <fullName>Carrier Agreement</fullName>
+                <default>false</default>
+                <label>Carrier Agreement</label>
+            </value>
+            <value>
+                <fullName>CER</fullName>
+                <default>false</default>
+                <label>CER</label>
+            </value>
+            <value>
+                <fullName>CEV</fullName>
+                <default>false</default>
+                <label>CEV</label>
+            </value>
+            <value>
+                <fullName>Change Order</fullName>
+                <default>false</default>
+                <label>Change Order</label>
+            </value>
+            <value>
+                <fullName>Content Delivery</fullName>
+                <default>false</default>
+                <label>Content Delivery</label>
+            </value>
+            <value>
+                <fullName>Conversion Agreements</fullName>
+                <default>false</default>
+                <label>Conversion Agreements</label>
+            </value>
+            <value>
+                <fullName>Co-Pilot</fullName>
+                <default>false</default>
+                <label>Co-Pilot</label>
+            </value>
+            <value>
+                <fullName>CTPAT</fullName>
+                <default>false</default>
+                <label>CTPAT</label>
+            </value>
+            <value>
+                <fullName>Data Share - No Pricing</fullName>
+                <default>false</default>
+                <label>Data Share - No Pricing</label>
+            </value>
+            <value>
+                <fullName>Data Share - Pricing</fullName>
+                <default>false</default>
+                <label>Data Share - Pricing</label>
+            </value>
+            <value>
+                <fullName>Data Share - VLV</fullName>
+                <default>false</default>
+                <label>Data Share - VLV</label>
+            </value>
+            <value>
+                <fullName>Data Sharing</fullName>
+                <default>false</default>
+                <label>Data Sharing</label>
+            </value>
+            <value>
+                <fullName>DHA</fullName>
+                <default>false</default>
+                <label>DHA</label>
+            </value>
+            <value>
+                <fullName>Direct Procurement</fullName>
+                <default>false</default>
+                <label>Direct Procurement</label>
+            </value>
+            <value>
+                <fullName>Domestic Reseller</fullName>
+                <default>false</default>
+                <label>Domestic Reseller</label>
+            </value>
+            <value>
+                <fullName>Domestic Sales Agency</fullName>
+                <default>false</default>
+                <label>Domestic Sales Agency</label>
+            </value>
+            <value>
+                <fullName>Driver Email</fullName>
+                <default>false</default>
+                <label>Driver Email</label>
+            </value>
+            <value>
+                <fullName>Driver Scorecard</fullName>
+                <default>false</default>
+                <label>Driver Scorecard</label>
+            </value>
+            <value>
+                <fullName>Driver Workflow</fullName>
+                <default>false</default>
+                <label>Driver Workflow</label>
+            </value>
+            <value>
+                <fullName>DTTS Service (In-Cab)</fullName>
+                <default>false</default>
+                <label>DTTS Service (In-Cab)</label>
+            </value>
+            <value>
+                <fullName>DTTS Service (Trailer)</fullName>
+                <default>false</default>
+                <label>DTTS Service (Trailer)</label>
+            </value>
+            <value>
+                <fullName>Engineering SOW</fullName>
+                <default>false</default>
+                <label>Engineering SOW</label>
+            </value>
+            <value>
+                <fullName>Equipment and Software Loan</fullName>
+                <default>false</default>
+                <label>Equipment and Software Loan</label>
+            </value>
+            <value>
+                <fullName>Exact Fuel</fullName>
+                <default>false</default>
+                <label>Exact Fuel</label>
+            </value>
+            <value>
+                <fullName>Extended Productivity</fullName>
+                <default>false</default>
+                <label>Extended Productivity</label>
+            </value>
+            <value>
+                <fullName>Fault Monitoring</fullName>
+                <default>false</default>
+                <label>Fault Monitoring</label>
+            </value>
+            <value>
+                <fullName>Fault Monitoring - Extended Faults</fullName>
+                <default>false</default>
+                <label>Fault Monitoring - Extended Faults</label>
+            </value>
+            <value>
+                <fullName>Fault Monitoring with Extended Faults</fullName>
+                <default>false</default>
+                <label>Fault Monitoring with Extended Faults</label>
+            </value>
+            <value>
+                <fullName>Fuel Tax</fullName>
+                <default>false</default>
+                <label>Fuel Tax</label>
+            </value>
+            <value>
+                <fullName>HOS</fullName>
+                <default>false</default>
+                <label>HOS</label>
+            </value>
+            <value>
+                <fullName>IFTA</fullName>
+                <default>false</default>
+                <label>IFTA</label>
+            </value>
+            <value>
+                <fullName>In-Cab Scanning</fullName>
+                <default>false</default>
+                <label>In-Cab Scanning</label>
+            </value>
+            <value>
+                <fullName>Indirect Procurement</fullName>
+                <default>false</default>
+                <label>Indirect Procurement</label>
+            </value>
+            <value>
+                <fullName>Infrastructure</fullName>
+                <default>false</default>
+                <label>Infrastructure</label>
+            </value>
+            <value>
+                <fullName>Int. Perpetual</fullName>
+                <default>false</default>
+                <label>Int. Perpetual</label>
+            </value>
+            <value>
+                <fullName>International Reseller</fullName>
+                <default>false</default>
+                <label>International Reseller</label>
+            </value>
+            <value>
+                <fullName>IVG</fullName>
+                <default>false</default>
+                <label>IVG</label>
+            </value>
+            <value>
+                <fullName>Lead Referral Agreement</fullName>
+                <default>false</default>
+                <label>Lead Referral Agreement</label>
+            </value>
+            <value>
+                <fullName>Letters/Memos</fullName>
+                <default>false</default>
+                <label>Letters/Memos</label>
+            </value>
+            <value>
+                <fullName>Master Services Agreement (MSA)</fullName>
+                <default>false</default>
+                <label>Master Services Agreement (MSA)</label>
+            </value>
+            <value>
+                <fullName>Master Test Agreement (MTA)</fullName>
+                <default>false</default>
+                <label>Master Test Agreement (MTA)</label>
+            </value>
+            <value>
+                <fullName>MCP100S</fullName>
+                <default>false</default>
+                <label>MCP100S</label>
+            </value>
+            <value>
+                <fullName>MCP100T</fullName>
+                <default>false</default>
+                <label>MCP100T</label>
+            </value>
+            <value>
+                <fullName>MCP110</fullName>
+                <default>false</default>
+                <label>MCP110</label>
+            </value>
+            <value>
+                <fullName>MCP200</fullName>
+                <default>false</default>
+                <label>MCP200</label>
+            </value>
+            <value>
+                <fullName>MCP50</fullName>
+                <default>false</default>
+                <label>MCP50</label>
+            </value>
+            <value>
+                <fullName>Media Manager</fullName>
+                <default>false</default>
+                <label>Media Manager</label>
+            </value>
+            <value>
+                <fullName>Multi-party</fullName>
+                <default>false</default>
+                <label>Multi-party</label>
+            </value>
+            <value>
+                <fullName>Mutual</fullName>
+                <default>false</default>
+                <label>Mutual</label>
+            </value>
+            <value>
+                <fullName>NaviGo</fullName>
+                <default>false</default>
+                <label>NaviGo</label>
+            </value>
+            <value>
+                <fullName>OmniEXPRESS</fullName>
+                <default>false</default>
+                <label>OmniEXPRESS</label>
+            </value>
+            <value>
+                <fullName>OmniTRACKS/OmniEXPRESS</fullName>
+                <default>false</default>
+                <label>OmniTRACKS/OmniEXPRESS</label>
+            </value>
+            <value>
+                <fullName>OmniTRACS</fullName>
+                <default>false</default>
+                <label>OmniTRACS</label>
+            </value>
+            <value>
+                <fullName>Omnitracs API Documentation Agreement</fullName>
+                <default>false</default>
+                <label>Omnitracs API Documentation Agreement</label>
+            </value>
+            <value>
+                <fullName>Omnitracs Business Agreement</fullName>
+                <default>false</default>
+                <label>Omnitracs Business Agreement</label>
+            </value>
+            <value>
+                <fullName>Omnitracs Navigation</fullName>
+                <default>false</default>
+                <label>Omnitracs Navigation</label>
+            </value>
+            <value>
+                <fullName>Omnitracs Reporting and Analytics</fullName>
+                <default>false</default>
+                <label>Omnitracs Reporting and Analytics</label>
+            </value>
+            <value>
+                <fullName>Omnitracs Software License</fullName>
+                <default>false</default>
+                <label>Omnitracs Software License</label>
+            </value>
+            <value>
+                <fullName>Order Device Referral Agreement</fullName>
+                <default>false</default>
+                <label>Order Device Referral Agreement</label>
+            </value>
+            <value>
+                <fullName>OT1 Application Terms</fullName>
+                <default>false</default>
+                <label>OT1 Application Terms</label>
+            </value>
+            <value>
+                <fullName>OT1 SOW</fullName>
+                <default>false</default>
+                <label>OT1 SOW</label>
+            </value>
+            <value>
+                <fullName>OTA</fullName>
+                <default>false</default>
+                <label>OTA</label>
+            </value>
+            <value>
+                <fullName>Package Subscriptions</fullName>
+                <default>false</default>
+                <label>Package Subscriptions</label>
+            </value>
+            <value>
+                <fullName>Panic Button Notification</fullName>
+                <default>false</default>
+                <label>Panic Button Notification</label>
+            </value>
+            <value>
+                <fullName>Payroll</fullName>
+                <default>false</default>
+                <label>Payroll</label>
+            </value>
+            <value>
+                <fullName>Per Diem Manager</fullName>
+                <default>false</default>
+                <label>Per Diem Manager</label>
+            </value>
+            <value>
+                <fullName>Performance Monitoring</fullName>
+                <default>false</default>
+                <label>Performance Monitoring</label>
+            </value>
+            <value>
+                <fullName>PPS</fullName>
+                <default>false</default>
+                <label>PPS</label>
+            </value>
+            <value>
+                <fullName>Pricing Schedule</fullName>
+                <default>false</default>
+                <label>Pricing Schedule</label>
+            </value>
+            <value>
+                <fullName>Professional Services Agreement (PSA)</fullName>
+                <default>false</default>
+                <label>Professional Services Agreement (PSA)</label>
+            </value>
+            <value>
+                <fullName>Professional Services SOW</fullName>
+                <default>false</default>
+                <label>Professional Services SOW</label>
+            </value>
+            <value>
+                <fullName>Purchase Order (PO)</fullName>
+                <default>false</default>
+                <label>Purchase Order (PO)</label>
+            </value>
+            <value>
+                <fullName>RNA Sandbox</fullName>
+                <default>false</default>
+                <label>RNA Sandbox</label>
+            </value>
+            <value>
+                <fullName>RN Perpetual License</fullName>
+                <default>false</default>
+                <label>RN Perpetual License</label>
+            </value>
+            <value>
+                <fullName>RN SaaS</fullName>
+                <default>false</default>
+                <label>RN SaaS</label>
+            </value>
+            <value>
+                <fullName>RN Telematics, Wireless Services, and SaaS</fullName>
+                <default>false</default>
+                <label>RN Telematics, Wireless Services, and SaaS</label>
+            </value>
+            <value>
+                <fullName>RN Telematics, Wireless Services, and SaaS (Lease)</fullName>
+                <default>false</default>
+                <label>RN Telematics, Wireless Services, and SaaS (Lease)</label>
+            </value>
+            <value>
+                <fullName>RN Telematics, Wireless Services, and SaaS (Purchase)</fullName>
+                <default>false</default>
+                <label>RN Telematics, Wireless Services, and SaaS (Purchase)</label>
+            </value>
+            <value>
+                <fullName>RN Telematics and Wireless Services (Lease)</fullName>
+                <default>false</default>
+                <label>RN Telematics and Wireless Services (Lease)</label>
+            </value>
+            <value>
+                <fullName>RN Telematics and Wireless Services (Purchase)</fullName>
+                <default>false</default>
+                <label>RN Telematics and Wireless Services (Purchase)</label>
+            </value>
+            <value>
+                <fullName>RN Term License</fullName>
+                <default>false</default>
+                <label>RN Term License</label>
+            </value>
+            <value>
+                <fullName>Roadnet Legacy</fullName>
+                <default>false</default>
+                <label>Roadnet Legacy</label>
+            </value>
+            <value>
+                <fullName>Roadnet Reseller</fullName>
+                <default>false</default>
+                <label>Roadnet Reseller</label>
+            </value>
+            <value>
+                <fullName>Satellite Services and Equipment</fullName>
+                <default>false</default>
+                <label>Satellite Services and Equipment</label>
+            </value>
+            <value>
+                <fullName>Service Center</fullName>
+                <default>false</default>
+                <label>Service Center</label>
+            </value>
+            <value>
+                <fullName>Skybitz Asset Tracking Device</fullName>
+                <default>false</default>
+                <label>Skybitz Asset Tracking Device</label>
+            </value>
+            <value>
+                <fullName>SpeedGauge</fullName>
+                <default>false</default>
+                <label>SpeedGauge</label>
+            </value>
+            <value>
+                <fullName>Staffing SOW</fullName>
+                <default>false</default>
+                <label>Staffing SOW</label>
+            </value>
+            <value>
+                <fullName>Supplier Amendment</fullName>
+                <default>false</default>
+                <label>Supplier Amendment</label>
+            </value>
+            <value>
+                <fullName>Sylectus Agreement</fullName>
+                <default>false</default>
+                <label>Sylectus Agreement</label>
+            </value>
+            <value>
+                <fullName>Sylectus Master Terms</fullName>
+                <default>false</default>
+                <label>Sylectus Master Terms</label>
+            </value>
+            <value>
+                <fullName>Sylectus Subscription</fullName>
+                <default>false</default>
+                <label>Sylectus Subscription</label>
+            </value>
+            <value>
+                <fullName>Tax Manager</fullName>
+                <default>false</default>
+                <label>Tax Manager</label>
+            </value>
+            <value>
+                <fullName>Telecommunications Link Agreement</fullName>
+                <default>false</default>
+                <label>Telecommunications Link Agreement</label>
+            </value>
+            <value>
+                <fullName>Terrestrial Browsing 2.0</fullName>
+                <default>false</default>
+                <label>Terrestrial Browsing 2.0</label>
+            </value>
+            <value>
+                <fullName>Terrestrial Data Plan</fullName>
+                <default>false</default>
+                <label>Terrestrial Data Plan</label>
+            </value>
+            <value>
+                <fullName>Trailer ABS Connect</fullName>
+                <default>false</default>
+                <label>Trailer ABS Connect</label>
+            </value>
+            <value>
+                <fullName>Trip Manager</fullName>
+                <default>false</default>
+                <label>Trip Manager</label>
+            </value>
+            <value>
+                <fullName>TT150</fullName>
+                <default>false</default>
+                <label>TT150</label>
+            </value>
+            <value>
+                <fullName>TT200</fullName>
+                <default>false</default>
+                <label>TT200</label>
+            </value>
+            <value>
+                <fullName>TT210</fullName>
+                <default>false</default>
+                <label>TT210</label>
+            </value>
+            <value>
+                <fullName>Turnpike</fullName>
+                <default>false</default>
+                <label>Turnpike</label>
+            </value>
+            <value>
+                <fullName>Unilateral</fullName>
+                <default>false</default>
+                <label>Unilateral</label>
+            </value>
+            <value>
+                <fullName>Vendor Info Security Requirements</fullName>
+                <default>false</default>
+                <label>Vendor Info Security Requirements</label>
+            </value>
+            <value>
+                <fullName>VIR</fullName>
+                <default>false</default>
+                <label>VIR</label>
+            </value>
+            <value>
+                <fullName>VLV</fullName>
+                <default>false</default>
+                <label>VLV</label>
+            </value>
+            <value>
+                <fullName>Wiki</fullName>
+                <default>false</default>
+                <label>Wiki</label>
+            </value>
+            <value>
+                <fullName>WSB</fullName>
+                <default>false</default>
+                <label>WSB</label>
+            </value>
+            <value>
+                <fullName>XATANet</fullName>
+                <default>false</default>
+                <label>XATANet</label>
+            </value>
+            <value>
+                <fullName>XRS</fullName>
+                <default>false</default>
+                <label>XRS</label>
+            </value>
+            <value>
+                <fullName>XRS Bundle</fullName>
+                <default>false</default>
+                <label>XRS Bundle</label>
+            </value>
+            <value>
+                <fullName>XRS Fault Code</fullName>
+                <default>false</default>
+                <label>XRS Fault Code</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

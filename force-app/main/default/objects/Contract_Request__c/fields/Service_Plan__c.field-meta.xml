@@ -1,0 +1,652 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Service_Plan__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Standard Terrestrial Premium Trip Management Plan is not available for MCP100.</inlineHelpText>
+    <label>Service Plan</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Product__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AT&amp;T – GSM</fullName>
+                <default>false</default>
+                <label>AT&amp;T – GSM</label>
+            </value>
+            <value>
+                <fullName>Enhanced Plan with Fleet Averaging</fullName>
+                <default>false</default>
+                <label>Enhanced Plan with Fleet Averaging</label>
+            </value>
+            <value>
+                <fullName>Enhanced Plan with Volume Rate Tiers</fullName>
+                <default>false</default>
+                <label>Enhanced Plan with Volume Rate Tiers</label>
+            </value>
+            <value>
+                <fullName>EOBR Plan</fullName>
+                <default>false</default>
+                <label>EOBR Plan</label>
+            </value>
+            <value>
+                <fullName>EOBR Plan 1 Year, $23.95</fullName>
+                <default>false</default>
+                <label>EOBR Plan 1 Year, $23.95</label>
+            </value>
+            <value>
+                <fullName>EOBR Plan 2 Years, $22.95</fullName>
+                <default>false</default>
+                <label>EOBR Plan 2 Years, $22.95</label>
+            </value>
+            <value>
+                <fullName>EOBR Plan 3 Years, $21.95</fullName>
+                <default>false</default>
+                <label>EOBR Plan 3 Years, $21.95</label>
+            </value>
+            <value>
+                <fullName>EOBR Plan 5 Years, $19.95</fullName>
+                <default>false</default>
+                <label>EOBR Plan 5 Years, $19.95</label>
+            </value>
+            <value>
+                <fullName>Evaluation</fullName>
+                <default>false</default>
+                <label>Evaluation</label>
+            </value>
+            <value>
+                <fullName>GlobalTRACS &amp; GlobalTRACS Lite Evaluation</fullName>
+                <default>false</default>
+                <label>GlobalTRACS &amp; GlobalTRACS Lite Evaluation</label>
+            </value>
+            <value>
+                <fullName>GlobalTRACS &amp; GlobalTRACS Lite Message Plans</fullName>
+                <default>false</default>
+                <label>GlobalTRACS &amp; GlobalTRACS Lite Message Plans</label>
+            </value>
+            <value>
+                <fullName>GlobalTRACS Evaluation</fullName>
+                <default>false</default>
+                <label>GlobalTRACS Evaluation</label>
+            </value>
+            <value>
+                <fullName>GlobalTRACS Lite Evaluation</fullName>
+                <default>false</default>
+                <label>GlobalTRACS Lite Evaluation</label>
+            </value>
+            <value>
+                <fullName>GlobalTRACS Lite Message Plan</fullName>
+                <default>false</default>
+                <label>GlobalTRACS Lite Message Plan</label>
+            </value>
+            <value>
+                <fullName>GlobalTRACS  Message Plan</fullName>
+                <default>false</default>
+                <label>GlobalTRACS  Message Plan</label>
+            </value>
+            <value>
+                <fullName>IMCT Base Message Service Plan</fullName>
+                <default>false</default>
+                <label>IMCT Base Message Service Plan</label>
+            </value>
+            <value>
+                <fullName>IMCT Enhanced Message Service Plan</fullName>
+                <default>false</default>
+                <label>IMCT Enhanced Message Service Plan</label>
+            </value>
+            <value>
+                <fullName>IMCT Rental Program Service Plan</fullName>
+                <default>false</default>
+                <label>IMCT Rental Program Service Plan</label>
+            </value>
+            <value>
+                <fullName>International</fullName>
+                <default>false</default>
+                <label>International</label>
+            </value>
+            <value>
+                <fullName>JD Link &amp; JDLink Express Messaging Plans</fullName>
+                <default>false</default>
+                <label>JD Link &amp; JDLink Express Messaging Plans</label>
+            </value>
+            <value>
+                <fullName>JDLink Express Messaging Plans</fullName>
+                <default>false</default>
+                <label>JDLink Express Messaging Plans</label>
+            </value>
+            <value>
+                <fullName>JDLink Messaging Plans</fullName>
+                <default>false</default>
+                <label>JDLink Messaging Plans</label>
+            </value>
+            <value>
+                <fullName>LTL Plan with Fleet Averaging</fullName>
+                <default>false</default>
+                <label>LTL Plan with Fleet Averaging</label>
+            </value>
+            <value>
+                <fullName>MCP100S Evaluation</fullName>
+                <default>false</default>
+                <label>MCP100S Evaluation</label>
+            </value>
+            <value>
+                <fullName>MCP100S Foundation Service Plan</fullName>
+                <default>false</default>
+                <label>MCP100S Foundation Service Plan</label>
+            </value>
+            <value>
+                <fullName>MCP100S UVP – Bronze @ $59.95 for One (1) year</fullName>
+                <default>false</default>
+                <label>MCP100S UVP – Bronze @ $59.95 for One (1) year</label>
+            </value>
+            <value>
+                <fullName>MCP100S UVP – Gold @ $49.95 for Five (5) years</fullName>
+                <default>false</default>
+                <label>MCP100S UVP – Gold @ $49.95 for Five (5) years</label>
+            </value>
+            <value>
+                <fullName>MCP100S UVP – Silver @ $53.95 for Three (3) years</fullName>
+                <default>false</default>
+                <label>MCP100S UVP – Silver @ $53.95 for Three (3) years</label>
+            </value>
+            <value>
+                <fullName>MCP100T Evaluation</fullName>
+                <default>false</default>
+                <label>MCP100T Evaluation</label>
+            </value>
+            <value>
+                <fullName>MCP100T Service Plan</fullName>
+                <default>false</default>
+                <label>MCP100T Service Plan</label>
+            </value>
+            <value>
+                <fullName>MCP100T UVP – Bronze @ $49.95 for One (1) year</fullName>
+                <default>false</default>
+                <label>MCP100T UVP – Bronze @ $49.95 for One (1) year</label>
+            </value>
+            <value>
+                <fullName>MCP100T UVP – Gold @ $39.95 for Five (5) years</fullName>
+                <default>false</default>
+                <label>MCP100T UVP – Gold @ $39.95 for Five (5) years</label>
+            </value>
+            <value>
+                <fullName>MCP100T UVP – Silver @ 43.95 for Three (3) years</fullName>
+                <default>false</default>
+                <label>MCP100T UVP – Silver @ 43.95 for Three (3) years</label>
+            </value>
+            <value>
+                <fullName>MCP110 Evaluation</fullName>
+                <default>false</default>
+                <label>MCP110 Evaluation</label>
+            </value>
+            <value>
+                <fullName>MCP110 UVP - Bronze @ 49.95 for one (1) year</fullName>
+                <default>false</default>
+                <label>MCP110 UVP - Bronze @ 49.95 for one (1) year</label>
+            </value>
+            <value>
+                <fullName>MCP110 UVP - Gold @ 39.95 for five (5) years</fullName>
+                <default>false</default>
+                <label>MCP110 UVP - Gold @ 39.95 for five (5) years</label>
+            </value>
+            <value>
+                <fullName>MCP110 UVP - Silver @ 43.95 for three (3) years</fullName>
+                <default>false</default>
+                <label>MCP110 UVP - Silver @ 43.95 for three (3) years</label>
+            </value>
+            <value>
+                <fullName>MCP200 Evaluation</fullName>
+                <default>false</default>
+                <label>MCP200 Evaluation</label>
+            </value>
+            <value>
+                <fullName>MCP200 UVP - Bronze @ 49.95/59.95 for one (1) year</fullName>
+                <default>false</default>
+                <label>MCP200 UVP - Bronze @ 49.95/59.95 for one (1) year</label>
+            </value>
+            <value>
+                <fullName>MCP200 UVP - Gold @ 39.95/49.95 for five (5) years</fullName>
+                <default>false</default>
+                <label>MCP200 UVP - Gold @ 39.95/49.95 for five (5) years</label>
+            </value>
+            <value>
+                <fullName>MCP200 UVP - Silver @ 43.95/53.95 for three (3) years</fullName>
+                <default>false</default>
+                <label>MCP200 UVP - Silver @ 43.95/53.95 for three (3) years</label>
+            </value>
+            <value>
+                <fullName>Monthly Service</fullName>
+                <default>false</default>
+                <label>Monthly Service</label>
+            </value>
+            <value>
+                <fullName>OEX Basic Message Service Plan</fullName>
+                <default>false</default>
+                <label>OEX Basic Message Service Plan</label>
+            </value>
+            <value>
+                <fullName>OEX Bronze Message Service Plan</fullName>
+                <default>false</default>
+                <label>OEX Bronze Message Service Plan</label>
+            </value>
+            <value>
+                <fullName>OEX Gold Message Service Plan</fullName>
+                <default>false</default>
+                <label>OEX Gold Message Service Plan</label>
+            </value>
+            <value>
+                <fullName>OEX Platinum Lite Message Service Plan</fullName>
+                <default>false</default>
+                <label>OEX Platinum Lite Message Service Plan</label>
+            </value>
+            <value>
+                <fullName>OEX Platinum Message Service Plan</fullName>
+                <default>false</default>
+                <label>OEX Platinum Message Service Plan</label>
+            </value>
+            <value>
+                <fullName>OEX Silver Message Service Plan</fullName>
+                <default>false</default>
+                <label>OEX Silver Message Service Plan</label>
+            </value>
+            <value>
+                <fullName>OmniExpress Evaluation</fullName>
+                <default>false</default>
+                <label>OmniExpress Evaluation</label>
+            </value>
+            <value>
+                <fullName>OmniTRACS Evaluation</fullName>
+                <default>false</default>
+                <label>OmniTRACS Evaluation</label>
+            </value>
+            <value>
+                <fullName>Refurbished OmniTRACS Evaluation</fullName>
+                <default>false</default>
+                <label>Refurbished OmniTRACS Evaluation</label>
+            </value>
+            <value>
+                <fullName>Sprint – CDMA</fullName>
+                <default>false</default>
+                <label>Sprint – CDMA</label>
+            </value>
+            <value>
+                <fullName>Standard Terrestrial Compliance Plan</fullName>
+                <default>false</default>
+                <label>Standard Terrestrial Compliance Plan</label>
+            </value>
+            <value>
+                <fullName>Standard Terrestrial Core Plan</fullName>
+                <default>false</default>
+                <label>Standard Terrestrial Core Plan</label>
+            </value>
+            <value>
+                <fullName>Standard Terrestrial Performance Plan</fullName>
+                <default>false</default>
+                <label>Standard Terrestrial Performance Plan</label>
+            </value>
+            <value>
+                <fullName>Standard Terrestrial Plan 1 Year</fullName>
+                <default>false</default>
+                <label>Standard Terrestrial Plan 1 Year</label>
+            </value>
+            <value>
+                <fullName>Standard Terrestrial Plan 2 Years</fullName>
+                <default>false</default>
+                <label>Standard Terrestrial Plan 2 Years</label>
+            </value>
+            <value>
+                <fullName>Standard Terrestrial Plan 3 Years</fullName>
+                <default>false</default>
+                <label>Standard Terrestrial Plan 3 Years</label>
+            </value>
+            <value>
+                <fullName>Standard Terrestrial Plan 5 Years</fullName>
+                <default>false</default>
+                <label>Standard Terrestrial Plan 5 Years</label>
+            </value>
+            <value>
+                <fullName>Standard Terrestrial Premium Plan</fullName>
+                <default>false</default>
+                <label>Standard Terrestrial Premium Plan</label>
+            </value>
+            <value>
+                <fullName>Standard Terrestrial Premium Trip Management Plan</fullName>
+                <default>false</default>
+                <label>Standard Terrestrial Premium Trip Management Plan</label>
+            </value>
+            <value>
+                <fullName>T2 Asset Reefer Service</fullName>
+                <default>false</default>
+                <label>T2 Asset Reefer Service</label>
+            </value>
+            <value>
+                <fullName>T2 Asset Service</fullName>
+                <default>false</default>
+                <label>T2 Asset Service</label>
+            </value>
+            <value>
+                <fullName>T2 Evaluation</fullName>
+                <default>false</default>
+                <label>T2 Evaluation</label>
+            </value>
+            <value>
+                <fullName>T-Mobile – GSM</fullName>
+                <default>false</default>
+                <label>T-Mobile – GSM</label>
+            </value>
+            <value>
+                <fullName>Value Plan HOS</fullName>
+                <default>false</default>
+                <label>Value Plan HOS</label>
+            </value>
+            <value>
+                <fullName>Value Plan Safety/Compliance</fullName>
+                <default>false</default>
+                <label>Value Plan Safety/Compliance</label>
+            </value>
+            <value>
+                <fullName>Value Plan Safety/Compliance with Dispatch</fullName>
+                <default>false</default>
+                <label>Value Plan Safety/Compliance with Dispatch</label>
+            </value>
+            <value>
+                <fullName>ZX Link &amp; ZXLink Express Messaging Plans</fullName>
+                <default>false</default>
+                <label>ZX Link &amp; ZXLink Express Messaging Plans</label>
+            </value>
+            <value>
+                <fullName>ZXLink Express Messaging Plans</fullName>
+                <default>false</default>
+                <label>ZXLink Express Messaging Plans</label>
+            </value>
+            <value>
+                <fullName>ZXLink Messaging Plans</fullName>
+                <default>false</default>
+                <label>ZXLink Messaging Plans</label>
+            </value>
+            <value>
+                <fullName>Trailer Tracking Plan</fullName>
+                <default>false</default>
+                <label>Trailer Tracking Plan</label>
+            </value>
+            <value>
+                <fullName>Trailer Tracking Reefer Plan</fullName>
+                <default>false</default>
+                <label>Trailer Tracking Reefer Plan</label>
+            </value>
+            <value>
+                <fullName>Core</fullName>
+                <default>false</default>
+                <label>Core</label>
+            </value>
+            <value>
+                <fullName>Compliance</fullName>
+                <default>false</default>
+                <label>Compliance</label>
+            </value>
+            <value>
+                <fullName>Performance</fullName>
+                <default>false</default>
+                <label>Performance</label>
+            </value>
+            <value>
+                <fullName>Standard Terrestrial Plans</fullName>
+                <default>false</default>
+                <label>Standard Terrestrial Plans</label>
+            </value>
+            <value>
+                <fullName>Tier 1 - Non-refrigerated monitoring @ $7.95/Refrigerated monitoring @ $9.95</fullName>
+                <default>false</default>
+                <label>Tier 1 - Non-refrigerated monitoring @ $7.95/Refrigerated monitoring @ $9.95</label>
+            </value>
+            <value>
+                <fullName>Tier 2 - Non-refrigerated monitoring @ $9.95/Refrigerated monitoring @ $11.95</fullName>
+                <default>false</default>
+                <label>Tier 2 - Non-refrigerated monitoring @ $9.95/Refrigerated monitoring @ $11.95</label>
+            </value>
+            <value>
+                <fullName>Tier 3 - Non-refrigerated monitoring @ $14.95/Refrigerated monitoring @ $17.95</fullName>
+                <default>false</default>
+                <label>Tier 3 - Non-refrigerated monitoring @ $14.95/Refrigerated monitoring @ $17.95</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>Refurbished MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <valueName>EOBR Plan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>Refurbished MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <valueName>Standard Terrestrial Plans</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>Trailer Tracks 210</controllingFieldValue>
+            <controllingFieldValue>Refurbished MCP100S</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>Refurbished OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trailer Tracks 210</controllingFieldValue>
+            <controllingFieldValue>TT210 System</controllingFieldValue>
+            <controllingFieldValue>T2 System with integrated solar panel</controllingFieldValue>
+            <controllingFieldValue>T2 Reefer System</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniExpress</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>JDLink</controllingFieldValue>
+            <controllingFieldValue>ZXLink</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS Lite</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>Refurbished OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>SFM</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS &amp; GlobalTRACS Lite</controllingFieldValue>
+            <valueName>Evaluation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trailer Tracks 210</controllingFieldValue>
+            <valueName>Tier 1 - Non-refrigerated monitoring @ $7.95/Refrigerated monitoring @ $9.95</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trailer Tracks 210</controllingFieldValue>
+            <valueName>Tier 2 - Non-refrigerated monitoring @ $9.95/Refrigerated monitoring @ $11.95</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trailer Tracks 210</controllingFieldValue>
+            <valueName>Tier 3 - Non-refrigerated monitoring @ $14.95/Refrigerated monitoring @ $17.95</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Refurbished MCP100S</controllingFieldValue>
+            <valueName>Standard Terrestrial Premium Plan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Refurbished MCP100S</controllingFieldValue>
+            <valueName>Standard Terrestrial Premium Trip Management Plan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Refurbished MCP100S</controllingFieldValue>
+            <valueName>Core</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Refurbished MCP100S</controllingFieldValue>
+            <valueName>Compliance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Refurbished MCP100S</controllingFieldValue>
+            <valueName>Performance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TT210 System</controllingFieldValue>
+            <controllingFieldValue>T2 System with integrated solar panel</controllingFieldValue>
+            <valueName>T2 Asset Service</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>T2 Reefer System</controllingFieldValue>
+            <valueName>T2 Asset Reefer Service</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Third Party Acquired OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <valueName>OEX Basic Message Service Plan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Third Party Acquired OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <valueName>OEX Bronze Message Service Plan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Third Party Acquired OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <valueName>OEX Gold Message Service Plan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Third Party Acquired OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <valueName>OEX Platinum Lite Message Service Plan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Third Party Acquired OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <valueName>OEX Platinum Message Service Plan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Third Party Acquired OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <valueName>OEX Silver Message Service Plan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Third Party Acquired OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>Refurbished OmniTRACS</controllingFieldValue>
+            <valueName>Enhanced Plan with Fleet Averaging</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Third Party Acquired OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>Refurbished OmniTRACS</controllingFieldValue>
+            <valueName>Enhanced Plan with Volume Rate Tiers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Third Party Acquired OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>Refurbished OmniTRACS</controllingFieldValue>
+            <valueName>IMCT Base Message Service Plan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Third Party Acquired OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>Refurbished OmniTRACS</controllingFieldValue>
+            <valueName>IMCT Enhanced Message Service Plan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Third Party Acquired OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>Refurbished OmniTRACS</controllingFieldValue>
+            <valueName>LTL Plan with Fleet Averaging</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>JDLink</controllingFieldValue>
+            <controllingFieldValue>JDLink &amp; ZXLink</controllingFieldValue>
+            <valueName>JDLink Messaging Plans</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ZXLink</controllingFieldValue>
+            <controllingFieldValue>JDLink &amp; ZXLink</controllingFieldValue>
+            <valueName>ZXLink Messaging Plans</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GlobalTRACS</controllingFieldValue>
+            <valueName>GlobalTRACS Evaluation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GlobalTRACS</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS &amp; GlobalTRACS Lite</controllingFieldValue>
+            <valueName>GlobalTRACS  Message Plan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GlobalTRACS Lite</controllingFieldValue>
+            <valueName>GlobalTRACS Lite Evaluation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GlobalTRACS Lite</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS &amp; GlobalTRACS Lite</controllingFieldValue>
+            <valueName>GlobalTRACS Lite Message Plan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <valueName>OmniExpress Evaluation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <valueName>OmniTRACS Evaluation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SFM</controllingFieldValue>
+            <valueName>Monthly Service</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Global Smart Services</controllingFieldValue>
+            <valueName>AT&amp;T – GSM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Global Smart Services</controllingFieldValue>
+            <valueName>International</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Global Smart Services</controllingFieldValue>
+            <valueName>Sprint – CDMA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Global Smart Services</controllingFieldValue>
+            <valueName>T-Mobile – GSM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GlobalTRACS &amp; GlobalTRACS Lite</controllingFieldValue>
+            <valueName>GlobalTRACS &amp; GlobalTRACS Lite Evaluation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GlobalTRACS &amp; GlobalTRACS Lite</controllingFieldValue>
+            <valueName>GlobalTRACS &amp; GlobalTRACS Lite Message Plans</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>JDLink Express</controllingFieldValue>
+            <valueName>JDLink Express Messaging Plans</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ZXLink Express</controllingFieldValue>
+            <valueName>ZXLink Express Messaging Plans</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>JDLink &amp; JDLink Express</controllingFieldValue>
+            <valueName>JD Link &amp; JDLink Express Messaging Plans</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ZXLink &amp; ZXLink Express</controllingFieldValue>
+            <valueName>ZX Link &amp; ZXLink Express Messaging Plans</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

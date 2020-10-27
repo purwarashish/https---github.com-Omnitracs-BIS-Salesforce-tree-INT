@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Marketing_ready_for_retest</fullName>
+    <columns>NAME</columns>
+    <columns>Requirement__c</columns>
+    <columns>Verification_User__c</columns>
+    <columns>Scenario__c</columns>
+    <columns>Test_Case_Action__c</columns>
+    <columns>Test_Results_Count__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Ready for Re-Test,Not Tested</value>
+    </filters>
+    <filters>
+        <field>Track_From_Requirement__c</field>
+        <operation>contains</operation>
+        <value>Marketing</value>
+    </filters>
+    <label>Marketing (ready for retest)</label>
+    <language>en_US</language>
+</ListView>

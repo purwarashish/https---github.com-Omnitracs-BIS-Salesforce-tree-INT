@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Manual_Scoring_Reason__c</fullName>
+    <externalId>false</externalId>
+    <label>Manual Scoring Reason</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Product reliability</fullName>
+                <default>false</default>
+                <label>Product reliability</label>
+            </value>
+            <value>
+                <fullName>Network reliability</fullName>
+                <default>false</default>
+                <label>Network reliability</label>
+            </value>
+            <value>
+                <fullName>Product features</fullName>
+                <default>false</default>
+                <label>Product features</label>
+            </value>
+            <value>
+                <fullName>Contract Termination</fullName>
+                <default>false</default>
+                <label>Contract Termination</label>
+            </value>
+            <value>
+                <fullName>RFP / RFQ</fullName>
+                <default>false</default>
+                <label>RFP / RFQ</label>
+            </value>
+            <value>
+                <fullName>Support</fullName>
+                <default>false</default>
+                <label>Support</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

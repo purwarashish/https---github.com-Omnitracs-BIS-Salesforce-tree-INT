@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllShipments</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Item_ID__c</columns>
+    <columns>Item_Description__c</columns>
+    <columns>Oracle_Shipment_Number__c</columns>
+    <columns>Order_Type__c</columns>
+    <columns>Product_Shipped__c</columns>
+    <columns>Quantity__c</columns>
+    <columns>Shipment_Date__c</columns>
+    <columns>Scheduled_Ship_Date__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Shipments</label>
+</ListView>

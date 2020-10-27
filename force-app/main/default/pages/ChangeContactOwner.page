@@ -1,0 +1,43 @@
+<!-- /*******************************************************************************
+ * File:  ChangeContactOwner.Page
+ * Date:  June 21, 2013
+ * Author:  Joseph Hutchins
+ *
+ * The use, disclosure, reproduction, modification, transfer, or transmittal of
+ * this work for any purpose in any form or by any means without the written 
+ * permission of United Parcel Service is strictly prohibited.
+ *
+ * Confidential, unpublished property of United Parcel Service.
+ * Use and distribution limited solely to authorized personnel.
+ *
+ * Copyright 2009, UPS Logistics Technologies, Inc.  All rights reserved.
+ *  *******************************************************************************/ -->
+<apex:page standardcontroller="Contact" extensions="ChangeContactOwnerExtension">
+    <apex:form >
+        <apex:pageBlock title="Change Contact Owner">
+            <apex:pageblockbuttons location="bottom">
+                <apex:commandbutton value="Change Owner" action="{!changeOwner}"/>
+                <apex:commandbutton value="Cancel" action="{!cancel}"/>
+            </apex:pageblockbuttons>
+            <apex:pageblocksection title="Change Contact Owner" columns="1">
+            
+	            <apex:pageblocksectionitem >
+	            	<apex:outputlabel value="Transfer this Contact"/>
+	            	<apex:outputfield value="{!Contact.name}"/>
+	            </apex:pageblocksectionitem>
+	            
+	            <apex:inputfield value="{!Contact.ownerId}"/>
+	             <apex:pageblocksectionItem >
+                    <apex:outputlabel value="Send Email to New Owner"/>
+                    <apex:inputcheckbox value="{!notifyNewOwner}"/>
+                </apex:pageblocksectionItem>
+                
+                <apex:pageblocksectionItem >
+                    <apex:outputlabel value="Email Comments"/>
+                    <apex:inputtextarea cols="50" rows="10" value="{!ownerChangeEmailComments}"/>
+                </apex:pageblocksectionItem>
+                
+            </apex:pageblocksection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

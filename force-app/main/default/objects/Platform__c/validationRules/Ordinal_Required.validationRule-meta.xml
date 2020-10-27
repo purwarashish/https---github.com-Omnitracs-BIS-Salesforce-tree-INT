@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ordinal_Required</fullName>
+    <active>true</active>
+    <description>Checks whether the Ordinal has a value if &quot;Display on Left Rail as a Link&quot; is selected</description>
+    <errorConditionFormula>Display_on_Left_Nav_Bar__c  = true &amp;&amp; ISBLANK(Ordinal__c)</errorConditionFormula>
+    <errorDisplayField>Ordinal__c</errorDisplayField>
+    <errorMessage>Ordinal cannot be blank if &quot;Display On Left Rail as Link&quot; is Checked</errorMessage>
+</ValidationRule>

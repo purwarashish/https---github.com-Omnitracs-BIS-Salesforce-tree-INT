@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>currentStage__c</columns>
+    <columns>percentComplete__c</columns>
+    <columns>contractRequestDate__c</columns>
+    <columns>contract_Fully_Executed_Date__c</columns>
+    <columns>customerNMCSetupCompleteDate__c</columns>
+    <columns>orderPlacedDate__c</columns>
+    <columns>shippedDate__c</columns>
+    <columns>firstMessageReceivedDate__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+    <language>en_US</language>
+</ListView>

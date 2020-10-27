@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Owner__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>The partner account owner which is derived using an APEX trigger and generally not through the UI</description>
+    <externalId>false</externalId>
+    <label>Partner Owner</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>R00N30000002DjDQEA0</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

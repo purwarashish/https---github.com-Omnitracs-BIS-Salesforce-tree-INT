@@ -1,0 +1,71 @@
+<apex:page controller="DocumentGenerationSelectionController" showHeader="true" sidebar="true">
+    <style type="text/css">
+        .message {
+            background-color: #c00; // change background color here
+            border-style: solid;
+            border-width: 1px;
+            color: #000;
+            padding: 6px 8px 6px 6px;
+            margin: 4px 20px;
+            color: white;
+            }
+        .message .messageText {
+            margin-left: 8px;
+            font-weight:bold;
+            color: white; //change fonnt color here
+            }
+    </style>
+    <apex:sectionHeader title="Document Selection"/>
+    
+    <!-- Use the following text in apex:pageMessage in the event of SpringCM downtime:
+    Due to scheduled maintenance of the SpringCM Production Environment on (insert date), document generation will be unavailable from (insert timeframe). 
+    Make the severity "warning" and the strength "3" -->
+    
+    <apex:pageMessages />
+
+    <apex:form id="Main">
+        <apex:pageblock title="">
+            <apex:outputText >Follow the steps below to send contracts to the customer.  Click "Run" once you have made your selections.</apex:outputText>
+            <apex:pageBlockSection columns="2" rendered="{!valPanicContact}">
+                    <apex:outputText >&nbsp;</apex:outputText>
+                    <apex:outputText >&nbsp;</apex:outputText>
+                    <apex:outputText >1. Specify the customer contact that will sign the documents: </apex:outputText>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputPanel >
+                            <div class="requiredInput">
+                                <div class="requiredBlock"></div>
+                                <apex:inputField value="{!quote.CustomerContact__c}" />
+                            </div>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    <apex:outputText >2. Select the documents to generate:</apex:outputText>
+                    <apex:selectList id="generateOptions" value="{!generateOptions}">
+                        <apex:selectOptions value="{!generateOptionItems}" />
+                    </apex:selectList>
+                    <apex:outputPanel rendered="{!showQuoteContracts}">
+                        <apex:outputText >3. Select related attachments (if any):</apex:outputText>
+                        <apex:selectCheckboxes id="attachments" value="{!attachments}" layout="pageDirection">
+                            <apex:selectOptions value="{!attachmentItems}" />
+                        </apex:selectCheckboxes>
+                    </apex:outputPanel>
+                    <apex:outputText />
+                    <apex:outputPanel rendered="{!isCanadianQuote}">
+                        <apex:outputText >4. Select the Language: &nbsp;&nbsp;&nbsp;&nbsp;</apex:outputText>
+                        <apex:selectList id="generateLanguage" value="{!selectedLanguage}">
+                            <apex:selectOptions value="{!languages}" />
+                        </apex:selectList>
+                    </apex:outputPanel>
+
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <!--<apex:commandButton value="Run" action="{!runDocumentationGeneration}" rendered="{!valPanicContact && valPanicNumber && !addressContacts && !accountLegalName && valOEMName && val3PLName && valContractAdmin}"/>-->
+                <apex:commandButton value="Run" action="{!runDocumentationGeneration}" disabled="{! isRevisionPending}" rendered="{!valPanicContact && valPanicNumber && !addressContacts && !accountLegalName && val3PLName && valContractAdmin}"/>
+                <apex:commandButton value="Cancel" action="{!doCancel}" immediate="true" html-formnovalidate="formnovalidate"/>
+                <apex:commandlink action="{!activationSchedules}" rendered="{!hasActivationSchedules}" style="text-decoration: none" target="_blank">
+                    <apex:commandButton value="Activation Schedules"/>
+                </apex:commandLink>
+            </apex:pageBlockButtons>
+        </apex:pageblock>
+    </apex:form>
+    
+</apex:page>

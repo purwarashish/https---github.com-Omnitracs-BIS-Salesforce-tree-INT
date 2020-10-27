@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source_Fields_All_In_Review</fullName>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>Field_Name__c</columns>
+    <columns>System_Name__c</columns>
+    <columns>Source_Field_Type__c</columns>
+    <columns>System_Field__c</columns>
+    <columns>Transformation__c</columns>
+    <columns>Inbound_Integration_Notes__c</columns>
+    <columns>Outbound_Integration_Notes__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>In Review</value>
+    </filters>
+    <label>Source Fields (All In Review)</label>
+    <language>en_US</language>
+</ListView>

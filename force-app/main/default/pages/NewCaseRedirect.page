@@ -1,0 +1,32 @@
+<apex:page standardController="Case" extensions="NewCaseRedirect_Ctrl" action="{!doRedirect}">
+
+<!--
+
+<apex:includeScript value="/support/console/29.0/integration.js"/> 
+
+<script type="text/javascript"> 
+
+// if not in console redirect user to landing page 
+if (!(sforce.console.isInConsole())) { 
+    window.location.replace('/apex/NewCaseRedirect'); 
+} 
+
+// override subtab with the landing page requested 
+sforce.console.getEnclosingPrimaryTabId(getPrimaryTabId); 
+
+
+function getPrimaryTabId(result) { 
+primaryTabId = result.id;
+sforce.console.getEnclosingTabId(getSubtabId); 
+}; 
+
+function getSubtabId(result) { 
+subTabId = result.id; 
+        sforce.console.openSubtab(primaryTabId, '/apex/NewCaseRedirect', true, 'New Case', subTabId); 
+}; 
+
+</script> 
+
+-->
+
+</apex:page>

@@ -1,0 +1,58 @@
+<apex:page standardController="Contact" extensions="PortalInviteExtension" sidebar="false" showHeader="false" action="{!toggleButton}">
+    <apex:form >
+        <!--apex:actionFunction name="updateInvitor" action="{!updateInvitor}"/-->
+    </apex:form>
+    <form name="inviteToPortal" method="post" action="{!$Label.CPInviteURL}" target="_blank">
+    <apex:pageBlock mode="maindetail" Title="Omnitracs Customer Portal Invite">
+        <div id="textToHide" align="center" style="display:{!if(showinviteWarningMsg,"block","none")};padding-bottom:16px;">
+                <font color="red">
+                    <apex:outputText rendered="{!showinviteWarningMsg}" value="{!inviteWarningMsg}" escape="false" />
+                </font>            
+        </div>
+        <div id="buttonToHide" align="center" style="display:{!if(showInviteButton,"block","none")};">
+            <input type="button" value="Invite To Portal" onclick="validate();"/>
+            <input style="display:none" type="submit" id="inviteToPortalBtn" value="" />
+        </div>
+        <div id="buttonToHide1" align="center" style="display:{!if(showStatusButton,"block","none")};">
+            <input type="submit" value="Check Status / Cancel Invite" />
+        </div>
+        <table width="100%">
+        <tr>
+            <td width="5%">
+            </td>
+            <td width="45%">
+                <apex:outputText value="Contact Status:"/>
+                <font color="green"><apex:outputField value="{!Contact.Unity_Contact_Status__c}" rendered="{!showGreenFont}"/></font>
+                <font color="red">
+                    <apex:outputText rendered="{!showUnityBackendValidationMsg}" value="{!backendValidationMsg}" escape="false" />
+                </font>
+                <font color="red"><apex:outputField value="{!Contact.Unity_Contact_Status__c}" rendered="{!(NOT(showGreenFont) && NOT(showUnityBackendValidationMsg))}"/></font>
+            </td>
+            <td width="5%">
+            </td>
+            <td width="45%">
+                <apex:outputText value="Customer Portal Status:" rendered="{!showUnityStatus}"/>
+                <font color="blue">
+                <apex:outputField value="{!Contact.UnityStatus__c}" rendered="{!showUnityStatus}"/></font>
+            </td>
+        </tr>
+        </table>
+        <input type="hidden" name="conFirstName" id="conFirstName" value="{!FirstName}"/>
+        <input type="hidden" name="conLastName" id="conLastName" value="{!LastName}"/>
+        <input type="hidden" name="sfContact" id="sfContact" value="{!FullContactID}"/>
+        <!---//Added by Gayatri.K , 9/10/2020----/--->
+        <input type="hidden" name="businessAccountId" id="businessAccountId" value="{!UUID}"/>  
+    </apex:pageBlock>
+    </form> 
+    <script>
+        function validate(){
+            var firstName = document.getElementById('conFirstName').value;
+            var lastName = document.getElementById('conLastName').value;
+            if(firstName == null || firstName.trim().length <= 1 || lastName == null || lastName.trim().length <= 1){
+                alert("Contact's First and Last name should be more than 1 character long");
+            }else{
+                document.getElementById("inviteToPortalBtn").click();
+            }
+        }
+    </script>
+</apex:page>

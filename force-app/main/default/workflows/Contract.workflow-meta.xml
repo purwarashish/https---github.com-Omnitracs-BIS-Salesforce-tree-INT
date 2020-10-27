@@ -1,0 +1,1016 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Contract_Notify_Contract_creation_team_when_a_new_contract_is_created</fullName>
+        <description>Contract: Notify Contract creation team when a new contract is created</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Contract_Creation_LegalTeam</recipient>
+            <type>group</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/Contract_New_Contract_Created_for_Opportunity</template>
+    </alerts>
+    <alerts>
+        <fullName>Contract_Status_Updated_Procurement</fullName>
+        <ccEmails>tgalt@omnitracs.com</ccEmails>
+        <description>Contract Status Updated - Procurement</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Finance_Buyers</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Contract_Email_Templates/Contract_Status_Change</template>
+    </alerts>
+    <alerts>
+        <fullName>Contract_renewal_Notification_email</fullName>
+        <description>Contract renewal Notification email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>Current_Contract_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Contract_Email_Templates/Contract_Renewal_Notification</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Affiliate_Language_Update</fullName>
+        <description>Field used to update the affiliate language field.</description>
+        <field>Affiliate_Language__c</field>
+        <literalValue>Yes</literalValue>
+        <name>Affiliate Language Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Agreement_Type_Update</fullName>
+        <description>Action used to update the agreement type field.</description>
+        <field>Agreement_Type__c</field>
+        <literalValue>Embedded Clause</literalValue>
+        <name>Agreement Type Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Autorenewal_Name_FieldUpdate</fullName>
+        <description>Action used to populate the name field on the contract record so that the autorenewal uplift opportunity is named correctly.</description>
+        <field>Name__c</field>
+        <formula>&quot;Auto Renewal: &quot; + 
+LEFT( 
+RIGHT(Contract_Title__c,LEN(Contract_Title__c)-FIND(&quot;SB Contract:&quot;,Contract_Title__c)-12), 
+65 
+) 
+/* Roesler - have to truncate contract title to keep name within 80-character limit */</formula>
+        <name>Autorenewal Name Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contract_Activation</fullName>
+        <description>Action used to activate the contract record.</description>
+        <field>Status</field>
+        <literalValue>Activated</literalValue>
+        <name>Contract Activation</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contract_Title_Update</fullName>
+        <description>Action used to update the contract title field.</description>
+        <field>Contract_Title__c</field>
+        <formula>If ( ISBLANK(SBQQ__Opportunity__r.SBQQ__RenewedContract__c),
+     IF ( ISBLANK(Affiliate_Account_Name__c),
+          &quot;SB Contract: &quot; + Account.Name + &quot;: &quot; + Quote_Line_Group__r.Name,
+          &quot;SB Contract: &quot; + Affiliate_Account_Name__c + &quot;: &quot; + Quote_Line_Group__r.Name
+     ),
+     /* moving the renewal naming to the ContractTriggerHandler
+     /* SBQQ__Opportunity__r.SBQQ__RenewedContract__r.Contract_Title__c */
+     Contract_Title__c
+)</formula>
+        <name>Contract Title Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contract_Verified_Date</fullName>
+        <field>Contract_Verified_Date__c</field>
+        <formula>if(Contract_Verified__c = TRUE, NOW(), NULL)</formula>
+        <name>Contract Verified Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Master_Term_Remaining_Stamp</fullName>
+        <description>Action used to stamp the master term remaining value from the quote that created the contract.</description>
+        <field>Master_Term_Remaining__c</field>
+        <formula>IF(NOT(ISBLANK(SBQQ__Quote__r.Master_Term_Remaining__c)), SBQQ__Quote__r.Master_Term_Remaining__c, NULL)</formula>
+        <name>Master Term Remaining Stamp</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Master_Term_Stamp</fullName>
+        <description>Action used to stamp the value of the master term from the quote that created the contract.</description>
+        <field>Master_Term__c</field>
+        <formula>IF(NOT(ISBLANK(SBQQ__Quote__r.Master_Term__c)), SBQQ__Quote__r.Master_Term__c, NULL)</formula>
+        <name>Master Term Stamp</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Name_field_update</fullName>
+        <description>Action used to populate the name field on the contract record so that the renewal uplift opportunity is names correctly.</description>
+        <field>Name__c</field>
+        <formula>&quot;Annual Increase: &quot; + 
+LEFT(
+     RIGHT(Contract_Title__c,LEN(Contract_Title__c)-FIND(&quot;SB Contract:&quot;,Contract_Title__c)-12),
+     60
+) 
+/* Roesler - have to truncate contract title to keep name within 80-character limit */</formula>
+        <name>Annual Increase Name field update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Order_Type_Auto_Renewal_w_Increase</fullName>
+        <description>Action used to set the order type picklist value to &quot;Auto Renewal With Increase&quot;</description>
+        <field>Order_Type__c</field>
+        <literalValue>Auto Renewal With Increase</literalValue>
+        <name>Order Type (Auto Renewal w/Increase)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Order_Type_Renewal_Within_Term</fullName>
+        <description>Action used to update the order type field. Twin fields functionality for the auto renewal uplift opportunities (Renewal Within Term)</description>
+        <field>Order_Type__c</field>
+        <literalValue>Renewal Within Term (No Increase)</literalValue>
+        <name>Order Type = Renewal Within Term</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Order_Type_field_update</fullName>
+        <description>Action used to update the order type field. Twin fields functionality for the auto renewal uplift opportunities.</description>
+        <field>Order_Type__c</field>
+        <literalValue>Annual Increase Within Term</literalValue>
+        <name>Order Type field update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Renewal_Forecast_True</fullName>
+        <field>SBQQ__RenewalForecast__c</field>
+        <literalValue>1</literalValue>
+        <name>Renewal Forecast = True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Renewal_Forecast_True2</fullName>
+        <description>Renewal Forecast = True</description>
+        <field>SBQQ__RenewalForecast__c</field>
+        <literalValue>1</literalValue>
+        <name>Renewal Forecast = True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Renewal_Opp_Stage_Closed_Won2</fullName>
+        <description>Action used to update the Renewal Opportunity Stage field. Twin fields functionality for the auto renewal uplift opportunities (Renewal Within Term).</description>
+        <field>SBQQ__RenewalOpportunityStage__c</field>
+        <formula>&quot;Closed Won&quot;</formula>
+        <name>Renewal Opp Stage = Closed Won</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Renewal_Opp_Stage_Negotiate</fullName>
+        <description>Action used to update the Renewal Opportunity Stage field. Twin fields functionality for the auto renewal uplift opportunities (Annual Increase Within Term).</description>
+        <field>SBQQ__RenewalOpportunityStage__c</field>
+        <formula>&apos;Sales Acceptance&apos;</formula>
+        <name>Renewal Opp Stage = Negotiate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Renewal_Opportunity_Record_Type_Id_St2</fullName>
+        <description>Action used to assign the renewal record type to renewal opportunities.</description>
+        <field>SBQQ__RenewalOpportunityRecordTypeId__c</field>
+        <formula>&quot;01250000000E5Nl&quot;</formula>
+        <name>Renewal Opportunity Record Type Id Stamp</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Renewal_Opportunity_Record_Type_Id_Stamp</fullName>
+        <description>Action used to assign the renewal record type to renewal opportunities.</description>
+        <field>SBQQ__RenewalOpportunityRecordTypeId__c</field>
+        <formula>&quot;01250000000E5Nl&quot;</formula>
+        <name>Renewal Opportunity Record Type Id Stamp</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Renewal_Owner_Omnitracs_Direct_Sales</fullName>
+        <field>SBQQ__RenewalOwner__c</field>
+        <lookupValue>csmhelp@omnitracs.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>Renewal Owner = Omnitracs Direct Sales</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Renewal_Quoted_True</fullName>
+        <field>SBQQ__RenewalQuoted__c</field>
+        <literalValue>1</literalValue>
+        <name>Renewal Quoted = True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Renewal_Quoted_True2</fullName>
+        <description>Renewal Quoted = True</description>
+        <field>SBQQ__RenewalQuoted__c</field>
+        <literalValue>1</literalValue>
+        <name>Renewal Quoted = True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Renewal_Stage_default</fullName>
+        <field>SBQQ__RenewalOpportunityStage__c</field>
+        <formula>&apos;Sales Acceptance&apos;</formula>
+        <name>Renewal Stage default</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Renewal_Term_Stamp</fullName>
+        <description>Action used to stamp the renewal term field from the quote that created it.</description>
+        <field>SBQQ__RenewalTerm__c</field>
+        <formula>12</formula>
+        <name>Renewal Term Stamp</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Renewal_Term_Stamp_Auto_Renewal</fullName>
+        <description>Action used to stamp the renewal term field with the value of 12.</description>
+        <field>SBQQ__RenewalTerm__c</field>
+        <formula>12</formula>
+        <name>Renewal Term Stamp (Auto Renewal)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reset_Bypass_Rules_field</fullName>
+        <field>Bypass_Rules__c</field>
+        <literalValue>0</literalValue>
+        <name>Reset Bypass Rules field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SBQQ_Renewal_Owner_Omni_Direct_Sales</fullName>
+        <description>SBQQ Renewal Owner = Omni Direct Sales</description>
+        <field>SBQQ__RenewalOwner__c</field>
+        <lookupValue>csmhelp@omnitracs.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>SBQQ Renewal Owner = Omni Direct Sales</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Activated_By</fullName>
+        <field>Activated_By_Name__c</field>
+        <formula>$User.FirstName &amp; &quot; &quot; &amp;  $User.LastName</formula>
+        <name>Set Activated By</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Activated_Date</fullName>
+        <field>ActivatedDate</field>
+        <formula>NOW()</formula>
+        <name>Set Activated Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Contract_Administrator</fullName>
+        <description>Action used to set the contract administrator.</description>
+        <field>Current_Contract_Manager__c</field>
+        <lookupValue>sysadmin@omnitracs.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>Set Contract Administrator</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Contract_Status_to_Expired</fullName>
+        <field>Status</field>
+        <literalValue>Expired</literalValue>
+        <name>Set Contract Status to Expired</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Contract_Type_to_CPQ</fullName>
+        <description>Action used to set the contract type to CPQ.</description>
+        <field>Contract_Type__c</field>
+        <literalValue>CPQ</literalValue>
+        <name>Set Contract Type to CPQ</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Family_ID_for_Child</fullName>
+        <field>Family_ID__c</field>
+        <formula>Parent_Contract__r.Family_ID__c</formula>
+        <name>Set Family ID for Child</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Family_ID_for_Grandchild</fullName>
+        <field>Family_ID__c</field>
+        <formula>Parent_Contract__r.Parent_Contract__r.Family_ID__c</formula>
+        <name>Set Family ID for Grandchild</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Family_ID_for_Parent</fullName>
+        <field>Family_ID__c</field>
+        <formula>ContractNumber</formula>
+        <name>Set Family ID for Parent</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Original_Admin_on_Edit</fullName>
+        <field>Original_Contract_Manager__c</field>
+        <formula>PRIORVALUE( Current_Contract_Administrator_Name__c )</formula>
+        <name>Set Original Admin on Edit</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Original_Attorney</fullName>
+        <field>Original_Attorney__c</field>
+        <formula>Current_Attorney__r.FirstName &amp; &quot; &quot; &amp; Current_Attorney__r.LastName</formula>
+        <name>Set Original Attorney</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Original_Attorney_on_Edit</fullName>
+        <field>Original_Attorney__c</field>
+        <formula>PRIORVALUE(  Current_Attorney_Name__c  )</formula>
+        <name>Set Original Attorney on Edit</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Original_Company_Name</fullName>
+        <field>Original_Company__c</field>
+        <formula>Account.Name</formula>
+        <name>Set Original Company Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Original_Company_on_Edit</fullName>
+        <field>Original_Company__c</field>
+        <formula>PRIORVALUE( Account_Name__c )</formula>
+        <name>Set Original Company on Edit</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Original_Contract_Admin</fullName>
+        <field>Original_Contract_Manager__c</field>
+        <formula>Current_Contract_Manager__r.FirstName &amp; &quot; &quot; &amp; Current_Contract_Manager__r.LastName</formula>
+        <name>Set Original Contract Admin</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Original_Expiration_Date</fullName>
+        <field>Original_Expiration_Date__c</field>
+        <formula>EndDate</formula>
+        <name>Set Original Expiration Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Original_Expiration_Date_on_Create</fullName>
+        <field>Original_Expiration_Date__c</field>
+        <formula>EndDate</formula>
+        <name>Set Original Expiration Date on Create</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Original_Expiration_Date_on_edit</fullName>
+        <field>Original_Expiration_Date__c</field>
+        <formula>PRIORVALUE(EndDate)</formula>
+        <name>Set Original Expiration Date on Edit</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Prior_End_Date</fullName>
+        <field>Original_Expiration_Date__c</field>
+        <formula>PRIORVALUE(EndDate)</formula>
+        <name>Set Prior End Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Renewal_Forecast_Check_Box_to_True2</fullName>
+        <description>Action used to create a Renewal Opportunity.</description>
+        <field>SBQQ__RenewalForecast__c</field>
+        <literalValue>1</literalValue>
+        <name>Set Renewal Forecast Check Box to True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Renewal_Quoted_Check_Box_To_True2</fullName>
+        <description>Action used to create a Renewal Quote</description>
+        <field>SBQQ__RenewalQuoted__c</field>
+        <literalValue>1</literalValue>
+        <name>Set Renewal Quoted Check Box To True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_SB_Contract_Title_to_INACTIVE</fullName>
+        <description>When a SB Contract is renewed, set it&apos;s title to INACTIVE</description>
+        <field>Contract_Title__c</field>
+        <formula>&quot;INACTIVE: &quot; + Contract_Title__c</formula>
+        <name>Set SB Contract Title to INACTIVE</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Upliftable_Contract_checkbox</fullName>
+        <description>If the workflow criteria evaluates to true, then Upliftable Contract checkbox will be set to true.</description>
+        <field>Upliftable_Contract__c</field>
+        <literalValue>1</literalValue>
+        <name>Set Upliftable Contract checkbox</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Term_Type_Update</fullName>
+        <description>Action used to update the term type field.</description>
+        <field>Term_Type__c</field>
+        <literalValue>Fixed</literalValue>
+        <name>Term Type Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Record_Type</fullName>
+        <description>Action to update the record type id to represent the CPQ record type.</description>
+        <field>RecordTypeId</field>
+        <lookupValue>SteelBrick_CPQ_Contract</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Update Record Type</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Version_Update</fullName>
+        <description>Action used to update the version field.</description>
+        <field>Version__c</field>
+        <formula>&quot;CPQ&quot;</formula>
+        <name>Version Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>Auto Expire Contracts</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract.EndDate</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract.Status</field>
+            <operation>equals</operation>
+            <value>Active</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract.Term_Type__c</field>
+            <operation>notEqual</operation>
+            <value>Auto-Renewal</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract.Term_Type__c</field>
+            <operation>notEqual</operation>
+            <value>Perpetual</value>
+        </criteriaItems>
+        <description>When &quot;Active&quot; contracts have reached End Date = TODAY then they will be expired if they are not Auto-Renew</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Set_Contract_Status_to_Expired</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Contract.EndDate</offsetFromField>
+            <timeLength>-1</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Contract Expiration Notification</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract.Status</field>
+            <operation>equals</operation>
+            <value>Activated,Active</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Bypass_Workflows__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>SteelBrick CPQ Contract</value>
+        </criteriaItems>
+        <description>email alert a Contract is Ready to Renew</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Contract_renewal_Notification_email</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Contract.Owner_Notice_Date__c</offsetFromField>
+            <timeLength>-1</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Contract Status Change - Procurement</fullName>
+        <actions>
+            <name>Contract_Status_Updated_Procurement</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract.RecordTypeId</field>
+            <operation>contains</operation>
+            <value>Developer Agreement,Legal,License/Distribution Agreement,NDA,Other,Procurement Agreement,Professional Services Agreement,Service Provider Agreement,Strategic Alliance</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract.OwnerId</field>
+            <operation>contains</operation>
+            <value>Travis Galt,Weston Poulos</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract.Status</field>
+            <operation>equals</operation>
+            <value>Active</value>
+        </criteriaItems>
+        <description>Used for procurement contracts to send email alerts.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contract%3A Notify contract creation team when new contract is created</fullName>
+        <actions>
+            <name>Contract_Notify_Contract_creation_team_when_a_new_contract_is_created</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract.Status</field>
+            <operation>equals</operation>
+            <value>Contract Requested</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Customer Agreement,Professional Services Agreement</value>
+        </criteriaItems>
+        <description>Notifies contract creation team when a new contract record is created with &apos;Contract Requested&apos; status</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Populate Contract Verified date</fullName>
+        <actions>
+            <name>Contract_Verified_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED(Contract_Verified__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Reset Bypass Rules field</fullName>
+        <actions>
+            <name>Reset_Bypass_Rules_field</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract.Bypass_Rules__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Bypass_Workflows__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>&quot;Bypass Rules&quot; is checked by various Contract wizards to bypass validation rules.  This workflow resets the checkbox to false so validation rules go back into effect afterwards.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Activation Fields</fullName>
+        <actions>
+            <name>Set_Activated_By</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Set_Activated_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract.IsActive__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Bypass_Workflows__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Family ID for Child</fullName>
+        <actions>
+            <name>Set_Family_ID_for_Child</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>TCM_Contract_Number__c =&quot;&quot; &amp;&amp;  NOT(Parent_Contract__c =&quot;&quot;) &amp;&amp; Parent_Contract__r.Parent_Contract__c = &quot;&quot; &amp;&amp; $User.Bypass_Workflows__c = false</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Family ID for Grandchild</fullName>
+        <actions>
+            <name>Set_Family_ID_for_Grandchild</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>TCM_Contract_Number__c =&quot;&quot; &amp;&amp;  NOT(Parent_Contract__c =&quot;&quot;) &amp;&amp; NOT(Parent_Contract__r.Parent_Contract__c = &quot;&quot;) &amp;&amp; $User.Bypass_Workflows__c = false</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Family ID for Parent</fullName>
+        <actions>
+            <name>Set_Family_ID_for_Parent</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>TCM_Contract_Number__c =&quot;&quot; &amp;&amp;  Parent_Contract__c =&quot;&quot; &amp;&amp; $User.Bypass_Workflows__c = false</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Original Admin on Edit</fullName>
+        <actions>
+            <name>Set_Original_Admin_on_Edit</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED(  Current_Contract_Manager__c  ) &amp;&amp;  Original_Contract_Manager__c  = &quot;&quot; &amp;&amp; $User.Bypass_Workflows__c = false</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Original Attorney on Edit</fullName>
+        <actions>
+            <name>Set_Original_Attorney_on_Edit</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED( Current_Attorney__c ) &amp;&amp;  Original_Attorney__c  = &quot;&quot; &amp;&amp; $User.Bypass_Workflows__c = false</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Original Company on Edit</fullName>
+        <actions>
+            <name>Set_Original_Company_on_Edit</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED(Account_Name__c) &amp;&amp;  Original_Company__c = &quot;&quot; &amp;&amp; $User.Bypass_Workflows__c = false</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Original Expiration Date on Create</fullName>
+        <actions>
+            <name>Set_Original_Expiration_Date_on_Create</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED(EndDate) &amp;&amp; ISBLANK(PRIORVALUE(EndDate)) &amp;&amp; OR( ISBLANK(Original_Expiration_Date__c), ISNULL(Original_Expiration_Date__c)) &amp;&amp; $User.Bypass_Workflows__c = false</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Original Expiration Date on Edit</fullName>
+        <actions>
+            <name>Set_Original_Expiration_Date_on_edit</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED(EndDate) &amp;&amp; OR( ISBLANK(Original_Expiration_Date__c), ISNULL(Original_Expiration_Date__c)) &amp;&amp; $User.Bypass_Workflows__c = false</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Original Values on New</fullName>
+        <actions>
+            <name>Set_Original_Attorney</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Set_Original_Company_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Set_Original_Contract_Admin</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Set_Original_Expiration_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract.CreatedById</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Bypass_Workflows__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>SteelBrick - Annual Increase Within Term Contract Field Assignments</fullName>
+        <actions>
+            <name>Name_field_update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Order_Type_field_update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Renewal_Opportunity_Record_Type_Id_St2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Workflow used to call on actions that assign the correct values on the contract so that the auto generated annual increase within term opportunity data is set correctly.</description>
+        <formula>IF(AND(SBQQ__Quote__r.Upliftable_Contract__c = TRUE, Master_Term_Remaining__c &gt; 0),   TRUE, FALSE)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>SteelBrick - Assign CPQ Record Type</fullName>
+        <actions>
+            <name>Renewal_Stage_default</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Record_Type</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract.Contract_Type__c</field>
+            <operation>equals</operation>
+            <value>CPQ</value>
+        </criteriaItems>
+        <description>WF used to assign a record type being viewed to be the SteelBrick CPQ record type and page layout.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>SteelBrick - Contract Term %26 Upliftable Contract Fields Update</fullName>
+        <actions>
+            <name>Master_Term_Remaining_Stamp</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Master_Term_Stamp</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Renewal_Term_Stamp</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Workflow used to launch actions that update the contract term fields used to track the master term, master remaining term and renewal term.</description>
+        <formula>IF(NOT(ISBLANK(SBQQ__Quote__c)), TRUE, FALSE)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>SteelBrick - Renewal Contract Field Assignments</fullName>
+        <actions>
+            <name>Autorenewal_Name_FieldUpdate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Order_Type_Auto_Renewal_w_Increase</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Renewal_Opp_Stage_Negotiate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Renewal_Opportunity_Record_Type_Id_Stamp</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Renewal_Term_Stamp_Auto_Renewal</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract.Master_Term_Remaining__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </criteriaItems>
+        <description>Workflow used to call on actions that assign the correct values on the contract so that the auto generated renewal opportunity data is set correctly.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>SteelBrick - Renewal Contract Renewal Owner Assignment</fullName>
+        <actions>
+            <name>SBQQ_Renewal_Owner_Omni_Direct_Sales</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract.Primary_BU__c</field>
+            <operation>equals</operation>
+            <value>Omnitracs US,Roadnet,Omnitracs Canada</value>
+        </criteriaItems>
+        <description>Workflow used to assign the house Omnitracs Direct Sales user to Renewals.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>SteelBrick - Renewal Within Term %28No Increase%29 Contract Field Assignment</fullName>
+        <actions>
+            <name>Name_field_update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Order_Type_Renewal_Within_Term</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Renewal_Opp_Stage_Closed_Won2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Renewal_Owner_Omnitracs_Direct_Sales</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Workflow used to call on actions that assign the correct values on the contract so that the auto generated renewal within term (No Increase) opportunity data is set correctly.</description>
+        <formula>IF(AND(SBQQ__Quote__r.Upliftable_Contract__c = False, Master_Term_Remaining__c &gt; 0), TRUE, FALSE)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>SteelBrick - Set Contract Type Field</fullName>
+        <actions>
+            <name>Affiliate_Language_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Agreement_Type_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Contract_Activation</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Contract_Title_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Set_Contract_Administrator</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Set_Contract_Type_to_CPQ</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Term_Type_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Version_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>WF used to set the Contract Type on the Contract object.</description>
+        <formula>IF(NOT(ISBLANK(SBQQ__Quote__c)), TRUE, FALSE)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>SteelBrick - Set Contract Type Field After QLG is Added</fullName>
+        <actions>
+            <name>Contract_Title_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>WF used to set the Contract Type on a Steelbrick Contract after the Quote Line Group is added via the batch process</description>
+        <formula>IF(NOT(ISBLANK(Quote_Line_Group__c)), TRUE, FALSE)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Steelbrick - Upliftable Contract Checkbox</fullName>
+        <actions>
+            <name>Set_Upliftable_Contract_checkbox</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>This rule looks to the quote that created this contract and checks to see if the Upliftable Contract checkbox evaluates true.</description>
+        <formula>IF(SBQQ__Quote__r.Upliftable_Contract__c = True, True, False)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

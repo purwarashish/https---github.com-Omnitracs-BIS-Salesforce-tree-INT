@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quantity__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Supported operators: &gt;0, &gt;=0</inlineHelpText>
+    <label>Quantity</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>&gt;=0</fullName>
+                <default>false</default>
+                <label>&gt;=0</label>
+            </value>
+            <value>
+                <fullName>&gt;0</fullName>
+                <default>false</default>
+                <label>&gt;0</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

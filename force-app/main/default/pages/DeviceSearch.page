@@ -1,0 +1,189 @@
+<apex:page controller="QCSDeviceSearchController" id="pageID" tabStyle="Account"  showHeader="true" sidebar="true">
+    
+    <apex:includeScript value="{!$Resource.prototype_js}"/>
+    <apex:stylesheet value="{!$Resource.jquery_ui_1_8_5_custom_zip}/css/ui-lightness/jquery-ui-1.8.5.custom.css"/>
+    <apex:includeScript value="{!$Resource.jquery_ui_1_8_5_custom_zip}/js/jquery-1.4.2.min.js"/>
+    <apex:includeScript value="{!$Resource.jquery_ui_1_8_5_custom_zip}/js/jquery-ui-1.8.5.custom.min.js"/>
+   
+      
+    <apex:sectionHeader title="Device Detail Search"/>
+
+    <apex:pageMessages id="Messages" showDetail="true"/>
+    
+    <apex:form id="formId">
+        <apex:outputPanel id="SearchPanel">
+            <apex:outputPanel >
+                <apex:pageBlock title="Search Device" mode="view" id="pb">
+                        <br/>
+                        <br/>
+                        <apex:panelGrid columns="3" id="searchGrid" cellpadding="2" style="vertical-align:bottom;">
+                            
+                            <apex:outputLabel id="DeviceLbl" style="font-weight:bold;">Device ID </apex:outputLabel>          
+                            <apex:inputText id="deviceId" size="30" value="{!deviceId}" onkeydown="javascript: handleKeyUpInSearchField(event);" rendered="{!isDeviceIdEmpty}" maxlength="11"/>
+                            <apex:inputText id="DevideIdRd" size="30" value="{!deviceId}" rendered="{!!isDeviceIdEmpty}" disabled="true"/>
+                            <apex:commandButton id="SearchBtn" action="{!doDeviceSearch}" value="Search"
+                                                reRender="SearchPanel,DeviceDetailsPanel,Messages"
+                                               onclick="javascript:showDialog();"
+                                               oncomplete="javascript:hideDialog(); "
+                                               rendered="{!isDeviceIdEmpty}" />
+                            <apex:commandButton id="ClearBtn" action="{!doClear}" value="New Search"
+                                               reRender="SearchPanel,DeviceDetailsPanel,Messages"
+                                               onclick="javascript:showDialog();"
+                                               oncomplete="javascript:hideDialog();"
+                                               rendered="{!!isDeviceIdEmpty}"/>
+                         </apex:panelGrid>  
+                </apex:pageBlock>            
+             </apex:outputPanel>
+         </apex:outputPanel>
+        <!--Device Details section-->
+        <apex:outputPanel id="DeviceDetailsPanel">
+            <apex:outputPanel rendered="{!hasResults}">
+                <apex:pageBlock id="ResultsBlk" Title="Device Details" mode="view">
+                    <br/>
+                    <br/>
+                    <apex:pageBlockSection columns="3">
+                        <apex:dataTable styleClass="results" columnClasses="DpcColumn"  value="{!deviceDetailLst}" var="deviceVal" id="theTable" rowClasses="odd,even" border="1" cellpadding="2" cellspacing="0">
+                            <apex:column >        
+                                <apex:facet name="header">Device Type</apex:facet>
+                                <apex:outputText value="{!deviceVal.deviceType}"/>        
+                            </apex:column>        
+                            <apex:column >        
+                                <apex:facet name="header">Kit ID</apex:facet>                   
+                                <apex:outputText value="{!deviceVal.KitId}"/>        
+                            </apex:column>
+                        </apex:dataTable>
+                        
+                        <apex:dataTable styleClass="results" columnClasses="DpcColumn"  value="{!deviceDetailLst}" var="deviceVal" id="theTable1" rowClasses="odd,even" border="1" cellpadding="2" cellspacing="0" rendered="{!deviceDetail.DeviceType='TRACKER'}">
+                            <apex:column >        
+                                <apex:facet name="header">Network State</apex:facet>
+                                <apex:outputText value="{!deviceVal.networkState}"/>        
+                            </apex:column>        
+                            <apex:column >        
+                                <apex:facet name="header">Eligible for Activation</apex:facet>                   
+                                <apex:outputText value="{!deviceVal.eligibleForActivation}"/>        
+                            </apex:column>
+                        </apex:dataTable>
+                    </apex:pageBlockSection>
+                    <br/>
+                    <br/>
+                    <apex:pageBlockSection columns="3">
+                        <apex:panelGrid columns="2" columnClasses="DpcColumn" id="SWGrid" styleClass="results" style="text-align:center;" border="1" cellpadding="2" cellspacing="0">
+                            <apex:facet name="header">SW Version</apex:facet>
+                            <apex:outputText value="Client App" id="clientAppLbl" rendered="{!deviceDetail.deviceType == 'TRACKER'}"/>
+                            <apex:outputText value="{!deviceDetail.ftdClientApp}" id="clientAppVal" rendered="{!deviceDetail.deviceType == 'TRACKER'}"/>
+                            <apex:outputText value="FTD SRR" id="ftdSRRLbl" rendered="{!deviceDetail.deviceType == 'TRACKER'}"/>
+                            <apex:outputText value="{!deviceDetail.ftdSRR}" id="ftdSRRVal" rendered="{!deviceDetail.deviceType == 'TRACKER'}"/>
+                            <apex:outputText value="FBC SRR" id="fbcSRRLbl" rendered="{!deviceDetail.deviceType == 'CHARGER'}"/>
+                            <apex:outputText value="{!deviceDetail.fbcSRR}" id="fbcSRRVal" rendered="{!deviceDetail.deviceType == 'CHARGER'}"/>
+                        </apex:panelGrid>
+                        <apex:panelGrid columns="2" columnClasses="DpcColumn"  id="HWGrid" styleClass="results" style="text-align:center;" border="1" cellpadding="2" cellspacing="0">
+                            <apex:facet name="header">HW Version</apex:facet>
+                            <apex:outputText value="FTD MCN" id="ftdMCNLbl" rendered="{!deviceDetail.deviceType == 'TRACKER'}"/>
+                            <apex:outputText value="{!deviceDetail.ftdMCN}" id="ftdMCNVal" rendered="{!deviceDetail.deviceType == 'TRACKER'}"/>
+                            <apex:outputText value="FTD MFG S/N" id="ftdMFGbl" rendered="{!deviceDetail.deviceType == 'TRACKER'}"/>
+                            <apex:outputText value="{!deviceDetail.ftdMFG}" id="ftdMFGVal" rendered="{!deviceDetail.deviceType == 'TRACKER'}"/>
+                            <apex:outputText value="FBC MCN" id="fbcMCNLbl" rendered="{!deviceDetail.deviceType == 'CHARGER'}"/>
+                            <apex:outputText value="{!deviceDetail.fbcMCN}" id="fbcMCNVal" rendered="{!deviceDetail.deviceType == 'CHARGER'}"/>
+                            <apex:outputText value="FBC MFG S/N" id="fbcMFGLbl" rendered="{!deviceDetail.deviceType == 'CHARGER'}"/>
+                            <apex:outputText value="{!deviceDetail.fbcMFG}" id="fbcMFGVal" rendered="{!deviceDetail.deviceType == 'CHARGER'}"/>
+                        </apex:panelGrid>
+                    </apex:pageBlockSection>
+                    <br/>
+                    <br/>
+                    <apex:pageBlockSection columns="2"> 
+                        <apex:dataTable columnClasses="DasColumn" styleClass="results" value="{!deviceDetailLst}" width="765" var="deviceVal" id="theTable" rowClasses="odd,even" border="1" cellpadding="2" cellspacing="0" rendered="{!deviceDetail.deviceType == 'TRACKER'}">
+                            <apex:column >        
+                                <apex:facet name="header">Device Service State</apex:facet>
+                                <apex:outputText value="{!deviceVal.deviceServiceState}"/>        
+                            </apex:column>        
+                            <apex:column >        
+                                <apex:facet name="header">Device Security State</apex:facet>                   
+                                <apex:outputText value="{!deviceVal.deviceSecurityState}"/>        
+                            </apex:column>
+                            <apex:column >        
+                                <apex:facet name="header">Device Reachability State</apex:facet>                   
+                                <apex:outputText value="{!deviceVal.deviceReachabilityState}"/>        
+                            </apex:column>
+                        </apex:dataTable>
+                  </apex:pageBlockSection>  
+                  <br/>
+                  <br/>
+                </apex:pageBlock>
+            </apex:outputPanel>            
+        </apex:outputPanel>
+        <apex:actionFunction name="doDeviceSearch" 
+            action="{!doDeviceSearch}" 
+            reRender="SearchPanel,DeviceDetailsPanel,Messages"
+            oncomplete="javascript: hideDialog(); "
+        />                
+    </apex:form>
+     <style>
+        table.results th{text-align:center;background-color:#D8ECF3;}
+        table.results td{text-align:center;background-color:#FFFFFF;}
+        table.results {text-align:center;}         
+        .DpcColumn {width:180px;}        
+        .DasColumn {width:100px;}
+        .ui-progressbar-value { 
+            background-image: url({!$Resource.progress_bar}); 
+        .boldText {font-weight:bold;}
+        }
+    </style> 
+    
+    <div id="dialog" title="Operation in progress">
+        <table border="0" width="100%" cellpadding="0" cellspacing="3">
+            <tr>
+                <td>Please wait...</td>
+            </tr>
+            <tr>
+                <td><div id="progressbar"></div></td>
+            </tr>
+            <!-- 
+            <tr>
+                <td><a href="/home/home.jsp" target="_blank">Click here to open another salesforce tab</a></td>
+            </tr>
+             -->
+        </table>
+    </div>
+    
+    <script type="text/javascript">
+        jQuery.noConflict();
+        jQuery('#dialog').dialog({
+            autoOpen: false,
+            bgiframe: true,
+            closeOnEscape: false,
+            draggable: false,
+            modal: true,
+            open: function(event, ui) { jQuery(".ui-dialog-titlebar-close").hide(); },
+            position: 'center',
+            resizable: false
+        });
+        jQuery('#progressbar' ).progressbar({
+            value: 100
+        });
+        
+        
+            
+        function showDialog(){
+            jQuery('#dialog').dialog('open');
+            var theDialog = $('dialog');
+            if(theDialog){
+                theDialog.setStyle('min-height: 70px');
+            }
+        }
+        
+         function handleKeyUpInSearchField(event){
+            if(event != null && event.keyCode == 13){                
+                showDialog();
+                doDeviceSearch();
+                
+            }
+        }
+        
+        function hideDialog(){
+            jQuery('#dialog').dialog('close');
+
+        }
+        
+        
+    </script>
+</apex:page>

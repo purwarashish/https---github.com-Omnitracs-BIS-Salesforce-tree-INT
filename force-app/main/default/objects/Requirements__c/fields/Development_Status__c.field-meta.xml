@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Development_Status__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Has this requirement been implemented, ready for testing, a work in progress, or pending?</inlineHelpText>
+    <label>Development Status</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Closed / Implemented</fullName>
+                <default>false</default>
+                <label>Closed / Implemented</label>
+            </value>
+            <value>
+                <fullName>Completed - Code</fullName>
+                <default>false</default>
+                <label>Completed - Code</label>
+            </value>
+            <value>
+                <fullName>Completed - Config</fullName>
+                <default>false</default>
+                <label>Completed - Config</label>
+            </value>
+            <value>
+                <fullName>Completed - Data</fullName>
+                <default>false</default>
+                <label>Completed - Data</label>
+            </value>
+            <value>
+                <fullName>In Progress - Code</fullName>
+                <default>false</default>
+                <label>In Progress - Code</label>
+            </value>
+            <value>
+                <fullName>In Progress - Config</fullName>
+                <default>false</default>
+                <label>In Progress - Config</label>
+            </value>
+            <value>
+                <fullName>In Progress - Data</fullName>
+                <default>false</default>
+                <label>In Progress - Data</label>
+            </value>
+            <value>
+                <fullName>NA</fullName>
+                <default>false</default>
+                <label>NA</label>
+            </value>
+            <value>
+                <fullName>Pending - Code</fullName>
+                <default>false</default>
+                <label>Pending - Code</label>
+            </value>
+            <value>
+                <fullName>Pending - Config</fullName>
+                <default>false</default>
+                <label>Pending - Config</label>
+            </value>
+            <value>
+                <fullName>Pending - Data</fullName>
+                <default>false</default>
+                <label>Pending - Data</label>
+            </value>
+            <value>
+                <fullName>Ready for Testing</fullName>
+                <default>false</default>
+                <label>Ready for Testing</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

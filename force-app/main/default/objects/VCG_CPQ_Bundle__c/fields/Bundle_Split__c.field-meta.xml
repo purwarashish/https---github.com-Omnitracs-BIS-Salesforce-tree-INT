@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bundle_Split__c</fullName>
+    <description>When converting SKU&apos;d Bundles to it&apos;s component bundles, this is the % of $ amount of the bundle&apos;s price(s) to allocate to this component&apos;s price(s). If this is a $ amount, it will be subtracted from the bundle&apos;s price first, then the remaining amount spread across the component products based on their percentage (i.e. % values should always sum up to 100%). % values should be entered as percentage values ... i.e. &apos;50&apos; for 50%, not &apos;0.50&apos;.</description>
+    <externalId>false</externalId>
+    <label>Bundle Split</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

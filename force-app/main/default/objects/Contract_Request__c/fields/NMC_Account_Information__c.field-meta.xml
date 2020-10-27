@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NMC_Account_Information__c</fullName>
+    <externalId>false</externalId>
+    <label>NMC Account Information</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New/Current Customer - Needs New NMC Account Setup</fullName>
+                <default>false</default>
+                <label>New/Current Customer - Needs New NMC Account Setup</label>
+            </value>
+            <value>
+                <fullName>New/Current Customer - Needs Test NMC Account Setup</fullName>
+                <default>false</default>
+                <label>New/Current Customer - Needs Test NMC Account Setup</label>
+            </value>
+            <value>
+                <fullName>Current Customer</fullName>
+                <default>false</default>
+                <label>Current Customer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

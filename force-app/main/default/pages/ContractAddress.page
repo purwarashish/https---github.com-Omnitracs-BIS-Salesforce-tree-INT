@@ -1,0 +1,105 @@
+<apex:page standardController="Contract_Address__c" extensions="ContractAddressExt">
+<script type="text/javascript"> 
+    function openLookup(baseURL, width, modified, searchParam){
+        var originalbaseURL = baseURL;
+        var originalwidth = width;
+        var originalmodified = modified;
+        var originalsearchParam = searchParam;
+        var contractId = "{!Contract_Address__c.Contract__c}";
+        var lookupType = baseURL.substr(baseURL.length-3, 3);
+        var AddressKeyPrfx = "{!KeyPrfx}";
+        if (modified == '1') baseURL = baseURL + searchParam;
+        
+        var isCustomLookup = false;
+        
+        // Following "001" is the lookup type for Account object so change this as per your standard or custom object
+        if(lookupType == AddressKeyPrfx){
+        
+        var urlArr = baseURL.split("&");
+        var txtId = '';
+        if(urlArr.length > 2) {
+        urlArr = urlArr[1].split('=');
+        txtId = urlArr[1];
+        }
+    
+        // Following is the url of Custom Lookup page. You need to change that accordingly
+        baseURL = "/apex/MyContactSearchPopup?id="+ contractId +"&txt=" + txtId;
+        // alert("baseURL-["+baseURL);
+        // Following is the id of apex:form control "myForm". You need to change that accordingly
+        baseURL = baseURL + "&frm=" + escapeUTF("{!$Component.Contract}");
+        if (modified == '1') {
+        baseURL = baseURL + "&lksearch=" + searchParam;
+        }
+        
+        // Following is the ID of inputField that is the lookup to be customized as custom lookup
+        if(txtId.indexOf('cName') > -1 ){
+        isCustomLookup = true;
+        }
+        }
+        
+        
+        if(isCustomLookup == true){
+            // alert("YES");
+        openPopup(baseURL, "lookup", 350, 480, "width="+980+",height=480,toolbar=no,status=no,directories=no,menubar=yes,resizable=yes,scrollable=yes", true);
+        }
+        else {
+            // alert(lookupType+"\n"+urlArr+"\n"+isCustomLookup+"\ntxtId- "+txtId+"\nbaseURL -["+baseURL+"]"+"\n"+modified);
+
+        if (modified == '1') originalbaseURL = originalbaseURL + originalsearchParam;
+        openPopup(originalbaseURL, "lookup", 350, 480, "width"+980+",height=180,toolbar=no,status=yes,directories=no,menubar=no,resizable=yes,scrollable=no", true);
+        } 
+    }
+</script>
+<apex:sectionHeader title="Contract Address  Edit" subtitle="{!Contract_Address__c.name}"/>
+
+<apex:form id="Contract">
+    <apex:outputPanel layout="block" id="Main">
+    <apex:pageMessages />
+    <apex:pageBlock title="Contract Address Edit" mode="edit" id="thePageBlock" >
+    
+        <apex:pageBlockButtons location="top">
+            <apex:commandButton value="Save" action="{!save}"/>
+            <apex:commandButton value="Save & New" action="{!SaveAndNew}" rerender="Main" />
+            <apex:commandButton value="Cancel" action="{!cancel}"/>
+        </apex:pageBlockButtons>
+        
+        <apex:pageBlockButtons location="bottom">
+            <apex:commandButton value="Save" action="{!save}"/>
+            <apex:commandButton value="Save & New" action="{!SaveAndNew}"  rerender="Contract"/>
+            <apex:commandButton value="Cancel" action="{!cancel}"/>
+        </apex:pageBlockButtons>
+        
+            <apex:pageBlockSection title="Information" columns="2">
+            <apex:inputField Id="ContractNum" value="{!Contract_Address__c.Contract__c}" taborderhint="1" required="true"/>
+            <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Account Address"/>
+            <apex:outputPanel >
+                <!--<apex:inputField value="{!Contract_Address__c.Account_Address__c}" taborderhint="2" required="false">-->
+                <apex:inputField id="cName" value="{!Contract_Address__c.Account_Address__c}" taborderhint="2" required="false">
+                <apex:actionSupport event="onchange" action="{!ResetAddress}"
+                                        rerender="thePageBlock"
+                                        status="status"/>
+                </apex:inputField>
+                  <apex:actionStatus startText="applying value..." 
+                                     id="status"/>
+            </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            <apex:inputField taborderhint="3" value="{!Contract_Address__c.Location_Type__c}" required="false" />
+            <apex:inputField taborderhint="4" value="{!Contract_Address__c.Attention__c}" required="false"/>
+            <apex:inputField taborderhint="5" value="{!Contract_Address__c.Address_Line_1__c}" required="false"/>
+            <apex:inputField taborderhint="11" value="{!Contract_Address__c.Phone_Number__c}" required="false"/>
+            <apex:inputField taborderhint="6" value="{!Contract_Address__c.Address_Line_2__c}" required="false"/>
+            <apex:inputField taborderhint="12" value="{!Contract_Address__c.Fax_Number__c}" required="false"/>
+            <apex:inputField taborderhint="7" value="{!Contract_Address__c.City__c}" required="false"/>
+            <apex:inputField taborderhint="13" value="{!Contract_Address__c.Email_Address__c}" required="false"/>
+            <apex:inputField taborderhint="8" value="{!Contract_Address__c.State_Province__c}" required="false"/>
+            <apex:outputText /> 
+            <apex:inputField taborderhint="9" value="{!Contract_Address__c.Zip_Postal_Code__c}" required="false"/>
+            <apex:outputText /> 
+            <apex:inputField taborderhint="10" value="{!Contract_Address__c.Country__c}" required="false"/>
+        </apex:pageBlockSection>
+        
+    </apex:pageBlock>
+    </apex:outputPanel>
+</apex:form>
+</apex:page>

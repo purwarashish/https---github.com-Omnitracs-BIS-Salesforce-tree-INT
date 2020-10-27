@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QES_Product_Solution_Offered__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>What product/solution is being offered?</inlineHelpText>
+    <label>Product/Solution Offered</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>AEF</fullName>
+                <default>false</default>
+                <label>AEF</label>
+            </value>
+            <value>
+                <fullName>AEF Armor</fullName>
+                <default>false</default>
+                <label>AEF Armor</label>
+            </value>
+            <value>
+                <fullName>Analytics Manager</fullName>
+                <default>false</default>
+                <label>Analytics Manager</label>
+            </value>
+            <value>
+                <fullName>Consulting</fullName>
+                <default>false</default>
+                <label>Consulting</label>
+            </value>
+            <value>
+                <fullName>Content Development:  External</fullName>
+                <default>false</default>
+                <label>Content Development:  External</label>
+            </value>
+            <value>
+                <fullName>Content Development:  Internal</fullName>
+                <default>false</default>
+                <label>Content Development:  Internal</label>
+            </value>
+            <value>
+                <fullName>CSA Safety Performance Service</fullName>
+                <default>false</default>
+                <label>CSA Safety Performance Service</label>
+            </value>
+            <value>
+                <fullName>Driver Recruiting Model</fullName>
+                <default>false</default>
+                <label>Driver Recruiting Model</label>
+            </value>
+            <value>
+                <fullName>Driver Retention Model</fullName>
+                <default>false</default>
+                <label>Driver Retention Model</label>
+            </value>
+            <value>
+                <fullName>Driving Center Platform</fullName>
+                <default>false</default>
+                <label>Driving Center Platform</label>
+            </value>
+            <value>
+                <fullName>Fatigue Risk Model</fullName>
+                <default>false</default>
+                <label>Fatigue Risk Model</label>
+            </value>
+            <value>
+                <fullName>FS Connect</fullName>
+                <default>false</default>
+                <label>FS Connect</label>
+            </value>
+            <value>
+                <fullName>FS Cost Control</fullName>
+                <default>false</default>
+                <label>FS Cost Control</label>
+            </value>
+            <value>
+                <fullName>FS Elite</fullName>
+                <default>false</default>
+                <label>FS Elite</label>
+            </value>
+            <value>
+                <fullName>FS Security</fullName>
+                <default>false</default>
+                <label>FS Security</label>
+            </value>
+            <value>
+                <fullName>Hours of Service</fullName>
+                <default>false</default>
+                <label>Hours of Service</label>
+            </value>
+            <value>
+                <fullName>Implementation Services:  Driver Recruiting</fullName>
+                <default>false</default>
+                <label>Implementation Services:  Driver Recruiting</label>
+            </value>
+            <value>
+                <fullName>Implementation Services:  Driver Retention</fullName>
+                <default>false</default>
+                <label>Implementation Services:  Driver Retention</label>
+            </value>
+            <value>
+                <fullName>Implementation Services:  Fatigue Model</fullName>
+                <default>false</default>
+                <label>Implementation Services:  Fatigue Model</label>
+            </value>
+            <value>
+                <fullName>Implementation Services:  Safety Model Driving</fullName>
+                <default>false</default>
+                <label>Implementation Services:  Safety Model Driving</label>
+            </value>
+            <value>
+                <fullName>Implementation Services:  Safety Model Workers Comp</fullName>
+                <default>false</default>
+                <label>Implementation Services:  Safety Model Workers Comp</label>
+            </value>
+            <value>
+                <fullName>In-cab Navigation</fullName>
+                <default>false</default>
+                <label>In-cab Navigation</label>
+            </value>
+            <value>
+                <fullName>In-cab Scanning</fullName>
+                <default>false</default>
+                <label>In-cab Scanning</label>
+            </value>
+            <value>
+                <fullName>In-cab Training</fullName>
+                <default>false</default>
+                <label>In-cab Training</label>
+            </value>
+            <value>
+                <fullName>IVG</fullName>
+                <default>false</default>
+                <label>IVG</label>
+            </value>
+            <value>
+                <fullName>Kit T2 para Caja Seca</fullName>
+                <default>false</default>
+                <label>Kit T2 para Caja Seca</label>
+            </value>
+            <value>
+                <fullName>Kit T2 para Plataforma</fullName>
+                <default>false</default>
+                <label>Kit T2 para Plataforma</label>
+            </value>
+            <value>
+                <fullName>Kit TMCI Básico Nuevo</fullName>
+                <default>false</default>
+                <label>Kit TMCI Básico Nuevo</label>
+            </value>
+            <value>
+                <fullName>Kit TMCI Básico Remanufacturado</fullName>
+                <default>false</default>
+                <label>Kit TMCI Básico Remanufacturado</label>
+            </value>
+            <value>
+                <fullName>Kit TMCI Logístico Nuevo</fullName>
+                <default>false</default>
+                <label>Kit TMCI Logístico Nuevo</label>
+            </value>
+            <value>
+                <fullName>Kit TMCI Logístico Remanufacturado</fullName>
+                <default>false</default>
+                <label>Kit TMCI Logístico Remanufacturado</label>
+            </value>
+            <value>
+                <fullName>MCP100</fullName>
+                <default>false</default>
+                <label>MCP100</label>
+            </value>
+            <value>
+                <fullName>MCP110</fullName>
+                <default>false</default>
+                <label>MCP110</label>
+            </value>
+            <value>
+                <fullName>MCP200</fullName>
+                <default>false</default>
+                <label>MCP200</label>
+            </value>
+            <value>
+                <fullName>MCP50</fullName>
+                <default>false</default>
+                <label>MCP50</label>
+            </value>
+            <value>
+                <fullName>OmniTRACS</fullName>
+                <default>false</default>
+                <label>OmniTRACS</label>
+            </value>
+            <value>
+                <fullName>OmniTRACS Shield</fullName>
+                <default>false</default>
+                <label>OmniTRACS Shield</label>
+            </value>
+            <value>
+                <fullName>OT Light</fullName>
+                <default>false</default>
+                <label>OT Light</label>
+            </value>
+            <value>
+                <fullName>Performance Monitoring with Fuel Manager</fullName>
+                <default>false</default>
+                <label>Performance Monitoring with Fuel Manager</label>
+            </value>
+            <value>
+                <fullName>PPS</fullName>
+                <default>false</default>
+                <label>PPS</label>
+            </value>
+            <value>
+                <fullName>Safety Model:  Driving</fullName>
+                <default>false</default>
+                <label>Safety Model:  Driving</label>
+            </value>
+            <value>
+                <fullName>Safety Model:  Workers Comp</fullName>
+                <default>false</default>
+                <label>Safety Model:  Workers Comp</label>
+            </value>
+            <value>
+                <fullName>Sylectus Alliance Connect</fullName>
+                <default>false</default>
+                <label>Sylectus Alliance Connect</label>
+            </value>
+            <value>
+                <fullName>Sylectus Alliance Pro</fullName>
+                <default>false</default>
+                <label>Sylectus Alliance Pro</label>
+            </value>
+            <value>
+                <fullName>Sylectus Alliance Virtual Fleet</fullName>
+                <default>false</default>
+                <label>Sylectus Alliance Virtual Fleet</label>
+            </value>
+            <value>
+                <fullName>TrailerTRACS</fullName>
+                <default>false</default>
+                <label>TrailerTRACS</label>
+            </value>
+            <value>
+                <fullName>Trip Manager</fullName>
+                <default>false</default>
+                <label>Trip Manager</label>
+            </value>
+            <value>
+                <fullName>TT210</fullName>
+                <default>false</default>
+                <label>TT210</label>
+            </value>
+            <value>
+                <fullName>TT210 dry goods</fullName>
+                <default>false</default>
+                <label>TT210 dry goods</label>
+            </value>
+            <value>
+                <fullName>TT210 refrigerated</fullName>
+                <default>false</default>
+                <label>TT210 refrigerated</label>
+            </value>
+            <value>
+                <fullName>Unlimited Value Plan</fullName>
+                <default>false</default>
+                <label>Unlimited Value Plan</label>
+            </value>
+            <value>
+                <fullName>XRS</fullName>
+                <default>false</default>
+                <label>XRS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

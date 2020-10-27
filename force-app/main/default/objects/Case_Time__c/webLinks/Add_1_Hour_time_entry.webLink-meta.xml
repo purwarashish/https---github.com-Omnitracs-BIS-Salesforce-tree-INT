@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Add_1_Hour_time_entry</fullName>
+    <availability>online</availability>
+    <description>Automatically create a Time entry for 1 hour</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Add 1 Hour</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/a2N/e?CF00N50000002uwUZ={!Case.CaseNumber}&amp;CF00N50000002uwUZ_lkid={!Case.Id}&amp;CF00N50000002uwV6={!User.Name}&amp;CF00N50000002uwV6_lkid={!User.Id}&amp;00N50000002uwV2=1&amp;saveURL=%2F{!Case.Id}&amp;cancelURL=%2F{!Case.Id}&amp;CF00NR0000001D9UT={!User.Support_Tier__c}&amp;00N50000002uwV7=Tier1</url>
+</WebLink>

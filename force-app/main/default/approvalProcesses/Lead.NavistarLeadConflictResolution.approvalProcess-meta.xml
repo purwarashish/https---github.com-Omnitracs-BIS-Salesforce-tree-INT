@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Owner</field>
+        <field>Company</field>
+        <field>Name</field>
+        <field>Address</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>LeadApproved</name>
+                <type>Alert</type>
+            </action>
+            <action>
+                <name>LeadApprovedChangeStatus</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>PRMSupport775351</name>
+                <type>queue</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <label>Conflict Approval</label>
+        <name>ConflictApproval</name>
+        <rejectionActions>
+            <action>
+                <name>LeadRejected</name>
+                <type>Alert</type>
+            </action>
+            <action>
+                <name>LeadRejectedLeadStatus</name>
+                <type>FieldUpdate</type>
+            </action>
+        </rejectionActions>
+    </approvalStep>
+    <description>This approval process will be used for reseller/agents that enter a lead via PRM, submit for approval to ensure QES Sales is not working the same lead.
+
+If the lead is approved: the record type and lead status will flip and an email will be sent to the agent. 
+
+If the lead is denied: he record type and lead status will flip and an email will be sent to the agent.</description>
+    <emailTemplate>QESAutomatedMessages/LeadApprovalRequired</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <criteriaItems>
+            <field>Lead.RecordType</field>
+            <operation>equals</operation>
+            <value>New Lead (Navistar)</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionRecordLock>true</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>LeadStatusPendingApproval</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Navistar Lead - Conflict Resolution</label>
+    <processOrder>3</processOrder>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

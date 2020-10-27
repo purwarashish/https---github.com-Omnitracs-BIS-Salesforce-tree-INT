@@ -1,0 +1,22 @@
+<apex:page cache="true" expires="{!IF(renderConfig, '600','')}" controller="VCG_CPQ_ExportConfigController" contentType="{!IF(renderConfig, 'application/xml','')}" showHeader="{! !renderConfig }"><apex:outputPanel layout="none" rendered="{! renderConfig }">{!configXML}</apex:outputPanel>
+    
+    <apex:outputPanel layout="none" rendered="{! !renderConfig }">
+        <apex:form >
+            <div style="font-weight: bold; font-size: 1.4em; margin-top: 16px;">Export CPQ Config</div>
+            <br/>
+            Click the button below to generate the CPQ configuration in XML. Can be used for comparisons (using diff tools) or backup. (No import currently available however, and only part of the config is covered for now.)
+            <br/><br/>
+            <div style="font-weight: bold; font-size: 1.1em;">Currently Included:</div>
+            <ul>
+                <li>Product2 CPQ Formula Fields</li>
+                <li>Pricing Config</li>
+                <li>Product Filters</li>
+                <li>Field Layouts</li>
+                <li>Field Mappings</li>
+            </ul>
+            
+            <apex:commandButton value="Export Config" action="{!generateConfigXML}" />
+        </apex:form>
+    </apex:outputPanel>
+    
+</apex:page>

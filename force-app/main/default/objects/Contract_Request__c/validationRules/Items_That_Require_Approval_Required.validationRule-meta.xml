@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Items_That_Require_Approval_Required</fullName>
+    <active>true</active>
+    <description>Make the Items That Require Approval field required if an approver is selected.</description>
+    <errorConditionFormula>AND(
+ All_Discounts_Incentives_Requested__c =&quot;&quot;,
+ OR(
+ Sales_Mgmt_Approver__c &lt;&gt; &quot;&quot;,
+ Prod_Mgmt_Approver__c &lt;&gt; &quot;&quot;,
+ Financial_Approver__c &lt;&gt; &quot;&quot;,
+ Other_Approver__c &lt;&gt; &quot;&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>All_Discounts_Incentives_Requested__c</errorDisplayField>
+    <errorMessage>Items That Require Approval is required if an Approver is selected</errorMessage>
+</ValidationRule>

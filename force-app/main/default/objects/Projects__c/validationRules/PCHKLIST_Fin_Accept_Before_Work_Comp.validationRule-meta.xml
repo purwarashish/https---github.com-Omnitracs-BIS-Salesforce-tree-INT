@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PCHKLIST_Fin_Accept_Before_Work_Comp</fullName>
+    <active>true</active>
+    <description>Final Acceptance cannot be checked if Work Completed is not checked.</description>
+    <errorConditionFormula>AND(  Final_Acceptance__c ,   Work_Completed__c  &lt;&gt;True)</errorConditionFormula>
+    <errorDisplayField>Final_Acceptance__c</errorDisplayField>
+    <errorMessage>Final Acceptance cannot be checked if Work Completed is not checked.</errorMessage>
+</ValidationRule>

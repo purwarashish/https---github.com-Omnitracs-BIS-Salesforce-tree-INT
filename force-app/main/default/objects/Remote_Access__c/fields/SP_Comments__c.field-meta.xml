@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SP_Comments__c</fullName>
+    <description>Server Profile Comments</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Add any Server Profile comments</inlineHelpText>
+    <label>Server Profile Comments</label>
+    <length>10000</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>10</visibleLines>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Account_Test_Scenarios</fullName>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>Scenario__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Area__c</field>
+        <operation>contains</operation>
+        <value>Accounts</value>
+    </filters>
+    <label>All Account Test Scenarios</label>
+    <language>en_US</language>
+</ListView>

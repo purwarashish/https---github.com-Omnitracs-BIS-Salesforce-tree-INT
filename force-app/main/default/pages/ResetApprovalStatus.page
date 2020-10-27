@@ -1,0 +1,24 @@
+<apex:page standardController="SBQQ__Quote__c" extensions="QuoteResetApproval" sidebar="false" showchat="false" showheader="false" lightningStylesheets="true">
+    <!--
+    <script>
+        var quoteStatus = "{!SBQQ__Quote__c.SBQQ__Status__c}";
+        if(quoteStatus!='Draft'){
+            alert('Quote status is '+quoteStatus+' so you can not reset the approvals');  
+            window.Location='/'+recId ;
+        }
+    </script>-->
+    <apex:form > 
+        <apex:pagemessages id="pagems"/>
+        <center>    
+        <apex:pageBlock title="Are you sure you want to reset the Approval Status? Once Approvals are reset, you must start the Approval Process over. " rendered="{!if(SBQQ__Quote__c.SBQQ__Status__c=='Draft',true,false)}" >
+            <apex:commandButton value="Yes, reset the Approvals" action="{!ResetApproval}" rerender="pagems"/>&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:commandButton value="No, take me back to Quote" action="{!goBack}"/>
+        </apex:pageBlock>
+        
+        <apex:pageBlock title="This Quote has past the point at which you are able to reset the Quote Approvals. The SpringCM Document Generation Process has already begun." rendered="{!if(SBQQ__Quote__c.SBQQ__Status__c!='Draft',true,false)}" >
+            <br/><br/>
+            <apex:commandButton value="Take me back to Quote" action="{!goBack}" />
+        </apex:pageBlock>
+        </center>
+    </apex:form>
+</apex:page>

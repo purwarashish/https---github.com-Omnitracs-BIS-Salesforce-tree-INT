@@ -1,0 +1,77 @@
+<!--
+   @author:        Mark De Chavez | mark.dechavez@cloudsherpas.com
+   @description:   A custom interface to create child Shipment_Forecast__c records from a single Quote_Product__c record
+   @date-created:  September 09, 2014
+   @revision: 
+-->
+<apex:page standardController="VCG_CPQ_Quote_Product__c" extensions="EditShipmentScheduleExt">
+    <apex:form >
+        <apex:outputField value="{!VCG_CPQ_Quote_Product__c.Quote__c}"  rendered="false"/>
+        <apex:actionFunction name="updateRemainingQty" action="{!updateRemainingQty}" reRender="pbsQuoteProdInfo" />
+        <apex:pageBlock id="pb">
+            <apex:pageMessages />
+            <apex:outputText style="font-size: 20px;" value="Add/Edit Shipment Schedule"/> <br/><br/>
+            <apex:pageBlockSection id="pbsQuoteProdInfo" title="Quote Product Information" columns="2" collapsible="false">
+                <apex:outputText label="Opportunity Name" value="{!VCG_CPQ_Quote_Product__c.Quote__r.Opportunity__r.Name}" />
+                <apex:outputText label="Quantity" value="{!VCG_CPQ_Quote_Product__c.License_Metric_Quantity__c}"/>
+                <apex:outputText label="Quote Number" value="{!VCG_CPQ_Quote_Product__c.Quote__r.Name}"/>
+                <apex:outputText label="Remaining Quantity for Shipment Schedule" value="{!remainingQty}"/>
+                <apex:outputText label="Quote Product SKU" value="{!VCG_CPQ_Quote_Product__c.Name}"/>
+                <apex:outputText label="ARR" value="{!VCG_CPQ_Quote_Product__c.Annual_Recurring_Revenue__c}"/>                
+                <apex:outputText label="Product Name" value="{!VCG_CPQ_Quote_Product__c.Product__r.Name}"/>
+                <apex:inputField label="Delivery Schedule" value="{!VCG_CPQ_Quote_Product__c.Delivery_Schedule__c}" required="true"/>
+            </apex:pageBlockSection>          
+            
+            <center>
+                <apex:commandButton value="Save" action="{!saveShipmentSched}" style="display:inline" />
+                <!--<apex:commandButton value="Cancel" action="{!cancel}" />-->
+            </center>
+            
+            <apex:variable var="rowNumber" value="{!0}"/>
+            <apex:pageBlockSection title="Shipment Schedule" collapsible="false" columns="1">
+                <apex:pageBlockTable id="pbtShipSched"  value="{!dispShipmentSched}" var="disp" >
+                    <apex:column style="width:115px; text-align:center;">
+                        <apex:facet name="header">
+                            <div style="text-align:center">Shipment Number</div>
+                        </apex:facet>
+                        <apex:outputText value="{0}" > 
+                            <apex:param value="{!rowNumber+1}" />
+                        </apex:outputText>
+                    </apex:column>
+                    <apex:column headerValue="Shipment Date">
+                        <apex:inputField value="{!disp.Shipment_Date__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Shipment Quantity">
+                        <apex:inputField value="{!disp.Shipment_Quantity__c}" onchange="updateRemainingQty();"/>
+                    </apex:column>
+                    <!-- <apex:column headerValue="Delivery Schedule">
+                        <apex:inputField value="{!disp.Delivery_Schedule__c}" required="true"/>
+                    </apex:column>-->
+                    <apex:column headerValue="Shipment Notes">
+                        <apex:inputField value="{!disp.Notes__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Oracle Sales Order ID">
+                        <apex:inputField value="{!disp.Oracle_Sales_Order_ID__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Shipped">
+                        <apex:inputField value="{!disp.Shipped__c}"/>
+                    </apex:column>
+                    <apex:column style="width:115px; text-align:center;">
+                        <apex:facet name="header">
+                            <div style="text-align:center">Delete?</div>
+                        </apex:facet>
+                        <apex:outputPanel >
+                            <apex:outputText ><div style="cursor:pointer">X</div></apex:outputText>
+                            <apex:actionSupport event="onclick" action="{!deleteShipmentSched}" rerender="pb" >
+                                <apex:param name="rowIndex" value="{!rowNumber}"/>
+                            </apex:actionSupport>
+                        </apex:outputPanel>
+                        <apex:variable var="rowNumber" value="{!rowNumber+1}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            
+            <apex:commandButton style="margin-right:20px" action="{!addRow}" value="Add More" reRender="pb"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

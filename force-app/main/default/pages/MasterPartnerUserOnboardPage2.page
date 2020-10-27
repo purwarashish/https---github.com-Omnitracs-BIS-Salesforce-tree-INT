@@ -1,0 +1,13 @@
+<apex:page controller="MasterPartnerUserOnboardCtrl">
+<apex:form >
+<apex:pageBlock >
+<apex:outputText value="{!retAcctID}" label="Account ID" />
+          <apex:outputText value="{!retLeadQueueID}" label="Lead Queue ID" />
+          <apex:outputText value="{!retName}" label="Custom Setting Name" />
+ <apex:pageBlockButtons id="btns" location="bottom" rendered="true">
+
+          <apex:commandButton id="saveBtn2" value="Add Custom Setting" action="{!insertPRMAcctQueueCombination}" />
+          </apex:pageBlockButtons>
+          </apex:pageBlock>
+          </apex:form>
+</apex:page>

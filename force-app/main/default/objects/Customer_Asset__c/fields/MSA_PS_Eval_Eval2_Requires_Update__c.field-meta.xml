@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MSA_PS_Eval_Eval2_Requires_Update__c</fullName>
+    <description>Identify the Customer Assets that should have an updated association with a (MSA, Schedule, Eval, Eval2) contract.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+  OR(
+    (AND(NOT(ISBLANK(MSA_Document__c)), NOT(ISBLANK(Latest_Quote_Line__r.SBQQ__Product__r.Output_MSA_Document_Template__c)),
+      OR(
+        AND(
+          (TEXT(Latest_Quote_Line__r.SBQQ__Quote__r.SBQQ__Opportunity2__r.Order_Type__c) == &apos;Contract Renewal&apos;),
+          (MSA_Document__r.SpringCM_Quote__c != Latest_Quote_Line__r.SBQQ__Quote__c)
+        ),
+        AND(
+          (TEXT(Latest_Quote_Line__r.SBQQ__Product__r.Output_MSA_Document_Template__r.Contract_Category_1__c) == &apos;Sylectus&apos;),
+          (MSA_Document__r.SpringCM_Quote__c != Latest_Quote_Line__r.SBQQ__Quote__c)
+        )
+      )
+    )),
+    (AND(NOT(ISBLANK(Product_Schedule_Document__c)), NOT(ISBLANK(Latest_Quote_Line__r.SBQQ__Product__r.Output_Schedule_Document_Template__c)),
+      OR(
+        AND(
+          (TEXT(Latest_Quote_Line__r.SBQQ__Quote__r.SBQQ__Opportunity2__r.Order_Type__c) == &apos;Contract Renewal&apos;),
+          (Product_Schedule_Document__r.SpringCM_Quote__c != Latest_Quote_Line__r.SBQQ__Quote__c)
+        ),
+        AND(
+          (TEXT(Latest_Quote_Line__r.SBQQ__Product__r.Output_MSA_Document_Template__r.Contract_Category_1__c) == &apos;Sylectus&apos;),
+          (Product_Schedule_Document__r.SpringCM_Quote__c != Latest_Quote_Line__r.SBQQ__Quote__c)
+        )
+      )
+    )),
+    (AND(
+      NOT(ISBLANK(Eval_Document__c)), NOT(ISBLANK(Latest_Quote_Line__r.SBQQ__Product__r.Output_Eval_Document_Template__c)),
+      OR(
+        AND(
+          (TEXT(Latest_Quote_Line__r.SBQQ__Quote__r.SBQQ__Opportunity2__r.Order_Type__c) == &apos;Contract Renewal&apos;),
+          (Eval_Document__r.SpringCM_Quote__c != Latest_Quote_Line__r.SBQQ__Quote__c)
+        ),
+        AND(
+          (TEXT(Latest_Quote_Line__r.SBQQ__Product__r.Output_MSA_Document_Template__r.Contract_Category_1__c) == &apos;Sylectus&apos;),
+          (Eval_Document__r.SpringCM_Quote__c != Latest_Quote_Line__r.SBQQ__Quote__c)
+        )
+      )
+    )),
+    (AND(NOT(ISBLANK(Eval2_Document__c)), NOT(ISBLANK(Latest_Quote_Line__r.SBQQ__Product__r.Output_Eval2_Document_Template__c)),
+      OR(
+        AND(
+          (TEXT(Latest_Quote_Line__r.SBQQ__Quote__r.SBQQ__Opportunity2__r.Order_Type__c) == &apos;Contract Renewal&apos;),
+          (Eval2_Document__r.SpringCM_Quote__c != Latest_Quote_Line__r.SBQQ__Quote__c)
+        ),
+        AND(
+          (TEXT(Latest_Quote_Line__r.SBQQ__Product__r.Output_MSA_Document_Template__r.Contract_Category_1__c) == &apos;Sylectus&apos;),
+          (Eval2_Document__r.SpringCM_Quote__c != Latest_Quote_Line__r.SBQQ__Quote__c)
+        )
+      )
+    ))
+  ),
+  true,
+  false
+)</formula>
+    <inlineHelpText>If checked, the Customer Asset must be mapped to a new (MSA, Product Schedule, Eval, or Eval2) Contract record.</inlineHelpText>
+    <label>(MSA, PS, Eval, Eval2) Requires Update?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

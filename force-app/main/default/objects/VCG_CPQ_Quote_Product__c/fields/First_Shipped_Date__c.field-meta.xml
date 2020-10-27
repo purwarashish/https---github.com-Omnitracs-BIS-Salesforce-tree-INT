@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>First_Shipped_Date__c</fullName>
+    <externalId>false</externalId>
+    <label>First Shipped Date</label>
+    <summarizedField>Shipment_Forecast__c.Shipment_Date__c</summarizedField>
+    <summaryForeignKey>Shipment_Forecast__c.Quote_Product__c</summaryForeignKey>
+    <summaryOperation>min</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

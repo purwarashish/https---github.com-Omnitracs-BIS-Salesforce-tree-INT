@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Installation_Audit</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New Installation Audit</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/a1q/e?CF00N50000002irj1={!Call_Report__c.Name}&amp;CF00N50000002irj1_lkid={!Call_Report__c.Id}&amp;CF00N50000002irir={!Call_Report__c.Account__c}&amp;retURL=%2F{!Call_Report__c.Id}</url>
+</WebLink>

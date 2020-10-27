@@ -1,0 +1,51 @@
+<apex:page standardcontroller="Scoring_Item__c" extensions="ScoringItemEdit"  >
+ 
+ <apex:sectionHeader title="Scoring Item" />
+ 
+ <apex:form >
+ 
+ <apex:pageMessages />
+ 
+ <apex:pageBlock >
+ 
+ <apex:pageBlockButtons >
+    <apex:commandButton value="Save" action="{!DoSave}" />
+    <apex:commandButton value="Cancel" action="{!Cancel}" />
+ </apex:pageBlockButtons>
+ 
+ <apex:pageBlockSection columns="2">
+ 
+ <apex:inputField value="{!CurrentScoringItem.Name}" required="true"/>
+ 
+ <apex:outputText value="" />
+ 
+ <apex:inputField value="{!CurrentScoringItem.Scoring_Model__c}" required="true"/>
+  
+ <apex:inputField value="{!CurrentScoringItem.Scoring_Weight__c}"   />
+  
+ <apex:pageBlockSectionItem >
+    <apex:outputLabel value="Scoring Formula Field" />
+        <apex:selectList value="{!CurrentScoringItem.Scoring_Field_API_Name__c}" multiselect="false" size="1">
+            <apex:selectOptions value="{!AccountFields}"/>
+    </apex:selectList> 
+ </apex:pageBlockSectionItem>
+ 
+ <apex:inputField value="{!CurrentScoringItem.Default_Score_Value__c}"   />
+ 
+  <apex:inputField value="{!CurrentScoringItem.Red_Score_From__c}"  required="true"/>
+ <apex:inputField value="{!CurrentScoringItem.Red_Score_To__c}"  required="true"/>
+ 
+  <apex:inputField value="{!CurrentScoringItem.Yellow_Score_From__c}"  required="true"/>
+ <apex:inputField value="{!CurrentScoringItem.Yellow_Score_To__c}"  required="true"/>
+ 
+ <apex:inputField value="{!CurrentScoringItem.Green_Score_From__c}"  required="true"/>
+ <apex:inputField value="{!CurrentScoringItem.Green_Score_To__c}"  required="true"/>
+ 
+ 
+ </apex:pageBlockSection> 
+  
+ </apex:pageBlock>
+ 
+ </apex:form>
+ 
+</apex:page>

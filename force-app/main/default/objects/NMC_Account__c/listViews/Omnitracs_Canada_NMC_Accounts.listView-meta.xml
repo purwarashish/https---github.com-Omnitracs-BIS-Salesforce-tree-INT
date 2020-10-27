@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Omnitracs_Canada_NMC_Accounts</fullName>
+    <booleanFilter>1 OR 2</booleanFilter>
+    <columns>NMC_Account__c</columns>
+    <columns>Account__c</columns>
+    <columns>NMC_Account_Name__c</columns>
+    <columns>NAME</columns>
+    <columns>Default_NMC_Account_for_Unit_Type__c</columns>
+    <columns>NMCAccountandHubID_text__c</columns>
+    <columns>Hub_ID__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>CREATEDBY_USER.ALIAS</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Inactive__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Hub_ID__c</field>
+        <operation>equals</operation>
+        <value>81</value>
+    </filters>
+    <filters>
+        <field>NMCAccountandHubID_text__c</field>
+        <operation>contains</operation>
+        <value>_81</value>
+    </filters>
+    <label>Omnitracs Canada NMC Accounts</label>
+    <language>en_US</language>
+    <sharedTo>
+        <allInternalUsers/>
+    </sharedTo>
+</ListView>

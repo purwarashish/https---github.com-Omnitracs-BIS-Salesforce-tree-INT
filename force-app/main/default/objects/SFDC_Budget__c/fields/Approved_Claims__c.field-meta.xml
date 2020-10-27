@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approved_Claims__c</fullName>
+    <defaultValue>0</defaultValue>
+    <description>Sum of all approved claims. This field is calculated automatically and should not be entered manually.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Amount of fund claims that have been approved</inlineHelpText>
+    <label>Approved Claims</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

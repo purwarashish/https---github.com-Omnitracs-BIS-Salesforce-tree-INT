@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Contract Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Amended License</fullName>
+                <default>false</default>
+                <label>Amended License</label>
+            </value>
+            <value>
+                <fullName>Amended Software Basis</fullName>
+                <default>false</default>
+                <label>Amended Software Basis</label>
+            </value>
+            <value>
+                <fullName>Existing Customer, Existing Product</fullName>
+                <default>false</default>
+                <label>Existing Customer, Existing Product</label>
+            </value>
+            <value>
+                <fullName>Existing Customer, License Compliance</fullName>
+                <default>false</default>
+                <label>Existing Customer, License Compliance</label>
+            </value>
+            <value>
+                <fullName>Existing Customer, License Transfer</fullName>
+                <default>false</default>
+                <label>Existing Customer, License Transfer</label>
+            </value>
+            <value>
+                <fullName>Existing Customer, New Product</fullName>
+                <default>false</default>
+                <label>Existing Customer, New Product</label>
+            </value>
+            <value>
+                <fullName>Existing Customer, Prof. to Ent. Upgrade</fullName>
+                <default>false</default>
+                <label>Existing Customer, Prof. to Ent. Upgrade</label>
+            </value>
+            <value>
+                <fullName>Existing Customer, Reactivation</fullName>
+                <default>false</default>
+                <label>Existing Customer, Reactivation</label>
+            </value>
+            <value>
+                <fullName>Existing customer, Renewal</fullName>
+                <default>false</default>
+                <label>Existing customer, Renewal</label>
+            </value>
+            <value>
+                <fullName>Existing Customer, Term Renewal</fullName>
+                <default>false</default>
+                <label>Existing Customer, Term Renewal</label>
+            </value>
+            <value>
+                <fullName>Hardware</fullName>
+                <default>false</default>
+                <label>Hardware</label>
+            </value>
+            <value>
+                <fullName>Hardware &amp; Services</fullName>
+                <default>false</default>
+                <label>Hardware &amp; Services</label>
+            </value>
+            <value>
+                <fullName>Int. Term</fullName>
+                <default>false</default>
+                <label>Int. Term</label>
+            </value>
+            <value>
+                <fullName>Maintenance Consolidation</fullName>
+                <default>false</default>
+                <label>Maintenance Consolidation</label>
+            </value>
+            <value>
+                <fullName>New Customer</fullName>
+                <default>false</default>
+                <label>New Customer</label>
+            </value>
+            <value>
+                <fullName>Partner License</fullName>
+                <default>false</default>
+                <label>Partner License</label>
+            </value>
+            <value>
+                <fullName>Perpetual SW (Add-On)</fullName>
+                <default>false</default>
+                <label>Perpetual SW (Add-On)</label>
+            </value>
+            <value>
+                <fullName>Perpetual SW (Back Up / Testing Copy)</fullName>
+                <default>false</default>
+                <label>Perpetual SW (Back Up / Testing Copy)</label>
+            </value>
+            <value>
+                <fullName>Perpetual SW (License Re-activation - former customer)</fullName>
+                <default>false</default>
+                <label>Perpetual SW (License Re-activation - former customer)</label>
+            </value>
+            <value>
+                <fullName>Perpetual SW (License Transfer)</fullName>
+                <default>false</default>
+                <label>Perpetual SW (License Transfer)</label>
+            </value>
+            <value>
+                <fullName>Perpetual SW (License Upgrade)</fullName>
+                <default>false</default>
+                <label>Perpetual SW (License Upgrade)</label>
+            </value>
+            <value>
+                <fullName>Perpetual SW (Map Upgrade)</fullName>
+                <default>false</default>
+                <label>Perpetual SW (Map Upgrade)</label>
+            </value>
+            <value>
+                <fullName>Perpetual SW (New Customer)</fullName>
+                <default>false</default>
+                <label>Perpetual SW (New Customer)</label>
+            </value>
+            <value>
+                <fullName>Perpetual SW (Partner License)</fullName>
+                <default>false</default>
+                <label>Perpetual SW (Partner License)</label>
+            </value>
+            <value>
+                <fullName>Prior Customer, Reactivation</fullName>
+                <default>false</default>
+                <label>Prior Customer, Reactivation</label>
+            </value>
+            <value>
+                <fullName>Professional Services</fullName>
+                <default>false</default>
+                <label>Professional Services</label>
+            </value>
+            <value>
+                <fullName>Services</fullName>
+                <default>false</default>
+                <label>Services</label>
+            </value>
+            <value>
+                <fullName>Subscription SW (Add On)</fullName>
+                <default>false</default>
+                <label>Subscription SW (Add On)</label>
+            </value>
+            <value>
+                <fullName>Subscription SW (New Customer)</fullName>
+                <default>false</default>
+                <label>Subscription SW (New Customer)</label>
+            </value>
+            <value>
+                <fullName>Subscription SW (Renewal)</fullName>
+                <default>false</default>
+                <label>Subscription SW (Renewal)</label>
+            </value>
+            <value>
+                <fullName>Subscription SW (Term Renewal)</fullName>
+                <default>false</default>
+                <label>Subscription SW (Term Renewal)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

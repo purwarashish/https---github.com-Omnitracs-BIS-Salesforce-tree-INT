@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NMC_Account_required_for_Current_Custome</fullName>
+    <active>true</active>
+    <description>NMC Account is required when NMC Account Information is Current Customer</description>
+    <errorConditionFormula>AND (
+(ISPICKVAL( NMC_Account_Information__c, &quot;Current Customer&quot;)),
+( NMC_Account_Number__c =&quot;&quot; )
+)</errorConditionFormula>
+    <errorDisplayField>NMC_Account_Number__c</errorDisplayField>
+    <errorMessage>NMC Account is required when NMC Account Information is Current Customer</errorMessage>
+</ValidationRule>

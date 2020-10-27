@@ -1,0 +1,646 @@
+<apex:page id="pg" controller="SrSearchArticalModeller"  showHeader="false"
+           sidebar="False"  cache="true">
+    <apex:include pageName="cssandjs"/> 
+    <apex:include pageName="supportGoogleAnalytics"/>
+    <style>
+        #bodyWrapper {
+            width:960px; 
+            margin:0 auto; 
+            background:transparent;
+        }
+       .gobtn {
+        background: url("{!URLFor($Resource.QESUnityCSSAndJS, 'Html/images/customer/support-button-sprites.png')}") no-repeat scroll 0 -296px transparent !important;
+        border: 0 none !important;
+        cursor: pointer !important;
+        height: 34px !important;
+        margin: 0 !important;
+        width: 45px !important;
+        }
+        .spacer{height:1px; clear:both;}
+        #middle-container
+        {
+        width:910px; background:#fff; 
+        
+        clear:both; 
+        padding:25px;
+        }
+        .gobtn:hover {
+            background: url("{!URLFor($Resource.QESUnityCSSAndJS, 'Html/images/customer/support-button-sprites.png')}") no-repeat scroll -47px -296px transparent !important;
+        }
+        .dsplyZindexHtWidPos{
+            display:block;
+            z-index: 8999;
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            display:none;
+        }
+        .zIndexBkgrdFltrDisp{
+            z-index: 9000;
+            background-color: black;
+            filter: alpha(opacity =   30);
+            opacity: 0.3;
+            height: 100%;
+            position: fixed;
+            width: 100%;
+            display:block;
+        }
+        .imgLeftTopDisp{
+            left: 50%;
+            top: 50%;
+            position: absolute;
+            display: block;
+        }
+        .dispNormal{
+            display: normal;
+        }
+        .mnHtTopMargn{
+            min-height: 500px;
+            top-margin: 45px !important;
+        }
+        .dispBlockWithFont{
+            display: block;
+            font-weight: bold;
+            font-family: arial;
+            font-size: 13px;
+        }
+        .padn8{
+            padding: 8px;
+        }
+        .padnnDispBlk{
+            padding: 5px 0 2px;
+            display: block;
+        }
+        .outlinBrdrWdthnBkgrd{
+            outline: 0pt none;
+            border: 1pt none;
+            width: 200px;
+            background: grey;
+        }
+        .mrgnLeft0{
+            margin-left:500;
+        }
+        .width637{
+            width: 637px !important;
+        }
+        .searchResultInnerLeft {
+            width: 637px;
+        }
+        .width372{
+            width:572px !important;
+        }
+        .width675{
+            width: 675px;
+        }
+        .mrgn0{
+            margin:0pt;
+        }
+        .width667{
+            width:667;
+        }
+        .mrgnTop16{
+            margin-top: 16px;
+        }
+        .colorGrey{
+            color: grey;
+        }
+        .fltRightDispNone{
+            float:right;
+            display:none;
+        }
+        .mrgnTop-48{
+            margin-top: -48px;
+        }
+        .mrgnLeft0px{
+            margin-left:0px;
+        }
+        .width725{
+            width: 725px;
+        }
+    </style>
+    <div id="loadingElementParentDiv" class="loadingElementParentDiv dsplyZindexHtWidPos">
+        <div 
+            class="zIndexBkgrdFltrDisp">
+            <div id="innerLoadingDiv">
+                    <img src="/img/loading.gif" class="imgLeftTopDisp" / >
+            </div>    
+        </div>
+    </div>
+    
+    <div id="bodyWrapper">
+    <div class="breadcumWrp">
+      <!-- <h1 class="dispNormal">Search Answer Center</h1> -->
+    </div>
+    <div id="middle-container" class="mnHtTopMargn">
+    <apex:outputPanel layout="none" id="QESSearch">
+    <apex:outputPanel layout="none">
+    <apex:form id="theForm">
+        <apex:actionFunction name="refineSearch" action="{!doQESSearch}"
+              status="refineStatus" immediate="true" reRender="KnowledgePanel"
+              focus="pg" oncomplete="hideLoadingImage();">
+             <apex:param value="" name="searchCriteria" assignTo="{!searchCriteria}" />    
+        </apex:actionFunction>
+        <apex:actionFunction name="clearfilters"
+                    action="{!clearAllFilters}" immediate="true"
+                    rerender="CategoryFilters,KnowledgePanel"
+                    status="refineStatus" focus="pg" 
+                    oncomplete="hideLoadingImage();"/> 
+    </apex:form>
+  
+    <apex:outputPanel id="CategoryFilters">
+        <div class="custom-search-left fll">
+            <div class="sidemnuNarrowSearch">
+                <h3 class="dispBlockWithFont">Narrow Search Results</h3>
+                    <div class="filterSearchBox">
+                        <div class="padn8">
+                            <div class="filterSerchAlign">
+                                <apex:repeat value="{!listCategoryGroupSelection}"
+                                             var="categoryconf" id="catchoice">
+                                    <div>
+                                        <apex:outputPanel >
+                                            <h5 class="listHeader padnnDispBlk">
+                                                Filter By  {!categoryconf.categoryGroup.Category_Group_Label__c}
+                                                
+                                            </h5>
+                                        </apex:outputPanel>
+                                        <select class="changeMe4 outlinBrdrWdthnBkgrd"
+                                                      id="{!categoryconf.categoryGroup.Category_Group_Name__c}"
+                                                      name="{!categoryconf.categoryGroup.Category_Group_Name__c}"
+                                                      onchange="refineSearch()" size="1">
+                                                      
+                                                    <apex:outputPanel layout="none"
+                                                          rendered="{!currentCategory = noFilterValue}">
+                                                          <option value="{!categoryconf.categoryGroup.Category_Group_Name__c+':'+noFilterValue}"
+                                                                  class="selectME4 gselected" selected="selected">
+                                                                      {!noFilterLabel}
+                                                          </option>
+                                                    </apex:outputPanel>
+                                                    <apex:outputPanel layout="none"
+                                                          rendered="{!currentCategory != noFilterValue}">
+                                                            <option class="selectME4 gselected"
+                                                                    value="{!categoryconf.categoryGroup.Category_Group_Name__c+':'+noFilterValue}">
+                                                                        {!noFilterLabel}
+                                                            </option>
+                                                    </apex:outputPanel>
+                                                    
+                                                    <apex:outputPanel layout="none"
+                                                          rendered="{!categoryconf.selectedGroupItem!=categoryconf.categoryGroup.Category_Group_Name__c+':'+categoryconf.categoryGroup.Root_Category__c}">
+                                                          <option value="{!categoryconf.categoryGroup.Category_Group_Name__c+':'+categoryconf.categoryGroup.Root_Category__c}">
+                                                              All
+                                                          </option>
+                                                    </apex:outputPanel>
+                                                    <apex:outputPanel layout="none"
+                                                          rendered="{!categoryconf.selectedGroupItem=categoryconf.categoryGroup.Category_Group_Name__c+':'+categoryconf.categoryGroup.Root_Category__c}">
+                                                              <option value="{!categoryconf.categoryGroup.Category_Group_Name__c+':'+categoryconf.categoryGroup.Root_Category__c}"
+                                                                        selected="selected">All
+                                                              </option>
+                                                    </apex:outputPanel>
+                                                    
+                                                    <knowledge:categoryList categoryGroup="{!categoryconf.categoryGroup.Category_Group_Name__c}"
+                                                                        ancestorsOf="{!categoryconf.categoryGroup.Ancestors_Of__c}"
+                                                                        rootCategory="{!categoryconf.categoryGroup.Root_Category__c}"
+                                                                        categoryVar="category"
+                                                                        level="{!categoryconf.categoryGroup.Level_or_Depth__c}">
+                                                                        <apex:outputPanel layout="none"
+                                                                            rendered="{!OR(categoryconf.selectedGroupItem=categoryconf.categoryGroup.Category_Group_Name__c+':'+category.name, currentCategory=categoryconf.categoryGroup.Category_Group_Name__c+':'+category.name)}">
+                                                                            <option
+                                                                                value="{!categoryconf.categoryGroup.Category_Group_Name__c+':'+category.name}"
+                                                                                selected="selected">
+                                                                                <apex:outputText escape="false"
+                                                                                    value="" />
+                                                                                {!category.label}
+                                                                            </option>
+
+                                                                        </apex:outputPanel>
+                                                                        
+                                                                        <apex:outputPanel layout="none"
+                                                                            rendered="{!AND(categoryconf.selectedGroupItem!=categoryconf.categoryGroup.Category_Group_Name__c+':'+category.name, currentCategory!=categoryconf.categoryGroup.Category_Group_Name__c+':'+category.name)}">
+
+                                                                            <option
+                                                                                value="{!categoryconf.categoryGroup.Category_Group_Name__c+':'+category.name}">
+                                                                                <apex:outputText escape="false"
+                                                                                    value="" />
+                                                                                {!category.label}
+                                                                            </option>
+
+                                                                        </apex:outputPanel>
+                                                                        
+                                                    </knowledge:categoryList>
+                                        </select>
+                                    </div>
+                                </apex:repeat>
+                            </div>
+                            <div>
+                                <a href="#" class="clearFilter"> Clear All Filters </a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </apex:outputPanel> 
+    </apex:outputPanel>                
+    </apex:outputPanel>
+    <apex:outputPanel id="results">
+    <apex:outputPanel styleclass="mrgnLeft0">
+        <div class="custom-search-right fll mrgnLeft0">
+            <div class="searchContainer2 width637">
+                <apex:form >
+                    <apex:inputText id="search-q" value="{!currentKeyword}"
+                            onfocus="if (this.value == 'Type Questions or Keywords' ) this.value ='';"
+                            onblur="if (this.value == '' ) this.value = 'Type Questions or Keywords';"
+                            styleclass="search3 fll width372" />
+                    <apex:commandButton styleclass="gobtn" id="search-btn"
+                              immediate="false" action="{!doQESSearch}" value=""/>
+                                
+                </apex:form>    
+            </div>
+            <div class="width675">
+                <apex:outputPanel styleClass="searchResultInnerLeft fll mrgn0" id="innerpannel">
+                    <!-- BEGIN COMPONENT CODE TO RENDER ARTICLE SEARCH LIST -->
+                    <apex:variable var="oddrow" value="True" /> 
+                    <div style="display:{!IF((currentKeyword == '' ), 'none;', 'normal;')}"> 
+                        <apex:outputPanel styleclass="mrgnLeft0">
+                            <div class="searchResultHeader2">
+                                <h2 class="searchTxtArea fll">Search Results</h2>
+                                <div class="searchResultCount flr"></div>
+                            </div>
+                        </apex:outputPanel>
+                        <knowledge:articleList id="KnowledgePanel"  articleVar="article" keyword="{!currentKeyword}" hasMoreVar="hasMore" 
+                        pageNumber="{!qesCurrentPageNumber}" pageSize="10"
+                                                categories="{!categoryFilters}">
+                                               
+                            <script>                                                
+                                (function($) {
+                                    $(document).ready(function()
+                                    {
+                                        if('' == '{!currentKeyword}') {
+                                            return;
+                                        }
+                                          
+                                        if({!hasMore}!= true)
+                                        {
+                                            $('[id*=nextArticleLink]').hide();
+                                            if({!qesCurrentPageNumber}>1)
+                                            {
+                                                $('[id*=previous]').show();
+                                            }
+                                            else{
+                                                $('[id*=previous]').hide();
+                                            }
+                                        }
+                                        else{
+                                            $('[id*=nextArticleLink]').show();
+                                            if({!qesCurrentPageNumber}>1)
+                                            {
+                                                $('[id*=previous]').show();
+                                            }
+                                            else{
+                                                $('[id*=previous]').hide();
+                                            }
+                                        }
+                                    });
+                                } ) ( jQuery );
+                            </script>
+                            <!-- Render search header only when results are found -->
+                            <apex:outputPanel id="articlePanel" styleclass="mrgnLeft0 width667">
+                               <ul id="ul{!article.id}" class="searchArticleList2 mrgnLeft0">
+                                    <li id="articleli{!article.id}" class="{!IF(oddrow='True','','even')}" style="margin-left: 0">
+                                        <a target="_blank" href="/sr/apex/srsupportarticle?type={!Left(article.articleTypeName,
+                                                                      LEN(article.articleTypeName)-5)
+                                                                      }&&id={!article.id}" class="searchTitle"
+                                                                      >
+                                            <apex:outputtext rendered="{!LEN(article.title) <= 50}">{!article.title}</apex:outputtext>
+                                            <apex:outputtext rendered="{!LEN(article.title) > 50}">{!Left(article.title,47)}...</apex:outputtext>
+                                        </a>
+                                        <apex:outputText rendered="{!LEN(article.summary) > 200}"> {!Left(article.summary,197)}...
+                                        </apex:outputText>
+                                        <apex:outputText rendered="{!LEN(article.summary) <= 200}"> {!article.summary}
+                                        </apex:outputText>
+                                        <br></br>
+                                    </li>
+                                </ul>
+                            </apex:outputPanel>
+                            <apex:variable var="oddrow"
+                                         value="{!IF(oddrow='True','False','True')}" />
+                        </knowledge:articleList>
+                    </div>
+                    <apex:outputPanel id="noArtTxt">
+                        <div class="mrgnTop16">
+                            <h4 class="colorGrey">
+                                <center>No articles found matching your
+                                        selections. Please modify your search.
+                                </center>
+                            </h4>
+                        </div>
+                    </apex:outputPanel>
+                   
+                    <br/>
+                    <apex:form >
+                        <apex:commandLink id="nextArticleLink" styleClass="HiddenCmdLinkNext buttonSet newButton4 fltRightDispNone" value="Next" onclick="showLoadingImage();"
+                                 action="{!incrementPageNumber}"  
+                                 reRender="KnowledgePanel" 
+                                 oncomplete="hideLoadingImage();" />
+                        &nbsp;&nbsp;
+                        <apex:commandLink id="previousArticleLink" styleClass="HiddenCmdLinkPrevious buttonSet newButton5 fltRightDispNone" 
+                                 value="Previous" 
+                                 onclick="showLoadingImage();"
+                                 action="{!decrementPageNumber}"  
+                                 reRender="KnowledgePanel" 
+                                 oncomplete="hideLoadingImage();"/>
+                     </apex:form>
+               </apex:outputPanel>
+           </div>
+        </div>
+        </apex:outputPanel>
+        </apex:outputPanel>
+                        <!-- END COMPONENT CODE TO RENDER ARTICLE SEARCH LIST -->
+        <div class="clr">
+            <img src="images/customer/spacer.png" width="1" height="1"
+                            border="0" alt="" />
+        </div>
+        <div class="clr">
+                <img src="images/customer/spacer.png" width="1" height="1"
+                border="0" alt="" />
+            </div>
+        </div>
+    </div>
+    <script>
+    ( function($) {
+                  // first locate all of the select tags on the page and hide them
+                            $("select.changeMe4").css('display','none');
+                  //now, for each select box, run this function
+                            $("select.changeMe4").each(function()
+                            {
+                                                            
+                             var curSel = $(this);
+                 // get the CSS width from the original select box
+                             var gddWidth = $(curSel).css('width');
+                             var gddWidthL = gddWidth.slice(0,-2);
+                             var gddWidth2 = gddWidthL - 38;
+                             var gddWidth3 = gddWidthL - 16;
+                // build the new div structure
+                             var gddTop = '<div style="width:' + gddWidthL + 'px" class="selectME4" tabindex="0"><div class="cornerstop"><div><div></div></div></div><div class="middle"><div><div><div>';
+               //get the default selected option
+                             var whatSelected = $(curSel).children('option:selected').text();
+               //write the default
+                             var gddFirst = '<div class="first"><span class="selectME4 gselected" style="width:'+ gddWidth2 +  'px;">'+ whatSelected +'</span><span id="arrowImg4"></span><div class="clears"></div></div><ul class="selectME4">';
+              // create a new array of div options from the originals options
+                             var addItems = new Array();
+                              $(curSel).children('option').each( function() {
+                                        var text = $(this).text();
+                                        var selVal = $(this).attr('value');
+                                        var before =  '<li style="width:' + gddWidthL + 'px;"><a href="#" rel="' + selVal + '" tabindex="0"  style="width:' + gddWidth3 + 'px;">';
+                                        var after = '</a></li>';
+                                        addItems.push(before + text + after);
+                              });
+               //hide the default from the list of options
+               
+               // create the end of the div selectbox and close everything off
+                            var gddBottom ='</ul></div></div></div></div><div class="cornersbottom"><div><div></div></div></div></div>'
+              //write everything after each selectbox
+                             var GDD = gddTop + gddFirst + addItems.join('') + gddBottom;
+                             $(curSel).after(GDD);
+              //this var selects the div select box directly after each of the origials
+                             var nGDD = $(curSel).next('div.selectME4');
+                            $(nGDD).find('li:first').addClass("first");
+                            $(nGDD).find('li:last').addClass('last');
+             //handle the on click functions - push results back to old text box
+                            $(nGDD).click( function(e) 
+                            {
+                                var myTarA = $(e.target).attr('rel');
+                                var myTarT = $(e.target).text();
+                                var myTar = $(e.target);
+             //if closed, then open
+                                if( $(nGDD).find('li').css('display') == 'none')
+                                {
+                                    //this next line closes any other selectboxes that might be open
+                                    $('div.selectME4').find('li').css('display','none');
+                                    $(nGDD).find('li').css('display','block');
+                                                    
+                                   //if user clicks off of the div select box, then shut the whole thing down
+                                    $(document.window || 'body').click( function(f) 
+                                    {
+                                        var myTar2 = $(f.target);
+                                        if (myTar2 !== nGDD) {$(nGDD).find('li').css('display','none');}
+                                    });
+                                    return false;
+                                }
+                                else
+                                {
+                                     if (myTarA == null){
+                                                $(nGDD).find('li').css('display','none');
+                                                        return false;
+                                                }
+                                     else {
+                                           //set the value of the old select box
+                                               $(curSel).val(myTarA);
+                                           //set the text of the new one
+                                               $(nGDD).find('span.gselected').text(myTarT);
+                                               $(nGDD).find('li').css('display','none');
+                                               return false;
+                                          }
+                                 }
+                                                        //handle the tab index functions
+                                }).focus( function(e)
+                                {                        
+                                    $(nGDD).find('li:first').addClass('currentDD');
+                                    $(nGDD).find('li:last').addClass('lastDD');
+                                    function checkKey(e)
+                                    {
+                                 //on keypress handle functions
+                                        function moveDown() {
+                                            var current = $(nGDD).find('.currentDD:first');
+                                            var next = $(nGDD).find('.currentDD').next();
+                                            if ($(current).is('.lastDD'))
+                                            {
+                                                return false;
+                                            } else {
+                                                $(next).addClass('currentDD');
+                                                $(current).removeClass('currentDD');
+                                            }
+                                        }
+                                        function moveUp()
+                                        {
+                                            var current = $(nGDD).find('.currentDD:first');
+                                            var prev = $(nGDD).find('.currentDD').prev();
+                                            if ($(current).is('.first'))
+                                            {
+                                                return false;
+                                            } 
+                                            else {
+                                                    $(prev).addClass('currentDD');
+                                                    $(current).removeClass('currentDD');
+                                                }
+                                        }
+                                        var curText = $(nGDD).find('.currentDD:first').text();
+                                        var curVal = $(nGDD).find('.currentDD:first a').attr('rel');
+                                        switch (e.keyCode) 
+                                        {
+                                            case 40:
+                                                $(curSel).val(curVal);
+                                                $(nGDD).find('span.gselected').text(curText);
+                                                moveDown();
+                                                return false;
+                                                break;
+                                            case 38:
+                                                $(curSel).val(curVal);
+                                                $(nGDD).find('span.gselected').text(curText);
+                                                moveUp();
+                                                return false;
+                                                break;
+                                            case 13:
+                                                $(nGDD).find('li').css('display','none');
+                                        }
+                                    }
+                                    $(document).keydown(checkKey);
+                                }).blur( function()
+                                {
+                                    $(document).unbind('keydown');
+                                });
+                            });
+                                                        
+                                $('.selectME4 li a').click(
+                                    function()
+                                    {
+                                        $('.loadingElementParentDiv').show();
+                                        refineSearch($(this).attr('rel'));
+                                    }
+                                );
+                                if($('.search3').val() == '')
+                                $('.search3').val('Type Questions or Keywords');
+                                $('.clearFilter').click
+                                (
+                                    function()
+                                    {                
+                                        $('.loadingElementParentDiv').show();
+                                         clearfilters();       
+                                    }
+                                );                                                    
+                  } 
+           ) ( jQuery );   
+           function documentReady() {
+            if(true == docReadyCalled) {
+                return;
+            }
+            ( function($) {     
+                $('a.searchTitle').click(
+                function(e)
+                {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    var URL = $(this).attr('href');
+                    window.open(URL,'', 'height=550,width=1024,location=no,resizable=yes,toolbar=no,status=no,menubar=no,scrollbars=yes');
+                });
+                                   
+                                      
+            $('.articlesNextButton').click(
+                function(e)
+                {
+                    $('.loadingElementParentDiv').show();
+                    window.scroll(0,200);
+                    e.preventDefault();
+                    e.stopPropagation();                                                                                  
+                    $('.HiddenCmdLinkNext').click();                            
+                    return false;
+                }
+            );
+             
+            $('.articlesPreviousButton').click(
+                function(e)
+                {
+                    $('.loadingElementParentDiv').show();
+                    window.scroll(0,200);
+                    e.preventDefault();
+                    e.stopPropagation();                    
+                    $('.HiddenCmdLinkPrevious').click(); 
+                    return false;                                             
+                }
+            );
+                            
+            function redir(rUrl,e)
+            {             
+                e.preventDefault();
+                e.stopPropagation();  
+                return false;
+            }
+        } ) ( jQuery );
+        docReadyCalled = true;
+    }
+
+    var docReadyCalled = false;
+    function updateRating() { 
+        ( function($) {
+                    hideLoadingImage();
+            } ) ( jQuery );        
+        }
+
+        function showLoadingImage() { 
+            ( function($) {
+               $('.loadingElementParentDiv').show(); 
+               window.scroll(0,200);           
+            } ) ( jQuery );        
+        }        
+                        
+        function hideLoadingImage() { 
+            ( function($) {              
+               documentReady();
+               showMsg();
+               $('.loadingElementParentDiv').hide(); 
+                         
+            } ) ( jQuery );        
+        }
+        
+        /*function verifySearchKey()
+        {
+            (function($){
+                if($('[id*=search-q]').val() == ''  || $('[id*=search-q]').val() == 'Type Questions or Keywords')
+                {
+                    alert('wrong keyword');
+                    return false;
+                }
+                else
+                {
+                    alert('correct keyword');
+                    callQesSearch($('[id*=search-q]').val());
+                }
+            })(jQuery);
+        }*/
+        function showMsg(){
+            (function($){
+                if($(".searchTitle").length==0)
+                {
+                    $('[id*=previous]').hide();
+                    $('[id*=nextArticleLink]').hide();
+                    if('{!currentKeyword}' != ''){
+                        $('[id*=noArtTxt]').show();   
+                    }
+                    else
+                    {
+                        $('[id*=noArtTxt]').hide();    
+                    }
+                 }
+                 else
+                 {
+                     $('[id*=noArtTxt]').hide();        
+                 }
+             })(jQuery); 
+        }
+        
+        ( function($) {        
+            $(document).ready( function() {
+                                
+                $('[id*=noArtTxt]').hide();
+                showMsg();              
+                $('.clearFilter').click(function(){
+                    $("#loadinglement").css("opacity", "0.5");
+                });
+                $('.middle').click(function(){
+                    $("#loadinglement").css("opacity", "0.5");
+                });                  
+                documentReady();
+                
+            });                                                                        
+        } ) ( jQuery );                                                                        
+    </script>
+
+</apex:page>

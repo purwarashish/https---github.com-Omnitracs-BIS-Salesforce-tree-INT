@@ -1,0 +1,1201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>AssignOldLocationType</name>
+        <label>AssignOldLocationType</label>
+        <locationX>580</locationX>
+        <locationY>429</locationY>
+        <assignmentItems>
+            <assignToReference>LocationType_New</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>LocationType_old</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Choices_To_Apply</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>AssignValueForContractAddress</name>
+        <label>AssignValueForContractAddress</label>
+        <locationX>992</locationX>
+        <locationY>1038</locationY>
+        <assignmentItems>
+            <assignToReference>ContractAddress.Address_Line_1__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Address_Line_1</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ContractAddress.Address_Line_2__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Address_Line_2</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ContractAddress.Attention__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Attention</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ContractAddress.City__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>City</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ContractAddress.State_Province__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>State_Province</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ContractAddress.Zip_Postal_Code__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Zip_Postal_Code</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ContractAddress.Email_Address__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Email</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ContractAddress.Phone_Number__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Phone</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ContractAddress.Country__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Country</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ContractAddress.Fax_Number__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Fax</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UpdateContractAddresses</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>NewLocationTypeAssignment</name>
+        <label>NewLocationTypeAssignment</label>
+        <locationX>871</locationX>
+        <locationY>388</locationY>
+        <assignmentItems>
+            <assignToReference>LocationType_New</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>New_Location_Type</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Choices_To_Apply</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>UpdateContractAddresses</name>
+        <label>UpdateContractAddresses</label>
+        <locationX>957</locationX>
+        <locationY>1272</locationY>
+        <assignmentItems>
+            <assignToReference>UpdateContract_Addresses</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>ContractAddress</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>ScanAllAddress</targetReference>
+        </connector>
+    </assignments>
+    <choices>
+        <name>Additional_Party_Notice_Address_cc</name>
+        <choiceText>Additional Party Notice Address - cc</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Additional Party Notice Address - cc</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Additional_Party_Notice_Address_Primary</name>
+        <choiceText>Additional Party Notice Address - Primary</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Additional Party Notice Address - Primary</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Apply_also_to_all_Contracts_that_use_this_Address</name>
+        <choiceText>Apply update also to all Contracts that use this Address</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Contracts</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Apply_only_to_this_Account_Address_record</name>
+        <choiceText>Apply update only to this Account Address record</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Account</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Billing_Address</name>
+        <choiceText>Billing Address</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Billing Address</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Certificate_of_Insurance_Notice</name>
+        <choiceText>Certificate of Insurance Notice</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Certificate of Insurance Notice</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Contract_Expiration_Auto_Renew</name>
+        <choiceText>Contract Expiration (Auto-Renew)</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Auto</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Contract_Expiration_Fixed</name>
+        <choiceText>Contract Expiration (Fixed)</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Fixed</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Contract_Specific_Address</name>
+        <choiceText>Contract Specific Address</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Contract Specific Address</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Deliverable_Due_to_Customer</name>
+        <choiceText>Deliverable Due to Customer</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Deliverable Due to Customer</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Deliverable_Due_to_Omnitracs</name>
+        <choiceText>Deliverable Due to Omnitracs</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Deliverable Due to Omnitracs</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Exit_out_of_this_menu</name>
+        <choiceText>Exit out of this menu - cancel all changes</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Exit</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Express_Mail_Address</name>
+        <choiceText>Express Mail Address</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Express Mail Address</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Government_Specific_Address</name>
+        <choiceText>Government Specific Address</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Government Specific Address</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Indemnity_Request_Status</name>
+        <choiceText>Indemnity Request Status</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Indemnity Request Status</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Invoice_Address</name>
+        <choiceText>Invoice Address</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Invoice Address</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>NDA_Expiration</name>
+        <choiceText>NDA Expiration</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>NDA Expiration</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>No</name>
+        <choiceText>No</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>No</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>No_Template_Just_add_Comments_below</name>
+        <choiceText>No Template</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Notice</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Notice_Address_cc</name>
+        <choiceText>Notice Address - cc</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Notice Address - cc</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Notice_Address_Primary</name>
+        <choiceText>Notice Address - Primary</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Notice Address - Primary</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Omni_Legal_Omni_Canada_Contracts</name>
+        <choiceText>Omni-Legal/Omni-Canada Contracts</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Omni-Legal/Omni-Canada Contracts</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Omni_Procurement</name>
+        <choiceText>Omni-Procurement</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Omni-Procurement</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Pricing_Notice_Address</name>
+        <choiceText>Pricing Notice Address</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Pricing Notice Address</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Remit_to_Address</name>
+        <choiceText>Remit to Address</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Remit to Address</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Shipping_Address</name>
+        <choiceText>Shipping Address</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Shipping Address</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>tleast1</name>
+        <choiceText>tleast1</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>tleast1</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>tleast2</name>
+        <choiceText>tleast2</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>tleast2</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>tleast3</name>
+        <choiceText>tleast3</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>tleast3</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>TLSAM_Bauckman</name>
+        <choiceText>TLSAM-Bauckman</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>TLSAM-Bauckman</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>TLSAM_Coop</name>
+        <choiceText>TLSAM-Coop</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>TLSAM-Coop</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>X1_Year</name>
+        <choiceText>1 Year</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>365</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Yes</name>
+        <choiceText>Yes</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Yes</stringValue>
+        </value>
+    </choices>
+    <constants>
+        <name>SubjectText_Expiration</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Contract Expiration Alert</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>TaskRecordTypeID</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>012W00000000SVGIA2</stringValue>
+        </value>
+    </constants>
+    <decisions>
+        <name>First_Decision</name>
+        <label>First Decision</label>
+        <locationX>593</locationX>
+        <locationY>718</locationY>
+        <defaultConnectorLabel>No Selection</defaultConnectorLabel>
+        <rules>
+            <name>Apply_Only_to_This_Account_Address</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ChoiceWhatToDo</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Account</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Account_Address</targetReference>
+            </connector>
+            <label>Apply Only to This Account Address</label>
+        </rules>
+        <rules>
+            <name>Apply_to_this_Address_and_Also_to_all_Contracts</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ChoiceWhatToDo</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Contracts</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Account_Address_2</targetReference>
+            </connector>
+            <label>Apply to this Address and Also to all Contracts</label>
+        </rules>
+        <rules>
+            <name>Exit</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ChoiceWhatToDo</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Exit</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Exit</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Modify_Location_Type_Choice</name>
+        <label>Modify Location Type Choice</label>
+        <locationX>578</locationX>
+        <locationY>270</locationY>
+        <defaultConnector>
+            <targetReference>AssignOldLocationType</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Change to Location Type</defaultConnectorLabel>
+        <rules>
+            <name>Change_Location_Type</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Do_you_want_to_change_the_Location_Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Modify_Location_Type</targetReference>
+            </connector>
+            <label>Change Location Type</label>
+        </rules>
+    </decisions>
+    <description>v3</description>
+    <label>Address Change Wizard</label>
+    <loops>
+        <name>ScanAllAddress</name>
+        <label>ScanAllAddress</label>
+        <locationX>603</locationX>
+        <locationY>1152</locationY>
+        <assignNextValueToReference>ContractAddress</assignNextValueToReference>
+        <collectionReference>CurrentContractAddresses</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>AssignValueForContractAddress</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>UpdateContractAddressWithChange</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>LookupAddress</name>
+        <label>LookupAddress</label>
+        <locationX>575</locationX>
+        <locationY>26</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Modify_Address</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varID</elementReference>
+            </value>
+        </filters>
+        <object>Address__c</object>
+        <outputAssignments>
+            <assignToReference>Address_Line_1_old</assignToReference>
+            <field>Address_Line_1__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Address_Line_2_old</assignToReference>
+            <field>Address_Line_2__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Attention_old</assignToReference>
+            <field>Attention__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>City_old</assignToReference>
+            <field>City__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Country_old</assignToReference>
+            <field>Country__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Email_old</assignToReference>
+            <field>Email_Address__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Fax_old</assignToReference>
+            <field>Fax_Number__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>LocationType_old</assignToReference>
+            <field>Location_Type__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Phone_old</assignToReference>
+            <field>Phone_Number__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>State_old</assignToReference>
+            <field>State_Province__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Zip_old</assignToReference>
+            <field>Zip_Postal_Code__c</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <name>LookupAllContractAddress</name>
+        <label>LookupAllContractAddress</label>
+        <locationX>603</locationX>
+        <locationY>1062</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>ScanAllAddress</targetReference>
+        </connector>
+        <filters>
+            <field>Account_Address__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varID</elementReference>
+            </value>
+        </filters>
+        <object>Contract_Address__c</object>
+        <outputReference>CurrentContractAddresses</outputReference>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Account_Address</name>
+        <label>Update Account Address</label>
+        <locationX>971</locationX>
+        <locationY>717</locationY>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varID</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Address_Line_1__c</field>
+            <value>
+                <elementReference>Address_Line_1</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Address_Line_2__c</field>
+            <value>
+                <elementReference>Address_Line_2</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Attention__c</field>
+            <value>
+                <elementReference>Attention</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>City__c</field>
+            <value>
+                <elementReference>City</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Country__c</field>
+            <value>
+                <elementReference>Country</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Email_Address__c</field>
+            <value>
+                <elementReference>Email</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Fax_Number__c</field>
+            <value>
+                <elementReference>Fax</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Location_Type__c</field>
+            <value>
+                <elementReference>LocationType_New</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Phone_Number__c</field>
+            <value>
+                <elementReference>Phone</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>State_Province__c</field>
+            <value>
+                <elementReference>State_Province</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Zip_Postal_Code__c</field>
+            <value>
+                <elementReference>Zip_Postal_Code</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Address__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Account_Address_2</name>
+        <label>Update Account Address 2</label>
+        <locationX>597</locationX>
+        <locationY>921</locationY>
+        <connector>
+            <targetReference>LookupAllContractAddress</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varID</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Address_Line_1__c</field>
+            <value>
+                <elementReference>Address_Line_1</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Address_Line_2__c</field>
+            <value>
+                <elementReference>Address_Line_2</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Attention__c</field>
+            <value>
+                <elementReference>Attention</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>City__c</field>
+            <value>
+                <elementReference>City</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Country__c</field>
+            <value>
+                <elementReference>Country</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Email_Address__c</field>
+            <value>
+                <elementReference>Email</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Fax_Number__c</field>
+            <value>
+                <elementReference>Fax</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Location_Type__c</field>
+            <value>
+                <elementReference>LocationType_New</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Phone_Number__c</field>
+            <value>
+                <elementReference>Phone</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>State_Province__c</field>
+            <value>
+                <elementReference>State_Province</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Zip_Postal_Code__c</field>
+            <value>
+                <elementReference>Zip_Postal_Code</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Address__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UpdateContractAddressWithChange</name>
+        <label>UpdateContractAddressWithChange</label>
+        <locationX>597</locationX>
+        <locationY>1362</locationY>
+        <connector>
+            <targetReference>Choices_To_Apply_0</targetReference>
+        </connector>
+        <inputReference>UpdateContract_Addresses</inputReference>
+    </recordUpdates>
+    <screens>
+        <name>Choices_To_Apply</name>
+        <label>Choices To Apply</label>
+        <locationX>586</locationX>
+        <locationY>593</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>First_Decision</targetReference>
+        </connector>
+        <fields>
+            <name>ChoiceWhatToDo</name>
+            <choiceReferences>Apply_only_to_this_Account_Address_record</choiceReferences>
+            <choiceReferences>Apply_also_to_all_Contracts_that_use_this_Address</choiceReferences>
+            <choiceReferences>Exit_out_of_this_menu</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>What would you like to do?</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Choices_To_Apply_0</name>
+        <label>Choices To Apply</label>
+        <locationX>599</locationX>
+        <locationY>1505</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>FinishText</name>
+            <fieldText>&lt;SPAN ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;&lt;B&gt;All Contract Related addresses have been updated to reflect the change.&lt;/B&gt;&lt;/FONT&gt;&lt;/SPAN&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Modify_Address</name>
+        <label>Modify Address</label>
+        <locationX>579</locationX>
+        <locationY>157</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Modify_Location_Type_Choice</targetReference>
+        </connector>
+        <fields>
+            <name>Instructions</name>
+            <fieldText>Please modify the Address fields as needed</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Address_Line_1</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Address_Line_1_old</elementReference>
+            </defaultValue>
+            <fieldText>Address Line 1</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Address_Line_2</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Address_Line_2_old</elementReference>
+            </defaultValue>
+            <fieldText>Address Line 2</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>City</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>City_old</elementReference>
+            </defaultValue>
+            <fieldText>City</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>State_Province</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>State_old</elementReference>
+            </defaultValue>
+            <fieldText>State/Province</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+            <validationRule>
+                <errorMessage>For US or Canada please enter a 2-letter code for State or Province</errorMessage>
+                <formulaExpression>LEN({!State_Province}) &lt;&gt; 2 &amp;&amp; OR(
+{!Country} = &quot;United States&quot; ,
+{!Country} = &quot;&quot;,
+{!Country} = &quot;US&quot;,
+{!Country} = &quot;USA&quot;,
+{!Country} = &quot;Canada&quot;)</formulaExpression>
+            </validationRule>
+        </fields>
+        <fields>
+            <name>Zip_Postal_Code</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Zip_old</elementReference>
+            </defaultValue>
+            <fieldText>Zip/Postal Code</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Country</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Country_old</elementReference>
+            </defaultValue>
+            <fieldText>Country</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Attention</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Attention_old</elementReference>
+            </defaultValue>
+            <fieldText>Attention</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Email</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Email_old</elementReference>
+            </defaultValue>
+            <fieldText>Email</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Phone</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Phone_old</elementReference>
+            </defaultValue>
+            <fieldText>Phone</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Fax</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Fax_old</elementReference>
+            </defaultValue>
+            <fieldText>Fax</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>CurrentType</name>
+            <fieldText>Current Location Type is:   {!LocationType_old}</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Do_you_want_to_change_the_Location_Type</name>
+            <choiceReferences>No</choiceReferences>
+            <choiceReferences>Yes</choiceReferences>
+            <dataType>String</dataType>
+            <defaultSelectedChoiceReference>No</defaultSelectedChoiceReference>
+            <fieldText>Do you want to change the Location Type?</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Modify_Location_Type</name>
+        <label>Modify Location Type</label>
+        <locationX>866</locationX>
+        <locationY>273</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>NewLocationTypeAssignment</targetReference>
+        </connector>
+        <fields>
+            <name>CurrentLocationType2</name>
+            <fieldText>Current Location Type is:  {!LocationType_old}</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>New_Location_Type</name>
+            <choiceReferences>Additional_Party_Notice_Address_cc</choiceReferences>
+            <choiceReferences>Additional_Party_Notice_Address_Primary</choiceReferences>
+            <choiceReferences>Billing_Address</choiceReferences>
+            <choiceReferences>Contract_Specific_Address</choiceReferences>
+            <choiceReferences>Express_Mail_Address</choiceReferences>
+            <choiceReferences>Invoice_Address</choiceReferences>
+            <choiceReferences>Notice_Address_cc</choiceReferences>
+            <choiceReferences>Notice_Address_Primary</choiceReferences>
+            <choiceReferences>Pricing_Notice_Address</choiceReferences>
+            <choiceReferences>Government_Specific_Address</choiceReferences>
+            <choiceReferences>Remit_to_Address</choiceReferences>
+            <choiceReferences>Shipping_Address</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>New Location Type</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <startElementReference>LookupAddress</startElementReference>
+    <status>Obsolete</status>
+    <textTemplates>
+        <name>AutoRenewFullText</name>
+        <text>The purpose of this notification is to let you know that the current term of the Agreement referenced below will expire on {!EndDate}.
+
+Please work with your Contracts Administrator to take ONE of the following actions:
+
+ 
+
+1. NO ACTION:  allow the agreement to auto-renew (roll into evergreen)
+
+2. EXTEND/RENEW the agreement
+
+3. TERMINATE
+
+ 
+
+Termination Notice must be received/sent by {!EndDate} in order to terminate at the end of the current term.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>CertificateofInsuranceNotice</name>
+        <text>This alert is being sent to you to remind you that the Certificate of Insurance required under this contract is expiring.  Please follow up on the receipt of a current Certificate of Insurance if one is still required.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>DeliverableDuetoCustomer</name>
+        <text>A deliverable is due to this customer for the contract referenced below on .  Please determine if we will be timely or if an extension is needed.  When delivered, contact Finance as required for any applicable invoicing that needs to go to customer.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>DeliverableDuetoOmnitracs</name>
+        <text>A deliverable is due to Omnitracs for the contract referenced below on .  This requires confirmation that the deliverable is received as required by the contract and satisfactory to Omnitracs.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>FixedFullText</name>
+        <text>The purpose of this notification is to let you know that the Term of the Agreement referenced below will expire on {!EndDate}.  Please advise your Contract Administrator if you want to extend the term of this agreement.
+
+ 
+
+NO ACTION WILL RESULT IN THE EXIRATION OF THE AGREEMENT.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>IndemnityRequestStatus</name>
+        <text>Please review any actions and/or correspondence that have taken place regarding this request and update this profile accordingly.  Any correspondence that have been sent and/or received must be uploaded as supplemental documentation in the documents tab.  Any actions and/or resolutions must be updated in the description field.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>NDACommentFullText</name>
+        <text>The below-referenced NDA will expire in 30 days. You are receiving this e-mail because you or your department is listed as the NDA&apos;s original requestor.
+ 
+
+THIS NDA WILL EXPIRE IF YOU DO NOT TAKE ACTION. If it is necessary to keep this NDA active, please forward the following information to the OMNITRACS NDA Department (nda@omnitracs.com):
+
+ 
+
+(1) the current complete legal name of the company,
+
+(2) the current address of company,
+
+(3) your current contact at the company,
+
+(4) your current contact&apos;s email address,
+
+(5) your current contact&apos;s phone number, and
+
+(6) your current contact&apos;s fax number.
+
+ 
+
+Thank You
+
+ 
+
+OMNITRACS NDA Department
+
+nda@omnitracs.com</text>
+    </textTemplates>
+    <variables>
+        <name>AccountID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>Address_Line_1_old</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>Address_Line_2_old</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>Attention_old</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>City_old</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>ContractAddress</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Contract_Address__c</objectType>
+    </variables>
+    <variables>
+        <name>Country_old</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>CurrentContractAddresses</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Contract_Address__c</objectType>
+    </variables>
+    <variables>
+        <name>Email_old</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>EndDate</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>ExpTaskID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>Fax_old</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>LocationType_New</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>LocationType_old</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>NoticeTaskID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>OwnerID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>Phone_old</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>State_old</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>UpdateContract_Addresses</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Contract_Address__c</objectType>
+    </variables>
+    <variables>
+        <name>varID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>Zip_old</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

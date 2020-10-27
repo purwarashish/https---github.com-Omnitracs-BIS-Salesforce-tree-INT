@@ -1,0 +1,37 @@
+<apex:page standardController="User_Story__c" tabStyle="User_Story__c" extensions="ViewUserStory_Ext">
+    <apex:messages />
+    <apex:detail relatedList="false" showChatter="true"/>
+    <apex:relatedList list="User_Story_Requirements__r"/>
+    <apex:form id="theForm">
+        <apex:pageBlock rendered="{!canAccess}">
+            <apex:pageBlockSection columns="1" title="Associate Existing Requirements">
+                <apex:pageBlockSectionItem >
+                    <apex:commandButton action="{!doSave}" value="Save Assignments" style="margin-left:415px;"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Filter by Track"/>
+                    <apex:selectList value="{!selectedFilter}" size="1">
+                        <apex:selectOptions value="{!filterOptions}"/>
+                        <apex:actionSupport event="onchange" action="{!refreshFilter}" rerender="theForm"/> 
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Associate Existing Requirements" rendered="false"/>
+                    <apex:outputPanel id="menus">
+                        <c:MultiselectPicklist leftLabel="Unassigned Requirements"
+                            leftOptions="{!unassignedReqsList}"
+                            rightLabel="Assigned Requirements"
+                            rightOptions="{!assignedReqsList}"
+                            size="5"
+                            width="275px"/>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:commandButton action="{!doSave}" value="Save Assignments" style="margin-left:415px;"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+    <apex:relatedList list="Action_Items__r"/>
+</apex:page>

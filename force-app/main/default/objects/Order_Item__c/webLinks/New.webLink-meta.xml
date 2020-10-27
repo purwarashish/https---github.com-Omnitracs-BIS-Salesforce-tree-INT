@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New</fullName>
+    <availability>online</availability>
+    <description>Return to Sales Order request after entering new order line</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/a0W/e?CF00N50000001uOEP={!Sales_Order_Request__c.Name}&amp;CF00N50000001uOEP_lkid={!Sales_Order_Request__c.Id}&amp;retURL=%2F{!Sales_Order_Request__c.Id}&amp;cancelURL=%2F{!Sales_Order_Request__c.Id}&amp;saveURL=%2F{!Sales_Order_Request__c.Id}</url>
+</WebLink>

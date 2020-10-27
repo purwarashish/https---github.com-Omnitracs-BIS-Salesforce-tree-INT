@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Competitive_Products_Offered__c</fullName>
+    <description>Owned by Strategic Alliance Team (Matt Martinez &amp; Joe Vastine)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>What competitive products do they offer? Please select from this list.</inlineHelpText>
+    <label>Competitive Products Offered?</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Critical Event Video</fullName>
+                <default>false</default>
+                <label>Critical Event Video</label>
+            </value>
+            <value>
+                <fullName>Data Plan</fullName>
+                <default>false</default>
+                <label>Data Plan</label>
+            </value>
+            <value>
+                <fullName>Enterprise Services – Active Driver Coach</fullName>
+                <default>false</default>
+                <label>Enterprise Services – Active Driver Coach</label>
+            </value>
+            <value>
+                <fullName>Enterprise Services – Analytics Manager</fullName>
+                <default>false</default>
+                <label>Enterprise Services – Analytics Manager</label>
+            </value>
+            <value>
+                <fullName>Enterprise Services – Critical Event Reporting</fullName>
+                <default>false</default>
+                <label>Enterprise Services – Critical Event Reporting</label>
+            </value>
+            <value>
+                <fullName>Enterprise Services – Critical Event Video</fullName>
+                <default>false</default>
+                <label>Enterprise Services – Critical Event Video</label>
+            </value>
+            <value>
+                <fullName>Enterprise Services – Customer Portal</fullName>
+                <default>false</default>
+                <label>Enterprise Services – Customer Portal</label>
+            </value>
+            <value>
+                <fullName>Enterprise Services – Driver Workflow</fullName>
+                <default>false</default>
+                <label>Enterprise Services – Driver Workflow</label>
+            </value>
+            <value>
+                <fullName>Enterprise Services – Exact Fuel</fullName>
+                <default>false</default>
+                <label>Enterprise Services – Exact Fuel</label>
+            </value>
+            <value>
+                <fullName>Enterprise Services – Extended Fault Monitoring</fullName>
+                <default>false</default>
+                <label>Enterprise Services – Extended Fault Monitoring</label>
+            </value>
+            <value>
+                <fullName>Enterprise Services – Extended Productivity (BlueDot)</fullName>
+                <default>false</default>
+                <label>Enterprise Services – Extended Productivity (BlueDot)</label>
+            </value>
+            <value>
+                <fullName>Enterprise Services – Fault Monitoring</fullName>
+                <default>false</default>
+                <label>Enterprise Services – Fault Monitoring</label>
+            </value>
+            <value>
+                <fullName>Enterprise Services – Fuel Tax Automation</fullName>
+                <default>false</default>
+                <label>Enterprise Services – Fuel Tax Automation</label>
+            </value>
+            <value>
+                <fullName>Enterprise Services – In-Cab Printing</fullName>
+                <default>false</default>
+                <label>Enterprise Services – In-Cab Printing</label>
+            </value>
+            <value>
+                <fullName>Enterprise Services – In-Cab Scanning</fullName>
+                <default>false</default>
+                <label>Enterprise Services – In-Cab Scanning</label>
+            </value>
+            <value>
+                <fullName>Enterprise Services – Media Manager</fullName>
+                <default>false</default>
+                <label>Enterprise Services – Media Manager</label>
+            </value>
+            <value>
+                <fullName>Enterprise Services – Mobile Apps</fullName>
+                <default>false</default>
+                <label>Enterprise Services – Mobile Apps</label>
+            </value>
+            <value>
+                <fullName>Enterprise Services – Mobile Data Capture</fullName>
+                <default>false</default>
+                <label>Enterprise Services – Mobile Data Capture</label>
+            </value>
+            <value>
+                <fullName>Enterprise Services - Mobile Hours of Service</fullName>
+                <default>false</default>
+                <label>Enterprise Services - Mobile Hours of Service</label>
+            </value>
+            <value>
+                <fullName>Enterprise Services – Per Diem Manager</fullName>
+                <default>false</default>
+                <label>Enterprise Services – Per Diem Manager</label>
+            </value>
+            <value>
+                <fullName>Enterprise Services – Performance Monitoring</fullName>
+                <default>false</default>
+                <label>Enterprise Services – Performance Monitoring</label>
+            </value>
+            <value>
+                <fullName>Enterprise Services – Services Portal</fullName>
+                <default>false</default>
+                <label>Enterprise Services – Services Portal</label>
+            </value>
+            <value>
+                <fullName>Enterprise Services - Support Portal</fullName>
+                <default>false</default>
+                <label>Enterprise Services - Support Portal</label>
+            </value>
+            <value>
+                <fullName>Enterprise Services – Tire Inflation Alerts</fullName>
+                <default>false</default>
+                <label>Enterprise Services – Tire Inflation Alerts</label>
+            </value>
+            <value>
+                <fullName>Enterprise Services – Tire Pressure Monitoring</fullName>
+                <default>false</default>
+                <label>Enterprise Services – Tire Pressure Monitoring</label>
+            </value>
+            <value>
+                <fullName>Enterprise Services – Trailer ID</fullName>
+                <default>false</default>
+                <label>Enterprise Services – Trailer ID</label>
+            </value>
+            <value>
+                <fullName>Enterprise Services – Trip Manager</fullName>
+                <default>false</default>
+                <label>Enterprise Services – Trip Manager</label>
+            </value>
+            <value>
+                <fullName>Enterprise Services – Vehicle Inspection Reports</fullName>
+                <default>false</default>
+                <label>Enterprise Services – Vehicle Inspection Reports</label>
+            </value>
+            <value>
+                <fullName>Enterprise Services – Web Browser</fullName>
+                <default>false</default>
+                <label>Enterprise Services – Web Browser</label>
+            </value>
+            <value>
+                <fullName>Enterprise Services – Weigh Station Bypass</fullName>
+                <default>false</default>
+                <label>Enterprise Services – Weigh Station Bypass</label>
+            </value>
+            <value>
+                <fullName>GeoTRACS (Canada)</fullName>
+                <default>false</default>
+                <label>GeoTRACS (Canada)</label>
+            </value>
+            <value>
+                <fullName>Grove (Canada) - DVIR</fullName>
+                <default>false</default>
+                <label>Grove (Canada) - DVIR</label>
+            </value>
+            <value>
+                <fullName>Grove (Canada) - Enhanced Scanning</fullName>
+                <default>false</default>
+                <label>Grove (Canada) - Enhanced Scanning</label>
+            </value>
+            <value>
+                <fullName>Grove (Canada) - Finesse Hours of Service</fullName>
+                <default>false</default>
+                <label>Grove (Canada) - Finesse Hours of Service</label>
+            </value>
+            <value>
+                <fullName>Grove (Canada) - IFTA tool</fullName>
+                <default>false</default>
+                <label>Grove (Canada) - IFTA tool</label>
+            </value>
+            <value>
+                <fullName>Hours of Service</fullName>
+                <default>false</default>
+                <label>Hours of Service</label>
+            </value>
+            <value>
+                <fullName>Navigation – ALK CoPilot</fullName>
+                <default>false</default>
+                <label>Navigation – ALK CoPilot</label>
+            </value>
+            <value>
+                <fullName>Navigation – CER Black Spots</fullName>
+                <default>false</default>
+                <label>Navigation – CER Black Spots</label>
+            </value>
+            <value>
+                <fullName>Navigation – CER Posted Road Speed</fullName>
+                <default>false</default>
+                <label>Navigation – CER Posted Road Speed</label>
+            </value>
+            <value>
+                <fullName>Navigation – NaviGo</fullName>
+                <default>false</default>
+                <label>Navigation – NaviGo</label>
+            </value>
+            <value>
+                <fullName>Navigation – Omnitracs</fullName>
+                <default>false</default>
+                <label>Navigation – Omnitracs</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>OEM Solutions - Analytics and Faults</fullName>
+                <default>false</default>
+                <label>OEM Solutions - Analytics and Faults</label>
+            </value>
+            <value>
+                <fullName>Omnitracs Analytics – Accident Severity Model</fullName>
+                <default>false</default>
+                <label>Omnitracs Analytics – Accident Severity Model</label>
+            </value>
+            <value>
+                <fullName>Omnitracs Analytics – Active Driver Coaching</fullName>
+                <default>false</default>
+                <label>Omnitracs Analytics – Active Driver Coaching</label>
+            </value>
+            <value>
+                <fullName>Omnitracs Analytics – Automated Insights</fullName>
+                <default>false</default>
+                <label>Omnitracs Analytics – Automated Insights</label>
+            </value>
+            <value>
+                <fullName>Omnitracs Analytics – Driver Retention Model</fullName>
+                <default>false</default>
+                <label>Omnitracs Analytics – Driver Retention Model</label>
+            </value>
+            <value>
+                <fullName>Omnitracs Analytics – Fleet Business Intelligence</fullName>
+                <default>false</default>
+                <label>Omnitracs Analytics – Fleet Business Intelligence</label>
+            </value>
+            <value>
+                <fullName>Omnitracs Analytics – Recruitment Model</fullName>
+                <default>false</default>
+                <label>Omnitracs Analytics – Recruitment Model</label>
+            </value>
+            <value>
+                <fullName>Omnitracs Analytics – Safety Model</fullName>
+                <default>false</default>
+                <label>Omnitracs Analytics – Safety Model</label>
+            </value>
+            <value>
+                <fullName>Omnitracs Analytics – Workers’ Compensation Model</fullName>
+                <default>false</default>
+                <label>Omnitracs Analytics – Workers’ Compensation Model</label>
+            </value>
+            <value>
+                <fullName>Omnitracs Integrated Telematics (OIT)</fullName>
+                <default>false</default>
+                <label>Omnitracs Integrated Telematics (OIT)</label>
+            </value>
+            <value>
+                <fullName>OTAP Engine</fullName>
+                <default>false</default>
+                <label>OTAP Engine</label>
+            </value>
+            <value>
+                <fullName>OTAP Transmission</fullName>
+                <default>false</default>
+                <label>OTAP Transmission</label>
+            </value>
+            <value>
+                <fullName>RDC - Routing, Dispatching, and Compliance</fullName>
+                <default>false</default>
+                <label>RDC - Routing, Dispatching, and Compliance</label>
+            </value>
+            <value>
+                <fullName>Roadnet Active Alerts</fullName>
+                <default>false</default>
+                <label>Roadnet Active Alerts</label>
+            </value>
+            <value>
+                <fullName>Roadnet Anywhere</fullName>
+                <default>false</default>
+                <label>Roadnet Anywhere</label>
+            </value>
+            <value>
+                <fullName>Roadnet Dispatching</fullName>
+                <default>false</default>
+                <label>Roadnet Dispatching</label>
+            </value>
+            <value>
+                <fullName>Roadnet FleetLoader</fullName>
+                <default>false</default>
+                <label>Roadnet FleetLoader</label>
+            </value>
+            <value>
+                <fullName>Roadnet Fleetview</fullName>
+                <default>false</default>
+                <label>Roadnet Fleetview</label>
+            </value>
+            <value>
+                <fullName>Roadnet Insights</fullName>
+                <default>false</default>
+                <label>Roadnet Insights</label>
+            </value>
+            <value>
+                <fullName>Roadnet MobileCast</fullName>
+                <default>false</default>
+                <label>Roadnet MobileCast</label>
+            </value>
+            <value>
+                <fullName>Roadnet Routing</fullName>
+                <default>false</default>
+                <label>Roadnet Routing</label>
+            </value>
+            <value>
+                <fullName>Roadnet Scheduler</fullName>
+                <default>false</default>
+                <label>Roadnet Scheduler</label>
+            </value>
+            <value>
+                <fullName>Roadnet Territory Planner</fullName>
+                <default>false</default>
+                <label>Roadnet Territory Planner</label>
+            </value>
+            <value>
+                <fullName>Roadnet Transportation Suite</fullName>
+                <default>false</default>
+                <label>Roadnet Transportation Suite</label>
+            </value>
+            <value>
+                <fullName>Sylectus Alliance Network</fullName>
+                <default>false</default>
+                <label>Sylectus Alliance Network</label>
+            </value>
+            <value>
+                <fullName>Sylectus Mobile On-Demand</fullName>
+                <default>false</default>
+                <label>Sylectus Mobile On-Demand</label>
+            </value>
+            <value>
+                <fullName>Sylectus TMS</fullName>
+                <default>false</default>
+                <label>Sylectus TMS</label>
+            </value>
+            <value>
+                <fullName>Virtual Load View</fullName>
+                <default>false</default>
+                <label>Virtual Load View</label>
+            </value>
+            <value>
+                <fullName>XRS – Black Box Reconstruction</fullName>
+                <default>false</default>
+                <label>XRS – Black Box Reconstruction</label>
+            </value>
+            <value>
+                <fullName>XRS – Critical Event Video</fullName>
+                <default>false</default>
+                <label>XRS – Critical Event Video</label>
+            </value>
+            <value>
+                <fullName>XRS – Driver Performance Reporting</fullName>
+                <default>false</default>
+                <label>XRS – Driver Performance Reporting</label>
+            </value>
+            <value>
+                <fullName>XRS – Driver Vehicle Inspection Report</fullName>
+                <default>false</default>
+                <label>XRS – Driver Vehicle Inspection Report</label>
+            </value>
+            <value>
+                <fullName>XRS – Fleetview</fullName>
+                <default>false</default>
+                <label>XRS – Fleetview</label>
+            </value>
+            <value>
+                <fullName>XRS – Flex Forms</fullName>
+                <default>false</default>
+                <label>XRS – Flex Forms</label>
+            </value>
+            <value>
+                <fullName>XRS – IFTA Reporting</fullName>
+                <default>false</default>
+                <label>XRS – IFTA Reporting</label>
+            </value>
+            <value>
+                <fullName>XRS – Per Diem Manager</fullName>
+                <default>false</default>
+                <label>XRS – Per Diem Manager</label>
+            </value>
+            <value>
+                <fullName>XRS – Weigh Station Bypass</fullName>
+                <default>false</default>
+                <label>XRS – Weigh Station Bypass</label>
+            </value>
+            <value>
+                <fullName>Trailer Tracks</fullName>
+                <default>false</default>
+                <label>Trailer Tracks</label>
+            </value>
+            <value>
+                <fullName>Enterprise Services - DTTS</fullName>
+                <default>false</default>
+                <label>Enterprise Services - DTTS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

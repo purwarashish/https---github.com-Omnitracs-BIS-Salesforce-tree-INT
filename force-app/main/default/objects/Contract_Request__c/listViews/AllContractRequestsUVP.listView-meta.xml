@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllContractRequestsUVP</fullName>
+    <booleanFilter>1 OR 2</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Request_Type__c</columns>
+    <columns>Product__c</columns>
+    <columns>Product_Quantity__c</columns>
+    <columns>Service_Plan__c</columns>
+    <columns>Request_Status__c</columns>
+    <columns>Assigned_To__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Product__c</field>
+        <operation>equals</operation>
+        <value>OmniVision - Satellite UVP,OmniVision - Terrestrial UVP</value>
+    </filters>
+    <filters>
+        <field>Service_Plan__c</field>
+        <operation>contains</operation>
+        <value>UVP</value>
+    </filters>
+    <label>All Contract Requests - UVP</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>ContractsStaff</group>
+        <group>ContractsStaffmgrs</group>
+        <group>QESAllDomesticStrategicIntern</group>
+        <group>QESContractsSalesAdmin</group>
+        <group>QESDomestic</group>
+        <group>QESDomesticStrategic</group>
+        <group>QESExecutives</group>
+        <group>QESVPDivisionCounsel</group>
+        <group>TLAllAccounts</group>
+        <group>TLEasternRegion</group>
+        <group>TLEasternSales</group>
+        <group>TLInsideSales</group>
+        <group>TLMgrs</group>
+        <group>TLSalesManagement</group>
+        <group>TLStrategic</group>
+        <group>TLStrategicSales</group>
+        <group>TLUsers</group>
+        <group>TLWesternRegion</group>
+        <group>TLWesternSales</group>
+    </sharedTo>
+</ListView>

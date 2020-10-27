@@ -1,0 +1,16 @@
+{
+  "status": 0,
+  "result": {
+    "createdById": "0053F000006SgquQAC",
+    "createdByName": "Ashish Purwar",
+    "createdDate": "1970-01-01T00:00:00.000Z",
+    "fileName": "escalationRules/Case.escalationRules",
+    "fullName": "Case",
+    "id": "",
+    "lastModifiedById": "0053F000006SgquQAC",
+    "lastModifiedByName": "Ashish Purwar",
+    "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+    "namespacePrefix": "",
+    "type": "EscalationRules"
+  }
+}

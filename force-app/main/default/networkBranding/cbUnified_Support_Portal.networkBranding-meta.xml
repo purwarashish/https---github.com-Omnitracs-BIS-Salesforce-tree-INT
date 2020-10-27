@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NetworkBranding xmlns="http://soap.sforce.com/2006/04/metadata">
+    <loginFooterText>salesforce.com | Roadnet Technologies | Omnitracs, LLC</loginFooterText>
+    <loginLogo>Communities_Shared_Document_Folder/oct2015_Rebrand_OT_logo_250x58_png1.png</loginLogo>
+    <loginLogoName>oct2015 Rebrand OT logo_250x58.png</loginLogoName>
+    <loginPrimaryColor>#F5AC63</loginPrimaryColor>
+    <loginQuaternaryColor>#E5E5E5</loginQuaternaryColor>
+    <network>Unified Support Portal</network>
+    <pageHeader>ButtonsLogosImages/oct2015_Rebrand_OT_logo_250x58_png.png</pageHeader>
+    <primaryColor>#F5AC63</primaryColor>
+    <primaryComplementColor>#222222</primaryComplementColor>
+    <quaternaryColor>#E5E5E5</quaternaryColor>
+    <quaternaryComplementColor>#222222</quaternaryComplementColor>
+    <secondaryColor>#70A524</secondaryColor>
+    <tertiaryColor>#E5E5E5</tertiaryColor>
+    <tertiaryComplementColor>#222222</tertiaryComplementColor>
+    <zeronaryColor>#FFFFFF</zeronaryColor>
+    <zeronaryComplementColor>#222222</zeronaryComplementColor>
+</NetworkBranding>

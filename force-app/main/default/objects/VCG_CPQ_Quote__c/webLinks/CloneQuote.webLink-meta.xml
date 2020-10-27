@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CloneQuote</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Clone</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&apos;/soap/ajax/26.0/connection.js&apos;)} 
+{!REQUIRESCRIPT(&apos;/js/functions.js&apos;)} 
+var businessUnit = &apos;{!JSENCODE(VCG_CPQ_Quote__c.Primary_Business_Unit__c)}&apos;; 
+var quoteId = &apos;{!VCG_CPQ_Quote__c.Id}&apos;; 
+var loggedInUserProfileName = &apos;{!$Profile.Name}&apos;;
+
+if((businessUnit == &apos;Omnitracs Mexico&apos;)) 
+{ 
+alert(&apos;Clone feature is not available for Omnitracs Mexico Quotes&apos;); 
+window.location.reload(); 
+} 
+if (loggedInUserProfileName == &apos;Roadnet Partner Community User&apos;)
+{
+    top.location.href = &apos;/partners/apex/dh_superclone__superclone?rid=&apos;+quoteId+&apos;&amp;cfg=CPQ&amp;saveURL=apex/c__VCG_CPQ_Quote%3Fid%3D[newid]&apos;; 
+}
+else 
+{ 
+    top.location.href = &apos;/apex/dh_superclone__superclone?rid=&apos;+quoteId+&apos;&amp;cfg=CPQ&amp;saveURL=apex/c__VCG_CPQ_Quote%3Fid%3D[newid]&apos;; 
+}</url>
+</WebLink>

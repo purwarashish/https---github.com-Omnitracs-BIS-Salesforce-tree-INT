@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Omnitracs_Assignment_Rights__c</fullName>
+    <externalId>false</externalId>
+    <label>Omnitracs Assignment Rights</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No customer consent required</fullName>
+                <default>false</default>
+                <label>No customer consent required</label>
+            </value>
+            <value>
+                <fullName>Customer consent required except in event of restructure</fullName>
+                <default>false</default>
+                <label>Customer consent required except in event of restructure</label>
+            </value>
+            <value>
+                <fullName>Customer consent required, not to be unreasonably withheld</fullName>
+                <default>false</default>
+                <label>Customer consent required, not to be unreasonably withheld</label>
+            </value>
+            <value>
+                <fullName>Customer consent required</fullName>
+                <default>false</default>
+                <label>Customer consent required</label>
+            </value>
+            <value>
+                <fullName>Assignment prohibited</fullName>
+                <default>false</default>
+                <label>Assignment prohibited</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

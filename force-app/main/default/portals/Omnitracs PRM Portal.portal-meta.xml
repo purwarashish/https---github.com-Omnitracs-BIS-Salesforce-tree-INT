@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Portal xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <admin>qesadmin@qualcomm.com</admin>
+    <defaultLanguage>en_US</defaultLanguage>
+    <description>Primary Partner Portal</description>
+    <emailSenderAddress>prmsupport@omnitracs.com</emailSenderAddress>
+    <emailSenderName>Omnitracs Partner Management</emailSenderName>
+    <enableSelfCloseCase>false</enableSelfCloseCase>
+    <footerDocument>QES_CE_Partner_Portal_Theme_New/Footer_htm.html</footerDocument>
+    <forgotPassTemplate>PartnerRelationshipManagement/Partner_Relationship_Management_Partner_Portal_Reset_Password</forgotPassTemplate>
+    <headerDocument>QES_CE_Partner_Portal_Theme_New/Header_htm.htm</headerDocument>
+    <isSelfRegistrationActivated>false</isSelfRegistrationActivated>
+    <loginHeaderDocument>QESMarketingMaterials/PRM_Login_html.htm</loginHeaderDocument>
+    <logoDocument>ButtonsLogosImages/QUALCOMMHeaderLogo.png</logoDocument>
+    <logoutUrl>https://omnitracs.my.salesforce.com/secur/login_portal.jsp?orgId=00D3F000000AFMi&amp;portalId=06050000000002l</logoutUrl>
+    <newPassTemplate>PartnerRelationshipManagement/Partner_Relationship_Management_Partner_Portal_Reset_Password</newPassTemplate>
+    <newUserTemplate>PartnerRelationshipManagement/Partner_Relationship_Management_Partner_Portal_Login_Information</newUserTemplate>
+    <showActionConfirmation>true</showActionConfirmation>
+    <type>Partner</type>
+</Portal>

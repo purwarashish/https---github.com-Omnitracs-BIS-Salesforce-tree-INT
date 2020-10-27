@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_List_Price_or_Reduced_Price</fullName>
+    <active>true</active>
+    <description>Either the product list price checkbox must be checked OR the reduced price must be specified.</description>
+    <errorConditionFormula>AND( Product_List_Price__c = false, 
+OR(Product_Discount_Amount__c &lt;=0,Product_Discount_Amount__c=null), 
+OR((ISPICKVAL( Request_Type__c ,&quot;Schedule Only&quot;)), 
+(ISPICKVAL( Request_Type__c ,&quot;Master Contract and Schedule&quot;))) 
+)</errorConditionFormula>
+    <errorDisplayField>Product_Discount_Amount__c</errorDisplayField>
+    <errorMessage>Product Discount Amount must be specified and be greater than Zero if the List Price checkbox is not checked.</errorMessage>
+</ValidationRule>

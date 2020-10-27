@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Carrier_Type_CAP__c</fullName>
+    <description>Used for CAP survey data collection.</description>
+    <externalId>false</externalId>
+    <label>Carrier Type (CAP)</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>For Hire</fullName>
+                <default>false</default>
+                <label>For Hire</label>
+            </value>
+            <value>
+                <fullName>Private Fleet</fullName>
+                <default>false</default>
+                <label>Private Fleet</label>
+            </value>
+            <value>
+                <fullName>Private Fleet w/ For Hire Authority</fullName>
+                <default>false</default>
+                <label>Private Fleet w/ For Hire Authority</label>
+            </value>
+            <value>
+                <fullName>Owner/Operator</fullName>
+                <default>false</default>
+                <label>Owner/Operator</label>
+            </value>
+            <value>
+                <fullName>Independent Contractor</fullName>
+                <default>false</default>
+                <label>Independent Contractor</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

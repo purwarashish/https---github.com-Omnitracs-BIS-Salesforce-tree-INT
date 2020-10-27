@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Roadnet_Service_Agreement_Adjustment_All</fullName>
+    <booleanFilter>1 OR 2</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Contracted_Asset__c</columns>
+    <columns>Reason__c</columns>
+    <columns>CREATEDBY_USER.ALIAS</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>SAA_Status__c</field>
+        <operation>notEqual</operation>
+        <value>New,In Negotiation,Notification Sent,Email Bounce Back</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Service_Agreement_Adjustment__c.Roadnet_Service_Agreement_Adjustment</value>
+    </filters>
+    <label>Roadnet - All</label>
+    <language>en_US</language>
+</ListView>

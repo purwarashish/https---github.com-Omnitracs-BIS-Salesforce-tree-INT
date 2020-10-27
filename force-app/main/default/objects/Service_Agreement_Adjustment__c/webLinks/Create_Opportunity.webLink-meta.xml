@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_Opportunity</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Create Opportunity</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&apos;/soap/ajax/26.0/connection.js&apos;)} 
+{!REQUIRESCRIPT(&apos;/js/functions.js&apos;)} 
+
+var agreementStatus = &apos;{!Service_Agreement_Adjustment__c.SAA_Status__c}&apos;; 
+var opportunityDetails = &apos;{!Service_Agreement_Adjustment__c.Opportunity__c}&apos;; 
+try{ 
+if(( agreementStatus == &apos;Notification Sent&apos;)&amp;&amp;(opportunityDetails == &apos;&apos;)) 
+{ 
+var oppCloseDate = new Date(); 
+oppCloseDate.setMonth(oppCloseDate.getMonth() + 1); 
+
+var newOpportunity = new sforce.SObject(&apos;Opportunity&apos;); 
+
+newOpportunity.RecordTypeId = &apos;01250000000E5Nl&apos;; 
+newOpportunity.name = &apos;Uplift-&apos;+&apos;{!JSENCODE(Service_Agreement_Adjustment__c.Account_Legal_Name__c)}&apos;; 
+newOpportunity.StageName = &apos;Sales Acceptance&apos;; 
+newOpportunity.accountid =&apos;{!Service_Agreement_Adjustment__c.account_Id__c}&apos;; 
+newOpportunity.CloseDate = oppCloseDate ; 
+newOpportunity.Type = &apos;Existing Business&apos;; 
+newOpportunity.Order_Type__c = &apos;Subscription&apos;; 
+newOpportunity.Order_Sub_Type__c = &apos;Annual Increase&apos;; 
+newOpportunity.LeadSource = &apos;Sales Generated&apos;; 
+
+var CurrentDate = new Date(); 
+CurrentDate.setMonth(CurrentDate.getMonth() + 1); 
+
+result = sforce.connection.create([newOpportunity]); 
+
+if(result[0].success == &apos;true&apos;) 
+{ 
+var serviceAgreementRecord = new sforce.SObject(&apos;Service_Agreement_Adjustment__c&apos;); 
+
+var sAAId = window.sfdcPage.getEntityId(); 
+serviceAgreementRecord.id = sAAId; 
+serviceAgreementRecord.Opportunity__c = result[0].id; 
+serviceAgreementRecord.SAA_Status__c = &apos;In Negotiation&apos;; 
+sforce.connection.update([serviceAgreementRecord]); 
+
+window.location.reload(); 
+} 
+} 
+else 
+{ 
+alert(&apos;Service Agreement did not meet the opportunity creation criteria. Please review and try again.&apos; ); 
+window.location.reload(); 
+} 
+} 
+catch(err) 
+{ 
+alert(err.message); 
+window.location.reload(); 
+}</url>
+</WebLink>

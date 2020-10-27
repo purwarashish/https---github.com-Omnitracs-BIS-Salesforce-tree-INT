@@ -1,0 +1,20 @@
+<apex:page standardController="VCG_CPQ_Quote__c" extensions="VCG_CPQ_QuoteAddress" action="{!verifyUserIsRoadnetPartnerVar}">
+<apex:messages />
+  <apex:Form >
+      <apex:PageBlock Title="Select The Quote's Invoice and Corporate Addresses">
+         <apex:PageBlockButtons >
+             <apex:commandButton value="Next" action="{!next}"/>
+         </apex:PageBlockButtons>
+              <apex:PageBlockSection columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="If Checked, can’t save quote without addresses" for="bypassValidation"/>
+                    <apex:inputCheckbox value="{!bypassValidation}" Id="bypassValidation"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:InputField value="{!opp.Corporate_Account_Address__c}" />
+                <apex:InputField value="{!opp.Invoice_Account_Address__c}"/>
+                <apex:InputField value="{!opp.ShippingAddress__c}"/>
+          </apex:PageBlockSection>
+      </apex:PageBlock>
+  </apex:Form>
+</apex:page>

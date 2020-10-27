@@ -1,0 +1,6 @@
+<apex:page standardController="User_Story_Requirement__c" action="/{!User_Story_Requirement__c.Requirement__c}?retURL={!User_Story_Requirement__c.User_Story__c}">
+  <apex:form >
+      <apex:inputfield value="{!User_Story_Requirement__c.Requirement__c}"/>
+      <apex:inputfield value="{!User_Story_Requirement__c.User_Story__c}"/>
+  </apex:form>
+</apex:page>

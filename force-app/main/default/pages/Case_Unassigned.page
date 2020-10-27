@@ -1,0 +1,7 @@
+<apex:page sidebar="false" showheader="false">
+  <!-- Begin Default Content REMOVE THIS -->
+  <script type='text/javascript'>
+      window.parent.location = 'https://omnitracs.my.salesforce.com/500?fcf=00B50000006vJcU';
+  </script>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

@@ -1,0 +1,60 @@
+<!---------------------------------------------------------------------------------------------------
+Name : Customer_Ideas_by_Customers_Excel
+Author : Shruti Karn
+Date : 8 August 2011
+
+Usage : Page to show the report for all Customer Ideas sorted by Customers . This page will be rendered as Excel. 
+
+Dependencies:  Static Resource -> JQuery. Visualforce Component -> pbTable
+    
+CR # 39183
+----------------------------------------------------------------------------------------------------->
+<apex:page id="ideaReport" controller="IdeaReportController" showHeader="False" sidebar="False"  cache="true" action="{!showIdeasByCustomers}" language="english" contentType="application/vnd.ms-excel#CustomerIdeabyCustomers.xls">
+    <table border ="1">
+	<tr  bgcolor="#999999">
+		<th>Account</th>
+		<th>Total Number of Trucks</th>
+	</tr>
+	<apex:repeat id="reportrepeat" value="{!lstIdeaTotNumofTrucks}" var="lstIdea"> 
+	<tr>
+			<td bgcolor="#95B9C7">
+			{!lstIdea.acctRec.Name}
+			<table width="100%" border="1" >
+                    <tr bgcolor="#FFFFFF">
+                        <td>
+                            <b>Idea Name</b>
+                        </td>
+                        <td>
+                            <b>Number of Trucks</b>
+                        </td>
+                        <!-- 
+                        <td>
+                            <b>Status</b>
+                        </td>
+                        -->                        
+                            <apex:repeat value="{!lstIdea.lstRelCustomerIdea}" var="CustomerIdea">
+                            <tr bgcolor="#FFFFFF">
+                                <td>
+                                    <apex:outputField value="{!CustomerIdea.Idea__r.Title}"/>
+                                </td>
+                                <td>
+                                    <apex:outputField value="{!CustomerIdea.Number_of_Trucks__c}"/>
+                                </td>
+                                <!-- 
+                                <td>
+                                        <apex:outputText value="{!if(CustomerIdea.Account__r.QWBS_Status__c != 'Active Prospect','Customer','Prospect')}"/>
+                                </td>
+                                -->
+                            </tr>
+                            </apex:repeat>
+                       
+                    </tr>
+                </table>
+			
+			</td>
+			<td>{!lstIdea.totNumofTrucks}</td>
+			</tr>
+		</apex:repeat>
+	
+</table>
+</apex:page>

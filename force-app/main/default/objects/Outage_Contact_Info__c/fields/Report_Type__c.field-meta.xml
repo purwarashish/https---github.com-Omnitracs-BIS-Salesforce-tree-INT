@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Report_Type__c</fullName>
+    <description>&apos;Hardware&apos; or &apos;Portal/Services&apos;;</description>
+    <externalId>false</externalId>
+    <inlineHelpText>&apos;Hardware&apos; or &apos;Portal/Services&apos;;</inlineHelpText>
+    <label>Report Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

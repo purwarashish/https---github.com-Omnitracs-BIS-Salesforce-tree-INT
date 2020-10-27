@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Community xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <description>Ideas exposed in the Customer Portal.</description>
+    <expertsGroup>SystemAdministrator</expertsGroup>
+    <showInPortal>true</showInPortal>
+</Community>

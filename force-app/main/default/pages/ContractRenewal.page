@@ -1,0 +1,5 @@
+<apex:page standardController="Contract" tabStyle="Contract" extensions="ContractRewalExt">
+    <flow:interview name="Test_Renewal_Wizard"  interview="{!RenewalFlow}" finishLocation="{!GotoNewContract}">
+        <apex:param name="varID" value="{!Contract.Id}"/>
+    </flow:interview>
+</apex:page>

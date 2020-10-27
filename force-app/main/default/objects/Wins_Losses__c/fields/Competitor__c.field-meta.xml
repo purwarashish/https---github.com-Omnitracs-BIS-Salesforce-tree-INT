@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Competitor__c</fullName>
+    <externalId>false</externalId>
+    <label>Competitor</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>@Road</fullName>
+                <default>false</default>
+                <label>@Road</label>
+            </value>
+            <value>
+                <fullName>Actia</fullName>
+                <default>false</default>
+                <label>Actia</label>
+            </value>
+            <value>
+                <fullName>Aeris</fullName>
+                <default>false</default>
+                <label>Aeris</label>
+            </value>
+            <value>
+                <fullName>AirIQ</fullName>
+                <default>false</default>
+                <label>AirIQ</label>
+            </value>
+            <value>
+                <fullName>Alda Digital</fullName>
+                <default>false</default>
+                <label>Alda Digital</label>
+            </value>
+            <value>
+                <fullName>AMA</fullName>
+                <default>false</default>
+                <label>AMA</label>
+            </value>
+            <value>
+                <fullName>Anasat</fullName>
+                <default>false</default>
+                <label>Anasat</label>
+            </value>
+            <value>
+                <fullName>Astrum Satelital</fullName>
+                <default>false</default>
+                <label>Astrum Satelital</label>
+            </value>
+            <value>
+                <fullName>AT&amp;T</fullName>
+                <default>false</default>
+                <label>AT&amp;T</label>
+            </value>
+            <value>
+                <fullName>Axeda</fullName>
+                <default>false</default>
+                <label>Axeda</label>
+            </value>
+            <value>
+                <fullName>Blue Tree Systems</fullName>
+                <default>false</default>
+                <label>Blue Tree Systems</label>
+            </value>
+            <value>
+                <fullName>Cadec</fullName>
+                <default>false</default>
+                <label>Cadec</label>
+            </value>
+            <value>
+                <fullName>CarrierWeb</fullName>
+                <default>false</default>
+                <label>CarrierWeb</label>
+            </value>
+            <value>
+                <fullName>Central de Alarmas</fullName>
+                <default>false</default>
+                <label>Central de Alarmas</label>
+            </value>
+            <value>
+                <fullName>Cevsa</fullName>
+                <default>false</default>
+                <label>Cevsa</label>
+            </value>
+            <value>
+                <fullName>Comtech Mobile Datacom</fullName>
+                <default>false</default>
+                <label>Comtech Mobile Datacom</label>
+            </value>
+            <value>
+                <fullName>ControlTrack</fullName>
+                <default>false</default>
+                <label>ControlTrack</label>
+            </value>
+            <value>
+                <fullName>CoolTrax</fullName>
+                <default>false</default>
+                <label>CoolTrax</label>
+            </value>
+            <value>
+                <fullName>Copiloto Satelital Mexicano Sa De Cv</fullName>
+                <default>false</default>
+                <label>Copiloto Satelital Mexicano Sa De Cv</label>
+            </value>
+            <value>
+                <fullName>Crossbridge</fullName>
+                <default>false</default>
+                <label>Crossbridge</label>
+            </value>
+            <value>
+                <fullName>Danin Pricol</fullName>
+                <default>false</default>
+                <label>Danin Pricol</label>
+            </value>
+            <value>
+                <fullName>Discrete Wireless</fullName>
+                <default>false</default>
+                <label>Discrete Wireless</label>
+            </value>
+            <value>
+                <fullName>DriveCam</fullName>
+                <default>false</default>
+                <label>DriveCam</label>
+            </value>
+            <value>
+                <fullName>Driver Tech</fullName>
+                <default>false</default>
+                <label>Driver Tech</label>
+            </value>
+            <value>
+                <fullName>Encontrak</fullName>
+                <default>false</default>
+                <label>Encontrak</label>
+            </value>
+            <value>
+                <fullName>Esprida</fullName>
+                <default>false</default>
+                <label>Esprida</label>
+            </value>
+            <value>
+                <fullName>Fleet Management Solutions</fullName>
+                <default>false</default>
+                <label>Fleet Management Solutions</label>
+            </value>
+            <value>
+                <fullName>Fleetmatics</fullName>
+                <default>false</default>
+                <label>Fleetmatics</label>
+            </value>
+            <value>
+                <fullName>Ful-Mar</fullName>
+                <default>false</default>
+                <label>Ful-Mar</label>
+            </value>
+            <value>
+                <fullName>GE</fullName>
+                <default>false</default>
+                <label>GE</label>
+            </value>
+            <value>
+                <fullName>Geologic</fullName>
+                <default>false</default>
+                <label>Geologic</label>
+            </value>
+            <value>
+                <fullName>GE Telematics</fullName>
+                <default>false</default>
+                <label>GE Telematics</label>
+            </value>
+            <value>
+                <fullName>Globalstar</fullName>
+                <default>false</default>
+                <label>Globalstar</label>
+            </value>
+            <value>
+                <fullName>Global Track</fullName>
+                <default>false</default>
+                <label>Global Track</label>
+            </value>
+            <value>
+                <fullName>GPS Ratreo - Sistemas de Información Satelital</fullName>
+                <default>false</default>
+                <label>GPS Ratreo - Sistemas de Información Satelital</label>
+            </value>
+            <value>
+                <fullName>Hunter Pro</fullName>
+                <default>false</default>
+                <label>Hunter Pro</label>
+            </value>
+            <value>
+                <fullName>ILSP</fullName>
+                <default>false</default>
+                <label>ILSP</label>
+            </value>
+            <value>
+                <fullName>Incerno</fullName>
+                <default>false</default>
+                <label>Incerno</label>
+            </value>
+            <value>
+                <fullName>Inmosat</fullName>
+                <default>false</default>
+                <label>Inmosat</label>
+            </value>
+            <value>
+                <fullName>Intercomunicaciones Moviles Satelitales Sa De Cv</fullName>
+                <default>false</default>
+                <label>Intercomunicaciones Moviles Satelitales Sa De Cv</label>
+            </value>
+            <value>
+                <fullName>Internal Solution</fullName>
+                <default>false</default>
+                <label>Internal Solution</label>
+            </value>
+            <value>
+                <fullName>J.J. Keller</fullName>
+                <default>false</default>
+                <label>J.J. Keller</label>
+            </value>
+            <value>
+                <fullName>Jasper Wireless</fullName>
+                <default>false</default>
+                <label>Jasper Wireless</label>
+            </value>
+            <value>
+                <fullName>Kore Telematics</fullName>
+                <default>false</default>
+                <label>Kore Telematics</label>
+            </value>
+            <value>
+                <fullName>Lo Jack</fullName>
+                <default>false</default>
+                <label>Lo Jack</label>
+            </value>
+            <value>
+                <fullName>M2M Data Corp.</fullName>
+                <default>false</default>
+                <label>M2M Data Corp.</label>
+            </value>
+            <value>
+                <fullName>MAS - Monitoreo de Activos por Satélite</fullName>
+                <default>false</default>
+                <label>MAS - Monitoreo de Activos por Satélite</label>
+            </value>
+            <value>
+                <fullName>Misanti</fullName>
+                <default>false</default>
+                <label>Misanti</label>
+            </value>
+            <value>
+                <fullName>MWA Intelligence</fullName>
+                <default>false</default>
+                <label>MWA Intelligence</label>
+            </value>
+            <value>
+                <fullName>NavMan Wireless</fullName>
+                <default>false</default>
+                <label>NavMan Wireless</label>
+            </value>
+            <value>
+                <fullName>Network Car</fullName>
+                <default>false</default>
+                <label>Network Car</label>
+            </value>
+            <value>
+                <fullName>Nextel</fullName>
+                <default>false</default>
+                <label>Nextel</label>
+            </value>
+            <value>
+                <fullName>No Competitor</fullName>
+                <default>false</default>
+                <label>No Competitor</label>
+            </value>
+            <value>
+                <fullName>Numerex</fullName>
+                <default>false</default>
+                <label>Numerex</label>
+            </value>
+            <value>
+                <fullName>PeopleNet</fullName>
+                <default>false</default>
+                <label>PeopleNet</label>
+            </value>
+            <value>
+                <fullName>Pointer Telocation</fullName>
+                <default>false</default>
+                <label>Pointer Telocation</label>
+            </value>
+            <value>
+                <fullName>Proeza Ti, S.A. De C.V.</fullName>
+                <default>false</default>
+                <label>Proeza Ti, S.A. De C.V.</label>
+            </value>
+            <value>
+                <fullName>Prosegur</fullName>
+                <default>false</default>
+                <label>Prosegur</label>
+            </value>
+            <value>
+                <fullName>Protectio</fullName>
+                <default>false</default>
+                <label>Protectio</label>
+            </value>
+            <value>
+                <fullName>Qualtech Systems (QSI)</fullName>
+                <default>false</default>
+                <label>Qualtech Systems (QSI)</label>
+            </value>
+            <value>
+                <fullName>Questra</fullName>
+                <default>false</default>
+                <label>Questra</label>
+            </value>
+            <value>
+                <fullName>Rastreo Y Control Satelital S.A. De C.V.</fullName>
+                <default>false</default>
+                <label>Rastreo Y Control Satelital S.A. De C.V.</label>
+            </value>
+            <value>
+                <fullName>SATA</fullName>
+                <default>false</default>
+                <label>SATA</label>
+            </value>
+            <value>
+                <fullName>Satamatics</fullName>
+                <default>false</default>
+                <label>Satamatics</label>
+            </value>
+            <value>
+                <fullName>SensorLogic</fullName>
+                <default>false</default>
+                <label>SensorLogic</label>
+            </value>
+            <value>
+                <fullName>Sepromex</fullName>
+                <default>false</default>
+                <label>Sepromex</label>
+            </value>
+            <value>
+                <fullName>SERVISEG</fullName>
+                <default>false</default>
+                <label>SERVISEG</label>
+            </value>
+            <value>
+                <fullName>SkyAngel</fullName>
+                <default>false</default>
+                <label>SkyAngel</label>
+            </value>
+            <value>
+                <fullName>SkyBitz</fullName>
+                <default>false</default>
+                <label>SkyBitz</label>
+            </value>
+            <value>
+                <fullName>SkyTel</fullName>
+                <default>false</default>
+                <label>SkyTel</label>
+            </value>
+            <value>
+                <fullName>SkyTrackers</fullName>
+                <default>false</default>
+                <label>SkyTrackers</label>
+            </value>
+            <value>
+                <fullName>SkyWorld Protection</fullName>
+                <default>false</default>
+                <label>SkyWorld Protection</label>
+            </value>
+            <value>
+                <fullName>Smartracs</fullName>
+                <default>false</default>
+                <label>Smartracs</label>
+            </value>
+            <value>
+                <fullName>Smart Tracker</fullName>
+                <default>false</default>
+                <label>Smart Tracker</label>
+            </value>
+            <value>
+                <fullName>Soltrack</fullName>
+                <default>false</default>
+                <label>Soltrack</label>
+            </value>
+            <value>
+                <fullName>Soluciones Ti</fullName>
+                <default>false</default>
+                <label>Soluciones Ti</label>
+            </value>
+            <value>
+                <fullName>Sprint</fullName>
+                <default>false</default>
+                <label>Sprint</label>
+            </value>
+            <value>
+                <fullName>Star 911</fullName>
+                <default>false</default>
+                <label>Star 911</label>
+            </value>
+            <value>
+                <fullName>StarTrak</fullName>
+                <default>false</default>
+                <label>StarTrak</label>
+            </value>
+            <value>
+                <fullName>Stop &amp; Track de Skytel</fullName>
+                <default>false</default>
+                <label>Stop &amp; Track de Skytel</label>
+            </value>
+            <value>
+                <fullName>Summary Systems</fullName>
+                <default>false</default>
+                <label>Summary Systems</label>
+            </value>
+            <value>
+                <fullName>Tecno Líder</fullName>
+                <default>false</default>
+                <label>Tecno Líder</label>
+            </value>
+            <value>
+                <fullName>Tecnologistik Satelital System</fullName>
+                <default>false</default>
+                <label>Tecnologistik Satelital System</label>
+            </value>
+            <value>
+                <fullName>Telargo Inc.</fullName>
+                <default>false</default>
+                <label>Telargo Inc.</label>
+            </value>
+            <value>
+                <fullName>TeleTrac</fullName>
+                <default>false</default>
+                <label>TeleTrac</label>
+            </value>
+            <value>
+                <fullName>Telnorm Satelital Explorer</fullName>
+                <default>false</default>
+                <label>Telnorm Satelital Explorer</label>
+            </value>
+            <value>
+                <fullName>Terion</fullName>
+                <default>false</default>
+                <label>Terion</label>
+            </value>
+            <value>
+                <fullName>Touchstar</fullName>
+                <default>false</default>
+                <label>Touchstar</label>
+            </value>
+            <value>
+                <fullName>Tracking System de México (UDA)</fullName>
+                <default>false</default>
+                <label>Tracking System de México (UDA)</label>
+            </value>
+            <value>
+                <fullName>Transcore</fullName>
+                <default>false</default>
+                <label>Transcore</label>
+            </value>
+            <value>
+                <fullName>Transmobile</fullName>
+                <default>false</default>
+                <label>Transmobile</label>
+            </value>
+            <value>
+                <fullName>Transportek S.A. De C.V.</fullName>
+                <default>false</default>
+                <label>Transportek S.A. De C.V.</label>
+            </value>
+            <value>
+                <fullName>Tridium (Honeywell)</fullName>
+                <default>false</default>
+                <label>Tridium (Honeywell)</label>
+            </value>
+            <value>
+                <fullName>Trimble</fullName>
+                <default>false</default>
+                <label>Trimble</label>
+            </value>
+            <value>
+                <fullName>Turnpike</fullName>
+                <default>false</default>
+                <label>Turnpike</label>
+            </value>
+            <value>
+                <fullName>Ubicacel Vehicular Iusacell</fullName>
+                <default>false</default>
+                <label>Ubicacel Vehicular Iusacell</label>
+            </value>
+            <value>
+                <fullName>UbicaMovil</fullName>
+                <default>false</default>
+                <label>UbicaMovil</label>
+            </value>
+            <value>
+                <fullName>Ubicaware</fullName>
+                <default>false</default>
+                <label>Ubicaware</label>
+            </value>
+            <value>
+                <fullName>UDA</fullName>
+                <default>false</default>
+                <label>UDA</label>
+            </value>
+            <value>
+                <fullName>Unicom</fullName>
+                <default>false</default>
+                <label>Unicom</label>
+            </value>
+            <value>
+                <fullName>Unicomm</fullName>
+                <default>false</default>
+                <label>Unicomm</label>
+            </value>
+            <value>
+                <fullName>Velocitor</fullName>
+                <default>false</default>
+                <label>Velocitor</label>
+            </value>
+            <value>
+                <fullName>Veriwise</fullName>
+                <default>false</default>
+                <label>Veriwise</label>
+            </value>
+            <value>
+                <fullName>Verizon</fullName>
+                <default>false</default>
+                <label>Verizon</label>
+            </value>
+            <value>
+                <fullName>Visualsat</fullName>
+                <default>false</default>
+                <label>Visualsat</label>
+            </value>
+            <value>
+                <fullName>Volvo</fullName>
+                <default>false</default>
+                <label>Volvo</label>
+            </value>
+            <value>
+                <fullName>WebTech Wireless</fullName>
+                <default>false</default>
+                <label>WebTech Wireless</label>
+            </value>
+            <value>
+                <fullName>Wireless Matrix</fullName>
+                <default>false</default>
+                <label>Wireless Matrix</label>
+            </value>
+            <value>
+                <fullName>Xata</fullName>
+                <default>false</default>
+                <label>Xata</label>
+            </value>
+            <value>
+                <fullName>Zonar</fullName>
+                <default>false</default>
+                <label>Zonar</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Relationship_Type__c</fullName>
+    <description>Created for Contract Management.</description>
+    <externalId>false</externalId>
+    <label>Relationship Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Affiliate</fullName>
+                <default>false</default>
+                <label>Affiliate</label>
+            </value>
+            <value>
+                <fullName>Agent</fullName>
+                <default>false</default>
+                <label>Agent</label>
+            </value>
+            <value>
+                <fullName>Assignee</fullName>
+                <default>false</default>
+                <label>Assignee</label>
+            </value>
+            <value>
+                <fullName>Assingnor</fullName>
+                <default>false</default>
+                <label>Assingnor</label>
+            </value>
+            <value>
+                <fullName>Authorized Reseller</fullName>
+                <default>false</default>
+                <label>Authorized Reseller</label>
+            </value>
+            <value>
+                <fullName>BD Team Linked</fullName>
+                <default>false</default>
+                <label>BD Team Linked</label>
+            </value>
+            <value>
+                <fullName>Branch</fullName>
+                <default>false</default>
+                <label>Branch</label>
+            </value>
+            <value>
+                <fullName>Broker</fullName>
+                <default>false</default>
+                <label>Broker</label>
+            </value>
+            <value>
+                <fullName>Business</fullName>
+                <default>false</default>
+                <label>Business</label>
+            </value>
+            <value>
+                <fullName>Business Unit/Segment</fullName>
+                <default>false</default>
+                <label>Business Unit/Segment</label>
+            </value>
+            <value>
+                <fullName>Buyer</fullName>
+                <default>false</default>
+                <label>Buyer</label>
+            </value>
+            <value>
+                <fullName>Buyer&apos;s Agent</fullName>
+                <default>false</default>
+                <label>Buyer&apos;s Agent</label>
+            </value>
+            <value>
+                <fullName>Co-Lessor</fullName>
+                <default>false</default>
+                <label>Co-Lessor</label>
+            </value>
+            <value>
+                <fullName>Committee</fullName>
+                <default>false</default>
+                <label>Committee</label>
+            </value>
+            <value>
+                <fullName>Company</fullName>
+                <default>false</default>
+                <label>Company</label>
+            </value>
+            <value>
+                <fullName>Consortium/Group</fullName>
+                <default>false</default>
+                <label>Consortium/Group</label>
+            </value>
+            <value>
+                <fullName>Consultant</fullName>
+                <default>false</default>
+                <label>Consultant</label>
+            </value>
+            <value>
+                <fullName>Consulting Services Beneficiary</fullName>
+                <default>false</default>
+                <label>Consulting Services Beneficiary</label>
+            </value>
+            <value>
+                <fullName>Custodian/Trustee</fullName>
+                <default>false</default>
+                <label>Custodian/Trustee</label>
+            </value>
+            <value>
+                <fullName>Customer</fullName>
+                <default>false</default>
+                <label>Customer</label>
+            </value>
+            <value>
+                <fullName>Division</fullName>
+                <default>false</default>
+                <label>Division</label>
+            </value>
+            <value>
+                <fullName>Duplicate Accounts</fullName>
+                <default>false</default>
+                <label>Duplicate Accounts</label>
+            </value>
+            <value>
+                <fullName>Employee</fullName>
+                <default>false</default>
+                <label>Employee</label>
+            </value>
+            <value>
+                <fullName>Employer</fullName>
+                <default>false</default>
+                <label>Employer</label>
+            </value>
+            <value>
+                <fullName>End User</fullName>
+                <default>false</default>
+                <label>End User</label>
+            </value>
+            <value>
+                <fullName>Financing Company</fullName>
+                <default>false</default>
+                <label>Financing Company</label>
+            </value>
+            <value>
+                <fullName>Former Employee</fullName>
+                <default>false</default>
+                <label>Former Employee</label>
+            </value>
+            <value>
+                <fullName>Former Employer</fullName>
+                <default>false</default>
+                <label>Former Employer</label>
+            </value>
+            <value>
+                <fullName>Founder</fullName>
+                <default>false</default>
+                <label>Founder</label>
+            </value>
+            <value>
+                <fullName>Group Member</fullName>
+                <default>false</default>
+                <label>Group Member</label>
+            </value>
+            <value>
+                <fullName>Independant Contractor</fullName>
+                <default>false</default>
+                <label>Independant Contractor</label>
+            </value>
+            <value>
+                <fullName>Investment Management Service Provider</fullName>
+                <default>false</default>
+                <label>Investment Management Service Provider</label>
+            </value>
+            <value>
+                <fullName>JDLink End User [NO LONGER USED]</fullName>
+                <default>false</default>
+                <label>JDLink End User [NO LONGER USED]</label>
+            </value>
+            <value>
+                <fullName>JDLink Reseller [NO LONGER USED]</fullName>
+                <default>false</default>
+                <label>JDLink Reseller [NO LONGER USED]</label>
+            </value>
+            <value>
+                <fullName>Joint Venture</fullName>
+                <default>false</default>
+                <label>Joint Venture</label>
+            </value>
+            <value>
+                <fullName>Licensor</fullName>
+                <default>false</default>
+                <label>Licensor</label>
+            </value>
+            <value>
+                <fullName>Liscensee</fullName>
+                <default>false</default>
+                <label>Liscensee</label>
+            </value>
+            <value>
+                <fullName>Manufacturer</fullName>
+                <default>false</default>
+                <label>Manufacturer</label>
+            </value>
+            <value>
+                <fullName>Merged</fullName>
+                <default>false</default>
+                <label>Merged</label>
+            </value>
+            <value>
+                <fullName>Merged with</fullName>
+                <default>false</default>
+                <label>Merged with</label>
+            </value>
+            <value>
+                <fullName>Merger Sub</fullName>
+                <default>false</default>
+                <label>Merger Sub</label>
+            </value>
+            <value>
+                <fullName>New Entity from Divestiture</fullName>
+                <default>false</default>
+                <label>New Entity from Divestiture</label>
+            </value>
+            <value>
+                <fullName>ODM</fullName>
+                <default>false</default>
+                <label>ODM</label>
+            </value>
+            <value>
+                <fullName>Ownership Interest</fullName>
+                <default>false</default>
+                <label>Ownership Interest</label>
+            </value>
+            <value>
+                <fullName>Parent</fullName>
+                <default>false</default>
+                <label>Parent</label>
+            </value>
+            <value>
+                <fullName>Partner</fullName>
+                <default>false</default>
+                <label>Partner</label>
+            </value>
+            <value>
+                <fullName>Property</fullName>
+                <default>false</default>
+                <label>Property</label>
+            </value>
+            <value>
+                <fullName>Same Ownership (Sister Company)</fullName>
+                <default>false</default>
+                <label>Same Ownership (Sister Company)</label>
+            </value>
+            <value>
+                <fullName>Sector</fullName>
+                <default>false</default>
+                <label>Sector</label>
+            </value>
+            <value>
+                <fullName>Seller</fullName>
+                <default>false</default>
+                <label>Seller</label>
+            </value>
+            <value>
+                <fullName>Service Agent</fullName>
+                <default>false</default>
+                <label>Service Agent</label>
+            </value>
+            <value>
+                <fullName>Shareholder</fullName>
+                <default>false</default>
+                <label>Shareholder</label>
+            </value>
+            <value>
+                <fullName>Spin-Off</fullName>
+                <default>false</default>
+                <label>Spin-Off</label>
+            </value>
+            <value>
+                <fullName>Subcontractor</fullName>
+                <default>false</default>
+                <label>Subcontractor</label>
+            </value>
+            <value>
+                <fullName>Sublicensee</fullName>
+                <default>false</default>
+                <label>Sublicensee</label>
+            </value>
+            <value>
+                <fullName>Subsidiary</fullName>
+                <default>false</default>
+                <label>Subsidiary</label>
+            </value>
+            <value>
+                <fullName>Supplier</fullName>
+                <default>false</default>
+                <label>Supplier</label>
+            </value>
+            <value>
+                <fullName>Target</fullName>
+                <default>false</default>
+                <label>Target</label>
+            </value>
+            <value>
+                <fullName>Value Added Reseller</fullName>
+                <default>false</default>
+                <label>Value Added Reseller</label>
+            </value>
+            <value>
+                <fullName>Wholly Owned Subsidiary</fullName>
+                <default>false</default>
+                <label>Wholly Owned Subsidiary</label>
+            </value>
+            <value>
+                <fullName>ZXLink End User [NO LONGER USED]</fullName>
+                <default>false</default>
+                <label>ZXLink End User [NO LONGER USED]</label>
+            </value>
+            <value>
+                <fullName>ZXLink Reseller [NO LONGER USED]</fullName>
+                <default>false</default>
+                <label>ZXLink Reseller [NO LONGER USED]</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

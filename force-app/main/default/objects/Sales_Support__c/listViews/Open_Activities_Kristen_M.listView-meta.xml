@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open_Activities_Kristen_M</fullName>
+    <columns>NAME</columns>
+    <columns>Opportunity__c</columns>
+    <columns>Fleet_Size1__c</columns>
+    <columns>Products__c</columns>
+    <columns>Status__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>SR_User__c</columns>
+    <columns>Secondary_Managed_By__c</columns>
+    <columns>Request_Date1__c</columns>
+    <columns>Completion_By__c</columns>
+    <columns>RFP_Notes__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>SE_User__c</field>
+        <operation>contains</operation>
+        <value>Maloney</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>,Waiting for Documents,Waiting for PSQ,Assigned,In Process,Scheduled</value>
+    </filters>
+    <label>Open Activities - Kristen Maloney</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>SSA_views_Gina_and_Kristen</group>
+    </sharedTo>
+</ListView>

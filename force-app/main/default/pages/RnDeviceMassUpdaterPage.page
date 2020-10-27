@@ -1,0 +1,192 @@
+<apex:page standardcontroller="RN_Telematics_Devices__c" extensions="RnDeviceMassUpdater" >
+    <script>
+       function setFocusOnLoad(){}
+    </script>
+    <apex:form >
+    
+        <apex:pageblock title="RN Telematics Device Mass Updater">
+            <apex:pageblocksection >
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Make a Selection:"/>
+                    <apex:selectlist value="{!userSelection}" size="1">
+                        
+                        <apex:selectoption itemlabel="Find by Contract #" itemvalue="Find by Contract #"/>
+                        <apex:selectoption itemlabel="Find by SN#" itemvalue="Find by SN#"/> 
+                        <apex:selectoption itemlabel="Find By PO#" itemvalue="Find By PO#"/>
+                        <apex:selectoption itemlabel="Account" itemvalue="Account"/>
+                        <apex:actionsupport event="onchange" action="{!findDevices}"/>
+                    </apex:selectlist>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem rendered="{!userSelection == 'Account'}">
+                    <apex:outputlabel value="Account Name"/>
+                    <apex:outputtext value="{!account.Name}"/>
+                </apex:pageblocksectionitem>
+            </apex:pageblocksection>
+            <apex:pageblocksection columns="2">
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Activation Date"/>
+                    <apex:outputpanel >
+                        <apex:inputfield value="{!tempDevice.Activation_Date__c}"/>
+                        <apex:commandbutton value="Set Activation Date" action="{!assignActivationDate}"/>
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>
+                
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Installation Date"/>
+                    <apex:outputpanel >
+                        <apex:inputfield value="{!tempDevice.Installation_Date__c}"/>
+                        <apex:commandbutton value="Set Installation Date" action="{!assignInstallationDate}"/>
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>
+                
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Current Status"/>
+                    <apex:outputpanel >
+                        <apex:inputfield value="{!tempDevice.Current_Status__c}"/>
+                        <apex:commandbutton value="Assign Current Status" action="{!assignCurrentStatus}"/>
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>
+                
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Account"/>
+                    <apex:outputpanel >
+                        <apex:inputfield value="{!tempDevice.Account__c}"/>
+                        <apex:commandbutton value="Assign Account" action="{!assignAccount}"/>
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>
+                
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Installer"/>
+                    <apex:outputpanel >
+                        <apex:inputfield value="{!tempDevice.Installer__c}"/>
+                        <apex:commandbutton value="Assign Installer" action="{!assignInstaller}"/>
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>
+            </apex:pageblocksection>
+        </apex:pageblock>
+        
+        <apex:pageblock title="Find By Section" rendered="{!showFindBySection}">
+            <apex:pageblocksection >
+                <apex:pageblocksectionitem rendered="{!userSelection == 'Find by SN#'}">
+                    <apex:outputlabel value="Enter Serial Numbers:"/>
+                    <apex:inputtextarea value="{!deviceSerialNumbers}" cols="50" rows="25"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem rendered="{!showFindByPoLabel}">
+                    <apex:outputlabel value="Enter Purchase Order Numbers:"/>
+                    <apex:inputtextarea value="{!deviceSerialNumbers}" cols="50" rows="25"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem rendered="{!showFindByContractLabel}">
+                    <apex:outputlabel value="Enter Contract Numbers:"/>
+                    <apex:inputtextarea value="{!deviceSerialNumbers}" cols="50" rows="25"/>
+                </apex:pageblocksectionitem>
+            </apex:pageblocksection>
+            <apex:commandbutton value="Find Devices"  action="{!findDevices}"/>
+            <apex:outputtext value="Found {!devices.size} devices out of {!deviceSerialNumberCount}"/>
+            
+        </apex:pageblock>
+        
+        <apex:pageblock >
+            <apex:facet name="header">
+                 <apex:outputPanel >
+                    <apex:outputLabel style="font-size:14px; font-weight:bold; color:black;" value="Showing {!deviceSubSet.size} out of {!devices.size}"/>
+                    <apex:outputLabel style="font-size:12px; font-weight:bold; color:black;" value="Page #"/>
+                    <apex:selectlist value="{!currentPageNumber}" size="1">
+                        <apex:selectoptions value="{!pageNumberPickList}"/>
+                        <apex:actionsupport event="onchange" action="{!findDevices}"/>
+                    </apex:selectlist>
+                    <apex:outputLabel style="font-size:12px; font-weight:bold; color:black;" value="Sort By:"/>
+                    <apex:selectlist value="{!sortBySelection}" size="1">
+                        <apex:selectoption itemlabel="Last Modified Date" itemvalue="LastModifiedDate"/>
+                        <apex:selectoption itemlabel="Serial Number" itemvalue="Serial_Number__c"/>
+                        <apex:selectoption itemlabel="Account" itemvalue="Account__c"/>
+                        <apex:selectoption itemlabel="Contract" itemvalue="Contract__c"/> 
+                        <apex:actionsupport event="onchange" action="{!findDevices}"/>
+                    </apex:selectlist>
+                    <apex:outputLabel style="font-size:12px; font-weight:bold; color:black;" value="Asc/Desc:"/>
+                    <apex:selectlist value="{!AscDescSelection}" size="1">
+                        <apex:selectoption itemlabel="Ascending" itemvalue="asc"/>
+                        <apex:selectoption itemlabel="Descending" itemvalue="desc"/>
+                        <apex:actionsupport event="onchange" action="{!findDevices}"/>
+                    </apex:selectlist>
+                 </apex:outputPanel>
+            </apex:facet>
+            <apex:pageblocksection columns="1">
+                <apex:pageblockTable value="{!devicesubset}" var="device">
+                    <apex:column >
+                        <apex:facet name="header">
+                            <apex:outputPanel >
+                                <apex:inputcheckbox value="{!selectAll}">
+                                    <apex:actionsupport event="onchange" action="{!selectAllOnChange}"/>
+                                </apex:inputcheckbox>
+                                <apex:outputtext value="Select All?"/>
+                            </apex:outputPanel>
+                        </apex:facet>
+                        <apex:inputcheckbox value="{!device.shouldUpdate}">
+                        </apex:inputcheckbox>
+                    </apex:column>
+                    
+                    <apex:column headervalue="Serial Number" >
+                        <apex:outputlink value="{!$Site.OriginalURl}/{!device.device.id}" target="_parent">
+                            <apex:outputtext value="{!device.device.Serial_Number__c}"/>
+                        </apex:outputlink>
+                    </apex:column>
+                    <apex:column value="{!device.device.Purchase_Order__c}"/>
+                    <apex:column headervalue="Account">
+                        <apex:inputfield value="{!device.device.Account__c}"/>
+                    </apex:column>
+                    <apex:column value="{!device.device.Contract__c}"/>
+                    <apex:column headervalue="Current Status">
+                        <apex:inputfield value="{!device.device.Current_Status__c}"/>
+                    </apex:column>
+                    <apex:column headervalue="Installer">
+                        <apex:inputfield value="{!device.device.Installer__c}"/>
+                    </apex:column>
+                    
+                    <apex:column headervalue="Is Eval?">
+                    	<apex:inputfield value="{!device.device.Is_Eval__c}"/>
+                    </apex:column>
+                    
+                    <apex:column headervalue="Is Hos?">
+                    	<apex:inputfield value="{!device.device.Is_Hos__c}"/>
+                    </apex:column>
+                    
+                    
+                    <apex:column value="{!device.device.Product_Type__c}"/>
+                    
+                    <apex:column headervalue="Activation Date">
+                        <apex:inputfield value="{!device.device.Activation_Date__c }"/>
+                    </apex:column>
+                    <apex:column headervalue="Installation Date" >
+                        <apex:inputfield value="{!device.device.Installation_Date__c}"/>
+                    </apex:column>
+                    
+                </apex:pageblockTable>
+                <apex:outputpanel >
+                    <apex:commandbutton value="Save Records" action="{!saveRecords}"/> 
+                    <apex:commandbutton value="Cancel" action="{!cancel}"/>
+                </apex:outputpanel>
+            </apex:pageblocksection>
+        </apex:pageblock>
+        <apex:pageblock title="Debug" rendered="false">
+            <apex:pageblockSection >
+                 <apex:pageblocksectionItem >
+                    <apex:outputlabel value="Begin Index"/>
+                    <apex:outputtext value="{!beginIndex}"/>
+                 </apex:pageblocksectionItem>
+                
+                 <apex:pageblocksectionItem >
+                    <apex:outputlabel value="End Index"/>
+                    <apex:outputtext value="{!endIndex}"/>
+                 </apex:pageblocksectionItem>
+                 <apex:pageblocksectionItem >
+                    <apex:outputlabel value="Number of Pages"/>
+                    <apex:outputtext value="{!numOfPages}"/>
+                 </apex:pageblocksectionItem>
+                  <apex:pageblocksectionItem >
+                    <apex:outputlabel value="Current Page #"/>
+                    <apex:outputtext value="{!currentPageNumber}"/>
+                 </apex:pageblocksectionItem>
+            </apex:pageblockSection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

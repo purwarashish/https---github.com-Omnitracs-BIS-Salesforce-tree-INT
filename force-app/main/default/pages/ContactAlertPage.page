@@ -1,0 +1,31 @@
+<!--/*******************************************************************************
+ * File:  ContactAlertPage.Page
+ * Date:  October 1st, 2009
+ * Author:  Joseph Hutchins
+ *
+ * The use, disclosure, reproduction, modification, transfer, or transmittal of
+ * this work for any purpose in any form or by any means without the written 
+ * permission of United Parcel Service is strictly prohibited.
+ *
+ * Confidential, unpublished property of United Parcel Service.
+ * Use and distribution limited solely to authorized personnel.
+ *
+ * Copyright 2009, UPS Logistics Technologies, Inc.  All rights reserved.
+ *  *******************************************************************************/-->
+
+<apex:page standardcontroller="Contact" extensions="ContactAlertExtension" >
+  <script type="text/javascript">
+    function displayMessage()
+    {
+          if ({!shouldShowAccountAlert})
+          {
+              alert("Warning:\n {!accountAlert} \n\n {!contact.Contact_Alert__c}");
+          }
+          else if ({!shouldShowContactAlert})
+          {
+              alert("Warning:\n {!contact.Contact_Alert__c}");
+          }
+    }
+    displayMessage();
+ </script>
+ </apex:page>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sponsor_Letter</fullName>
+    <active>true</active>
+    <description>Letter sent to Sponsor during Qualify; required for Develop</description>
+    <label>Sponsor Letter</label>
+</RecordType>

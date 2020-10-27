@@ -1,0 +1,49 @@
+<apex:page standardController="VCG_CPQ_Quote__c">
+<apex:includeScript value="{!URLFOR($Resource.VCG_CPQ_jQuery, 'jquery-ui-1.10.4.custom/js/jquery-1.10.2.js')}"  />
+<apex:includeScript value="{!URLFOR($Resource.VCG_CPQ_jQuery, 'jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js')}"  />
+<apex:includeScript value="{!URLFOR($Resource.VCG_CPQ_jQuery, 'jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.js')}"  />
+<style>
+  .bPageBlock {
+  border-top: 3px solid #fff !Important;
+   }
+  .pbTitle h3 {
+    display: none !Important;
+   }
+   .hideButton {
+    display: none !Important;
+}
+  
+} 
+</style>
+
+ <script>
+   $j = jQuery.noConflict();
+   $j(document).ready(function() {
+   $j("[name=piSubmit]").addClass("hideButton");
+   
+   var actualURL = $j("[name=piRemove]").attr("onclick");
+   $j("[name=piRemove]").prop("onclick","");
+   var redirectURL = actualURL.substr(15, 28);
+   
+   
+   $j("[name=piRemove]").click(function() {
+   
+   window.open(redirectURL);
+   return false;
+    });
+   
+   });
+   
+ </script> 
+ 
+  <apex:relatedList list="ProcessSteps" >
+               <apex:facet name="header">  </apex:facet>
+  </apex:relatedList>
+   
+   <script type="application/javascript">
+    var aTags = document.getElementsByTagName('a');
+    for(var i = 0; i < aTags.length; i++) 
+        aTags[i].target = "_blank";
+   </script>
+   
+</apex:page>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Make_Documentation_Comments_Required</fullName>
+    <active>true</active>
+    <description>Make Documentation Comments required if Documentation is No.</description>
+    <errorConditionFormula>AND( 
+ISBLANK( Documentation_Comments__c ), 
+ISPICKVAL( Documentation__c , &quot;No&quot;) 
+)</errorConditionFormula>
+    <errorDisplayField>Documentation_Comments__c</errorDisplayField>
+    <errorMessage>Documentation Comments is required if Documentation is &quot;No&quot;</errorMessage>
+</ValidationRule>

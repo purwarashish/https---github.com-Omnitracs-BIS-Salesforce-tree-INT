@@ -1,0 +1,43 @@
+<apex:page controller="ReportCustomReportsNavigation" sidebar="true" showHeader="true" tabStyle="Custom_Reports__tab">
+<apex:sectionHeader title="Custom Reports"/>
+<apex:form id="form">
+    <!-- apex:pageBlock >
+        <apex:pageBlockSection id="pgblkscnButtons">
+            <apex:commandButton action="{!gotoOptyReport}" value="Opportunity/3rdParty/Product Report" status="loadingStatusAdd" />
+            This report will show Opportunities, Projects and 3rd Party Products for selected Opportunity Types (Workflow, MCP100. MCP200, etc)
+        </apex:pageBlockSection>
+        <!--apex:pageBlockSection >        
+            <apex:commandButton action="{!gotoLeadershipReport}" value="Leadership Report" />
+            This report will pull all "Leadership" information into one central report
+        </apex:pageBlockSection->
+        <apex:pageBlockSection >        
+        <apex:commandButton action="{!gotoLeadershipReport}" value="Leadership Report" />
+            This report will pull all "Leadership" information into one central report
+        </apex:pageBlockSection>
+    </apex:pageBlock -->
+    <apex:pageBlock >
+        <table class="list" border="0" id="reporttable" cellspacing="0" cellpadding="5" border="0" >
+        <tr class="headerRow" nowrap="nowrap">
+            <th>Report Name</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td class="dataCell" >
+                <apex:commandLink action="{!gotoOptyReport}" value="Opty / 3rd Party / Prod Report" id="optyRptCmdLnk"/>
+            </td>
+            <td class="dataCell" >
+                This report will show Opportunities, Projects and 3rd Party Products for selected Opportunity Types (Workflow, MCP100. MCP200, etc)
+            </td>
+        </tr>
+        <!-- tr>
+            <td class="dataCell" >
+                <apex:commandLink action="{!gotoLeadershipReport}" value="Leadership Report" id="ldrRptCmdLnk"/>
+            </td>
+            <td class="dataCell" >
+                This report will pull all "Leadership" information into one central report
+            </td>
+        </tr-->        
+        </table>
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

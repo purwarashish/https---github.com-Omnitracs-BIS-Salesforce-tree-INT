@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Request_from_Account</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>New Request</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>{!requireScript(&quot;/soap/ajax/14.0/connection.js&quot;)}
+{!requireScript(&quot;/js/functions.js&quot;)}
+
+var queryString=&quot;Select BillingStreet from Account where Id =&apos;{!Account.Id}&apos;&quot;;
+try
+{
+var queryResult = sforce.connection.query(queryString);
+
+if (queryResult.size &gt; 0)
+{
+var records = queryResult.getArray(&apos;records&apos;);
+var varBillingStreet = records[0].BillingStreet;
+var re = /&lt;|&gt;/g;
+// To remove special characters like &quot;&lt;&quot; and &quot;&gt;&quot;
+varBillingStreet = varBillingStreet.replace(re, &quot;&quot;);
+//var varAddress = escape(varBillingStreet) + &quot; {!Account.BillingCity}, &quot;+ &quot;{!Account.BillingState} &quot;+ //&quot;{!Account.BillingPostalCode} &quot;+ &quot;{!Account.BillingCountry} &quot;;
+var varAddress = escape(varBillingStreet);
+}
+
+}
+catch(err)
+{
+txt=&quot;There was an error on this page.\n\n&quot;;
+txt+=&quot;Error description: &quot; + err + &quot;\n\n&quot;;
+txt+=&quot;Click OK to continue.\n\n&quot;;
+alert(txt);
+} 
+
+window.parent.location.href=&quot;{!URLFOR( $Action.Sales_Order_Request__c.New ,  Sales_Order_Request__c.Id,[retURL=URLFOR($Action.Sales_Order_Request__c.New, Sales_Order_Request__c.Id)],true)}&amp;CF00N50000001uJn6=&quot;+encodeURIComponent(&quot;{!Account.Name}&quot;)+&quot;&amp;CF00N50000001uJn6_lkid={!Account.Id}&amp;00N50000001uJn8={!Account.BillingCity}&amp;00N50000001uJn9={!Account.BillingState}&amp;00N50000001uJnA={!Account.BillingPostalCode}&amp;00N50000001uJn7=&quot;+ varAddress +&quot;&amp;cancelURL=%2F{!Account.Id}&amp;nooverride=1&quot;;</url>
+</WebLink>

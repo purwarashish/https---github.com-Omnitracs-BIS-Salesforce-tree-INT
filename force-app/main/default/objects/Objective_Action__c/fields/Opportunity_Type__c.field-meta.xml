@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Opportunity Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Competitive</fullName>
+                <default>false</default>
+                <label>Competitive</label>
+            </value>
+            <value>
+                <fullName>Competitive Takeaway</fullName>
+                <default>false</default>
+                <label>Competitive Takeaway</label>
+            </value>
+            <value>
+                <fullName>Cross Sale</fullName>
+                <default>false</default>
+                <label>Cross Sale</label>
+            </value>
+            <value>
+                <fullName>Existing Business</fullName>
+                <default>false</default>
+                <label>Existing Business</label>
+            </value>
+            <value>
+                <fullName>Existing Client</fullName>
+                <default>false</default>
+                <label>Existing Client</label>
+            </value>
+            <value>
+                <fullName>Existing Customer</fullName>
+                <default>false</default>
+                <label>Existing Customer</label>
+            </value>
+            <value>
+                <fullName>Existing Customer - Region</fullName>
+                <default>false</default>
+                <label>Existing Customer - Region</label>
+            </value>
+            <value>
+                <fullName>Existing Customer - SAM</fullName>
+                <default>false</default>
+                <label>Existing Customer - SAM</label>
+            </value>
+            <value>
+                <fullName>New Client</fullName>
+                <default>false</default>
+                <label>New Client</label>
+            </value>
+            <value>
+                <fullName>New Customer</fullName>
+                <default>false</default>
+                <label>New Customer</label>
+            </value>
+            <value>
+                <fullName>New Prospect</fullName>
+                <default>false</default>
+                <label>New Prospect</label>
+            </value>
+            <value>
+                <fullName>Prior Customer</fullName>
+                <default>false</default>
+                <label>Prior Customer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

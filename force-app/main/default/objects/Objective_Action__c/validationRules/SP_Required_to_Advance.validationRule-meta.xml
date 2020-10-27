@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SP_Required_to_Advance</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL(Action_Type__c, &apos;Required&apos;) &amp;&amp; ISBLANK(Opportunity_Type__c) &amp;&amp; ISBLANK(Opportunity_Order_Type__c) &amp;&amp; ISBLANK(Opportunity_Order_SubType__c)</errorConditionFormula>
+    <errorDisplayField>Action_Type__c</errorDisplayField>
+    <errorMessage>Please select at least one Order Type or Order SubType that the required action applies to.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Next_Steps__c</fullName>
+    <externalId>false</externalId>
+    <label>Next Steps</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Callback</fullName>
+                <default>false</default>
+                <label>Callback</label>
+            </value>
+            <value>
+                <fullName>On-site meeting</fullName>
+                <default>false</default>
+                <label>On-site meeting</label>
+            </value>
+            <value>
+                <fullName>Evaluation</fullName>
+                <default>false</default>
+                <label>Evaluation</label>
+            </value>
+            <value>
+                <fullName>Happy with competition</fullName>
+                <default>false</default>
+                <label>Happy with competition</label>
+            </value>
+            <value>
+                <fullName>Long term contract with competitor</fullName>
+                <default>false</default>
+                <label>Long term contract with competitor</label>
+            </value>
+            <value>
+                <fullName>Email update</fullName>
+                <default>false</default>
+                <label>Email update</label>
+            </value>
+            <value>
+                <fullName>Solution offered</fullName>
+                <default>false</default>
+                <label>Solution offered</label>
+            </value>
+            <value>
+                <fullName>Price negotiations</fullName>
+                <default>false</default>
+                <label>Price negotiations</label>
+            </value>
+            <value>
+                <fullName>Contract out for signature</fullName>
+                <default>false</default>
+                <label>Contract out for signature</label>
+            </value>
+            <value>
+                <fullName>Looking at Functionality</fullName>
+                <default>false</default>
+                <label>Looking at Functionality</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

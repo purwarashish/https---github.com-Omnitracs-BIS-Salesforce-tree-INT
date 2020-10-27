@@ -1,0 +1,53 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "00550000000vfNuAAI",
+      "createdByName": "Omnitracs Admin",
+      "createdDate": "2007-01-19T20:11:37.000Z",
+      "fileName": "portals/Omnitracs PRM Portal.portal",
+      "fullName": "Omnitracs PRM Portal",
+      "id": "06050000000002lAAA",
+      "lastModifiedById": "00550000001biZKAAY",
+      "lastModifiedByName": "Deployment User",
+      "lastModifiedDate": "2014-11-08T06:39:02.000Z",
+      "type": "Portal"
+    },
+    {
+      "createdById": "00550000001ZWWuAAO",
+      "createdByName": "David Ragsdale",
+      "createdDate": "2010-12-20T19:04:01.000Z",
+      "fileName": "portals/CNR Portal.portal",
+      "fullName": "CNR Portal",
+      "id": "06050000000LlScAAK",
+      "lastModifiedById": "00550000001ZWWuAAO",
+      "lastModifiedByName": "David Ragsdale",
+      "lastModifiedDate": "2011-03-15T22:22:03.000Z",
+      "type": "Portal"
+    },
+    {
+      "createdById": "00550000001ZWWuAAO",
+      "createdByName": "David Ragsdale",
+      "createdDate": "2011-10-31T22:46:42.000Z",
+      "fileName": "portals/Omnitracs Customer Portal.portal",
+      "fullName": "Omnitracs Customer Portal",
+      "id": "06050000000Lm1LAAS",
+      "lastModifiedById": "00550000006mu7mAAA",
+      "lastModifiedByName": "Yasir Arafat",
+      "lastModifiedDate": "2020-06-08T02:24:15.000Z",
+      "type": "Portal"
+    },
+    {
+      "createdById": "00550000000vfOcAAI",
+      "createdByName": "Mark Silber",
+      "createdDate": "2008-11-26T04:49:54.000Z",
+      "fileName": "portals/QES Prototype Customer Portal.portal",
+      "fullName": "QES Prototype Customer Portal",
+      "id": "060500000004fCCAAY",
+      "lastModifiedById": "00550000003h5fCAAQ",
+      "lastModifiedByName": "Casey Keeling",
+      "lastModifiedDate": "2016-03-23T16:01:10.000Z",
+      "type": "Portal"
+    }
+  ]
+}

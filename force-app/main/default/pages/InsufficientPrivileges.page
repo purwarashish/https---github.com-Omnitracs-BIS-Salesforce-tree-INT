@@ -1,0 +1,6 @@
+<apex:page >
+    <p style="font-size:16px; font-weight:bold; font-family:arial;">Insufficient Privileges</p>
+    <p>You do not have the level of access necessary to perform the operation you requested. 
+        Please contact the owner of the record or your administrator if access is necessary.
+    </p>
+</apex:page>

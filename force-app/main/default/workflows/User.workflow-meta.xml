@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>CNR_Update_BU_for_Customer_Community_Use</fullName>
+        <field>Business_Unit__c</field>
+        <literalValue>Omnitracs MX</literalValue>
+        <name>CNR Update BU for Customer Community Use</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Roadnet_Update_BU_for_Customer_Community</fullName>
+        <field>Business_Unit__c</field>
+        <literalValue>Roadnet</literalValue>
+        <name>Roadnet Update BU for Customer Community</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Business_Unit_Omni_US</fullName>
+        <field>Business_Unit__c</field>
+        <literalValue>Omnitracs US</literalValue>
+        <name>Set Business Unit Omni US</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sylectus_Update_BU_for_Customer_Communit</fullName>
+        <field>Business_Unit__c</field>
+        <literalValue>Sylectus</literalValue>
+        <name>Sylectus Update BU for Customer Communit</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>CNR Update BU for Customer Community User</fullName>
+        <actions>
+            <name>CNR_Update_BU_for_Customer_Community_Use</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>User.ProfileId</field>
+            <operation>equals</operation>
+            <value>CNR Customer Community User,CNR Customer Community Admin</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.ProfileId</field>
+            <operation>notEqual</operation>
+            <value>Data Migration</value>
+        </criteriaItems>
+        <description>This is to update the Business Unit with the right value when a customer community user is added by a customer portal admin</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Roadnet Update BU for Customer Community User</fullName>
+        <actions>
+            <name>Roadnet_Update_BU_for_Customer_Community</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>User.ProfileId</field>
+            <operation>equals</operation>
+            <value>Roadnet Customer Community User,Roadnet Customer Community Admin,Roadnet Partner Profile,Roadnet New Customer Community User,Roadnet Partner Community User</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.ProfileId</field>
+            <operation>notEqual</operation>
+            <value>Data Migration</value>
+        </criteriaItems>
+        <description>This is to update the Business Unit with the right value when a customer community user is added by a customer portal admin</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sylectus Update BU for Customer Community User</fullName>
+        <actions>
+            <name>Sylectus_Update_BU_for_Customer_Communit</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>User.ProfileId</field>
+            <operation>equals</operation>
+            <value>Sylectus Customer Community User,Sylectus Customer Community Admin</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.ProfileId</field>
+            <operation>notEqual</operation>
+            <value>Data Migration</value>
+        </criteriaItems>
+        <description>This is to update the Business Unit with the right value when a customer community user is added by a customer portal admin</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>21.0</apiVersion>
+    <availableInTouch>false</availableInTouch>
+    <confirmationTokenRequired>false</confirmationTokenRequired>
+    <description>This page gives User the option to select the notification topic - Hardware , NMC system, Custom Serach or Portal.Services</description>
+    <label>OutageNotificationTopic</label>
+</ApexPage>

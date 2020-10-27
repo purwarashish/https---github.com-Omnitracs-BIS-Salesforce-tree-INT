@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>OD_PS_Response_Weighted_Average_FU</fullName>
+        <description>Field Update for Weighted Averages for OD Training - Onsite, OD Training - Webinar and OD PS Project Closure</description>
+        <field>Weighted_Average__c</field>
+        <formula>IF(TEXT(Survey_Type__c) = &quot;ODOnsiteTraining&quot;, ((Response_1_Value__c*0.10) + (Response_2_Value__c*0.10) + (Response_3_Value__c*0.20) + (Response_4_Value__c*0.10) + (Response_5_Value__c*0.10) + (Response_6_Value__c*0.40))/5, IF(TEXT(Survey_Type__c) = &quot;ODTrainingWebinar&quot;, ((Response_1_Value__c*0.1) + (Response_2_Value__c*0.1) + (Response_3_Value__c*0.10) + (Response_4_Value__c*0.10) + (Response_5_Value__c*0.10) + (Response_6_Value__c*0.10)+ (Response_7_Value__c*0.40))/5, IF(TEXT(Survey_Type__c) = &quot;ODPSProjectClosure&quot;,
+IF(Response_1__c = &apos;Yes&apos;, ((0.50*5.00) + (Response_2_Value__c*0.10) + (Response_3_Value__c*0.20) + (Response_4_Value__c*0.20))/5, ((0.00*5.00) + (Response_2_Value__c*0.10) + (Response_3_Value__c*0.20) + (Response_4_Value__c*0.20))/5), 0)))</formula>
+        <name>OD PS Response Weighted Average FU</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Populate_Customer_Survey_ID</fullName>
+        <field>Customer_Survey_ID__c</field>
+        <formula>CASESAFEID(Id)</formula>
+        <name>Populate Customer Survey ID</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Response_Value_Average_FU</fullName>
+        <field>Response_Value_Average__c</field>
+        <formula>IF(TEXT(Survey_Type__c) != &apos;NPS&apos;, (IF(OR(ISNULL(Response_1_Value__c), TEXT(Response_1_Value__c) = &apos;Yes&apos;, TEXT(Response_1_Value__c) = &apos;No&apos;), 0, Response_1_Value__c) + 
+IF(OR(ISNULL(Response_2_Value__c), TEXT(Response_2_Value__c) = &apos;Yes&apos;, TEXT(Response_2_Value__c) = &apos;No&apos;), 0, Response_2_Value__c) + 
+IF(OR(ISNULL(Response_3_Value__c), TEXT(Response_2_Value__c) = &apos;Yes&apos;, TEXT(Response_2_Value__c) = &apos;No&apos;), 0, Response_3_Value__c) + 
+IF(OR(ISNULL(Response_4_Value__c), TEXT(Response_4_Value__c) = &apos;Yes&apos;, TEXT(Response_4_Value__c) = &apos;No&apos;), 0, Response_4_Value__c) + 
+IF(OR(ISNULL(Response_5_Value__c), TEXT(Response_5_Value__c) = &apos;Yes&apos;, TEXT(Response_5_Value__c) = &apos;No&apos;), 0, Response_5_Value__c) + 
+IF(OR(ISNULL(Response_6_Value__c), TEXT(Response_6_Value__c) = &apos;Yes&apos;, TEXT(Response_6_Value__c) = &apos;No&apos;), 0, Response_6_Value__c) + 
+IF(OR(ISNULL(Response_7_Value__c), TEXT(Response_7_Value__c) = &apos;Yes&apos;, TEXT(Response_7_Value__c) = &apos;No&apos;), 0, Response_7_Value__c) +
+IF(OR(ISNULL(Response_8_Value__c), TEXT(Response_8_Value__c) = &apos;Yes&apos;, TEXT(Response_8_Value__c) = &apos;No&apos;), 0, Response_8_Value__c)) / (
+IF(OR(ISNULL(Response_1_Value__c), TEXT(Response_1_Value__c) = &apos;Yes&apos;, TEXT(Response_1_Value__c) = &apos;No&apos;), 0, 1) + 
+IF(OR(ISNULL(Response_2_Value__c), TEXT(Response_2_Value__c) = &apos;Yes&apos;, TEXT(Response_2_Value__c) = &apos;No&apos;), 0, 1) + 
+IF(OR(ISNULL(Response_3_Value__c), TEXT(Response_3_Value__c) = &apos;Yes&apos;, TEXT(Response_3_Value__c) = &apos;No&apos;), 0, 1) + 
+IF(OR(ISNULL(Response_4_Value__c), TEXT(Response_4_Value__c) = &apos;Yes&apos;, TEXT(Response_4_Value__c) = &apos;No&apos;), 0, 1) + 
+IF(OR(ISNULL(Response_5_Value__c), TEXT(Response_5_Value__c) = &apos;Yes&apos;, TEXT(Response_5_Value__c) = &apos;No&apos;), 0, 1) + 
+IF(OR(ISNULL(Response_6_Value__c), TEXT(Response_6_Value__c) = &apos;Yes&apos;, TEXT(Response_6_Value__c) = &apos;No&apos;), 0, 1) + 
+IF(OR(ISNULL(Response_7_Value__c), TEXT(Response_7_Value__c) = &apos;Yes&apos;, TEXT(Response_7_Value__c) = &apos;No&apos;), 0, 1) + 
+IF(OR(ISNULL(Response_8_Value__c), TEXT(Response_8_Value__c) = &apos;Yes&apos;, TEXT(Response_8_Value__c) = &apos;No&apos;), 0, 1)), 0)</formula>
+        <name>Response Value Average FU</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Would_Like_to_be_Contacted</fullName>
+        <field>Would_like_to_be_contacted__c</field>
+        <literalValue>Yes</literalValue>
+        <name>Update Would Like to be Contacted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>Customer Survey Workflow</fullName>
+        <actions>
+            <name>OD_PS_Response_Weighted_Average_FU</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Response_Value_Average_FU</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Customer_Survey__c.Survey_Type__c</field>
+            <operation>notEqual</operation>
+            <value>NPS</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

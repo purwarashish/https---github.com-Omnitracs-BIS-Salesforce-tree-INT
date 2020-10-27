@@ -1,0 +1,47 @@
+<apex:page tabStyle="Contract_Request__c" showHeader="false" standardController="Contract_Request__c" extensions="ContractRequestTISControllerExtension" tabstyle="Contract_Request__c">
+<!--Date: 6/12/2009-->
+<!--Author: Rajkumari Nagarajan, Salesforce.com Administrator-->
+<!--Tata Consultancy Services Limited-->
+<html>
+<head>
+</head>
+<body style="background-color: #F3F3EC">
+
+<apex:form id="TISForm" style="background-color: #F3F3EC">
+    
+    <apex:pageBlock > 
+       <apex:pageBlockButtons location="top" >
+            <b>Display History for&nbsp;</b><apex:selectList value="{!State}" multiselect="false" size="1" required="true">
+                <apex:actionSupport event="onchange" rerender="summary, detail" />
+                <apex:selectOptions value="{!items}"/>
+            </apex:selectList>
+            <apex:commandButton value="Show Detail" disabled="{!ShowDetail}" action="{!TrueToggleShowDetail}" rerender="TISForm"/>
+            <apex:commandButton value="Show Summary" disabled="{!!ShowDetail}" action="{!FalseToggleShowDetail}" reRender="TISForm"/>
+        </apex:pageBlockButtons>
+
+      
+      <apex:outputPanel id="summary" rendered="{!!ShowDetail}">
+       <apex:pageBlockTable value="{!TISSummary}" var="TIS">
+            <apex:column headerValue="State" value="{!TIS.State__c}"/> 
+            <apex:column headerValue="Duration" value="{!TIS.Duration__c}"/>
+            <apex:column headerValue="Last Date/Time Out" value="{!TIS.Last_Date_Time_Out__c}"/>
+       </apex:pageBlockTable>
+      </apex:outputPanel>
+      
+       <apex:outputPanel id="detail" rendered="{!ShowDetail}">
+           <apex:pageBlockTable value="{!TISDetail}" var="TISD">
+                <apex:column headerValue="State" value="{!TISD.State__c}"/> 
+                <apex:column headerValue="Modified By" value="{!TISD.Who__c}"/>
+                <apex:column headerValue="Date Time In" value="{!TISD.Date_Time_In__c}"/> 
+                <apex:column headerValue="Date Time Out"  value="{!TISD.Date_Time_Out__c}"/>
+                <apex:column headerValue="Duration" value="{!TISD.Duration__c}"/>
+            </apex:pageBlockTable>     
+        </apex:outputPanel>      
+      
+    </apex:pageBlock> 
+    
+</apex:form>
+
+</body>
+</html>
+</apex:page>

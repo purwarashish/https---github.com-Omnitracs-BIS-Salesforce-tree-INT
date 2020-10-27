@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shipment_Schedule__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Number_of_Shipment_Forecasts__c &gt; 0, HYPERLINK(&apos;/apex/EditShipmentSchedule?Id=&apos; + Id, &apos;Edit&apos;), HYPERLINK(&apos;/apex/EditShipmentSchedule?Id=&apos; + Id, &apos;Add&apos;))</formula>
+    <label>Shipment Schedule</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

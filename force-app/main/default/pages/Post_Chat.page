@@ -1,0 +1,91 @@
+<apex:page showHeader="false" controller="PostChatController">
+      <div style="height: 34px; width: 100%; background-color:#333;"><button style="background: #D54858!important; float: right!important; border-radius: 3px!important; display: inline-block!important; color: #fff!important; margin: 5px 10px 5px 10px!important; font-size: 1em!important; padding: 2px 8px!important; font-family: Arial!important; line-height: normal!important; text-align: center!important; border-style: solid!important; border-width: 0px!important; cursor: pointer!important;" onclick="window.open('', '_self', ''); window.close();">End Chat</button></div>
+      <div id='details'>
+      <!-- This will present all the post chat parameters available to this page -->
+           <p><b>Thank you for chatting.</b></p>   
+            <p>  
+            Hopefully we have helped you or are routing your question to someone who can help.<br></br><br></br>If you need further assistance, please contact us again.<br></br>A copy of your chat transcript has been provided below.
+            </p>
+            <p id="feedbackArea">
+                Please tell us how we did: <img onclick="positiveFeedback()" id="thumbup" style="cursor: pointer" src="https://customer.int.omnitracs.com/u/public/MSUP/ic_thumb_up_black_24dp_1x.png"></img>&nbsp;<img onclick="negativeFeedback()" id="thumbdown" style="cursor: pointer" src="https://customer.int.omnitracs.com/u/public/MSUP/ic_thumb_down_black_24dp_1x.png"></img>
+            </p>
+            <p id="additionalFeedback" style="display: none;">
+                Would you like to leave additional feedback?: <button onclick="showNegativeFeedbackBox()">Yes</button><button onclick="negativeNoAdditionalFeedback()">No</button>
+            </p>
+            <p id="feedbackbox" style="display: none;">
+                Provide additional feedback.<br></br>
+                <textarea style="height:152px; width:95%;" id="additionalTxtArea"></textarea><br></br>
+                <button onclick="submitNegativeFeedback()">Submit</button>
+            </p>
+            <p id="thanksFeedback" style="display: none;">
+                Thanks for providing feedback.
+            </p>
+            <p>
+                <textarea style="height:152px; width:95%;" disabled="true"><apex:outputText value="{!$CurrentPage.parameters.transcript}" /></textarea>
+            </p>
+      </div>
+      <hr/>
+      <!-- Message to show if chat is abandoned -->
+      <div id='abandoned' style='display: none;'>
+          An error has occured and we were unable to connect you with a chat agent. Either all our agents are busy with other chats or they are offline. Please refresh your page and try again.
+      </div>
+      <!-- Code to decide if we show the abandoned block or the full data -->
+      <script type='text/javascript'>
+          var parameters = '{!$CurrentPage.parameters.chatDetails}';
+          console.log(parameters);
+            var notclicked = true;
+            var positiveFeedback = function(){
+                if (notclicked){
+                    document.getElementById("feedbackArea").style.display = "none";
+                    document.getElementById("additionalFeedback").style.display = "none";
+                    document.getElementById("feedbackbox").style.display = "none";
+                    submitFeedback('Satisfied');
+                    document.getElementById("thanksFeedback").style.display = "block";
+                }
+                notclicked = false;
+            }
+            var negativeFeedback = function(){
+                if (notclicked){
+                    document.getElementById("thumbdown").src = "https://customer.int.omnitracs.com/u/public/MSUP/ic_thumb_down_green_24dp_1x.png";
+                    document.getElementById("additionalFeedback").style.display = "block";
+                    document.getElementById("thumbup").style.cursor = "default";
+                    document.getElementById("thumbdown").style.cursor = "default";
+                }
+                notclicked = false;
+            }
+            var negativeNoAdditionalFeedback = function(){
+                document.getElementById("feedbackArea").style.display = "none";
+                document.getElementById("additionalFeedback").style.display = "none";
+                document.getElementById("feedbackbox").style.display = "none";
+                submitFeedback('Dissatisfied');
+                document.getElementById("thanksFeedback").style.display = "block";
+            }
+            var showNegativeFeedbackBox = function(){
+                document.getElementById("feedbackArea").style.display = "none";
+                document.getElementById("additionalFeedback").style.display = "none";
+                document.getElementById("feedbackbox").style.display = "block";
+            }
+            var submitNegativeFeedback = function(){
+                document.getElementById("feedbackArea").style.display = "none";
+                document.getElementById("additionalFeedback").style.display = "none";
+                document.getElementById("feedbackbox").style.display = "none";
+                submitFeedback('Dissatisfied',document.getElementById("additionalTxtArea").value);
+                document.getElementById("thanksFeedback").style.display = "block";
+            }
+            var requestTime = '{!$CurrentPage.parameters.requestTime}';
+            var startTime = '{!$CurrentPage.parameters.startTime}';
+            // when startTime doesn't have a value, it means the chat never started
+            //if (!startTime) {
+            if (!startTime) {
+                  document.getElementById('details').style.display = 'none';
+                  document.getElementById('abandoned').style.display = 'block';
+            }
+      </script>
+      <apex:form >
+         <apex:actionFunction name="submitFeedback" action="{!submitFeedback}" reRender="details">
+             <apex:param name="feedback" assignTo="{!feedback}" value=""/>
+             <apex:param name="cAdditionalFeedback" assignTo="{!cAdditionalFeedback}" value=""/>
+         </apex:actionFunction>
+      </apex:form>
+
+</apex:page>

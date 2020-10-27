@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_Approval</fullName>
+    <active>true</active>
+    <description>Email which shows the prospect has approved the deal; received during Prove; required for Negotiate</description>
+    <label>Email Approval</label>
+</RecordType>

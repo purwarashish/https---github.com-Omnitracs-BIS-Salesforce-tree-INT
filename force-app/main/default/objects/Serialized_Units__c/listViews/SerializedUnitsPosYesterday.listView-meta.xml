@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SerializedUnitsPosYesterday</fullName>
+    <columns>NAME</columns>
+    <columns>Product__c</columns>
+    <columns>Item_ID__c</columns>
+    <columns>Unit_State__c</columns>
+    <columns>Account__c</columns>
+    <columns>NMC_Account__c</columns>
+    <columns>NMC_System__c</columns>
+    <columns>NMC_State__c</columns>
+    <columns>Last_Message_Date__c</columns>
+    <columns>Last_Position_Date__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Last_Position_Date__c</field>
+        <operation>equals</operation>
+        <value>YESTERDAY</value>
+    </filters>
+    <label>Serialized Units Pos Yesterday</label>
+    <language>en_US</language>
+</ListView>

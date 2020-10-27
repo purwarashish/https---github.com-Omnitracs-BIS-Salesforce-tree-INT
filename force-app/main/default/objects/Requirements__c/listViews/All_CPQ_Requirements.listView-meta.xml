@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_CPQ_Requirements</fullName>
+    <booleanFilter>1 OR 2 OR 3 OR 4</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Track__c</columns>
+    <columns>Area__c</columns>
+    <columns>Title__c</columns>
+    <columns>Business_Owner__c</columns>
+    <columns>Requirement_Status__c</columns>
+    <columns>Approved_Status__c</columns>
+    <columns>Origin__c</columns>
+    <columns>Req_Identified_During__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Title__c</field>
+        <operation>contains</operation>
+        <value>CPQ</value>
+    </filters>
+    <filters>
+        <field>Area__c</field>
+        <operation>includes</operation>
+        <value>CPQ</value>
+    </filters>
+    <filters>
+        <field>Title__c</field>
+        <operation>contains</operation>
+        <value>Quoting</value>
+    </filters>
+    <filters>
+        <field>Area__c</field>
+        <operation>includes</operation>
+        <value>Quoting</value>
+    </filters>
+    <label>All CPQ Requirements</label>
+    <language>en_US</language>
+</ListView>

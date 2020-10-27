@@ -1,0 +1,302 @@
+<apex:page id="SystemOutage" tabStyle="Case" standardController="Case"
+    extensions="OutageListClass">
+<style>
+.headerRow.headerStyle {
+    font-weight: bold;
+}
+</style>
+<script language="Javascript">
+function display(objId)
+{
+    var currval = objId.substring((objId.lastIndexOf(":"))+1, objId.length);
+    selectedrec.value = currval;
+    Change();
+}
+
+function Verify()
+{
+    var answer = confirm('Are you sure?');
+    if(answer)
+       {
+    
+          return true;
+       }
+       else
+       {
+            return false;
+       }
+}
+
+
+function RenderCells()
+ {
+    var innersize=document.getElementById('SystemOutage:form:innerlistSize').value;
+    var outersize=document.getElementById('SystemOutage:form:outerlistSize').value;
+    var browserName=navigator.appName;
+    if(innersize > 0 && outersize>0)
+    {
+        var rowlength = document.getElementById('innertable').rows.length;
+    }
+    var spacing = '\&nbsp\;\&nbsp\;\&nbsp\;\&nbsp\;\&nbsp\;\&nbsp\;\&nbsp\;\&nbsp\;';
+    if(outersize>0){
+        for(i=1;i<=outersize;i++)
+        {
+            var k=1;
+            var counter= 0;
+            for(j=1;j<rowlength;j++)
+            {
+                if(browserName == 'Microsoft Internet Explorer')
+                {
+                    var tablerow = document.getElementById('outertable').rows[i].childNodes[3].childNodes[2].rows[k].innerHTML;
+                }
+                if (browserName == 'Netscape')
+                {
+                    var tablerow = document.getElementById('outertable').rows[i].childNodes[7].childNodes[2].childNodes[1].rows[k].innerHTML;
+                }       
+                tablerow = tablerow.replace(/(<([^>]+)>)/ig,"");
+                tablerow = tablerow.replace(spacing,"");
+                tablerow = tablerow.replace(/^\s+|\s+$/g, '');
+                if(tablerow.length == 0 )
+                {
+                    counter = counter +1;
+                    if(browserName == 'Netscape')
+                    {
+                        var currentNode = document.getElementById('outertable').rows[i].childNodes[7].childNodes[2].childNodes[1].rows[k];
+                    }
+                    if (browserName == 'Microsoft Internet Explorer')
+                    {
+                        var currentNode = document.getElementById('outertable').rows[i].childNodes[3].childNodes[2].rows[k];
+                    }
+                    currentNode.parentNode.removeChild(currentNode);
+                }
+                else
+                {
+                    k=k+1;
+                }
+                if (counter==innersize)
+                 {
+                     if(browserName == 'Netscape')
+                     {
+                         var tableid = document.getElementById('outertable').rows[i].childNodes[7].childNodes[2].childNodes[1];
+                     }
+                     if (browserName == 'Microsoft Internet Explorer')
+                     {
+                         var tableid = document.getElementById('outertable').rows[i].childNodes[3].childNodes[2];
+                     }
+                     var Pnode=tableid.parentNode;
+                     Pnode.removeChild(tableid);
+                 }
+            }
+        }
+    }
+
+}
+
+
+function toggleAllUsers(button, alphabet) {
+isAscending=false;
+if(button != null){
+allUserToggle = button;
+alpha = null;
+} else if(alphabet != null) {
+alpha = alphabet;
+}
+//alert('alpha:'+alpha);
+selectedalpha.value = alpha;
+Ordering();
+}
+</script>
+
+    <apex:form style="width:100%" id="form">
+        <apex:inputHidden id="outerlistSize" value="{!OUTERLIST_SIZE}" />
+        <apex:inputHidden id="innerlistSize" value="{!INNERLIST_SIZE}" />
+        <apex:inputhidden value="{!id1}" id="id1" />
+        <script> var id1= document.getElementById('{!$Component.id1}'); </script>
+
+        <apex:sectionHeader title="System Outages" subtitle="{!Case_num}" />
+        <apex:commandLink value="Case: {!Case_num}" action="/{!caseId}" />
+        <apex:actionFunction name="Change" action="{!ChangeOrder}" />
+        <apex:actionFunction name="Ordering" action="{!alphabet_Ordering}" />
+        <apex:include pageName="Alphabet_Ordering" rendered="{!isAlphaBar}"  />
+
+        <apex:pageblock mode="detail" id="pageblk">
+            <TABLE id="outertable" cellspacing="0" cellpadding="10" border="0"
+                width="100%" class="detailList">
+
+                <TR>
+                    <th class="headerRow"><apex:outputText value="Action" /></th>
+                    <td width="100%" nowrap="nowrap"><apex:outputPanel id="panel">
+                        <apex:commandLink style="font-weight:bold;"
+                            id="name" value="System Outage" rerender="panel,pageblktable"
+                            onclick="javascript:display(this.id);">
+                            <apex:image value="../img/sort_asc_arrow.gif"
+                                rendered="{!AND(asce,if(current_value == 'name',true,false))}"
+                                id="asce" />
+                            <apex:image value="../img/sort_desc_arrow.gif"
+                                rendered="{!AND(NOT(asce),if(current_value == 'name',true,false))}"
+                                id="desc" />
+                        </apex:commandLink>
+                    </apex:outputPanel></td>
+
+                    <td class="headerRow"><apex:outputPanel id="panel1" style="">
+                        <apex:commandLink id="Type__c"
+                            style="font-weight:bold;text-wrap:none;text-align:left;width:200;"
+                            value="Type" rerender="panel1,pageblktable"
+                            onclick="javascript:display(this.id);">
+                            <apex:image value="../img/sort_asc_arrow.gif"
+                                rendered="{!AND(asce,if(current_value == 'Type__c',true,false))}" />
+                            <apex:image value="../img/sort_desc_arrow.gif"
+                                rendered="{!AND(NOT(asce),if(current_value == 'Type__c',true,false))}" />
+                        </apex:commandLink>
+                    </apex:outputPanel></td>
+
+                    <td class="headerRow"><apex:outputPanel id="panel2">
+                        <apex:commandLink id="system" style="font-weight:bold"
+                            value="System" rerender="panel2,pageblktable"
+                            onclick="javascript:display(this.id);">
+                            <apex:image value="../img/sort_asc_arrow.gif"
+                                rendered="{!AND(asce,if(current_value == 'system',true,false))}"
+                                id="img1" />
+                            <apex:image id="img2" value="../img/sort_desc_arrow.gif"
+                                rendered="{!AND(NOT(asce),if(current_value == 'system',true,false))}" />
+                        </apex:commandLink>
+                    </apex:outputPanel></td>
+                    <td class="headerRow"><apex:outputPanel id="panel3">
+                        <apex:commandLink id="subsystem" style="font-weight:bold"
+                            value="Subsystem" rerender="panel3,pageblktable"
+                            onclick="javascript:display(this.id);">
+                            <apex:image value="../img/sort_asc_arrow.gif"
+                                rendered="{!AND(asce,if(current_value == 'subsystem',true,false))}" />
+                            <apex:image value="../img/sort_desc_arrow.gif"
+                                rendered="{!AND(NOT(asce),if(current_value == 'subsystem',true,false))}" />
+                        </apex:commandLink>
+                    </apex:outputPanel></td>
+
+                    <td class="headerRow" width="100px" nowrap="nowrap"><apex:outputPanel id="panel4">
+                        <apex:commandLink id="Start_Time__c" style="font-weight:bold"
+                            value="Start Time (PST/PDT)" rerender="panel4,pageblktable"
+                            onclick="javascript:display(this.id);">
+                            <apex:image value="../img/sort_asc_arrow.gif"
+                                rendered="{!AND(asce,if(current_value == 'Start_Time__c',true,false))}" />
+                            <apex:image value="../img/sort_desc_arrow.gif"
+                                rendered="{!AND(NOT(asce),if(current_value == 'Start_Time__c',true,false))}" />
+                        </apex:commandLink>
+                    </apex:outputPanel></td>
+
+                    <td class="headerRow" nowrap="nowrap"><apex:outputPanel id="panel5">
+                        <apex:commandLink id="End_Time__c" style="font-weight:bold"
+                            value="End Time (PST/PDT)" rerender="panel5,pageblktable"
+                            onclick="javascript:display(this.id);">
+                            <apex:image value="../img/sort_asc_arrow.gif"
+                                rendered="{!AND(asce,if(current_value == 'End_Time__c',true,false))}" />
+                            <apex:image value="../img/sort_desc_arrow.gif"
+                                rendered="{!AND(NOT(asce),if(current_value == 'End_Time__c',true,false))}" />
+                        </apex:commandLink>
+                    </apex:outputPanel></td>
+
+                    <td class="headerRow" nowrap="nowrap"><apex:outputPanel id="panel6">
+                        <apex:commandLink id="Calculated_Downtime__c"
+                            style="font-weight:bold" value="Calculated Time"
+                            rerender="panel6,pageblktable"
+                            onclick="javascript:display(this.id);">
+                            <apex:image value="../img/sort_asc_arrow.gif"
+                                rendered="{!AND(asce,if(current_value == 'Calculated_Downtime__c',true,false))}" />
+                            <apex:image value="../img/sort_desc_arrow.gif"
+                                rendered="{!AND(NOT(asce),if(current_value == 'Calculated_Downtime__c',true,false))}" />
+                        </apex:commandLink>
+                    </apex:outputPanel></td>
+
+                    <td class="headerRow" nowrap="nowrap"><apex:outputPanel id="panel7">
+                        <apex:commandLink id="CreatedById"
+                            style="font-weight:bold;text-wrap:none;" value="Created By"
+                            rerender="panel7,pageblktable"
+                            onclick="javascript:display(this.id);">
+                            <apex:image value="../img/sort_asc_arrow.gif"
+                                rendered="{!AND(asce,if(current_value == 'CreatedById',true,false))}" />
+                            <apex:image value="../img/sort_desc_arrow.gif"
+                                rendered="{!AND(NOT(asce),if(current_value == 'CreatedById ',true,false))}" />
+                        </apex:commandLink>
+                    </apex:outputPanel></td>
+
+                    <td class="headerRow" nowrap="nowrap"><apex:outputPanel id="panel8">
+                        <apex:commandLink id="LastModifiedById" style="font-weight:bold"
+                            value="Last Modified By" rerender="panel8,pageblktable"
+                            onclick="javascript:display(this.id);">
+                            <apex:image value="../img/sort_asc_arrow.gif"
+                                rendered="{!AND(asce,if(current_value == 'LastModifiedById',true,false))}" />
+                            <apex:image value="../img/sort_desc_arrow.gif"
+                                rendered="{!AND(NOT(asce),if(current_value == 'LastModifiedById',true,false))}" />
+                        </apex:commandLink>
+                    </apex:outputPanel></td>
+                </TR>
+
+                <apex:repeat id="outerrepeat" value="{!outageList}" var="OutList">
+                    <TR>
+                        <td ><apex:outputPanel style="width:20%;">
+                            <b><apex:commandLink value="Edit"
+                                action="/apex/SystemOutageDetails?CF00N50000001caGA_lkid={!CaseId}&Id={!OutList.Id}"
+                                rendered="true" />&nbsp;<apex:outputText value="|" />&nbsp;<apex:commandLink value="Del" onclick="javascript: return Verify();"
+                                action="/setup/own/deleteredirect.jsp?delID={!OutList.Id}&retURL={!CaseId}" /></b>
+                        </apex:outputPanel></td>
+                        <td ><apex:commandLink value="{!OutList.name}"
+                            action="/apex/DisplaySystemOutage?id={!OutList.Id}&sfdc.override=1" /></td>
+                        <td  align="left"><apex:outputField value="{!OutList.Type__c}"></apex:outputField></td>
+                        <td align="left"><apex:outputField value="{!OutList.System_Lookup__c}" style="font-weight:bold"></apex:outputField>
+
+                        <TABLE id="innertable" cellspacing="0" cellpadding="5" width="400px"                            >
+
+                            <TR class="headerRow">
+                                <th class="header"><apex:outputtext value="Level 2 / Level 3 System" /></th>
+
+                                <th class="header"><apex:outputtext value="Outage Type" /></th>
+                            </TR>
+                            <apex:repeat id="repeattag" value="{!OutageLineList}"
+                                var="L2System">
+                                <TR>
+                                    <td width="60%" class="dataCell"><apex:outputPanel id="firstcol1"
+                                        rendered="{!if(L2System.Level__c=='Level - 2',true,false)}">
+                                        <b><apex:outputField value="{!L2System.System_Master__c}"
+                                            style="font-weight:bold;"
+                                            rendered="{!if(L2System.System_Outage_Header__c == OutList.Id ,true,false)}" /></b>
+                                    </apex:outputPanel> <apex:outputPanel id="firstcol2"
+                                        rendered="{!if(L2System.Level__c=='Level - 3',true,false)}"
+                                        style="width:90%">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputField value="{!L2System.System_Master__c}"
+                                            style="text-align:right;word-wrap:break-word;width:90%"
+                                            rendered="{!if(L2System.System_Outage_Header__c == OutList.Id ,true,false)}" />
+                                    </apex:outputPanel></td>
+                                    <td width="40%" class="dataCell"><apex:outputField value="{!L2System.Outage_Type__c}"
+                                        rendered="{!if(L2System.System_Outage_Header__c == OutList.Id ,true,false)}" />
+                                    </td>
+                                </TR>
+                            </apex:repeat>
+                        </TABLE>
+
+                        </td>
+                        <td  align="left"><apex:outputField value="{!OutList.Subsystem_Lookup__c}"></apex:outputField></td>
+                        <td  align="left"><apex:outputField value="{!OutList.Start_Time__c}"></apex:outputField></td>
+                        <td  align="left"><apex:outputField value="{!OutList.End_Time__c}"></apex:outputField></td>
+                        <td  align="left"><apex:outputField value="{!OutList.Calculated_Downtime__c}"></apex:outputField></td>
+                        <td  align="left"><apex:outputField value="{!OutList.CreatedById}"></apex:outputField></td>
+                        <td  align="left"><apex:outputField value="{!OutList.LastModifiedById}"></apex:outputField></td>
+
+
+                    </TR>
+                </apex:repeat>
+
+            </TABLE>
+
+            <script language="Javascript">RenderCells();</script>
+
+
+        </apex:pageblock>
+        <apex:inputhidden value="{!current_Value}" id="selectedid" />
+        <script> var selectedrec= document.getElementById('{!$Component.selectedid}'); </script>
+        <apex:inputhidden value="{!alphabet}" id="selectedalpha" />
+        <script> var selectedalpha= document.getElementById('{!$Component.selectedalpha}'); </script>
+        <apex:include pageName="Alphabet_Ordering" rendered="{!isAlphaBar}" />
+
+
+    </apex:form>
+
+</apex:page>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>nb</fullName>
+    <columns>NAME</columns>
+    <columns>Condition__c</columns>
+    <columns>Data_Key__c</columns>
+    <columns>Data_Scale_1__c</columns>
+    <columns>Data_Scale_2__c</columns>
+    <columns>CURRENCY_ISO_CODE</columns>
+    <columns>Result_Type__c</columns>
+    <columns>Result_Value__c</columns>
+    <columns>Result_Value_String__c</columns>
+    <columns>Multiply_by_Quantity__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Data_Key__c</field>
+        <operation>equals</operation>
+        <value>21000-VE-MP-I-ET|2014</value>
+    </filters>
+    <label>nb</label>
+    <language>en_US</language>
+</ListView>

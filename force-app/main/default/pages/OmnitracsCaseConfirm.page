@@ -1,0 +1,39 @@
+<apex:page showHeader="false" sidebar="false" controller="OmnitracsCreateCaseController">
+  <apex:include pageName="homePage" />
+  <Style>
+     .confirm-message{
+        padding:150px 10px;
+        font-size:1.5em;
+        color:#F8F8F8;
+    }
+    .btn {
+        border: 0 none !important;
+        cursor: pointer !important;
+        height: 34px !important;
+        margin: 0 !important;
+        width: 70px !important;
+        margin-left: 46% !important;
+        margin-top: 41px !important;
+        }
+        
+        .btn:hover{
+            background:#faa634;
+            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#faa634), to(#c25701)); /* Safari 4-5, Chrome 1-9 */  
+            background: -webkit-linear-gradient(top, #faa634, #c25701); /* Safari 5.1, Chrome 10+ */    
+            background: -moz-linear-gradient(top, #faa634, #c25701); /* Firefox 3.6+ */ 
+            background: -ms-linear-gradient(top, #faa634, #c25701); /* IE 10 */ 
+            background: -o-linear-gradient(top, #faa634, #c25701); /* Opera 11.10+ */
+        }
+  </style>
+  <div id="quotation-wrapper-id" class="quotation-wrapper">
+    <apex:form style="margin: 13% 0 0;" >
+    <apex:outputLabel styleClass="confirm-message" style="margin-left: 33%;" >
+      Thank you. Your request has been submitted succesfully.
+    </apex:outputLabel>
+    <br/>
+    <div >
+        <apex:commandButton styleClass="btn" value="Exit" action="/apex/OmnitracsCreateCase"/>
+    </div>
+    </apex:Form>    
+  </div>
+</apex:page>

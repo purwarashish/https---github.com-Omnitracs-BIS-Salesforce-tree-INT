@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Professional_Services__c</fullName>
+    <externalId>false</externalId>
+    <label>Professional Services</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <controllingField>Product__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Drivers/Dispatchers Training</fullName>
+                <default>false</default>
+                <label>Drivers/Dispatchers Training</label>
+            </value>
+            <value>
+                <fullName>High Volume Term. Install</fullName>
+                <default>false</default>
+                <label>High Volume Term. Install</label>
+            </value>
+            <value>
+                <fullName>High Volume Term. Install w/Solar Panel</fullName>
+                <default>false</default>
+                <label>High Volume Term. Install w/Solar Panel</label>
+            </value>
+            <value>
+                <fullName>Installation Training</fullName>
+                <default>false</default>
+                <label>Installation Training</label>
+            </value>
+            <value>
+                <fullName>Qualcomm Authorized Service Installation</fullName>
+                <default>false</default>
+                <label>Qualcomm Authorized Service Installation</label>
+            </value>
+            <value>
+                <fullName>Qualcomm Installation</fullName>
+                <default>false</default>
+                <label>Qualcomm Installation</label>
+            </value>
+            <value>
+                <fullName>Terminal Installation</fullName>
+                <default>false</default>
+                <label>Terminal Installation</label>
+            </value>
+            <value>
+                <fullName>Terminal Installation with Door Sensor</fullName>
+                <default>false</default>
+                <label>Terminal Installation with Door Sensor</label>
+            </value>
+            <value>
+                <fullName>Terminal Installation with Solar Panel</fullName>
+                <default>false</default>
+                <label>Terminal Installation with Solar Panel</label>
+            </value>
+            <value>
+                <fullName>Other Professional Services</fullName>
+                <default>false</default>
+                <label>Other Professional Services</label>
+            </value>
+            <value>
+                <fullName>Web-based SFM Training</fullName>
+                <default>false</default>
+                <label>Web-based SFM Training</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Trailer Tracks 210</controllingFieldValue>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>T2 System with integrated solar panel</controllingFieldValue>
+            <controllingFieldValue>T2 Reefer System</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniExpress</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>JDLink</controllingFieldValue>
+            <controllingFieldValue>ZXLink</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS Lite</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>Refurbished OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>T2 System</controllingFieldValue>
+            <valueName>Drivers/Dispatchers Training</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trailer Tracks 210</controllingFieldValue>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>T2 System with integrated solar panel</controllingFieldValue>
+            <controllingFieldValue>T2 Reefer System</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniExpress</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>JDLink</controllingFieldValue>
+            <controllingFieldValue>ZXLink</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS Lite</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>Refurbished OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>T2 System</controllingFieldValue>
+            <valueName>High Volume Term. Install</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trailer Tracks 210</controllingFieldValue>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>T2 System with integrated solar panel</controllingFieldValue>
+            <controllingFieldValue>T2 Reefer System</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniExpress</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>JDLink</controllingFieldValue>
+            <controllingFieldValue>ZXLink</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS Lite</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>Refurbished OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>T2 System</controllingFieldValue>
+            <valueName>High Volume Term. Install w/Solar Panel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trailer Tracks 210</controllingFieldValue>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>T2 System with integrated solar panel</controllingFieldValue>
+            <controllingFieldValue>T2 Reefer System</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniExpress</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>JDLink</controllingFieldValue>
+            <controllingFieldValue>ZXLink</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS Lite</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>Refurbished OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>T2 System</controllingFieldValue>
+            <controllingFieldValue>SFM</controllingFieldValue>
+            <valueName>Installation Training</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trailer Tracks 210</controllingFieldValue>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>T2 System with integrated solar panel</controllingFieldValue>
+            <controllingFieldValue>T2 Reefer System</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniExpress</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>JDLink</controllingFieldValue>
+            <controllingFieldValue>ZXLink</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS Lite</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>Refurbished OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>T2 System</controllingFieldValue>
+            <controllingFieldValue>SFM</controllingFieldValue>
+            <valueName>Qualcomm Authorized Service Installation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trailer Tracks 210</controllingFieldValue>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>T2 System with integrated solar panel</controllingFieldValue>
+            <controllingFieldValue>T2 Reefer System</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniExpress</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>JDLink</controllingFieldValue>
+            <controllingFieldValue>ZXLink</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS Lite</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>Refurbished OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>T2 System</controllingFieldValue>
+            <controllingFieldValue>SFM</controllingFieldValue>
+            <valueName>Qualcomm Installation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trailer Tracks 210</controllingFieldValue>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>T2 System with integrated solar panel</controllingFieldValue>
+            <controllingFieldValue>T2 Reefer System</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniExpress</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>JDLink</controllingFieldValue>
+            <controllingFieldValue>ZXLink</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS Lite</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>Refurbished OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>T2 System</controllingFieldValue>
+            <valueName>Terminal Installation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trailer Tracks 210</controllingFieldValue>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>T2 System with integrated solar panel</controllingFieldValue>
+            <controllingFieldValue>T2 Reefer System</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniExpress</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>JDLink</controllingFieldValue>
+            <controllingFieldValue>ZXLink</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS Lite</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>Refurbished OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>T2 System</controllingFieldValue>
+            <valueName>Terminal Installation with Door Sensor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trailer Tracks 210</controllingFieldValue>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>T2 System with integrated solar panel</controllingFieldValue>
+            <controllingFieldValue>T2 Reefer System</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniExpress</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>JDLink</controllingFieldValue>
+            <controllingFieldValue>ZXLink</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS Lite</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>Refurbished OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>T2 System</controllingFieldValue>
+            <valueName>Terminal Installation with Solar Panel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trailer Tracks 210</controllingFieldValue>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>T2 System with integrated solar panel</controllingFieldValue>
+            <controllingFieldValue>T2 Reefer System</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniExpress</controllingFieldValue>
+            <controllingFieldValue>Third Party Acquired OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>JDLink</controllingFieldValue>
+            <controllingFieldValue>ZXLink</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS Lite</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>Refurbished OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>T2 System</controllingFieldValue>
+            <valueName>Other Professional Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SFM</controllingFieldValue>
+            <valueName>Web-based SFM Training</valueName>
+        </valueSettings>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

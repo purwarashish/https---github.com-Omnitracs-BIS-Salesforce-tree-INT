@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Assoc_Restriction_Level_Name__c</fullName>
+    <description>The name associated with the Restriction Level. Ex: if Restriction Level = &apos;Profile&apos; an associated Profile Name such as &apos;System Administrator&apos; would be added here to determine which Profile is Restricted.</description>
+    <externalId>false</externalId>
+    <label>Assoc. Restriction Level Name</label>
+    <length>128</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

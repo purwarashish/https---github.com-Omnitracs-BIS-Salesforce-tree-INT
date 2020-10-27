@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Used in AllAccountUtils class mainly for the Calculation Data Quality Score and generate Data Quality Description for the account.</description>
+    <enableFeeds>false</enableFeeds>
+    <label>AllAccountUtils</label>
+    <visibility>Public</visibility>
+</CustomObject>

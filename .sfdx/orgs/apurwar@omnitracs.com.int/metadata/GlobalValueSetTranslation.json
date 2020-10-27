@@ -1,0 +1,1195 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/OrderProductStatus-pt_BR.globalValueSetTranslation",
+      "fullName": "OrderProductStatus-pt_BR",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/JobStatus-de.globalValueSetTranslation",
+      "fullName": "JobStatus-de",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/ContractingMethod-pt_BR.globalValueSetTranslation",
+      "fullName": "ContractingMethod-pt_BR",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/SubscriptionType-de.globalValueSetTranslation",
+      "fullName": "SubscriptionType-de",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/BillingFrequency-ja.globalValueSetTranslation",
+      "fullName": "BillingFrequency-ja",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/BookingsIndicator-ja.globalValueSetTranslation",
+      "fullName": "BookingsIndicator-ja",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/ContractAction-pt_BR.globalValueSetTranslation",
+      "fullName": "ContractAction-pt_BR",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/ContractingMethod-es_MX.globalValueSetTranslation",
+      "fullName": "ContractingMethod-es_MX",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/BookingsIndicator-pt_BR.globalValueSetTranslation",
+      "fullName": "BookingsIndicator-pt_BR",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/OrderProductStatus-fr.globalValueSetTranslation",
+      "fullName": "OrderProductStatus-fr",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/BillingFrequency-es_MX.globalValueSetTranslation",
+      "fullName": "BillingFrequency-es_MX",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/PriceModel-ja.globalValueSetTranslation",
+      "fullName": "PriceModel-ja",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/PriceModel-pt_BR.globalValueSetTranslation",
+      "fullName": "PriceModel-pt_BR",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/PaymentTerm-es_MX.globalValueSetTranslation",
+      "fullName": "PaymentTerm-es_MX",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/JobStatus-pt_BR.globalValueSetTranslation",
+      "fullName": "JobStatus-pt_BR",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/PriceType-ja.globalValueSetTranslation",
+      "fullName": "PriceType-ja",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/BillingType-ja.globalValueSetTranslation",
+      "fullName": "BillingType-ja",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/ContractAction-es_MX.globalValueSetTranslation",
+      "fullName": "ContractAction-es_MX",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/BillingFrequency-fr.globalValueSetTranslation",
+      "fullName": "BillingFrequency-fr",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/JobStatus-ja.globalValueSetTranslation",
+      "fullName": "JobStatus-ja",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/PriceType-pt_BR.globalValueSetTranslation",
+      "fullName": "PriceType-pt_BR",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/ChargeType-ja.globalValueSetTranslation",
+      "fullName": "ChargeType-ja",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/ChargeType-pt_BR.globalValueSetTranslation",
+      "fullName": "ChargeType-pt_BR",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/PriceType-es_MX.globalValueSetTranslation",
+      "fullName": "PriceType-es_MX",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/SubscriptionPricing-es_MX.globalValueSetTranslation",
+      "fullName": "SubscriptionPricing-es_MX",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/PaperSize-ja.globalValueSetTranslation",
+      "fullName": "PaperSize-ja",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/BookingsIndicator-fr.globalValueSetTranslation",
+      "fullName": "BookingsIndicator-fr",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/PaymentTerm-fr.globalValueSetTranslation",
+      "fullName": "PaymentTerm-fr",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/OrderProductStatus-ja.globalValueSetTranslation",
+      "fullName": "OrderProductStatus-ja",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/JobStatus-fr.globalValueSetTranslation",
+      "fullName": "JobStatus-fr",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/PriceModel-de.globalValueSetTranslation",
+      "fullName": "PriceModel-de",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/SubscriptionType-es_MX.globalValueSetTranslation",
+      "fullName": "SubscriptionType-es_MX",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/OrderProductStatus-es_MX.globalValueSetTranslation",
+      "fullName": "OrderProductStatus-es_MX",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/SubscriptionPricing-ja.globalValueSetTranslation",
+      "fullName": "SubscriptionPricing-ja",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/SubscriptionType-ja.globalValueSetTranslation",
+      "fullName": "SubscriptionType-ja",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/JobStatus-es_MX.globalValueSetTranslation",
+      "fullName": "JobStatus-es_MX",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/PriceType-de.globalValueSetTranslation",
+      "fullName": "PriceType-de",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/ContractAction-de.globalValueSetTranslation",
+      "fullName": "ContractAction-de",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/BillingType-es_MX.globalValueSetTranslation",
+      "fullName": "BillingType-es_MX",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/BillingType-de.globalValueSetTranslation",
+      "fullName": "BillingType-de",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/BillingFrequency-de.globalValueSetTranslation",
+      "fullName": "BillingFrequency-de",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/ChargeType-de.globalValueSetTranslation",
+      "fullName": "ChargeType-de",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/PaymentTerm-ja.globalValueSetTranslation",
+      "fullName": "PaymentTerm-ja",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/PaperSize-fr.globalValueSetTranslation",
+      "fullName": "PaperSize-fr",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/ContractAction-ja.globalValueSetTranslation",
+      "fullName": "ContractAction-ja",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/BillingType-pt_BR.globalValueSetTranslation",
+      "fullName": "BillingType-pt_BR",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/SubscriptionType-pt_BR.globalValueSetTranslation",
+      "fullName": "SubscriptionType-pt_BR",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/PriceModel-fr.globalValueSetTranslation",
+      "fullName": "PriceModel-fr",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/PaymentTerm-pt_BR.globalValueSetTranslation",
+      "fullName": "PaymentTerm-pt_BR",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/BillingType-fr.globalValueSetTranslation",
+      "fullName": "BillingType-fr",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/PriceModel-es_MX.globalValueSetTranslation",
+      "fullName": "PriceModel-es_MX",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/PaperSize-de.globalValueSetTranslation",
+      "fullName": "PaperSize-de",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/ContractAction-fr.globalValueSetTranslation",
+      "fullName": "ContractAction-fr",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/PaymentTerm-de.globalValueSetTranslation",
+      "fullName": "PaymentTerm-de",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/PaperSize-pt_BR.globalValueSetTranslation",
+      "fullName": "PaperSize-pt_BR",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/OrderProductStatus-de.globalValueSetTranslation",
+      "fullName": "OrderProductStatus-de",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/ContractingMethod-ja.globalValueSetTranslation",
+      "fullName": "ContractingMethod-ja",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/PriceType-fr.globalValueSetTranslation",
+      "fullName": "PriceType-fr",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/SubscriptionPricing-de.globalValueSetTranslation",
+      "fullName": "SubscriptionPricing-de",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/BookingsIndicator-es_MX.globalValueSetTranslation",
+      "fullName": "BookingsIndicator-es_MX",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/BookingsIndicator-de.globalValueSetTranslation",
+      "fullName": "BookingsIndicator-de",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/ContractingMethod-de.globalValueSetTranslation",
+      "fullName": "ContractingMethod-de",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/SubscriptionPricing-pt_BR.globalValueSetTranslation",
+      "fullName": "SubscriptionPricing-pt_BR",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/ContractingMethod-fr.globalValueSetTranslation",
+      "fullName": "ContractingMethod-fr",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/ChargeType-fr.globalValueSetTranslation",
+      "fullName": "ChargeType-fr",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/SubscriptionType-fr.globalValueSetTranslation",
+      "fullName": "SubscriptionType-fr",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/BillingFrequency-pt_BR.globalValueSetTranslation",
+      "fullName": "BillingFrequency-pt_BR",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/PaperSize-es_MX.globalValueSetTranslation",
+      "fullName": "PaperSize-es_MX",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/ChargeType-es_MX.globalValueSetTranslation",
+      "fullName": "ChargeType-es_MX",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "globalValueSetTranslations/SubscriptionPricing-fr.globalValueSetTranslation",
+      "fullName": "SubscriptionPricing-fr",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    }
+  ]
+}

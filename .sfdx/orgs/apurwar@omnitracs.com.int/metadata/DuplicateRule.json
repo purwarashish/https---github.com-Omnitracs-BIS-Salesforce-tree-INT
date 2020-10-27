@@ -1,0 +1,70 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "00550000006mu7mAAA",
+      "createdByName": "Yasir Arafat",
+      "createdDate": "2019-04-27T00:58:37.000Z",
+      "fileName": "duplicateRules/Contact.Basic_Contact_Check.duplicateRule",
+      "fullName": "Contact.Basic_Contact_Check",
+      "id": "0Bm1T000000NpvYSAS",
+      "lastModifiedById": "00550000006mu7mAAA",
+      "lastModifiedByName": "Yasir Arafat",
+      "lastModifiedDate": "2020-07-07T23:04:50.000Z",
+      "manageableState": "unmanaged",
+      "type": "DuplicateRule"
+    },
+    {
+      "createdById": "00550000006ssMNAAY",
+      "createdByName": "Luis Esquivel",
+      "createdDate": "2018-05-08T20:33:22.000Z",
+      "fileName": "duplicateRules/Lead.Leads_with_Duplicate_Leads.duplicateRule",
+      "fullName": "Lead.Leads_with_Duplicate_Leads",
+      "id": "0Bm50000000cxkqCAA",
+      "lastModifiedById": "00550000006ssMNAAY",
+      "lastModifiedByName": "Luis Esquivel",
+      "lastModifiedDate": "2018-06-07T14:00:09.000Z",
+      "manageableState": "unmanaged",
+      "type": "DuplicateRule"
+    },
+    {
+      "createdById": "00550000001IbGRAA0",
+      "createdByName": "Automated Process",
+      "createdDate": "2017-06-10T07:45:03.000Z",
+      "fileName": "duplicateRules/Contact.Standard_Rule_for_Contacts_with_Duplicate_Leads.duplicateRule",
+      "fullName": "Contact.Standard_Rule_for_Contacts_with_Duplicate_Leads",
+      "id": "0Bm50000000NlUWCA0",
+      "lastModifiedById": "00550000001IbGRAA0",
+      "lastModifiedByName": "Automated Process",
+      "lastModifiedDate": "2017-06-10T07:45:03.000Z",
+      "manageableState": "unmanaged",
+      "type": "DuplicateRule"
+    },
+    {
+      "createdById": "00550000001IbGRAA0",
+      "createdByName": "Automated Process",
+      "createdDate": "2017-06-10T07:44:54.000Z",
+      "fileName": "duplicateRules/Lead.Standard_Rule_for_Leads_with_Duplicate_Contacts.duplicateRule",
+      "fullName": "Lead.Standard_Rule_for_Leads_with_Duplicate_Contacts",
+      "id": "0Bm50000000NlUVCA0",
+      "lastModifiedById": "00550000006ssMNAAY",
+      "lastModifiedByName": "Luis Esquivel",
+      "lastModifiedDate": "2018-06-07T14:00:25.000Z",
+      "manageableState": "unmanaged",
+      "type": "DuplicateRule"
+    },
+    {
+      "createdById": "00550000006mu7mAAA",
+      "createdByName": "Yasir Arafat",
+      "createdDate": "2019-04-27T00:58:37.000Z",
+      "fileName": "duplicateRules/Account.Basic_Account_Duplicate_Check.duplicateRule",
+      "fullName": "Account.Basic_Account_Duplicate_Check",
+      "id": "0Bm1T000000NpvXSAS",
+      "lastModifiedById": "0051T000009JLYDQA4",
+      "lastModifiedByName": "Sooraj Surendranath",
+      "lastModifiedDate": "2020-06-26T17:25:26.000Z",
+      "manageableState": "unmanaged",
+      "type": "DuplicateRule"
+    }
+  ]
+}

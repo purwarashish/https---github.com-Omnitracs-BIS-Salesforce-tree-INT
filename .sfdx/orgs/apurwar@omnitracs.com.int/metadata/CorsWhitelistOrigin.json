@@ -1,0 +1,33 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "00550000001biZKAAY",
+      "createdByName": "Deployment User",
+      "createdDate": "2018-06-30T15:25:50.000Z",
+      "fileName": "corsWhitelistOrigins/SBQQ__ApexRestWhitelist.corsWhitelistOrigin",
+      "fullName": "SBQQ__ApexRestWhitelist",
+      "id": "07450000000GmfJAAS",
+      "lastModifiedById": "00550000001biZKAAY",
+      "lastModifiedByName": "Deployment User",
+      "lastModifiedDate": "2018-06-30T15:25:50.000Z",
+      "manageableState": "installed",
+      "namespacePrefix": "SBQQ",
+      "type": "CorsWhitelistOrigin"
+    },
+    {
+      "createdById": "00550000006vjtxAAA",
+      "createdByName": "Salesforce CPQ",
+      "createdDate": "2019-06-15T06:37:22.000Z",
+      "fileName": "corsWhitelistOrigins/SBQQ__ApexRestVFWhitelist.corsWhitelistOrigin",
+      "fullName": "SBQQ__ApexRestVFWhitelist",
+      "id": "0741T0000004CF6QAM",
+      "lastModifiedById": "00550000006vjtxAAA",
+      "lastModifiedByName": "Salesforce CPQ",
+      "lastModifiedDate": "2019-06-15T06:37:22.000Z",
+      "manageableState": "installed",
+      "namespacePrefix": "SBQQ",
+      "type": "CorsWhitelistOrigin"
+    }
+  ]
+}

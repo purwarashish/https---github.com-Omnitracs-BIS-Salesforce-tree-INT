@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Past_Due_Pct__c</fullName>
+    <description>What percentage of the total amount of AR is past due.</description>
+    <externalId>false</externalId>
+    <formula>IF (Total_AR__c &gt; 0, Total_Past_Due__c / Total_AR__c, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>What percentage of the total amount of AR is past due</inlineHelpText>
+    <label>Percent &gt; 31 Days</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

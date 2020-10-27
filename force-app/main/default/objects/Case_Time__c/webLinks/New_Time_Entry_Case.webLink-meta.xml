@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Time_Entry_Case</fullName>
+    <availability>online</availability>
+    <description>Create a new Time record and pre-populate fields based on passing data from the related Case record.</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New Time Entry</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/a2N/e?CF00N50000002uwUZ={!Case.CaseNumber}&amp;CF00N50000002uwUZ_lkid={!Case.Id}&amp;CF00N50000002uwV6={!User.Name}&amp;CF00N50000002uwV6_lkid={!User.Id}&amp;saveURL=%2F{!Case.Id}&amp;cancelURL=%2F{!Case.Id}&amp;CF00N50000002uwVC={!User.Support_Tier__c}</url>
+</WebLink>

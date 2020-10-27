@@ -1,0 +1,57 @@
+<!---------------------------------------------------------------------------------------------------
+Name : Customer Ideas (by Number of Trucks)
+Author : Shruti Karn
+Date : 8 August 2011
+
+Usage : Page to show the report for all Customer Ideas sorted by Number of Trucks. This page will be rendered as Excel.
+
+    
+CR # 39183
+----------------------------------------------------------------------------------------------------->
+<apex:page id="ideaReport" contentType="application/vnd.ms-excel#CustomerIdeabyNumofTrucks.xls"  controller="IdeaReportController" showHeader="False" sidebar="False"  cache="true" action="{!showIdeasByNumofTrucks}" language="english">
+<table border ="1">
+	<tr  bgcolor="#999999">
+		<th>Idea</th>
+		<th>Total Number of Trucks</th>
+	</tr>
+	<apex:repeat id="reportrepeat" value="{!lstIdeaTotNumofTrucks}" var="lstIdea"> 
+	<tr>
+			<td bgcolor="#95B9C7">
+			{!lstIdea.ideaRec.Title}
+			<table width="100%" border="1" >
+                    <tr bgcolor="#FFFFFF">
+                        <td>
+                            <b>Account Name</b>
+                        </td>
+                        <td>
+                            <b>Number of Trucks</b>
+                        </td>
+                        <td>
+                            <b>Status</b>
+                        </td>
+                        
+                            <apex:repeat value="{!lstIdea.lstRelCustomerIdea}" var="CustomerIdea">
+                            <tr bgcolor="#FFFFFF">
+                                <td>
+                                    <apex:outputField value="{!CustomerIdea.Account__r.Name}"/>
+                                </td>
+                                <td>
+                                    <apex:outputField value="{!CustomerIdea.Number_of_Trucks__c}"/>
+                                </td>
+                                <td>
+                                        <apex:outputText value="{!if(CustomerIdea.Account__r.QWBS_Status__c != 'Active Prospect','Customer','Prospect')}"/>
+                                </td>
+                            </tr>
+                            </apex:repeat>
+                       
+                    </tr>
+                </table>
+			
+			</td>
+			<td>{!lstIdea.totNumofTrucks}</td>
+			</tr>
+		</apex:repeat>
+	
+</table>
+  
+</apex:page>

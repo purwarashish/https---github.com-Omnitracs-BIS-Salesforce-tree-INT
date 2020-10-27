@@ -1,0 +1,3 @@
+<apex:page standardController="Requirements__c">
+  <h1>All Requirements must be created from a User Story</h1>
+</apex:page>

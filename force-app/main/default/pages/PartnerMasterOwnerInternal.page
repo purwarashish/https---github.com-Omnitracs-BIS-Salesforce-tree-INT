@@ -1,0 +1,120 @@
+<apex:page id="page" 
+           standardController="Account" 
+           extensions="PartnerMasterOwnerController"
+           sidebar="false" 
+           showHeader="false" >
+<apex:includeScript value="{!URLFOR($Resource.JQueryTable, 'DataTables-1.7.6/media/js/jquery.js')}"/>
+<script language="Javascript">
+
+<!-- For Scrolling the Lead Window to top position -->
+    var previousOnload = window.onload;  
+    var isError;      
+    window.onload = function()
+    { 
+        if (previousOnload) { 
+            previousOnload();
+        }
+        scrollParent1();
+
+    }
+    
+    function scrollParent1()
+    {
+        //window.opener.parent.scrollTo(0,0); 
+    }
+
+<!-- For getting the Id of the Selected Owner and setting it to Backend variable-->
+  
+   function SelectedId(id)
+   {
+        selectedrec.value = id;
+        //alert(selectedrec.value);    
+   }
+   
+<!-- For closing the current window and updating the Parent window -->
+   function testclose()
+   {    
+      if(isError == 'false')
+      {       
+       window.opener.parent.location.replace('/'+ '{!selectedCustAcctId}'); 
+       window.close();
+      } 
+   }
+</script>
+
+<apex:form id="form1">
+
+
+    <apex:pageBlock mode="edit" rendered="{!NOT(isNotTrasnferrableToPartner)}">
+    
+      <apex:outputPanel id="hiddenPnl">
+      <apex:pageMessages />
+        <script>
+          isError =  "{!isError}";
+        </script>  
+        </apex:outputPanel>
+        <apex:pageBlockSection columns="2" >
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Select Partner Account" rendered="{!isShowSelectOption}" />
+                <apex:selectList size="1"  value="{!selectedPartAcctId}" styleClass="partnerSelectList" rendered="{!isShowSelectOption}" >
+                    <apex:selectOptions value="{!lstPartnerAccountSelectOptions}"></apex:selectOptions>
+                    <apex:actionSupport event="onchange" rerender="pnlTbl" action="{!populateListOfUsers}" status="loadingStatusAdd"/>
+                </apex:selectList>        
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection> 
+    </apex:pageBlock>    
+    <apex:pageBlock id="pgblk" >
+        <apex:pageMessages />
+        <apex:outputPanel id="pnlTbl" rendered="{!NOT(isNotTrasnferrableToPartner)}">
+        <center>
+            <apex:outputLabel style="color:rgb(204,0,0);font-weight: bold;text-align:center" value="There are no other users to assign to" rendered="{!IF(lstPartnerUsers.size >0,false,true)}" />
+        </center>    
+        <br/>
+        <apex:pageblockTable id="pgBlkTb" value="{!lstPartnerUsers}" var="partnerUser" rendered="{!IF(lstPartnerUsers.size>0,true,false)}" >
+            <apex:column >
+                <apex:commandButton value="Assign" id="theButton"  action="{!AssignUserOrQueue}" oncomplete="javascript:testclose();" status="loadingStatusAdd" rerender="hiddenPnl">
+                    <apex:param name="ownerId" value="{!partnerUser.id}" assignTo="{!SelectedOwnerId}" />
+                </apex:commandButton>
+            </apex:column>
+
+            <apex:column headerValue="Name">
+                <apex:outputText value="{!mapUsrIdnName[partnerUser.id]}"/>               
+            </apex:column>         
+        </apex:pageblockTable>
+        </apex:outputPanel>
+        <apex:inputCheckbox value="{!isTransferOpp}" selected="true" rendered="{!NOT(isNotTrasnferrableToPartner)}"/><apex:outputText value="Transfer Open Opportunities to new owner" rendered="{!NOT(isNotTrasnferrableToPartner)}"/>  
+        <br/>
+        <apex:inputCheckbox value="{!isTransferCont}" selected="true" rendered="{!NOT(isNotTrasnferrableToPartner)}"/><apex:outputText value="Transfer Contacts To New Owner" rendered="{!NOT(isNotTrasnferrableToPartner)}"/>
+        <br/>
+      <!--  <apex:inputCheckbox value="{!isTransferOpenActivity}" selected="true" rendered="{!NOT(isNotTrasnferrableToPartner)}"/><apex:outputText value="Transfer Open Activities To New Owner" rendered="{!NOT(isNotTrasnferrableToPartner)}"/>
+        <br/> -->
+        <apex:inputCheckbox value="{!isSendEmail}" selected="true" rendered="{!NOT(isNotTrasnferrableToPartner)}"/><apex:outputText value="Send Notification Email" rendered="{!NOT(isNotTrasnferrableToPartner)}"/>
+
+        <apex:actionStatus id="loadingStatusAdd">
+            <apex:facet name="start">
+                <c:loadingStatus id="loadingStatusAddComponent" BackColor="#efefef" borderColor="#336699" borderSize="3" height="50px" width="150px" ImageUrl="/img/loading.gif" Message="Processing..." BluryBackGround_DivId="bbgd1" SalesforceStatusBox_DivId="ssbd1" messageStyle="color:darkred;font-size:11pt;font-weight:bold;"/>
+            </apex:facet>
+        </apex:actionStatus>
+      
+        
+        <c:JQueryTable filter="true" jqueryUI="true" pbTable="page:form1:pgblk:pgBlkTb"> </c:JQueryTable>
+        <script>
+            var $jq=jQuery.noConflict();
+            $jq(document).ready(function(){
+                disableButtons();
+                $jq('[id*=j_id11header]').unbind('click');
+                $jq('[id*=j_id11header] div span').hide();
+            });
+            function disableButtons() {
+                $jq('.ColVis').hide();
+            }            
+            disableButtons();
+        </script>
+    </apex:pageBlock>
+    <apex:inputhidden value="{!SelectedOwnerId}" id="selectedid" />
+    <apex:inputHidden value="{!Account.QWBS_Status__c}"/>
+    <script> 
+        var selectedrec= document.getElementById('{!$Component.selectedid}'); 
+    </script>
+    </apex:form>  
+</apex:page>

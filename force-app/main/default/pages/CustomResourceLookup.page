@@ -1,0 +1,77 @@
+<apex:page controller="Schedule_Resource_lookup"  
+  title="Search" 
+  showHeader="false" 
+  sideBar="false" 
+  tabStyle="Account" 
+  id="pg">
+
+  <apex:form >
+  <apex:outputPanel id="page" layout="block" style="margin:5px;padding:10px;padding-top:2px;">
+    <apex:actionRegion >
+      
+      <apex:outputPanel id="top" layout="block" style="margin:5px;padding:10px;padding-top:2px;">
+        <apex:outputLabel value="Search" style="font-weight:Bold;padding-right:10px;" for="txtSearch"/>
+        <apex:inputText id="txtSearch" value="{!searchString}" />
+          <span style="padding-left:5px"><apex:commandButton id="btnGo" value="Go" action="{!Search}" rerender="searchResults"></apex:commandButton></span>
+      </apex:outputPanel>
+
+      <apex:outputPanel id="pnlSearchResults" style="margin:10px;height:350px;overflow-Y:auto;" layout="block">
+        <apex:pageBlock id="searchResults"> 
+          <apex:pageBlockTable value="{!results}" var="res" id="tblResults">
+            <apex:column >
+              <apex:facet name="header">
+                <apex:outputPanel >Resource Name</apex:outputPanel>
+              </apex:facet>
+               <apex:outputLink value="javascript:top.window.opener.lookupPick2('{!FormTag}','{!TextBox}_lkid','{!TextBox}','{!res.Id}','{!res.Name}', false)" rendered="{!NOT(ISNULL(res.Id))}">{!res.Name}</apex:outputLink>     
+            </apex:column>
+            
+            <apex:column >
+              <apex:facet name="header">
+                     <apex:outputPanel >Email</apex:outputPanel>
+              </apex:facet>
+              {!res.Email}      
+            </apex:column>
+            
+            <apex:column >
+              <apex:facet name="header">
+                     <apex:outputPanel >Account</apex:outputPanel>
+              </apex:facet>
+              {!res.Account.Name}      
+            </apex:column>
+            
+            <apex:column >
+              <apex:facet name="header">
+                     <apex:outputPanel >Practice Name</apex:outputPanel>
+              </apex:facet>
+              {!res.pse__Practice__r.name}      
+            </apex:column>
+            
+            <apex:column >
+              <apex:facet name="header">
+                     <apex:outputPanel >Group Name</apex:outputPanel>
+              </apex:facet>
+              {!res.pse__Group__r.name}      
+            </apex:column>
+            
+             <apex:column >
+              <apex:facet name="header">
+                     <apex:outputPanel >Resource Role</apex:outputPanel>
+              </apex:facet>
+              {!res.pse__Resource_Role__c}      
+            </apex:column>
+            
+             <apex:column >
+              <apex:facet name="header">
+                     <apex:outputPanel >Record Type</apex:outputPanel>
+              </apex:facet>
+              {!res.recordtype.Name}      
+            </apex:column>
+            
+          </apex:pageBlockTable>
+        </apex:pageBlock>
+      </apex:outputPanel>
+      
+    </apex:actionRegion>
+  </apex:outputPanel>
+  </apex:form>
+</apex:page>

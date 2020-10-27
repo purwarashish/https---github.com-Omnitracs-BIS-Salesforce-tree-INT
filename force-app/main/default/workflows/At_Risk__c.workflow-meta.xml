@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Alert_At_Risk_Event_is_Closed_or_Cancelled</fullName>
+        <ccEmails>omnitracs.sfdc.noreply@omnitracs.com</ccEmails>
+        <description>Alert/At Risk Event is Closed or Cancelled</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Manager APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Owner APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Accounts Receivable Rep APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Apex Role</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Business Development</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Channel Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Contract Admin APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>FRA Account Manager APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>FRA Contracts Administrator APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>FRA Customer Service Rep APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>FRA Software Application Eng APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside CSR</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside CSR APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside Sales Rep</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside Sales Rep APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Opportunity Owner</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Partner</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Partner Account Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Partner Agent</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Professional Services</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Professional Services Rep APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Regional Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Software Application Eng</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Software Application Eng APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Contract_Email_Templates/At_Risk_Event_Closed_or_Cancelled</template>
+    </alerts>
+    <alerts>
+        <fullName>At_Risk_Email_Alert_All_Account_Team_Members</fullName>
+        <description>At Risk Email Alert - All Account Team Members</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Account Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Manager APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Owner APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Accounts Receivable Rep APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Apex Role</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Business Development</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Channel Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Contract Admin APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>FRA Account Manager APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>FRA Contracts Administrator APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>FRA Customer Service Rep APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>FRA Software Application Eng APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside CSR</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside CSR APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside Sales Rep</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside Sales Rep APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Opportunity Owner</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Partner</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Partner Account Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Partner Agent</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Professional Services</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Professional Services Rep APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Regional Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Software Application Eng</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Software Application Eng APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/At_Risk_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>At_Risk_notification_to_account_owner</fullName>
+        <description>At Risk notification to account owner</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Account Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Manager APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Owner APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Accounts Receivable Rep APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Apex Role</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Business Development</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Channel Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Contract Admin APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>FRA Account Manager APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>FRA Contracts Administrator APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>FRA Customer Service Rep APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>FRA Software Application Eng APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside CSR</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside CSR APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside Sales Rep</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside Sales Rep APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Opportunity Owner</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Partner</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Partner Account Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Partner Agent</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Professional Services</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Professional Services Rep APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Regional Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Software Application Eng</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Software Application Eng APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Automated_Messages/Critical_At_Risk_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>New_At_Risk_Created_Notification_Omni_MX</fullName>
+        <description>New At Risk Created Notification--Omni-MX</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Account Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Manager APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/At_Risk_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>New_At_Risk_Created_Notification_Omni_US_East_District</fullName>
+        <description>New At Risk Created Notification--Omni-US East District</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Account Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Manager APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside CSR</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside CSR APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/At_Risk_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>New_At_Risk_Created_Notification_Omni_US_SAM</fullName>
+        <description>New At Risk Created Notification--Omni-US SAM</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Account Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Manager APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside CSR</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside CSR APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/At_Risk_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>New_At_Risk_Created_Notification_Omni_US_West_District</fullName>
+        <description>New At Risk Created Notification--Omni-US West District</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Account Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Manager APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside CSR</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside CSR APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/At_Risk_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>New_At_Risk_Created_Notification_Roadnet</fullName>
+        <description>New At Risk Created Notification--Roadnet</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Account Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Manager APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/At_Risk_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>New_At_Risk_Created_Notification_Sylectus</fullName>
+        <description>New At Risk Created Notification--Sylectus</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Account Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Manager APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/At_Risk_Notification</template>
+    </alerts>
+    <rules>
+        <fullName>At Risk - New At Risk Created - All BUs</fullName>
+        <actions>
+            <name>At_Risk_Email_Alert_All_Account_Team_Members</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>At_Risk__c.Name</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>At_Risk__c.Severity__c</field>
+            <operation>equals</operation>
+            <value>Yellow</value>
+        </criteriaItems>
+        <description>Notification to all members of the Account Team whenever there is an At Risk record created.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>At Risk Notification Closed</fullName>
+        <actions>
+            <name>Alert_At_Risk_Event_is_Closed_or_Cancelled</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>At_Risk__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Closed,Cancelled</value>
+        </criteriaItems>
+        <description>This is to notify the Account owner and account manager that a At Risk event has been Closed or Cancelled.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Critical At Risk Notification</fullName>
+        <actions>
+            <name>At_Risk_notification_to_account_owner</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>At_Risk__c.Severity__c</field>
+            <operation>equals</operation>
+            <value>Red</value>
+        </criteriaItems>
+        <description>This is to notify the Account owner and account manager that a critical or &quot;red&quot; At Risk event has been created in order to take necessary actions to mitigate the risk/issues.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

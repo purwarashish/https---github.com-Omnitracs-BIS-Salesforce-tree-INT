@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pending_Financial_Hold_Duration__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF (ISNULL(Contract_Received__c ), null, IF (ISNULL(Financial_Hold__c ),
+null,
+Financial_Hold__c - Contract_Received__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>If the Financial Hold field is blank, the duration will be blank.
+If the Financial Hold field is complete, the duration is calculated by the financial hold date minus the contract received date.</inlineHelpText>
+    <label>Pending Financial Hold (Duration)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

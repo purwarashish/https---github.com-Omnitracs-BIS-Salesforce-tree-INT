@@ -1,0 +1,109 @@
+<apex:page showheader="false" sidebar="false">
+
+    <style type="text/css">
+        .cmComponent {
+            font-size:1em;
+            font-family:arial,verdana,sans-serif;
+        }
+        
+        .cmComponent table {
+            margin-left:-2px;
+        }
+        
+        a {
+
+            color: #333333;
+            font-size:11px;      
+            text-decoration:underline;
+
+        }
+
+        a:hover {
+
+            text-decoration: none;
+            color: #FF0000;
+            font-size:11px;
+
+        }
+        
+        a#logout {
+        
+            font-size:12px;
+        }
+        
+        a:hover#logout {
+
+            text-decoration: underline;
+            font-size:12px;
+
+        }
+        table, tr, td {
+            margin:0;padding:0;
+            font-size:11px;
+        }
+        
+        td.statvalue {
+            padding-left:2px;
+            text-align:right;
+        }
+        
+        ul {
+            list-style-type:none;
+            margin:3px 0 15px 0;padding:0;
+        }
+        
+        ul li {
+            margin:0;padding:0;
+            line-height:11px;
+        }
+        
+        .title {
+            display:block;
+            font-weight:bold;
+            font-size:12px;
+        }
+        
+        
+        .clearfloats {
+            clear:both;
+        }
+
+        .sidebar_image {
+            width:30%;
+            padding:0px 0;
+
+        }
+        .sidebarlinks {
+            color: #333333;
+            font-size:11px;
+            text-decoration:underline;
+            line-height: 130%}
+        }
+
+    </style>
+
+    <div class="cmComponent">
+
+        <span class="title">Mis Candidatos </span> 
+         <ul>
+           <li><a href="/00Q?fcf=00B50000005lNYw" target="_top" class="sidebarlinks">Candidatos en Negociación</a></li>
+           <li><a href="/00Q?fcf=00B500000030DzM" target="_top" class="sidebarlinks">Candidatos que expiran esta semana</a></li>
+           <li><a href="/00Q?fcf=00B50000005lNYx" target="_top" class="sidebarlinks">Candidatos  sin registrar</a></li>
+           <li><a href="/00Q/e" target="_top" class="sidebarlinks">Registro de nuevos candidatos</a></li>
+        </ul>
+        
+        <span class="title">Mis Oportunidades </span> 
+          <ul>
+            <li><a href="/006?fcf=00B50000005lNZG" target="_top" class="sidebarlinks">Oportunidades en Negociación</a></li>
+            <li><a href="/006?fcf=00B500000036aPt" target="_top" class="sidebarlinks">Oportunidades que cierran en 30 días</a></li>
+            <li><a href="/006?fcf=00B50000005lNZB" target="_top" class="sidebarlinks">Oportunidades que expiran en 30 días</a></li>        
+        </ul>
+
+    <span class="title">Guía para el Distribuidor </span>
+        <!-- To add a new link, copy below to End New Link comment --> 
+        <ul>
+        <li><a href="/sfc/#workspaces" target="_top" class="sidebarlinks">Material de Mercadotecnia</a></li>
+        </ul>
+</div>
+
+</apex:page>

@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vendor_Map_Version_PL__c</fullName>
+    <externalId>false</externalId>
+    <label>Vendor Map Version</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Digibase - Brazil</fullName>
+                <default>false</default>
+                <label>Digibase - Brazil</label>
+            </value>
+            <value>
+                <fullName>DMTI Canmap V.2008.1</fullName>
+                <default>false</default>
+                <label>DMTI Canmap V.2008.1</label>
+            </value>
+            <value>
+                <fullName>GEDAS - Mexico</fullName>
+                <default>false</default>
+                <label>GEDAS - Mexico</label>
+            </value>
+            <value>
+                <fullName>Geo Strategies</fullName>
+                <default>false</default>
+                <label>Geo Strategies</label>
+            </value>
+            <value>
+                <fullName>HERE 2016.03 v8</fullName>
+                <default>false</default>
+                <label>HERE 2016.03 v8</label>
+            </value>
+            <value>
+                <fullName>HERE 2016.1 v8</fullName>
+                <default>false</default>
+                <label>HERE 2016.1 v8</label>
+            </value>
+            <value>
+                <fullName>HERE 2016.4 v8</fullName>
+                <default>false</default>
+                <label>HERE 2016.4 v8</label>
+            </value>
+            <value>
+                <fullName>Here 2017.01 Routenet 8</fullName>
+                <default>false</default>
+                <label>Here 2017.01 Routenet 8</label>
+            </value>
+            <value>
+                <fullName>HERE 2017.3</fullName>
+                <default>false</default>
+                <label>HERE 2017.3</label>
+            </value>
+            <value>
+                <fullName>HERE 2017.4</fullName>
+                <default>false</default>
+                <label>HERE 2017.4</label>
+            </value>
+            <value>
+                <fullName>HERE 2018.1</fullName>
+                <default>false</default>
+                <label>HERE 2018.1</label>
+            </value>
+            <value>
+                <fullName>HERE 2019.1</fullName>
+                <default>false</default>
+                <label>HERE 2019.1</label>
+            </value>
+            <value>
+                <fullName>Here2019.3</fullName>
+                <default>false</default>
+                <label>Here2019.3</label>
+            </value>
+            <value>
+                <fullName>HERE 2019.4</fullName>
+                <default>false</default>
+                <label>HERE 2019.4</label>
+            </value>
+            <value>
+                <fullName>Here 2020.01</fullName>
+                <default>false</default>
+                <label>Here 2020.01</label>
+            </value>
+            <value>
+                <fullName>HERE BRAZIL 2017.03</fullName>
+                <default>false</default>
+                <label>HERE BRAZIL 2017.03</label>
+            </value>
+            <value>
+                <fullName>HERE North America 2015.1 v9</fullName>
+                <default>false</default>
+                <label>HERE North America 2015.1 v9</label>
+            </value>
+            <value>
+                <fullName>HERE North America 2017.1 v9</fullName>
+                <default>false</default>
+                <label>HERE North America 2017.1 v9</label>
+            </value>
+            <value>
+                <fullName>HERE North America 2017.2 v9</fullName>
+                <default>false</default>
+                <label>HERE North America 2017.2 v9</label>
+            </value>
+            <value>
+                <fullName>HERE North America 2017.4 v9</fullName>
+                <default>false</default>
+                <label>HERE North America 2017.4 v9</label>
+            </value>
+            <value>
+                <fullName>LeadDog</fullName>
+                <default>false</default>
+                <label>LeadDog</label>
+            </value>
+            <value>
+                <fullName>MapInfo</fullName>
+                <default>false</default>
+                <label>MapInfo</label>
+            </value>
+            <value>
+                <fullName>MapInfo - Singapore</fullName>
+                <default>false</default>
+                <label>MapInfo - Singapore</label>
+            </value>
+            <value>
+                <fullName>Mapping Solutions Company Ltd</fullName>
+                <default>false</default>
+                <label>Mapping Solutions Company Ltd</label>
+            </value>
+            <value>
+                <fullName>Maps Provided by VAR</fullName>
+                <default>false</default>
+                <label>Maps Provided by VAR</label>
+            </value>
+            <value>
+                <fullName>NAV2</fullName>
+                <default>false</default>
+                <label>NAV2</label>
+            </value>
+            <value>
+                <fullName>Navteq 2011.3</fullName>
+                <default>false</default>
+                <label>Navteq 2011.3 v8</label>
+            </value>
+            <value>
+                <fullName>NavTeq - Europe</fullName>
+                <default>false</default>
+                <label>NavTeq - Europe</label>
+            </value>
+            <value>
+                <fullName>NavTeq - NT02</fullName>
+                <default>false</default>
+                <label>NavTeq - NT02</label>
+            </value>
+            <value>
+                <fullName>NavTeq - Oman</fullName>
+                <default>false</default>
+                <label>NavTeq - Oman</label>
+            </value>
+            <value>
+                <fullName>NavTeq - U.K.</fullName>
+                <default>false</default>
+                <label>NavTeq - U.K.</label>
+            </value>
+            <value>
+                <fullName>SGSI</fullName>
+                <default>false</default>
+                <label>SGSI</label>
+            </value>
+            <value>
+                <fullName>TomTom 2014.06 v8</fullName>
+                <default>false</default>
+                <label>TomTom 2014.06 v8</label>
+            </value>
+            <value>
+                <fullName>TomTom 2014.09 v8</fullName>
+                <default>false</default>
+                <label>TomTom 2014.09 v8</label>
+            </value>
+            <value>
+                <fullName>TomTom 2014.12 v8</fullName>
+                <default>false</default>
+                <label>TomTom 2014.12 v8</label>
+            </value>
+            <value>
+                <fullName>TomTom 2015.03 v8</fullName>
+                <default>false</default>
+                <label>TomTom 2015.03 v8</label>
+            </value>
+            <value>
+                <fullName>TomTom 2015.06 v8</fullName>
+                <default>false</default>
+                <label>TomTom 2015.06 v8</label>
+            </value>
+            <value>
+                <fullName>TomTom 2015.09 v8</fullName>
+                <default>false</default>
+                <label>TomTom 2015.09 v8</label>
+            </value>
+            <value>
+                <fullName>TomTom 2015.12 v8</fullName>
+                <default>false</default>
+                <label>TomTom 2015.12 v8</label>
+            </value>
+            <value>
+                <fullName>TomTom 2016.3 v8</fullName>
+                <default>false</default>
+                <label>TomTom 2016.03 v8</label>
+            </value>
+            <value>
+                <fullName>TomTom 2016.05 v9</fullName>
+                <default>false</default>
+                <label>TomTom 2016.05 v9</label>
+            </value>
+            <value>
+                <fullName>TomTom 2016.09 v8</fullName>
+                <default>false</default>
+                <label>TomTom 2016.09 v8</label>
+            </value>
+            <value>
+                <fullName>TomTom 2017.03 v8</fullName>
+                <default>false</default>
+                <label>TomTom 2017.03 v8</label>
+            </value>
+            <value>
+                <fullName>TomTom 2017.06</fullName>
+                <default>false</default>
+                <label>TomTom 2017.06 v8</label>
+            </value>
+            <value>
+                <fullName>TomTom 2017.09 v8</fullName>
+                <default>false</default>
+                <label>TomTom 2017.09 v8</label>
+            </value>
+            <value>
+                <fullName>TomTom 2017.12 v8</fullName>
+                <default>false</default>
+                <label>TomTom 2017.12 v8</label>
+            </value>
+            <value>
+                <fullName>TomTom 2018.03</fullName>
+                <default>false</default>
+                <label>TomTom 2018.03</label>
+            </value>
+            <value>
+                <fullName>TomTom 2019.03</fullName>
+                <default>false</default>
+                <label>TomTom 2019.03</label>
+            </value>
+            <value>
+                <fullName>TomTom 2019.06</fullName>
+                <default>false</default>
+                <label>TomTom 2019.06</label>
+            </value>
+            <value>
+                <fullName>TomTom 2019.12</fullName>
+                <default>false</default>
+                <label>TomTom 2019.12</label>
+            </value>
+            <value>
+                <fullName>TomTom 2020.03</fullName>
+                <default>false</default>
+                <label>TomTom 2020.03</label>
+            </value>
+            <value>
+                <fullName>TomTom Australia New Zealand 2015.03</fullName>
+                <default>false</default>
+                <label>TomTom Australia New Zealand 2015.03</label>
+            </value>
+            <value>
+                <fullName>TomTom Brasil 2015.09</fullName>
+                <default>false</default>
+                <label>TomTom Brasil 2015.09</label>
+            </value>
+            <value>
+                <fullName>TomTom Italy 2015.06</fullName>
+                <default>false</default>
+                <label>TomTom Italy 2015.06</label>
+            </value>
+            <value>
+                <fullName>TomTom North America 2014.12 v9</fullName>
+                <default>false</default>
+                <label>TomTom North America 2014.12 v9</label>
+            </value>
+            <value>
+                <fullName>TomTom North America 2015.03 v9</fullName>
+                <default>false</default>
+                <label>TomTom North America 2015.03 v9</label>
+            </value>
+            <value>
+                <fullName>TomTom North America 2015.06 v9</fullName>
+                <default>false</default>
+                <label>TomTom North America 2015.06 v9</label>
+            </value>
+            <value>
+                <fullName>TomTom North America 2015.09 v9</fullName>
+                <default>false</default>
+                <label>TomTom North America 2015.09 v9</label>
+            </value>
+            <value>
+                <fullName>TomTom North America 2016.03 v9</fullName>
+                <default>false</default>
+                <label>TomTom North America 2016.03 v9</label>
+            </value>
+            <value>
+                <fullName>TomTom North America 2016.12 v9</fullName>
+                <default>false</default>
+                <label>TomTom North America 2016.12 v9</label>
+            </value>
+            <value>
+                <fullName>TomTom North America 2017.03 v9</fullName>
+                <default>false</default>
+                <label>TomTom North America 2017.03 v9</label>
+            </value>
+            <value>
+                <fullName>United Arab Emirates</fullName>
+                <default>false</default>
+                <label>United Arab Emirates</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

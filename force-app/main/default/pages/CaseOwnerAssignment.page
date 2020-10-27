@@ -1,0 +1,121 @@
+<apex:page standardController="Case" extensions="CaseOwnerAssignmentController" sidebar="false" showHeader="false" tabStyle="Case">
+<script language="Javascript">
+<!-- For Scrolling the Case Window to top position -->
+var previousOnload = window.onload;        
+    window.onload = function() { 
+        if (previousOnload) { 
+            previousOnload();
+        }
+        scrollParent1();
+
+    }
+    
+    function scrollParent1()
+    {
+        window.opener.parent.scrollTo(0,0); 
+    }
+
+<!-- For getting the Id of the Selected Owner and setting it to Backend variable-->
+   function SelectedId(buttonid)
+   {
+    var subSelectedId = buttonid.lastIndexOf("theButton");
+    var ownerId = buttonid.substring(0,subSelectedId);
+    ownerId = ownerId + "selrec";
+    selectedrec.value = document.getElementById(ownerId).value;
+   }
+   
+<!-- For closing the current window and updating the Parent window -->
+   function testclose()
+   {
+       var sURL = unescape(window.opener.parent.location); 
+       window.opener.parent.location.replace(sURL); 
+       window.close(); 
+   }
+    </script>
+    <apex:form >
+    <div style="padding-left:20px">
+        <h1>Assign a Case to a User From the Queue</h1>
+        </div>
+        <br/>
+        <div>                    
+            This screen allows you to transfer cases from one user or queue to another. When you transfer ownership, the new owner will own: 
+            <ul> 
+                <li>all open activities (tasks and events) for this case that are assigned to the current owner</li> 
+            </ul> 
+            Note that completed activities will not be transferred. Open activities will not be transferred when assigning this case to a queue. 
+                         
+            <br/>
+            <apex:include pageName="Alphabet_Ordering" /> 
+            <br/>
+        </div>
+        <apex:actionFunction name="Ordering" action="{!Alphabet_Ordering}" />
+        <apex:pageBlock >
+            <table >
+                <tr>
+                    <td>               
+                        <apex:inputCheckbox style="width:20px" value="{!sendEmail}" selected="true" /> Send Notification Email </td>
+                    <td style="padding-left:50px" >
+                        <apex:commandButton value="Show All Users" action="{!ShowAllUsers}" />
+                        <apex:commandButton value="Show Users In Queues" action="{!ShowUsersInQueues}" />
+                        <apex:commandButton value="Show Users In Current Queue" action="{!ShowUsersInCurrentQueue}" />
+                    </td>
+                </tr>
+            </table>  
+            <TABLE id="outertable" cellspacing="0" cellpadding="0" border="0" width="100%" class="detailList">    
+                <tr>
+                    <td>
+                    </td>
+                    <td width="50%" nowrap="nowrap" > 
+                        <apex:outputPanel id="panel2">                       
+                            <apex:commandLink style="font-weight:bold;" action="{!ChangeOrder}" id="name" value="Name" >
+                                 <apex:image value="../img/sort_asc_arrow.gif" id="asce" rendered="{!asce}" />
+                                 <apex:image value="../img/sort_desc_arrow.gif" id="desc" rendered="{!NOT(asce)}" />
+                            </apex:commandLink>
+                        </apex:outputPanel>
+                    </td>
+                    <td width="80%" nowrap="nowrap"> 
+                        <apex:outputPanel id="panel1">                      
+                            <apex:commandLink style="font-weight:bold;"  action="{!ChangeOrder}" value="Queue" >
+                                <apex:image value="../img/sort_asc_arrow.gif" rendered="{!asce}" />
+                                <apex:image value="../img/sort_desc_arrow.gif" rendered="{!NOT(asce)}" />
+                            </apex:commandLink>    
+                        </apex:outputPanel> 
+                    </td>
+                </tr>
+                <apex:repeat id="outerrepeat" value="{!userList}" var="list">
+                
+                <tr>
+                    <td width="15%">
+                        <apex:commandButton value="Assign User" id="theButton" onclick="SelectedId(this.id);" action="{!AssignUser}" oncomplete="javascript:testclose();" status="loadingStatusAdd"/>
+                        <apex:inputHidden value="{!list.Id}" id="selrec"/>
+                    </td>
+                
+                  
+                    <td width="50%"> 
+                        <apex:outputField value="{!list.Name}" />                
+                    </td>
+                
+                
+                    <td width="80%">
+                        <apex:outputField value="{!list.Queue__c}"/>
+  
+                    </td>
+                 </tr>
+                    </apex:repeat>
+               
+            </TABLE>
+             <apex:actionStatus id="loadingStatusAdd">
+            <apex:facet name="start">
+                <c:loadingStatus id="loadingStatusAddComponent" BackColor="#efefef" borderColor="#336699" borderSize="3" height="50px" width="150px" ImageUrl="/img/loading.gif" Message="Processing..." BluryBackGround_DivId="bbgd1" SalesforceStatusBox_DivId="ssbd1" messageStyle="color:darkred;font-size:11pt;font-weight:bold;"/>
+            </apex:facet>
+        </apex:actionStatus>
+
+        </apex:pageBlock>
+<apex:inputhidden value="{!SelectedOwnerId}" id="selectedid" />
+<script> var selectedrec= document.getElementById('{!$Component.selectedid}'); </script>
+<apex:inputhidden value="{!alphabet}" id="selectedalpha" />
+<script> var selectedalpha= document.getElementById('{!$Component.selectedalpha}'); </script>
+
+    </apex:form>
+
+</apex:page>

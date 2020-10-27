@@ -1,0 +1,276 @@
+<apex:page id="pageId" sidebar="false" showheader="false" 
+           controller="MainController" action="{!pdm_initSingleton}">
+<apex:include id="mainpage" pageName="mainPage" />
+ 
+ <script type="text/javascript">
+	window.onload = function() {
+	    var links = document.getElementsByTagName('a');
+		for(var i=0; i<links.length; i++) {
+		  if(links[i].href == 'http://customer.int.omnitracs.com/'){
+		  	links[i].href = 'https://login.int.omnitracs.com/go.jsp?d=home';
+		  }
+		  else if(links[i].href == 'http://customer.omnitracs.com/'){
+		  	links[i].href = 'https://login.omnitracs.com/go.jsp?d=home';
+		  }
+		}
+	};
+</script>   
+      
+<div id = "bodyWrapper" >
+    <div class="breadcumWrp">
+          <ul>
+            <li><a href="https://login.{!$Label.CPURL}go.jsp?d=home">Home</a><span>|</span>
+            <a href="/apex/support" class="breadcumlink">Support</a> <span>|</span>
+            {!pdm.docType}
+            </li>
+          </ul>
+          <h1>{!pdm.docType}</h1>
+          <hr width="910px" align="center" style="height:1px;border:1px;color:#dadce0;background-color:#dadce0;" />
+        </div>
+        <div id = "middle-container">
+            <apex:form id="form1" >
+            
+                <link rel="stylesheet" href="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/css/style.css')}" type="text/css" media="screen, projection" />
+                <link href="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/css/mainstyle.css')}" rel="stylesheet" type="text/css" />
+                <link href="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/css/jquery.jcarousel.css')}" rel="stylesheet" type="text/css" />
+                <link href="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/css/customer.css')}" rel="stylesheet" type="text/css" />
+
+                
+                <script src="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/scripts/jquery-1.4.2.min.js')}" type="text/javascript"></script>
+                <script src="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/scripts/jquery.tinycarousel.min.js')}" type="text/javascript"></script>
+                <script src="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/scripts/menu.js')}" type="text/javascript"></script>
+                <script src="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/scripts/jquery.bxSlider.min3.js')}" type="text/javascript"></script>
+
+
+                <script src="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/scripts/jquery.dropdown.js')}" type="text/javascript"></script>
+                <script src="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/scripts/jquery.dropdownPlain.js')}" type="text/javascript"></script>
+                <script src="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/scripts/jquery.dropdown2.js')}" type="text/javascript"></script>
+                <script src="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/scripts/jquery.dropdownPlain2.js')}" type="text/javascript"></script>
+                <script src="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/scripts/jquery.dropdown3.js')}" type="text/javascript"></script>
+                <script src="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/scripts/jquery.dropdownPlain3.js')}" type="text/javascript"></script>
+                <script src="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/scripts/hoverIntent.js')}" type="text/javascript"></script> 
+                 
+                
+                <script src="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/scripts/picklist2.js')}" type="text/javascript"></script>
+                <script src="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/scripts/picklist.js')}" type="text/javascript"></script>
+                
+                 <style>
+                    .clr{
+                        clear:both;
+                        height:1px !important;
+                     }
+                    div.filterSearchBox span{
+                        display:block !important;
+                    }
+                
+                    ul.topQuestionsList span{
+                        display:block;
+                    }
+                    ul.topQuestionsList li{
+                        min-height:18px;
+                    }
+                    ul.appsIcons{
+                        height:24px !important;
+                    }
+                    ul.appsIcons li{
+                        line-height: 22px;
+                    }
+                    .dummyClass {}
+                </style>
+
+            
+            <!--Begin Center-->
+            <apex:outputPanel id="doc1"  styleClass="searchResultInnerLeftNew fll">
+                
+                 <div style="margin-bottom:10px;">
+                    <a class="searchunity" href = "{!$CurrentPage.parameters.retURL}&name={!$CurrentPage.parameters.name}&prodtype={!$CurrentPage.parameters.prodtype}&doctype={!$CurrentPage.parameters.doctype}">Back</a>
+                 </div>
+                    
+                
+                <div class = "MenuBoxHeader">
+                    <h3 style="font-size:13px;">
+                        <span class = "floatL">{!pdm.titleBarString}</span>
+                        <span class = "traRightSpace30 floatR"></span>
+                    </h3>
+                    
+                    <div class="suggestedSolutionBg">
+                        <!-- 
+                        <apex:dataList id="doc" styleClass="searchArticleList2" value="{!pdm.lstLocal}" var="doc" first="{!pdm.intFirst}" rows="{!pdm.intInternalRows}">
+                            <a Class="sfLinkTxt fll searchTitle" href="/apex/supportdocdetail?id={!doc.ContentDocumentid}&&retUrl=supportdocsmore&&prodtype={!pdm.productType}&&doctype=Documentation&&headerType={!pdm.headertype}">
+                                <apex:outputText value="{!doc.title}">
+                                </apex:outputText>
+                            </a>
+                          
+                            <apex:outputText value="{!(doc.description)}"></apex:outputText>
+                        </apex:dataList>
+                        -->
+                        
+                        <apex:variable var="showApplicationDocs" value="{!(pdm.lstApplicationDocs.size) > 0}" />
+                        <apex:variable var="showHardwareDocs" value="{!(pdm.lstHardwareDocs.size) > 0}" />
+                        <apex:variable var="showTrainingDocs" value="{!(pdm.lstTrainingDocs.size) > 0}" />
+                        
+                        <apex:outputpanel style="{!if (showApplicationDocs,'display:normal','display:none')}" layout="block" styleclass="docsDescription">
+                            <h4 class="docsHeadTxt" style="display:block">Application</h4>
+                            <apex:datalist value="{!pdm.lstApplicationDocs}" var="doc" first="{!pdm.intFirstRowApplication}" rows="{!pdm.intRows}" id="ApplicationDocs" styleclass="documentList">
+                                <a class="searchTitle" href="/apex/supportdocdetail?id={!doc.ContentDocumentid}&&retUrl=supportdocsmore&&prodtype={!pdm.productType}&doctype=Documentation">
+                                    <apex:outputText value="{!doc.title}"/>
+                                </a>
+                                
+                                <apex:outputLink styleClass="sfLinkTxt flr" rendered="{!doc.Orderable__c}" value="{!$Label.Product_Catalog_Link}">Product Catalog</apex:outputLink>
+                                
+                                <apex:outputtext value="{!doc.Description}"/>
+                            </apex:datalist>
+                            
+                            <div class="documentListBtnCtrl">
+                                <apex:commandlink rerender="doc1" styleclass="buttonSet newButton5 fll" value="Previous" rendered="{!pdm.intFirstRowApplication > 0}" action="{!pdm.getPreviousApplicationDocs}"/>
+                                <apex:commandlink rerender="doc1" styleclass="buttonSet newButton4 flr" value="Next" rendered="{!(pdm.intRows + pdm.intFirstRowApplication) < pdm.lstApplicationDocs.size}" action="{!pdm.getNextApplicationDocs}"/>
+                            </div>
+                        </apex:outputpanel>
+                        
+                        <apex:outputpanel style="{!if (showHardwareDocs,'display:normal','display:none')}" layout="block" styleclass="docsDescription">
+                            <h4 class="docsHeadTxt" style="display:block">Hardware</h4>
+                            <apex:datalist value="{!pdm.lstHardwareDocs}" var="doc" first="{!pdm.intFirstRowHardware}" rows="{!pdm.intRows}" id="HardwareDocs" styleclass="documentList">                                
+                                <a class="searchTitle" href="/apex/supportdocdetail?id={!doc.ContentDocumentid}&&retUrl=supportdocsmore&&prodtype={!pdm.productType}&doctype=Documentation">
+                                    <apex:outputText value="{!doc.title}"/>
+                                </a>
+                                
+                                <apex:outputLink styleClass="sfLinkTxt flr" rendered="{!doc.Orderable__c}" value="{!$Label.Product_Catalog_Link}">Product Catalog</apex:outputLink>
+                                
+                                <apex:outputtext value="{!doc.Description}"/>
+                            </apex:datalist>
+                            
+                            <div class="documentListBtnCtrl">
+                                <apex:commandlink rerender="doc1" styleclass="buttonSet newButton5 fll" value="Previous" rendered="{!pdm.intFirstRowHardware > 0}" action="{!pdm.getPreviousHardwareDocs}"/>
+                                <apex:commandlink rerender="doc1" styleclass="buttonSet newButton4 flr" value="Next" rendered="{!(pdm.intRows + pdm.intFirstRowHardware) < pdm.lstHardwareDocs.size}" action="{!pdm.getNextHardwareDocs}"/>
+                            </div>
+                        </apex:outputpanel>
+                        
+                        <apex:outputpanel style="{!if (showTrainingDocs,'display:normal','display:none')}" layout="block" styleclass="docsDescription">
+                            <h4 class="docsHeadTxt" style="display:block">Training</h4>
+                            <apex:datalist value="{!pdm.lstTrainingDocs}" var="doc" first="{!pdm.intFirstRowTraining}" rows="{!pdm.intRows}" id="TrainingDocs" styleclass="documentList">
+                                <a class="searchTitle" href="/apex/supportdocdetail?id={!doc.ContentDocumentid}&&retUrl=supportdocsmore&&prodtype={!pdm.productType}&doctype=Documentation">
+                                    <apex:outputText title="{!doc.Description}" value="{!doc.title}"/>
+                                </a>
+                                
+                                <apex:outputLink styleClass="sfLinkTxt flr" rendered="{!doc.Orderable__c}" value="{!$Label.Product_Catalog_Link}">Product Catalog</apex:outputLink>
+                               
+                                <apex:outputtext value="{!doc.Description}"/>
+                            </apex:datalist>
+                            
+                            <div class="documentListBtnCtrl">
+                                <apex:commandlink rerender="doc1" styleclass="buttonSet newButton5 fll" value="Previous" rendered="{!pdm.intFirstRowTraining > 0}" action="{!pdm.getPreviousTrainingDocs}"/>
+                                <apex:commandlink rerender="doc1" styleclass="buttonSet newButton4 flr" value="Next" rendered="{!(pdm.intRows + pdm.intFirstRowTraining) < pdm.lstTrainingDocs.size}" action="{!pdm.getNextTrainingDocs}"/>
+                            </div>
+                        </apex:outputpanel>
+                         
+                        
+                        <!-- Commented as this Next/Previous buttons are not needed anymore
+                        <apex:commandLink style="float: right; display: block;" styleClass="buttonSet newButton4" 
+                                          id="next" 
+                                          value="Next" 
+                                          action="{!pdm.NextContent}"  
+                                          status="showstatus" 
+                                          reRender="doc1" 
+                                          rendered="{!pdm.blnMoreProducts}"/>&nbsp;&nbsp;
+                        <apex:commandLink style="float: left; display: block;" styleClass="buttonSet newButton5" 
+                                          id="previous" 
+                                          value="Previous" 
+                                          action="{!pdm.PreviousContent}"  
+                                          status="showstatus" 
+                                          reRender="doc1" 
+                                          rendered="{!pdm.blnPrevious}"/>
+                          -->
+                    </div>
+                </div>
+             </apex:outputPanel>   
+    <!--END OF CENTER-->
+    
+    
+    
+    <!-- Outer Right Ends -->
+  <apex:commandLink id="HiddenCmdLink" value=""  action="{!pdm.redirectTo}" />
+  <apex:inputHidden id="hiddenInputField" value="{!pdm.hiddenInputField}"/>
+  <script>
+   var pagename="supportdocsmore";
+   ( function($) {
+   $(document).ready(function(){ 
+    
+   $('#trainingData').append('{!wscm.supportLandingTrainingData}');
+   $('a.searchunity').click(
+            function(e)
+            {
+                redir1($(this).attr('href'),e);
+            }
+     );
+    function redir1(rUrl,e)
+            {                
+                e.preventDefault();
+                e.stopPropagation();
+                $("#pageId\\:form1\\:hiddenInputField").val(rUrl);
+                $("#pageId\\:form1\\:HiddenCmdLink").click();
+                return false;
+                
+            }
+     $('.Redirect').each(
+            function()
+            {
+                var link = $(this).attr('href');
+                var text = $(this).text();
+                if($(location).attr('href').search('myqualcomm.forcedev.cs4.force.com') != -1)
+                {
+                     $(this).attr('href','/demo/supportplatformsapps?name='+text);
+                }
+                else
+                {
+                $(this).attr('href','/apex/supportplatformsapps?name='+text);
+                }
+                }
+     );  
+     $('a.Redirect').click(
+            function(e)
+            {
+                redir1('supportplatformsapps?name='+$(this).text(),e);
+            }
+     ); 
+     
+     $('a.bcklnk').each(function(){
+     
+     var text = '{!tpm.returnURL}';
+      
+     if($(location).attr('href').search('myqualcomm.forcedev.cs4.force.com') != -1)
+           {
+               $(this).attr('href','/demo/'+text);
+           }
+           else
+           {
+               $(this).attr('href','/apex/'+text);
+           }
+  
+     });
+    
+     
+     }
+     );
+     
+     $('a.searchTitle').click(
+        function(e)
+        {
+          
+          e.preventDefault();
+          e.stopPropagation();
+          var URL = $(this).attr('href');
+          window.open(URL,'', 'height=550,width=1024,location=no,resizable=yes,toolbar=no,status=no,menubar=no,scrollbars=yes');
+        });
+        
+     } ) ( jQuery );    
+     /* var linkId=document.getElementById('{!$Component.doc}');
+     linkId.oncontextmenu=function(){return false;} */ 
+     
+     
+  </script>
+  </apex:form>
+</div>
+
+<apex:include pageName="UnityFooter" />
+</div>
+</apex:page>

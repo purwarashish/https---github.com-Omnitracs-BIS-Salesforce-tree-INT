@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_Parent_Check_For_level0</fullName>
+    <active>true</active>
+    <description>System at level 0 must not have a parent</description>
+    <errorConditionFormula>AND 
+( NOT(ISBlank( Parent__c )), 
+ISPICKVAL( Level__c, &quot;Level - 0&quot;) 
+)</errorConditionFormula>
+    <errorDisplayField>Level__c</errorDisplayField>
+    <errorMessage>System at level 0 must not have a parent</errorMessage>
+</ValidationRule>

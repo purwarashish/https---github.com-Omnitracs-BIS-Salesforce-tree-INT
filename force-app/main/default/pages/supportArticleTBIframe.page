@@ -1,0 +1,17 @@
+<apex:page id="page" name="rating" sidebar="false" showHeader="false">  
+    <head>
+        <meta name="ejsc-auto-load-support-files" content="false" />
+    </head>
+    <style>
+        .versioningPanel {
+            display:none !important;
+        }
+    	ul, li, img, span, p, input, textarea, h1, h2, h3, h4, h5, h6, a {
+            list-style-type: inherit;
+        }
+        .propertiesLink {
+            display:none !important;
+        }        
+    </style>  
+    <knowledge:articleRendererToolBar canvote="true" articleId="{!$CurrentPage.parameters.id}" />
+ </apex:page>

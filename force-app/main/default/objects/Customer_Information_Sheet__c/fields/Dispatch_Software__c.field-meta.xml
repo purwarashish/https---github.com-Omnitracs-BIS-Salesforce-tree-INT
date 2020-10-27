@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dispatch_Software__c</fullName>
+    <externalId>false</externalId>
+    <label>Dispatch Software</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Add-On Systems</fullName>
+                <default>false</default>
+                <label>Add-On Systems</label>
+            </value>
+            <value>
+                <fullName>CAMS</fullName>
+                <default>false</default>
+                <label>CAMS</label>
+            </value>
+            <value>
+                <fullName>Carrier Logistics</fullName>
+                <default>false</default>
+                <label>Carrier Logistics</label>
+            </value>
+            <value>
+                <fullName>Choice Technologies</fullName>
+                <default>false</default>
+                <label>Choice Technologies</label>
+            </value>
+            <value>
+                <fullName>Classic</fullName>
+                <default>false</default>
+                <label>Classic</label>
+            </value>
+            <value>
+                <fullName>Creative Systems</fullName>
+                <default>false</default>
+                <label>Creative Systems</label>
+            </value>
+            <value>
+                <fullName>Daffron</fullName>
+                <default>false</default>
+                <label>Daffron</label>
+            </value>
+            <value>
+                <fullName>Descartes</fullName>
+                <default>false</default>
+                <label>Descartes</label>
+            </value>
+            <value>
+                <fullName>Dispatching Solutions INc.</fullName>
+                <default>false</default>
+                <label>Dispatching Solutions INc.</label>
+            </value>
+            <value>
+                <fullName>DPS</fullName>
+                <default>false</default>
+                <label>DPS</label>
+            </value>
+            <value>
+                <fullName>GPSNet</fullName>
+                <default>false</default>
+                <label>GPSNet</label>
+            </value>
+            <value>
+                <fullName>In-House / Home Grown</fullName>
+                <default>false</default>
+                <label>In-House / Home Grown</label>
+            </value>
+            <value>
+                <fullName>Innovative-(ICC)</fullName>
+                <default>false</default>
+                <label>Innovative-(ICC)</label>
+            </value>
+            <value>
+                <fullName>Keystone</fullName>
+                <default>false</default>
+                <label>Keystone</label>
+            </value>
+            <value>
+                <fullName>McLeod Software</fullName>
+                <default>false</default>
+                <label>McLeod Software</label>
+            </value>
+            <value>
+                <fullName>Melton Technologies (MTI)</fullName>
+                <default>false</default>
+                <label>Melton Technologies (MTI)</label>
+            </value>
+            <value>
+                <fullName>Milsoft</fullName>
+                <default>false</default>
+                <label>Milsoft</label>
+            </value>
+            <value>
+                <fullName>NISC</fullName>
+                <default>false</default>
+                <label>NISC</label>
+            </value>
+            <value>
+                <fullName>North American Dispatch Systems</fullName>
+                <default>false</default>
+                <label>North American Dispatch Systems</label>
+            </value>
+            <value>
+                <fullName>Omni Information Systems</fullName>
+                <default>false</default>
+                <label>Omni Information Systems</label>
+            </value>
+            <value>
+                <fullName>Paradigm</fullName>
+                <default>false</default>
+                <label>Paradigm</label>
+            </value>
+            <value>
+                <fullName>Partner Software</fullName>
+                <default>false</default>
+                <label>Partner Software</label>
+            </value>
+            <value>
+                <fullName>PCS Software</fullName>
+                <default>false</default>
+                <label>PCS Software</label>
+            </value>
+            <value>
+                <fullName>Profit Tools</fullName>
+                <default>false</default>
+                <label>Profit Tools</label>
+            </value>
+            <value>
+                <fullName>Progressive Data Solutions</fullName>
+                <default>false</default>
+                <label>Progressive Data Solutions</label>
+            </value>
+            <value>
+                <fullName>Prophesy</fullName>
+                <default>false</default>
+                <label>Prophesy</label>
+            </value>
+            <value>
+                <fullName>Roadnet</fullName>
+                <default>false</default>
+                <label>Roadnet</label>
+            </value>
+            <value>
+                <fullName>RoadVision</fullName>
+                <default>false</default>
+                <label>RoadVision</label>
+            </value>
+            <value>
+                <fullName>Show Me</fullName>
+                <default>false</default>
+                <label>Show Me</label>
+            </value>
+            <value>
+                <fullName>Strategic Systems</fullName>
+                <default>false</default>
+                <label>Strategic Systems</label>
+            </value>
+            <value>
+                <fullName>Sylectus</fullName>
+                <default>false</default>
+                <label>Sylectus</label>
+            </value>
+            <value>
+                <fullName>Syneristic Systems</fullName>
+                <default>false</default>
+                <label>Syneristic Systems</label>
+            </value>
+            <value>
+                <fullName>Systems Support</fullName>
+                <default>false</default>
+                <label>Systems Support</label>
+            </value>
+            <value>
+                <fullName>TellSystems</fullName>
+                <default>false</default>
+                <label>TellSystems</label>
+            </value>
+            <value>
+                <fullName>TME Systems</fullName>
+                <default>false</default>
+                <label>TME Systems</label>
+            </value>
+            <value>
+                <fullName>TMS (Custom Software Solutions)</fullName>
+                <default>false</default>
+                <label>TMS (Custom Software Solutions)</label>
+            </value>
+            <value>
+                <fullName>TMW Suite</fullName>
+                <default>false</default>
+                <label>TMW Suite</label>
+            </value>
+            <value>
+                <fullName>TMW Systems</fullName>
+                <default>false</default>
+                <label>TMW Systems</label>
+            </value>
+            <value>
+                <fullName>TMW Truckmate</fullName>
+                <default>false</default>
+                <label>TMW Truckmate</label>
+            </value>
+            <value>
+                <fullName>TransWork Solutions Inc.</fullName>
+                <default>false</default>
+                <label>TransWork Solutions Inc.</label>
+            </value>
+            <value>
+                <fullName>Truck Master</fullName>
+                <default>false</default>
+                <label>Truck Master</label>
+            </value>
+            <value>
+                <fullName>Varipro</fullName>
+                <default>false</default>
+                <label>Varipro</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

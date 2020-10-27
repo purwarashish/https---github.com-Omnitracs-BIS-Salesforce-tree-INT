@@ -1,0 +1,1 @@
+<apex:page id="QuoteAddressAutoPopulate" standardController="SBQQ__Quote__c" extensions="QuoteAddressAutoPopulateController" action="{!populateAddresses}" ></apex:page>

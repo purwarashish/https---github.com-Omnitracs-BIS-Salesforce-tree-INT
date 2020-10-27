@@ -1,0 +1,17 @@
+<apex:page controller="DocumentGenerationSelectionController" showHeader="true" sidebar="true">
+    <apex:pageblock title="Document Generation">
+        <span id="successText"></span>  <br/>
+    </apex:pageblock>
+    <script>
+        var successParam = '{!$CurrentPage.parameters.workflowSuccess}';
+        console.log('Success Param: ' + successParam);
+        if(successParam == 'true') {
+            document.getElementById('successText').innerHTML = 'Document Generation successfully started. Quote - <a href="/{!quote.Id}">{!quote.name}</a>';
+        } else {
+            document.getElementById('successText').innerHTML = 'Document Generation  failed. Ed';
+        }
+
+    </script>
+
+
+</apex:page>

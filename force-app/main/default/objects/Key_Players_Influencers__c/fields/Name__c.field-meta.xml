@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Name__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>For VVSS: This field is used to identify the name of the buyer/contact role/key player</description>
+    <externalId>false</externalId>
+    <label>Name</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>3-2-1 Buyer Map</relationshipLabel>
+    <relationshipName>Key_Players</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Host_Platform__c</fullName>
+    <externalId>false</externalId>
+    <label>Host Platform</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Services__c</controllingField>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>3rd Party</fullName>
+                <default>false</default>
+                <label>3rd Party</label>
+            </value>
+            <value>
+                <fullName>400</fullName>
+                <default>false</default>
+                <label>400</label>
+            </value>
+            <value>
+                <fullName>400 Thin Client</fullName>
+                <default>false</default>
+                <label>400 Thin Client</label>
+            </value>
+            <value>
+                <fullName>Contracted Testing</fullName>
+                <default>false</default>
+                <label>Contracted Testing</label>
+            </value>
+            <value>
+                <fullName>Customer to Customer</fullName>
+                <default>false</default>
+                <label>Customer to Customer</label>
+            </value>
+            <value>
+                <fullName>ESA</fullName>
+                <default>false</default>
+                <label>ESA</label>
+            </value>
+            <value>
+                <fullName>LAN</fullName>
+                <default>false</default>
+                <label>LAN</label>
+            </value>
+            <value>
+                <fullName>PC</fullName>
+                <default>false</default>
+                <label>PC</label>
+            </value>
+            <value>
+                <fullName>Portal</fullName>
+                <default>false</default>
+                <label>Portal</label>
+            </value>
+            <value>
+                <fullName>System to System</fullName>
+                <default>false</default>
+                <label>System to System</label>
+            </value>
+            <value>
+                <fullName>Unix</fullName>
+                <default>false</default>
+                <label>Unix</label>
+            </value>
+            <value>
+                <fullName>UNV</fullName>
+                <default>false</default>
+                <label>UNV</label>
+            </value>
+            <value>
+                <fullName>Web</fullName>
+                <default>false</default>
+                <label>Web</label>
+            </value>
+            <value>
+                <fullName>Win</fullName>
+                <default>false</default>
+                <label>Win</label>
+            </value>
+            <value>
+                <fullName>Windows</fullName>
+                <default>false</default>
+                <label>Windows</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>QTRACS</controllingFieldValue>
+            <controllingFieldValue>JTRACS</controllingFieldValue>
+            <controllingFieldValue>TrailerTRACS</controllingFieldValue>
+            <controllingFieldValue>SensorTRACS</controllingFieldValue>
+            <controllingFieldValue>Remote Integration(RI)</controllingFieldValue>
+            <valueName>400</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QTRACS</controllingFieldValue>
+            <valueName>400 Thin Client</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QTRACS</controllingFieldValue>
+            <controllingFieldValue>Remote Integration(RI)</controllingFieldValue>
+            <valueName>ESA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QTRACS</controllingFieldValue>
+            <valueName>LAN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QTRACS</controllingFieldValue>
+            <valueName>PC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QTRACS</controllingFieldValue>
+            <controllingFieldValue>TrailerTRACS</controllingFieldValue>
+            <controllingFieldValue>SensorTRACS</controllingFieldValue>
+            <controllingFieldValue>TruckMail</controllingFieldValue>
+            <valueName>Portal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QTRACS</controllingFieldValue>
+            <controllingFieldValue>Remote Integration(RI)</controllingFieldValue>
+            <valueName>Unix</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QTRACS</controllingFieldValue>
+            <controllingFieldValue>SensorTRACS</controllingFieldValue>
+            <controllingFieldValue>Remote Integration(RI)</controllingFieldValue>
+            <valueName>UNV</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QTRACS</controllingFieldValue>
+            <controllingFieldValue>TrailerManager</controllingFieldValue>
+            <controllingFieldValue>TruckMail</controllingFieldValue>
+            <controllingFieldValue>Remote Integration(RI)</controllingFieldValue>
+            <valueName>Web</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QTRACS</controllingFieldValue>
+            <controllingFieldValue>TruckMail</controllingFieldValue>
+            <controllingFieldValue>Remote Integration(RI)</controllingFieldValue>
+            <valueName>Win</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SensorTRACS</controllingFieldValue>
+            <valueName>Windows</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QMI</controllingFieldValue>
+            <valueName>3rd Party</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QMI</controllingFieldValue>
+            <valueName>Contracted Testing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QMI</controllingFieldValue>
+            <valueName>Customer to Customer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>QMI</controllingFieldValue>
+            <valueName>System to System</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

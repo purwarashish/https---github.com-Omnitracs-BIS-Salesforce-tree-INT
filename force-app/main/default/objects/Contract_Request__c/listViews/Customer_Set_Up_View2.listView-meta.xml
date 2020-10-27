@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Set_Up_View2</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Request_Status__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>Assigned_To__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Request_Status__c</field>
+        <operation>equals</operation>
+        <value>Distributed,Hold: See Notes,Hold: Needs Approval</value>
+    </filters>
+    <label>Customer Set-Up View</label>
+    <language>en_US</language>
+</ListView>

@@ -1,0 +1,95 @@
+<!-- 
+ *******************************************************************************
+ * File:  ConfigKeyGenerationPage.page
+ * Date:  March 17, 2009
+ * Author:  Charlie Heaps
+ *
+ * The use, disclosure, reproduction, modification, transfer, or transmittal of
+ * this work for any purpose in any form or by any means without the written 
+ * permission of United Parcel Service is strictly prohibited.
+ *
+ * Confidential, unpublished property of United Parcel Service.
+ * Use and distribution limited solely to authorized personnel.
+ *
+ * Copyright 2009, UPS Logistics Technologies, Inc.  All rights reserved.
+ *
+ * Purpose: 
+ *   VF page used to generate a Roadnet Transportation Suite Config Key from
+ *   Salesforce. Displays the config key to the user and then allows the user
+ *   to send the config key to an email address.
+ *******************************************************************************/
+ -->
+<apex:page standardcontroller="Account" extensions="ConfigKeyGenerationExtension">
+
+    <apex:form id="myForm">
+    <apex:outputpanel id="noProductsSection" rendered="{!doesAccountHaveAnyProducts}" >
+        <apex:pageblock >
+            <apex:pageblocksection >
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="This account has no products. Are you sure you want to create a config key?"/>
+                    <apex:outputpanel >
+                        <apex:commandbutton value="Yes" action="{!showMainSection}"/>
+                        <apex:commandbutton value="Cancel" action="{!cancel}"/>
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>
+            </apex:pageblocksection>
+        </apex:pageblock>
+    </apex:outputpanel>
+        
+    <apex:outputpanel rendered="{!AND(showConfigKeySection)}" id="emergencyTestDemoSelectionId">
+        <apex:pagemessage strength="2"  severity="info" 
+            title="How To Add/Edit items in the PRODUCTS/LIMITS section (changes to the products section is not recommended)"  detail="{!overallEmergencyHelp}"/>
+        
+        <apex:pagemessages />
+        <apex:pageblock title="Help For Editing Config Key">
+            <apex:pageblocksection columns="1" showheader="true" title="Collaspe To Hide This Section">
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="How To Edit Items In PRODUCTS: Section"/>
+                    <apex:outputtext escape="false" value="{!productsSectionDetailedHelp}"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="How To Edit Items In LIMITS: Section"/>
+                    <apex:outputtext escape="false" value="{!limitsSectionDetailedHelp}"/>
+                </apex:pageblocksectionitem>
+            </apex:pageblocksection>
+        </apex:pageblock>
+            <br />
+            <apex:outputtext value="Is Emergency?"/>
+            <apex:inputcheckbox value="{!isEmergencyKey}"/>
+            <br />
+            <apex:outputtext value="Create Emergency Config Key for Demo/Test Line Items?"/>
+            <apex:inputcheckbox value="{!isDemoTestConfigKey}">
+                <apex:actionSupport event="onclick" action="{!resetConfigKeyData}" 
+                    rerender="testDemoSelectionId, emergecnyconfigKeyId" status="emergencyrerenderStatus" focus="emergencyemailFieldId"/>
+            </apex:inputcheckbox>
+            <apex:actionstatus id="emergencyrerenderStatus" startText="Please Wait..." stopTExt=""/>
+            <br />
+         <apex:outputLabel >Config Key Type: </apex:outputLabel>
+       <apex:selectList value="{!licenseKeyType}" size="1">
+       <apex:selectOption itemLabel="" itemValue=""/>
+       <apex:selectOption itemLabel="Permanent" itemValue="Permanent"/>
+        <apex:selectOption itemLabel="Temporary" itemValue="Temporary"/>
+        <!--   <apex:selectOptions value="{!lktList}"/> -->
+        </apex:selectList> 
+        <br />
+         <apex:outputLabel >Config Key Expiration Date: </apex:outputLabel>
+         <apex:inputText value="{!licenseKeyExpirationDate}" size="10" id="demo"    onfocus="DatePicker.pickDate(false, this , false);" />
+   
+            <br />
+         <apex:pageBlock title="Emergency Config Key" id="emergecnyconfigKeyId" >    
+            <apex:inputtextArea value="{!editableCfgKey}" cols="100" rows="25"/>
+         </apex:pageBlock>
+        <apex:pageBlock >
+
+            <apex:outputLabel value="Enter optional comment below and press Send Config Key.  The config key will be emailed to you."/><br/><br/>
+            <apex:outputLabel value="Email Address Config Key Will Be Emailed To: "/><br/>
+            <apex:outputtext value="{!emergencyemail}"  id="emergencyemailFieldId" /><br/><br/>
+            <apex:outputLabel value="Optional Comment "/><br/>
+            <apex:inputTextArea value="{!comment}" cols="80"/><br/><br/>
+            <apex:commandButton value="Send Config Key" action="{!sendEmail}"/>
+            <apex:commandButton value="Cancel" action="{!cancelEmail}"/>
+            
+        </apex:pageBlock> 
+    </apex:outputpanel>    
+    </apex:form>
+</apex:page>

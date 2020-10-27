@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Roadnet_Sales_Calls</fullName>
+    <active>true</active>
+    <description>Tracks calls Roadnet Sales team makes</description>
+    <label>Roadnet Sales Calls</label>
+    <picklistValues>
+        <picklist>Advance_Achieved__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applications_Services__c</picklist>
+        <values>
+            <fullName>Enterprise Services - Support Portal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>How_are_Employees_Paid__c</picklist>
+        <values>
+            <fullName>Commission</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hourly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mixed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Per Mile Driven</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Percentage %28%25%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Method__c</picklist>
+        <values>
+            <fullName>Customer Site Visit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On-site Visit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tradeshow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinar</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Next_Steps__c</picklist>
+        <values>
+            <fullName>Callback</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract out for signature</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email update</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Evaluation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Happy with competition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Long term contract with competitor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Looking at Functionality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On-site meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Price negotiations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Solution offered</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>PS_Discipline__c</picklist>
+        <values>
+            <fullName>Installation</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Technical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Management_Attendees__c</picklist>
+        <values>
+            <fullName>Arielle McMahon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Miranda Leadbeater</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rachel Allen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tyler Forcum</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Purpose__c</picklist>
+        <values>
+            <fullName>Authorized Service Centers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Service Visit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Discovery Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Discuss Alliance Partnership</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Executive Visit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet Risk Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inside CSR Account review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Product Discussion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Operations Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quarterly Review Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sponsor Letter Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strategic Account Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technical Discussion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Requires_Prewire_Products__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Satisfaction_Level__c</picklist>
+        <values>
+            <fullName>Dissatisfied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neutral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Satisfied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Very Dissatisfied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Very Satisfied</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sentiment__c</picklist>
+        <values>
+            <fullName>Negative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neutral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Positive</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Draft</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Top_Issues_Functional_Category__c</picklist>
+        <values>
+            <fullName>Billing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Professional Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales %2F Sales Ops</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Supply Chain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type_of_Competitor__c</picklist>
+        <values>
+            <fullName>Competitive Takeaway</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Competitive Threat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Competitor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

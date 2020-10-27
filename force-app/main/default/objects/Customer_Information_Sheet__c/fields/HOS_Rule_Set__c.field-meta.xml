@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HOS_Rule_Set__c</fullName>
+    <externalId>false</externalId>
+    <label>HOS Rule Set</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>HOS_Rule__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>US 8/70 hr</fullName>
+                <default>false</default>
+                <label>US 8/70 hr</label>
+            </value>
+            <value>
+                <fullName>US 7/60 hr</fullName>
+                <default>false</default>
+                <label>US 7/60 hr</label>
+            </value>
+            <value>
+                <fullName>CAN 7/70 hr</fullName>
+                <default>false</default>
+                <label>CAN 7/70 hr</label>
+            </value>
+            <value>
+                <fullName>CAN 14/120 hr</fullName>
+                <default>false</default>
+                <label>CAN 14/120 hr</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Federal</controllingFieldValue>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>US 8/70 hr</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Federal</controllingFieldValue>
+            <controllingFieldValue>State</controllingFieldValue>
+            <valueName>US 7/60 hr</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Canadian</controllingFieldValue>
+            <valueName>CAN 7/70 hr</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Canadian</controllingFieldValue>
+            <valueName>CAN 14/120 hr</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

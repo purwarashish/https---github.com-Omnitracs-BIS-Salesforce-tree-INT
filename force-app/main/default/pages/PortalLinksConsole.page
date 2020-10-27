@@ -1,0 +1,17 @@
+<apex:page standardStylesheets="false">
+
+    <head>
+        <apex:stylesheet value="{!$Resource.SCCQuickCreateToolBarStyleSheet}"/>
+    </head>
+
+    <div class="moduleHeader">
+        <span class="btmfield">
+            <center>
+            <a href="https://customer.omnitracs.com/portal/home.jsp" target="_blank">Customer Portal Home Page</a>
+            <br />
+            <a href="https://omnitracs.my.salesforce.com/secur/login_portal.jsp?orgId=00D3F000000AFMi&portalId=06050000000002l" target="_blank">Partner Portal Home Page</a>
+            </center>
+        </span>
+    </div>
+    
+</apex:page>

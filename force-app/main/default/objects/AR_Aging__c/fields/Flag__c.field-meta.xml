@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flag__c</fullName>
+    <description>Red flag if the total amount 31+ days past due is greater than 20%.</description>
+    <externalId>false</externalId>
+    <formula>if( Total_Past_Due_Pct__c &gt;0.2, image(&quot;/img/samples/flag_red.gif&quot;,&quot;Total 31+ Days Past Due Is Over 20%&quot;),&quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Red flag if the total amount 31+ days past due is greater than 20%</inlineHelpText>
+    <label>Flag</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

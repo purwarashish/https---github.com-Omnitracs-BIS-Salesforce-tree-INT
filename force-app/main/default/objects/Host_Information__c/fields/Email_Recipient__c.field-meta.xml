@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_Recipient__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>Recipient of XRS Welcome email.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Select the contact to receive the XRS Welcome email.</inlineHelpText>
+    <label>Email Recipient</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Host Information</relationshipLabel>
+    <relationshipName>Host_Information</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

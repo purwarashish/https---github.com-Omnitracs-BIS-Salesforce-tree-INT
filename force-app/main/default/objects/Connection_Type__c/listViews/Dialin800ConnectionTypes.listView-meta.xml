@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dialin800ConnectionTypes</fullName>
+    <columns>NMC_Account__c</columns>
+    <columns>Connection_Type__c</columns>
+    <columns>NAME</columns>
+    <columns>User_ID_Login_Aux_ID__c</columns>
+    <columns>Password__c</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Connection_Type__c</field>
+        <operation>equals</operation>
+        <value>Dial In 800</value>
+    </filters>
+    <label>Dial in 800 Connection Types</label>
+</ListView>

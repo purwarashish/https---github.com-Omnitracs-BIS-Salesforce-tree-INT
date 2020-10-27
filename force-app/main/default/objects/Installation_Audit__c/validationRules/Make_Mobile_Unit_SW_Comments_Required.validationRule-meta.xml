@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Make_Mobile_Unit_SW_Comments_Required</fullName>
+    <active>true</active>
+    <description>Make Mobile Unit Software Comments required if Mobile Unit Software is No.</description>
+    <errorConditionFormula>AND( 
+ISBLANK( Mobile_Unit_Software_Comments__c ), 
+ISPICKVAL( Mobile_Unit_Software__c , &quot;No&quot;) 
+)</errorConditionFormula>
+    <errorDisplayField>Mobile_Unit_Software_Comments__c</errorDisplayField>
+    <errorMessage>Mobile Unit Software Comments is required if Mobile Unit Software is &quot;No&quot;</errorMessage>
+</ValidationRule>

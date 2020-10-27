@@ -1,0 +1,101 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "00550000000vfNuAAI",
+      "createdByName": "Omnitracs Admin",
+      "createdDate": "2007-11-29T19:18:30.000Z",
+      "fileName": "delegateGroups/QES_Delegated_Admin.delegateGroup",
+      "fullName": "QES_Delegated_Admin",
+      "id": "02f50000000Cf27AAC",
+      "lastModifiedById": "00550000003hMOAAA2",
+      "lastModifiedByName": "Joe Vastine",
+      "lastModifiedDate": "2016-04-26T13:58:39.000Z",
+      "type": "DelegateGroup"
+    },
+    {
+      "createdById": "00550000001biZKAAY",
+      "createdByName": "Deployment User",
+      "createdDate": "2014-12-10T19:56:02.000Z",
+      "fileName": "delegateGroups/Marketing.delegateGroup",
+      "fullName": "Marketing",
+      "id": "02f50000000CfPfAAK",
+      "lastModifiedById": "00550000001biZKAAY",
+      "lastModifiedByName": "Deployment User",
+      "lastModifiedDate": "2014-12-10T19:56:02.000Z",
+      "type": "DelegateGroup"
+    },
+    {
+      "createdById": "00550000001biZKAAY",
+      "createdByName": "Deployment User",
+      "createdDate": "2014-12-06T03:46:24.000Z",
+      "fileName": "delegateGroups/Sylectus_Delegated_Admin.delegateGroup",
+      "fullName": "Sylectus_Delegated_Admin",
+      "id": "02f50000000CfPaAAK",
+      "lastModifiedById": "00550000003h5fCAAQ",
+      "lastModifiedByName": "Casey Keeling",
+      "lastModifiedDate": "2016-07-01T14:58:27.000Z",
+      "type": "DelegateGroup"
+    },
+    {
+      "createdById": "00550000001biZKAAY",
+      "createdByName": "Deployment User",
+      "createdDate": "2014-12-11T00:33:38.000Z",
+      "fileName": "delegateGroups/Sales.delegateGroup",
+      "fullName": "Sales",
+      "id": "02f50000000CfPkAAK",
+      "lastModifiedById": "00550000003h5fCAAQ",
+      "lastModifiedByName": "Casey Keeling",
+      "lastModifiedDate": "2018-11-30T20:03:58.000Z",
+      "type": "DelegateGroup"
+    },
+    {
+      "createdById": "00550000003hCi3AAE",
+      "createdByName": "Rittu Roy",
+      "createdDate": "2015-03-05T19:17:03.000Z",
+      "fileName": "delegateGroups/CPQ_Delegated_Admin.delegateGroup",
+      "fullName": "CPQ_Delegated_Admin",
+      "id": "02f50000000CfQdAAK",
+      "lastModifiedById": "00550000001d1yqAAA",
+      "lastModifiedByName": "Nicole Beaulieu",
+      "lastModifiedDate": "2018-04-23T14:00:27.000Z",
+      "type": "DelegateGroup"
+    },
+    {
+      "createdById": "005500000026ebyAAA",
+      "createdByName": "Amrita Ganguly",
+      "createdDate": "2014-04-03T19:37:06.000Z",
+      "fileName": "delegateGroups/CNR_Delegated_Admin.delegateGroup",
+      "fullName": "CNR_Delegated_Admin",
+      "id": "02f50000000PG6YAAW",
+      "lastModifiedById": "00550000001d1yqAAA",
+      "lastModifiedByName": "Nicole Beaulieu",
+      "lastModifiedDate": "2018-03-09T23:42:49.000Z",
+      "type": "DelegateGroup"
+    },
+    {
+      "createdById": "00550000003h1uIAAQ",
+      "createdByName": "Jane Park",
+      "createdDate": "2015-03-23T20:35:37.000Z",
+      "fileName": "delegateGroups/Roadnet_Delegated_Sales.delegateGroup",
+      "fullName": "Roadnet_Delegated_Sales",
+      "id": "02f50000000CfQsAAK",
+      "lastModifiedById": "00550000001d1yqAAA",
+      "lastModifiedByName": "Nicole Beaulieu",
+      "lastModifiedDate": "2017-02-03T01:50:47.000Z",
+      "type": "DelegateGroup"
+    },
+    {
+      "createdById": "00550000001biZKAAY",
+      "createdByName": "Deployment User",
+      "createdDate": "2014-12-17T19:22:53.000Z",
+      "fileName": "delegateGroups/QA_Delegated_Admins.delegateGroup",
+      "fullName": "QA_Delegated_Admins",
+      "id": "02f50000000CfPuAAK",
+      "lastModifiedById": "00550000001d1yqAAA",
+      "lastModifiedByName": "Nicole Beaulieu",
+      "lastModifiedDate": "2017-12-12T17:33:48.000Z",
+      "type": "DelegateGroup"
+    }
+  ]
+}

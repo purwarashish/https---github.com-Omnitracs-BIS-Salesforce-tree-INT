@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Expired_Opportunity_Line_1st_notice</fullName>
+        <description>Expired Opportunity Line - 1st notice</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/ExpiredOpportunityLineAlert1stMsg</template>
+    </alerts>
+    <alerts>
+        <fullName>Expired_Opportunity_Line_2nd_notice</fullName>
+        <description>Expired Opportunity Line - 2nd notice</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/ExpiredOpportunityLineAlert2ndMsg</template>
+    </alerts>
+    <alerts>
+        <fullName>Expired_Opportunity_Line_2nd_notice_partner</fullName>
+        <description>Expired Opportunity Line - 2nd notice (partner)</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/ExpiredOpportunityAlert2ndMsg</template>
+    </alerts>
+</Workflow>

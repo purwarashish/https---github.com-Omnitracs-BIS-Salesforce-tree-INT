@@ -1,0 +1,9 @@
+<!--
+ *  @author:        Mark De Chavez | mark.dechavez@cloudsherpas.com
+ *  @description:   Starting from quote - A custom interface to create child Shipment_Forecast__c records from a single 
+ *				 	Quote_Product__c record
+ *  @date-created:  September 23, 2014
+ *  @revision: 
+ -->
+<apex:page controller="QuoteEditShipmentScheduleController" action="{!redirectToEditShipmentSched}"  >
+</apex:page>

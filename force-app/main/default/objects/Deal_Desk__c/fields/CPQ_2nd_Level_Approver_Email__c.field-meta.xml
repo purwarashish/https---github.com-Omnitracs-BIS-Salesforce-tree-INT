@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CPQ_2nd_Level_Approver_Email__c</fullName>
+    <description>CPQ 2nd level Approver</description>
+    <externalId>false</externalId>
+    <label>CPQ 2nd Level Approver Email</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Email</type>
+    <unique>false</unique>
+</CustomField>

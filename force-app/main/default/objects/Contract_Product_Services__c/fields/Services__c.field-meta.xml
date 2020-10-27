@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Services__c</fullName>
+    <externalId>false</externalId>
+    <label>Services</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Mobile_Platform__c</controllingField>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Alarm Clock</fullName>
+                <default>false</default>
+                <label>Alarm Clock</label>
+            </value>
+            <value>
+                <fullName>Amber Alert</fullName>
+                <default>false</default>
+                <label>Amber Alert</label>
+            </value>
+            <value>
+                <fullName>Analytics Manager</fullName>
+                <default>false</default>
+                <label>Analytics Manager</label>
+            </value>
+            <value>
+                <fullName>Asset Management</fullName>
+                <default>false</default>
+                <label>Asset Management</label>
+            </value>
+            <value>
+                <fullName>Automated Arrival &amp; Departure</fullName>
+                <default>false</default>
+                <label>Automated Arrival &amp; Departure</label>
+            </value>
+            <value>
+                <fullName>Aux Sensor</fullName>
+                <default>false</default>
+                <label>Aux Sensor</label>
+            </value>
+            <value>
+                <fullName>BluMASS</fullName>
+                <default>false</default>
+                <label>BluMASS</label>
+            </value>
+            <value>
+                <fullName>BOT/EOT</fullName>
+                <default>false</default>
+                <label>BOT/EOT</label>
+            </value>
+            <value>
+                <fullName>CabCard</fullName>
+                <default>false</default>
+                <label>CabCard</label>
+            </value>
+            <value>
+                <fullName>Cargo Sensor</fullName>
+                <default>false</default>
+                <label>Cargo Sensor</label>
+            </value>
+            <value>
+                <fullName>Cargo Theft Alert</fullName>
+                <default>false</default>
+                <label>Cargo Theft Alert</label>
+            </value>
+            <value>
+                <fullName>Content Delivery</fullName>
+                <default>false</default>
+                <label>Content Delivery</label>
+            </value>
+            <value>
+                <fullName>Critical Event Reporting</fullName>
+                <default>false</default>
+                <label>Critical Event Reporting</label>
+            </value>
+            <value>
+                <fullName>CSA Safety Performance</fullName>
+                <default>false</default>
+                <label>CSA Safety Performance</label>
+            </value>
+            <value>
+                <fullName>DataView</fullName>
+                <default>false</default>
+                <label>DataView</label>
+            </value>
+            <value>
+                <fullName>Door Sensor</fullName>
+                <default>false</default>
+                <label>Door Sensor</label>
+            </value>
+            <value>
+                <fullName>Driver Email</fullName>
+                <default>false</default>
+                <label>Driver Email</label>
+            </value>
+            <value>
+                <fullName>Driver Login</fullName>
+                <default>false</default>
+                <label>Driver Login</label>
+            </value>
+            <value>
+                <fullName>Driver Notification Service</fullName>
+                <default>false</default>
+                <label>Driver Notification Service</label>
+            </value>
+            <value>
+                <fullName>Driver Workflow</fullName>
+                <default>false</default>
+                <label>Driver Workflow</label>
+            </value>
+            <value>
+                <fullName>DTTS</fullName>
+                <default>false</default>
+                <label>DTTS</label>
+            </value>
+            <value>
+                <fullName>FleetAdvisor</fullName>
+                <default>false</default>
+                <label>FleetAdvisor</label>
+            </value>
+            <value>
+                <fullName>Hard Braking</fullName>
+                <default>false</default>
+                <label>Hard Braking</label>
+            </value>
+            <value>
+                <fullName>Hours of Service</fullName>
+                <default>false</default>
+                <label>Hours of Service</label>
+            </value>
+            <value>
+                <fullName>In-Cab Scanning</fullName>
+                <default>false</default>
+                <label>In-Cab Scanning</label>
+            </value>
+            <value>
+                <fullName>JTRACS</fullName>
+                <default>false</default>
+                <label>JTRACS</label>
+            </value>
+            <value>
+                <fullName>Lease Asset</fullName>
+                <default>false</default>
+                <label>Lease Asset</label>
+            </value>
+            <value>
+                <fullName>Mapping</fullName>
+                <default>false</default>
+                <label>Mapping</label>
+            </value>
+            <value>
+                <fullName>Nav-ALK</fullName>
+                <default>false</default>
+                <label>Nav-ALK</label>
+            </value>
+            <value>
+                <fullName>Nav - InCab Only</fullName>
+                <default>false</default>
+                <label>Nav - InCab Only</label>
+            </value>
+            <value>
+                <fullName>Nav - Maptuit</fullName>
+                <default>false</default>
+                <label>Nav - Maptuit</label>
+            </value>
+            <value>
+                <fullName>OnRoute</fullName>
+                <default>false</default>
+                <label>OnRoute</label>
+            </value>
+            <value>
+                <fullName>Panic Button</fullName>
+                <default>false</default>
+                <label>Panic Button</label>
+            </value>
+            <value>
+                <fullName>Performance Monitoring</fullName>
+                <default>false</default>
+                <label>Performance Monitoring</label>
+            </value>
+            <value>
+                <fullName>PIT</fullName>
+                <default>false</default>
+                <label>PIT</label>
+            </value>
+            <value>
+                <fullName>Pre-filled macros</fullName>
+                <default>false</default>
+                <label>Pre-filled macros</label>
+            </value>
+            <value>
+                <fullName>QDI</fullName>
+                <default>false</default>
+                <label>QDI</label>
+            </value>
+            <value>
+                <fullName>QMASS</fullName>
+                <default>false</default>
+                <label>QMASS</label>
+            </value>
+            <value>
+                <fullName>QMI</fullName>
+                <default>false</default>
+                <label>QMI</label>
+            </value>
+            <value>
+                <fullName>QTRACS</fullName>
+                <default>false</default>
+                <label>QTRACS</label>
+            </value>
+            <value>
+                <fullName>Remote Integration(RI)</fullName>
+                <default>false</default>
+                <label>Remote Integration(RI)</label>
+            </value>
+            <value>
+                <fullName>Rental Asset</fullName>
+                <default>false</default>
+                <label>Rental Asset</label>
+            </value>
+            <value>
+                <fullName>SensorTRACS</fullName>
+                <default>false</default>
+                <label>SensorTRACS</label>
+            </value>
+            <value>
+                <fullName>TrailerManager</fullName>
+                <default>false</default>
+                <label>TrailerManager</label>
+            </value>
+            <value>
+                <fullName>TrailerTRACS</fullName>
+                <default>false</default>
+                <label>TrailerTRACS</label>
+            </value>
+            <value>
+                <fullName>Trip Manager</fullName>
+                <default>false</default>
+                <label>Trip Manager</label>
+            </value>
+            <value>
+                <fullName>TruckMail</fullName>
+                <default>false</default>
+                <label>TruckMail</label>
+            </value>
+            <value>
+                <fullName>Vehicle Command &amp; Control</fullName>
+                <default>false</default>
+                <label>Vehicle Command &amp; Control</label>
+            </value>
+            <value>
+                <fullName>Vehicle Maintenance</fullName>
+                <default>false</default>
+                <label>Vehicle Maintenance</label>
+            </value>
+            <value>
+                <fullName>ViaWeb</fullName>
+                <default>false</default>
+                <label>ViaWeb</label>
+            </value>
+            <value>
+                <fullName>Virtual Display</fullName>
+                <default>false</default>
+                <label>Virtual Display</label>
+            </value>
+            <value>
+                <fullName>VMU</fullName>
+                <default>false</default>
+                <label>VMU</label>
+            </value>
+            <value>
+                <fullName>Wireless Panic Button</fullName>
+                <default>false</default>
+                <label>Wireless Panic Button</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <valueName>Alarm Clock</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <valueName>Amber Alert</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <valueName>Analytics Manager</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <valueName>Automated Arrival &amp; Departure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>TT210</controllingFieldValue>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>T2</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <valueName>BluMASS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <valueName>Cargo Theft Alert</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <valueName>Content Delivery</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <valueName>Critical Event Reporting</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <valueName>CSA Safety Performance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <valueName>Driver Email</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <valueName>Driver Login</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <valueName>Driver Notification Service</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <valueName>Driver Workflow</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <valueName>DTTS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <valueName>Hours of Service</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <valueName>In-Cab Scanning</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <valueName>Nav-ALK</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <valueName>Nav - InCab Only</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <valueName>Nav - Maptuit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <valueName>Panic Button</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <valueName>Performance Monitoring</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <valueName>Pre-filled macros</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <controllingFieldValue>Host Software</controllingFieldValue>
+            <valueName>QTRACS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>TT210</controllingFieldValue>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS</controllingFieldValue>
+            <controllingFieldValue>Handheld</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>T2</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <controllingFieldValue>Host Software</controllingFieldValue>
+            <valueName>Remote Integration(RI)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <controllingFieldValue>TrailerTRACS</controllingFieldValue>
+            <controllingFieldValue>Host Software</controllingFieldValue>
+            <valueName>TrailerTRACS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <valueName>Trip Manager</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <valueName>Vehicle Command &amp; Control</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <valueName>Vehicle Maintenance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <valueName>Virtual Display</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <valueName>VMU</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP200</controllingFieldValue>
+            <controllingFieldValue>MCP110</controllingFieldValue>
+            <controllingFieldValue>MCP50</controllingFieldValue>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>MCP100T</controllingFieldValue>
+            <controllingFieldValue>MCP100S</controllingFieldValue>
+            <valueName>Wireless Panic Button</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TT210</controllingFieldValue>
+            <controllingFieldValue>T2</controllingFieldValue>
+            <valueName>Asset Management</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TT210</controllingFieldValue>
+            <controllingFieldValue>T2</controllingFieldValue>
+            <valueName>Aux Sensor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TT210</controllingFieldValue>
+            <controllingFieldValue>T2</controllingFieldValue>
+            <valueName>BOT/EOT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TT210</controllingFieldValue>
+            <controllingFieldValue>T2</controllingFieldValue>
+            <valueName>Cargo Sensor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TT210</controllingFieldValue>
+            <controllingFieldValue>T2</controllingFieldValue>
+            <valueName>Door Sensor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TT210</controllingFieldValue>
+            <controllingFieldValue>T2</controllingFieldValue>
+            <valueName>Lease Asset</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TT210</controllingFieldValue>
+            <controllingFieldValue>T2</controllingFieldValue>
+            <valueName>Rental Asset</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TT210</controllingFieldValue>
+            <controllingFieldValue>T2</controllingFieldValue>
+            <controllingFieldValue>Host Software</controllingFieldValue>
+            <valueName>TrailerManager</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PIT</controllingFieldValue>
+            <valueName>PIT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Handheld</controllingFieldValue>
+            <valueName>OnRoute</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>Host Software</controllingFieldValue>
+            <valueName>FleetAdvisor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <valueName>Hard Braking</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>Host Software</controllingFieldValue>
+            <valueName>JTRACS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OmniExpress</controllingFieldValue>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>Host Software</controllingFieldValue>
+            <valueName>SensorTRACS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <valueName>CabCard</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>Host Software</controllingFieldValue>
+            <valueName>QMASS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>Host Software</controllingFieldValue>
+            <valueName>QMI</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <valueName>TruckMail</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OmniTRACS</controllingFieldValue>
+            <controllingFieldValue>Host Software</controllingFieldValue>
+            <valueName>ViaWeb</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Host Software</controllingFieldValue>
+            <valueName>Mapping</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

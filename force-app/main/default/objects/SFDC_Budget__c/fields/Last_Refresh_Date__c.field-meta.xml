@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Refresh_Date__c</fullName>
+    <description>The date &amp; time the budget was last refreshed/ calculated. The budget recalculates when a request or claim is approved, or a previously approved record is rejected</description>
+    <externalId>false</externalId>
+    <label>Last Refresh Date</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

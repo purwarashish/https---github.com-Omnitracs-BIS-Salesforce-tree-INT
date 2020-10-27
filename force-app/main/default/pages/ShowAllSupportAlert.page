@@ -1,0 +1,25 @@
+<apex:page standardController="Case" extensions="ShowSupportAlertController" sidebar="false" showHeader="false">
+    <apex:pageBlock id="supp">
+        <apex:pageBlockTable value="{!lstAllSupportAlert}" var="suppAlert" >
+            <apex:column headerValue="Support Alert Name">
+                <apex:outputText value="{!suppAlert.Name}"/>
+            </apex:column>
+            <apex:column headerValue="Critical">
+                <apex:image url="/servlet/servlet.FileDownload?file=01550000000FzO7" rendered="{!if(suppAlert.Critical__c,true,false)}"/>
+                <apex:image url="/servlet/servlet.FileDownload?file=01550000000FzOM" rendered="{!if(suppAlert.Critical__c,false,true)}"/>
+            </apex:column>
+            <apex:column headerValue="Description" width="50%">
+                <apex:outputText style="word-wrap:break-word;"  value="{!suppAlert.Description__c}"/>
+            </apex:column>
+            <apex:column headerValue="Summary" width="50%">
+                <apex:outputText style="word-wrap:break-word;" value="{!suppAlert.Summary__c}"/>
+            </apex:column>
+            <apex:column headerValue="End Date">
+                <apex:outputText value="{!suppAlert.End_Date__c}"/>
+            </apex:column>
+            <!--<apex:column headerValue="Created By">
+                <apex:outputText value="{!suppAlert.CreatedBy}"/> 
+            </apex:column>-->
+        </apex:pageBlockTable>
+      </apex:pageBlock>
+</apex:page>

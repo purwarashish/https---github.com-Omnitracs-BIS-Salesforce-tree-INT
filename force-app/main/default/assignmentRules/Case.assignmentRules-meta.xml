@@ -1,0 +1,1191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssignmentRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignmentRule>
+        <fullName>Case Assignment</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <assignedTo>Oracle_Middleware</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Oracle Middleware</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - Oracle Middleware</value>
+            </criteriaItems>
+            <template>QESAutomatedMessages/Oracle_Middleware_Case_Assignment</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>FieldCS</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-iQ</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>RN_Tier_1</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-RTS Support,Email-Roadnet Support</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>TechnicalSupport</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Support Portal</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Business_Unit__c</field>
+                <operation>equals</operation>
+                <value>Omnitracs US</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Status</field>
+                <operation>equals</operation>
+                <value>New - Unassigned</value>
+            </criteriaItems>
+            <template>Other/SUPPORTNewassignmentnotificationSAMPLE</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Project_Request</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Project Request</value>
+            </criteriaItems>
+            <template>Automated_Messages/Case_Assigned_Message</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>CNR_Call_Center</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-CallCenterMX</value>
+            </criteriaItems>
+            <template>All_Email_Templates/CNR_Case_Assignment_Notification</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>CNR_Hub</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-OperadoresMX</value>
+            </criteriaItems>
+            <template>All_Email_Templates/CNR_Case_Assignment_Notification</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>CNR_Call_Center</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Support Portal</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Business_Unit__c</field>
+                <operation>equals</operation>
+                <value>Omnitracs MX</value>
+            </criteriaItems>
+            <template>All_Email_Templates/CNR_Case_Assignment_Notification</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>SFDC_Support</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Web</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Case Request</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Case_Queue__c</field>
+                <operation>equals</operation>
+                <value>SFDC Support,Other</value>
+            </criteriaItems>
+            <template>Automated_Messages/Case_Assigned_Message</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>ETS775351</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-Shrek</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>startsWith</operation>
+                <value>Warning: shrek50743</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Sylectus_Support</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-Sylectus</value>
+            </criteriaItems>
+            <template>All_Email_Templates/Sylectus_Case_Assignment_Notification</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Sylectus_Support</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Support Portal</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Business_Unit__c</field>
+                <operation>equals</operation>
+                <value>Sylectus</value>
+            </criteriaItems>
+            <template>All_Email_Templates/Sylectus_Case_Assignment_Notification</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>RN_Tier_1</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Support Portal</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Business_Unit__c</field>
+                <operation>equals</operation>
+                <value>Roadnet</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>FRA_Call_Center</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-FRA</value>
+            </criteriaItems>
+            <template>All_Email_Templates/FRA_Case_Assignment_Notification</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Sylectus_Professional_Services</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Professional Services</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Business_Unit__c</field>
+                <operation>equals</operation>
+                <value>Sylectus</value>
+            </criteriaItems>
+            <template>All_Email_Templates/Sylectus_Case_Assignment_Notification</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>RN_Tier_2</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-Var Support</value>
+            </criteriaItems>
+            <template>All_Email_Templates/Roadnet_Case_Assignment_Notification</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>RN_Tier_1</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-RNA Support</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>RN_Tier_1</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Zultys Third Party Voice Mail</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Partner Portal</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>ETS775351</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-Xtrasupport</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Qforce_Case_Number__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <template>QESAutomatedMessages/CaseAssignment_d_2</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>ETS775351</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-Shrek</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Qforce_Case_Number__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>HubAdmin</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-iQ OV Requests</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>contains</operation>
+                <value>Fault Monitoring Integration Inter-Company Share</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>contains</operation>
+                <value>Omnitracs Data Share Request</value>
+            </criteriaItems>
+            <template>QESAutomatedMessages/CaseAssignment_d_2</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>FieldCS</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-iQ OV Requests</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Qforce_Case_Number__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>HubAdmin</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-HubAdmin</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Qforce_Case_Number__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <template>QESAutomatedMessages/CaseAssignment_d_2</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>HubOps</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-HubRequest</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Qforce_Case_Number__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <template>QESAutomatedMessages/CaseAssignment_d_2</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>TechnicalSupport</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>AmberWatch</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Qforce_Case_Number__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>ETS775351</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-ETS</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Qforce_Case_Number__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <template>QESAutomatedMessages/CaseAssignment_d_2</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>QCTransfer</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-QC Transfer</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - XRS Pana Transfer</value>
+            </criteriaItems>
+            <template>QESAutomatedMessages/CaseAssignment_d_2</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>SalesAdmin775351</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - Sales Administration</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - RN Sales Administration</value>
+            </criteriaItems>
+            <template>QESAutomatedMessages/CaseAssignment_d_2</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>TechnicalSupport</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-Technical Support</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Qforce_Case_Number__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <template>QESAutomatedMessages/CaseAssignment_d_2</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>TechnicalSupport</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Qforce_Case_Number__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <template>QESAutomatedMessages/CaseAssignment_d_2</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>TechnicalSupport</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Customer Portal</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>notEqual</operation>
+                <value>Customer Portal Feedback</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Qforce_Case_Number__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <template>QESAutomatedMessages/CaseAssignment_d_2</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>CEMS</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>CUPS Requests</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CUPS_Queue_Designation__c</field>
+                <operation>equals</operation>
+                <value>CEMS</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Qforce_Case_Number__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <template>QESAutomatedMessages/CaseAssignment_d_2</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>ERPiQ</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>CUPS Requests</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CUPS_Queue_Designation__c</field>
+                <operation>equals</operation>
+                <value>ERP/iQ</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Qforce_Case_Number__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <template>QESAutomatedMessages/CaseAssignment_d_2</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>HubOps</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>CUPS Requests</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CUPS_Queue_Designation__c</field>
+                <operation>equals</operation>
+                <value>HubOps</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Qforce_Case_Number__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <template>QESAutomatedMessages/CaseAssignment_d_2</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>CustomerPortalFeedback</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>equals</operation>
+                <value>Customer Portal Feedback</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Call Center</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Qforce_Case_Number__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <template>QESAutomatedMessages/QES_Feedback_Notification</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>SFDC_Support</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>(1 OR (2 AND 4)) AND 3</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-SFDC</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Case_Queue__c</field>
+                <operation>equals</operation>
+                <value>SFDC Support</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Qforce_Case_Number__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <template>Automated_Messages/Case_Assigned_Message</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>CNR_IT_Support</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-CNR IT</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Case_Queue__c</field>
+                <operation>equals</operation>
+                <value>CNR IT Support</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Qforce_Case_Number__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <template>Automated_Messages/Case_Assigned_Message</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DMA_Support</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-DMA</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Case_Queue__c</field>
+                <operation>equals</operation>
+                <value>DMA Support</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Qforce_Case_Number__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <template>Automated_Messages/Case_Assigned_Message</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>OTS_Queue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>OTS Support</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-OTS</value>
+            </criteriaItems>
+            <template>Automated_Messages/Case_Assigned_Message</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>CP_IT_Support</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-CP IT Support</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Case_Queue__c</field>
+                <operation>equals</operation>
+                <value>Customer Portal</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Qforce_Case_Number__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <template>Automated_Messages/Case_Assigned_Message</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BillOps_Support</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-BillOps</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Case_Queue__c</field>
+                <operation>equals</operation>
+                <value>BillOps Support</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Qforce_Case_Number__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <template>Automated_Messages/Case_Assigned_Message</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Employee_Portal_Support</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - Employee Portal</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Case_Queue__c</field>
+                <operation>equals</operation>
+                <value>Employee Portal Support</value>
+            </criteriaItems>
+            <template>Automated_Messages/Case_Assigned_Message</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>ERP_Support</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - ERP,Email - ERP Support</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>ERP Support</value>
+            </criteriaItems>
+            <template>Automated_Messages/Case_Assigned_Message</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>SSG_Support</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - SSG</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Case_Queue__c</field>
+                <operation>equals</operation>
+                <value>SSG Support</value>
+            </criteriaItems>
+            <template>Automated_Messages/Case_Assigned_Message</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>VMS_Admin_Support</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - VMS Admin</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Case_Queue__c</field>
+                <operation>equals</operation>
+                <value>VMS Admin Support</value>
+            </criteriaItems>
+            <template>Automated_Messages/Case_Assigned_Message</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>iAdmin_Support</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - iAdmin</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Case_Queue__c</field>
+                <operation>equals</operation>
+                <value>iAdmin Support</value>
+            </criteriaItems>
+            <template>Automated_Messages/Case_Assigned_Message</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BI_DW_IT_Support</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>(1 OR 2)</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-BI/DW IT</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Case_Queue__c</field>
+                <operation>equals</operation>
+                <value>BI/DW IT Support</value>
+            </criteriaItems>
+            <template>Automated_Messages/Case_Assigned_Message</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Engineering_Tools_Support</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-Engineering Tools</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Case_Queue__c</field>
+                <operation>equals</operation>
+                <value>Engineering Tools Support</value>
+            </criteriaItems>
+            <template>Automated_Messages/Case_Assigned_Message</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>VMS_Admin_Queue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>VMS Requests</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-OTS</value>
+            </criteriaItems>
+            <template>Automated_Messages/Case_Assigned_Message</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>TechnicalSupport</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Call Center</value>
+            </criteriaItems>
+            <template>QESAutomatedMessages/CaseAssignment_d_2</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>UNIX_Resolvers</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - UNIX-Resolvers</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Case_Queue__c</field>
+                <operation>equals</operation>
+                <value>UNIX-Resolvers</value>
+            </criteriaItems>
+            <template>Automated_Messages/Case_Assigned_Message</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Inside_Customer_Success</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - Channel Support</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Case_Queue__c</field>
+                <operation>equals</operation>
+                <value>Inside Customer Success</value>
+            </criteriaItems>
+            <template>Automated_Messages/Case_Assigned_Message</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>PTA_Support</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - PTA Support</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Case_Queue__c</field>
+                <operation>equals</operation>
+                <value>PTA Support</value>
+            </criteriaItems>
+            <template>Automated_Messages/Case_Assigned_Message</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>XRS_Tier_2</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - XRS Tier 2</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Queue__c</field>
+                <operation>equals</operation>
+                <value>XRS Tier 2</value>
+            </criteriaItems>
+            <template>QESAutomatedMessages/CaseAssignment_d_2</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Lab_Support</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - Lab Support</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Lab Support</value>
+            </criteriaItems>
+            <template>QESAutomatedMessages/CaseAssignment_d_2</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>XRS_Fuel_Tax</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - XRS Fuel Tax</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>XRS Fuel Tax</value>
+            </criteriaItems>
+            <template>QESAutomatedMessages/CaseAssignment_d_2</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>XRS_Tier_1</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - XRS Tier 1</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Queue__c</field>
+                <operation>equals</operation>
+                <value>XRS Tier 1</value>
+            </criteriaItems>
+            <template>QESAutomatedMessages/CaseAssignment_d_2</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Navigation_Driver_Feedback</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email -OT Navigation Driver Feedback</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Navigation Driver Feedback Support</value>
+            </criteriaItems>
+            <template>QESAutomatedMessages/CaseAssignment_d_2</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Omni_Finance_Pricing_Queue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - Omni Finance Pricing</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Omni Finance Pricing</value>
+            </criteriaItems>
+            <template>QESAutomatedMessages/CaseAssignment_d_2</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Customer_Setup_Queue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - Customer Setup</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Customer Setup</value>
+            </criteriaItems>
+            <template>QESAutomatedMessages/CaseAssignment_d_2</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>CPQ_Operations</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - CPQ Operations</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>CPQ Operations</value>
+            </criteriaItems>
+            <template>Automated_Messages/Case_Assigned_Message</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Sales_Ops</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - Sales.Ops</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Sales Ops</value>
+            </criteriaItems>
+            <template>Automated_Messages/Case_Assigned_Message</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Omnitracs_NAV_Support</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 AND 2</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - Omnitracs NAV Support</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Omnitracs NAV Support</value>
+            </criteriaItems>
+            <template>QESAutomatedMessages/CaseAssignment_d_2</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Agile_Support</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - Agile Support</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Agile Support</value>
+            </criteriaItems>
+            <template>QESAutomatedMessages/CaseAssignment_d_2</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Host_Information_Setup</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-Host Information</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Account Admin Support</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>ProductSupport</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-Product Support</value>
+            </criteriaItems>
+            <template>QESAutomatedMessages/CaseAssignment_d_2</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Carrier_Notifications</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - Carrier Notifications</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Carrier Notifications</value>
+            </criteriaItems>
+            <template>Automated_Messages/Case_Assigned_Message_Carrier_Notifications</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Roadnet_Telematics_Queue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - Roadnet Telematics</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Roadnet Telematics</value>
+            </criteriaItems>
+            <template>Automated_Messages/Case_Open_Message_Roadnet_Telematics</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>VAR_Retail_Support</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - VAR Retail Support</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>VAR Retail Support</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Roadnet_Product_Support</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>contains</operation>
+                <value>Email - Roadnet Product Support</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Roadnet Product Support,Email Generated Cases</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>ELD_Info_Setup</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>equals</operation>
+                <value>XRS VAR Host Info Setup</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Training_Team</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - Training Team</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Training Case</value>
+            </criteriaItems>
+            <template>QESAutomatedMessages/CaseAssignment_d_2</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Legal_Data_Entry</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-Legal Data Entry</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Omnitracs_Canada_Orders</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-Omnitracs Canada Orders</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Omnitracs Canada Orders,Email Generated Cases</value>
+            </criteriaItems>
+            <template>Automated_Messages/Case_Assigned_Message</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Omnitracs_Canada_Returns</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-Omnitracs Canada Returns</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Omnitracs Canada Returns,Email Generated Cases</value>
+            </criteriaItems>
+            <template>Automated_Messages/Case_Assigned_Message</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Omnitracs_Canada_Transfers</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-Omnitracs Canada Transfers</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Omnitracs Canada Transfers,Email Generated Cases</value>
+            </criteriaItems>
+            <template>Automated_Messages/Case_Assigned_Message</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Omnitracs_Canada_Support</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-Omnitracs Canada Support</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Omnitracs Canada Support,Email Generated Cases</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>XRS_Returns</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - XRS Product Support</value>
+            </criteriaItems>
+            <template>Automated_Messages/Case_Assigned_Message</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>XRS_Orders</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email - XRS Sales Administration</value>
+            </criteriaItems>
+            <template>Automated_Messages/Case_Assigned_Message</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Tools</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Confluence,JIRA,JIRA Admin</value>
+            </criteriaItems>
+            <template>Automated_Messages/Case_Assigned_Message</template>
+        </ruleEntry>
+    </assignmentRule>
+</AssignmentRules>

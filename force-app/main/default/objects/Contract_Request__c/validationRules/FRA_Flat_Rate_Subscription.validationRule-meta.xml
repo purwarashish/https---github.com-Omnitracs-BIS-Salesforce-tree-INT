@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FRA_Flat_Rate_Subscription</fullName>
+    <active>true</active>
+    <description>If Flat Rate or Subscription is selected, Compensation is required.</description>
+    <errorConditionFormula>AND( 
+OR( 
+INCLUDES( Contract_Type__c , &quot;Flat Rate&quot;), 
+INCLUDES( Contract_Type__c , &quot;Subscription&quot;)), 
+ISBLANK( Compensation__c ))</errorConditionFormula>
+    <errorDisplayField>Compensation__c</errorDisplayField>
+    <errorMessage>If Flat Rate or Subscription is selected, Compensation is required.</errorMessage>
+</ValidationRule>

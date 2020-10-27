@@ -1,0 +1,25 @@
+<!-- /*******************************************************************************
+ * File:  EmailSendSuccessful.Page
+ * Date:  March 4th, 2010
+ * Author:  Joseph Hutchins
+ *
+ * The use, disclosure, reproduction, modification, transfer, or transmittal of
+ * this work for any purpose in any form or by any means without the written 
+ * permission of United Parcel Service is strictly prohibited.
+ *
+ * Confidential, unpublished property of United Parcel Service.
+ * Use and distribution limited solely to authorized personnel.
+ *
+ * Copyright 2009, UPS Logistics Technologies, Inc.  All rights reserved.
+ *  *******************************************************************************/ -->
+<apex:page standardcontroller="Account" extensions="EmailSendSuccessfulController">
+    <apex:form id="theForm">
+    <apex:pagemessages />
+    <apex:pagemessage strength="3" severity="info" title="Email Sent Successfully"/>
+        <apex:pageblock >
+            <apex:pageBlockbuttons location="top">
+                <apex:commandbutton action="{!back}" value="Go Back" id="saveButton" status="saveButtonStatus"/>
+            </apex:pageblockButtons>  
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

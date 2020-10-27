@@ -1,0 +1,3585 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Alert_CS_when_Opportunity_is_Closed_Won</fullName>
+        <ccEmails>omnitracs.sfdc.noreply@omnitracs.com</ccEmails>
+        <description>Alert when Opportunity is Closed Won</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>cbeatty@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>cbrandt@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>cchappelear@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>dbikle@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jyanda@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>osmith@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>schipper@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>smcwilliams@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>tcampbell@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>All_Email_Templates/Opportunity_Closed_Won</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_Roadnet_Sales_when_Opportunity_is_Lost</fullName>
+        <ccEmails>omnitracs.sfdc.noreply@omnitracs.com</ccEmails>
+        <description>Alert Roadnet Sales when Opportunity is Lost</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>cbrandt@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>dbikle@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jyanda@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>osmith@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Roadnet_Sales_Domestic_Templates/Opportunity_Closed_Lost</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_for_Mexico_team_when_Pro_Serve</fullName>
+        <description>Alert for Mexico team when ProServe is checked</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>c_rbeltran@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>iochoa@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Professional_Services/Project_Notification_to_the_sales_team</template>
+    </alerts>
+    <alerts>
+        <fullName>CAD_VLV_Setup_Is_Required</fullName>
+        <ccEmails>ckeeling@omnitracs.com</ccEmails>
+        <description>CAD VLV Setup Is Required</description>
+        <protected>false</protected>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Automated_Messages/CAD_VLV_Setup_Is_Required</template>
+    </alerts>
+    <alerts>
+        <fullName>CAD_VLV_Setup_Is_Required2</fullName>
+        <ccEmails>vlv.support@omnitracs.com</ccEmails>
+        <ccEmails>canada.support@omnitracs.com</ccEmails>
+        <description>CAD VLV Setup Is Required</description>
+        <protected>false</protected>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Automated_Messages/CAD_VLV_Setup_Is_Required</template>
+    </alerts>
+    <alerts>
+        <fullName>Decommission_Sales_Order_Entry_for_RN_Opportunity</fullName>
+        <description>Decommission Sales Order Entry for RN Opportunity</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>apascarell@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>lgrueninger@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/RN_Dec_Opp_ready_for_sales_order_entry</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Alert_to_CS_Rep_and_Product_Management</fullName>
+        <description>Email Alert to CS Rep and Product Management</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>apascarell@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>lgrueninger@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mpi@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Automated_Messages/RN_Closed_Won_Opp_Notification_to_CS_and_PM</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Alert_to_Opp_Owner_Sales_Plan_not_Complete</fullName>
+        <description>Email Alert to Opp Owner - Sales Plan not Complete</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/VVSS_Sales_Plan_Not_Complete</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Alert_when_Opportunity_Legal_Review_Contract_Data_Entry_Process</fullName>
+        <description>Email Alert when Opportunity: Legal Review = Contract Data Entry Process</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>apascarell@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jalban@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>lhughes@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>FinanceNotices/Opp_Legal_Review_Set_to_Contract_Data_Entry_Process</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Customer_Setup_Team_that_Finance_Review_has_been_completed</fullName>
+        <description>Email Customer Setup Team (except Brad Matocha case- # 01970894) that Finance Review has been completed</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>emartin@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>fannyl@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>lindah@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>ncolabel@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>smithc@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>swoitas@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>All_Email_Templates/MIBOS_Customer_Setup_Email_for_FinanceReviewComplete</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_LegalTeam_FinanceReviewCompleted</fullName>
+        <description>Email to Legal team that Finance Review has been completed</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Contract_Creation_LegalTeam</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/Legal_Team_Email_for_FinanceReviewComplete</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Partner</fullName>
+        <description>Email Partner</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Marketing_Operations</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>All_Email_Templates/Opportunity_Assigned_New_Owner</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Partner_when_Opportunity_Assigned</fullName>
+        <ccEmails>swalsh@omnitracs.com</ccEmails>
+        <description>Email Partner when Opportunity Assigned</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>All_Email_Templates/Opportunity_Assigned_New_Owner</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_to_Finance_Accounting_team_forFinanceReviewComplete</fullName>
+        <description>Email to Finance-Accounting team that Finance Review has been completed</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>ckeeling@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>All_Email_Templates/MIBOS_Finance_Accounting_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_to_Opportunity_Owner_and_sender_that_Finance_Review_has_rejected</fullName>
+        <description>Email to Opportunity Owner and sender that Finance Review has rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Opportunity Owner</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>All_Email_Templates/MIBOS_Opportunity_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_to_XRS_Eval_team_when_opp_includes_Eval_XRS_CMPP</fullName>
+        <ccEmails>evals@omnitracs.com</ccEmails>
+        <description>Email to XRS Eval team when opp includes Eval-&gt;XRS CMPP</description>
+        <protected>false</protected>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>TLSalesTemplates/Eval_with_XRS_CMPP_Email_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Eval_Conversions_Notification_2</fullName>
+        <ccEmails>omni.collectors@omnitracs.com,</ccEmails>
+        <description>Eval Conversions Notification 2</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Account Manager APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/Eval_Conversions_Email_Template2</template>
+    </alerts>
+    <alerts>
+        <fullName>Eval_Conversions_Notification_XRS</fullName>
+        <ccEmails>Billing@xrscorp.com</ccEmails>
+        <description>Eval Conversions Notification XRS</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Account Manager APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/Eval_Conversions_Email_Template_XRS</template>
+    </alerts>
+    <alerts>
+        <fullName>ExpiredOpportunityNotification</fullName>
+        <description>Expired Opportunity Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/ExpiredOpportunityAlert1stMsg</template>
+    </alerts>
+    <alerts>
+        <fullName>ExpiredOpportunityNotification2nd</fullName>
+        <description>Expired Opportunity Notification - 2nd notice (partner)</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/ExpiredOpportunityAlert2ndMsg</template>
+    </alerts>
+    <alerts>
+        <fullName>Finance_ReviewNeeded</fullName>
+        <ccEmails>custsetup@omnitracs.com; omni.credit.approval@omnitracs.com</ccEmails>
+        <description>Email to Finance distribution list that Finance Review needs to be completed</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>ckeeling@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>dgriffith@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>lrecio@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>rskaggs@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>All_Email_Templates/MIBOS_Finance_Review_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Finance_ReviewNeeded_Sylectus</fullName>
+        <description>Email to Sylectus Finance distribution list that Finance Review needs to be completed</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>smilana@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>smithg@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>All_Email_Templates/MIBOS_Finance_Review_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>New_opportunity_with_TCV_10000_has_been_automatically_approved</fullName>
+        <description>New opportunity with TCV &gt;= 10,000 has been automatically approved</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>challbor@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>ckeeling@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>ddere@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jehill@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mhurew@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>FinanceNotices/Opp_Finance_Review_Set_to_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>New_opportunity_with_TCV_10_000_has_been_automatically_approved</fullName>
+        <description>New opportunity with TCV &gt;= 10,000 has been automatically approved</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>challbor@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>ddere@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>FinanceNotices/Opp_Finance_Review_Set_to_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>Notification_for_opportunity_when_stage_is_changed</fullName>
+        <ccEmails>KHudson@omnitracs.com</ccEmails>
+        <description>Notification for opportunity when stage is changed</description>
+        <protected>false</protected>
+        <senderAddress>sfdc.support@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Roadnet_Sales_Domestic_Templates/Opportunity_Stage_Changed</template>
+    </alerts>
+    <alerts>
+        <fullName>NotifyOppOwnerandManagerOpphasexpiredCloseDate</fullName>
+        <description>Notify Opp Owner and Manager Opp has expired Close Date</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Account Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Manager APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside CSR</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside CSR APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside Sales Rep</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside Sales Rep APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/ExpiredOpportunityAlert2ndMsg</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_BDR_when_Opp_assigned_from_PAM_to_Partner_Reseller</fullName>
+        <ccEmails>dmoriarty@omnitracs.com</ccEmails>
+        <description>Notify BDR when Opp assigned from PAM to Partner Reseller</description>
+        <protected>false</protected>
+        <recipients>
+            <field>BDR_s_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>All_Email_Templates/BDR_Opportunity_Assigned_New_Owner</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_CER_East_District_2</fullName>
+        <description>Notify CER - East District 2</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>slisenba@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>TLSalesTemplates/Notify_CER_of_New_Account</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_CER_East_District_3</fullName>
+        <description>Notify CER - East District 3</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jcrellin@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>TLSalesTemplates/Notify_CER_of_New_Account</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_CER_East_District_4</fullName>
+        <description>Notify CER - East District 4</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>apaschall@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>TLSalesTemplates/Notify_CER_of_New_Account</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_CER_East_District_5</fullName>
+        <description>Notify CER - East District 5</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>kpeterso@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>TLSalesTemplates/Notify_CER_of_New_Account</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_CER_East_District_6</fullName>
+        <description>Notify CER - East District 6</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>barnettj@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>TLSalesTemplates/Notify_CER_of_New_Account</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_CER_West_District_1</fullName>
+        <description>Notify CER - West District 1</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jbrinch@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>TLSalesTemplates/Notify_CER_of_New_Account</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_CER_West_District_2</fullName>
+        <description>Notify CER - West District 2</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jmclain@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>TLSalesTemplates/Notify_CER_of_New_Account</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_CER_West_District_3</fullName>
+        <description>Notify CER - West District 3</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jlombardo@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>TLSalesTemplates/Notify_CER_of_New_Account</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_CER_West_District_4</fullName>
+        <description>Notify CER - West District 4</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jbaker@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>TLSalesTemplates/Notify_CER_of_New_Account</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_CER_West_District_5</fullName>
+        <description>Notify CER - West District 5</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>cboe@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>TLSalesTemplates/Notify_CER_of_New_Account</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_CER_West_District_6</fullName>
+        <description>Notify CER - West District 6</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>cthipa@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>TLSalesTemplates/Notify_CER_of_New_Account</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_Legal_of_Approval</fullName>
+        <description>Notify Legal of Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jlaughlin@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mgranillo@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>swanigasinghe@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/Legal_Team_Email_for_SalesComplete</template>
+    </alerts>
+    <alerts>
+        <fullName>OmniMX_Opportunity_Closed_Won</fullName>
+        <ccEmails>liberacionesmx@omnitracs.com</ccEmails>
+        <description>Alert when Omnitracs Mexico Opportunity is Closed Won</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jpaulo@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>lgrueninger@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>CNR_Email_Templates/OmniMX_Opportunity_Closed_Won</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_Assigned</fullName>
+        <description>Opportunity Assigned</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/Opportunity_Assigned_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_Assigned_Partner</fullName>
+        <ccEmails>channelleads@omnitracs.com</ccEmails>
+        <description>Opportunity Assigned - Partner</description>
+        <protected>false</protected>
+        <recipients>
+            <field>PAM_s_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/Opportunity_Assigned_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_Assigned_from_PAM_to_Partner_Reseller</fullName>
+        <ccEmails>channelleads@omnitracs.com</ccEmails>
+        <description>Opportunity Assigned from PAM to Partner Reseller</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>All_Email_Templates/Opportunity_Assigned_New_Owner</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_Notify_Opportunity_Owner_Stage_Reversed_from_Sales_Complete</fullName>
+        <description>Opportunity: Notify Opportunity Owner - Stage Reversed from Sales Complete</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/Opportunity_Stage_Reversed_from_Sales_Complete</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_Send_Email_Notification_when_partner_rejects_lead</fullName>
+        <ccEmails>ChannelLeads@omnitracs.com</ccEmails>
+        <description>Opportunity - Send Email Notification when partner rejects Opportunity</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Primary_Partner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Oppty_Rejected_by_Partner</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_Send_Welcome_Email_to_Customer</fullName>
+        <ccEmails>omnitracs.sfdc.noreply@omnitracs.com</ccEmails>
+        <description>Opportunity: XRS - Send Welcome Email to Customer</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderAddress>xrsbilling@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/XRS_Welcome_Email_to_Customer</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_Stage_Reversal_Approved_Notify_Oppty_Owner</fullName>
+        <description>Opportunity: Stage Reversal Approved - Notify Oppty Owner</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/Opportunity_Stage_Reversal_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_Stage_Reversal_Rejected_Notify_Oppty_Owner</fullName>
+        <description>Opportunity: Stage Reversal Rejected - Notify Oppty Owner</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/Opportunity_Stage_Reversal_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_XRS_New_Opportunity_Closed_Won_Notify_Opportunity_Owner</fullName>
+        <ccEmails>omnitracs.sfdc.noreply@omnitracs.com</ccEmails>
+        <ccEmails>PAMNCIS@omnitracs.com</ccEmails>
+        <description>Opportunity: XRS - New Opportunity Closed Won - Notify Opportunity Owner</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>xrsbilling@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/XRS_New_Opportunity_Closed_Won</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_XRS_New_Opportunity_Closed_Won_Notify_Prof_Services</fullName>
+        <ccEmails>pro_serv_mgt@omnitracs.com</ccEmails>
+        <ccEmails>omnitracs.sfdc.noreply@omnitracs.com</ccEmails>
+        <description>Opportunity: XRS - New Opportunity Closed Won - Notify Prof Services</description>
+        <protected>false</protected>
+        <senderAddress>xrsbilling@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/XRS_New_Opportunity_Closed_Won</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_XRS_Notify_Prof_Services_to_Identify_Resource</fullName>
+        <ccEmails>pro_serv_mgt@omnitracs.com</ccEmails>
+        <ccEmails>omnitracs.sfdc.noreply@omnitracs.com</ccEmails>
+        <description>Opportunity: XRS - Notify Prof Services to Identify Resource</description>
+        <protected>false</protected>
+        <senderAddress>xrsbilling@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/XRS_Assign_Resources_for_Opportunity</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_XRS_Stage_Closed_Won_Notify_XRS_Sales_Admin</fullName>
+        <ccEmails>pta.team@omnitracs.com, xrs-sales-admin@omnitracs.com</ccEmails>
+        <description>Opportunity XRS: Stage Closed Won - Notify XRS-Sales-Admin</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <field>Primary_Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/Sales_Information_from_XRS_Quotes</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_assigned_to_Partner_Account_Manager</fullName>
+        <ccEmails>channelleads@omnitracs.com</ccEmails>
+        <description>Opportunity assigned to Partner Account Manager</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>All_Email_Templates/Opportunity_Assigned_New_Owner</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_tcv_less_than10K_alert_with_Finance_Status_review_completed</fullName>
+        <description>Opportunity (TCV&lt;10K) alert with Finance Status review completed</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>challbor@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>ddere@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>FinanceNotices/Opp_Finance_Review_Set_to_Approved_10k</template>
+    </alerts>
+    <alerts>
+        <fullName>Primary_Contact_Required_for_Opportunity</fullName>
+        <description>Primary Contact Required for Opportunity</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>TLSalesTemplates/Primary_Contact_Required</template>
+    </alerts>
+    <alerts>
+        <fullName>Professional_Services_Alert_when_Opportunity_Probability_49</fullName>
+        <ccEmails>services-scope-request@omnitracs.com</ccEmails>
+        <description>Professional Services Alert when Opportunity Probability &gt; 49%</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>Professional_Services/Opportunity_Probability_49</template>
+    </alerts>
+    <alerts>
+        <fullName>Professional_Services_Alert_when_Opportunity_Stage_Closed_Won</fullName>
+        <ccEmails>pro_serv_mgt@omnitracs.com</ccEmails>
+        <description>Professional Services Alert when Opportunity Stage = Closed Won or Sales Complete</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>Professional_Services/Opportunity_Stage_Sales_Complete_or_Closed_Won</template>
+    </alerts>
+    <alerts>
+        <fullName>Professional_Services_Alert_when_Opportunity_contains_Professional_Services</fullName>
+        <ccEmails>services-scope-request@omnitracs.com</ccEmails>
+        <description>Professional Services Alert when Opportunity contains Professional Services</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>Professional_Services/Opportunity_contains_Professional_Services</template>
+    </alerts>
+    <alerts>
+        <fullName>Project_notification_to_Sales_Team</fullName>
+        <ccEmails>pro_serv_mgt@omnitracs.com</ccEmails>
+        <description>Project notification to Sales Team</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>Professional_Services/Pro_Serv_Mgt_Alert_for_Opportunity</template>
+    </alerts>
+    <alerts>
+        <fullName>RDC_MTA_Product_Quoted</fullName>
+        <ccEmails>pro_serv_mgt@omnitracs.com</ccEmails>
+        <description>RDC MTA Product Quoted</description>
+        <protected>false</protected>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/X90_Day_RDC_MTA_Free_Trial_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>RN_opportuntiy_alert_with_Finance_Status_review_completed</fullName>
+        <description>RN opportuntiy alert with Finance Status review completed</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>challbor@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>ddere@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jehill@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mhurew@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/RN_Opp_Finance_review_completed</template>
+    </alerts>
+    <alerts>
+        <fullName>Sales_Order_entry_for_RN_opportuntiy</fullName>
+        <ccEmails>rn-order-admin@omnitracs.com</ccEmails>
+        <description>Sales Order entry for RN opportuntiy</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>All_Email_Templates/Opportunity_Closed_Won</template>
+    </alerts>
+    <alerts>
+        <fullName>TEST_InsideSales_WFR_Opp_Create</fullName>
+        <description>TEST InsideSales WFR Opp Create</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>christian@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>nicoleb@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>All_Email_Templates/TEST_InsideSales_WFR</template>
+    </alerts>
+    <alerts>
+        <fullName>This_email_is_sent_to_the_Finance_email_distribution_list_when_the_AR_Finance_Re</fullName>
+        <description>Email to Finance when AR Finance Review automatically approved</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>lrecio@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>rskaggs@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>FinanceNotices/Finance_Renewal_Review_Auto_AR_Approval_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>send_notification_to_pro_serv_management_team</fullName>
+        <description>send notification to pro serv management team</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>ajara@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Professional_Services/Project_Notification_to_the_sales_team</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Account_Classification_Customer</fullName>
+        <description>Update Account Classification to Customer</description>
+        <field>Account_Classification__c</field>
+        <literalValue>Customer</literalValue>
+        <name>Account Classification Customer</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <targetObject>AccountId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Account_Owner_Partner_Account_Manager</fullName>
+        <description>Assign Marketo Interface to Account Owner</description>
+        <field>OwnerId</field>
+        <lookupValue>marketo@omnitracs.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>Account Owner Partner Account Manager</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <targetObject>AccountId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Account_Status_Active</fullName>
+        <description>Update Account Status to Active</description>
+        <field>Account_Status__c</field>
+        <literalValue>Active</literalValue>
+        <name>Account Status Active</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <targetObject>AccountId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Accretive_ACV_Stamp</fullName>
+        <field>Accretive_Recurring_ACV_Stamp__c</field>
+        <formula>Accretive_Recurring_ACV__c</formula>
+        <name>Accretive ACV Stamp</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>BDR_Qualified_Date</fullName>
+        <field>BDR_Qualified_Date__c</field>
+        <formula>Now()</formula>
+        <name>BDR Qualified Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>BDR_Qualified_Date_45_days</fullName>
+        <field>BDR_Qualified_Date__c</field>
+        <formula>NOW()</formula>
+        <name>BDR Qualified Date - 45 days</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>BD_Qualified_Date</fullName>
+        <field>BDR_Qualified_Date__c</field>
+        <formula>NOW()</formula>
+        <name>BD Qualified Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CSR_East_District_2</fullName>
+        <field>CSR__c</field>
+        <name>CSR - East District 2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <targetObject>AccountId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CSR_East_District_3</fullName>
+        <field>CSR__c</field>
+        <name>CSR - East District 3</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <targetObject>AccountId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CSR_East_District_4</fullName>
+        <field>CSR__c</field>
+        <lookupValue>apaschall@omnitracs.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>CSR - East District 4</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <targetObject>AccountId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CSR_East_District_5</fullName>
+        <field>CSR__c</field>
+        <lookupValue>jherrington@omnitracs.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>CSR - East District 5</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <targetObject>AccountId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CSR_East_District_6</fullName>
+        <field>CSR__c</field>
+        <lookupValue>barnettj@omnitracs.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>CSR - East District 6</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <targetObject>AccountId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CSR_West_District_1</fullName>
+        <field>CSR__c</field>
+        <name>CSR - West District 1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <targetObject>AccountId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CSR_West_District_2</fullName>
+        <field>CSR__c</field>
+        <lookupValue>jmclain@omnitracs.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>CSR - West District 2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <targetObject>AccountId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CSR_West_District_3</fullName>
+        <field>CSR__c</field>
+        <lookupValue>jlombardo@omnitracs.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>CSR - West District 3</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <targetObject>AccountId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CSR_West_District_4</fullName>
+        <field>CSR__c</field>
+        <lookupValue>jbaker@omnitracs.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>CSR - West District 4</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <targetObject>AccountId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CSR_West_District_5</fullName>
+        <field>CSR__c</field>
+        <lookupValue>cboe@omnitracs.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>CSR - West District 5</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <targetObject>AccountId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CSR_West_District_6</fullName>
+        <field>CSR__c</field>
+        <lookupValue>cthipa@omnitracs.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>CSR - West District 6</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <targetObject>AccountId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Close_Date_Stamp_on_Renewals</fullName>
+        <field>CloseDate</field>
+        <formula>CloseDate</formula>
+        <name>Close Date Stamp on Renewals</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Finance_Status_Approved</fullName>
+        <description>Set Financial Status to Approved</description>
+        <field>Finance_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Finance Status--Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Finance_Status_Needs_Review</fullName>
+        <field>Finance_Status__c</field>
+        <literalValue>Needs Review</literalValue>
+        <name>Finance Status - Credit Check</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Forecast_Demand_Best_Case</fullName>
+        <field>Forecast_Demand__c</field>
+        <literalValue>Best Case - 70%</literalValue>
+        <name>Forecast Demand Best Case</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Forecast_Demand_Commit</fullName>
+        <field>Forecast_Demand__c</field>
+        <literalValue>Commit - 90%</literalValue>
+        <name>Forecast Demand Commit</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Forecast_Demand_Omitted</fullName>
+        <description>Sets Forecast Demand to 0%-30% on Opportunity</description>
+        <field>Forecast_Demand__c</field>
+        <literalValue>Omitted - 0% to 30%</literalValue>
+        <name>Forecast Demand Omitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Forecast_Demand_Pipeline</fullName>
+        <field>Forecast_Demand__c</field>
+        <literalValue>Pipeline - 30% to 50%</literalValue>
+        <name>Forecast Demand Pipeline</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Forecast_Demand_Shipped</fullName>
+        <field>Forecast_Demand__c</field>
+        <literalValue>Closed - 100%</literalValue>
+        <name>Forecast Demand Shipped</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Forecast_Status_Solid</fullName>
+        <field>Forecast_Status__c</field>
+        <literalValue>Solid</literalValue>
+        <name>Forecast Status--Solid</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Inactive_Reason_Blank</fullName>
+        <description>Set the Account Inactive Reason to Blank</description>
+        <field>Inactive_Reason__c</field>
+        <name>Inactive Reason Blank</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <targetObject>AccountId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Increment_Push_Counter</fullName>
+        <field>Push_Counter__c</field>
+        <formula>Push_Counter__c + 1</formula>
+        <name>Increment Push Counter</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Legal_Review_Approved</fullName>
+        <description>Set Legal Review to Approved</description>
+        <field>Legal_Review__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Legal Review--Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_Finance_Status_Review_Completed</fullName>
+        <field>Finance_Status__c</field>
+        <literalValue>Review Completed</literalValue>
+        <name>Opp - Finance Status = Review Completed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_Owner_Partner_Account_Manager</fullName>
+        <description>Sets the Opportunity Owner to Marketo Interface</description>
+        <field>OwnerId</field>
+        <lookupValue>marketo@omnitracs.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>Opp Owner Partner Account Manager</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_set_partner_record_type</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Partner_Opportunity_Reseller</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Opp - set partner record type</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opportunity_Check_Unlock_Opportunity</fullName>
+        <description>Opportunity: Checks &apos;Unlock Opportunity&apos; checkbox</description>
+        <field>Unlock_Opportunity__c</field>
+        <literalValue>1</literalValue>
+        <name>Opportunity: Check Unlock Opportunity</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opportunity_Name_Stamp</fullName>
+        <field>Name</field>
+        <formula>IF(
+   AND(
+       NOT(ISBLANK(SBQQ__RenewedContract__c)), 
+       NOT(ISPICKVAL(Order_Type__c,&quot;Contract Renewal&quot;))
+   ),
+   SBQQ__RenewedContract__r.Name__c,
+   &quot;Contract Renewal:&quot;&amp;RIGHT(SBQQ__RenewedContract__r.Name__c,LEN(SBQQ__RenewedContract__r.Name__c)-FIND(&quot;:&quot;,SBQQ__RenewedContract__r.Name__c))
+)</formula>
+        <name>Opportunity Name Stamp</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opportunity_Reset_Legal_Review</fullName>
+        <description>Resets Legal Review field</description>
+        <field>Legal_Review__c</field>
+        <name>Opportunity: Reset Legal Review</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opportunity_Reset_Stage_Reversal_Reason</fullName>
+        <field>Stage_Reversal_Reason__c</field>
+        <name>Opportunity: Reset Stage Reversal Reason</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opportunity_Set_Stage_Before_Reversal</fullName>
+        <field>Stage_Before_Reversal__c</field>
+        <formula>Text(PRIORVALUE(StageName))</formula>
+        <name>Opportunity: Set Stage Before Reversal</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Owner_s_Manager_Stamp</fullName>
+        <field>Owner_s_Manager__c</field>
+        <formula>IF( 
+VEP_Opportunity_Type__c = &quot;Annual Renewal&quot;, 
+&quot;&quot;, 
+Owner.Manager_Name__c)</formula>
+        <name>Owner&apos;s Manager Stamp</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Owner_s_Market_Stamp</fullName>
+        <field>Owner_s_Market2__c</field>
+        <formula>IF( 
+VEP_Opportunity_Type__c = &quot;Annual Renewal&quot;, 
+TEXT(Account.QWBS_Market__c), 
+TEXT(Owner.Market__c))</formula>
+        <name>Owner&apos;s Market Stamp</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Owner_s_Region_Stamp</fullName>
+        <field>Owner_s_Region2__c</field>
+        <formula>IF( 
+VEP_Opportunity_Type__c = &quot;Annual Renewal&quot;, 
+TEXT(Account.Region__c), 
+TEXT(Owner.Region__c))</formula>
+        <name>Owner&apos;s Region Stamp</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Owner_s_Segment_Stamp</fullName>
+        <field>Owner_s_Segment2__c</field>
+        <formula>IF( 
+VEP_Opportunity_Type__c = &quot;Annual Renewal&quot;, 
+TEXT(Account.Segment__c), 
+TEXT(Owner.Segment__c))</formula>
+        <name>Owner&apos;s Segment Stamp</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Owner_s_Territory_Stamp</fullName>
+        <field>Owner_s_Territory2__c</field>
+        <formula>IF( 
+VEP_Opportunity_Type__c = &quot;Annual Renewal&quot;, 
+TEXT(Account.Territory__c), 
+TEXT(Owner.Territory__c))</formula>
+        <name>Owner&apos;s Territory Stamp</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Primary_Quote_Status</fullName>
+        <field>Primary_Quote_Approval_Status__c</field>
+        <formula>&quot;Approved&quot;</formula>
+        <name>Primary Quote Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Rule_Type_New_Business_New_Customer</fullName>
+        <field>Type</field>
+        <literalValue>New Customer</literalValue>
+        <name>Rule Type = New Business &gt; New Customer</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sales_Plan_Opt_Out_True</fullName>
+        <field>Sales_Plan_Opt_Out__c</field>
+        <literalValue>1</literalValue>
+        <name>Sales Plan Opt Out = True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Date_Time_Finance_Review_Completed</fullName>
+        <description>Populate the &quot;Date/Time Finance Review Completed&quot; field with the current date/time</description>
+        <field>Date_Time_Finance_Review_Completed__c</field>
+        <formula>NOW()</formula>
+        <name>Set Date/Time Finance Review Completed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Develop_Date</fullName>
+        <field>Develop_Date__c</field>
+        <formula>Today()</formula>
+        <name>Set Develop Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Finance_Status_Rejected</fullName>
+        <field>Finance_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Set Finance Status Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Finance_Status_Review_Completed</fullName>
+        <field>Finance_Status__c</field>
+        <literalValue>Review Completed</literalValue>
+        <name>Set Finance Status Customer Setup</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Finance_Status_to_Approved</fullName>
+        <description>Sets Finance Status to Approved</description>
+        <field>Finance_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Set Finance Status to Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_LastAssignedtoPartnerDate</fullName>
+        <description>Set the date to today&apos;s date.</description>
+        <field>Last_Assigned_from_PAM_to_Partner_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>Set LastAssignedtoPartnerDate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Lead_Source_To_Self_Gen</fullName>
+        <field>LeadSource</field>
+        <literalValue>Sales Generated</literalValue>
+        <name>Set Lead Source To Self Gen</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Legal_Approval_Approved</fullName>
+        <field>Legal_Review__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Set Legal Approval Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Legal_Approval_In_Review</fullName>
+        <field>Legal_Review__c</field>
+        <literalValue>Initial Review</literalValue>
+        <name>Set Legal Approval In Review</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Negotiate_Date</fullName>
+        <field>Negotiate_Date__c</field>
+        <formula>Today()</formula>
+        <name>Set Negotiate Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Opp_Lead_Source_Most_Recent_Upd_Date</fullName>
+        <field>Lead_Source_Most_Recent_Update_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>Set Opp Lead Source Most Recent Upd Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Opp_Lead_Source_Update_Date</fullName>
+        <field>Lead_Source_Update_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>Set Opp Lead Source Update Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Opportunity_Close_Date</fullName>
+        <description>Set opp close date to today</description>
+        <field>CloseDate</field>
+        <formula>TODAY()</formula>
+        <name>Set Opportunity Close Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Product_Name_to_Blank</fullName>
+        <field>Product_name__c</field>
+        <name>Set Product Name to Blank</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_SB_Contract_Checkbox</fullName>
+        <description>Action to set the contracted checkbox to true.</description>
+        <field>SBQQ__Contracted__c</field>
+        <literalValue>1</literalValue>
+        <name>Set SB Contract Checkbox</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Sales_Acceptance_Date</fullName>
+        <field>Sales_Acceptance_Date__c</field>
+        <formula>Today()</formula>
+        <name>Set Sales Acceptance Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Stage_Reversal_Status_Approved</fullName>
+        <field>Stage_Reversal_Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Set Stage Reversal Status - Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Stage_Reversal_Status_NeedReview</fullName>
+        <description>Set Stage Reversal Approval Status to Needs Review</description>
+        <field>Stage_Reversal_Approval_Status__c</field>
+        <literalValue>Needs Review</literalValue>
+        <name>Set Stage Reversal Status - NeedReview</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Stage_Reversal_Status_Rejected</fullName>
+        <description>Reversal Approval Status &gt; Rejected</description>
+        <field>Stage_Reversal_Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Set Stage Reversal Status - Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Stage_Reversal_Status_Submitted</fullName>
+        <field>Stage_Reversal_Approval_Status__c</field>
+        <literalValue>Submitted</literalValue>
+        <name>Set Stage Reversal Status - Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Stage_to_Closed_Won</fullName>
+        <field>StageName</field>
+        <literalValue>Closed Won</literalValue>
+        <name>Set Stage to Closed Won</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Stage_to_Closed_Won2</fullName>
+        <description>This action will set the Opportunity Stage to Closed/Won when the WF criteria is met.</description>
+        <field>StageName</field>
+        <literalValue>Closed Won</literalValue>
+        <name>Set Stage to Closed/Won</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Stage_to_Sales_Complete</fullName>
+        <field>StageName</field>
+        <literalValue>Sales Complete</literalValue>
+        <name>Set Stage to Sales Complete</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_opportunity_qty</fullName>
+        <description>set opportunity qty to account self reported fleet size</description>
+        <field>Editable_Opportunity_Qty__c</field>
+        <formula>Account.Self_Reported_Fleet_Size__c</formula>
+        <name>Set opportunity qty</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stage_Set_MQL</fullName>
+        <field>StageName</field>
+        <literalValue>MQL</literalValue>
+        <name>Stage Set - MQL</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stage_Set_Negotiate</fullName>
+        <description>Set the Opportunity Stage based on Record type, Order Type and Order Sub-type</description>
+        <field>StageName</field>
+        <literalValue>Negotiate</literalValue>
+        <name>Stage Set--Negotiate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stage_Set_Prove</fullName>
+        <description>Set the Stage to Prove when Opportunity record is first created.</description>
+        <field>StageName</field>
+        <literalValue>Prove</literalValue>
+        <name>Stage Set--Prove</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stage_Set_Sales_Acceptance</fullName>
+        <description>Set the Opportunity Stage to Sales Acceptance based on Record type, Order Type and Order Sub-type</description>
+        <field>StageName</field>
+        <literalValue>Sales Acceptance</literalValue>
+        <name>Stage Set--Sales Acceptance</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stage_Shipped</fullName>
+        <field>StageName</field>
+        <literalValue>Shipped</literalValue>
+        <name>Stage Shipped</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_Inactive_Prospect</fullName>
+        <field>QWBS_Status__c</field>
+        <literalValue>Inactive Prospect</literalValue>
+        <name>Status Inactive Prospect</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <targetObject>AccountId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Type_Existing_Business_Existing_Cust</fullName>
+        <field>Type</field>
+        <literalValue>Existing Customer</literalValue>
+        <name>Type = Existing Business &gt;Existing Cust</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Assigned_to_Partner_Name</fullName>
+        <field>Last_Assigned_from_PAM_to_Partner_Name__c</field>
+        <formula>(Owner.CompanyName)</formula>
+        <name>Update Assigned to Partner Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_BDR_Email</fullName>
+        <field>BDR_s_Email__c</field>
+        <formula>$User.Email</formula>
+        <name>Update BDR Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Business_Development_Rep_Value</fullName>
+        <field>Business_Development_Rep__c</field>
+        <formula>$User.FirstName + &quot; &quot; + $User.LastName</formula>
+        <name>Update Business Development Rep Value</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Demo_Status</fullName>
+        <field>Demo_Status__c</field>
+        <literalValue>Scheduled</literalValue>
+        <name>Update Demo Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Field_for_Test</fullName>
+        <description>Update temporary field for InsideSales to conduct a test.</description>
+        <field>Test__c</field>
+        <literalValue>1</literalValue>
+        <name>Update Field for Test</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Forecast_Category</fullName>
+        <description>Update *Forecast Category</description>
+        <field>Forecast_Category__c</field>
+        <literalValue>Closed</literalValue>
+        <name>Update Forecast Category</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Negotiation_Type</fullName>
+        <field>Negotiation_Type__c</field>
+        <literalValue>Sale</literalValue>
+        <name>Update Negotiation Type</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_PAM_s_Email</fullName>
+        <field>PAM_s_Email__c</field>
+        <formula>Account.Partner_Account_Manager__r.Email</formula>
+        <name>Update PAM&apos;s Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Partner_Driven_Last_Activity</fullName>
+        <field>Partner_Driven_Last_Activity__c</field>
+        <formula>NOW()</formula>
+        <name>Update Partner Driven Last Activity</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_Decommission_Close_Date</fullName>
+        <field>CloseDate</field>
+        <formula>Related_Parent_Opportunity__r.CloseDate</formula>
+        <name>update Decommission Close Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <outboundMessages>
+        <fullName>Appointment_Set_Lead_Admin</fullName>
+        <apiVersion>45.0</apiVersion>
+        <endpointUrl>https://powerstandings.insidesales.com/kpi/ctrctrev</endpointUrl>
+        <fields>Id</fields>
+        <fields>Sales_Lead_Administrator_4__c</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>insideadmin@omnitracs.com</integrationUser>
+        <name>Inside Sales Appointment Set-Lead Admin</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <outboundMessages>
+        <fullName>Appointments_Set_Demo_Scheduled</fullName>
+        <apiVersion>44.0</apiVersion>
+        <endpointUrl>https://powerstandings.insidesales.com/kpi/apptsset</endpointUrl>
+        <fields>Id</fields>
+        <fields>OwnerId</fields>
+        <fields>Sales_Lead_Administrator_4__c</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>insideadmin@omnitracs.com</integrationUser>
+        <name>Appointments Set (Demo Scheduled)</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <outboundMessages>
+        <fullName>Demo_Sat</fullName>
+        <apiVersion>42.0</apiVersion>
+        <endpointUrl>https://powerstandings.insidesales.com/kpi/disqlld</endpointUrl>
+        <fields>Id</fields>
+        <fields>Sales_Lead_Administrator_4__c</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>insideadmin@omnitracs.com</integrationUser>
+        <name>Demo Sat</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <outboundMessages>
+        <fullName>InsideSales_Lead_Admin_KPI_Notification</fullName>
+        <apiVersion>36.0</apiVersion>
+        <endpointUrl>https://powerstandings.insidesales.com/kpi/apptsset</endpointUrl>
+        <fields>CreatedById</fields>
+        <fields>Id</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>ckeeling@omnitracs.com</integrationUser>
+        <name>InsideSales Lead Admin KPI Notification</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <outboundMessages>
+        <fullName>InsideSales_Qualify_KPI_Notification</fullName>
+        <apiVersion>36.0</apiVersion>
+        <endpointUrl>https://powerstandings.insidesales.com/kpi/qualopp</endpointUrl>
+        <fields>CreatedById</fields>
+        <fields>Id</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>ckeeling@omnitracs.com</integrationUser>
+        <name>InsideSales Qualify KPI Notification</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <outboundMessages>
+        <fullName>Inside_Sales_Annual_Contract_Value_ACV</fullName>
+        <apiVersion>44.0</apiVersion>
+        <endpointUrl>https://powerstandings.insidesales.com/kpi/annual_con_val</endpointUrl>
+        <fields>Id</fields>
+        <fields>OwnerId</fields>
+        <fields>Total_Accretive_ACV__c</fields>
+        <includeSessionId>true</includeSessionId>
+        <integrationUser>insideadmin@omnitracs.com</integrationUser>
+        <name>Inside Sales Annual Contract Value (ACV)</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <outboundMessages>
+        <fullName>Inside_Sales_Appointment_Set_KPI</fullName>
+        <apiVersion>40.0</apiVersion>
+        <endpointUrl>https://powerstandings.insidesales.com/kpi/ctrctrev</endpointUrl>
+        <fields>CreatedById</fields>
+        <fields>Id</fields>
+        <includeSessionId>true</includeSessionId>
+        <integrationUser>insideadmin@omnitracs.com</integrationUser>
+        <name>Inside Sales Appointment Set KPI</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <outboundMessages>
+        <fullName>Inside_Sales_Closed_Won_KPI</fullName>
+        <apiVersion>40.0</apiVersion>
+        <endpointUrl>https://powerstandings.insidesales.com/kpi/oppwon</endpointUrl>
+        <fields>Id</fields>
+        <fields>OwnerId</fields>
+        <includeSessionId>true</includeSessionId>
+        <integrationUser>insideadmin@omnitracs.com</integrationUser>
+        <name>Inside Sales Closed Won KPI</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <outboundMessages>
+        <fullName>Inside_Sales_Closed_Won_KPI_Lead_Admin</fullName>
+        <apiVersion>45.0</apiVersion>
+        <endpointUrl>https://powerstandings.insidesales.com/kpi/oppwon</endpointUrl>
+        <fields>Id</fields>
+        <fields>Sales_Lead_Administrator_4__c</fields>
+        <includeSessionId>true</includeSessionId>
+        <integrationUser>insideadmin@omnitracs.com</integrationUser>
+        <name>Inside Sales Closed Won KPI-Lead Admin</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <outboundMessages>
+        <fullName>Inside_Sales_Demo_Sat_KPI</fullName>
+        <apiVersion>40.0</apiVersion>
+        <endpointUrl>https://powerstandings.insidesales.com/kpi/disqlld</endpointUrl>
+        <fields>Id</fields>
+        <fields>OwnerId</fields>
+        <includeSessionId>true</includeSessionId>
+        <integrationUser>insideadmin@omnitracs.com</integrationUser>
+        <name>Inside Sales Demo Sat KPI</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <outboundMessages>
+        <fullName>Inside_Sales_Opportunity_Creation_KPI</fullName>
+        <apiVersion>46.0</apiVersion>
+        <endpointUrl>https://eus-p01.pods.insidesales.com/kpms/SFDC/eyJvcmdfaWQiOjE3MDEzMDc4LCJrcG1fdXVpZCI6IlgxdHUxSE56NG4iLCJhdXRoX2tleSI6IkdjbE14TmxhSW05cmZyN1hNRjNISFlwNkZmMmtacnpPTXVxbVd6eGF2T2NmVE9pdUNMIiwiY3JtX3R5cGUiOiJTRkRDIn0=</endpointUrl>
+        <fields>Id</fields>
+        <fields>LastModifiedById</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>insideadmin@omnitracs.com</integrationUser>
+        <name>Inside Sales Opportunity Creation KPI</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <outboundMessages>
+        <fullName>test</fullName>
+        <apiVersion>46.0</apiVersion>
+        <endpointUrl>https://nicoleb@omnitracs.com</endpointUrl>
+        <fields>Id</fields>
+        <fields>Opportunity_18_Digit_ID__c</fields>
+        <fields>Opportunity_Number__c</fields>
+        <fields>Opportunity_Owner_Role__c</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>nicoleb@omnitracs.com</integrationUser>
+        <name>test</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>Active Customer on Closed Won</fullName>
+        <actions>
+            <name>Account_Classification_Customer</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Account_Status_Active</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Inactive_Reason_Blank</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Set the Account Classification and Account Status to Customer and Active when Opportunity goes to Closed Won</description>
+        <formula>AND
+(
+    ISPICKVAL(StageName,&apos;Closed Won&apos;),
+    $User.Bypass_Workflows__c == false
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Alert Roadnet Sales Ops on Sales Complete</fullName>
+        <actions>
+            <name>Notify_Legal_of_Approval</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Sales Complete</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Bypass_Workflows__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Order_Type__c</field>
+            <operation>notEqual</operation>
+            <value>Customer Portal</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Owner_Business_Unit__c</field>
+            <operation>equals</operation>
+            <value>Roadnet</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>Renewal Only</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Order_Type__c</field>
+            <operation>notEqual</operation>
+            <value>Decommission</value>
+        </criteriaItems>
+        <description>When an opportunity goes to Sales Complete, Roadnet&apos;s Sales Ops gets alerted.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Alert to Sales for Mexico Opportunities</fullName>
+        <actions>
+            <name>Alert_for_Mexico_team_when_Pro_Serve</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>AND ( Opportunity_Country__c == &apos;MX&apos;, OR ( ISPICKVAL(StageName, &apos;MQL&apos;), ISPICKVAL(StageName, &apos;Sales Acceptance&apos;), ISPICKVAL(StageName, &apos;Qualify&apos;), ISPICKVAL(StageName, &apos;Develop&apos;), ISPICKVAL(StageName, &apos;Prove&apos;), ISPICKVAL(StageName, &apos;Negotiate&apos;) ), ProServ_Scoping_requested_needed__c = True, OR ( ISNEW(), ISCHANGED (ProServ_Scoping_requested_needed__c )) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Alert when Omnitracs Mexico Opportunity is Closed Won</fullName>
+        <actions>
+            <name>OmniMX_Opportunity_Closed_Won</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Owner_Business_Unit__c</field>
+            <operation>equals</operation>
+            <value>Omnitracs MX</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>Data Migration</value>
+        </criteriaItems>
+        <description>Alert when Omnitracs Mexico Opportunity is Closed Won</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Alert when Roadnet Opportunity is Closed Won</fullName>
+        <actions>
+            <name>Alert_CS_when_Opportunity_is_Closed_Won</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Primary_Business_Unit__c</field>
+            <operation>equals</operation>
+            <value>Roadnet</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>Renewal Only,Data Migration</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Order_Type__c</field>
+            <operation>notEqual</operation>
+            <value>Decommission</value>
+        </criteriaItems>
+        <description>Alert when Roadnet Opportunity is Closed Won</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Alert when Roadnet Opportunity is Lost</fullName>
+        <actions>
+            <name>Alert_Roadnet_Sales_when_Opportunity_is_Lost</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed Lost</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Primary_Business_Unit__c</field>
+            <operation>equals</operation>
+            <value>Roadnet</value>
+        </criteriaItems>
+        <description>Alert when Roadnet Opportunity is Lost</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Alert when XRS CMPP Eval selected</fullName>
+        <actions>
+            <name>Email_to_XRS_Eval_team_when_opp_includes_Eval_XRS_CMPP</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Opportunity.Order_Type__c</field>
+            <operation>equals</operation>
+            <value>Eval</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Order_Sub_Type__c</field>
+            <operation>equals</operation>
+            <value>XRS CMPP</value>
+        </criteriaItems>
+        <description>When a sales team members sets up a XRS CMPP Eval, the new opportunity triggers a notification of the child opportunity to the email distribution of XRS.Eval@omnitracs.com.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Alert when XRS Indirect Opportunity is Closed Won</fullName>
+        <actions>
+            <name>Opportunity_XRS_New_Opportunity_Closed_Won_Notify_Opportunity_Owner</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Product_name__c</field>
+            <operation>equals</operation>
+            <value>XRS</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Partner Opportunity (Reseller)</value>
+        </criteriaItems>
+        <description>Notification to the Opportunity Owner (VAR) when XRS Indirect Opportunity moves to Close Won.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>BDR Qualified Date %28channel%29 - 45 days</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Partner Opportunity (Reseller)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>MQL,Sales Acceptance,Qualify,Develop,Prove,Negotiate</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.BDR_Qualified_Date__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.OwnerId</field>
+            <operation>notContain</operation>
+            <value>Marketo</value>
+        </criteriaItems>
+        <description>Updates BDR qualified date for the channel after 45 days</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>BD_Qualified_Date</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Opportunity.CreatedDate</offsetFromField>
+            <timeLength>45</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>BDR Qualified Date %28channel%29 Closed Won</fullName>
+        <actions>
+            <name>BDR_Qualified_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Partner Opportunity (Reseller)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.BDR_Qualified_Date__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Opportunity_Age__c</field>
+            <operation>lessOrEqual</operation>
+            <value>45</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Business Development Rep Field Autopoulate</fullName>
+        <actions>
+            <name>Update_BDR_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Business_Development_Rep_Value</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>User.Title</field>
+            <operation>contains</operation>
+            <value>Business Dev</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Title</field>
+            <operation>contains</operation>
+            <value>Lead Dev</value>
+        </criteriaItems>
+        <description>The field should populate the name of the creating user on creation only, given that their title contains &quot;business dev&quot; or &quot;lead dev&quot;</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Change in Next Steps - Create Task to update Days from last activity</fullName>
+        <actions>
+            <name>Next_Steps_Field_Updated</name>
+            <type>Task</type>
+        </actions>
+        <active>true</active>
+        <description>Change in Next Steps field will create a Task to update Days from last activity to 0</description>
+        <formula>ISCHANGED(NextStep)&amp;&amp; NOT(ISNEW())</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Closed Won with Legal Review %26 Finance Status Approved - Decommission</fullName>
+        <actions>
+            <name>Decommission_Sales_Order_Entry_for_RN_Opportunity</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>When an RN Opportunity for a decommission goes to Closed Won with Legal Review &amp; Finance Status approved</description>
+        <formula>ISPICKVAL(Owner.Business_Unit__c, &apos;Roadnet&apos;)&amp;&amp; ISPICKVAL(StageName,&apos;Closed Won&apos;) &amp;&amp; 
+ISPICKVAL(Order_Type__c,&apos;Decommission&apos;)&amp;&amp;
+NOT(ISPICKVAL(Order_Sub_Type__c,&apos;Annual Increase&apos;))&amp;&amp;
+ISPICKVAL(Legal_Review__c,&apos;Approved&apos;) &amp;&amp; ISPICKVAL(Finance_Status__c,&apos;Approved&apos;)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Customer Portal Order Type--Closed Won</fullName>
+        <actions>
+            <name>Finance_Status_Approved</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Legal_Review_Approved</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>(1 OR (4 and 5)) AND 2 AND 3</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.Order_Type__c</field>
+            <operation>equals</operation>
+            <value>Customer Portal</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Sales Complete</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Primary_Quote_Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Total_Non_XRS_OD_Products__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Order_Type__c</field>
+            <operation>equals</operation>
+            <value>Decommission</value>
+        </criteriaItems>
+        <description>When Opp Order Type is Customer Portal and Primary Quote is Approved and New Stage = Sales Complete on Save, set Financial review and Legal Status to Approved and Stage to Closed Won.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Email Notification - EMEA oppotunity stage is changed</fullName>
+        <actions>
+            <name>Notification_for_opportunity_when_stage_is_changed</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Notify Kevin Hudson when an EMEA opportunity stage is changed</description>
+        <formula>(ISCHANGED(StageName)) &amp;&amp; ISPICKVAL( Geo_Region__c,&apos;EMEA&apos;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Email PAMs when Opp is assigned to Partner Account Manager</fullName>
+        <actions>
+            <name>Opportunity_assigned_to_Partner_Account_Manager</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Sends a notification email when an opportunity is assigned to Partner Account Manager User. Deactivating as new workflow added: Opportunity Assigned - Alert</description>
+        <formula>OwnerId =&apos;005500000022xfi&apos;&amp;&amp; PRIORVALUE(OwnerId ) !=&apos;005500000022xfi&apos;&amp;&amp; ISCHANGED(OwnerId )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Email Partner Reseller when Opp Assigned from PAM to Partner Reseller</fullName>
+        <actions>
+            <name>Notify_BDR_when_Opp_assigned_from_PAM_to_Partner_Reseller</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Opportunity_Assigned_from_PAM_to_Partner_Reseller</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Sends a notification email when an opportunity is assigned to Partner Account Manager User.</description>
+        <formula>$User.Bypass_Workflows__c = false &amp;&amp;  ISCHANGED( OwnerId ) &amp;&amp;   PRIORVALUE(OwnerId) =&apos;005500000022xfi&apos;</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Eval Customer Lost</fullName>
+        <actions>
+            <name>Status_Inactive_Prospect</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed Lost</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.QWBS_Status__c</field>
+            <operation>equals</operation>
+            <value>New Eval Customer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Eval</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Evaluate Date%2FTime Finance Review Completed</fullName>
+        <actions>
+            <name>Set_Date_Time_Finance_Review_Completed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Set the &quot;Date/Time Finance Review Completed&quot; field with the current date/time when Finance Status = Approved</description>
+        <formula>ISPICKVAL(
+Finance_Status__c, &quot;Approved&quot;
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Expired Opportunities-Partner</fullName>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.IsClosed</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Partner Opportunity (Reseller)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Bypass_Workflows__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Evaluate an Opportunity to determine if it is still open. Set a time-based workflow to notify the Opportunity owner the Close Date has passed.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>ExpiredOpportunityNotification</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Opportunity.CloseDate</offsetFromField>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>ExpiredOpportunityNotification2nd</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Opportunity.CloseDate</offsetFromField>
+            <timeLength>7</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Forecast Demand - Probability 0-50</fullName>
+        <actions>
+            <name>Forecast_Demand_Omitted</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Probability</field>
+            <operation>greaterOrEqual</operation>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Probability</field>
+            <operation>lessThan</operation>
+            <value>50</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Bypass_Workflows__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Update Forecast Demand to Omitted 0%-30% when Probability is between 0%-50%</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Forecast Demand - Probability 100 Not shipped</fullName>
+        <actions>
+            <name>Forecast_Demand_Commit</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Probability</field>
+            <operation>equals</operation>
+            <value>100</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>notEqual</operation>
+            <value>Shipped</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Bypass_Workflows__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Update Forecast Demand to Commit 90% when Probability is 100</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Forecast Demand - Probability 50-70</fullName>
+        <actions>
+            <name>Forecast_Demand_Pipeline</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Probability</field>
+            <operation>greaterOrEqual</operation>
+            <value>50</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Probability</field>
+            <operation>lessThan</operation>
+            <value>70</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Bypass_Workflows__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Update Forecast Demand to Pipeline 30%-50% when Probability is between 50-70</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Forecast Demand - Probability 70-90</fullName>
+        <actions>
+            <name>Forecast_Demand_Best_Case</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Probability</field>
+            <operation>greaterOrEqual</operation>
+            <value>70</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Probability</field>
+            <operation>lessThan</operation>
+            <value>90</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Bypass_Workflows__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Update Forecast Demand to Best Case 70%  when Probability is between 70-90</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Forecast Demand - Probability 90-100</fullName>
+        <actions>
+            <name>Forecast_Demand_Commit</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Probability</field>
+            <operation>greaterOrEqual</operation>
+            <value>90</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Probability</field>
+            <operation>lessThan</operation>
+            <value>100</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Bypass_Workflows__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Update Forecast Demand to Commit 90% when Probability is between 90-100</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Forecast Demand Closed based on Stage</fullName>
+        <actions>
+            <name>Forecast_Demand_Shipped</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Shipped</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Indirect (Partner),Partner Opportunity (Reseller),Transportation &amp; Logistics</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Bypass_Workflows__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Changes the Forecast Demand % to Closed field when Stage field is set on Opportunity.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Inside Sales - BDR Qualified Date</fullName>
+        <actions>
+            <name>BDR_Qualified_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>InsideSales_Qualify_KPI_Notification</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Qualify,Develop,Prove,Negotiate,Sales Complete,Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.BDR_Qualified_Date__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>InsideSales Annual Contract Value %28ACV%29 KPI</fullName>
+        <actions>
+            <name>Inside_Sales_Annual_Contract_Value_ACV</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Opportunity_Owner_Role__c</field>
+            <operation>equals</operation>
+            <value>Inside Sales Rep,VP of Sales</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Total_Accretive_ACV__c</field>
+            <operation>greaterThan</operation>
+            <value>USD 0</value>
+        </criteriaItems>
+        <description>Used by InsideSales application to pass data for KPIs.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>InsideSales Appointment Set KPI</fullName>
+        <actions>
+            <name>Appointment_Set_Lead_Admin</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <actions>
+            <name>Inside_Sales_Appointment_Set_KPI</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Prove</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Opportunity_Owner_Role__c</field>
+            <operation>equals</operation>
+            <value>Inside Sales Rep,VP of Sales</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Demo_Status__c</field>
+            <operation>equals</operation>
+            <value>Scheduled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Name</field>
+            <operation>notContain</operation>
+            <value>Eval,Addon,Add On,Key Fob,Installation,Driver ID,Test</value>
+        </criteriaItems>
+        <description>Used by InsideSales application to pass data for KPIs.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>InsideSales Appointment Set KPI %28Sevki%29</fullName>
+        <actions>
+            <name>Appointments_Set_Demo_Scheduled</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Opportunity_Owner_Role__c</field>
+            <operation>equals</operation>
+            <value>Inside Sales Rep,VP of Sales</value>
+        </criteriaItems>
+        <description>Used by InsideSales application to pass data for KPIs.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>InsideSales BD Created By</fullName>
+        <actions>
+            <name>InsideSales_Lead_Admin_KPI_Notification</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.Created_By_Title__c</field>
+            <operation>equals</operation>
+            <value>Business Development Associate,Business Development Lead,Business Development Rep,Inside Sales Rep</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.CreatedById</field>
+            <operation>equals</operation>
+            <value>Dustin Moriarty</value>
+        </criteriaItems>
+        <description>Workflow for InsideSales KPI.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>InsideSales BD qualified opp alert</fullName>
+        <actions>
+            <name>InsideSales_Qualify_KPI_Notification</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>(1 AND 2) or (3 and 4)</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Qualify,Develop,Prove,Negotiate,Sales Complete,Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.BDR_Qualified_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Sales Acceptance</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Opportunity_Age__c</field>
+            <operation>lessOrEqual</operation>
+            <value>90</value>
+        </criteriaItems>
+        <description>Used by InsideSales application to pass data for KPIs. Sends data to ISDC Power Standings for qualified opps.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>InsideSales Closed Won KPI</fullName>
+        <actions>
+            <name>Inside_Sales_Closed_Won_KPI</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <actions>
+            <name>Inside_Sales_Closed_Won_KPI_Lead_Admin</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Opportunity_Owner_Role__c</field>
+            <operation>equals</operation>
+            <value>Inside Sales Rep,VP of Sales</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Sales_Lead_Administrator_4__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Used by InsideSales application to pass data for KPIs.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>InsideSales Demo Sat KPI</fullName>
+        <actions>
+            <name>Update_Field_for_Test</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Inside_Sales_Demo_Sat_KPI</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Demo_Status__c</field>
+            <operation>equals</operation>
+            <value>Sat</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>InsideSales Opportunity Creation KPI</fullName>
+        <actions>
+            <name>TEST_InsideSales_WFR_Opp_Create</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Inside_Sales_Opportunity_Creation_KPI</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>User.UserRoleId</field>
+            <operation>equals</operation>
+            <value>Inside Sales Rep</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.UserRoleId</field>
+            <operation>equals</operation>
+            <value>VP of Sales</value>
+        </criteriaItems>
+        <description>Used by InsideSales Playbooks application to pass data for KPIs.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opp - Assigned to Partner</fullName>
+        <actions>
+            <name>Opp_set_partner_record_type</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>OR(CONTAINS(Owner.ProfileId,&apos;00e500000018kiz&apos;),CONTAINS(Owner.ProfileId,&apos;00e500000018kiu&apos;)) &amp;&amp; $User.Bypass_Workflows__c = false</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opp - Lead Source Change</fullName>
+        <actions>
+            <name>Set_Opp_Lead_Source_Update_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>OR(  ISCHANGED( LeadSource ),  AND(ISNEW(), NOT(ISPICKVAL( LeadSource ,&quot;&quot;)) )) &amp;&amp; $User.Bypass_Workflows__c = false</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opportunity - Lead Source Most Recent Change</fullName>
+        <actions>
+            <name>Set_Opp_Lead_Source_Most_Recent_Upd_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>OR(  ISCHANGED( Lead_Source_Most_Recent__c ),  AND(ISNEW(), NOT(ISPICKVAL( Lead_Source_Most_Recent__c  ,&quot;&quot;)) )) &amp;&amp; $User.Bypass_Workflows__c = false</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opportunity - Self Generated</fullName>
+        <actions>
+            <name>Set_Lead_Source_To_Self_Gen</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.QWBS_Status__c</field>
+            <operation>equals</operation>
+            <value>Contract Customer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Partner Opportunity (Reseller)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Bypass_Workflows__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opportunity Rejected by Partner</fullName>
+        <actions>
+            <name>Opportunity_Send_Email_Notification_when_partner_rejects_lead</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Partner Opportunity (Reseller)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed Lost</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Bypass_Workflows__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opportunity Split Stamp %28Temp%29</fullName>
+        <actions>
+            <name>Accretive_ACV_Stamp</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED(Accretive_Recurring_ACV__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opportunity%3A Identify if Stage Reversal Approval Reqd</fullName>
+        <actions>
+            <name>Opportunity_Set_Stage_Before_Reversal</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Set_Stage_Reversal_Status_NeedReview</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Identifies if approval is required, when opportunity stage is moved back. This WFR should not be converted into a process flow, since there is a dependent process flow.</description>
+        <formula>AND ( ISCHANGED(Probability), Probability &lt; PRIORVALUE( Probability ), NOT( ISPICKVAL( StageName , &quot;Closed Lost&quot;)), TCV__c &gt;= 10000, NOT(RecordType.DeveloperName  = &quot;Partner_Opportunity_Reseller&quot;),  $Profile.Name &lt;&gt; &quot;System Administrator&quot;, NOT(OR($Profile.Name == &apos;Contracts&apos;,$Profile.Name == &apos;Contracts - Admin&apos;, $Profile.Name == &apos;AR/Billing&apos;)) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opportunity%3A Notify Owner if stage reversed from Sales Complete</fullName>
+        <actions>
+            <name>Opportunity_Notify_Opportunity_Owner_Stage_Reversed_from_Sales_Complete</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Opportunity_Reset_Legal_Review</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Notifies Opportunity owner when legal/contracts change stage from Sales Complete to Negotiate</description>
+        <formula>AND ( ISCHANGED(StageName), ISPICKVAL( PRIORVALUE( StageName ), &quot;Sales Complete&quot;), ISPICKVAL(StageName, &quot;Negotiate&quot;),  OR($Profile.Name == &apos;Contracts&apos;,$Profile.Name == &apos;Contracts - Admin&apos;,$Profile.Name == &apos;AR/Billing&apos;) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Populate Develop Date</fullName>
+        <actions>
+            <name>Set_Develop_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Develop Date value captures the date when Stage was &quot;Develop&quot;</description>
+        <formula>AND(ISCHANGED(StageName) ,  ISPICKVAL(StageName, &quot;Develop&quot;))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Populate Negotiate Date</fullName>
+        <actions>
+            <name>Set_Negotiate_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Negotiate Date value captures the date when Stage was &quot;Negotiate&quot;</description>
+        <formula>AND(ISCHANGED(StageName) ,  ISPICKVAL(StageName, &quot;Negotiate&quot;))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Populate Sales Acceptance Date</fullName>
+        <actions>
+            <name>Set_Sales_Acceptance_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Sales Acceptance Date value captures the date when Stage was &quot;Sales Acceptance&quot;</description>
+        <formula>AND(ISCHANGED(StageName) ,  ISPICKVAL(StageName, &quot;Sales Acceptance&quot;))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Populate opportunity quantity</fullName>
+        <actions>
+            <name>Set_opportunity_qty</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Sets the opportunity based on the fleet size of the lead</description>
+        <formula>Account.Self_Reported_Fleet_Size__c&gt;0 &amp;&amp; $User.Bypass_Workflows__c = false</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>ProServ Alert Stage %3D Closed Won</fullName>
+        <actions>
+            <name>Professional_Services_Alert_when_Opportunity_Stage_Closed_Won</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.TCV_ProServe__c</field>
+            <operation>greaterThan</operation>
+            <value>USD 0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Bypass_Workflows__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>Data Migration</value>
+        </criteriaItems>
+        <description>Email Alert sent Professional Services Team when an Opportunity is Closed Won.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>ProServ Alert Stage %3D Sales Complete</fullName>
+        <actions>
+            <name>Professional_Services_Alert_when_Opportunity_Stage_Closed_Won</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Sales Complete</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.TCV_ProServe__c</field>
+            <operation>greaterThan</operation>
+            <value>USD 0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Bypass_Workflows__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Email Alert sent Professional Services Team when an Opportunity is Sales Complete</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>ProServ Alert When RDC MTA is Quoted</fullName>
+        <active>true</active>
+        <formula>AND( ISPICKVAL(StageName, &quot;Closed Won&quot;), RDC_MTA_Quoted__c = TRUE, NOT(RecordType.DeveloperName = &quot;Date_Migration&quot;), NOT(RecordType.DeveloperName = &quot;Eval&quot;), $User.Bypass_Workflows__c = FALSE)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>RDC_MTA_Product_Quoted</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Opportunity.CloseDate</offsetFromField>
+            <timeLength>83</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>RN - Closed Won Email Alert to CS and PM</fullName>
+        <actions>
+            <name>Email_Alert_to_CS_Rep_and_Product_Management</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Closed Won alert sent to CS and PM reps, for when an opp owners BU is RN.</description>
+        <formula>ISPICKVAL(Owner.Business_Unit__c,&apos;Roadnet&apos;)&amp;&amp;  ISPICKVAL(StageName,&apos;Closed Won&apos;)&amp;&amp; 
+RecordType.DeveloperName &lt;&gt; &quot;Data Migration&quot;</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Renewal Opp Only -- Finance Review Set to Customer Setup</fullName>
+        <actions>
+            <name>This_email_is_sent_to_the_Finance_email_distribution_list_when_the_AR_Finance_Re</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Set_Finance_Status_Review_Completed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Renewal Only</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Owner_Business_Unit__c</field>
+            <operation>notEqual</operation>
+            <value>Omnitracs Mexico,Sylectus</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Finance_Status__c</field>
+            <operation>equals</operation>
+            <value>Review Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Product_name__c</field>
+            <operation>notEqual</operation>
+            <value>XRS</value>
+        </criteriaItems>
+        <description>Workflow for Renewal opportunities only (where Sylectus is not the primary business unit or if there are XRS opportunity products). Workflow to automatically approve AR for Scott Woitas Team.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>SMRT Field Stamps</fullName>
+        <actions>
+            <name>Owner_s_Manager_Stamp</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Owner_s_Market_Stamp</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Owner_s_Region_Stamp</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Owner_s_Segment_Stamp</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Owner_s_Territory_Stamp</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Owned by Sales. Needed for reporting. Historical Stamps to capture the Owner values prior to the opportunity going closed.</description>
+        <formula>AND (
+NOT(ISPICKVAL(StageName, &quot;Closed Won&quot;)) ,NOT(ISPICKVAL(StageName, &quot;Closed Lost&quot;)),
+OR (ISCHANGED(OwnerId ),
+ISNEW()) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set LastAssigned To Partner Date</fullName>
+        <actions>
+            <name>Set_LastAssignedtoPartnerDate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Set the Last Assigned (from PAM) to Partner Name date field once the opportunity owner is changed from a PAM user to a Partner user</description>
+        <formula>$User.Bypass_Workflows__c = false &amp;&amp; PRIORVALUE(OwnerId) =&apos;005500000022xfi&apos;&amp;&amp; ISCHANGED(OwnerId )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set LastAssigned To Partner Name</fullName>
+        <actions>
+            <name>Update_Assigned_to_Partner_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Set the Last Assigned (from PAM) to Partner Name date field once the opportunity owner is changed from a PAM user to a Partner user</description>
+        <formula>$User.Bypass_Workflows__c = false &amp;&amp; PRIORVALUE(OwnerId) =&apos;005500000022xfi&apos;&amp;&amp; ISCHANGED(OwnerId)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Legal Review on Sales Complete</fullName>
+        <actions>
+            <name>Forecast_Status_Solid</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Sales Complete</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Bypass_Workflows__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Order_Type__c</field>
+            <operation>notEqual</operation>
+            <value>Customer Portal</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Order_Type__c</field>
+            <operation>notEqual</operation>
+            <value>Decommission</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Opportunity Close Date for Closed Lost</fullName>
+        <actions>
+            <name>Set_Opportunity_Close_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed/Lost,Closed Lost</value>
+        </criteriaItems>
+        <description>Set the opp closed date to today for closed lost</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Opportunity Stage--Negotiate on Create</fullName>
+        <actions>
+            <name>Stage_Set_Negotiate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>((((1 AND 2 AND 3) OR (1 AND 4 AND 5) OR (6) AND 7) AND 8) OR 9)</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>&quot;Products, Services and Maintenance&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Type</field>
+            <operation>equals</operation>
+            <value>Existing Customer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Order_Type__c</field>
+            <operation>equals</operation>
+            <value>AddOn,Reactivation,Decommission,Customer Portal</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Type</field>
+            <operation>equals</operation>
+            <value>Existing Customer,New Customer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Order_Type__c</field>
+            <operation>equals</operation>
+            <value>Transfer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Renewal Only,Services Only</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Bypass_Workflows__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Owner_Business_Unit__c</field>
+            <operation>notEqual</operation>
+            <value>Roadnet</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Opportunity_Owner_Profile__c</field>
+            <operation>equals</operation>
+            <value>Sales - Domestic Inside - Quick</value>
+        </criteriaItems>
+        <description>Set the Opportunity Stage Negotiate based on the Opportunities Record type, Order type and Sub-Order Type when created</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Opportunity Stage--Sales Acceptance on Create</fullName>
+        <actions>
+            <name>Stage_Set_Sales_Acceptance</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>(1 AND 2 AND 3) OR ( 1 AND 4 AND 5) AND 6</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>&quot;Products, Services and Maintenance&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Type</field>
+            <operation>equals</operation>
+            <value>Existing Customer,New Customer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Order_Type__c</field>
+            <operation>equals</operation>
+            <value>New,Migration</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Type</field>
+            <operation>equals</operation>
+            <value>Prior Customer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Order_Type__c</field>
+            <operation>equals</operation>
+            <value>Reactivation</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Bypass_Workflows__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Set the Opportunity Stage Sales Acceptance based on the Opportunities Record type, Order type and Sub-Order Type when created</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set SB Contracted Checkbox - Steelbrick CPQ</fullName>
+        <actions>
+            <name>Set_SB_Contract_Checkbox</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <description>WF rule to set the SteelBrick contracted checkbox to true.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Subscription ARPU and Product Name to Blank when Product Type %3D Application</fullName>
+        <actions>
+            <name>Set_Product_Name_to_Blank</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Product_Type__c</field>
+            <operation>notEqual</operation>
+            <value>Hardware</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Transportation &amp; Logistics,Partner Opportunity (Reseller)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Bypass_Workflows__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Set Product Name and Subscription ARPU to Null when Product Type= Application or Technical Services</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>SteelBrick - Renewal within Term Workflow</fullName>
+        <actions>
+            <name>Close_Date_Stamp_on_Renewals</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Opportunity_Name_Stamp</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Workflow used to launch actions for opportunities created as renewals within term.</description>
+        <formula>IF(
+   AND(
+       NOT(ISBLANK(SBQQ__RenewedContract__c)),
+       SBQQ__RenewedContract__r.Master_Term_Remaining__c &gt;= 0
+   ),
+   TRUE,
+   FALSE
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Transfer owner to Marketo Interface for closed opportunities</fullName>
+        <actions>
+            <name>Opp_Owner_Partner_Account_Manager</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed Lost</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Partner Opportunity (Reseller),Eval,&quot;Products, Services and Maintenance&quot;,Renewal Only,Services Only</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Bypass_Workflows__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.ProfileId</field>
+            <operation>notContain</operation>
+            <value>Roadnet</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.UserType</field>
+            <operation>notContain</operation>
+            <value>Standard</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.QWBS_Cust_ID__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Account_Classification__c</field>
+            <operation>notEqual</operation>
+            <value>Customer</value>
+        </criteriaItems>
+        <description>Transfer owner to Partner Account Manager for Omni Partner closed opportunities and also associated Account for Non-Roadnet Partners</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Decommission Opportunity when Stage is Closed Won</fullName>
+        <actions>
+            <name>update_Decommission_Close_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND( 
+(Related_Parent_Opportunity__c != null), 
+(ISPICKVAL(StageName,&apos;Closed Won&apos;)) 
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Demo Status when Opp-%3EProve</fullName>
+        <actions>
+            <name>Update_Demo_Status</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Prove</value>
+        </criteriaItems>
+        <description>Update the Demo Status field to Scheduled when Opportunity goes to Prove.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Forecast Status when Closed</fullName>
+        <actions>
+            <name>Update_Forecast_Category</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <description>When opportunity goes to Closed Won, *Forecast Category is updated to Closed</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Partner Driven Last Activity</fullName>
+        <actions>
+            <name>Update_Partner_Driven_Last_Activity</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>$Setup.Partner_Activity__c.isPartner__c &amp;&amp; $User.Bypass_Workflows__c = false</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Push Counter</fullName>
+        <actions>
+            <name>Increment_Push_Counter</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Every time the close date is pushed to a later date which is more than 30 days later to the current date increment the push counter field</description>
+        <formula>AND ( CloseDate &gt; PRIORVALUE( CloseDate ), CloseDate - PRIORVALUE (CloseDate) &gt; 30) &amp;&amp; $User.Bypass_Workflows__c = false</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Stage to Closed Won during Finance Approval</fullName>
+        <actions>
+            <name>Set_Opportunity_Close_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Set_Stage_to_Closed_Won</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>(ISCHANGED(Finance_Status__c)||ISCHANGED(Legal_Review__c)|| ISCHANGED(Primary_Quote_Approval_Status__c)||ISCHANGED(Order_Type__c)) &amp;&amp; (ISPICKVAL(Finance_Status__c, &apos;Approved&apos;) &amp;&amp; ISPICKVAL(Legal_Review__c, &apos;Approved&apos;) &amp;&amp;  Primary_Quote_Approval_Status__c = &quot;Approved&quot; &amp;&amp;  $User.Bypass_Workflows__c = false &amp;&amp; NOT(ISPICKVAL(Order_Type__c, &quot;Auto Renewal With Increase&quot;)))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>VVSS - Email Alert to Owner When SP not Complete %28VVSS Required%29</fullName>
+        <actions>
+            <name>Email_Alert_to_Opp_Owner_Sales_Plan_not_Complete</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Finance_Status__c</field>
+            <operation>equals</operation>
+            <value>Needs Review</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Legal_Review__c</field>
+            <operation>equals</operation>
+            <value>Waiting for Counter-Signature</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Negotiate_Complete__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.VVSS_Required__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>notEqual</operation>
+            <value>Negotiate</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>VVSS - Opportunity Sales Complete %28VVSS not Required%29</fullName>
+        <actions>
+            <name>Set_Stage_to_Sales_Complete</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND (3 OR (4 AND 5 AND 6))</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.Finance_Status__c</field>
+            <operation>equals</operation>
+            <value>Needs Review</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Legal_Review__c</field>
+            <operation>equals</operation>
+            <value>Waiting for Counter-Signature</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.VVSS_Required__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.VVSS_Required__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Negotiate</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Negotiate_Complete__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>VVSS - Opt Out for all Partner Account RTs</fullName>
+        <actions>
+            <name>Sales_Plan_Opt_Out_True</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Partner Account (Reseller)</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>VVSS - Set Opp Stage to Negotiate on Create</fullName>
+        <actions>
+            <name>Stage_Set_Negotiate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Set the Opportunity Stage Negotiate based on the Opportunities Record Type, Type Order type and Sub-Order Type when created</description>
+        <formula>OR( (RecordType.DeveloperName = &quot;Products_and_Services&quot; &amp;&amp;  (ISPICKVAL(Order_Type__c,&quot;Transfer&quot;) ||  ISPICKVAL(Order_Type__c,&quot;AddOn&quot;) ||  ISPICKVAL(Order_Type__c,&quot;Customer Portal&quot;) ||  ISPICKVAL(Order_Type__c,&quot;Decommission&quot;) ||  ISPICKVAL(Order_Type__c,&quot;Reactivation&quot;))), RecordType.DeveloperName = &quot;Data_Migration&quot;, RecordType.DeveloperName = &quot;Renewal&quot;, RecordType.DeveloperName = &quot;Services_Only&quot;)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>VVSS - Set Opp Stage to Prove on Create</fullName>
+        <actions>
+            <name>Stage_Set_Prove</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Set the Opportunity Stage Prove based on the Opportunities Record Type, Type Order type and Sub-Order Type when created</description>
+        <formula>RecordType.DeveloperName = &quot;Products_and_Services&quot; &amp;&amp;  ISPICKVAL(Type,&quot;Existing Customer&quot;)  &amp;&amp;  OR( ISPICKVAL(Order_Type__c,&quot;New&quot;), ISPICKVAL(Order_Type__c,&quot;Migration&quot;))</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>VVSS - Set Opportunity Stage to MQL on Create</fullName>
+        <actions>
+            <name>Stage_Set_MQL</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Set the Opportunity Stage Sales Acceptance based on the Opportunities Record type, Order type and Sub-Order Type when created</description>
+        <formula>AND(  OR($Profile.Name = &quot;Marketing - User 2&quot;,  $Profile.Name = &quot;Marketing - User 3&quot;), OR( RecordType.DeveloperName = &quot;Partner_Opportunity_Reseller&quot;, RecordType.DeveloperName = &quot;Eval&quot;, (RecordType.DeveloperName = &quot;Products_and_Services&quot;  &amp;&amp;   ISPICKVAL(Type,&quot;New Customer&quot;)  &amp;&amp;   (ISPICKVAL(Order_Type__c,&quot;Transfer&quot;) || ISPICKVAL(Order_Type__c,&quot;New&quot;))),  (RecordType.DeveloperName = &quot;Products_and_Services&quot;  &amp;&amp; ISPICKVAL(Type,&quot;Prior Customer&quot;))))</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>VVSS - Set Opportunity Stage to Sales Acceptance on Create</fullName>
+        <actions>
+            <name>Stage_Set_Sales_Acceptance</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Set the Opportunity Stage Sales Acceptance based on the Opportunities Record type, Order type and Sub-Order Type when created</description>
+        <formula>AND(  OR( RecordType.DeveloperName = &quot;Partner_Opportunity_Reseller&quot;, RecordType.DeveloperName = &quot;Eval&quot;, (RecordType.DeveloperName = &quot;Products_and_Services&quot;  &amp;&amp;   ISPICKVAL(Type,&quot;New Customer&quot;)  &amp;&amp;   (ISPICKVAL(Order_Type__c,&quot;Transfer&quot;) || ISPICKVAL(Order_Type__c,&quot;New&quot;))),  (RecordType.DeveloperName = &quot;Products_and_Services&quot;  &amp;&amp; ISPICKVAL(Type,&quot;Prior Customer&quot;))),  OR($Profile.Name &lt;&gt; &quot;Marketing - User 2&quot;,  $Profile.Name &lt;&gt; &quot;Marketing - User 3&quot;))</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <tasks>
+        <fullName>Next_Steps_Field_Updated</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>Next steps field is updated</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Low</priority>
+        <protected>false</protected>
+        <status>Completed</status>
+        <subject>Next Steps Field Updated</subject>
+    </tasks>
+    <tasks>
+        <fullName>test_dashboard</fullName>
+        <assignedTo>thadmims@omnitracs.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>test - dashboard</subject>
+    </tasks>
+</Workflow>

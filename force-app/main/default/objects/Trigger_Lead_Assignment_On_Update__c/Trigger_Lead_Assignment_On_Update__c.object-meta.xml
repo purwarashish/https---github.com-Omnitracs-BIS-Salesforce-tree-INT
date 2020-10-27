@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Has the group id or user id to which if a lead is assigned to should be reassigned on updates from Eloqua</description>
+    <enableFeeds>false</enableFeeds>
+    <label>Trigger Lead Assignment On Update</label>
+    <visibility>Public</visibility>
+</CustomObject>

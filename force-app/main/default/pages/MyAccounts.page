@@ -1,0 +1,142 @@
+<apex:page id="MyAccounts" title="My Accounts" standardController="Account" extensions="MyAccountsController" >
+   <script language="Javascript"> 
+    function display(objId)
+    {
+        var currval = objId.substring((objId.lastIndexOf(":"))+1, objId.length);
+        selectedrec.value = currval;
+        Change();
+    }
+    
+    function sorting()
+    {
+        var currentList=new Array();
+        for( var i=0;i<2;i++)
+        {
+            var value = document.getElementById('MyAccounts:form:pageblk:outerrepeat:'+i+':j_id27').innerHTML;
+            currentList[i] = value;
+            
+        }
+        currentList.sort();
+    }
+    </script>
+    <apex:form style="width:100%" id="form">
+        <apex:actionFunction name="Change" action="{!ChangeOrder}" />
+        <apex:sectionHeader title="My Accounts" />
+        <apex:pageblock mode="detail" id="pageblk">
+            <TABLE id="outertable" cellspacing="0" cellpadding="3" border="0"
+                width="100%" class="detailList">
+
+                <TR>
+                     <td ><apex:outputPanel id="panel" style="">
+                        <apex:commandLink id="name"
+                            style="font-weight:bold;text-wrap:none;text-align:left;width:200;" onclick="javascript:display(this.id);"
+                            value="Account Name" rerender="panel1,pageblktable">
+                            <apex:image value="../img/sort_asc_arrow.gif"
+                                rendered="{!AND(asce,if(current_value == 'name',true,false))}" />
+                            <apex:image value="../img/sort_desc_arrow.gif"
+                                rendered="{!AND(NOT(asce),if(current_value == 'name',true,false))}" />
+                        </apex:commandLink>
+                    </apex:outputPanel></td>
+
+                    <td  ><apex:outputPanel id="panel1" style="">
+                        <apex:commandLink id="QWBS_Market__c"
+                            style="font-weight:bold;text-wrap:none;text-align:left;width:200;" onclick="javascript:display(this.id);"
+                            value="Market" rerender="panel1,pageblktable">
+                            <apex:image value="../img/sort_asc_arrow.gif"
+                                rendered="{!AND(asce,if(current_value == 'QWBS_Market__c',true,false))}" />
+                            <apex:image value="../img/sort_desc_arrow.gif"
+                                rendered="{!AND(NOT(asce),if(current_value == 'QWBS_Market__c',true,false))}" />
+                        </apex:commandLink>
+                    </apex:outputPanel></td>
+
+                    <td  ><apex:outputPanel id="panel2">
+                        <apex:commandLink id="District__c" style="font-weight:bold"
+                            value="District" rerender="panel2,pageblktable"
+                            onclick="javascript:display(this.id);">
+                            <apex:image value="../img/sort_asc_arrow.gif"
+                                rendered="{!AND(asce,if(current_value == 'District__c',true,false))}"
+                                id="img1" />
+                            <apex:image id="img2" value="../img/sort_desc_arrow.gif"
+                                rendered="{!AND(NOT(asce),if(current_value == 'District__c',true,false))}" />
+                        </apex:commandLink>
+                    </apex:outputPanel></td>
+                    <td ><apex:outputPanel id="panel3">
+                        <apex:commandLink id="QWBS_Status__c" style="font-weight:bold"
+                            value="Status" rerender="panel3,pageblktable"
+                            onclick="javascript:display(this.id);">
+                            <apex:image value="../img/sort_asc_arrow.gif"
+                                rendered="{!AND(asce,if(current_value == 'QWBS_Status__c',true,false))}" />
+                            <apex:image value="../img/sort_desc_arrow.gif"
+                                rendered="{!AND(NOT(asce),if(current_value == 'QWBS_Status__c',true,false))}" />
+                        </apex:commandLink>
+                    </apex:outputPanel></td>
+
+                    <td nowrap="nowrap"><apex:outputPanel id="panel4">
+                        <apex:commandLink id="QWBS_Cust_ID__c" style="font-weight:bold"
+                            value="Cust ID" rerender="panel4,pageblktable"
+                            onclick="javascript:display(this.id);">
+                            <apex:image value="../img/sort_asc_arrow.gif"
+                                rendered="{!AND(asce,if(current_value == 'QWBS_Cust_ID__c',true,false))}" />
+                            <apex:image value="../img/sort_desc_arrow.gif"
+                                rendered="{!AND(NOT(asce),if(current_value == 'QWBS_Cust_ID__c',true,false))}" />
+                        </apex:commandLink>
+                    </apex:outputPanel></td>
+
+                    <td nowrap="nowrap"><apex:outputPanel id="panel5">
+                        <apex:commandLink id="Phone" style="font-weight:bold"
+                            value="Phone" rerender="panel5,pageblktable"
+                            onclick="javascript:display(this.id);">
+                            <apex:image value="../img/sort_asc_arrow.gif"
+                                rendered="{!AND(asce,if(current_value == 'Phone',true,false))}" />
+                            <apex:image value="../img/sort_desc_arrow.gif"
+                                rendered="{!AND(NOT(asce),if(current_value == 'Phone',true,false))}" />
+                        </apex:commandLink>
+                    </apex:outputPanel></td>
+
+                    <td nowrap="nowrap"><apex:outputPanel id="panel6">
+                        <apex:commandLink id="BillingCity"
+                            style="font-weight:bold" value="City"
+                            rerender="panel6,pageblktable"
+                            onclick="javascript:display(this.id);">
+                            <apex:image value="../img/sort_asc_arrow.gif"
+                                rendered="{!AND(asce,if(current_value == 'BillingCity',true,false))}" />
+                            <apex:image value="../img/sort_desc_arrow.gif"
+                                rendered="{!AND(NOT(asce),if(current_value == 'BillingCity',true,false))}" />
+                        </apex:commandLink>
+                    </apex:outputPanel></td>
+
+                    <td nowrap="nowrap"><apex:outputPanel id="panel7">
+                        <apex:commandLink id="BillingState"
+                            style="font-weight:bold;text-wrap:none;" value="State"
+                            rerender="panel7,pageblktable"
+                            onclick="javascript:display(this.id);">
+                            <apex:image value="../img/sort_asc_arrow.gif"
+                                rendered="{!AND(asce,if(current_value == 'BillingState',true,false))}" />
+                            <apex:image value="../img/sort_desc_arrow.gif"
+                                rendered="{!AND(NOT(asce),if(current_value == 'BillingState',true,false))}" />
+                        </apex:commandLink>
+                    </apex:outputPanel></td>
+                </TR>
+                <apex:repeat id="outerrepeat" value="{!userList}" var="list">
+                <TR id="value">
+                    <td nowrap="nowrap" ><apex:commandLink value="{!list.Name}" action="/{!list.Id}"></apex:commandLink></td>
+                    <td  ><apex:outputField value="{!list.QWBS_Market__c}"></apex:outputField></td>
+                    <td ><apex:outputField value="{!list.District__c}"></apex:outputField></td>
+                    <td ><apex:outputField value="{!list.QWBS_Status__c}"></apex:outputField></td>
+                    <td ><apex:outputField value="{!list.QWBS_Cust_ID__c}"></apex:outputField></td>
+                    <td  ><apex:outputField value="{!list.Phone}"></apex:outputField></td>
+                    <td  ><apex:outputField value="{!list.BillingCity}"></apex:outputField></td>
+                    <td  ><apex:outputField value="{!list.BillingState}"></apex:outputField></td>
+                </TR>
+                </apex:repeat>    
+            </TABLE>
+            <br/>
+            <apex:panelGrid columns="2"> 
+                <apex:commandLink action="{!previous}" rendered="{!NOT(if(currentPage== 1,true,false))}">Previous</apex:commandlink> 
+                <apex:commandLink action="{!next}"  rendered="{!NOT(if(currentPage== totalPages,true,false))}">Next</apex:commandlink> 
+            </apex:panelGrid>
+        </apex:pageblock>
+         <apex:inputhidden value="{!current_Value}" id="selectedid" />
+         <script> var selectedrec= document.getElementById('{!$Component.selectedid}'); </script>
+    </apex:form>
+</apex:page>

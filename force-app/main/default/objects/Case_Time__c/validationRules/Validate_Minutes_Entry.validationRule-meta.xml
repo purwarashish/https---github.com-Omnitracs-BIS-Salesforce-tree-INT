@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Minutes_Entry</fullName>
+    <active>true</active>
+    <description>Total Time entered must be greater than 0.</description>
+    <errorConditionFormula>Valid_Minutes__c = &quot;False&quot;</errorConditionFormula>
+    <errorMessage>Determines if the Minutes entered are valid - only 0, 15, 30 and 45 are valid entries.</errorMessage>
+</ValidationRule>

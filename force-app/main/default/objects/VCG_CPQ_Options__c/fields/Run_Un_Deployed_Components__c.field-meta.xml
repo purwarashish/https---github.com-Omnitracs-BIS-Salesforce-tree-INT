@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Run_Un_Deployed_Components__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Enter in usernames for users who are testing un-deployed components (Approval Conditions for now). Un-Deployed components will be skipped and not evaluated for anyone not in this list. Separate with newlines, commas, etc. (matches by doing a contains())</inlineHelpText>
+    <label>Run Un-Deployed Components</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

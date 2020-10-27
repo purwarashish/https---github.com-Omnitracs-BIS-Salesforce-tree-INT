@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Top_Customer_Issues_Flag__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>did not find any reference where this checkbox is used. Needs to be deleted. Workflow rules have been deactivated as per case - # 01794084</description>
+    <externalId>false</externalId>
+    <label>Top Customer Issues Flag</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

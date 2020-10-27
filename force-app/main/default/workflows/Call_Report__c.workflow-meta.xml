@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Brazil_Call_Report_Email</fullName>
+        <description>Brazil Call Report Email</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>cguimaraes@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>janaya@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/New_Call_Report_VSF</template>
+    </alerts>
+    <alerts>
+        <fullName>CNRCallReportEmail</fullName>
+        <description>CNR Call Report Email</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>janaya@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jpaulo@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mvidal@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/New_Call_Report_VSF</template>
+    </alerts>
+    <alerts>
+        <fullName>CNRCallReportEmailAR</fullName>
+        <description>CNR Call Report Email - AR Review</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>janaya@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mvidal@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/NewCallReportCNRDetails</template>
+    </alerts>
+    <alerts>
+        <fullName>CNRCallReportEmailBajio</fullName>
+        <description>CNR Call Report Email - Bajio</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jpaulo@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/New_Call_Report_VSF</template>
+    </alerts>
+    <alerts>
+        <fullName>CNRCallReportEmailCentral</fullName>
+        <description>CNR Call Report Email - Central</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>c_jarosales@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mtorres@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/New_Call_Report_VSF</template>
+    </alerts>
+    <alerts>
+        <fullName>CNRCallReportEmailMetro</fullName>
+        <description>CNR Call Report Email - Metro</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>janaya@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mvidal@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/NewCallReportCNRDetails</template>
+    </alerts>
+    <alerts>
+        <fullName>CNRCallReportEmailNorth</fullName>
+        <description>CNR Call Report Email - North</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jpaulo@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/New_Call_Report_VSF</template>
+    </alerts>
+    <alerts>
+        <fullName>CNRCallReportEmailSouth</fullName>
+        <description>CNR Call Report Email - South</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>mtorres@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/New_Call_Report_VSF</template>
+    </alerts>
+    <alerts>
+        <fullName>CNR_Call_Report_Email_AEF</fullName>
+        <description>CNR Call Report Email - AEF Sales</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>janaya@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mvidal@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/NewCallReportCNRDetails</template>
+    </alerts>
+    <alerts>
+        <fullName>CNR_Call_Report_Email_CNR_Strategic</fullName>
+        <description>CNR Call Report Email - CNR Strategic</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>iochoa@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/New_Call_Report_VSF</template>
+    </alerts>
+    <alerts>
+        <fullName>CNR_Call_Report_Email_North_East</fullName>
+        <description>CNR Call Report Email - North East</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>janaya@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mvidal@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/NewCallReportCNRDetails</template>
+    </alerts>
+    <alerts>
+        <fullName>Call_Plan_Email_Notification_East</fullName>
+        <description>Call Plan Email Notification - East</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>hmixson@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jcrellin@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/CallPlanDetails</template>
+    </alerts>
+    <alerts>
+        <fullName>Call_Plan_Email_Notification_Strategic</fullName>
+        <description>Call Plan Email Notification - Strategic</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>tmccrady@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/CallPlanDetails</template>
+    </alerts>
+    <alerts>
+        <fullName>Call_Plan_Email_Notification_Sylectus</fullName>
+        <description>Call Plan Email Notification - Sylectus</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jakubr@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jchristmlocks@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kdrouill@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sjamie@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sserafim@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>vgumpa@vepcg.com.omnitracs</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/CallPlanDetails</template>
+    </alerts>
+    <alerts>
+        <fullName>Call_Plan_Email_Notification_West</fullName>
+        <description>Call Plan Email Notification - West</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>dbethers@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kpeterso@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/CallPlanDetails</template>
+    </alerts>
+    <alerts>
+        <fullName>Canada_Call_Report_Notification</fullName>
+        <description>Canada Call Report Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Manager APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Owner APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside CSR</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside CSR APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>bstaub@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>gfraser@omnitracs.com.omni</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mham@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>satnikov@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/NewCallReportDetails</template>
+    </alerts>
+    <alerts>
+        <fullName>Direct_Sales_Call_Report_Email_Alert</fullName>
+        <ccEmails>Product_Management@omnitracs.com</ccEmails>
+        <description>Direct Sales Call Report Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <field>Customer_Success_Lead_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Customer_Success_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Director_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Sales_VP_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>Call_Report_Extended_List</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <recipient>bspatz@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jwestover@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>urquhart@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/Sales_Call_Report_Email_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>FRA_Call_Report_Notification_All</fullName>
+        <description>FRA Call Report Notification - All</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>btan@omnitracs.comold</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>ldomnick@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/NewCallReportDetails</template>
+    </alerts>
+    <alerts>
+        <fullName>FRA_Call_Report_Notification_Sales</fullName>
+        <ccEmails>omnitracs.sfdc.noreply@omnitracs.com</ccEmails>
+        <description>FRA Call Report Notification - Sales and Service</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/NewCallReportDetails</template>
+    </alerts>
+    <alerts>
+        <fullName>Latam_Sales_Call_Report_Email_Alert</fullName>
+        <description>Latam Sales Call Report Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <field>Customer_Success_Lead_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Customer_Success_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Director_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Sales_VP_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>bspatz@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jwestover@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/Sales_Call_Report_Email_Template_LatAm</template>
+    </alerts>
+    <alerts>
+        <fullName>Mike_Kridler_Call_Report_Detail_Notification</fullName>
+        <ccEmails>PartnerCallReport@omnitracs.com</ccEmails>
+        <description>Mike Kridler Call Report Detail Notification</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/NewCallReportDetails</template>
+    </alerts>
+    <alerts>
+        <fullName>NewCallReportCreated</fullName>
+        <description>New Call Report Created</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Manager APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Owner APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside CSR</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside CSR APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside Sales Rep</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside Sales Rep APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/NewCallReportDetails</template>
+    </alerts>
+    <alerts>
+        <fullName>Partner_Accounts_Product_Mgnt_Call_Report_Email_Alert</fullName>
+        <ccEmails>channel.team@omnitracs.com</ccEmails>
+        <ccEmails>PdM.CallReports@omnitracs.com</ccEmails>
+        <ccEmails>Product_Management@omnitracs.com</ccEmails>
+        <description>Partner Accounts Product Mgnt Call Report Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Customer_Success_Lead_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Customer_Success_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>ebraswell@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jwestover@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/Product_Management_Call_Report_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Partner_Accounts_Sales_Call_Report_Email_Alert</fullName>
+        <ccEmails>channel.team@omnitracs.com</ccEmails>
+        <ccEmails>Product_Management@omnitracs.com</ccEmails>
+        <description>Partner Accounts Sales Call Report Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Customer_Success_Lead_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Customer_Success_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>ebraswell@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jwestover@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/Sales_Call_Report_Email_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>ProServCallReportEmailNotification</fullName>
+        <ccEmails>ps.call.report@omnitracs.com</ccEmails>
+        <description>Pro Serv Call Report Email Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/New_Call_Report_VSF</template>
+    </alerts>
+    <alerts>
+        <fullName>Product_Management_Call_Report_Email_Alert</fullName>
+        <ccEmails>PdM.CallReports@omnitracs.com</ccEmails>
+        <ccEmails>Product_Management@omnitracs.com</ccEmails>
+        <description>Product Management Call Report Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <field>Customer_Success_Lead_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Customer_Success_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Director_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Sales_VP_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>Call_Report_Extended_List</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <recipient>jwestover@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/Product_Management_Call_Report_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>TEST_InsideSales_WFR</fullName>
+        <description>TEST InsideSales WFR</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>christian@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>All_Email_Templates/TEST_InsideSales_WFR</template>
+    </alerts>
+    <alerts>
+        <fullName>TL_Inside_CSR_Account_review_Call_Report_Email_Notification</fullName>
+        <description>TL Inside CSR Account review Call Report Email Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Manager APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Account Owner APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside CSR APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Regional Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>michaelb@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>tmccrady@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/NewCallReportDetails</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Add_Top_Issues_Flag</fullName>
+        <description>Used for Leadership Report</description>
+        <field>Top_Customer_Issues_Flag__c</field>
+        <literalValue>1</literalValue>
+        <name>Add Top Issues Flag</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Call_Report_Customer_Success_Lead_Email</fullName>
+        <field>Customer_Success_Lead_Email__c</field>
+        <formula>Account__r.CSR__r.Email</formula>
+        <name>Call Report Customer Success Lead Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Call_Report_Customer_Success_Manag_Email</fullName>
+        <field>Customer_Success_Manager_Email__c</field>
+        <formula>Account__r.Customer_Success_Lead__r.Email</formula>
+        <name>Call Report Customer Success Manag Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Call_Report_Sales_Director_Email</fullName>
+        <field>Sales_Director_Email__c</field>
+        <formula>Account__r.Owner.CPQ_Manager__r.Email</formula>
+        <name>Call Report Sales Director Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Call_Report_Sales_VP_Email</fullName>
+        <field>Sales_VP_Email__c</field>
+        <formula>Account__r.Owner.Sales_VP__r.Email</formula>
+        <name>Call Report Sales VP Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Remove_Items_for_Exec_Assistance_flag</fullName>
+        <description>Used for Leadership Report</description>
+        <field>Items_for_Executive_Assistance_Flag__c</field>
+        <literalValue>0</literalValue>
+        <name>Remove Items for Exec Assistance flag</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Remove_Top_Issues_Flag</fullName>
+        <description>Used for Leadership Report</description>
+        <field>Top_Customer_Issues_Flag__c</field>
+        <literalValue>0</literalValue>
+        <name>Remove Top Issues Flag</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Items_For_Exec_Assist_Flag</fullName>
+        <description>Used for Leadership Report</description>
+        <field>Items_for_Executive_Assistance_Flag__c</field>
+        <literalValue>1</literalValue>
+        <name>Update Items For Exec Assist Flag</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <outboundMessages>
+        <fullName>Inside_Sales_Call_Report_Creation_KPI</fullName>
+        <apiVersion>46.0</apiVersion>
+        <endpointUrl>https://eus-p01.pods.insidesales.com/kpms/SFDC/eyJvcmdfaWQiOjE3MDEzMDc4LCJrcG1fdXVpZCI6Im1IdVI4S1FYcnAiLCJhdXRoX2tleSI6IkdjbE14TmxhSW05cmZyN1hNRjNISFlwNkZmMmtacnpPTXVxbVd6eGF2T2NmVE9pdUNMIiwiY3JtX3R5cGUiOiJTRkRDIn0=</endpointUrl>
+        <fields>Id</fields>
+        <fields>LastModifiedById</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>insideadmin@omnitracs.com</integrationUser>
+        <name>Inside Sales Call Report Creation KPI</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>Inside Sales Call Report Creation KPI</fullName>
+        <actions>
+            <name>TEST_InsideSales_WFR</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Inside_Sales_Call_Report_Creation_KPI</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>User.UserRoleId</field>
+            <operation>equals</operation>
+            <value>Inside Sales Rep</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.UserRoleId</field>
+            <operation>equals</operation>
+            <value>VP of Sales</value>
+        </criteriaItems>
+        <description>Used by InsideSales Playbooks application to pass data for KPIs.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Call Report Email fields</fullName>
+        <actions>
+            <name>Call_Report_Customer_Success_Lead_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Call_Report_Customer_Success_Manag_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Call_Report_Sales_Director_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Call_Report_Sales_VP_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.OwnerId</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

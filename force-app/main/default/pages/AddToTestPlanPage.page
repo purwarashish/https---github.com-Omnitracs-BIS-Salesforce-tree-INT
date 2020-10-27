@@ -1,0 +1,76 @@
+<!--
+ *******************************************************************************
+ * File:  TestPlanViewPage
+ * Date:  November 7th, 2012
+ * Author:  Evan Hartig
+ *
+ * The use, disclosure, reproduction, modification, transfer, or transmittal of
+ * this work for any purpose in any form or by any means without the written 
+ * permission of United Parcel Service is strictly prohibited.
+ *
+ * Confidential, unpublished property of United Parcel Service.
+ * Use and distribution limited solely to authorized personnel.
+ *
+ * Copyright 2009, UPS Logistics Technologies, Inc.  All rights reserved.
+ *
+ * Purpose: 
+ *   VF page for adding one or more test cases to a test plan from the test
+ *   case list view.
+ *******************************************************************************
+ -->
+ 
+<apex:page standardController="Test_Case__c" extensions="TestPlanExtension" recordSetVar="testCases" >
+	<apex:form >
+		<apex:sectionHeader title="Adding test cases to plan"/>
+		
+		<apex:pageMessages />
+		
+		<apex:pageBlock id="pageBlock">
+			<apex:pageBlockButtons >
+				<apex:commandbutton id="btnSave" action="{!saveCasesToPlan}" value="Add"/>
+				<apex:commandbutton id="btnCancel" action="{!cancel}" value="Cancel"/>
+			</apex:pageBlockButtons>
+			<apex:pageBlockSection columns="1">
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel id="lblTestPlan" value="Test Plan"/>
+					<apex:selectList id="testPlanInput" value="{!selectedPlan}" size="1">
+						<apex:selectOptions value="{!testPlanOptions}"/>
+						<apex:actionSupport action="{!updateSelectedPlan}" event="onchange" rerender="pageBlock"/>
+					</apex:selectList>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Run Parameters"/>
+					<apex:inputTextArea value="{!runParams}" rows="3" cols="70"/>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Show plan after save"/>
+					<apex:inputCheckbox value="{!navigateToPlan}"/>
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+			<apex:pageBlockSection columns="1" rendered="{!showNewFields}" title="New Plan Settings" collapsible="false">
+				<!--  <apex:pageBlockSectionItem>
+					<apex:outputLabel value=" "/>
+					<apex:outputLabel value="New Plan Properties"/>
+				</apex:pageBlockSectionItem>-->
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel id="lblNewPlanName" value="Plan Name"/>
+					<apex:inputText id="planNameInput" value="{!newPlanTemplate.Name}" size="63"/>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Product Family"/>
+					<apex:inputField value="{!newPlanTemplate.Product_Family_PL__c}"/>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Type"/>
+					<apex:inputField value="{!newPlanTemplate.Type__c}"/>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel id="lblNewPlanDescription" value="Description"/>
+					<apex:inputTextArea id="planDescriptionInput" value="{!newPlanTemplate.Description__c}" rows="4" cols="70"/>
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+	
+	</apex:form>
+	
+</apex:page>

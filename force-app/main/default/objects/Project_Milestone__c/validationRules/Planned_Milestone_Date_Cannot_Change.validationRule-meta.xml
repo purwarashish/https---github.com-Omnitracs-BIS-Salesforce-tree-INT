@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Planned_Milestone_Date_Cannot_Change</fullName>
+    <active>true</active>
+    <description>The Planned Milestone Date can&apos;t be changed.</description>
+    <errorConditionFormula>AND( 
+NOT( ISNEW() ), 
+ISCHANGED( Planned_Milestone_Date__c ), 
+$RecordType.Name = &quot;PM Milestone&quot;, 
+$Profile.Name &lt;&gt; &quot;Program Management - Mgmt&quot;,
+$Profile.Name &lt;&gt; &quot;Program Management - Mgmt Extended&quot; 
+)</errorConditionFormula>
+    <errorDisplayField>Planned_Milestone_Date__c</errorDisplayField>
+    <errorMessage>The Planned Milestone Date can&apos;t be changed after it has been entered.</errorMessage>
+</ValidationRule>

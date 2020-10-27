@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>32.0</apiVersion>
+    <availableInTouch>false</availableInTouch>
+    <confirmationTokenRequired>false</confirmationTokenRequired>
+    <description>VF page for override of the Standard New Opportunity Button with Message to create Opportunities from the Contact Record or from Lead Conversion</description>
+    <label>Create Opportunities from Contacts or Leads</label>
+</ApexPage>

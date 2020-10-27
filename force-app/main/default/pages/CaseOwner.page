@@ -1,0 +1,17 @@
+<apex:page standardController="Case" extensions="CaseOwnerAssignmentController" sidebar="false" showHeader="false">
+  <script type="text/javascript">window.sfdcPage = new EditPage();</script> 
+ <script type="text/javascript">
+ 
+ </script>
+  <apex:form >
+  <table>
+  <tr>
+  <td class="dataCol col02" > <apex:outputField value="{!case.Owner.Name}" />  
+  <!--<apex:outputtext value="{!currentCase.OwnerId}"  />-->
+<!--<apex:commandLink value="[Change]" action="{!RedirectToCaseOwnerAssignment}" target="_blank" />-->
+<apex:commandLink value="[Change]" onclick="openIntegration('/apex/CaseOwnerAssignment?id={!Case.Id}&ic=1', 'height=600,width=810,location=no,resizable=yes,toolbar=no,status=no,menubar=no,scrollbars=1', 1)"/>
+  </td>   
+  </tr>
+  </table>
+  </apex:form>
+</apex:page>

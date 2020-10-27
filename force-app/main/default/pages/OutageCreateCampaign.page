@@ -1,0 +1,154 @@
+<apex:page controller="OutageContactWizardController" tabStyle="Campaign" id="notificaionType" wizard="false" showHeader="true" sidebar="true" >
+      <script language="Javascript">
+    function selected(chkbxId)
+    {
+        selectedrec.value = chkbxId;
+
+    }
+    
+    function redirectToFinish()
+    {
+        redirectToFinish();
+    }
+    
+    function defaultSelection()
+    {
+       // document.getElementById('InptCheckbx').checked = true;
+    }   
+    
+    function updateOutageCont()
+    {
+        updateOutageCont();
+    }
+    
+    function validate()
+    {
+        var strDate = document.getElementById('notificaionType:contactNotificationForm:campInfo:campDataSectn:SelectOption:confirmBlk:strDate').value;
+        var endDate = document.getElementById('notificaionType:contactNotificationForm:campInfo:campDataSectn:SelectOption:confirmBlk:endDate').value;
+        var dt1 = getDateObject(strDate,"/");
+        if(endDate != '')
+            var dt2 = getDateObject(endDate,"/");
+        else
+            dt2 ='';
+                      
+        if((dt1 > dt2) && (dt2 != ''))
+        {
+            alert('Campaign Start Date cannot be greater than Campaign End Date ');
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+    
+    function getDateObject(dateString,dateSeperator)
+    {
+        //This function return a date object after accepting 
+        //a date string ans dateseparator as arguments
+        var curValue=dateString;
+        var sepChar=dateSeperator;
+        var curPos=0;
+        var cDate,cMonth,cYear;
+    
+        //extract day portion
+        curPos=dateString.indexOf(sepChar);
+        cDate=dateString.substring(0,curPos);
+        
+        //extract month portion             
+        endPos=dateString.indexOf(sepChar,curPos+1);            
+        cMonth=dateString.substring(curPos+1,endPos);
+    
+        //extract year portion              
+        curPos=endPos;
+        endPos=curPos+5;            
+        cYear=curValue.substring(curPos+1,endPos);
+        
+        //Create Date Object
+        dtObject=new Date(cYear,cMonth,cDate);  
+        return dtObject;
+    }
+
+    </script>
+    <apex:sectionHeader title="Outage Contact Tool" subtitle="Step 5 of 6"/>
+
+    <apex:form id="contactNotificationForm" style="width:100%" >
+    <apex:actionFunction name="updateOutageCont" action="{!redirectToStep6}" />
+    <!--<apex:actionFunction name="redirectToFinish" action="/apex/OutageFinishPage"/>-->
+    <apex:messages style="color:rgb(204,0,0);font-weight: bold;text-align:center"  />
+    <apex:pageBlock title="Create Campaign" id="campInfo">
+        <apex:pageBlockSection collapsible="false" columns="1" id="campDataSectn" >
+            <apex:pageBlockSectionItem >
+              <apex:outputPanel >
+                  <div style="text-align:right">
+                      <apex:commandButton value="Previous" action="{!redirectToStep4}"/>
+                      <apex:commandButton value="Next" action="{!insertCampaign}" onclick="if(validate()){this.disabled=false;}else{return false};" status="loadingStatusAdd" rerender="ProcessingText" oncomplete="updateOutageCont();"/>
+                      <apex:commandLink value="Cancel" action="/home/home.jsp"/>
+                      <!--  <apex:commandButton value="Export to Excel" action="/apex/test" /> -->
+                  </div>
+              </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+               You currently have {!totalRecpts} recipient(s) selected to receive this email.
+            </apex:pageBlockSectionItem>
+
+            <apex:pageBlockSectionItem id="SelectOption">
+               <apex:pageBlockSection collapsible="false" columns="1" title="Processing Options" id="confirmBlk">
+
+                    <apex:panelGrid columns="2">
+                                <!--Store an activity for each message  <apex:inputCheckbox value="{!saveActivity}"/>-->
+                    </apex:panelGrid>
+
+                    <apex:panelGrid columns="3" cellspacing="4" width="100%">
+                                <apex:panelGrid columns="2" width="100%">Campaign Name <apex:inputField value="{!newCampaign.Name}" style="width:200px" /></apex:panelGrid>
+                                <apex:panelGrid columns="2" width="100%">Campaign Market <apex:inputField value="{!newCampaign.Market__c}" /></apex:panelGrid>
+                                <apex:panelGrid columns="2" width="100%">Campaign Type <apex:inputField value="{!newCampaign.Type}" /></apex:panelGrid>
+                                <!--<table>
+                                    <tr>
+                                        <td>
+                                            Campaign Name
+                                        </td>
+                                        <td width="70%">
+                                            <apex:inputField value="{!newCampaign.Name}" />
+                                        </td>
+                                    </tr>
+                                </table>-->
+                                <!--<apex:outputPanel >Campaign Market <apex:inputField value="{!newCampaign.Market__c}" /></apex:outputPanel>
+                                <apex:outputPanel >Campaign Type <apex:inputField value="{!newCampaign.Type}" /></apex:outputPanel>-->
+                    </apex:panelGrid>
+
+                    <apex:panelGrid columns="6" cellspacing="3" id="CampDate">
+                                Campaign Status <apex:inputField value="{!newCampaign.Status}"/>
+                                Start Date <apex:inputField id="strDate" value="{!newCampaign.StartDate}" />
+                                End Date <apex:inputField id="endDate" value="{!newCampaign.EndDate}" />
+                    </apex:panelGrid>
+                    <apex:panelGrid columns="2" cellspacing="3">
+                     <apex:inputCheckbox value="{!sendEmailNow}"/>Configure Email Now?
+                    </apex:panelGrid>
+               </apex:pageBlockSection>
+
+            </apex:pageBlockSectionItem>
+            
+            <apex:pageBlockSectionItem >
+
+                <apex:outputPanel >
+                    <div style="text-align:right">
+                      <apex:commandButton value="Previous" action="{!redirectToStep4}"/>
+                      <apex:commandButton value="Next" action="{!insertCampaign}" onclick="if(validate()){this.disabled=false;}else{return false};" oncomplete="updateOutageCont();"/>
+                      <apex:commandLink value="Cancel" action="/home/home.jsp"/>
+                    </div>
+                </apex:outputPanel> 
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+        <apex:actionStatus id="loadingStatusAdd">
+                    <apex:facet name="start">
+                        <c:loadingStatus id="loadingStatusAddComponent" BackColor="#efefef" borderColor="#336699" borderSize="3" height="50px" width="150px" ImageUrl="/img/loading.gif" Message="Processing..." BluryBackGround_DivId="bbgd1" SalesforceStatusBox_DivId="ssbd1" messageStyle="color:darkred;font-size:11pt;font-weight:bold;"/>
+                    </apex:facet>
+                </apex:actionStatus>
+    </apex:pageBlock>
+    
+    <!--  <apex:inputhidden value="{!sendingOption}" id="selectedid" />
+    <script> var selectedrec= document.getElementById('{!$Component.selectedid}'); </script>-->
+    <script>defaultSelection()</script>
+    </apex:form>
+</apex:page>

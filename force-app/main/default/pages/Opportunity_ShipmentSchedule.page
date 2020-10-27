@@ -1,0 +1,139 @@
+<apex:page standardController="Opportunity" extensions="OpportunityShipmentScheduleController" >
+    <script>
+        function switchMenu(obj,obj1,obj2) 
+        {
+            var el = document.getElementById(obj);                                       
+            if ( el.style.display != 'none' ) 
+            {
+            el.style.display = 'none';
+            }
+            else 
+            {
+            el.style.display = '';
+            }
+            var e2 = document.getElementById(obj1);                                       
+            if ( e2.style.display != 'none' ) 
+            {
+            e2.style.display = 'none';
+            }
+            else 
+            {
+            e2.style.display = '';
+            }
+            var e3 = document.getElementById(obj2);                                       
+            if ( e2.style.display != 'none' ) 
+            {
+            e3.style.display = 'none';
+            }
+            else 
+            {
+            e3.style.display = '';
+            }
+        }
+    
+    	function saveJS ()
+    	{
+        	saveAF();
+    	}
+    
+    	function AddShipJS () 
+    	{
+        	AddShipAF();
+    	}
+    
+    </script>
+    <apex:form id="mainblock">
+        <apex:actionFunction name="saveAF" action="{!save}" reRender="mainblock"/>
+        <apex:actionFunction name="AddShipAF" action="{!AddShip}" reRender="mainblock"/>
+        <apex:outputPanel >
+            <apex:pageblock mode="inlineEdit">
+                <apex:pageMessages ></apex:pageMessages>
+                <!--<apex:pageBlockButtons >
+            		<apex:commandButton action="{!BacktoOpportunity}" value="Back to Opportunity"/>
+        		</apex:pageBlockButtons>-->
+                <apex:pageblockButtons >
+                    <apex:commandButton action="{!BacktoOpportunity}" value="Back to Opportunity"/>
+                    <apex:outputPanel rendered="{!If((theQuote.SBQQ__Opportunity2__r.StageName == 'Closed Won'),true,false)}">
+                    <button type="button" onclick="AddShipJS();" value="Add Shipping Line" 
+                        style="/* height: 30px; */
+                            color: #333;cursor:pointer;
+                            margin: 1px;
+                            padding: 2px 3px;
+                            border: 1px solid #b5b5b5;
+                            border-bottom-color: #7f7f7f;
+                            background: #e8e8e9 url(/img/alohaSkin/btn_sprite.png) repeat-x right top;
+                            font-weight: bold;
+                            font-size: .9em;
+                            -moz-border-radius: 3px;
+                            -webkit-border-radius: 3px;
+                            border-radius: 3px;
+                            height: 22px;" >Add Shipping Line</button></apex:outputPanel>
+        
+                    <apex:outputPanel rendered="{!If((theQuote.SBQQ__Opportunity2__r.StageName == 'Closed Won'),true,false)}">
+                    <button  onclick="saveJS();return false;" value="Save" 
+                        style="/* height: 30px; */
+                            color: #333;cursor:pointer;
+                            margin: 1px;
+                            padding: 2px 3px;
+                            border: 1px solid #b5b5b5;
+                            border-bottom-color: #7f7f7f;
+                            background: #e8e8e9 url(/img/alohaSkin/btn_sprite.png) repeat-x right top;
+                            font-weight: bold;
+                            font-size: .9em;
+                            -moz-border-radius: 3px;
+                            -webkit-border-radius: 3px;
+                            border-radius: 3px;
+                            height: 22px;" >Save</button></apex:outputPanel>
+                </apex:pageblockButtons>
+                
+                <apex:pageblockTable value="{!quanityDetailMap}" var="qli">
+                    <apex:column headerValue="Product Code" style="{!IF((quanityDetailMap[qli].effectivequantity != quanityDetailMap[qli].savedquantity),"background-color: #F1948A;","")}">{!qli} </apex:column>
+                    <apex:column headerValue="Product Name" style="{!IF((quanityDetailMap[qli].effectivequantity != quanityDetailMap[qli].savedquantity),"background-color: #F1948A;","")}">{!quanityDetailMap[qli].ProductName}</apex:column>
+                    <apex:column headerValue="Effective Quantity" style="{!IF((quanityDetailMap[qli].effectivequantity != quanityDetailMap[qli].savedquantity),"background-color: #F1948A;","")}">
+                        <apex:outputText value="{0,number,###0}">   
+       						<apex:param value="{!quanityDetailMap[qli].effectivequantity}"/>
+    					</apex:outputText>
+                    </apex:column>
+                    <apex:column headerValue="Saved Quantity" style="{!IF((quanityDetailMap[qli].effectivequantity != quanityDetailMap[qli].savedquantity),"background-color: #F1948A;","")}">
+                        <apex:outputText value="{0,number,###0}">    
+       						<apex:param value="{!quanityDetailMap[qli].savedquantity}"/>
+    					</apex:outputText>  
+                    </apex:column>
+                </apex:pageblockTable>
+                <apex:pageblocktable value="{!shippinglineItemList}" var="OrdCo">
+                    
+                    <apex:column headervalue="Shipping Date">
+                        <apex:outputtext value="{0,date, MMMM',' yyyy}">
+                            <apex:param value="{!OrdCo.Shipping_Date__c}"/>
+                        </apex:outputtext>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">
+                            Shipping Line Items
+                        </apex:facet>
+                            <Apex:pageblocktable value="{!OrdCo.Shipping_line_items__r}" var="SLI">
+                                
+                                <apex:column headervalue="Product">
+                                    <apex:outputfield value="{!SLI.Product__c}"/>
+                                </apex:column>  
+                                <apex:column headervalue="Product Code">
+                                    <apex:outputfield value="{!SLI.ProductCode__c}">
+                                    	<apex:inlineEditSupport disabled="true"/>
+                                    </apex:outputfield>
+                                </apex:column>  
+                                <apex:column headervalue="Quote Line">
+                                    <apex:outputfield value="{!SLI.Quote_Line__c}"/>
+                                </apex:column>
+                                <apex:column headervalue="Quantity">
+                                    <apex:outputfield value="{!SLI.Quantity__c}">
+                                        <apex:inlineEditSupport event="ondblclick"/> 
+                                    </apex:outputfield>
+                                </apex:column> 
+                                
+                            </Apex:pageblocktable>
+                    </apex:column>
+                </apex:pageblocktable>
+            </apex:pageblock>
+        </apex:outputPanel>
+    </apex:form>
+</apex:page>

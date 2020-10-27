@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PS_Timely_Follow_Up__c</fullName>
+    <description>When follow up was necessary, the Professional Services consultant did so in a timely manner.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>When follow up was necessary, the Professional Services consultant did so in a timely manner.</inlineHelpText>
+    <label>PS Timely Follow Up</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1 - Strongly Disagree</fullName>
+                <default>false</default>
+                <label>1 - Strongly Disagree</label>
+            </value>
+            <value>
+                <fullName>2 - Somewhat Disagree</fullName>
+                <default>false</default>
+                <label>2 - Somewhat Disagree</label>
+            </value>
+            <value>
+                <fullName>3 - Neither Agree nor Disagree</fullName>
+                <default>false</default>
+                <label>3 - Neither Agree nor Disagree</label>
+            </value>
+            <value>
+                <fullName>4 - Somewhat Agree</fullName>
+                <default>false</default>
+                <label>4 - Somewhat Agree</label>
+            </value>
+            <value>
+                <fullName>5 - Strongly Agree</fullName>
+                <default>false</default>
+                <label>5 - Strongly Agree</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

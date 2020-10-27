@@ -1,0 +1,20 @@
+<apex:page standardController="Deal_Desk__c" extensions="OppDealDeskController" action="{!loadFinanceData}" sidebar="false" showchat="false" showheader="false" >
+  
+  <apex:pageblock >
+       
+       <b>Most Recent Invoice Date : </b> <apex:outputText value="{0,date,MM/dd/yy}"> <apex:param value="{!mostRecentRev}" /> </apex:outputText> 
+       
+      <apex:pageblockTable value="{!finWra}" var="a">
+          <apex:column style="{!if(a.productName=='Total:','font-weight:bold;color:green','')}" headerValue="Platform Details" value="{!a.productName}"/>
+          <apex:column style="{!if(a.productName=='Total:','font-weight:bold;color:green','')}" headerValue="Unit Count" value="{!a.UnitCount}"/>
+          <apex:column style="{!if(a.productName=='Total:','font-weight:bold;color:green','')}" headerValue="ARPU" value="{!a.ARPU}"/>
+          <apex:column style="{!if(a.productName=='Total:','font-weight:bold;color:green','')}" headerValue="Revenue" value="{!a.Revenue}"/>
+          <apex:column style="{!if(a.productName=='Total:','font-weight:bold;color:green','')}" headerValue="Contract End Date">
+              <apex:outputText value="{0,date,MM/dd/yyyy}">
+                  <apex:param value="{!a.ContractEndDate}" />
+              </apex:outputText>
+          </apex:column>
+      </apex:pageblockTable>
+  
+  </apex:pageblock>
+</apex:page>

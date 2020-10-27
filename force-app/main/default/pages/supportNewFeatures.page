@@ -1,0 +1,148 @@
+<apex:page id="pageId" showHeader="false" sidebar="false" 
+           controller="MainController" action="{!nfm_initSingleton}" cache="true">
+<apex:include id="mainpage" pageName="mainPage" />
+<style>
+    .listTopic {
+        display: inline-block !important;
+        width: auto !important;
+        background: url("{!URLFor($Resource.QESUnityCSSAndJS, 'Html/images/customer/custArrow.png')}") no-repeat scroll 5px 6px transparent !important;        
+    }
+    
+    ul.topicList li {
+        border: none !important;
+        color: #4E4649 !important;
+        font-size: 13px !important;
+        font-weight: bold !important;
+        padding: 6px 0 !important;
+    }    
+
+    a.listTopic
+    {        
+        font-weight:normal !important;
+        padding-left:20px;
+    }
+    
+   a.monitor {visibility:{!CASE(standalone,'1', 'hidden', standalone,'0' , '' )}; display:{!CASE(standalone,'1', 'none', standalone,'0' , '' )};}
+            
+	a.manage {visibility:{!CASE(standalone,'1', 'hidden', standalone,'0' , '' )}; display:{!CASE(standalone,'1', 'none', standalone,'0' , '' )};}
+	    
+	a.shop {visibility:{!CASE(standalone,'1', 'hidden', standalone,'0' , '' )}; display:{!CASE(standalone,'1', 'none', standalone,'0' , '' )};}
+							
+	#drop3 li:nth-child(-n+3) {
+        display: none;
+    }
+    
+    #user_profile li:nth-child(-n+2) {
+        display: none;
+    }
+	           
+	ul.drop2 {visibility:{!CASE(standalone,'1', 'hidden', standalone,'0' , '' )}; display:{!CASE(standalone,'1', 'none', standalone,'0' , '' )};}
+	 
+	div.searchResultInnerRight{
+	    display:{!CASE(standalone,'1', 'none', standalone,'0' , 'initial' )};
+	}
+</style>
+
+<script>
+    var pagename = 'supportNewFeatures';
+   
+     $(document).ready(function(){                       
+          $('a.bcklnk').each(function(){         
+              var text = '{!nfm.returnURL}';         
+              $(this).attr('href', text);
+          });      
+    
+        $('a.bcklnk').click
+        (
+            function(e)
+            {
+               redir($(this).attr('href'),e);
+            }
+        );
+        function redir(rUrl,e)
+        {
+            e.preventDefault();
+            e.stopPropagation();
+            if('#' == rUrl) {
+                return false;
+            }
+            $("#pageId\\:form1\\:hiddenInputField").val(rUrl);
+            $("#pageId\\:form1\\:hiddencmdlink1").click();
+            return false;
+        }
+    });
+    
+    
+    </script>
+    
+    <script type="text/javascript">
+	window.onload = function() {
+	    var links = document.getElementsByTagName('a');
+		for(var i=0; i<links.length; i++) {
+		  if(links[i].href == 'http://customer.int.omnitracs.com/'){
+		  	links[i].href = 'https://login.int.omnitracs.com/go.jsp?d=home';
+		  }
+		  else if(links[i].href == 'http://customer.omnitracs.com/'){
+		  	links[i].href = 'https://login.omnitracs.com/go.jsp?d=home';
+		  }
+		}
+	};
+</script>
+
+<div id="bodyWrapper" >
+    <div class="breadcumWrp">
+    <ul>
+        <li>
+            <a href="https://login.{!$Label.CPURL}go.jsp?d=home">Home</a><span>|</span>
+            New Features
+         </li>
+     </ul>
+     
+    <h1 style="display: normal">New Features</h1>
+    <hr width="910px" align="center" style="height:1px;border:1px;color:#dadce0;background-color:#dadce0;" />
+    </div>
+    <div id="middle-container">
+        <div class="custom-search-right fll" style="width:100%">
+            <apex:form id="form1" >
+                <div class="searchResultInnerLeft fll" style="width:100%" >
+                <div style="margin-bottom:10px;">
+                <a href="#"  class = "bcklnk">Back</a>
+        </div>
+        <div class="MenuBoxHeader">
+            <h3>
+                <span class="floatL">List of Offerings</span>
+                <span class="traRightSpace30 floatR"></span>
+            </h3>
+            <apex:outputPanel layout="block" styleClass="boxBody" id="boxbody">
+                <div class="submenu1">
+                    <div id="newFeaturesHeading" style="font:bold;">
+                        <script>
+                            $('#newFeaturesHeading').append('{!nfm.wscm.newFeaturesHeading}');
+                        </script>
+                    </div>
+        
+                    <apex:dataList rows="{!nfm.wscm.listNewFeaturesTraining.size}"   first="0" id="newTraining" var="training" value="{!nfm.wscm.listNewFeaturesTraining}" styleClass="topicList">
+                        <a href="{!training.linkUrl}" class="searchTitle listTopic">{!training.title}</a>                
+                    </apex:dataList>  
+                    
+                    <br/>
+                    <div>
+                        <p>Access Support, including:</p>
+                    </div>           
+                    
+                    <apex:dataList rows="{!nfm.wscm.listNewFeaturesSupport.size}"   first="0" id="newSupport" var="support" value="{!nfm.wscm.listNewFeaturesSupport}" styleClass="topicList">
+                        <a href="{!support.linkUrl}" class="searchTitle listTopic">{!support.title}</a>                
+                    </apex:dataList>   
+                </div>
+            </apex:outputPanel>           
+        </div>
+    </div>
+    <apex:commandLink id="hiddencmdlink"  target="_blank" styleclass="hiddencmdlink" value="" action="{!menuHeaderRedirectTo}" />
+    <apex:commandLink id="hiddencmdlink1"  styleclass="hiddencmdlink1" value="" action="{!menuHeaderRedirectTo}" />
+    <apex:inputHidden id="hiddenInputField" value="{!hiddenInputField}"/> 
+    </apex:form>
+    </div>
+    </div>
+    <apex:include pageName="UnityFooter" />
+</div>
+</apex:page>

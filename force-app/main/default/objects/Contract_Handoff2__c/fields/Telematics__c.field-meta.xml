@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Telematics__c</fullName>
+    <description>Please provide the customer goals for Telematics such as idling reduction, speeding, etc</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Please provide the customer goals for Telematics such as idling reduction, speeding, etc</inlineHelpText>
+    <label>Telematics</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

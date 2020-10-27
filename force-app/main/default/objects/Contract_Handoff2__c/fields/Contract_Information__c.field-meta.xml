@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Information__c</fullName>
+    <description>Industry - Please enter their industry - Beer, Beverage, Produce, Fuel, etc.
+Geographic Area - Please enter their geographical area
+Number of Depots - Please enter the number of depots
+Number of Customer Locations - Please enter the number of cust locations
+Fleet Size - Please enter their Fleet Size (total &amp; per depot if more than 1)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Industry - Please enter their industry-Beer, Beverage, Produce, Fuel, etc.
+Geographic Area- Please enter their geographical area
+Number of Depots - Please enter the number of depots
+Number of Customer Locations - Please enter the number of cust locatio</inlineHelpText>
+    <label>Contract Information</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

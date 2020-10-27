@@ -1,0 +1,38 @@
+<apex:page standardcontroller="Scoring_Model__c" extensions="ScoringModelEdit"  >
+ 
+ <apex:sectionHeader title="Scoring Model" />
+ 
+ <apex:form >
+ 
+ <apex:pageMessages />
+ 
+ <apex:pageBlock >
+ 
+ <apex:pageBlockButtons >
+    <apex:commandButton value="Save" action="{!DoSave}" />
+    <apex:commandButton value="Cancel" action="{!Cancel}" />
+ </apex:pageBlockButtons>
+ 
+ <apex:pageBlockSection columns="2">
+ 
+ <apex:inputField value="{!CurrentScoringModel.Name}" required="true"/>
+ 
+ <apex:outputText value="" />
+ 
+  <apex:inputField value="{!CurrentScoringModel.Red_Overall_Score_From__c}"  required="true"/>
+ <apex:inputField value="{!CurrentScoringModel.Red_Overall_Score_To__c}"  required="true"/>
+ 
+  <apex:inputField value="{!CurrentScoringModel.Yellow_Overall_Score_From__c}"  required="true"/>
+ <apex:inputField value="{!CurrentScoringModel.Yellow_Overall_Score_To__c}"  required="true"/>
+ 
+ <apex:inputField value="{!CurrentScoringModel.Green_Overall_Score_From__c}"  required="true"/>
+ <apex:inputField value="{!CurrentScoringModel.Green_Overall_Score_To__c}"  required="true"/>
+ 
+ 
+ </apex:pageBlockSection> 
+  
+ </apex:pageBlock>
+ 
+ </apex:form>
+ 
+</apex:page>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New</fullName>
+    <availability>online</availability>
+    <description>Override new button to populate Installed Unit object</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New Installed Unit</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>/a0S/e?CF00NT0000000rnx9={!Opportunity.Account}&amp;CF00NT0000000rnxA={!Opportunity.Name}&amp;CF00NT0000000rnx9_lkid={!Opportunity.Id}&amp;cancelURL=%2F{!Opportunity.Id}&amp;saveURL=%2F{!Opportunity.Id}&amp;retURL=%2F{!Opportunity.Id}</url>
+</WebLink>

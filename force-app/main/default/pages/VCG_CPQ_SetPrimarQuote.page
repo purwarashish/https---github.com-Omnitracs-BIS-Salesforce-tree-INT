@@ -1,0 +1,9 @@
+<apex:page standardController="VCG_CPQ_Quote__c"
+		    recordSetVar="quotes"
+		    extensions="VCG_CPQ_SetPrimarQuoteController"
+		    action="{!applyPrimaryQuote}"
+		    id="spqPage">
+
+<apex:PageMessages />
+...
+</apex:page>

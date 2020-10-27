@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>This custom setting contains account id .Based on the value of this custom setting the accounts will be visible in the drop down when account owners are transferred for Partner Master Owner.</description>
+    <enableFeeds>false</enableFeeds>
+    <label>PartnerMasterOwnerAccount</label>
+    <visibility>Public</visibility>
+</CustomObject>

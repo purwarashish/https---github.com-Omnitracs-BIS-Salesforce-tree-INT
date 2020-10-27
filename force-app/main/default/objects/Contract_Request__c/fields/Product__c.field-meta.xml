@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product__c</fullName>
+    <externalId>false</externalId>
+    <label>Product</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Consulting</fullName>
+                <default>false</default>
+                <label>Consulting</label>
+            </value>
+            <value>
+                <fullName>Content Development:  External</fullName>
+                <default>false</default>
+                <label>Content Development:  External</label>
+            </value>
+            <value>
+                <fullName>Content Development:  Internal</fullName>
+                <default>false</default>
+                <label>Content Development:  Internal</label>
+            </value>
+            <value>
+                <fullName>Driver Recruiting Model</fullName>
+                <default>false</default>
+                <label>Driver Recruiting Model</label>
+            </value>
+            <value>
+                <fullName>Driver Retention Model</fullName>
+                <default>false</default>
+                <label>Driver Retention Model</label>
+            </value>
+            <value>
+                <fullName>Driving Center Platform</fullName>
+                <default>false</default>
+                <label>Driving Center Platform</label>
+            </value>
+            <value>
+                <fullName>Fatigue Risk Model</fullName>
+                <default>false</default>
+                <label>Fatigue Risk Model</label>
+            </value>
+            <value>
+                <fullName>Global Smart Services</fullName>
+                <default>false</default>
+                <label>Global Smart Services</label>
+            </value>
+            <value>
+                <fullName>GlobalTRACS</fullName>
+                <default>false</default>
+                <label>GlobalTRACS</label>
+            </value>
+            <value>
+                <fullName>GlobalTRACS &amp; GlobalTRACS Lite</fullName>
+                <default>false</default>
+                <label>GlobalTRACS &amp; GlobalTRACS Lite</label>
+            </value>
+            <value>
+                <fullName>GlobalTRACS Lite</fullName>
+                <default>false</default>
+                <label>GlobalTRACS Lite</label>
+            </value>
+            <value>
+                <fullName>Implementation Services:  Driver Recruiting</fullName>
+                <default>false</default>
+                <label>Implementation Services:  Driver Recruiting</label>
+            </value>
+            <value>
+                <fullName>Implementation Services:  Driver Retention</fullName>
+                <default>false</default>
+                <label>Implementation Services:  Driver Retention</label>
+            </value>
+            <value>
+                <fullName>Implementation Services:  Fatigue Model</fullName>
+                <default>false</default>
+                <label>Implementation Services:  Fatigue Model</label>
+            </value>
+            <value>
+                <fullName>Implementation Services:  Safety Model Driving</fullName>
+                <default>false</default>
+                <label>Implementation Services:  Safety Model Driving</label>
+            </value>
+            <value>
+                <fullName>Implementation Services:  Safety Model Workers Comp</fullName>
+                <default>false</default>
+                <label>Implementation Services:  Safety Model Workers Comp</label>
+            </value>
+            <value>
+                <fullName>IVG</fullName>
+                <default>false</default>
+                <label>IVG</label>
+            </value>
+            <value>
+                <fullName>JDLink</fullName>
+                <default>false</default>
+                <label>JDLink</label>
+            </value>
+            <value>
+                <fullName>JDLink &amp; JDLink Express</fullName>
+                <default>false</default>
+                <label>JDLink &amp; JDLink Express</label>
+            </value>
+            <value>
+                <fullName>JDLink &amp; ZXLink</fullName>
+                <default>false</default>
+                <label>JDLink &amp; ZXLink</label>
+            </value>
+            <value>
+                <fullName>JDLink Express</fullName>
+                <default>false</default>
+                <label>JDLink Express</label>
+            </value>
+            <value>
+                <fullName>MCP100</fullName>
+                <default>false</default>
+                <label>MCP100</label>
+            </value>
+            <value>
+                <fullName>MCP100S</fullName>
+                <default>false</default>
+                <label>MCP100S</label>
+            </value>
+            <value>
+                <fullName>MCP100T</fullName>
+                <default>false</default>
+                <label>MCP100T</label>
+            </value>
+            <value>
+                <fullName>MCP110</fullName>
+                <default>false</default>
+                <label>MCP110</label>
+            </value>
+            <value>
+                <fullName>MCP200</fullName>
+                <default>false</default>
+                <label>MCP200</label>
+            </value>
+            <value>
+                <fullName>MCP50</fullName>
+                <default>false</default>
+                <label>MCP50</label>
+            </value>
+            <value>
+                <fullName>OmniExpress</fullName>
+                <default>false</default>
+                <label>OmniExpress</label>
+            </value>
+            <value>
+                <fullName>OmniTRACS</fullName>
+                <default>false</default>
+                <label>OmniTRACS</label>
+            </value>
+            <value>
+                <fullName>OmniTRACS and OmniExpress</fullName>
+                <default>false</default>
+                <label>OmniTRACS and OmniExpress</label>
+            </value>
+            <value>
+                <fullName>Penske Data Share</fullName>
+                <default>false</default>
+                <label>Penske Data Share</label>
+            </value>
+            <value>
+                <fullName>Refurbished MCP100S</fullName>
+                <default>false</default>
+                <label>Refurbished MCP100S</label>
+            </value>
+            <value>
+                <fullName>Refurbished OmniTRACS</fullName>
+                <default>false</default>
+                <label>Refurbished OmniTRACS</label>
+            </value>
+            <value>
+                <fullName>Ryder Data Share</fullName>
+                <default>false</default>
+                <label>Ryder Data Share</label>
+            </value>
+            <value>
+                <fullName>Safety Model:  Driving</fullName>
+                <default>false</default>
+                <label>Safety Model:  Driving</label>
+            </value>
+            <value>
+                <fullName>Safety Model:  Workers Comp</fullName>
+                <default>false</default>
+                <label>Safety Model:  Workers Comp</label>
+            </value>
+            <value>
+                <fullName>SFM</fullName>
+                <default>false</default>
+                <label>SFM</label>
+            </value>
+            <value>
+                <fullName>T2 Reefer System</fullName>
+                <default>false</default>
+                <label>T2 Reefer System</label>
+            </value>
+            <value>
+                <fullName>T2 System</fullName>
+                <default>false</default>
+                <label>T2 System</label>
+            </value>
+            <value>
+                <fullName>T2 System with integrated solar panel</fullName>
+                <default>false</default>
+                <label>T2 System with integrated solar panel</label>
+            </value>
+            <value>
+                <fullName>Third Party Acquired OmniExpress</fullName>
+                <default>false</default>
+                <label>Third Party Acquired OmniExpress</label>
+            </value>
+            <value>
+                <fullName>Third Party Acquired OmniTRACS</fullName>
+                <default>false</default>
+                <label>Third Party Acquired OmniTRACS</label>
+            </value>
+            <value>
+                <fullName>Trailer Tracks 210</fullName>
+                <default>false</default>
+                <label>Trailer Tracks 210</label>
+            </value>
+            <value>
+                <fullName>TT210 System</fullName>
+                <default>false</default>
+                <label>TT210 System</label>
+            </value>
+            <value>
+                <fullName>ZXLink</fullName>
+                <default>false</default>
+                <label>ZXLink</label>
+            </value>
+            <value>
+                <fullName>ZXLink &amp; ZXLink Express</fullName>
+                <default>false</default>
+                <label>ZXLink &amp; ZXLink Express</label>
+            </value>
+            <value>
+                <fullName>ZXLink Express</fullName>
+                <default>false</default>
+                <label>ZXLink Express</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

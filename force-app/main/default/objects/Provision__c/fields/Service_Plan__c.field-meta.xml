@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Service_Plan__c</fullName>
+    <description>Created for Contract Management.</description>
+    <externalId>false</externalId>
+    <label>Service Plan</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Asset Service &amp; Asset Reefer</fullName>
+                <default>false</default>
+                <label>Asset Service &amp; Asset Reefer</label>
+            </value>
+            <value>
+                <fullName>Asset Service Plan</fullName>
+                <default>false</default>
+                <label>Asset Service Plan</label>
+            </value>
+            <value>
+                <fullName>Base Plan</fullName>
+                <default>false</default>
+                <label>Base Plan</label>
+            </value>
+            <value>
+                <fullName>CEV Service</fullName>
+                <default>false</default>
+                <label>CEV Service</label>
+            </value>
+            <value>
+                <fullName>Compliance Bundle with Macros</fullName>
+                <default>false</default>
+                <label>Compliance Bundle with Macros</label>
+            </value>
+            <value>
+                <fullName>Enhanced Plan</fullName>
+                <default>false</default>
+                <label>Enhanced Plan</label>
+            </value>
+            <value>
+                <fullName>Enhanced Plan w/ Fleet Averaging</fullName>
+                <default>false</default>
+                <label>Enhanced Plan w/ Fleet Averaging</label>
+            </value>
+            <value>
+                <fullName>Enhanced Plan w/ Volume Message Rate Tiers</fullName>
+                <default>false</default>
+                <label>Enhanced Plan w/ Volume Message Rate Tiers</label>
+            </value>
+            <value>
+                <fullName>Eval Service</fullName>
+                <default>false</default>
+                <label>Eval Service</label>
+            </value>
+            <value>
+                <fullName>FleetAdvisor Plus Base Plan</fullName>
+                <default>false</default>
+                <label>FleetAdvisor Plus Base Plan</label>
+            </value>
+            <value>
+                <fullName>FleetAdvisor Plus Enhanced Plan</fullName>
+                <default>false</default>
+                <label>FleetAdvisor Plus Enhanced Plan</label>
+            </value>
+            <value>
+                <fullName>FleetAdvisor Plus Standard Plan</fullName>
+                <default>false</default>
+                <label>FleetAdvisor Plus Standard Plan</label>
+            </value>
+            <value>
+                <fullName>FleetAdvisor Plus Volume Plan</fullName>
+                <default>false</default>
+                <label>FleetAdvisor Plus Volume Plan</label>
+            </value>
+            <value>
+                <fullName>Foundation Plan (MCP100S)</fullName>
+                <default>false</default>
+                <label>Foundation Plan (MCP100S)</label>
+            </value>
+            <value>
+                <fullName>LTL Plan</fullName>
+                <default>false</default>
+                <label>LTL Plan</label>
+            </value>
+            <value>
+                <fullName>MCP110 Compliance Plan (1yr)</fullName>
+                <default>false</default>
+                <label>MCP110 Compliance Plan (1yr)</label>
+            </value>
+            <value>
+                <fullName>MCP110 Compliance Plan (3yr)</fullName>
+                <default>false</default>
+                <label>MCP110 Compliance Plan (3yr)</label>
+            </value>
+            <value>
+                <fullName>MCP110 Compliance Plan (5yr)</fullName>
+                <default>false</default>
+                <label>MCP110 Compliance Plan (5yr)</label>
+            </value>
+            <value>
+                <fullName>MCP110 HOS Integration Plan (1yr)</fullName>
+                <default>false</default>
+                <label>MCP110 HOS Integration Plan (1yr)</label>
+            </value>
+            <value>
+                <fullName>MCP110 HOS Integration Plan (3yr)</fullName>
+                <default>false</default>
+                <label>MCP110 HOS Integration Plan (3yr)</label>
+            </value>
+            <value>
+                <fullName>MCP110 HOS Integration Plan (5yr)</fullName>
+                <default>false</default>
+                <label>MCP110 HOS Integration Plan (5yr)</label>
+            </value>
+            <value>
+                <fullName>MCP110 Performance Monitoring Integration Plan (1yr)</fullName>
+                <default>false</default>
+                <label>MCP110 Performance Monitoring Integration Plan (1yr)</label>
+            </value>
+            <value>
+                <fullName>MCP110 Performance Monitoring Integration Plan (3yr)</fullName>
+                <default>false</default>
+                <label>MCP110 Performance Monitoring Integration Plan (3yr)</label>
+            </value>
+            <value>
+                <fullName>MCP110 Performance Monitoring Integration Plan (5yr)</fullName>
+                <default>false</default>
+                <label>MCP110 Performance Monitoring Integration Plan (5yr)</label>
+            </value>
+            <value>
+                <fullName>MCP110 Safety &amp; Compliance Plan (1yr)</fullName>
+                <default>false</default>
+                <label>MCP110 Safety &amp; Compliance Plan (1yr)</label>
+            </value>
+            <value>
+                <fullName>MCP110 Safety &amp; Compliance Plan (3yr)</fullName>
+                <default>false</default>
+                <label>MCP110 Safety &amp; Compliance Plan (3yr)</label>
+            </value>
+            <value>
+                <fullName>MCP110 Safety &amp; Compliance Plan (5yr)</fullName>
+                <default>false</default>
+                <label>MCP110 Safety &amp; Compliance Plan (5yr)</label>
+            </value>
+            <value>
+                <fullName>MCP110 Safety &amp; Compliance w/ Dispatch Integration Plan (1yr)</fullName>
+                <default>false</default>
+                <label>MCP110 Safety &amp; Compliance w/ Dispatch Integration Plan (1yr)</label>
+            </value>
+            <value>
+                <fullName>MCP110 Safety &amp; Compliance w/ Dispatch Integration Plan (3yr)</fullName>
+                <default>false</default>
+                <label>MCP110 Safety &amp; Compliance w/ Dispatch Integration Plan (3yr)</label>
+            </value>
+            <value>
+                <fullName>MCP110 Safety &amp; Compliance w/ Dispatch Integration Plan (5yr)</fullName>
+                <default>false</default>
+                <label>MCP110 Safety &amp; Compliance w/ Dispatch Integration Plan (5yr)</label>
+            </value>
+            <value>
+                <fullName>MCP50 EOBR Plan 1 Year, $23.95</fullName>
+                <default>false</default>
+                <label>MCP50 EOBR Plan 1 Year, $23.95</label>
+            </value>
+            <value>
+                <fullName>MCP50 EOBR Plan 2 Years, $22.95</fullName>
+                <default>false</default>
+                <label>MCP50 EOBR Plan 2 Years, $22.95</label>
+            </value>
+            <value>
+                <fullName>MCP50 EOBR Plan 3 Years, $21.95</fullName>
+                <default>false</default>
+                <label>MCP50 EOBR Plan 3 Years, $21.95</label>
+            </value>
+            <value>
+                <fullName>MCP50 EOBR Plan 5 Years, $19.95</fullName>
+                <default>false</default>
+                <label>MCP50 EOBR Plan 5 Years, $19.95</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>OEX Basic Plan</fullName>
+                <default>false</default>
+                <label>OEX Basic Plan</label>
+            </value>
+            <value>
+                <fullName>OEX Bronze Plan</fullName>
+                <default>false</default>
+                <label>OEX Bronze Plan</label>
+            </value>
+            <value>
+                <fullName>OEX Gold Plan</fullName>
+                <default>false</default>
+                <label>OEX Gold Plan</label>
+            </value>
+            <value>
+                <fullName>OEX Platinum Lite Plan</fullName>
+                <default>false</default>
+                <label>OEX Platinum Lite Plan</label>
+            </value>
+            <value>
+                <fullName>OEX Platinum Plan</fullName>
+                <default>false</default>
+                <label>OEX Platinum Plan</label>
+            </value>
+            <value>
+                <fullName>OEX Silver Plan</fullName>
+                <default>false</default>
+                <label>OEX Silver Plan</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Performance Monitoring &amp; Compliance Bundle with Macros</fullName>
+                <default>false</default>
+                <label>Performance Monitoring &amp; Compliance Bundle with Macros</label>
+            </value>
+            <value>
+                <fullName>Service Fleet Manager Plan</fullName>
+                <default>false</default>
+                <label>Service Fleet Manager Plan</label>
+            </value>
+            <value>
+                <fullName>Service Plans</fullName>
+                <default>false</default>
+                <label>Service Plans</label>
+            </value>
+            <value>
+                <fullName>Simplified Billing Plan</fullName>
+                <default>false</default>
+                <label>Simplified Billing Plan</label>
+            </value>
+            <value>
+                <fullName>Standard Terrestrial Plan 1 Year</fullName>
+                <default>false</default>
+                <label>Standard Terrestrial Plan 1 Year</label>
+            </value>
+            <value>
+                <fullName>Standard Terrestrial Plan 2 Years</fullName>
+                <default>false</default>
+                <label>Standard Terrestrial Plan 2 Years</label>
+            </value>
+            <value>
+                <fullName>Standard Terrestrial Plan 3 Years</fullName>
+                <default>false</default>
+                <label>Standard Terrestrial Plan 3 Years</label>
+            </value>
+            <value>
+                <fullName>Standard Terrestrial Plan 5 Years</fullName>
+                <default>false</default>
+                <label>Standard Terrestrial Plan 5 Years</label>
+            </value>
+            <value>
+                <fullName>Terrestrial Service Plan (MCP100T)</fullName>
+                <default>false</default>
+                <label>Terrestrial Service Plan (MCP100T)</label>
+            </value>
+            <value>
+                <fullName>Trailer Asset Plan 450</fullName>
+                <default>false</default>
+                <label>Trailer Asset Plan 450</label>
+            </value>
+            <value>
+                <fullName>Trailer Asset Plan Unlimited</fullName>
+                <default>false</default>
+                <label>Trailer Asset Plan Unlimited</label>
+            </value>
+            <value>
+                <fullName>UVP Bronze</fullName>
+                <default>false</default>
+                <label>UVP Bronze</label>
+            </value>
+            <value>
+                <fullName>UVP Gold</fullName>
+                <default>false</default>
+                <label>UVP Gold</label>
+            </value>
+            <value>
+                <fullName>UVP Silver</fullName>
+                <default>false</default>
+                <label>UVP Silver</label>
+            </value>
+            <value>
+                <fullName>XRS – Compliance – Service Plan</fullName>
+                <default>false</default>
+                <label>XRS – Compliance – Service Plan</label>
+            </value>
+            <value>
+                <fullName>XRS – EOBR – Service Plan</fullName>
+                <default>false</default>
+                <label>XRS – EOBR – Service Plan</label>
+            </value>
+            <value>
+                <fullName>XRS – Premium – Service Plan</fullName>
+                <default>false</default>
+                <label>XRS – Premium – Service Plan</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

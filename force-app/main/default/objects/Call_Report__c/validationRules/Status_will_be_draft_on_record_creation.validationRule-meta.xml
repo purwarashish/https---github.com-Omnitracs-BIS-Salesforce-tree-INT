@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_will_be_draft_on_record_creation</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISNEW() &amp;&amp; Text( Status__c) != &apos;Draft&apos; &amp;&amp;
+ $User.Id &lt;&gt; &apos;0053F0000067ELs&apos;
+&amp;&amp; $User.Id &lt;&gt; LEFT($Label.S2S_User_Id,15) /*ConnectionUserId*/</errorConditionFormula>
+    <errorMessage>New Record is only created in &apos;Draft&apos; status</errorMessage>
+</ValidationRule>

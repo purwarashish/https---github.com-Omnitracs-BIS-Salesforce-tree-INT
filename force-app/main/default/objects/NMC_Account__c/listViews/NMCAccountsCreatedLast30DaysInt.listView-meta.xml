@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NMCAccountsCreatedLast30DaysInt</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>NMC_Account_Type__c</columns>
+    <columns>NMC_System__c</columns>
+    <columns>NMC_Units__c</columns>
+    <columns>Customer_Interface__c</columns>
+    <columns>Inactive__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>LAST_N_DAYS:30</value>
+    </filters>
+    <filters>
+        <field>CREATEDBY_USER.ALIAS</field>
+        <operation>equals</operation>
+        <value>qinterfa</value>
+    </filters>
+    <label>NMC Accounts Created Last 30 Days (Int)</label>
+    <language>en_US</language>
+</ListView>

@@ -1,0 +1,40 @@
+<apex:page standardController="Account" extensions="ViewSelectedCases"  sidebar="true" showHeader="true">
+
+<apex:form > 
+ 
+     <apex:pageBlock mode="detail" title="Cases">
+     <apex:pageBlockButtons location="top">
+            <apex:commandLink value="New Case" StyleClass="btn" style="text-decoration:none" action="/setup/ui/recordtypeselect.jsp?ent=Case&retURL=%2F{!Account.Id}&save_new_url=%2F500%2Fe%3FretURL%3D%252F{!Account.Id}%26def_account_id%3D{!Account.ID}" target="_top"/>
+            <apex:commandLink StyleClass="btn" style="text-decoration:none" value="New From Template" action="/apex/CaseTemplateList?AccountId={!Account.Id}&ContactId=''&NMCAcct=''" target="_top"/>
+            <apex:commandLink StyleClass="btn" style="text-decoration:none" value="New NMC Request" target="_top" action="{!NewCase}"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection id="Cases" columns="1">
+            <apex:pageBlockTable value="{!CaseList}" var="c" style="rowHeader" id="pgblktable">
+                <apex:column headerValue="Case Number">
+                    <apex:outputLink value="/{!c.Id}" target="_top">{!c.CaseNumber} </apex:outputLink>
+                </apex:column>
+                <apex:column headerValue="Contact Name">
+                    <apex:outputLink value="/{!c.ContactId}" title="{!c.Contact.name}" target="_top">{!c.Contact.name}</apex:outputLink>
+                </apex:column>
+                <apex:column value="{!c.Subject}" />
+                <apex:column value="{!c.Priority}" />
+                <apex:column value="{!c.Status}" />
+                <apex:column value="{!c.OwnerId}" />
+            </apex:pageBlockTable>
+            <apex:pageBlockSectionItem id="pgblksctnitmlink">
+                <apex:panelGrid columns="1" cellspacing="4">
+                   <!--  <apex:commandLink value="Show 5 more" action="{!showMore}" rerender="pgblktable"/>-->
+                   <apex:outputLink value="/apex/CasesGotoList?id={!Account.Id}" Title="Go to list" target="_parent" rendered="{!showGotoList}" > Go to list</apex:outputLink>
+                   <!--<apex:outputLink value="{!getCaseList}" Title="Go To List" target="_parent" >Go To List</apex:outputLink>-->
+                   <!--<apex:commandLink value="Go To List" action="{!getCaseList}" Title="Go To List" target="_parent" ></apex:commandLink>-->
+                </apex:panelGrid>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:form>
+</apex:page>
+
+
+<!-- 
+/500/e?retURL=%2F500%2Fo&RecordType=01250000000DaMS&cas4=Wal-Mart Stores Inc.&cas4_lkid=0015000000LGK3x&cas14=NMC Account Request - Wal-Mart Stores Inc.&cas15=NMC Account Request Details (optional):&00N50000001Kkos=Not Submitted&00N50000001cXos=New NMC Account&00N50000001f8Aj=14 days&00N50000001f86e=Not a Default NMC Account&cancelURL=%2F0015000000LGK3x
+ -->

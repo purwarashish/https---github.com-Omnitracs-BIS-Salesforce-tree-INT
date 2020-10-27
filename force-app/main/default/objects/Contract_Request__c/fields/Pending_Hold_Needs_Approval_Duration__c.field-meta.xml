@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pending_Hold_Needs_Approval_Duration__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF (ISNULL(Contract_Received__c ), null, IF (ISNULL(Hold_Needs_Approval__c ),
+null,
+Hold_Needs_Approval__c - Contract_Received__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>If the Hold: Needs Approval field is blank, the duration will be blank.
+If the Hold: Needs Approval field is complete, the duration is calculated by the Hold: Needs Approval minus the Contract Received date.</inlineHelpText>
+    <label>Pending Hold: Needs Approval (Duration)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

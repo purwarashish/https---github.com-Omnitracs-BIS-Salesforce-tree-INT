@@ -1,0 +1,77 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "00550000001biZKAAY",
+      "createdByName": "Deployment User",
+      "createdDate": "2017-10-09T19:44:58.000Z",
+      "fileName": "skills/HOS.skill",
+      "fullName": "HOS",
+      "id": "0C5500000004DD7CAM",
+      "lastModifiedById": "00550000001d1yqAAA",
+      "lastModifiedByName": "Nicole Beaulieu",
+      "lastModifiedDate": "2017-10-18T21:53:13.000Z",
+      "type": "Skill"
+    },
+    {
+      "createdById": "00550000004fEIIAA2",
+      "createdByName": "Cody Worth",
+      "createdDate": "2017-02-23T19:33:56.000Z",
+      "fileName": "skills/Route_Planning_Optimization.skill",
+      "fullName": "Route_Planning_Optimization",
+      "id": "0C550000000KzUICA0",
+      "lastModifiedById": "005500000047nRgAAI",
+      "lastModifiedByName": "Thad Mims",
+      "lastModifiedDate": "2018-05-09T19:43:02.000Z",
+      "type": "Skill"
+    },
+    {
+      "createdById": "00550000001biZKAAY",
+      "createdByName": "Deployment User",
+      "createdDate": "2017-10-09T19:44:58.000Z",
+      "fileName": "skills/Hardware.skill",
+      "fullName": "Hardware",
+      "id": "0C5500000004DD8CAM",
+      "lastModifiedById": "00550000001biZKAAY",
+      "lastModifiedByName": "Deployment User",
+      "lastModifiedDate": "2017-10-09T19:44:58.000Z",
+      "type": "Skill"
+    },
+    {
+      "createdById": "00550000001biZKAAY",
+      "createdByName": "Deployment User",
+      "createdDate": "2017-10-09T19:44:58.000Z",
+      "fileName": "skills/Customer_Portal.skill",
+      "fullName": "Customer_Portal",
+      "id": "0C5500000004DD6CAM",
+      "lastModifiedById": "00550000001biZKAAY",
+      "lastModifiedByName": "Deployment User",
+      "lastModifiedDate": "2017-10-09T19:44:58.000Z",
+      "type": "Skill"
+    },
+    {
+      "createdById": "00550000004fEIIAA2",
+      "createdByName": "Cody Worth",
+      "createdDate": "2017-02-23T20:21:36.000Z",
+      "fileName": "skills/Support_Questions.skill",
+      "fullName": "Support_Questions",
+      "id": "0C550000000KzUNCA0",
+      "lastModifiedById": "00550000001biZKAAY",
+      "lastModifiedByName": "Deployment User",
+      "lastModifiedDate": "2017-10-09T19:44:58.000Z",
+      "type": "Skill"
+    },
+    {
+      "createdById": "00550000001biZKAAY",
+      "createdByName": "Deployment User",
+      "createdDate": "2017-10-09T19:44:58.000Z",
+      "fileName": "skills/Call_Center_Employee.skill",
+      "fullName": "Call_Center_Employee",
+      "id": "0C5500000004DD5CAM",
+      "lastModifiedById": "00550000001biZKAAY",
+      "lastModifiedByName": "Deployment User",
+      "lastModifiedDate": "2017-10-09T19:44:58.000Z",
+      "type": "Skill"
+    }
+  ]
+}

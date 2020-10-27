@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>isUsrProfilSalesSysAdminOrSalesDomManagr__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked if it belongs &quot;Sales - Sys Admin&quot; AND &quot;Sales - Domestic Sales Manager&quot; Profiles.</description>
+    <externalId>false</externalId>
+    <label>isUsrProfilSalesSysAdminOrSalesDomManagr</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

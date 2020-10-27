@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Send_Email_to_Contact_on_SAA_creation</fullName>
+        <ccEmails>legal.noreply@omnitracs.com</ccEmails>
+        <ccEmails>Channel.CSR.Team@omnitracs.com</ccEmails>
+        <ccEmails>nicoleb@omnitracs.com</ccEmails>
+        <description>Send Email to Contact on SAA creation</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Contract_Email_Templates/Price_Uplift_Omni_US</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Send_Email_False</fullName>
+        <field>Email_Sent__c</field>
+        <literalValue>0</literalValue>
+        <name>Send Email &gt; False</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_date_for_Email_Notification_sent</fullName>
+        <field>Email_Sent_Date__c</field>
+        <formula>NOW()</formula>
+        <name>Update date for Email Notification sent</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_status_on_SAA_creation</fullName>
+        <field>SAA_Status__c</field>
+        <literalValue>Notification Sent</literalValue>
+        <name>Update status on SAA creation</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>Email Bounce Back %3E set Send Email to false</fullName>
+        <actions>
+            <name>Send_Email_False</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>set Send Email to false if status is set to &apos;Email Bounce Back&apos;</description>
+        <formula>AND( ISPICKVAL(SAA_Status__c , &apos;Email Bounce Back&apos;),  Email_Sent__c = true,  NOT(ISBLANK(Email_Sent_Date__c)), ISPICKVAL(PRIORVALUE(SAA_Status__c),&apos;Notification Sent&apos;) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

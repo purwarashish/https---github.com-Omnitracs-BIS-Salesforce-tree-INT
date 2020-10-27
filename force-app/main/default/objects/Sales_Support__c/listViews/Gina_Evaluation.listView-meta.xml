@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gina_Evaluation</fullName>
+    <columns>NAME</columns>
+    <columns>SE_User__c</columns>
+    <columns>Status__c</columns>
+    <columns>Opportunity__c</columns>
+    <columns>Products__c</columns>
+    <columns>Request_Date1__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Sales_Support__c.Evals_Pilot</value>
+    </filters>
+    <filters>
+        <field>SE_User__c</field>
+        <operation>equals</operation>
+        <value>Gina Imirie</value>
+    </filters>
+    <filters>
+        <field>Products__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Cancelled</value>
+    </filters>
+    <label>Gina Evaluation</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>SSA_views_Gina</group>
+    </sharedTo>
+</ListView>

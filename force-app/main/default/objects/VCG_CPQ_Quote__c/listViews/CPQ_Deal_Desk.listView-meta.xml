@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CPQ_Deal_Desk</fullName>
+    <columns>NAME</columns>
+    <filterScope>Queue</filterScope>
+    <label>CPQ Deal Desk</label>
+    <language>en_US</language>
+    <queue>CPQ_DealDesk</queue>
+    <sharedTo>
+        <allInternalUsers/>
+    </sharedTo>
+</ListView>

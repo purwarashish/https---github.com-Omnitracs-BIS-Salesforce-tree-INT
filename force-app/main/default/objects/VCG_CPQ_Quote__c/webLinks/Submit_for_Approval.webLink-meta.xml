@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Submit_for_Approval</fullName>
+    <availability>online</availability>
+    <description>Submit for Approval</description>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Submit for Approval</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&apos;/soap/ajax/26.0/connection.js&apos;)}
+{!REQUIRESCRIPT(&apos;/soap/ajax/26.0/apex.js&apos;)}
+{!REQUIRESCRIPT(&apos;/js/functions.js&apos;)}
+var toggleVar = &apos;{!JSENCODE(VCG_CPQ_Quote__c.Account_Legal_Name__c)}&apos;;
+var status = &apos;{!VCG_CPQ_Quote__c.Status__c}&apos;;
+var quoteId = &apos;{!VCG_CPQ_Quote__c.Id}&apos;;
+var loggedInUserProfileName = &apos;{!$Profile.Name}&apos;;
+
+
+if((toggleVar == &apos;&apos;)||(toggleVar == null))
+{
+alert(&apos;You must enter the legal name in Account detail page before the quote can be submitted for approval.&apos;);
+window.location.reload();
+}
+else
+{
+var errorThrown = sforce.apex.execute(&apos;ApprovalProcessUtils&apos;,&apos;submitProcessApprovalRequest&apos;,{objId:quoteId});
+
+if (errorThrown == &apos;true&apos;){
+alert(&apos;Quote could not be submitted for approval&apos;);
+}
+else{
+window.location.reload();
+}
+}</url>
+</WebLink>

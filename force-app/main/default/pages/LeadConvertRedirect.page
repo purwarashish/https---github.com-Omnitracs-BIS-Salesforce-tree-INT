@@ -1,0 +1,6 @@
+<apex:page standardController="lead" extensions="LeadConvertRedirectExtension" action="{!urlRedirect}">
+<apex:form >
+<apex:inputHidden value="{!Lead.RecordTypeId}"/>
+<apex:inputHidden value="{!Lead.Identify_Converted_Opp__c}"/>
+</apex:form>
+</apex:page>

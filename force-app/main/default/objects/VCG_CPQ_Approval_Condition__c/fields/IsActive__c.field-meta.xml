@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsActive__c</fullName>
+    <defaultValue>false</defaultValue>
+    <externalId>false</externalId>
+    <inlineHelpText>Mark this + Is Deployed for fully active rules. If this is set but Is Deployed is not, then this rule will be applied only to users listed in VCG_CPQ_Options.Run_Un_Deployed_Components custom setting. If Is Active is false, this rule won&apos;t run for anyone.</inlineHelpText>
+    <label>Is Active</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

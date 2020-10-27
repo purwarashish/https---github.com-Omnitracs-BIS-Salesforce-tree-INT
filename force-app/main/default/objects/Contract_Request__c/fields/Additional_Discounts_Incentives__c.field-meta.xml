@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Additional_Discounts_Incentives__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This filed is for any discounts or incentives not addressed in other sections.</inlineHelpText>
+    <label>Discounts &amp; Additional Incentives Detail</label>
+    <length>32000</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

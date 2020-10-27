@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPageWebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <availability>online</availability>
+    <description>Lookup Accounts using Advanced Search</description>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Account Lookup</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/search/SearchResults?searchType=2&amp;sen=001&amp;str=&amp;search=Search</url>
+</CustomPageWebLink>

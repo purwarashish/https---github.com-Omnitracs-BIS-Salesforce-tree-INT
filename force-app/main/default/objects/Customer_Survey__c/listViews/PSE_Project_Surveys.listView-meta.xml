@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PSE_Project_Surveys</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Initiated_By__c</columns>
+    <columns>Project_Manager__c</columns>
+    <columns>Response_Value_Average__c</columns>
+    <columns>Subject_User__c</columns>
+    <columns>Completion_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Survey_Type__c</field>
+        <operation>equals</operation>
+        <value>PSEProjectSurvey</value>
+    </filters>
+    <label>PSE Project Surveys</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>PSA_Project_Creators</group>
+        <group>Professional_Services_Sharing_Group</group>
+    </sharedTo>
+</ListView>

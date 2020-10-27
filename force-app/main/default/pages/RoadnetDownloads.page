@@ -1,0 +1,162 @@
+<apex:page showHeader="true"  sidebar="false" title="Roadnet Downloads">
+    <style>
+        #main{
+            height:auto; 
+            width:800px; 
+            margin: 0 auto;
+        }
+        
+        table tr td, tr th{
+            border: 1px solid black;
+        }
+        
+        table tr th{
+            
+            font-weight: bold;
+        }
+        
+        .header{
+            color: #006A51;
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;        
+        }
+        
+        .links{
+            margin-bottom: 10px;
+        }
+        
+        .dlink{
+            color: #8AB849; 
+            text-decoration:none
+        }
+        
+        table{
+            border-collapse: collapse;
+            width: 100%;
+        }
+    </style>
+    <div id="main">
+        <div class="header">
+            Roadnet Transportation Suite Product Download
+        </div>
+        
+        <div>
+            Clicking on a link below will allow you to download the RTS application upgrade. Before you attempt to upgrade the application you should review the information before and ensure your Corporate IT department has approved the upgrade as this may impact your Host interface, custom reports, mobile devices etc. Additionally, ensure your infrastructure meets the carefully review the RTS Installation and Upgrade Instructions which are both available below.
+        </div>
+        
+        <br/>
+        
+        <div class="links" >
+            <div style="float:left; font-weight:bold">General Release - &nbsp;</div> <a href="https://support.roadnet.com/pages/myaccount/productupdates/download.aspx?patchId=2097&categoryId=5" class="dlink" target="_blank"> Roadnet Transportation Suite v3.6.7</a>
+        </div>
+        
+        <div class="links" >
+            <div style="float:left; font-weight:bold">Limited Release - &nbsp;</div> <a href="https://support.roadnet.com/pages/myaccount/productupdates/download.aspx?patchId=2097&categoryId=5" class="dlink" target="_blank"> Roadnet Transportation Suite v3.6.8</a>
+        </div>
+                
+        <!-- DOCUMENTATION -->        
+        <div class="header">
+            Documentation:
+        </div>
+        
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>RTS Installation Instructions</td>
+                <td>Documents the installation and upgrade process</td>
+            </tr>
+            <tr>
+                <td>Operations Guide</td>
+                <td>Comprehensive reference guide for the Roadnet Transportation Suite</td>
+            </tr>
+            <tr>
+                <td>Implementation/Preparing for Guide</td>
+                <td>Everything you need to go to get started with RTS including file layouts and data flows</td>
+            </tr>
+            <tr>
+                <td>What’s New Guide</td>
+                <td>Details the new features added with this quarterly software release</td>
+            </tr>
+            <tr>
+                <td>Enterprise Guide</td>
+                <td>Best practices and systems infrastructure guide for Enterprise customers</td>
+            </tr>
+        </table>
+        
+        <!-- System Specification -->  
+        <div class="header">
+            System Specification: 
+        </div>
+        
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Enterprise System Specs</td>
+                <td>Hardware and Software Specifications for RTS Enterprise Edition</td>
+            </tr>
+            <tr>
+                <td>Third Party System Specs</td>
+                <td>OS, Database, and other third party software requirements for RTS</td>
+            </tr>
+            <tr>
+                <td>Professional Edition Specs</td>
+                <td>Hardware and Software Specifications for RTS Professional Edition</td>
+            </tr>            
+        </table>
+        
+        <!--  Product Lifecycle and Support Documentation:  -->  
+        <div class="header">
+            Product Lifecycle and Support Documentation: 
+        </div>
+        
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Product Lifecycle</td>
+                <td>Defines currently supported RTS and map versions</td>
+            </tr>
+            <tr>
+                <td>Welcome to Support Guide</td>
+                <td>Provides overview of support offerings, contact methods, and recommendations</td>
+            </tr>          
+        </table>
+        
+        <!--  Roadnet Review Newsletter  -->  
+        <div class="header">
+            Roadnet Review Newsletters: 
+        </div>
+        <div style="margin-bottom: 10px;">
+            <span>Below are the available editions of the Roadnet® Review Newsletter. If you are interested in receiving the monthly eNewsletter in your inbox, contact </span> 
+            <a href="#" class="dlink">support@roadnet.com </a>
+            <span> to subscribe.</span>
+        </div>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>November 2014</td>
+                <td>Roadnet Review November 2014</td>
+            </tr>
+            <tr>
+                <td>October 2014</td>
+                <td>Roadnet Review October 2014</td>
+            </tr> 
+            <tr>
+                <td>September 2014</td>
+                <td>Roadnet Review September 2014</td>
+            </tr> 
+        </table>
+    </div>
+</apex:page>

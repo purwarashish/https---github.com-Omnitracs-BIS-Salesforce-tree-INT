@@ -1,0 +1,3 @@
+<apex:page standardController="Request_Form__c">
+	<SpringCMEos:SpringCM_EOSGrid objectType="Request_Form__c" objectId="{!Id}" />
+</apex:page>

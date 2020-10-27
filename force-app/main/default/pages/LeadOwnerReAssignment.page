@@ -1,0 +1,311 @@
+<apex:page id="page" standardController="lead" extensions="LeadOwnerReAssignmentController"
+        showHeader="false" sidebar="false">
+    <apex:includeScript value="/support/console/20.0/integration.js"/>
+    <apex:includeScript value="{!URLFOR($Resource.JQueryTable, 'DataTables-1.7.6/media/js/jquery.js')}"/>
+    <style>
+        
+   .requiredBlock{
+        background-color: #CC0000;
+        display: inline-block;
+        height: 17px;
+        margin-right: 2px;
+        padding-left: 0;
+        padding-top: 4px;
+        position: relative;
+        width: 4px;
+    }
+    .olListStyle li
+    {
+        margin-bottom: 6px;
+        text-align:justify;
+    }
+    .bPageBlock .pbBody
+    {
+        margin:0 !important;
+       /* padding-top:15px !important; */
+        font-size:0.9em !important;
+        padding-left: 1 !important;
+        padding-right: 1 !important;
+    }
+    .b
+    {
+     font-weight:bold;
+    }
+    .sbtButton
+    {
+     
+     padding:3px 10px !important;
+     font-size:12px !important;
+     background: none repeat scroll 0 0 #1166AA !important;
+     border: 1px solid #1166AA !important;
+     color:#fff !important;
+    }
+    .sbtButton:hover
+    {
+      background-color:#ccc;
+      opacity:0.8;  
+    }
+    .olList
+    {
+     margin:0;
+     list-style-type:none;
+     padding:0 !important;
+    }
+    .olList li
+    {
+    margin-left: 1px !important;
+    margin-right: 2px !important;
+    
+    
+    }
+   .dataCol 
+   {
+    padding-top:5px !important;
+   }
+   .optionTable td
+   {
+    padding:8px 0 !important;
+    padding-bottom : 3px !important ;
+    border-bottom:none !important;
+    
+   }
+   
+   
+   .bPageBlock .pbBody 
+   {
+       font-size: 0.9em;
+   }
+   .olListReason li {
+    float: none;
+    margin-left: -25px;
+    padding: 0 !important;
+    }
+    .mgn01
+    {
+    margin: 12px 0 17px;
+    }
+    .mgn02
+    {
+    margin:0px 0 17px;
+    }
+    .mgn03
+    {
+    margin:0px 0 17px
+    }
+    @media \0screen 
+    {
+    .mgn01{margin: 11px 0 17px;}
+    .mgn02{margin:0px 0 17px;}
+    .mgn03{margin:0px 0 18px;}
+    .optionTable td{padding:7px 0 8px 0!important;}
+    }
+    </style>
+    <script>
+        var j$=jQuery.noConflict();
+        j$(document).ready(function() 
+        {
+           //Commented by Anand  
+           /* var statusVal='{!currentLeadStatus}';
+            j$('[id*=describe]').html(
+                    "<div>" +
+                    " Reason for Transfer examples;" +
+                    " <ul class='olListReason'> " +
+                        "<li> Could not reach lead</li>" +
+                        "<li> Wants to talk to Sales asap</li>" +
+                        "<li>No time to work lead</li> " +
+                        "<li>Not ready to purchase</li> " +
+                        "<li>Bad or fake information (phone , email, etc..)</li>"+
+                    "</ul>"+
+                    "</div>");
+            j$('[id*=radStatus]').html(
+                    "<ol class='olList'> "+
+                        "<li class='mgn01'> Not valid ,wrong number, wrong email</li>" +
+                        "<li class='mgn02'>Right target market , not currently purchasing</li>"+
+                        "<li class='mgn03'>Sales working</li>"+
+                        "<li class='mgn03'>No contact yet</li>"+
+                        "<li class='mgn03'>Right target market , has shown interest</li>"+
+                        "<li>Wrong target market , not worth pursuing</li>"+
+                    "</ol>");
+            j$('[id*=radioStatus]').each(function(){
+            
+            if(j$(this).val()== statusVal)
+            {
+                j$(this).attr('checked','checked');
+            }
+            });*/
+           
+        });
+        function validateForm()
+        {
+            var myOption = -1;
+            j$('[id*=radioStatus]').each(function()
+            {
+            if(j$(this).is(':checked'))
+                myOption=myOption+1;        
+            
+            });
+        //Commented by Anand    
+        /*if (myOption == -1)
+        {
+            document.getElementById("page:form:pgBlk:label").innerHTML="Please select a lead status . ";
+            return false ;
+        }*/
+        if(document.getElementById("page:form:pgBlk:pgBlkSec:selectlst").value == 'none')
+        {
+            document.getElementById("page:form:pgBlk:label").innerHTML="Please select new owner . ";    
+            return false;
+        }
+        if(document.getElementById("page:form:pgBlk:pgBlkSec:description").value == '')
+        {
+            //Commented by Anand
+            //document.getElementById("page:form:pgBlk:label").innerHTML="Please enter notes describing why you are re-assigning the lead. Use the examples displayed to guide your entry.";
+            document.getElementById("page:form:pgBlk:label").innerHTML="Please enter notes describing why you are re-assigning the lead.";
+            return false;
+        }
+        if(document.getElementById("page:form:pgBlk:pgBlkSec:selectlst").value == '{!currentOwnerId}')
+        {
+            document.getElementById("page:form:pgBlk:label").innerHTML= "Please select new owner, you cannot leave yourself as owner for this process." ;
+            return false;
+        }
+        else
+        {  
+            assignUserOrQueue();
+        }
+    }
+    </script>
+    <apex:outputPanel id="hidden" style="display:none;">
+        <script>
+            
+            function closeWindow() 
+            {
+                if({!isValid})
+                {
+                    window.opener.parent.location.replace('/00Q/o'); 
+                    window.close();             
+                }
+            }
+        </script>
+    </apex:outputPanel>
+    <apex:form id="form" style="margin:15px; width: 870px;margin:auto;">
+     <!-- Commented By Anand -->
+    <!--
+    <div style="padding-left:20px; text-align:center" >
+        <h1 style="font-size:15px;">Re-Assign A Lead</h1>
+    </div>
+    <div style ="background-color: #D6D6D6; border: 2px solid #999999; margin-bottom: 15px; padding: 10px; font-size: 12px;">                    
+           <b> Lead Re-assignment Instructions: </b>  
+        <ol class="olListStyle"> 
+            <li>Select the new owner from the drop down menu. </li>
+            <li>Add notes to describe why you are transferring the lead.
+                These notes can be viewed by anyone who has access to the lead record.
+                Please do not include specific names or personal information. 
+                Use the examples displayed in step 2 to guide your entry.
+            </li>
+            <li>
+                Select a new lead status or leave the current status.
+            </li>
+            <li>
+                When finished click the Submit Re-assignment button. An email will be sent to the new owner you selected. 
+            </li>
+        </ol>
+                
+        If you choose to re-assign from one <u>user to another user</u>
+        <ul>
+        <li>
+            All open activities will be re-assigned to the new owner.
+        </li>
+        <li>
+            All closed activities will be viewable to the new owner. 
+        </li>
+        </ul>
+        If you re-assign from a <u>lead queue to a user</u> or from a <u>user to lead queue</u>
+        <ul>
+        <li>
+            Both open and closed activities are not re-assigned but are viewable to the new owner.  
+        </li>
+        </ul>
+    </div>
+    -->
+    
+    
+     <div style="padding-left:20px; text-align:center" >
+        <h1 style="font-size:15px;">Lead Reassignment</h1>
+    </div>
+    <div style ="background-color: #D6D6D6; border: 2px solid #999999; margin-bottom: 15px; padding: 10px; font-size: 12px;">                    
+    <b>Use this screen ONLY if you are reassigning a lead, not rejecting a lead. </b>  
+    <p><b>To reject a lead (send it back to Omnitracs):</b> <br/>
+    Close this screen.  On the lead record, add a Reject Reason and click the Save button.   
+    </p>
+    <p>
+    <b>To reassign a lead:</b> <br/>
+    Step 1 – Select a new owner from the New Owner drop down box.<br/>
+    Step 2 – In the “Reason for Transfer” dialog box add a short description of why you are transferring the lead. <br/>
+    Step 3 – Click the ‘Submit Reassignment” button. 
+    
+    </p>
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    <apex:pageBlock id="pgBlk" >
+        <center>
+            <apex:outputLabel id="label" style="color:rgb(204,0,0);font-weight: bold;"></apex:outputLabel>
+        </center>
+        
+        <apex:pageBlockSection id="pgBlkSec" columns="3" >
+            <apex:outputLabel styleClass="b" value="Step 1: New Owner"/>
+            <apex:outputpanel >
+                <div class = "requiredBlock">|</div>
+                <apex:selectList id="selectlst" value="{!newOwner}" multiselect="false" size="1"  required="true">
+                    <apex:selectOptions value="{!items}"/>
+                </apex:selectList>
+            </apex:outputpanel>
+            <div id = "dropdown" style ="display:inline;"></div>
+            
+            <apex:outputLabel styleClass="b" value="Step 2: Reason for Transfer"/>
+            <apex:outputpanel >
+                <div class = "requiredBlock" style = "height: 58px !important;padding-top: 38px !important;"> </div>
+                <apex:inputTextarea id="description" style="vertical-align:top; height:90px; width: 192px;" value="{!description}" required="true" rows="2" cols="40"/>
+            </apex:outputpanel>
+            <div id = "describe" style ="display:inline;">Add notes relevant to the person or queue you are reassigning this lead to. </div>
+            <!-- Commented by Anand -->
+            <!-- <apex:outputLabel styleClass="b" value="Step 3: Lead Status"/>
+            <apex:outputpanel >
+                <apex:selectRadio styleClass="optionTable"  id="radioStatus" 
+                        value="{!leadStatus}" layout="pageDirection" required="true">
+                            <apex:selectoptions value="{!types}" ></apex:selectoptions>
+                </apex:selectRadio>
+            </apex:outputpanel>
+            
+            <div id = "radStatus" style ="display:inline;"></div> -->
+        </apex:pageBlockSection>
+<!--         <div style="text-align:center; margin:12px 0"> -->
+            
+<!--         </div>    -->
+        <apex:actionStatus id="loadingStatusAdd">
+            <apex:facet name="start">
+                <c:loadingStatus id="loadingStatusAddComponent" BackColor="#efefef" 
+                    borderColor="#336699" borderSize="3" height="50px" 
+                    width="150px" ImageUrl="/img/loading.gif" 
+                    Message="Processing..." BluryBackGround_DivId="bbgd1" 
+                    SalesforceStatusBox_DivId="ssbd1" 
+                    messageStyle="color:darkred;font-size:11pt;font-weight:bold;"/>
+            </apex:facet>
+        </apex:actionStatus>
+        <apex:pageBlockButtons location="bottom">
+        <apex:commandButton styleClass="sbtButton" value="Submit Reassignment" id="theButton" 
+                  action="Javascript: void(0)" onclick=" validateForm(); return false;" 
+                 />
+        <apex:actionFunction name="assignUserOrQueue" status="loadingStatusAdd" action="{!AssignUserOrQueue}"  oncomplete="closeWindow();"
+                  reRender="hidden"/>      
+         
+        </apex:pageBlockButtons>
+        
+        
+    </apex:pageBlock>
+</apex:form> 
+</apex:page>

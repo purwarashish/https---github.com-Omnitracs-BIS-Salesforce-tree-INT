@@ -1,0 +1,179 @@
+<apex:component Controller="ContractStructureController" allowDML="true" >
+    <apex:attribute name="currentIdd" description="This is the Account Id for displaying Acccount Hierarchy" type="String" required="true" assignTo="{!currentId}"/>
+<style>
+    div.treeNode{
+        top
+    }
+    
+    td{
+        border-bottom: 1px solid;
+    }
+    
+    #tb{
+        border-collapse: collapse;
+        border-spacing: 0px 0px;
+        table-layout:fixed; 
+        word-wrap:break-word; 
+        border-bottom: 1px solid;
+    }
+</style>
+
+<apex:pageBlock title="Contract Tree View">
+    <table width="100%">
+        <tr height="23">            
+            <th width="11.1%"><h1> Contract Number </h1></th>
+            <th width="11.4%"><h1> Account </h1></th>
+            <th width="11.4%"><h1> Agreement Type </h1></th>
+            <th width="11.4%"><h1> Contract Title</h1></th>
+            <th width="11.4%"><h1> Start Date</h1></th>
+            <th width="11.2%"><h1> End Date</h1></th>
+            <th width="11.4%"><h1> Status</h1></th>
+        </tr>
+    </table>
+
+    <div class="treeNode">
+        <apex:repeat value="{!ObjectStructure}" var="pos" >
+            <table id="tb" width="100%">
+                <tr>
+                    <td>
+                        <apex:repeat value="{!pos.levelFlag}" var="flag" first="0">
+                        
+                            <apex:image url="/img/tree/empty.gif" height="16" width="20" rendered="{!IF(flag,false,true)}"/>
+                            <apex:image url="/img/tree/chain.gif" height="16" width="20" rendered="{!IF(flag,true,false)}"/>
+                        
+                        </apex:repeat>
+                            
+                             <apex:outputText rendered="{!IF(pos.nodeType=='start',true,false)}">
+                                <apex:image id="tree_start" url="/img/tree/minusStart.gif" height="16" width="20" title="Click to expand/collapse nested items." onClick="TreeNodeElement.prototype.toggle(this,'{!pos.nodeId}');changeImage('{!$Component.tree_start}', 1)"/>
+                            </apex:outputText>
+                            
+                            <apex:outputText rendered="{!IF(OR(pos.nodeType=='parent',pos.nodeType=='parent_end'),true,false)}">
+                                <apex:image id="Tree_parent" url="/img/tree/minus.gif" rendered="{!IF(pos.nodeType=='parent',true,false)}" height="16" width="20" title="Click to expand/collapse nested items." onClick="TreeNodeElement.prototype.toggle(this,'{!pos.nodeId}');changeImage('{!$Component.Tree_parent}', 2)"/>
+                                <apex:image id="Tree_parent_end" url="/img/tree/minusEnd.gif" rendered="{!IF(pos.nodeType=='parent_end',true,false)}" height="16" width="20" title="Click to expand/collapse nested items." onClick="TreeNodeElement.prototype.toggle(this,'{!pos.nodeId}');changeImage('{!$Component.Tree_parent_end}', 3)"/>               
+                            </apex:outputText>
+                            
+                            <apex:outputText rendered="{!IF(OR(pos.nodeType=='child',pos.nodeType=='child_end'),true,false)}">
+                                <apex:image id="Tree_child" url="/img/tree/node.gif" rendered="{!IF(pos.nodeType=='child',true,false)}" height="16" width="20" title="Click to expand/collapse nested items." onClick="TreeNodeElement.prototype.toggle(this,'{!pos.nodeId}')"/>
+                                <apex:image id="Tree_child_current" url="/img/tree/nodeEnd.gif" rendered="{!IF(pos.nodeType=='child_end',true,false)}" height="16" width="20" title="Click to expand/collapse nested items." onClick="TreeNodeElement.prototype.toggle(this,'{!pos.nodeId}')"/>
+                            </apex:outputText>
+                            
+                            <apex:outputText rendered="{!IF(pos.nodeType=='end',true,false)}">
+                                <apex:image id="Tree_end" url="/img/tree/nodeEnd.gif" height="16" width="20"/>
+                            </apex:outputText>
+                            <apex:outputLink onclick="javascript:CloseAndRefresh('{!pos.contract.Id}')" target="_top">{!pos.contract.ContractNumber}</apex:outputLink>
+                    </td>
+                    
+                    <span height="16" v="top">         
+                        <td>                            
+                            <apex:outputLink onclick="javascript:CloseAndRefresh('{!pos.contract.Account.Id}')" target="_top">{!pos.contract.Account.Name}</apex:outputLink>
+                        </td>
+                        
+                        <td>
+                            <!--<apex:outputLabel >-->
+                            <!--    <apex:outputText value="{!pos.contract.RecordType.Name}" rendered="{!IF(pos.contract.RecordType.Name!= null, true, false)}"/>-->
+                            <!--</apex:outputLabel>-->
+                            <apex:outputLabel >
+                                <apex:outputText value="{!pos.contract.Agreement_Type__c}" rendered="{!IF(pos.contract.Agreement_Type__c!= null, true, false)}"/>
+                            </apex:outputLabel>
+                        </td>
+                        
+                        <td>
+                            <apex:outputLabel >
+                                <apex:outputText value="{!pos.contract.Contract_Title__c}" rendered="{!IF(pos.contract.Contract_Title__c!= '', true, false)}"/>
+                            </apex:outputLabel>
+                        </td>
+                        
+                        <td>
+                            <apex:outputLabel >
+                                <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                                    <apex:param value="{!pos.contract.StartDate}"/>
+                                </apex:outputText>
+                            </apex:outputLabel>
+                         </td>
+                         
+                         <td>
+                            <apex:outputLabel >
+                                <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                                    <apex:param value="{!pos.contract.EndDate}"/>
+                                </apex:outputText>
+                            </apex:outputLabel>
+                         </td>
+                         
+                         <td>
+                            <apex:outputLabel >
+                                <apex:outputText value="{!pos.contract.Status}" rendered="{!IF(pos.contract.Status!= '', true, false)}"/>
+                            </apex:outputLabel>
+                         </td>
+                         <!---->
+                        <!-- <td>-->
+                        <!--    <apex:outputLabel >-->
+                        <!--        <apex:outputText value="{!pos.contract.ContractTerm}"/>-->
+                        <!--    </apex:outputLabel>-->
+                        <!--</td>-->
+                        
+                    </span>
+                </tr>
+            </table>
+        
+          <div> </div>
+                <script>
+                    document.write('<div id={!pos.nodeId}>');
+                    
+                </script>
+                
+                    <apex:outputText rendered="{!IF(OR(pos.nodeType=='child_end',pos.nodeType=='child'),false,true)}"></apex:outputText>
+                    <apex:outputText rendered="{!IF(OR(pos.nodeType=='child_end',pos.nodeType=='child'),true,false)}">
+                        <div id='{!pos.nodeId}'></div>
+                    </apex:outputText>
+            
+                <apex:repeat value="{!pos.closeFlag}" var="close">
+                    
+                </apex:repeat>      
+    </apex:repeat>        
+    <br/><br/><br/>
+    </div>
+        
+    <center>
+    <apex:commandButton onclick="window.top.close()" value="Close" style="margin-top:8px;"/>﻿
+    </center>
+    
+        <script type="text/javascript">
+String.prototype.endsWith = function(str)
+
+{
+return (this.match(str+"$")==str)
+}
+
+function changeImage(s,i)
+{
+     imageURL = document.getElementById(s).src;
+     if (i == 1) {
+         if (imageURL.endsWith("/img/tree/minusStart.gif"))
+         imageURL = "/img/tree/plusStart.gif";
+         else if (imageURL.endsWith("/img/tree/plusStart.gif"))
+         imageURL = "/img/tree/minusStart.gif";
+     } else if (i == 2) {
+         if (imageURL.endsWith("/img/tree/minus.gif"))
+         imageURL = "/img/tree/plus.gif";
+         else if (imageURL.endsWith("/img/tree/plus.gif"))
+         imageURL = "/img/tree/minus.gif";
+     } else if (i == 3) {
+         if (imageURL.endsWith("/img/tree/minusEnd.gif"))
+         imageURL = "/img/tree/plusEnd.gif";
+         else if (imageURL.endsWith("/img/tree/plusEnd.gif"))
+         imageURL = "/img/tree/minusEnd.gif";
+     } else {
+        return null;
+     }
+     document.getElementById(s).src=imageURL;
+}
+function CloseAndRefresh(x)
+{
+    window.opener.location.href="/"+x;
+    window.top.close();
+    
+}
+</script>
+
+    </apex:pageBlock>
+</apex:component>

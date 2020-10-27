@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPageWebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <availability>online</availability>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Pricing Guide</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>https://omnitracs.sharepoint.com/teams/Sales/_layouts/15/WopiFrame.aspx?sourcedoc=%7B553E3E6E-B6B6-4879-B673-17AC3B6ED94F%7D&amp;file=Omnitracs%20Domestic%20Price%20Guide.xlsx&amp;action=default&amp;IsList=1&amp;ListId=%7BAE71077B-554E-4EA9-8C8D-035125664E6E%7D&amp;ListItemId=6787</url>
+</CustomPageWebLink>

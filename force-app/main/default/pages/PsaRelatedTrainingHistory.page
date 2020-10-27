@@ -1,0 +1,174 @@
+<apex:page StandardController="Contact" id="pageId" Extensions="PsaRelatedTrainingHistoryController" showHeader="false" sidebar="false">
+    <div >  
+        <head>
+            <apex:includeScript value="{!URLFOR($Resource.PSAEnhancement,'PSAStaticResource/Js/jquery-1.12.1.min.js')}"/> 
+            <apex:includeScript value="{!URLFOR($Resource.PSAEnhancement,'PSAStaticResource/DataTables-1.10.11/media/js/jquery.dataTables.min.js')}"/>
+            <apex:stylesheet value="{!URLFOR($Resource.PSAEnhancement,'PSAStaticResource/DataTables-1.10.11/media/css/jquery.dataTables.min.css')}"/>                                          
+             <style type="text/css"> 
+                .action
+                {    
+                    text-decoration: none;
+                    font-weight: normal;
+                }
+                .header
+                {
+                    border-bottom: 1px solid #e0e3e5;                  
+                    border-width: 0 0 1px 1px;
+                    border-color: #e0e3e5;
+                    color: #000;
+                    font-size: .9em;
+                    font-weight: bold;
+                    padding: 5px 2px 4px 5px;
+                    border-top: 1px solid #e0e3e5;
+                    border-left: 0.1px solid #e0e3e5;
+                    border-right: 0px solid #e0e3e5;
+                }
+                .header1
+                {
+                   border-right: 0.1px solid #e0e3e5;
+                }
+                .form
+                {
+                    background-color: #f8f8f8;
+                    border-bottom: 1px solid #eaeaea;
+                    border-left: 1px solid #eaeaea;
+                    border-right: 1px solid #eaeaea;                    
+                 }
+                 .body
+                 {                   
+                    margin-top: 6px;
+                    margin-right: 6px;
+                    margin-bottom: 6px;
+                    margin-left: 6px;
+                 }
+                 .row
+                 {
+                  padding: 4px 2px 4px 5px;                                                          
+                 }
+                 .body1                 
+                 {                        
+                      border-bottom: 1px solid #ddd;
+                      border-left: 1px solid #ddd;
+                      border-right:1px solid #ddd;
+                  }
+                  .column
+                  {
+                    border-left: 1px solid #ddd;
+                      
+                  }
+                  .column1
+                  {
+                     border-right:1px solid #ddd;
+                  }
+                  .body_panel
+                  {                   
+                    overflow-y:scroll;
+                 }                
+            </style>                                   
+            <script>
+                j$ = jQuery.noConflict();                                
+                j$(document).ready( function () {                      
+                j$('[id$="contacttable"]').DataTable({                                         
+                    paging:false, 
+                    info:false,
+                    scrollY:"80px",                   
+                    scrollCollapse: true,                        
+                    "columnDefs": [ {                                        
+                     "searchable": false,
+                     "orderable": false,
+                     "targets": 0                     
+                    } ],                                                                    
+                }); 
+                   j$('[id$="actionId"]').removeClass(" sorting_asc"); 
+                   j$('[id$="actionId"]').removeClass("sorting_1");  
+                                          
+            });                    
+              function reloadParentpage(Id)
+              {        
+                   window.top.location='https:/'+Id;
+              } 
+              function navigatetoNewTrainingHistory()
+              {    
+                  window.top.location='https:/aAA/e?retURL=%2FaAA%2Fo';      
+              }
+              function navigatetoEditpage(id)
+              {
+                   
+                 window.top.location='https:/'+id+'/e?retURL=%2F'+id;
+              }
+              function navigateToClassDetailPage(name) 
+              {
+                 window.top.location='https:/'+name;
+              }                        
+              function ConfirmDelete(Id)
+              {
+                var x = confirm("Are you sure you want to delete?");
+                if(x)
+                {   
+                     deletefuc(Id);
+                     return true;
+                }
+                 return false;   
+              }                            
+            </script>  
+        </head>
+        <apex:form >           
+                <apex:pageBlock id="pageblockId" title="Training Histories">                
+                    <apex:pageBlockButtons location="top"> 
+                        <!-- <input value="New Training History" class="btn" name="mm" title="New Training History" type="button" onclick="navigatetoNewTrainingHistory()"/>-->
+                        <!-- <apex:commandLink target="_blank" action="{!trainingHistoryHelp}"  styleClass="HelpLink"  style="color:#015ba7;margin-right:5%;Position:relative;left:460px;" id="Help">
+                           <apex:outputText title="Training Histories Help(New Window)" styleClass="HelpLinkText"   value="Training Histories Help"/>
+                           <!--<apex:image url="{!$Resource.help_image}"/>         
+                      </apex:commandLink> -->                                     
+                    </apex:pageBlockButtons>    
+                <div>    
+                <apex:messages id="myMsg" layout="table"/>
+                    <apex:outputPanel rendered="{!headrDisplay}">   
+                        <table id="contacttable" class="display body">       
+                           <thead>
+                               <tr class="header1">
+                                   <th id="actionId" class="header">Action</th>
+                                   <th class="header">Class</th>                 
+                                   <th class="header">Course Type</th>
+                                   <th class="header">Trainer</th>
+                                   <th class="header">Registration Start Date</th> 
+                                   <th class="header header1">Completion Date</th>                                                                             
+                               </tr>               
+                            </thead> 
+                            <div>                                             
+                            <tbody>          
+                                <apex:repeat value="{!lstTrainingHistoryWrapper}" var="HistoryRecords">
+                                    <tr class="row body1" id="rowId" onmousemove="this.style.backgroundColor='#e3f3ff'" onmouseout="this.style.backgroundColor =''">                                    
+                                        <td class="column">
+                                            <a href="# " onClick="navigatetoEditpage('{!HistoryRecords.Idcode}')" class="action"><span style="color:#015ba7;text-decoration:none;">Edit</span></a> &nbsp;<span style="color:#A9A9A9;">|</span>&nbsp;                           
+                                            <a href="# " onClick="ConfirmDelete('{!HistoryRecords.Idcode}');" class="action"><span style="color:#015ba7;text-decoration:none;"> Del </span></a>                   
+                                        </td>                        
+                                        <td>                          
+                                             <apex:outputLink onclick="navigateToClassDetailPage('{!HistoryRecords.classId}')">{!HistoryRecords.className}</apex:outputLink>
+                                        </td>                         
+                                         <td>
+                                           <apex:outputtext value="{!HistoryRecords.courseType}"/>
+                                        </td>                        
+                                        <td>
+                                            <apex:outputtext value="{!HistoryRecords.trainer}"/>                        
+                                        </td>                                    
+                                        <td>
+                                           <apex:outputtext value="{!HistoryRecords.registration}"/>
+                                        </td>                                    
+                                        <td class="column1">
+                                            <apex:outputtext value="{!HistoryRecords.completion}"/>
+                                        </td>                           
+                                    </tr>
+                                </apex:repeat>              
+                            </tbody>                            
+                            </div>          
+                        </table> 
+                    </apex:outputPanel> 
+                </div>            
+            </apex:pageBlock>       
+            <apex:actionFunction name="deletefuc" action="{!deleteRecord}" oncomplete="reloadParentpage('{!Contact.id}')">   
+                <apex:param name="TrainingHistoryId"  value=""/>
+            </apex:actionFunction>               
+        </apex:form> 
+    </div>      
+</apex:page>

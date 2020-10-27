@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>What_is_the_expected_rollout_schedule__c</fullName>
+    <description>Owned by Sales Ops to support Deal Desk functionality. 09/2018</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Briefly describe the expected rollout schedule.</inlineHelpText>
+    <label>What is the expected rollout schedule</label>
+    <length>120</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

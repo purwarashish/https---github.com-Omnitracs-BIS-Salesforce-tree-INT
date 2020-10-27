@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CacheMaxAge__c</fullName>
+    <defaultValue>0</defaultValue>
+    <externalId>false</externalId>
+    <inlineHelpText>The amount of time (in seconds) the content distribution network (CDN) server caches the pages of your PKB site. A value of zero (0) disables caching. CDN caching is automatically enabled on  sites. We recommend setting this to 300 seconds (5 minutes).</inlineHelpText>
+    <label>Cache Max Age</label>
+    <precision>10</precision>
+    <required>true</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,493 @@
+<apex:page cache="true" sidebar="false" showHeader="false"  
+           action="{!pdm_initSingleton}" controller="MainController" id="thepage">
+    <apex:include pageName="mainPage" id="mainpage"/>    
+   
+    <apex:form id="theform">
+    <style>
+        .documentList li a {
+            clear: both !important;
+            color: #315BA7 !important;
+            display: inline !important;
+            font-weight: bold !important;
+            text-decoration: none !important;
+            height: 35px;
+        }
+        
+       
+                  
+        .docType{
+            color: #4E4649;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .sidemnuNarrowSearch{
+            margin-bottom : 0px !important;
+        }         
+    
+    .list p {
+        font-size: 12px;
+    }
+    
+    a.anchor:hover{
+    text-decoration:none !important;
+    } 
+    div.selectME2 div.first span.selectME2 {
+    width:159px !important;
+    }
+    div.flr
+    {
+    float:right !important;
+    }
+    a.listTopic
+    {
+    /* width:225px; */
+    font-weight:normal !important;
+    }
+    
+    a.monitor {visibility:{!CASE(standalone,'1', 'hidden', standalone,'0' , '' )}; display:{!CASE(standalone,'1', 'none', standalone,'0' , '' )};}
+            
+	a.manage {visibility:{!CASE(standalone,'1', 'hidden', standalone,'0' , '' )}; display:{!CASE(standalone,'1', 'none', standalone,'0' , '' )};}
+	    
+	a.shop {visibility:{!CASE(standalone,'1', 'hidden', standalone,'0' , '' )}; display:{!CASE(standalone,'1', 'none', standalone,'0' , '' )};}
+							
+	ul.drop3 {visibility:{!CASE(standalone,'1', 'hidden', standalone,'0' , '' )}; display:{!CASE(standalone,'1', 'none', standalone,'0' , '' )};}
+
+    #user_profile li:nth-child(-n+2) {
+        display:{!CASE(standalone,'1', 'none', standalone,'0' , 'initial' )};
+    }
+	            
+	ul.drop2 {visibility:{!CASE(standalone,'1', 'hidden', standalone,'0' , '' )}; display:{!CASE(standalone,'1', 'none', standalone,'0' , '' )};}
+	
+    div.custom-search-left {visibility:{!CASE(standalone,'1', 'hidden', standalone,'0' , '' )}; display:{!CASE(standalone,'1', 'none', standalone,'0' , '' )};}
+	
+    .searchResultInnerRight :nth-of-type(2) {
+        display:{!CASE(standalone,'1', 'none', standalone,'0' , 'initial' )};
+    }
+   
+    </style>
+    
+    <script type="text/javascript">
+		window.onload = function() {
+		    var links = document.getElementsByTagName('a');
+			for(var i=0; i<links.length; i++) {
+			  if(links[i].href == 'http://customer.int.omnitracs.com/'){
+			  	links[i].href = 'https://login.int.omnitracs.com/go.jsp?d=home';
+			  }
+			  else if(links[i].href == 'http://customer.omnitracs.com/'){
+			  	links[i].href = 'https://login.omnitracs.com/go.jsp?d=home';
+			  }
+			}
+		};
+	</script>
+
+   <script src="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/scripts/picklist.js')}" type="text/javascript"></script>       
+   
+   <div id="bodyWrapper">
+    <!--Bredcrump-part-->
+     <div class="breadcumWrp">
+          <ul>
+            <li><a href="https://login.{!$Label.CPURL}go.jsp?d=home">Home</a><span>|</span>
+            <a href="/apex/support" class="searchunity">Support</a> <span>|</span>
+            {!pdm.docType}
+            </li>
+          </ul>
+          <h1>{!pdm.docType}</h1>
+          <hr width="910px" align="center" style="height:1px;border:1px;color:#dadce0;background-color:#dadce0;" />
+        </div>
+     <!--Brecrump-par ENDt-->
+         <div id="middle-container">  
+            <div style="margin-bottom:10px;">
+                <a href="#"  class="searchunity  buttonSet newButton12 fll">Back</a>
+                <script>
+                    var name = "{!$CurrentPage.parameters.name}";
+                    var doctype = "{!$CurrentPage.parameters.retDocType}";
+                    var prodtype = "{!$CurrentPage.parameters.prodtype}";
+                    var link = "{!$CurrentPage.parameters.retURL}";
+                    
+                    if("" == link) {
+                        link = "#";
+                    }
+                    else {
+                        if( ("" != name) || ("" != doctype) || ("" != prodtype)) {
+                            link = link + "?";
+                        }
+                        
+                        if("" != name) {
+                            link = link + "name=" + name;
+                            if('' == prodtype) {
+                                link = link + '&prodtype=' + name;
+                            }
+                            if( ("" != doctype) || ("" != prodtype) ) {
+                                link = link + "&";
+                            }
+                        }
+                        
+                        if("" != doctype) {
+                            link = link + "doctype=" + doctype;
+                            if("" != prodtype) {
+                                link = link + "&";
+                            }                            
+                        }
+                        
+                        if("" != prodtype) {
+                            link = link + "prodtype=" + prodtype;
+                        }
+                    }
+                    $('a.searchunity').attr("href", link);
+                </script>
+             </div>
+          <div class="clr">
+                <img width="1" height="20" border="0" alt="" src="{!URLFOR($Resource.QESCustomerSupporCaseView, 'Html/images/customer/spacer.png')}" />
+          </div>
+         <!--Left Rail Starts -->
+         <div class="custom-search-left fll">
+          <div class="sidemnuNarrowSearch">
+                    <h3>Browse Support</h3>
+                    <div class="filterSearchBox">
+                        <ul class="subMenuList">
+                            <li>
+                                <a href="/apex/supportanswers">Answer Center</a>
+                            </li>
+                            <li class=""><a href="https://transactions.{!$Label.CPURL}unity-iq/faces/UnityIQ?page=Firmware">Firmware/OS</a>
+                            </li>
+                            <li class=""><a href="/apex/supportdocs?doctype=DOC&retURL=/apex/supportdocs&retDocType={!pdm.docTypeShort}" class="searchunity">Documentation</a>
+                            </li>
+                            <li class=""><a href="/apex/supportdocs?doctype=CFA&retURL=/apex/supportdocs&retDocType={!pdm.docTypeShort}" class="searchunity">Customer/Field Alerts</a>
+                            </li>
+                           <!-- <li class=""><a href="#">Contact Us</a>
+                            </li>-->
+                            
+
+                        </ul>
+                        <div class="filterSerchAlign last textMarginTop2 subMnuLeftSpace">
+                            <!-- span class="ProductSupportTxt">View Support for Other Products</span -->
+
+                                <apex:selectList styleClass="changeMe8" id="selectlist1"
+                                    value="{!pdm.pam.strBrowseSupportPicklistValue}" dir="page"
+                                    multiselect="false" size="1">
+                                    <apex:selectOption itemLabel="All Platforms & Applications"
+                                        itemValue="All Platforms & Applications"></apex:selectOption>
+                                    <apex:selectOptions value="{!pdm.pam.lstAllPlatformsAndApps}"
+                                        id="selectBox1">
+                                    </apex:selectOptions>
+                                </apex:selectList>
+
+                            <div class="clr">
+                                <apex:image value="{!URLFor($Resource.QESUnityCSSAndJS,'Html/images/customer/spacer.png')}"
+                                    width="1" height="1" alt="" />
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!--SIDE Menu- BROWSE Support ENDS-->
+
+                <!-- CONTACT US-->
+                <apex:outputText rendered="{!caseCreationAllowed}">
+                    <div class="sidemnuNarrowSearch">
+                        <h3>Create a Case</h3>
+                        <div class="filterSearchBox RightBlockInnerSpace">
+                            <ul class="TrainingList">
+                                <li class="last"><a href="/apex/supportcasesubmit?retURL=/apex/supportDocs&retDocType={!pdm.docTypeShort}&docType={!pdm.docTypeShort}"><img
+                                        src="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/images/customer/Go.jpg')}"
+                                        width="20" height="20" border="0" alt="" /> Click the icon to create a service case</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </apex:outputText>
+              </div>  
+                <!--CONTACT US-->
+         <div class="custom-search-right fll">
+         <div class="" style="width:440px"> 
+         <div class="searchResultInnerLeft fll">
+         <div class="MenuBoxHeader">
+           <h3 style="font-size:13px">
+                <span class="floatL">{!pdm.docType}</span>
+                <span class="traRightSpace30 floatR"></span>
+           </h3>
+         
+        
+         <apex:outputPanel layout="block" styleClass="boxBody" id="boxbody">
+            <apex:dataList value="{!pdm.lstProduct}" first="{!pdm.intFirst}" var="productName"  styleClass="topicList1" id="datalist">
+                <div class="topicListHeadHolder">
+                    <script>
+                        var linkId=document.getElementById('{!$Component.datalist}');
+                        linkId.oncontextmenu=function(){return false;}
+                    </script>
+                    <apex:outputText value="{!productName}" styleClass="submenuheader1 fll">
+                        <span class="flr">
+                            <!-- a class="buttonSet newButton2 fll searchTitle" href="/apex/supportdocsmore?prodtype={!productName}&&doctype={!pdm.docType}">
+                                More
+                            </a -->
+                        </span>
+                    </apex:outputtext>
+                </div>
+            <div class="submenu1">                
+                <apex:dataList value="{!pdm.productLevelMap[productName]}" var="myInnerMap">
+                    <apex:dataList value="{!myInnerMap}" var="innerMapKey">
+                        <!-- apex:outputText value="{!innerMapKey}" styleClass="docType" / -->
+                        <apex:variable var="count" value="{!0}"/>                        
+                        <apex:outputpanel style="display:normal" layout="block" styleclass="docsDescription1">
+                            <h4 class="docsHeadTxt1" style="display:block">{!innerMapKey}</h4>
+                            <apex:datalist value="{!pdm.productLevelMap[productName][innerMapKey]}" var="doc" first="0" rows="5" id="ApplicationDocs" styleclass="documentList">
+                                <a class="searchTitle" href="/apex/supportdocdetail?id={!doc.ContentDocumentid}">
+                                    <apex:outputText title="{!doc.Description}" value="{!doc.title}"/>
+                                </a>                                
+                                <apex:outputLink styleClass="sfLinkTxt flr" rendered="{!doc.Orderable__c}" value="{!$Label.Product_Catalog_Link}">Product Catalog</apex:outputLink>                                                       
+                            </apex:datalist>                            
+                        </apex:outputpanel>                                                
+                    </apex:dataList>
+                </apex:dataList>
+                <br/>
+                <a class="newButton4 buttonSet searchunity" style="padding-bottom:10px;"
+                   href="/apex/supportdocsproduct?name={!productName}&prodtype={!productName}&doctype={!pdm.docTypeShort}&retURL=/apex/supportDocs">More</a>        
+            </div>
+        </apex:dataList>
+
+        
+        <apex:actionStatus startText="" id="showstatus">
+            <!--  apex:facet name="start">
+                <apex:image url="{!$Resource.LoadingImage}" width="20px" height="20px"/>
+            </apex:facet -->
+        </apex:actionStatus><br/>
+
+        <apex:includeScript value="{!URLFor($Resource.QESUnityCSSAndJS, 'Html/scripts/ddaccordion.js')}" />
+        
+         <style>
+             .sidemnuNarrowSearch{
+                 margin-bottom : 0px;
+             }
+           
+             .topicList1 li{
+                 border-bottom: 1px solid #CCCCCC ;
+             }                            
+         </style>
+    </apex:outputPanel>
+    
+   </div>
+  </div>
+  </div>
+  </div>
+  <!-- Outer Right -->
+            <div class="searchResultInnerRight fll">
+                <!-- Training -->
+                <div class="sidemnuNarrowSearch" style="{!if(('' == wscm.supportLandingTrainingData),'display:none','display:normal; margin-bottom:0px')}">
+                    <h3>
+                     Training
+                    </h3>
+                    <div class="section">
+                        <ul id="trainingData" class="list">
+                        </ul>
+                        <span>
+                            <a href="/apex/supporttrainingmore?ret=/apex/supportdocs&doctype={!$CurrentPage.parameters.doctype}" class="buttonSet newButton4 moretraining flr" style="margin-right:10px">View All</a>
+                        </span>
+                        <div class="clr"><img src="{!URLFor($Resource.QESUnityCSSAndJS,'Html/images/customer/spacer.png')}" width="1" height="1" border="0" alt="" /></div>
+                    </div>
+                </div>
+                <!-- Training ENDS -->
+            
+                <!-- Service Options-->
+                <div class="sidemnuNarrowSearch">
+                    <h3>Service Options</h3>
+                    <div class="filterSearchBox">
+                        <ul class="subMenuList">
+                            <li>
+                            <a href="https://transactions.{!$Label.CPURL}unity-iq/faces/UnityIQ?page=HealthCheck">Unit Health Check</a>
+                            </li>
+                            <li class="">
+                            <a href="https://transactions.{!$Label.CPURL}unity-iq/faces/UnityIQ?page=MobileReset">Mobile Reset</a>
+                            </li>
+                            <li class="">
+                            <a href="https://transactions.{!$Label.CPURL}unity-iq/faces/UnityIQ?page=Firmware">Firmware/OS</a>
+                            </li>
+                            <li>
+                            <a href="https://transactions.{!$Label.CPURL}unity-iq/faces/UnityIQ?page=ServiceCenter">Find Service Centers</a>
+                            </li>  
+                            <li><a
+                                href="https://transactions.{!$Label.CPURL}unity-iq/faces/UnityIQ?page=TimeStandards">Service
+                                    &amp; Repairs</a>
+                            </li>
+                            <apex:outputText rendered="{!caseCreationAllowed}">                      
+                                <li class="">
+                                <a href="/apex/supportcasesubmit?retURL=/apex/supportDocs&retDocType={!pdm.docTypeShort}&docType={!pdm.docTypeShort}">Create a Case</a>
+                                </li>                        
+                            </apex:outputText>
+                            <li class="last">
+                            <a href="https://customer.{!$Label.CPURL}portal/pages/contactUs.jsp">Contact Us</a>
+                            </li>                                              
+                        </ul>
+                    </div>
+                </div>
+
+                <!--Service Options-->
+
+                <!-- Support for your Apps-->
+                <!-- div class="sidemnuNarrowSearch">
+                    <apex:outputPanel rendered="{!pdm.pam.blnPlatform}">
+                        <h3>Supporting Applications</h3>
+                    </apex:outputPanel>
+                    <apex:outputPanel rendered="{!pdm.pam.blnApplication}">
+                        <h3>Supporting Platforms</h3>
+                    </apex:outputPanel>
+                    <div class="filterSearchBox">
+                        <apex:outputPanel rendered="{!pdm.pam.blnPlatform}">
+
+                            <apex:dataList value="{!pdm.pam.lstTop4PlatsOrApps}" var="applications" id="theList">
+                                <apex:outputText >
+                                    <a href="/apex/supportplatformsapps?name={!applications.Top_Application__r.name}&retURL=/apex/supportplatformsapps?name={!pdm.pam.strName}" class="searchunity">{!applications.Top_Application__r.name}</a>
+                                </apex:outputText>
+                            </apex:dataList>
+
+                            <ul class="subMnuLeftSpace">
+                            <li style="{!if(pdm.pam.intTopPlatformsOrAppsSelected  == 0,'font-weight: bold !important; font-size:12px !important;',' display:none')}">-- No Top
+                                    "Applications" for this Product --</li>
+
+                            </ul>
+                        </apex:outputPanel>
+
+                        <apex:outputPanel rendered="{!pdm.pam.blnApplication}">
+
+                            <apex:dataList value="{!pdm.pam.lstTop4PlatsOrApps}" var="platforms" id="theList1">
+                                <apex:outputText >
+                                    <a href="/apex/supportplatformsapps?name={!platforms.Top_Platform__r.name}&retURL=/apex/supportplatformsapps?name={!pdm.pam.strName}" class="searchunity">{!platforms.Top_Platform__r.name}</a>
+                                </apex:outputText>
+                            </apex:dataList>
+
+
+                            <ul class="subMnuLeftSpace">
+                            <li style="{!if(pdm.pam.intTopPlatformsOrAppsSelected ==0, 'font-weight: bold !important; font-size:12px; !important;',' display:none')}">-- No Top
+                                    "Platforms" for this Application</li>
+                            </ul>
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!pdm.pam.intTopPlatformsOrAppsSelected > 4}" >
+                        <div style="" class="filterSerchAlign last textMarginTop2 subMnuLeftSpace">
+
+                        <span
+                                style="{!if (!pdm.pam.blnPlatform,'display: normal ',' display:none')} !important"
+                                class="ProductSupportTxt">View Top Platforms
+                        </span>
+                        <span
+                                style="{!if (!pdm.pam.blnApplication,'display: normal ',' display:none')} !important"
+                                class="ProductSupportTxt">View Top Applications
+                        </span>
+
+                                <apex:selectList styleClass="changeMe8" id="selectlist"
+                                    value="{!pdm.pam.strServiceOptionPicklistValue}" dir="page"
+                                    multiselect="false" size="1" >
+                                    <apex:selectOption rendered="{!pdm.pam.blnPlatform}"
+                                        itemLabel="-- Other Top Applications --"
+                                        itemvalue="-- Other Top Applications --"></apex:selectOption>
+                                    <apex:selectOption rendered="{!pdm.pam.blnApplication}"
+                                        itemLabel="-- Other Top Platforms --"
+                                        itemvalue="-- Other Top Apps --"></apex:selectOption>
+                                    <apex:selectOptions value="{!pdm.pam.lstTopPlatformsOrAppsSelected}"
+                                        id="selectBox">
+                                    </apex:selectOptions>
+                                </apex:selectList>
+                             <div class="clr">
+                                <apex:image value="{!URLFor($Resource.QESUnityCSSAndJS,'Html/images/customer/spacer.png')}"
+                                    width="1" height="1" alt="" />
+                            </div>
+                        </div>
+                        </apex:outputPanel>
+                    </div>
+                </div>
+                <!--Support For your Apps-->
+               
+            </div>
+            <!-- Outer Right Ends --> 
+  </div>
+    <!-- Start Footer -->
+    <apex:include pageName="UnityFooter" />
+    <!-- End footer -->
+  </div>
+  <apex:commandLink id="HiddenCmdLink" value=""  action="{!pdm.redirectTo}" />
+  <apex:inputHidden id="hiddenInputField" value="{!pdm.hiddenInputField}"/>
+  <script>  
+      ddaccordion.init({
+                    headerclass: "submenuheader1", //Shared CSS class name of headers group
+                    contentclass: "submenu1", //Shared CSS class name of contents group
+                    revealtype: "click", //Reveal content when user clicks or onmouseover the header? Valid value: "click", "clickgo", or "mouseover"
+                    mouseoverdelay: 200, //if revealtype="mouseover", set delay in milliseconds before header expands onMouseover
+                    collapseprev: false, //Collapse previous content (so only one open at any time)? true/false 
+                    defaultexpanded: [], //index of content(s) open by default [index1, index2, etc] [] denotes no content
+                    onemustopen: false, //Specify whether at least one header should be open always (so never all headers closed)
+                    animatedefault: false, //Should contents open by default be animated into view?
+                    persiststate: false, //persist state of opened contents within browser session?
+                    toggleclass: ["history-open1", "history-close1"],                     
+                   oninit:function(headers, expandedindices){ //custom code to run when headers have initalized
+                        //do nothing
+                    },
+                    onopenclose:function(header, index, state, isuseractivated){ //custom code to run whenever a header is opened or closed
+                        //do nothing
+                    }
+       }); // End ddaccordion
+                    
+       var pagename = "supportdocs";
+       $(document).ready(function(){
+           $('#trainingData').append('{!wscm.supportLandingTrainingData}');
+           $('.Redirect').each(
+               function()
+               {
+                   var link = $(this).attr('href');
+                   var text = $(this).text();
+
+                    if($(location).attr('href').search('myqualcomm.forcedev.cs4.force.com') != -1)
+                    {
+                         $(this).attr('href','/demo/supportplatformsapps?name='+text);
+                    }
+                    else
+                    {
+                        $(this).attr('href','/apex/supportplatformsapps?name='+text);
+                    }
+                }
+            ); // End Redirect
+           $('a.searchunity,.Redirect').click(
+               function(e)
+                {
+                    if("#" == $(this).attr('href')) {
+                        return;
+                    }
+                    redir1($(this).attr('href'),e);
+                }
+            );
+            function redir1(rUrl,e)
+            {                
+                e.preventDefault();
+                e.stopPropagation();
+
+                $("#thepage\\:theform\\:hiddenInputField").val(rUrl);    
+                $("#thepage\\:theform\\:HiddenCmdLink").click();
+                return false;
+            }
+            
+            processUI();
+        }); // End document.ready    
+
+        function processUI()
+        {
+            $('ul.documentList').children().each
+            (
+                function()
+                {
+                    $(this).css('height','35px');                  
+                }
+            );
+        
+        }
+            
+        $('a.searchTitle').click(
+            function(e)
+            {
+                e.preventDefault();
+                e.stopPropagation();
+                var URL = $(this).attr('href'); 
+                window.open(URL,'', 'height=550,width=1024,location=no,resizable=yes,toolbar=no,status=no,menubar=no,scrollbars=yes');
+                return false;      
+            });                
+      </script>
+  
+  </apex:form>
+</apex:page>

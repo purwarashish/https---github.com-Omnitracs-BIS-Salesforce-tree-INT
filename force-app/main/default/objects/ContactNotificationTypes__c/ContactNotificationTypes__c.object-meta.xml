@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Different contact notification types. Mainly used in AllAccountUtils class to filter out the mentioned Notification types from the contacts associated with the account. Please refer the AllAccountUtils class in case if you want to add something.</description>
+    <enableFeeds>false</enableFeeds>
+    <label>ContactNotificationTypes</label>
+    <visibility>Public</visibility>
+</CustomObject>

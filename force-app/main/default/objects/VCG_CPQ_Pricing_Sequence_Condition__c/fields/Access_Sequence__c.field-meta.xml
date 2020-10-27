@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Access_Sequence__c</fullName>
+    <externalId>false</externalId>
+    <label>Access Sequence</label>
+    <referenceTo>VCG_CPQ_Pricing_Access_Sequence__c</referenceTo>
+    <relationshipLabel>Sequence Conditions</relationshipLabel>
+    <relationshipName>Sequence_Conditions</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>true</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

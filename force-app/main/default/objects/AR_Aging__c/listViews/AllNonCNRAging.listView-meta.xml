@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllNonCNRAging</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Current__c</columns>
+    <columns>PastDue__c</columns>
+    <columns>Past_Due_1_30_Days__c</columns>
+    <columns>Past_Due_31_60_Days__c</columns>
+    <columns>Past_Due_61_90_Days__c</columns>
+    <columns>Past_Due_91_Days__c</columns>
+    <columns>Total_AR__c</columns>
+    <columns>Flag__c</columns>
+    <columns>CurrencyCode__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>AccountType__c</field>
+        <operation>notEqual</operation>
+        <value>CNR</value>
+    </filters>
+    <label>All Non CNR Aging</label>
+    <language>en_US</language>
+</ListView>

@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X3rd_Party__c</fullName>
+    <externalId>false</externalId>
+    <label>3rd Party</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Accord</fullName>
+                <default>false</default>
+                <label>Accord</label>
+            </value>
+            <value>
+                <fullName>Add-On Systems</fullName>
+                <default>false</default>
+                <label>Add-On Systems</label>
+            </value>
+            <value>
+                <fullName>Affiliated Computer Services/RapidLog(QHOS)</fullName>
+                <default>false</default>
+                <label>Affiliated Computer Services/RapidLog(QHOS)</label>
+            </value>
+            <value>
+                <fullName>Affiliated Computer Services/Trippak(Scanning)</fullName>
+                <default>false</default>
+                <label>Affiliated Computer Services/Trippak(Scanning)</label>
+            </value>
+            <value>
+                <fullName>ATAdvantage</fullName>
+                <default>false</default>
+                <label>ATAdvantage</label>
+            </value>
+            <value>
+                <fullName>Axon Truck Software</fullName>
+                <default>false</default>
+                <label>Axon Truck Software</label>
+            </value>
+            <value>
+                <fullName>BCS</fullName>
+                <default>false</default>
+                <label>BCS</label>
+            </value>
+            <value>
+                <fullName>Bendix</fullName>
+                <default>false</default>
+                <label>Bendix</label>
+            </value>
+            <value>
+                <fullName>Bolt Systems</fullName>
+                <default>false</default>
+                <label>Bolt Systems</label>
+            </value>
+            <value>
+                <fullName>CAMS</fullName>
+                <default>false</default>
+                <label>CAMS</label>
+            </value>
+            <value>
+                <fullName>Carrier Logistics</fullName>
+                <default>false</default>
+                <label>Carrier Logistics</label>
+            </value>
+            <value>
+                <fullName>Cheetah</fullName>
+                <default>false</default>
+                <label>Cheetah</label>
+            </value>
+            <value>
+                <fullName>Choice Technologies</fullName>
+                <default>false</default>
+                <label>Choice Technologies</label>
+            </value>
+            <value>
+                <fullName>CH Robinson</fullName>
+                <default>false</default>
+                <label>CH Robinson</label>
+            </value>
+            <value>
+                <fullName>Classic</fullName>
+                <default>false</default>
+                <label>Classic</label>
+            </value>
+            <value>
+                <fullName>Comdata</fullName>
+                <default>false</default>
+                <label>Comdata</label>
+            </value>
+            <value>
+                <fullName>Computer Support Inc.</fullName>
+                <default>false</default>
+                <label>Computer Support Inc.</label>
+            </value>
+            <value>
+                <fullName>Creative Systems</fullName>
+                <default>false</default>
+                <label>Creative Systems</label>
+            </value>
+            <value>
+                <fullName>Daffron</fullName>
+                <default>false</default>
+                <label>Daffron</label>
+            </value>
+            <value>
+                <fullName>Daily Scheduled</fullName>
+                <default>false</default>
+                <label>Daily Scheduled</label>
+            </value>
+            <value>
+                <fullName>Descartes</fullName>
+                <default>false</default>
+                <label>Descartes</label>
+            </value>
+            <value>
+                <fullName>Dispatching Solutions</fullName>
+                <default>false</default>
+                <label>Dispatching Solutions</label>
+            </value>
+            <value>
+                <fullName>Dispatching Solutions Inc.</fullName>
+                <default>false</default>
+                <label>Dispatching Solutions Inc.</label>
+            </value>
+            <value>
+                <fullName>DPS</fullName>
+                <default>false</default>
+                <label>DPS</label>
+            </value>
+            <value>
+                <fullName>EatonVORAD</fullName>
+                <default>false</default>
+                <label>EatonVORAD</label>
+            </value>
+            <value>
+                <fullName>EBE Technologies</fullName>
+                <default>false</default>
+                <label>EBE Technologies</label>
+            </value>
+            <value>
+                <fullName>Fittipaldi</fullName>
+                <default>false</default>
+                <label>Fittipaldi</label>
+            </value>
+            <value>
+                <fullName>FiveCubits (fka Varipro)</fullName>
+                <default>false</default>
+                <label>FiveCubits (fka Varipro)</label>
+            </value>
+            <value>
+                <fullName>IDSC</fullName>
+                <default>false</default>
+                <label>IDSC</label>
+            </value>
+            <value>
+                <fullName>In-House / Home Grown</fullName>
+                <default>false</default>
+                <label>In-House / Home Grown</label>
+            </value>
+            <value>
+                <fullName>Innovative-(ICC)</fullName>
+                <default>false</default>
+                <label>Innovative-(ICC)</label>
+            </value>
+            <value>
+                <fullName>InterGis</fullName>
+                <default>false</default>
+                <label>InterGis</label>
+            </value>
+            <value>
+                <fullName>Intermec</fullName>
+                <default>false</default>
+                <label>Intermec</label>
+            </value>
+            <value>
+                <fullName>Inter-Tax</fullName>
+                <default>false</default>
+                <label>Inter-Tax</label>
+            </value>
+            <value>
+                <fullName>Irregular/Dynamic</fullName>
+                <default>false</default>
+                <label>Irregular/Dynamic</label>
+            </value>
+            <value>
+                <fullName>Iteris</fullName>
+                <default>false</default>
+                <label>Iteris</label>
+            </value>
+            <value>
+                <fullName>ITS Compliance</fullName>
+                <default>false</default>
+                <label>ITS Compliance</label>
+            </value>
+            <value>
+                <fullName>JJ Keller</fullName>
+                <default>false</default>
+                <label>JJ Keller</label>
+            </value>
+            <value>
+                <fullName>Keystone</fullName>
+                <default>false</default>
+                <label>Keystone</label>
+            </value>
+            <value>
+                <fullName>Magtec</fullName>
+                <default>false</default>
+                <label>Magtec</label>
+            </value>
+            <value>
+                <fullName>Manhattan</fullName>
+                <default>false</default>
+                <label>Manhattan</label>
+            </value>
+            <value>
+                <fullName>Manhattan &amp; Associates</fullName>
+                <default>false</default>
+                <label>Manhattan &amp; Associates</label>
+            </value>
+            <value>
+                <fullName>Manuguistics</fullName>
+                <default>false</default>
+                <label>Manuguistics</label>
+            </value>
+            <value>
+                <fullName>McLeod Software</fullName>
+                <default>false</default>
+                <label>McLeod Software</label>
+            </value>
+            <value>
+                <fullName>Melton Technologies (MTI)</fullName>
+                <default>false</default>
+                <label>Melton Technologies (MTI)</label>
+            </value>
+            <value>
+                <fullName>Meritor Wabco</fullName>
+                <default>false</default>
+                <label>Meritor Wabco</label>
+            </value>
+            <value>
+                <fullName>Milsoft</fullName>
+                <default>false</default>
+                <label>Milsoft</label>
+            </value>
+            <value>
+                <fullName>NISC</fullName>
+                <default>false</default>
+                <label>NISC</label>
+            </value>
+            <value>
+                <fullName>North American Dispatch Systems</fullName>
+                <default>false</default>
+                <label>North American Dispatch Systems</label>
+            </value>
+            <value>
+                <fullName>O&apos;neil Printers</fullName>
+                <default>false</default>
+                <label>O&apos;neil Printers</label>
+            </value>
+            <value>
+                <fullName>Omni Information Systems</fullName>
+                <default>false</default>
+                <label>Omni Information Systems</label>
+            </value>
+            <value>
+                <fullName>Other (put details in comments)</fullName>
+                <default>false</default>
+                <label>Other (put details in comments)</label>
+            </value>
+            <value>
+                <fullName>OTS</fullName>
+                <default>false</default>
+                <label>OTS</label>
+            </value>
+            <value>
+                <fullName>Paradigm</fullName>
+                <default>false</default>
+                <label>Paradigm</label>
+            </value>
+            <value>
+                <fullName>Partner Software</fullName>
+                <default>false</default>
+                <label>Partner Software</label>
+            </value>
+            <value>
+                <fullName>PCS Software</fullName>
+                <default>false</default>
+                <label>PCS Software</label>
+            </value>
+            <value>
+                <fullName>Permitax Corp</fullName>
+                <default>false</default>
+                <label>Permitax Corp</label>
+            </value>
+            <value>
+                <fullName>Profit Tools</fullName>
+                <default>false</default>
+                <label>Profit Tools</label>
+            </value>
+            <value>
+                <fullName>Progressive Data Solutions</fullName>
+                <default>false</default>
+                <label>Progressive Data Solutions</label>
+            </value>
+            <value>
+                <fullName>ProMiles</fullName>
+                <default>false</default>
+                <label>ProMiles</label>
+            </value>
+            <value>
+                <fullName>Prophesy</fullName>
+                <default>false</default>
+                <label>Prophesy</label>
+            </value>
+            <value>
+                <fullName>RAIR</fullName>
+                <default>false</default>
+                <label>RAIR</label>
+            </value>
+            <value>
+                <fullName>Regular/Fixed</fullName>
+                <default>false</default>
+                <label>Regular/Fixed</label>
+            </value>
+            <value>
+                <fullName>Roadnet</fullName>
+                <default>false</default>
+                <label>Roadnet</label>
+            </value>
+            <value>
+                <fullName>Roadshow</fullName>
+                <default>false</default>
+                <label>Roadshow</label>
+            </value>
+            <value>
+                <fullName>RoadVision</fullName>
+                <default>false</default>
+                <label>RoadVision</label>
+            </value>
+            <value>
+                <fullName>Show Me</fullName>
+                <default>false</default>
+                <label>Show Me</label>
+            </value>
+            <value>
+                <fullName>SpeedGauge</fullName>
+                <default>false</default>
+                <label>SpeedGauge</label>
+            </value>
+            <value>
+                <fullName>Spill Center</fullName>
+                <default>false</default>
+                <label>Spill Center</label>
+            </value>
+            <value>
+                <fullName>Sprint</fullName>
+                <default>false</default>
+                <label>Sprint</label>
+            </value>
+            <value>
+                <fullName>SSI</fullName>
+                <default>false</default>
+                <label>SSI</label>
+            </value>
+            <value>
+                <fullName>Strategy Systems</fullName>
+                <default>false</default>
+                <label>Strategy Systems</label>
+            </value>
+            <value>
+                <fullName>Sylectus</fullName>
+                <default>false</default>
+                <label>Sylectus</label>
+            </value>
+            <value>
+                <fullName>Synergistic Systems</fullName>
+                <default>false</default>
+                <label>Synergistic Systems</label>
+            </value>
+            <value>
+                <fullName>Systems Support</fullName>
+                <default>false</default>
+                <label>Systems Support</label>
+            </value>
+            <value>
+                <fullName>T-Check</fullName>
+                <default>false</default>
+                <label>T-Check</label>
+            </value>
+            <value>
+                <fullName>TellSystems</fullName>
+                <default>false</default>
+                <label>TellSystems</label>
+            </value>
+            <value>
+                <fullName>TMS (Custom Software Solutions)</fullName>
+                <default>false</default>
+                <label>TMS (Custom Software Solutions)</label>
+            </value>
+            <value>
+                <fullName>TMW Systems</fullName>
+                <default>false</default>
+                <label>TMW Systems</label>
+            </value>
+            <value>
+                <fullName>TransWork Solutions Inc.</fullName>
+                <default>false</default>
+                <label>TransWork Solutions Inc.</label>
+            </value>
+            <value>
+                <fullName>Truck Master</fullName>
+                <default>false</default>
+                <label>Truck Master</label>
+            </value>
+            <value>
+                <fullName>Turnpike Global</fullName>
+                <default>false</default>
+                <label>Turnpike Global</label>
+            </value>
+            <value>
+                <fullName>Varipro</fullName>
+                <default>false</default>
+                <label>Varipro</label>
+            </value>
+            <value>
+                <fullName>Voltage</fullName>
+                <default>false</default>
+                <label>Voltage</label>
+            </value>
+            <value>
+                <fullName>Wabco</fullName>
+                <default>false</default>
+                <label>Wabco</label>
+            </value>
+            <value>
+                <fullName>Zonar</fullName>
+                <default>false</default>
+                <label>Zonar</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

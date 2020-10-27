@@ -1,0 +1,5 @@
+<apex:page id="customerPortalHomePage" sidebar="false" showHeader="false">
+<head>
+    <meta HTTP-EQUIV="REFRESH" content="0; url=https://login.omnitracs.com"/>
+</head>
+</apex:page>

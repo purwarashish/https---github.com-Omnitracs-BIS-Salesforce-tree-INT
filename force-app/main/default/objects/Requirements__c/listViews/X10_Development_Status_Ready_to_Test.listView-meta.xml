@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X10_Development_Status_Ready_to_Test</fullName>
+    <columns>NAME</columns>
+    <columns>Track__c</columns>
+    <columns>Area__c</columns>
+    <columns>Title__c</columns>
+    <columns>Business_Owner__c</columns>
+    <columns>Requirement_Status__c</columns>
+    <columns>Approved_Status__c</columns>
+    <columns>Origin__c</columns>
+    <columns>Req_Identified_During__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Development_Status__c</field>
+        <operation>equals</operation>
+        <value>Ready for Testing</value>
+    </filters>
+    <label>10) Development Status: Ready to Test</label>
+    <language>en_US</language>
+</ListView>

@@ -1,0 +1,135 @@
+<apex:page controller="PartnerPortalWelcomeController" showHeader="false" sidebar="false">
+
+    <style type="text/css">
+        .cmComponent {
+            font-size:1em;
+            font-family:arial,verdana,sans-serif;
+        }
+        
+        .cmComponent table {
+            margin-left:-2px;
+        }
+        
+        a {
+
+            color: #333333;
+            font-size:11px;         
+            text-decoration:underline;
+
+        }
+
+        a:hover {
+
+            text-decoration: none;
+            color: #FF0000;
+            font-size:11px;
+
+        }
+        
+        a#logout {
+        
+            font-size:12px;
+        }
+        
+        a:hover#logout {
+
+            text-decoration: underline;
+
+            font-size:12px;
+
+        }
+        table, tr, td {
+            margin:0;padding:0;
+            font-size:11px;
+        }
+        
+        td.statvalue {
+            padding-left:2px;
+            text-align:right;
+            font-weight:bold;
+        }
+        
+        ul {
+            list-style-type:none;
+            margin:3px 0 15px 0;padding:0;
+        }
+        
+        ul li {
+            margin:0;padding:0;
+            line-height:11px;
+        }
+        
+        .title {
+            display:block;
+            font-weight:bold;
+            font-size:12px;
+        }
+        
+        
+        .clearfloats {
+            clear:both;
+        }
+        .sidebarlinks {
+            color: #333333;
+            font-size:11px;
+            text-decoration:underline;
+            line-height: 130%}
+        }
+
+    </style>
+
+
+    <div class="cmComponent">
+
+        <span class="title">{!$User.FirstName}&nbsp;{!$User.LastName} (<a href="/secur/logout.jsp" target="_top" id="logout">Salir</a>)</span>
+        <!--</strong>-->
+        <ul>
+<!--      <li><a href='/{!PartnerUser.Contact.AccountId}' target="_top" class="sidebarlinks">My Company Profile</a></li> -->
+          <li><a href="/apex/PartnerProfile?id={!PartnerUser.Contact.AccountId}" target="_top" class="sidebarlinks">Perfil de mi Compañía</a></li>
+          <li><a href="/_ui/core/portal/PortalUserMyProfilePage/d" target="_top" class="sidebarlinks">Mi Perfil</a></li>
+        </ul>
+
+<!--
+        <span class="title">My Channel Manager:</span>
+        <ul>
+          <li><a href='mailto:{!PartnerUser.Contact.Account.Owner.Email}' title='{}'>{!PartnerUser.Contact.Account.Owner.Name}</a></li>
+        </ul>
+-->
+     
+        <!-- START PARTNER STATS. IF YOU DON'T WANT TO SHOW THIS SECTION, COMMENT IT OUT OR DELETE IT -->
+<!-- 
+        <span class="title">My Stats:</span>
+        
+        <table>
+        <tr><td>
+        <!--
+            // Replace URL with the URL to the list view you want
+            
+            // Before this will work in your org, you need to make sure the SOQL statement in the controller's
+            initExpiringDealRegs method maps to your org's RecordTypeId and LeadSource for a Deal Registration Lead.
+             
+        -->
+<!-- 
+        <a href="/006?fcf=00B30000005gyjz" target="_parent">Deal Regs Exp Next 30 Days</a> 
+        </td> 
+        <td class="statvalue">{!ExpiringDealRegs}
+        </td>
+        </tr>
+        
+        <tr>
+        <td>
+               
+        <!-- Replace URL with the URL to the list view you want --> 
+<!--        
+        <a href="/00Q?fcf=00B500000036aPs" target="_parent">My Active Leads</a>
+        </td>
+        <td class="statvalue">{!ActiveLeads}
+        </td>
+        </tr>
+        </table>
+-->
+        <!-- END PARTNER STATS. IF YOU DON'T WANT TO SHOW THIS SECTION, COMMENT IT OUT OR DELETE IT -->
+    </div>
+   
+
+</apex:page>

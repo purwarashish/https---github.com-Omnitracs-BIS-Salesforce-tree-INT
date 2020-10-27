@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Email_Approval_Attached</fullName>
+        <description>change field to TRUE when Email Approval record created on Sales Plan Attachment object</description>
+        <field>Email_Approval_Attached__c</field>
+        <literalValue>1</literalValue>
+        <name>Email Approval Attached</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <targetObject>Opportunity__c</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Eval_Plan_Attached</fullName>
+        <description>change field to TRUE when Eval Plan record created on Sales Plan Attachment object</description>
+        <field>Eval_Plan_Attached__c</field>
+        <literalValue>1</literalValue>
+        <name>Eval Plan Attached</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <targetObject>Opportunity__c</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Power_Sponsor_Letter_Attached</fullName>
+        <description>change field to TRUE when Power Sponsor Letter record create on Sales Plan Attachment object</description>
+        <field>Power_Sponsor_Letter_Attached__c</field>
+        <literalValue>1</literalValue>
+        <name>Power Sponsor Letter Attached</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <targetObject>Opportunity__c</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ROI_Document_Attached</fullName>
+        <description>change field to TRUE when ROI Document record created on Sales Plan Attachment object</description>
+        <field>ROI_Document_Attached__c</field>
+        <literalValue>1</literalValue>
+        <name>ROI Document Attached</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <targetObject>Opportunity__c</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sponsor_Letter_Attached</fullName>
+        <description>change field to TRUE when Sponsor Letter record created on Sales Plan Attachment object</description>
+        <field>Sponsor_Letter_Attached__c</field>
+        <literalValue>1</literalValue>
+        <name>Sponsor Letter Attached</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <targetObject>Opportunity__c</targetObject>
+    </fieldUpdates>
+    <rules>
+        <fullName>Email Approval Attached</fullName>
+        <actions>
+            <name>Email_Approval_Attached</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Sales_Plan_Attachments__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Email Approval</value>
+        </criteriaItems>
+        <description>Triggered when &quot;Email Approval&quot; record is created on the Sales Plan Attachments object</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Eval Plan Attached</fullName>
+        <actions>
+            <name>Eval_Plan_Attached</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Sales_Plan_Attachments__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Eval Plan</value>
+        </criteriaItems>
+        <description>Triggered when &quot;Eval Plan&quot; record is created on the Sales Plan Attachments object</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Power Sponsor Letter Attached</fullName>
+        <actions>
+            <name>Power_Sponsor_Letter_Attached</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Sales_Plan_Attachments__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Power Sponsor Letter</value>
+        </criteriaItems>
+        <description>Triggered when &quot;Power Sponsor Letter&quot; record is created on the Sales Plan Attachments object</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>ROI Document Attached</fullName>
+        <actions>
+            <name>ROI_Document_Attached</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Sales_Plan_Attachments__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>ROI Document</value>
+        </criteriaItems>
+        <description>Triggered when &quot;ROI Document&quot; record is created on the Sales Plan Attachments object</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sponsor Letter Attached</fullName>
+        <actions>
+            <name>Sponsor_Letter_Attached</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Sales_Plan_Attachments__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Sponsor Letter</value>
+        </criteriaItems>
+        <description>Triggered when &quot;Sponsor Letter&quot; record is created on the Sales Plan Attachments object</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

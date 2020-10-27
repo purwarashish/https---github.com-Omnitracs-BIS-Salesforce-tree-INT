@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Application__c</fullName>
+    <description>Specifies the Ala carte application on which discount request is raised</description>
+    <externalId>false</externalId>
+    <label>Application</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>ALK CoPilot Truck</fullName>
+                <default>false</default>
+                <label>ALK CoPilot Truck</label>
+            </value>
+            <value>
+                <fullName>ALK Route Sync</fullName>
+                <default>false</default>
+                <label>ALK Route Sync</label>
+            </value>
+            <value>
+                <fullName>Automated Arrival and Departure</fullName>
+                <default>false</default>
+                <label>Automated Arrival and Departure</label>
+            </value>
+            <value>
+                <fullName>CER Add-on - Forward Collision Warning and Follow Time Violation</fullName>
+                <default>false</default>
+                <label>CER Add-on - Forward Collision Warning and Follow Time Violation</label>
+            </value>
+            <value>
+                <fullName>CER Add-on - Stability Control and Lane Departure Warning</fullName>
+                <default>false</default>
+                <label>CER Add-on - Stability Control and Lane Departure Warning</label>
+            </value>
+            <value>
+                <fullName>Circle of Service Workflow</fullName>
+                <default>false</default>
+                <label>Circle of Service Workflow</label>
+            </value>
+            <value>
+                <fullName>Content Delivery Basic</fullName>
+                <default>false</default>
+                <label>Content Delivery Basic</label>
+            </value>
+            <value>
+                <fullName>Content Delivery Deluxe</fullName>
+                <default>false</default>
+                <label>Content Delivery Deluxe</label>
+            </value>
+            <value>
+                <fullName>CoPilot Route Sync</fullName>
+                <default>false</default>
+                <label>CoPilot Route Sync</label>
+            </value>
+            <value>
+                <fullName>Critical Event Reporting</fullName>
+                <default>false</default>
+                <label>Critical Event Reporting</label>
+            </value>
+            <value>
+                <fullName>Driver Email</fullName>
+                <default>false</default>
+                <label>Driver Email</label>
+            </value>
+            <value>
+                <fullName>Driver Games</fullName>
+                <default>false</default>
+                <label>Driver Games</label>
+            </value>
+            <value>
+                <fullName>Driver Login</fullName>
+                <default>false</default>
+                <label>Driver Login</label>
+            </value>
+            <value>
+                <fullName>Extended Fault Monitoring</fullName>
+                <default>false</default>
+                <label>Extended Fault Monitoring</label>
+            </value>
+            <value>
+                <fullName>Fault Monitoring (prev. VM)</fullName>
+                <default>false</default>
+                <label>Fault Monitoring (prev. VM)</label>
+            </value>
+            <value>
+                <fullName>In-Cab Scanning</fullName>
+                <default>false</default>
+                <label>In-Cab Scanning</label>
+            </value>
+            <value>
+                <fullName>In-Cab Video Training</fullName>
+                <default>false</default>
+                <label>In-Cab Video Training</label>
+            </value>
+            <value>
+                <fullName>Maptuit NaviGo</fullName>
+                <default>false</default>
+                <label>Maptuit NaviGo</label>
+            </value>
+            <value>
+                <fullName>MCP50 In-CAB scanning</fullName>
+                <default>false</default>
+                <label>MCP50 In-CAB scanning</label>
+            </value>
+            <value>
+                <fullName>Media Manager</fullName>
+                <default>false</default>
+                <label>Media Manager</label>
+            </value>
+            <value>
+                <fullName>Mobile Computing Platform Screen Lock</fullName>
+                <default>false</default>
+                <label>Mobile Computing Platform Screen Lock</label>
+            </value>
+            <value>
+                <fullName>NaviGo Compliance</fullName>
+                <default>false</default>
+                <label>NaviGo Compliance</label>
+            </value>
+            <value>
+                <fullName>NaviGo Fuel</fullName>
+                <default>false</default>
+                <label>NaviGo Fuel</label>
+            </value>
+            <value>
+                <fullName>NaviGo Hazmat</fullName>
+                <default>false</default>
+                <label>NaviGo Hazmat</label>
+            </value>
+            <value>
+                <fullName>Odometer Positions</fullName>
+                <default>false</default>
+                <label>Odometer Positions</label>
+            </value>
+            <value>
+                <fullName>Open Wi-Fi</fullName>
+                <default>false</default>
+                <label>Open Wi-Fi</label>
+            </value>
+            <value>
+                <fullName>Performance Monitoring</fullName>
+                <default>false</default>
+                <label>Performance Monitoring</label>
+            </value>
+            <value>
+                <fullName>Qualcomm Hours of Service (Macro)</fullName>
+                <default>false</default>
+                <label>Qualcomm Hours of Service (Macro)</label>
+            </value>
+            <value>
+                <fullName>Qualcomm Hours of Service Mobile</fullName>
+                <default>false</default>
+                <label>Qualcomm Hours of Service Mobile</label>
+            </value>
+            <value>
+                <fullName>Qualcomm Mobility Services for Handheld</fullName>
+                <default>false</default>
+                <label>Qualcomm Mobility Services for Handheld</label>
+            </value>
+            <value>
+                <fullName>State Miles Counter</fullName>
+                <default>false</default>
+                <label>State Miles Counter</label>
+            </value>
+            <value>
+                <fullName>Tethered Trailer Tracking</fullName>
+                <default>false</default>
+                <label>Tethered Trailer Tracking</label>
+            </value>
+            <value>
+                <fullName>Tire Pressure Monitoring</fullName>
+                <default>false</default>
+                <label>Tire Pressure Monitoring</label>
+            </value>
+            <value>
+                <fullName>Trailer Tire Inflation Alerts</fullName>
+                <default>false</default>
+                <label>Trailer Tire Inflation Alerts</label>
+            </value>
+            <value>
+                <fullName>Trip Manager</fullName>
+                <default>false</default>
+                <label>Trip Manager</label>
+            </value>
+            <value>
+                <fullName>Vehicle Diagnostics</fullName>
+                <default>false</default>
+                <label>Vehicle Diagnostics</label>
+            </value>
+            <value>
+                <fullName>Vehicle Inspection Report (VIR)</fullName>
+                <default>false</default>
+                <label>Vehicle Inspection Report (VIR)</label>
+            </value>
+            <value>
+                <fullName>Web Browser</fullName>
+                <default>false</default>
+                <label>Web Browser</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

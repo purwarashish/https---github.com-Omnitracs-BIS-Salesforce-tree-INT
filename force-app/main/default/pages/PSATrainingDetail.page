@@ -1,0 +1,121 @@
+<apex:page standardController="Contact" extensions="PSATrainingDetailController" showHeader="false" sidebar="false" tabStyle="Account">
+
+
+
+<apex:form id="myForm">
+ 
+   <apex:pageBlock title="Training Profile">
+      
+       <apex:pageBlockSection >
+       
+        
+         <apex:outputText label="User Name" value="{!contactDetail.FirstName} {!contactDetail.LastName}"></apex:outputText>
+         <apex:outputField value="{!contactDetail.User_Status__c}"/>
+
+        
+       </apex:pageBlockSection>
+        
+       
+       <apex:pageBlockSection title="Webinar Training Information"  columns="1">
+        <apex:pageblockSectionItem >
+         <apex:pageMessages rendered="{!webinarMsgFlag}"/> 
+       </apex:pageblockSectionItem>
+         <apex:outputPanel id="WebinarPanel" style="margin:10px;height:100px;overflow-Y:auto;" layout="block">
+           <apex:pageBlockTable value="{!webinarList}"  var="v" rendered="{!webinarFlag}" columnsWidth="250px, 250px, 250px, 250px" >
+     
+             <apex:column headerValue="Name">
+                <apex:outputLink value="/{!v.Id}" id="webinarLink">
+                 <apex:outputField value="{!v.Name}" />
+                </apex:outputLink>
+             </apex:column>
+      
+             <apex:column headerValue="Start date">
+                <apex:outputField value="{!v.Start_Date__c}" />
+             </apex:column>
+     
+             <apex:column headerValue="End date">
+               <apex:outputField value="{!v.End_Date__c}" />
+             </apex:column>
+     
+             <apex:column headerValue="Status" >
+               <apex:outputField value="{!v.Status__c}" />
+             </apex:column>
+            
+           </apex:pageBlockTable>
+         </apex:outputPanel>
+      
+      </apex:pageBlockSection>
+   
+   
+  
+      <apex:pageBlockSection title="Learning Lab Training Information"  columns="1">
+          <apex:pageblockSectionItem >
+              <apex:pageMessages rendered="{!learninglabMsgFlag}"/>
+          </apex:pageblockSectionItem>
+          
+          <apex:outputPanel id="LearningLabPanel" style="margin:10px;height:100px;overflow-Y:auto;" layout="block">
+               
+             <apex:pageBlockTable value="{!learninglabList}" var="v" rendered="{!learninglabFlag}" columnsWidth=" 250px, 250px, 250px, 250px">
+       
+                  <apex:column headerValue="Name">
+                     <apex:outputLink value="/{!v.Id}" id="learningLabLink">
+                      <apex:outputField value="{!v.Name}" />
+                     </apex:outputLink>
+                  </apex:column>
+      
+                  <apex:column headerValue="Start date">
+                    <apex:outputField value="{!v.Start_Date__c}" />
+                  </apex:column>
+     
+                  <apex:column headerValue="End date">
+                    <apex:outputField value="{!v.End_Date__c}" />
+                  </apex:column>
+     
+                  <apex:column headerValue="Status" >
+                    <apex:outputField value="{!v.Status__c}" />
+                  </apex:column>
+    
+             </apex:pageBlockTable>
+            </apex:outputPanel>
+           
+
+        </apex:pageBlockSection>
+   
+        <apex:pageBlockSection title="Training History"  columns="1">
+            <apex:pageblockSectionItem >
+               <apex:pageMessages rendered="{!trainingHistoryMsgFlag}"/>
+            </apex:pageblockSectionItem>
+            
+            <apex:outputPanel id="TrainingHistoryPanel" style="margin:10px;height:150px;overflow-Y:auto;" layout="block">
+              
+              <apex:pageBlockTable value="{!trainingHistoryList}" var="v" rendered="{!trainingHistoryFlag}" columnsWidth=" 200px, 200px, 200px, 200px, 200px">
+       
+                 <apex:column headerValue="Class Name">
+                   <apex:outputLink value="/{!v.Class_Name__r.Id}" id="ClassLink">
+                        <apex:outputField value="{!v.Class_Name__r.Class_Name__c}" />
+                   </apex:outputLink>
+                 </apex:column>
+           
+                 <apex:column headerValue="Course Type">
+                   <apex:outputField value="{!v.Class_Name__r.Course__r.Course_Type__c}" />
+                 </apex:column>
+           
+                 <apex:column headerValue="Trainer">
+                   <apex:outputField value="{!v.Trainer__c}" />
+                 </apex:column>
+           
+                 <apex:column headerValue="Registration Date">
+                   <apex:outputField value="{!v.Registration_Date__c}" />
+                 </apex:column>
+           
+                 <apex:column headerValue="Completion Date">
+                    <apex:outputField value="{!v.Completion_Date__c}" />
+                 </apex:column>
+           
+              </apex:pageBlockTable>
+            </apex:outputPanel>
+           
+         </apex:pageBlockSection>
+     </apex:pageBlock>
+</apex:form>
+</apex:page>

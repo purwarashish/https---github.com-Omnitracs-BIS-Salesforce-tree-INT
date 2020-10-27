@@ -1,0 +1,38 @@
+<apex:page standardController="Requirements__c" tabStyle="Requirements__c" extensions="ViewRequirement_Ext">
+    <apex:messages />
+    <apex:detail relatedList="false" showChatter="true"/>
+    <apex:relatedList list="User_Story_Requirements1__r"/>
+    <apex:relatedList list="Action_Items__r"/>
+    <apex:relatedList list="Test_Scenarios__r"/>
+    <apex:relatedList list="Requirements_System_Fields__r"/>
+    <apex:form id="theForm">
+        <apex:pageBlock rendered="{!canAccess}">
+            <apex:pageBlockSection columns="1" title="Associate System Fields">
+                <apex:pageBlockSectionItem >
+                    <apex:commandButton action="{!doSave}" value="Save Assignments" style="margin-left:415px;"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Filter by Object"/>
+                    <apex:selectList value="{!selectedFilter}" size="1">
+                        <apex:selectOptions value="{!filterOptions}"/>
+                        <apex:actionSupport event="onchange" action="{!refreshFilter}" rerender="theForm"/> 
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Associate System Fields" rendered="false"/>
+                    <apex:outputPanel id="menus">
+                        <c:MultiselectPicklist leftLabel="Unassigned System Fields"
+                            leftOptions="{!unassignedFieldsList}"
+                            rightLabel="Assigned System Fields"
+                            rightOptions="{!assignedFieldsList}"
+                            size="5"
+                            width="275px"/>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:commandButton action="{!doSave}" value="Save Assignments" style="margin-left:415px;"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

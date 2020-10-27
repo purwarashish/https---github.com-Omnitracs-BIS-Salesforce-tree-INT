@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Template_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Template Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Output Eval Template</fullName>
+                <default>false</default>
+                <label>Output Eval Template</label>
+            </value>
+            <value>
+                <fullName>Output MSA Template</fullName>
+                <default>false</default>
+                <label>Output MSA Template</label>
+            </value>
+            <value>
+                <fullName>Output Schedule Template</fullName>
+                <default>false</default>
+                <label>Output Schedule Template</label>
+            </value>
+            <value>
+                <fullName>Output Standard SOW Template</fullName>
+                <default>false</default>
+                <label>Output Standard SOW Template</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

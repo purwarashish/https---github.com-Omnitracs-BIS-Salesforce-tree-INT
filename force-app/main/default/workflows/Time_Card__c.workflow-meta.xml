@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Time_Card_Approved</fullName>
+        <description>Time Card Approved</description>
+        <protected>false</protected>
+        <recipients>
+            <field>User__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Roadnet_Customer_Service/Time_Card_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>Time_Card_Rejected</fullName>
+        <description>Time Card Rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <field>User__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Roadnet_Customer_Service/Time_Card_Rejected</template>
+    </alerts>
+    <rules>
+        <fullName>Time Card Approved</fullName>
+        <actions>
+            <name>Time_Card_Approved</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(ISCHANGED(Submit_Status__c), ISPICKVAL(Submit_Status__c,&apos;Approved&apos;))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Time Card Rejected</fullName>
+        <actions>
+            <name>Time_Card_Rejected</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(ISCHANGED(Submit_Status__c), ISPICKVAL(Submit_Status__c,&apos;Rejected&apos;))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

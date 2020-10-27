@@ -1,0 +1,962 @@
+<!--/*******************************************************************************
+ * File:  EmployeeProd.Page
+ * Date:  August 10, 2015
+ * Author:  Joseph Hutchins
+ *
+ * The use, disclosure, reproduction, modification, transfer, or transmittal of
+ * this work for any purpose in any form or by any means without the written 
+ * permission of United Parcel Service is strictly prohibited.
+ *
+ * Confidential, unpublished property of United Parcel Service.
+ * Use and distribution limited solely to authorized personnel.
+ *
+ * Copyright 2009, UPS Logistics Technologies, Inc.  All rights reserved.
+ *  *******************************************************************************/-->
+<apex:page controller="EmployeeProductivityController" action="{!verifyUserIsApartOfCaseTeam}">
+    <!--  Stops the account name from having focus when page loads. -->
+    <script>
+       function setFocusOnLoad(){}
+    </script>
+    <apex:pagemessages />
+    <apex:form >
+        <apex:pageblock title="Debug Section" rendered="{!isDebug}">
+            <apex:pageblocksection >
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Query Stats"/>
+                    <apex:actionstatus id="refreshStatus" startText="Querying Records Please Wait..." stoptext=""/>
+                </apex:pageblocksectionitem>
+           
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Is Lead"/>
+                    <apex:outputtext value="{!isLead}"/>
+                </apex:pageblocksectionitem>
+            </apex:pageblocksection>
+        </apex:pageblock>
+        <apex:pageblock >
+            <apex:pageblocksection title="Date Selection">
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Begin Date:"/>
+                    <apex:inputfield value="{!timeCardForBeginDateOnly.Week_Begin__c}">
+                    </apex:inputfield>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="End Date:"/>
+                    <apex:inputfield value="{!timeCardForEndDateOnly.Week_Begin__c}"/>
+                </apex:pageblocksectionitem>
+                
+                <apex:pageblocksectionItem >
+                    <apex:outputlabel value="Business Unit"/>
+                    <apex:selectlist value="{!businessUnitUserChoice}" size="1">
+                        <apex:selectoption itemvalue="All" itemlabel="All"/>
+                        <apex:selectoption itemvalue="Omnitracs US" itemlabel="Omnitracs US"/>
+                        <apex:selectoption itemvalue="Roadnet" itemlabel="Roadnet"/>
+                        <apex:selectoption itemvalue="Sylectus" itemlabel="Sylectus"/>
+                        <apex:selectoption itemvalue="XRS" itemlabel="XRS"/>
+                    </apex:selectlist>
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem >
+                    <apex:outputlabel value="Manager"/>
+                    <apex:selectlist id="managerPickListId" value="{!managerUserChoice}" size="1">
+                        <apex:selectoption itemvalue="All" itemlabel="All"/>
+                        <apex:selectoption itemvalue="John Wajer" itemlabel="John Wajer"/>
+                        <apex:selectoption itemvalue="Zach Evans" itemlabel="Zach Evans"/>
+                        <apex:selectoption itemvalue="Colleen Watson" itemlabel="Colleen Watson"/>
+                        <apex:selectoption itemvalue="Makeissah Robinson" itemlabel="Makeissah Robinson"/>
+                        <apex:selectoption itemvalue="Marcus Lowe" itemlabel="Marcus Lowe"/>
+                        <apex:selectoption itemvalue="Michael Feathers" itemlabel="Michael Feathers"/>
+                        <apex:selectoption itemvalue="Scott Jacobs" itemlabel="Scott Jacobs"/>
+                        <apex:selectoption itemvalue="Steve Bohlman" itemlabel="Steve Bohlman"/>
+                        <apex:actionsupport event="onchange" action="{!refresh}"/>
+                    </apex:selectlist>
+                </apex:pageblocksectionItem>
+                
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value=""/>
+                    <apex:commandbutton action="{!refresh}" value="Query Stats"/>
+                </apex:pageblocksectionitem>                
+            </apex:pageblocksection>
+        </apex:pageblock>
+        <apex:pageblock >
+            <apex:pageblocksection columns="1" title="Roadnet - Primary Support - Zach Evans" 
+rendered="{!AND(OR(businessUnitUserChoice == 'Roadnet', businessUnitUserChoice == 'All'), OR(ManagerUserChoice == 'Zach Evans', ManagerUserChoice == 'All', ManagerUserChoice == 'John Wajer'), roadnetPrimarySupport.size > 2)}">
+                <apex:pageblocktable value="{!roadnetPrimarySupport}" var="row">
+                    <apex:column value="{!row.name}" headerValue="Name"/>
+                    <!--  start of column modifications for rodnade primary support -->
+                    <apex:column >
+                        <apex:facet name="header">Case <br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Case_Work_Time__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Non Case<br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Non_Case_Time_TC_Subtractors__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Absence <br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Absence_Time_Sum_All__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Case <br/> Events</apex:facet>
+                        <apex:outputfield value="{!row.Case_Events__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Cases <br/> Opened</apex:facet>
+                        <apex:outputfield value="{!row.Cases_Opened__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Cases <br/> Closed</apex:facet>
+                        <apex:outputfield value="{!row.Cases_Closed__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Case <br />Activity <br/> By Work Day</apex:facet>
+                        <apex:outputfield value="{!row.Case_Activity_by_Day__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Closed <br /> Cases <br/> Per Work Day</apex:facet>
+                        <apex:outputfield value="{!row.Closed_Cases_By_Day__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Total <br /> Cases <br/> Worked On</apex:facet>
+                        <apex:outputfield value="{!row.Total_Cases_Worked_On__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Engineering <br /> Cases <br/> Opened</apex:facet>
+                        <apex:outputfield value="{!row.Engineering_Cases_Opened__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Articles <br />Linked</apex:facet>
+                        <apex:outputfield value="{!row.Articles_Linked__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Articles <br />Created</apex:facet>
+                        <apex:outputfield value="{!row.Articles_Created__c}"/>      
+                    </apex:column>                    
+
+                    <apex:column >
+                        <apex:facet name="header">Utilization Rate<br /> (Pure Case <br /> Time Only)</apex:facet>
+                        <apex:outputtext value="{0,number, 0.0}%">
+                            <apex:param value="{!row.Utilization_Rate_Overall_Sum__c}"/>
+                        </apex:outputtext>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Utilization <br /> Rate <br /> Overall</apex:facet>
+                        <apex:outputtext value="{0,number, 0.0}%">
+                            <apex:param value="{!row.Utilization_Work_Minutes_Time_Card_Sum__c}"/>
+                        </apex:outputtext>
+                    </apex:column>                    
+                    <!--  end of column modifications for roadnet primary support-->
+                    
+                </apex:pageblocktable>
+            </apex:pageblocksection>
+            <apex:pageblocksection columns="1" title="Roadnet - Strategic Support - Colleen Watson" 
+rendered="{!AND(OR(businessUnitUserChoice == 'Roadnet', businessUnitUserChoice == 'All'), OR(ManagerUserChoice == 'Colleen Watson', ManagerUserChoice == 'All', ManagerUserChoice == 'John Wajer'), roadnetStrategicSupport.size > 2)}">
+                <apex:pageblocktable value="{!roadnetStrategicSupport}" var="row">
+                    <apex:column value="{!row.name}" headerValue="Name"/>
+                    <apex:column >
+                        <apex:facet name="header">Case <br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Case_Work_Time__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Non Case<br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Non_Case_Time_TC_Subtractors__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Absence <br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Absence_Time_Sum_All__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Case <br/> Events</apex:facet>
+                        <apex:outputfield value="{!row.Case_Events__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Cases <br/> Opened</apex:facet>
+                        <apex:outputfield value="{!row.Cases_Opened__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Cases <br/> Closed</apex:facet>
+                        <apex:outputfield value="{!row.Cases_Closed__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Case <br />Activity <br/> By Work Day</apex:facet>
+                        <apex:outputfield value="{!row.Case_Activity_by_Day__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Closed <br /> Cases <br/> Per Work Day</apex:facet>
+                        <apex:outputfield value="{!row.Closed_Cases_By_Day__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Total <br /> Cases <br/> Worked On</apex:facet>
+                        <apex:outputfield value="{!row.Total_Cases_Worked_On__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Engineering <br /> Cases <br/> Opened</apex:facet>
+                        <apex:outputfield value="{!row.Engineering_Cases_Opened__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Articles <br />Linked</apex:facet>
+                        <apex:outputfield value="{!row.Articles_Linked__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Articles <br />Created</apex:facet>
+                        <apex:outputfield value="{!row.Articles_Created__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Utilization Rate<br /> (Pure Case <br /> Time Only)</apex:facet>
+                        <apex:outputtext value="{0,number, 0.0}%">
+                            <apex:param value="{!row.Utilization_Rate_Overall_Sum__c}"/>
+                        </apex:outputtext>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Utilization <br /> Rate <br /> Overall</apex:facet>
+                        <apex:outputtext value="{0,number, 0.0}%">
+                            <apex:param value="{!row.Utilization_Work_Minutes_Time_Card_Sum__c}"/>
+                        </apex:outputtext>
+                    </apex:column>                    
+                </apex:pageblocktable>
+            </apex:pageblocksection>
+            
+            
+            
+
+            <apex:pageblocksection columns="1" title="{!variablePageBlockSectionTitle} - Tier 1 - Makeissah Robinson" 
+                rendered="{!AND(OR(businessUnitUserChoice == 'Omnitracs US', businessUnitUserChoice == 'XRS', businessUnitUserChoice == 'All'),OR(ManagerUserChoice == 'Makeissah Robinson',managerUserChoice == 'All'), robinsontier1.size > 2)}">
+                <apex:pageblocktable value="{!RobinsonTier1}" var="row">
+                    <apex:column value="{!row.name}" headerValue="Name"/>
+                    <apex:column >
+                        <apex:facet name="header">Case <br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Case_Work_Time__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Non Case<br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Non_Case_Time_TC_Subtractors__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Absence <br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Absence_Time_Sum_All__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Case <br/> Events</apex:facet>
+                        <apex:outputfield value="{!row.Case_Events__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Cases <br/> Opened</apex:facet>
+                        <apex:outputfield value="{!row.Cases_Opened__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Cases <br/> Closed</apex:facet>
+                        <apex:outputfield value="{!row.Cases_Closed__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Case <br />Activity <br/> By Work Day</apex:facet>
+                        <apex:outputfield value="{!row.Case_Activity_by_Day__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Closed <br /> Cases <br/> Per Work Day</apex:facet>
+                        <apex:outputfield value="{!row.Closed_Cases_By_Day__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Total <br /> Cases <br/> Worked On</apex:facet>
+                        <apex:outputfield value="{!row.Total_Cases_Worked_On__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Engineering <br /> Cases <br/> Opened</apex:facet>
+                        <apex:outputfield value="{!row.Engineering_Cases_Opened__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Articles <br />Linked</apex:facet>
+                        <apex:outputfield value="{!row.Articles_Linked__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Articles <br />Created</apex:facet>
+                        <apex:outputfield value="{!row.Articles_Created__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Utilization Rate<br /> (Pure Case <br /> Time Only)</apex:facet>
+                        <apex:outputtext value="{0,number, 0.0}%">
+                            <apex:param value="{!row.Utilization_Rate_Overall_Sum__c}"/>
+                        </apex:outputtext>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Utilization <br /> Rate <br /> Overall</apex:facet>
+                        <apex:outputtext value="{0,number, 0.0}%">
+                            <apex:param value="{!row.Utilization_Work_Minutes_Time_Card_Sum__c}"/>
+                        </apex:outputtext>
+                    </apex:column>                    
+                </apex:pageblocktable>
+            </apex:pageblocksection>
+
+            <apex:pageblocksection columns="1" title="{!variablePageBlockSectionTitle} - Tier 2 - Makeissah Robinson" 
+                rendered="{!AND(OR(businessUnitUserChoice == 'Omnitracs US', businessUnitUserChoice == 'XRS', businessUnitUserChoice == 'All'),OR(ManagerUserChoice == 'Makeissah Robinson',managerUserChoice == 'All'), robinsontier2.size > 2)}">
+                <apex:pageblocktable value="{!RobinsonTier2}" var="row">
+                    <apex:column value="{!row.name}" headerValue="Name"/>
+                    <apex:column >
+                        <apex:facet name="header">Case <br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Case_Work_Time__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Non Case<br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Non_Case_Time_TC_Subtractors__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Absence <br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Absence_Time_Sum_All__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Case <br/> Events</apex:facet>
+                        <apex:outputfield value="{!row.Case_Events__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Cases <br/> Opened</apex:facet>
+                        <apex:outputfield value="{!row.Cases_Opened__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Cases <br/> Closed</apex:facet>
+                        <apex:outputfield value="{!row.Cases_Closed__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Case <br />Activity <br/> By Work Day</apex:facet>
+                        <apex:outputfield value="{!row.Case_Activity_by_Day__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Closed <br /> Cases <br/> Per Work Day</apex:facet>
+                        <apex:outputfield value="{!row.Closed_Cases_By_Day__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Total <br /> Cases <br/> Worked On</apex:facet>
+                        <apex:outputfield value="{!row.Total_Cases_Worked_On__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Engineering <br /> Cases <br/> Opened</apex:facet>
+                        <apex:outputfield value="{!row.Engineering_Cases_Opened__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Articles <br />Linked</apex:facet>
+                        <apex:outputfield value="{!row.Articles_Linked__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Articles <br />Created</apex:facet>
+                        <apex:outputfield value="{!row.Articles_Created__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Utilization Rate<br /> (Pure Case <br /> Time Only)</apex:facet>
+                        <apex:outputtext value="{0,number, 0.0}%">
+                            <apex:param value="{!row.Utilization_Rate_Overall_Sum__c}"/>
+                        </apex:outputtext>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Utilization <br /> Rate <br /> Overall</apex:facet>
+                        <apex:outputtext value="{0,number, 0.0}%">
+                            <apex:param value="{!row.Utilization_Work_Minutes_Time_Card_Sum__c}"/>
+                        </apex:outputtext>
+                    </apex:column>                    
+                </apex:pageblocktable>
+            </apex:pageblocksection>
+
+<apex:pageblocksection columns="1" title="Omnitracs - Tier 1 - Marcus Lowe" 
+                rendered="{!AND(OR(businessUnitUserChoice == 'Omnitracs US', businessUnitUserChoice == 'XRS', businessUnitUserChoice == 'All'),OR(ManagerUserChoice == 'Marcus Lowe',managerUserChoice == 'All'), loweTier1.size > 2)}">
+                <apex:pageblocktable value="{!loweTier1}" var="row">
+                    <apex:column value="{!row.name}" headerValue="Name"/>
+                    <apex:column >
+                        <apex:facet name="header">Case <br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Case_Work_Time__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Non Case<br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Non_Case_Time_TC_Subtractors__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Absence <br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Absence_Time_Sum_All__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Case <br/> Events</apex:facet>
+                        <apex:outputfield value="{!row.Case_Events__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Cases <br/> Opened</apex:facet>
+                        <apex:outputfield value="{!row.Cases_Opened__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Cases <br/> Closed</apex:facet>
+                        <apex:outputfield value="{!row.Cases_Closed__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Case <br />Activity <br/> By Work Day</apex:facet>
+                        <apex:outputfield value="{!row.Case_Activity_by_Day__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Closed <br /> Cases <br/> Per Work Day</apex:facet>
+                        <apex:outputfield value="{!row.Closed_Cases_By_Day__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Total <br /> Cases <br/> Worked On</apex:facet>
+                        <apex:outputfield value="{!row.Total_Cases_Worked_On__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Engineering <br /> Cases <br/> Opened</apex:facet>
+                        <apex:outputfield value="{!row.Engineering_Cases_Opened__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Articles <br />Linked</apex:facet>
+                        <apex:outputfield value="{!row.Articles_Linked__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Articles <br />Created</apex:facet>
+                        <apex:outputfield value="{!row.Articles_Created__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Utilization Rate<br /> (Pure Case <br /> Time Only)</apex:facet>
+                        <apex:outputtext value="{0,number, 0.0}%">
+                            <apex:param value="{!row.Utilization_Rate_Overall_Sum__c}"/>
+                        </apex:outputtext>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Utilization <br /> Rate <br /> Overall</apex:facet>
+                        <apex:outputtext value="{0,number, 0.0}%">
+                            <apex:param value="{!row.Utilization_Work_Minutes_Time_Card_Sum__c}"/>
+                        </apex:outputtext>
+                    </apex:column>                    
+                </apex:pageblocktable>
+            </apex:pageblocksection>
+
+            <apex:pageblocksection columns="1" title="Omnitracs - Tier 2 - Marcus Lowe" 
+                rendered="{!AND(OR(businessUnitUserChoice == 'Omnitracs US', businessUnitUserChoice == 'XRS', businessUnitUserChoice == 'All'),OR(ManagerUserChoice == 'Marcus Lowe',managerUserChoice == 'All'), loweTier2.size > 2)}">
+                <apex:pageblocktable value="{!loweTier2}" var="row">
+                    <apex:column value="{!row.name}" headerValue="Name"/>
+                    <apex:column >
+                        <apex:facet name="header">Case <br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Case_Work_Time__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Non Case<br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Non_Case_Time_TC_Subtractors__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Absence <br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Absence_Time_Sum_All__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Case <br/> Events</apex:facet>
+                        <apex:outputfield value="{!row.Case_Events__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Cases <br/> Opened</apex:facet>
+                        <apex:outputfield value="{!row.Cases_Opened__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Cases <br/> Closed</apex:facet>
+                        <apex:outputfield value="{!row.Cases_Closed__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Case <br />Activity <br/> By Work Day</apex:facet>
+                        <apex:outputfield value="{!row.Case_Activity_by_Day__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Closed <br /> Cases <br/> Per Work Day</apex:facet>
+                        <apex:outputfield value="{!row.Closed_Cases_By_Day__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Total <br /> Cases <br/> Worked On</apex:facet>
+                        <apex:outputfield value="{!row.Total_Cases_Worked_On__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Engineering <br /> Cases <br/> Opened</apex:facet>
+                        <apex:outputfield value="{!row.Engineering_Cases_Opened__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Articles <br />Linked</apex:facet>
+                        <apex:outputfield value="{!row.Articles_Linked__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Articles <br />Created</apex:facet>
+                        <apex:outputfield value="{!row.Articles_Created__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Utilization Rate<br /> (Pure Case <br /> Time Only)</apex:facet>
+                        <apex:outputtext value="{0,number, 0.0}%">
+                            <apex:param value="{!row.Utilization_Rate_Overall_Sum__c}"/>
+                        </apex:outputtext>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Utilization <br /> Rate <br /> Overall</apex:facet>
+                        <apex:outputtext value="{0,number, 0.0}%">
+                            <apex:param value="{!row.Utilization_Work_Minutes_Time_Card_Sum__c}"/>
+                        </apex:outputtext>
+                    </apex:column>                    
+                </apex:pageblocktable>
+            </apex:pageblocksection>
+            
+            <apex:pageblocksection columns="1" title="Omnitracs - Tier 1 - Michael Feathers" 
+                rendered="{!AND(OR(businessUnitUserChoice == 'Omnitracs US', businessUnitUserChoice == 'XRS', businessUnitUserChoice == 'All'),OR(ManagerUserChoice == 'Michael Feathers',managerUserChoice == 'All'), featherTier1.size > 2)}">
+                <apex:pageblocktable value="{!featherTier1}" var="row">
+                    <apex:column value="{!row.name}" headerValue="Name"/>
+                    <apex:column >
+                        <apex:facet name="header">Case <br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Case_Work_Time__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Non Case<br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Non_Case_Time_TC_Subtractors__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Absence <br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Absence_Time_Sum_All__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Case <br/> Events</apex:facet>
+                        <apex:outputfield value="{!row.Case_Events__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Cases <br/> Opened</apex:facet>
+                        <apex:outputfield value="{!row.Cases_Opened__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Cases <br/> Closed</apex:facet>
+                        <apex:outputfield value="{!row.Cases_Closed__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Case <br />Activity <br/> By Work Day</apex:facet>
+                        <apex:outputfield value="{!row.Case_Activity_by_Day__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Closed <br /> Cases <br/> Per Work Day</apex:facet>
+                        <apex:outputfield value="{!row.Closed_Cases_By_Day__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Total <br /> Cases <br/> Worked On</apex:facet>
+                        <apex:outputfield value="{!row.Total_Cases_Worked_On__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Engineering <br /> Cases <br/> Opened</apex:facet>
+                        <apex:outputfield value="{!row.Engineering_Cases_Opened__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Articles <br />Linked</apex:facet>
+                        <apex:outputfield value="{!row.Articles_Linked__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Articles <br />Created</apex:facet>
+                        <apex:outputfield value="{!row.Articles_Created__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Utilization Rate<br /> (Pure Case <br /> Time Only)</apex:facet>
+                        <apex:outputtext value="{0,number, 0.0}%">
+                            <apex:param value="{!row.Utilization_Rate_Overall_Sum__c}"/>
+                        </apex:outputtext>
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Utilization <br /> Rate <br /> Overall</apex:facet>
+                        <apex:outputtext value="{0,number, 0.0}%">
+                            <apex:param value="{!row.Utilization_Work_Minutes_Time_Card_Sum__c}"/>
+                        </apex:outputtext>
+                    </apex:column>                    
+                </apex:pageblocktable>
+            </apex:pageblocksection>
+
+            <apex:pageblocksection columns="1" title="Omnitracs - Tier 2 - Michael Feathers" 
+                rendered="{!AND(OR(businessUnitUserChoice == 'Omnitracs US', businessUnitUserChoice == 'XRS', businessUnitUserChoice == 'All'),OR(ManagerUserChoice == 'Michael Feathers',managerUserChoice == 'All'), featherTier2.size > 2)}">
+                <apex:pageblocktable value="{!featherTier2}" var="row">
+                    <apex:column value="{!row.name}" headerValue="Name"/>
+                    <apex:column >
+                        <apex:facet name="header">Case <br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Case_Work_Time__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Non Case<br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Non_Case_Time_TC_Subtractors__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Absence <br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Absence_Time_Sum_All__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Case <br/> Events</apex:facet>
+                        <apex:outputfield value="{!row.Case_Events__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Cases <br/> Opened</apex:facet>
+                        <apex:outputfield value="{!row.Cases_Opened__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Cases <br/> Closed</apex:facet>
+                        <apex:outputfield value="{!row.Cases_Closed__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Case <br />Activity <br/> By Work Day</apex:facet>
+                        <apex:outputfield value="{!row.Case_Activity_by_Day__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Closed <br /> Cases <br/> Per Work Day</apex:facet>
+                        <apex:outputfield value="{!row.Closed_Cases_By_Day__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Total <br /> Cases <br/> Worked On</apex:facet>
+                        <apex:outputfield value="{!row.Total_Cases_Worked_On__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Engineering <br /> Cases <br/> Opened</apex:facet>
+                        <apex:outputfield value="{!row.Engineering_Cases_Opened__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Articles <br />Linked</apex:facet>
+                        <apex:outputfield value="{!row.Articles_Linked__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Articles <br />Created</apex:facet>
+                        <apex:outputfield value="{!row.Articles_Created__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Utilization Rate<br /> (Pure Case <br /> Time Only)</apex:facet>
+                        <apex:outputtext value="{0,number, 0.0}%">
+                            <apex:param value="{!row.Utilization_Rate_Overall_Sum__c}"/>
+                        </apex:outputtext>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Utilization <br /> Rate <br /> Overall</apex:facet>
+                        <apex:outputtext value="{0,number, 0.0}%">
+                            <apex:param value="{!row.Utilization_Work_Minutes_Time_Card_Sum__c}"/>
+                        </apex:outputtext>
+                    </apex:column>                    
+                </apex:pageblocktable>
+            </apex:pageblocksection>
+
+            
+            <apex:pageblocksection columns="1" title="Omnitracs - Tier 0 - Scott Jacobs" 
+                rendered="{!AND(OR(businessUnitUserChoice == 'Omnitracs US', businessUnitUserChoice == 'XRS', businessUnitUserChoice == 'All'),OR(ManagerUserChoice == 'Scott Jacobs',managerUserChoice == 'All'), jacobsTier0.size > 2)}">
+                <apex:pageblocktable value="{!jacobsTier0}" var="row">
+                    <apex:column value="{!row.name}" headerValue="Name"/>
+                    <apex:column >
+                        <apex:facet name="header">Case <br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Case_Work_Time__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Non Case<br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Non_Case_Time_TC_Subtractors__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Absence <br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Absence_Time_Sum_All__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Case <br/> Events</apex:facet>
+                        <apex:outputfield value="{!row.Case_Events__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Cases <br/> Opened</apex:facet>
+                        <apex:outputfield value="{!row.Cases_Opened__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Cases <br/> Closed</apex:facet>
+                        <apex:outputfield value="{!row.Cases_Closed__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Case <br />Activity <br/> By Work Day</apex:facet>
+                        <apex:outputfield value="{!row.Case_Activity_by_Day__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Closed <br /> Cases <br/> Per Work Day</apex:facet>
+                        <apex:outputfield value="{!row.Closed_Cases_By_Day__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Total <br /> Cases <br/> Worked On</apex:facet>
+                        <apex:outputfield value="{!row.Total_Cases_Worked_On__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Engineering <br /> Cases <br/> Opened</apex:facet>
+                        <apex:outputfield value="{!row.Engineering_Cases_Opened__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Articles <br />Linked</apex:facet>
+                        <apex:outputfield value="{!row.Articles_Linked__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Articles <br />Created</apex:facet>
+                        <apex:outputfield value="{!row.Articles_Created__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Utilization Rate<br /> (Pure Case <br /> Time Only)</apex:facet>
+                        <apex:outputtext value="{0,number, 0.0}%">
+                            <apex:param value="{!row.Utilization_Rate_Overall_Sum__c}"/>
+                        </apex:outputtext>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Utilization <br /> Rate <br /> Overall</apex:facet>
+                        <apex:outputtext value="{0,number, 0.0}%">
+                            <apex:param value="{!row.Utilization_Work_Minutes_Time_Card_Sum__c}"/>
+                        </apex:outputtext>
+                    </apex:column>
+                </apex:pageblocktable>
+            </apex:pageblocksection>
+            
+            <apex:pageblocksection columns="1" title="Omnitracs - Tier 1 - Scott Jacobs" 
+                rendered="{!AND(OR(businessUnitUserChoice == 'Omnitracs US', businessUnitUserChoice == 'XRS', businessUnitUserChoice == 'All'),OR(ManagerUserChoice == 'Scott Jacobs',managerUserChoice == 'All'), jacobsTier1.size > 2)}">
+                <apex:pageblocktable value="{!jacobsTier1}" var="row">
+                    <apex:column value="{!row.name}" headerValue="Name"/>
+                    <apex:column >
+                        <apex:facet name="header">Case <br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Case_Work_Time__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Non Case<br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Non_Case_Time_TC_Subtractors__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Absence <br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Absence_Time_Sum_All__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Case <br/> Events</apex:facet>
+                        <apex:outputfield value="{!row.Case_Events__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Cases <br/> Opened</apex:facet>
+                        <apex:outputfield value="{!row.Cases_Opened__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Cases <br/> Closed</apex:facet>
+                        <apex:outputfield value="{!row.Cases_Closed__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Case <br />Activity <br/> By Work Day</apex:facet>
+                        <apex:outputfield value="{!row.Case_Activity_by_Day__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Closed <br /> Cases <br/> Per Work Day</apex:facet>
+                        <apex:outputfield value="{!row.Closed_Cases_By_Day__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Total <br /> Cases <br/> Worked On</apex:facet>
+                        <apex:outputfield value="{!row.Total_Cases_Worked_On__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Engineering <br /> Cases <br/> Opened</apex:facet>
+                        <apex:outputfield value="{!row.Engineering_Cases_Opened__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Articles <br />Linked</apex:facet>
+                        <apex:outputfield value="{!row.Articles_Linked__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Articles <br />Created</apex:facet>
+                        <apex:outputfield value="{!row.Articles_Created__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Utilization Rate<br /> (Pure Case <br /> Time Only)</apex:facet>
+                        <apex:outputtext value="{0,number, 0.0}%">
+                            <apex:param value="{!row.Utilization_Rate_Overall_Sum__c}"/>
+                        </apex:outputtext>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Utilization <br /> Rate <br /> Overall</apex:facet>
+                        <apex:outputtext value="{0,number, 0.0}%">
+                            <apex:param value="{!row.Utilization_Work_Minutes_Time_Card_Sum__c}"/>
+                        </apex:outputtext>
+                    </apex:column>
+                </apex:pageblocktable>
+            </apex:pageblocksection>
+            
+
+            <apex:pageblocksection columns="1" title="Omnitracs - Tier 2 - Scott Jacobs" 
+                rendered="{!AND(OR(businessUnitUserChoice == 'Omnitracs US', businessUnitUserChoice == 'XRS', businessUnitUserChoice == 'All'),OR(ManagerUserChoice == 'Scott Jacobs',managerUserChoice == 'All'), jacobsTier2.size > 2)}">
+                <apex:pageblocktable value="{!jacobsTier2}" var="row">
+                    <apex:column value="{!row.name}" headerValue="Name"/>
+                    <apex:column >
+                        <apex:facet name="header">Case <br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Case_Work_Time__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Non Case<br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Non_Case_Time_TC_Subtractors__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Absence <br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Absence_Time_Sum_All__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Case <br/> Events</apex:facet>
+                        <apex:outputfield value="{!row.Case_Events__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Cases <br/> Opened</apex:facet>
+                        <apex:outputfield value="{!row.Cases_Opened__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Cases <br/> Closed</apex:facet>
+                        <apex:outputfield value="{!row.Cases_Closed__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Case <br />Activity <br/> By Work Day</apex:facet>
+                        <apex:outputfield value="{!row.Case_Activity_by_Day__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Closed <br /> Cases <br/> Per Work Day</apex:facet>
+                        <apex:outputfield value="{!row.Closed_Cases_By_Day__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Total <br /> Cases <br/> Worked On</apex:facet>
+                        <apex:outputfield value="{!row.Total_Cases_Worked_On__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Engineering <br /> Cases <br/> Opened</apex:facet>
+                        <apex:outputfield value="{!row.Engineering_Cases_Opened__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Articles <br />Linked</apex:facet>
+                        <apex:outputfield value="{!row.Articles_Linked__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Articles <br />Created</apex:facet>
+                        <apex:outputfield value="{!row.Articles_Created__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Utilization Rate<br /> (Pure Case <br /> Time Only)</apex:facet>
+                        <apex:outputtext value="{0,number, 0.0}%">
+                            <apex:param value="{!row.Utilization_Rate_Overall_Sum__c}"/>
+                        </apex:outputtext>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Utilization <br /> Rate <br /> Overall</apex:facet>
+                        <apex:outputtext value="{0,number, 0.0}%">
+                            <apex:param value="{!row.Utilization_Work_Minutes_Time_Card_Sum__c}"/>
+                        </apex:outputtext>
+                    </apex:column>                    
+                </apex:pageblocktable>
+            </apex:pageblocksection>
+            
+            <apex:pageblocksection columns="1" title="{!variablePageBlockSectionTitle} - Tier 1 - Steve Bohlman" 
+                rendered="{!AND(OR(businessUnitUserChoice == 'Omnitracs US', businessUnitUserChoice == 'XRS', businessUnitUserChoice == 'All'),OR(ManagerUserChoice == 'Steve Bohlman',managerUserChoice == 'All'), bolhmanTier1.size > 2)}">
+                <apex:pageblocktable value="{!bolhmanTier1}" var="row">
+                    <apex:column value="{!row.name}" headerValue="Name"/>
+                    <apex:column >
+                        <apex:facet name="header">Case <br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Case_Work_Time__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Non Case<br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Non_Case_Time_TC_Subtractors__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Absence <br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Absence_Time_Sum_All__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Case <br/> Events</apex:facet>
+                        <apex:outputfield value="{!row.Case_Events__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Cases <br/> Opened</apex:facet>
+                        <apex:outputfield value="{!row.Cases_Opened__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Cases <br/> Closed</apex:facet>
+                        <apex:outputfield value="{!row.Cases_Closed__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Case <br />Activity <br/> By Work Day</apex:facet>
+                        <apex:outputfield value="{!row.Case_Activity_by_Day__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Closed <br /> Cases <br/> Per Work Day</apex:facet>
+                        <apex:outputfield value="{!row.Closed_Cases_By_Day__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Total <br /> Cases <br/> Worked On</apex:facet>
+                        <apex:outputfield value="{!row.Total_Cases_Worked_On__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Engineering <br /> Cases <br/> Opened</apex:facet>
+                        <apex:outputfield value="{!row.Engineering_Cases_Opened__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Articles <br />Linked</apex:facet>
+                        <apex:outputfield value="{!row.Articles_Linked__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Articles <br />Created</apex:facet>
+                        <apex:outputfield value="{!row.Articles_Created__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Utilization Rate<br /> (Pure Case <br /> Time Only)</apex:facet>
+                        <apex:outputtext value="{0,number, 0.0}%">
+                            <apex:param value="{!row.Utilization_Rate_Overall_Sum__c}"/>
+                        </apex:outputtext>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Utilization <br /> Rate <br /> Overall</apex:facet>
+                        <apex:outputtext value="{0,number, 0.0}%">
+                            <apex:param value="{!row.Utilization_Work_Minutes_Time_Card_Sum__c}"/>
+                        </apex:outputtext>
+                    </apex:column>                    
+                </apex:pageblocktable>
+            </apex:pageblocksection>
+
+            <apex:pageblocksection columns="1" title="{!variablePageBlockSectionTitle} - Tier 2 - Steve Bohlman" 
+                rendered="{!AND(OR(businessUnitUserChoice == 'Omnitracs US', businessUnitUserChoice == 'XRS', businessUnitUserChoice == 'All'),OR(ManagerUserChoice == 'Steve Bohlman',managerUserChoice == 'All'), bolhmanTier2.size > 2)}">
+                <apex:pageblocktable value="{!bolhmanTier2}" var="row">
+                    <apex:column value="{!row.name}" headerValue="Name"/>
+                    <apex:column >
+                        <apex:facet name="header">Case <br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Case_Work_Time__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Non Case<br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Non_Case_Time_TC_Subtractors__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Absence <br />Time</apex:facet>
+                        <apex:outputfield value="{!row.Absence_Time_Sum_All__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Case <br/> Events</apex:facet>
+                        <apex:outputfield value="{!row.Case_Events__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Cases <br/> Opened</apex:facet>
+                        <apex:outputfield value="{!row.Cases_Opened__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Cases <br/> Closed</apex:facet>
+                        <apex:outputfield value="{!row.Cases_Closed__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Case <br />Activity <br/> By Work Day</apex:facet>
+                        <apex:outputfield value="{!row.Case_Activity_by_Day__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Closed <br /> Cases <br/> Per Work Day</apex:facet>
+                        <apex:outputfield value="{!row.Closed_Cases_By_Day__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Total <br /> Cases <br/> Worked On</apex:facet>
+                        <apex:outputfield value="{!row.Total_Cases_Worked_On__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Engineering <br /> Cases <br/> Opened</apex:facet>
+                        <apex:outputfield value="{!row.Engineering_Cases_Opened__c}"/>      
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Articles <br />Linked</apex:facet>
+                        <apex:outputfield value="{!row.Articles_Linked__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Articles <br />Created</apex:facet>
+                        <apex:outputfield value="{!row.Articles_Created__c}"/>      
+                    </apex:column>                    
+                    <apex:column >
+                        <apex:facet name="header">Utilization Rate<br /> (Pure Case <br /> Time Only)</apex:facet>
+                        <apex:outputtext value="{0,number, 0.0}%">
+                            <apex:param value="{!row.Utilization_Rate_Overall_Sum__c}"/>
+                        </apex:outputtext>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Utilization <br /> Rate <br /> Overall</apex:facet>
+                        <apex:outputtext value="{0,number, 0.0}%">
+                            <apex:param value="{!row.Utilization_Work_Minutes_Time_Card_Sum__c}"/>
+                        </apex:outputtext>
+                    </apex:column>                    
+                </apex:pageblocktable>
+            </apex:pageblocksection>            
+                
+            
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_Number__c</fullName>
+    <description>Each status value has a corresponding number associated with it. Check the raw html for the status field rendered to find the number associated.</description>
+    <externalId>false</externalId>
+    <label>Status Number</label>
+    <length>10</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

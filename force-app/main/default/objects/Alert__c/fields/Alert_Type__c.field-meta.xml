@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Alert_Type__c</fullName>
+    <description>Select the type of Alert indicating the business area that needs attention.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Select the type of Alert indicating the business area that needs attention.</inlineHelpText>
+    <label>Alert Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Product/Application</fullName>
+                <color>#CC0000</color>
+                <default>true</default>
+                <label>Product/Application</label>
+            </value>
+            <value>
+                <fullName>Support</fullName>
+                <color>#0B6FCE</color>
+                <default>false</default>
+                <label>Support</label>
+            </value>
+            <value>
+                <fullName>Service</fullName>
+                <color>#78C953</color>
+                <default>false</default>
+                <label>Service</label>
+            </value>
+            <value>
+                <fullName>Operations</fullName>
+                <color>#8F6429</color>
+                <default>false</default>
+                <label>Operations</label>
+            </value>
+            <value>
+                <fullName>Billing</fullName>
+                <color>#F3D904</color>
+                <default>false</default>
+                <label>Billing</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <color>#AFCADF</color>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

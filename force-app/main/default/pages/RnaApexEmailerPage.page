@@ -1,0 +1,144 @@
+<!--/*******************************************************************************
+ * File:  RnaApexEmailerController
+ * Date:  December 27, 2013
+ * Author:  Joseph Hutchins
+ *
+ * The use, disclosure, reproduction, modification, transfer, or transmittal of
+ * this work for any purpose in any form or by any means without the written 
+ * permission of United Parcel Service is strictly prohibited.
+ *
+ * Confidential, unpublished property of United Parcel Service.
+ * Use and distribution limited solely to authorized personnel.
+ *
+ * Copyright 2009, UPS Logistics Technologies, Inc.  All rights reserved.
+ *  *******************************************************************************/-->
+
+<apex:page controller="RnaApexEmailerController">
+    <!--  *************************** START OF THE MAIN PAGE  *************************** -->
+    <apex:form id="theForm" rendered="{!AND(showMainPage, !showEmailSuccessfulPage, !showEmailFailurePage)}">
+        <apex:pagemessages id="pageMessageSection"/>
+         <apex:pagemessage id="plannedEmailTemplateMessageSection" rendered="{!showPlannedEmailTemplatePageMessage}" 
+            strength="3" severity="error" title="Please Verify Email Template Body" 
+            detail="{!plannedEmailTemplatePageMessageDetail}"/>
+          
+         <apex:pagemessage strength="2" 
+                severity="info" title="Help" detail="{!detailedHelpText}"/>
+                
+        <apex:PageBlock title="RNA Apex Emailer">
+            <apex:pageblockbuttons >
+                 <!-- start of the new javascript confirm button --> 
+                <input id="sendEmailButton" type="button" class="btn" onclick="confirmSendEmail('{!$Component.emailTemplateSection.sendTestEmailSectionItem.isTestModeCheckbox}');" style="font-weight:bold" title="Send Email" value="Send Emails"/>
+                <apex:actionFunction action="{!sendEmails}" name="sendEmails" />
+                <!--  end of the new javascript confirm button -->  
+                
+                <apex:commandbutton action="{!cancel}" value="Cancel"/>                
+            </apex:pageblockbuttons>
+            <apex:pageblocksection title="Email Template Section" id="emailTemplateSection" columns="1">
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Select Template Folder"/>
+                    <apex:selectlist value="{!folderUserSelection}" size="1">
+                        <apex:actionsupport event="onchange" action="{!folderPicklistOnChange}"  rerender="selectEmailTemplateSection"/> <!--  -->
+                        <apex:selectoptions value="{!emailTemplateFolders}"/>
+                    </apex:selectlist>
+                </apex:pageblocksectionitem>
+                
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Select Email Template"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                         <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+		                    <apex:selectlist value="{!emailTemplateUserSelection}" size="1" id="selectEmailTemplateSection">
+		                        <apex:selectoptions value="{!emailTemplatePicklist}"/>
+		                        <apex:actionsupport event="onchange" action="{!emailTemplatePicklistOnChange}" rerender="emailPreviewSection"/>
+		                    </apex:selectlist>
+		             </apex:outputPanel>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem id="sendTestEmailSectionItem">
+                    <apex:outputlabel value="Send Test Emails?"/>
+                    <apex:inputcheckbox value="{!isTestMode}" id="isTestModeCheckbox">
+                        <apex:actionsupport event="onchange" action="{!refreshPage}"/>
+                    </apex:inputcheckbox>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem rendered="{!isTestMode}" >
+                    <apex:outputlabel value="Select Test Email Contact"/>
+                    <apex:outputpanel >
+                        <apex:inputfield value="{!caseEventContactLookupOnly.Contact__c}" >
+                            <apex:actionsupport event="onchange" action="{!testContactLookupOnChange}" /> <!--  moved to allow a full page refresh  rerender="pageMessageSection, testEmailAddressSection" -->
+                        </apex:inputfield>
+                        <apex:outputtext value="{!testContactEmailAddress}" id="testEmailAddressSection"/>
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>
+                
+                                
+            </apex:pageblocksection>
+            <apex:pageblocksection title="Selected Template Preview" columns="1" id="emailPreviewSection">
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Subject:"/>
+                    <apex:outputtext value="{!selectedEmailTemplate.subject}"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Body:"/>
+                    <apex:outputtext escape="true" value="{!selectedEmailTemplate.body}"/>
+                </apex:pageblocksectionitem>
+            </apex:pageblocksection>
+            
+            <apex:pageblocksection title="RNA Apex Contacts" columns="1">
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Number of RNA Apex Contacts"/>
+                    <apex:outputtext value="{!rnaApexContacts.size}"/>
+                </apex:pageblocksectionitem>
+                
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Email of All RNA Apex Contacts:"/>
+                    <apex:outputtext value="{!rnaApexContactsEmailsToString}"/>
+                </apex:pageblocksectionitem>
+            </apex:pageblocksection>
+        </apex:PageBlock>
+    </apex:form>
+    <!--  *************************** END OF THE MAIN PAGE  *************************** -->
+    
+    
+    <!--  *************************** START OF SUCCESSFUL EMAIL PAGE  *************************** -->
+    <apex:form rendered="{!AND(!showMainPage, !showEmailFailurePage, showEmailSuccessfulPage)}">
+        <apex:pagemessage strength="2" 
+                severity="confirm" title="Email Send Successful" detail="All emails were sent successfully."/>
+        <apex:pageblock >
+            <apex:pageblockbuttons >
+                    <apex:commandbutton action="{!cancel}" value="Go Back"/>                
+            </apex:pageblockbuttons>
+             
+        </apex:pageblock>
+    </apex:form>
+    <!--  *************************** END OF SUCCESSFUL EMAIL PAGE*************************** -->
+    
+    <!--  *************************** START OF FAILURE EMAIL PAGE*************************** -->
+    <apex:form rendered="{!AND(!showMainPage, !showEmailSuccessfulPage, showEmailFailurePage)}">
+        <apex:pagemessage strength="2" 
+                severity="error" title="Some emails failed sending" detail="Listed below are emails that failed sending.  All other emails not listed below were sent successfully."/>
+        <apex:pageblock title="Failed Email Sending Count: {!sendEmailFailures.size}">
+            <apex:pageblockbuttons >
+                    <apex:commandbutton action="{!cancel}" value="Go Back"/>                
+            </apex:pageblockbuttons>
+            <apex:pageblocktable value="{!sendEmailFailures}" var="failedEmail">
+                <apex:column value="{!failedEmail.contactName}" headervalue="Contact Name"/>
+               <apex:column value="{!failedEmail.contactEmailAddress}" headervalue="To Email Address"/>
+               <apex:column value="{!failedEmail.ErrorMessage}" headervalue="Error Message"/>
+            </apex:pageblocktable>
+            
+        </apex:pageblock>
+    </apex:form>
+    <!--  *************************** END OF FAILURE EMAIL PAGE*************************** -->
+    
+    <script type="text/javascript">
+        function confirmSendEmail(isTestModeCheckboxFieldId)
+        {
+           //var isTestMode = document.getElementById(isTestModeCheckboxFieldId).value;
+           
+            if (window.confirm("Are you sure you want to send emails out?"))
+            {   
+                sendEmails();
+            }
+            
+        }
+    
+    </script>  
+</apex:page>

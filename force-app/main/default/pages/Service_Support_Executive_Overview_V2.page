@@ -1,0 +1,3 @@
+<apex:page >
+<apex:outputLink value="https://omnitracs.my.salesforce.com/01Z50000000iIjc" id="theLink" target="_blank">Go to Service and Support - Executive Overview V2</apex:outputLink>
+</apex:page>

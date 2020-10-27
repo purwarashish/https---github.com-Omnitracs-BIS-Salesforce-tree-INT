@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Most_Recent__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>Is this the most recent AR agings snapshot for this account?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Is this the most recent AR agings snapshot for this account?</inlineHelpText>
+    <label>Most Recent?</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

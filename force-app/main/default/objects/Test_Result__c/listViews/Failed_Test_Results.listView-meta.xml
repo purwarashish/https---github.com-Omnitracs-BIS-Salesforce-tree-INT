@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Failed_Test_Results</fullName>
+    <columns>NAME</columns>
+    <columns>Test_Cycle__c</columns>
+    <columns>Test_Scenario__c</columns>
+    <columns>Steps_to_Reproduce__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Track_From_Scenario__c</columns>
+    <columns>Test_Record__c</columns>
+    <columns>Test_Status__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Test_Status__c</field>
+        <operation>equals</operation>
+        <value>Failed</value>
+    </filters>
+    <label>Failed Test Results</label>
+    <language>en_US</language>
+</ListView>

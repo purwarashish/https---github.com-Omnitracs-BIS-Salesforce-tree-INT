@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SAP_Number__c</fullName>
+    <description>Automatically assigned number for Strategic Account Profile to pass to Cognos for reporting.</description>
+    <displayFormat>SAP-{0000}</displayFormat>
+    <externalId>true</externalId>
+    <label>SAP Number</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>AutoNumber</type>
+</CustomField>

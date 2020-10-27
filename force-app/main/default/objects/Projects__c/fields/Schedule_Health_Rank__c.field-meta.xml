@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Schedule_Health_Rank__c</fullName>
+    <externalId>false</externalId>
+    <label>Schedule Health Rank</label>
+    <summarizedField>Project_Milestone__c.Health_Rank__c</summarizedField>
+    <summaryFilterItems>
+        <field>Project_Milestone__c.RecordTypeId</field>
+        <operation>equals</operation>
+        <value>PM Milestone</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Project_Milestone__c.Milestone_Name__c</field>
+        <operation>equals</operation>
+        <value>Commercial Release</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Project_Milestone__c.Project__c</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

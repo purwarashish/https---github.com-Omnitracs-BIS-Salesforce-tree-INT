@@ -1,0 +1,49 @@
+<apex:page showHeader="true" sidebar="false" standardStylesheets="false" controller="SCCQuickCreateToolbar_Controller">
+ 
+    <head>
+        <apex:stylesheet value="{!$Resource.SCCQuickCreateToolBarStyleSheet}"/>
+        <apex:includeScript value="/support/console/23.0/integration.js"/>
+    </head>
+    
+
+
+
+    <apex:form id="theForm">
+        <div class="moduleHeader">
+            <span class="btmlabel">
+            </span>
+            <span class="btmfield">
+                <center>
+                <apex:selectList multiselect="false" size="1" id="createContact" onchange="QuickContact()">
+                    <apex:selectOptions value="{!contactRecordTypes}"/>
+                </apex:selectList>
+                </center>
+            </span>
+        </div>
+    </apex:form>
+
+    <script type="text/javascript">
+        var contactRecordTypeSelectField;
+        var contactRecordTypeId;
+
+        function QuickContact() {
+            // Grab the contact record type selection field
+            contactRecordTypeSelectField = document.getElementById('{!$Component.theForm.createContact}');
+            // Get the record type id
+            contactRecordTypeId = contactRecordTypeSelectField.options[contactRecordTypeSelectField.selectedIndex].value;
+            // Open the New Contact Page
+            sforce.console.getEnclosingPrimaryTabId(openContact);
+            // Reset the picklist
+            contactRecordTypeSelectField.selectedIndex=0;
+        }    
+
+        // Called from QuickContact() to open a new subtab (test)
+        var openContact = function openContact (result) {
+            // open new contact with record type in a new subtab
+            sforce.console.openPrimaryTab(null ,'{!contactCreateURLPrefix}&RecordType='+contactRecordTypeId, true, '', null); //changed from openSubtab, result.id
+        }
+
+    </script>    
+    
+    
+</apex:page>

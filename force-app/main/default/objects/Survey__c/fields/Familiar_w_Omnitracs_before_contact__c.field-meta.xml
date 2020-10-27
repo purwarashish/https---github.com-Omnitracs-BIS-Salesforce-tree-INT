@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Familiar_w_Omnitracs_before_contact__c</fullName>
+    <externalId>false</externalId>
+    <label>Familiar w/ Omnitracs before contact</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Very Familiar</fullName>
+                <color>#0B6FCE</color>
+                <default>false</default>
+                <label>Very Familiar</label>
+            </value>
+            <value>
+                <fullName>Familiar</fullName>
+                <color>#78C953</color>
+                <default>false</default>
+                <label>Familiar</label>
+            </value>
+            <value>
+                <fullName>Somewhat Familiar</fullName>
+                <color>#FF9900</color>
+                <default>false</default>
+                <label>Somewhat Familiar</label>
+            </value>
+            <value>
+                <fullName>Not Familiar At All</fullName>
+                <color>#FF0000</color>
+                <default>false</default>
+                <label>Not Familiar At All</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Company</field>
+        <field>Address</field>
+        <field>Phone</field>
+        <field>Owner</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Lead_Approval_Change_Record_Type_CNR</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>LeadApprovedChangeStatus</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>LeadApprovedCNR</name>
+                <type>Alert</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>CNRPRMSupport775351</name>
+                <type>queue</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <label>Aprobación de Conflicto</label>
+        <name>ConflictApproval</name>
+        <rejectionActions>
+            <action>
+                <name>Lead_Rejected_Record_Type_CNR</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>LeadRejectedCNR</name>
+                <type>Alert</type>
+            </action>
+            <action>
+                <name>LeadRejectedLeadStatus</name>
+                <type>FieldUpdate</type>
+            </action>
+        </rejectionActions>
+    </approvalStep>
+    <description>This approval process will be used for reseller/agents that enter a lead via CRN PRM, submit for approval to ensure QES Sales is not working the same lead.
+
+If the lead is approved: the record type and lead status will flip and an email will be sent to the agent.
+
+If the lead is denied: he record type and lead status will flip and an email will be sent to the agent.</description>
+    <emailTemplate>CNR_Email_Templates/Lead_Approval_Required_CNR</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <criteriaItems>
+            <field>Lead.RecordType</field>
+            <operation>equals</operation>
+            <value>New Lead (CNR Portal)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>Dealer Portal</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionRecordLock>true</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>LeadStatusPendingApproval</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Lead - Conflict Resolution(CNR Portal)</label>
+    <processOrder>1</processOrder>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>false</showApprovalHistory>
+</ApprovalProcess>

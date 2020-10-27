@@ -1,0 +1,3 @@
+<apex:page standardController="Case">
+<!-- THIS IS A BLACK PAGE TO ALLOW OTHER VF PAGES TO BE VISIBLE -->
+</apex:page>

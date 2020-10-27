@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mexico_product_with_no_lease_term</fullName>
+    <active>true</active>
+    <description>Please choose a Lease Term before saving quote.</description>
+    <errorConditionFormula>AND(
+TEXT(Product__r.Business_Unit__c) = &quot;Omnitracs MX&quot;,
+ISBLANK(TEXT(Lease_Term__c)),
+NOT(ISPICKVAL(Quote__r.Opportunity__r.Order_Type__c, &quot;Eval&quot;)),
+TEXT(Line_Type__c) = &quot;New&quot;
+)</errorConditionFormula>
+    <errorMessage>Please choose a Lease Term before saving quote.</errorMessage>
+</ValidationRule>

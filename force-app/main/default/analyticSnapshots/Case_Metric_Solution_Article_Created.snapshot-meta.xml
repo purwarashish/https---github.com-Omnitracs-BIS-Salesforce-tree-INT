@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnalyticSnapshot xmlns="http://soap.sforce.com/2006/04/metadata">
+    <groupColumn>GRAND_SUMMARY</groupColumn>
+    <mappings>
+        <sourceField>JobName</sourceField>
+        <sourceType>snapshot</sourceType>
+        <targetField>Case_Metric__c.Name</targetField>
+    </mappings>
+    <mappings>
+        <sourceField>RowCount</sourceField>
+        <sourceType>summary</sourceType>
+        <targetField>Case_Metric__c.Solution_Article_Created__c</targetField>
+    </mappings>
+    <mappings>
+        <sourceField>ExecutionTime</sourceField>
+        <sourceType>snapshot</sourceType>
+        <targetField>Case_Metric__c.Week_Run__c</targetField>
+    </mappings>
+    <name>Case Metric - Solution Article Created</name>
+    <runningUser>jhutchins@roadnet.omnitracs.com</runningUser>
+    <sourceReport>Roadnet_Case_Metrics/Case_Metric_Solution_Articles_Created</sourceReport>
+    <targetObject>Case_Metric__c</targetObject>
+</AnalyticSnapshot>

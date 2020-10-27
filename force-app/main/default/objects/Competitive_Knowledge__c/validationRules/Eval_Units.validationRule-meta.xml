@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Eval_Units</fullName>
+    <active>true</active>
+    <description>If Eval = Yes, then Eval Start and Units is required</description>
+    <errorConditionFormula>AND(ISPICKVAL( Active_Evaluation__c , &quot;Yes&quot;), OR(ISBLANK( Eval_Start_Date__c ), ISBLANK( Total_Eval_Units__c )) )</errorConditionFormula>
+    <errorDisplayField>Total_Eval_Units__c</errorDisplayField>
+    <errorMessage>If customer has an Active Evaluation, please complete the Eval Start Date and Total Eval Units</errorMessage>
+</ValidationRule>

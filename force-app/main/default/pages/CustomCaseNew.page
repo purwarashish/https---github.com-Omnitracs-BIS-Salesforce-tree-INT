@@ -1,0 +1,18 @@
+<apex:page sidebar="true" showHeader="true" standardController="Case" extensions="ShowSupportAlertController">
+
+  <script text="text/javascript"> 
+window.onload = function() {
+    selected();
+} 
+</script>
+
+
+  
+  <apex:form >
+      <apex:actionFunction action="{!findRec}" name="selected"/>
+      <b>Redirecting.... Please Wait</b>
+  </apex:form>
+ 
+ 
+  
+</apex:page>

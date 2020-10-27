@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Max_Ship_Est_Quantity__c</fullName>
+    <description>The maximum of the quantities estimated to ship on a single date</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The maximum of the quantities estimated to ship on a single date</inlineHelpText>
+    <label>Max Ship Est Quantity</label>
+    <summarizedField>Shipping_Estimate__c.Estimated_Shipping_Quantity__c</summarizedField>
+    <summaryForeignKey>Shipping_Estimate__c.Shipping_Summary__c</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

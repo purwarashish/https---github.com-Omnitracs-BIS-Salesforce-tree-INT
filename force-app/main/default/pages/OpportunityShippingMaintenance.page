@@ -1,0 +1,116 @@
+<apex:page id="OpportunityShippingMaintenance" standardController="Shipping_Estimate_Summary__c" extensions="OpportunityShippingController">
+    <br/>
+    <br/><br/>
+
+    <br/> <B>This functionality is currently unavailable. </B> <br/> <!-- by ARMAN -->
+    
+
+    <!--apex:form id="ChoiceForm">
+        <apex:pageBlock id="choice">
+            <apex:outputText style="font-size: 20px;" value="Specify the Quote Line Group to use:    "/>
+            <apex:selectList id="quoteLineGroup" value="{!quoteLineGroup}" size="1">
+                <apex:actionSupport event="onchange" action="{!refreshForm}"/>
+                <apex:selectOptions value="{!quoteLineGroupItems}"/>
+            </apex:selectList>
+        </apex:pageBlock>
+        <apex:pageBlock id="btns">
+            <apex:commandButton value="Close Page" action="{!closePage}"/>
+        </apex:pageBlock>
+    </apex:form>
+    <br/><br/>
+    <apex:form id="fShippingEstimate">
+        <apex:pageBlock id="pbSummary" rendered="{!IF(quoteLineGroup != null,true,false)}">
+            <apex:pageMessages rendered="{!IF(estErr != true,true,false)}"/>
+            <apex:outputText style="font-size: 20px;" value="Add/Edit Shipping Estimate"/>
+            <br/><br/>
+            <apex:pageBlockSection id="summaryInfo" title="Shipping Estimate Summary Information" columns="2"
+                                   collapsible="true">
+                <apex:outputText label="Shipping Estimate Summary" value="{!summary.Name}"/>
+                <apex:outputText label="Shipping Estimate Summary Status"
+                                 value="{!summary.Shipping_Summary_Status__c}"/>
+                <apex:outputText label="Opportunity Name"
+                                 value="{!summary.Quote_Line_Group__r.SBQQ__Quote__r.SBQQ__Opportunity2__r.Name}"/>
+                <apex:outputText label="VEP Opportunity Type" value="{!summary.VEP_Opportunity_Type__c}"/>
+                <apex:outputText label="Quote Number" value="{!summary.Quote_Line_Group__r.SBQQ__Quote__r.Name}"/>
+                <apex:outputText label="Quote Line Group" value="{!summary.Quote_Line_Group__r.Name}"/>
+                <apex:outputText label="Delivery Schedule" value="{!summary.Quote_Line_Group__r.Delivery_Schedule__c}"/>
+                <apex:outputText label="Opportunity Close Date" value="{0,date,MM/dd/yy}">
+                    <apex:param value="{!summary.Quote_Line_Group__r.SBQQ__Quote__r.SBQQ__Opportunity2__r.CloseDate}"/>
+                </apex:outputText>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection id="quantityInfo" title="Shipping Estimate Summary Quantities" columns="2"
+                                   collapsible="true">
+                <apex:outputText label="Group Hardware Quantity" value="{!summary.Group_Hardware_Quantity_Rollup__c}" rendered="{!IF(qtyToShow == "hw",true,false)}"/>
+                <apex:outputText label="Group Service Plan Quantity" value="{!summary.Group_Service_Plan_Quantity_Rollup__c}" rendered="{!IF(qtyToShow == "sp",true,false)}"/>
+                <apex:outputText label="Group Application Quantity" value="{!summary.Group_Application_Quantity_Rollup__c}" rendered="{!IF(qtyToShow == "ap",true,false)}"/>
+                <apex:outputText label="Group Software Quantity" value="{!summary.Group_Software_Quantity_Rollup__c}" rendered="{!IF(qtyToShow == "sw",true,false)}"/>
+                <apex:outputText label="Total Estimated Quantity" value="{!summary.Total_Estimated_Quantities__c}"/>
+            </apex:pageBlockSection>
+
+            <apex:commandButton value="Start New Estimate" action="{!saveShippingSummary}"
+                                rendered="{!IF(summary.Name == null,true,false)}"/>
+        </apex:pageBlock>
+        <apex:pageBlock id="pbEstimate" rendered="{!IF(quoteLineGroup != null,true,false)}">
+            <apex:pageMessages rendered="{!IF(estErr == true,true,false)}"/>
+            <apex:variable var="rowNumber" value="{!0}"/>
+            <apex:pageBlockSection title="Shipping Estimate" collapsible="false" columns="1"
+                                   rendered="{!IF(summary.Name == null,false,true)}">
+                <apex:outputText label="Pending Changes" value="{!estimatesChanged}"/>
+                <apex:pageBlockTable id="shipEstimate" value="{!shippingEstimateList}" var="estList">
+                    <apex:column style="width:115px; text-align:center;">
+                        <apex:facet name="header">
+                            <div style="text-align:center">Estimate Number</div>
+                        </apex:facet>
+                        <apex:outputText value="{0}">
+                            <apex:param value="{!rowNumber+1}"/>
+                        </apex:outputText>
+                    </apex:column>
+                    <apex:column headerValue="Estimated Date">
+                        <apex:inputField value="{!estList.Estimated_Shipping_Date__c}">
+                            <apex:actionSupport event="onchange" action="{!dataChanged}" reRender="pbEstimate"/>
+                        </apex:inputField>
+                    </apex:column>
+                    <apex:column headerValue="Estimated Quantity">
+                        <apex:inputField value="{!estList.Estimated_Shipping_Quantity__c}">
+                            <apex:actionSupport event="onchange" action="{!dataChanged}" reRender="pbEstimate"/>
+                        </apex:inputField>
+                    </apex:column>
+                    <apex:column headerValue="Notes">
+                        <apex:inputField value="{!estList.Shipping_Notes__c}">
+                            <apex:actionSupport event="onchange" action="{!dataChanged}" reRender="pbEstimate"/>
+                        </apex:inputField>
+                    </apex:column>
+                    <apex:column headerValue="Id" rendered="false">
+                        <apex:inputField value="{!estList.Id}"/>
+                    </apex:column>
+                    <apex:column headerValue="Summary" rendered="false">
+                        <apex:inputField value="{!estList.Shipping_Summary__r.Name}"/>
+                    </apex:column>
+                    <apex:column style="width:115px; text-align:center;">
+                        <apex:facet name="header">
+                            <div style="text-align:center">Delete?</div>
+                        </apex:facet>
+                        <apex:outputPanel >
+                            <apex:outputText >
+                                <div style="cursor:pointer">X</div>
+                            </apex:outputText>
+                            <apex:actionSupport event="onclick" action="{!deleteShippingEstimate}" reRender="fShippingEstimate">
+                                <apex:param name="rowIndex" value="{!rowNumber}"/>
+                            </apex:actionSupport>
+                        </apex:outputPanel>
+                        <apex:variable var="rowNumber" value="{!rowNumber+1}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons id="pbButtons">
+                <apex:commandButton style="margin-right:20px" action="{!addRow}" value="Add Estimate" reRender="fShippingEstimate"
+                                    rendered="{!IF(summary.Name != null && estimatesChanged != 'true',true,false)}"/>
+                <apex:commandButton style="margin-right:20px" value="Save Estimates" action="{!saveShippingEstimates}"
+                                    rendered="{!IF(rowNumber >= 1 && estimatesChanged == 'true',true,false)}" reRender="fShippingEstimate"/>
+                <apex:commandButton value="Cancel" action="{!cancel}" rendered="{!IF(estimatesChanged == 'true',true,false)}" reRender="fShippingEstimate"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+    <script>function setFocusOnLoad() {
+    }</script-->
+</apex:page>

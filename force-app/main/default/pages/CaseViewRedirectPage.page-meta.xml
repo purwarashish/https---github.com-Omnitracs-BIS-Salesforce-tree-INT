@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>22.0</apiVersion>
+    <availableInTouch>false</availableInTouch>
+    <confirmationTokenRequired>false</confirmationTokenRequired>
+    <description>Redirects the User to either the Standard Case view or the CaseReview VF Page based on the user&apos;s profile (internal or customer portal profile)</description>
+    <label>CaseViewRedirectPage</label>
+</ApexPage>

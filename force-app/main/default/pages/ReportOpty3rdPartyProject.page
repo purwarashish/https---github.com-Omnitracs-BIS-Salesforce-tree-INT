@@ -1,0 +1,388 @@
+<apex:page id="OpportunityReport" controller="ReportOpty3rdPartyProjectController"  sidebar="false" showHeader="true" tabstyle="Opportunity">
+
+<script language="Javascript">
+
+
+function resetDemandValue()
+{
+    
+    var selectedObj = document.getElementById('OpportunityReport:form:pgblk:pgblksctn:pgblksctitm2:showOppList');
+    selectedObj.selectedIndex = -1;
+
+}
+
+
+function resetProjectValue()
+{
+    var selectedObj = document.getElementById('OpportunityReport:form:pgblk:pgblksctn:pgblksctitm3:showOppList');
+    selectedObj.selectedIndex = -1;
+}
+function resetValue()
+{
+    var inputbox = document.getElementById('OpportunityReport:form:reportblk:searchName');
+    inputbox.value = '';
+}
+function Change()
+{
+    ChangePagination();
+
+}
+
+function changeFocus()
+{
+alert('hi');
+//alert(document.getElementsByName('OpportunityReport:form:pgblk:pgblksctn:pgblksctitm7:runrpt'));
+//var runButton = document.getElementsByName('OpportunityReport:form:pgblk:pgblksctn:pgblksctitm7:runrpt');
+var id1 = document.getElementById('OpportunityReport:form:pgblk:pgblksctn:pgblksctitm1:ProductList');
+alert(id1);
+//alert(runButton[0]);
+runButton.focus();
+runButton.value = runButton.value;
+}
+
+function showError()
+{
+    
+   
+    if({!OppListSize} > 1000)
+    {
+        var answer = confirm('Only first 1000 records will be exported.Do you wish to continue?');
+        if(answer)
+           {
+        
+              return true;
+           }
+           else
+           {
+                return false;
+           }
+   }
+}
+
+</script>
+<!--<body onload="document.OpportunityReport.form.pgblk.pgblksctn.pgblksctitm7.runrpt.focus();"/>-->
+<!--<script language="Javascript"> resetValue();</script>-->
+<body onload="javascript:resetValue();"/>
+
+<apex:sectionHeader title="Opportunity / 3rd Party / Projects Report"/>
+<apex:form id="form" >
+    <!-- apex:image value="/servlet/servlet.FileDownload?file=01550000000GXtX"/-->
+    <!--<apex:image value="{!URLfor($action.document.download,'1550000000GXtX')}"/>-->
+    <apex:actionFunction name="Ordering" action="{!report}" />      
+    <apex:actionFunction name="ChangePagination" action="{!ChangePagination}"/>
+    <!--<apex:inputHidden id="OuterTableSize" value="{!OUTERLIST_SIZE}"/>
+    <apex:inputHidden id="prodList" value="{!ProductList_Size}"/>
+    <apex:inputHidden id="partyList" value="{!PartyList_Size}"/>-->
+    <apex:pageBlock id="pgblk" >
+    <apex:pageBlockSection id="pgblksctn" columns="1">
+    <apex:Messages style="color:rgb(204,0,0);font-weight: bold;text-align:center" />
+    <apex:pageBlockSectionItem id="pgblksctitm1" >
+        <b>Product:</b>
+        <apex:selectList id="ProductList"  multiselect="false" value="{!selProduct}" size="1" style="width:200px">
+                <apex:selectOptions value="{!Product}" />
+        </apex:selectList>
+    </apex:pageBlockSectionItem>
+    <apex:pageBlockSectionItem id="pgblksctitm2" >
+        <b>Forecast Demand :</b>
+        <!--<apex:inputField value="{!NewOpportunity.Forecast_Demand__c}"/>-->
+        <apex:panelGrid columns="2" cellspacing="3"> 
+        <apex:selectList id="showOppList"   multiselect="true" value="{!demand}" size="5" style="width:200px">
+                <apex:selectOptions value="{!foreCastDemand}" />
+       </apex:selectList>
+       <apex:commandLink onclick="javascript:resetDemandValue();" value="Reset Value"  />
+       Use ctrl to select multiple items
+       </apex:panelGrid> 
+    </apex:pageBlockSectionItem> 
+    <apex:pageBlockSectionItem id="pgblksctitm3" >
+      <b>Project Stage:</b>
+        <apex:panelGrid columns="2" cellspacing="3">
+        <apex:selectList id="showOppList"  multiselect="true" value="{!projValue}" size="4" style="width:200px">
+                <apex:selectOptions value="{!Project}" />
+       </apex:selectList>
+       <apex:commandLink onclick="javascript:resetProjectValue();" value="Reset Value"  />
+       Use ctrl to select multiple items
+       </apex:panelGrid>
+    </apex:pageBlockSectionItem> 
+    <apex:pageBlockSectionItem id="pgblksctitm4"  >
+      <b>Show Opportunities :</b>
+        <apex:selectList id="showOppList"  multiselect="false" value="{!selStage}" size="1" style="width:200px">
+                <apex:selectOptions value="{!ShowOpp}" />
+       </apex:selectList>
+    </apex:pageBlockSectionItem>
+    <apex:pageBlockSectionItem id="pgblksctitm5">
+      <b>Ship Date:</b>
+          <!--<apex:panelGrid columns="2" cellspacing="0" cellpadding="0"> -->
+              <apex:outputPanel >              
+              <table>
+              <tr>
+              <td>
+              Start:
+              </td>
+              <td>
+              <apex:inputField value="{!NewOpportunity.Start_Date__c}"/>
+              </td>
+              </tr>
+              <tr>
+              <td>
+              End:
+              </td>
+              <td>
+              <apex:inputField value="{!NewOpportunity.CloseDate}"/>
+              </td>
+                </tr>
+              <tr>
+              Leave Start <i>blank</i> to see all items  </tr>
+              </table>
+              </apex:outputPanel>
+
+          <!--</apex:panelGrid> -->     
+    </apex:pageBlockSectionItem>
+    <!--<apex:pageBlockSectionItem id="pgblksctitm6">
+        Only show records that have 3rd Party Products
+        <apex:inputCheckbox value="{!Showthirdparty}"/>
+    </apex:pageBlockSectionItem>-->
+
+    <apex:pageBlockSectionItem id="pgblksctitm7" >
+    <apex:panelGrid columns="2" cellspacing="4" id="panel1"> 
+              <apex:commandButton id="runrpt" action="{!runReport}" value="Run Report"  status="loadingStatusAdd"  />
+              <apex:commandButton value="Cancel" action="/home/home.jsp" immediate="true"/>
+    </apex:panelGrid> 
+    
+    </apex:pageBlockSectionItem> 
+    </apex:pageBlockSection>
+    <apex:actionStatus id="loadingStatusAdd">
+            <apex:facet name="start">
+                <c:loadingStatus id="loadingStatusAddComponent" BackColor="#efefef" borderColor="#336699" borderSize="3" height="50px" width="150px" ImageUrl="/img/loading.gif" Message="Processing..." BluryBackGround_DivId="bbgd1" SalesforceStatusBox_DivId="ssbd1" messageStyle="color:darkred;font-size:11pt;font-weight:bold;"/>
+            </apex:facet>
+        </apex:actionStatus>
+
+    </apex:pageBlock>
+    
+    <apex:pageBlock mode="detail" id="reportblk" rendered="{!isDisplay}" >
+    <table cellspacing="3">
+    <tr> 
+    <td>
+    
+    <apex:selectList id="NoofRecords"  multiselect="false" value="{!sel_No_of_Records}" size="1" style="width:200px" onchange="javascript:Change();" >
+                <apex:selectOptions value="{!No_of_Records}" />
+    </apex:selectList>
+    
+    </td>
+    <td>
+    <apex:commandButton value="Export to Excel" action="/apex/ReportOpty3rdPartyProjectExcel" onclick="javascript:return showError();"/>
+    </td>
+    </tr>
+    <tr>
+    <apex:panelGrid columns="3">
+                          Search Opportunity by Account Name:<apex:inputText value="{!search_Value}" id="searchName" />
+                          <apex:commandButton value="Find" action="{!report}"/>
+                      </apex:panelGrid>
+    </tr>    
+    </table>
+    <apex:pageBlockSection id="reportpgblksec">
+     
+    <br/>
+    <!--<apex:outputText value="No Records Found" rendered="{!noRecords}"></apex:outputText>-->
+    <table class="list" border="0" id="reporttable" cellspacing="0" cellpadding="5" border="0" >
+    <tr class="headerRow">
+        <apex:include pageName="Alphabet_Ordering" />
+    </tr>
+    <apex:repeat id="reportrepeat" value="{!MasterList1}" var="Master">   
+    <tr  bgcolor="#DAEDF3"  nowrap="nowrap">
+        <th >Account - <apex:outputField value="{!Master.tempOppList.Account.Name}"/></th>
+    </tr>
+    <tr>
+        <td class="dataCell" >
+        
+        <table id="maintable"  cellspacing="0" cellpadding="0" width="100%" class="" border="0" >
+        
+            <tr class="headerRow">
+                <th class="headerRow">
+                    CID 
+                </th>
+                <th class="headerRow">
+                    Account Name 
+                </th>
+                <th class="headerRow">
+                    Opportunity Name 
+                </th>
+                <th class="headerRow">
+                    Quantity 
+                </th>
+                <th class="headerRow">
+                    Forecast Demand %
+                </th>
+                <th class="headerRow">
+                    Stage
+                </th>
+                <th class="headerRow">
+                    Ship/Start Date 
+                </th>
+                <th class="headerRow" >
+                    Ranking
+                </th>
+           <!--     <th class="headerRow" width="100%" colspan="2">
+                    Dependencies
+                </th>-->
+            </tr> 
+            <tr>
+                <td class=" dataCell " colspan="1">
+                    <apex:outputText value="{!Master.tempOppList.Cust_ID__c}"></apex:outputText>
+                </td>
+                <td class=" dataCell " colspan="1">
+                    <apex:outputField value="{!Master.tempOppList.AccountId}"/>
+                </td>
+                <td class=" dataCell " colspan="1">
+                     <apex:outputField value="{!Master.tempOppList.Name}"/>
+                </td>
+                <td class=" dataCell " colspan="1">
+                    <apex:outputField value="{!Master.tempOppList.Oppty_Quantity__c}"/>
+                </td>
+                <td class=" dataCell " colspan="1">
+                    <apex:outputField value="{!Master.tempOppList.Forecast_Demand__c}"/>
+                </td>
+                <td class=" dataCell " colspan="1">
+                    <apex:outputField value="{!Master.tempOppList.StageName}"/>
+                </td>
+                <td class=" dataCell " colspan="1">
+                    <apex:outputField value="{!Master.tempOppList.CloseDate}"/>
+                </td>
+                <td class=" dataCell " colspan="1">
+                     <apex:outputField value="{!Master.tempOppList.Ranking__c}"/>
+                </td>
+           <!-- <td class=" dataCell " colspan="2">
+                    <apex:outputField value="{!Master.tempOppList.Dependencies__c}"/>
+                </td> -->
+            </tr>
+            
+             <tr bgcolor="#95B9C7" colspan="9">
+                 <td>
+                 </td>
+                 <td nowrap="nowrap" width="100%" colspan="9">
+                     <b> Product Information </b>
+                 </td>
+                 
+             </tr>
+             <tr class="headerRow" colspan="9">
+                 <td>
+                 </td>
+                 <th width="20%">Product Name</th>  
+                <th colspan="8">Line Description</th>
+                
+                 
+             </tr>  
+             <tr>
+                 <td>
+                 </td>
+                 <td colspan="9">
+                 <apex:repeat value="{!Master.tempProdList}" var="prod">
+                 <tr>
+                 <td></td>
+                 <td><apex:outputText value="{!prod.PricebookEntry.Name}" ></apex:outputText></td>
+                <td colspan="8"><apex:outputText value="{!prod.Description}" ></apex:outputText></td>
+                
+                </tr>
+                </apex:repeat>
+                </td>
+             </tr>    
+            <tr bgcolor="#95B9C7" colspan="9">
+                 <td>
+                 </td>
+                 <td nowrap="nowrap" width="100%" colspan="9">
+                     <b> Project Information </b>
+                 </td>
+                 
+             </tr>
+             <tr class="headerRow" colspan="8">
+                 <td>
+                 </td>
+                 <th width="20%">Project Number</th>  
+                <th>Project Status</th>
+                <th>Stage</th>
+                <th>Actual Start Date</th>
+                <th>Actual Completion Date</th>
+                <th>Est. Billable Amount</th>
+                <th colspan="3">Project Manager</th>
+                 
+             </tr>  
+             <tr>
+                 <td>
+                 </td>
+                 <td colspan="9">
+                 <apex:repeat value="{!Master.tempProjList}" var="proj">
+                 <tr>
+                 <td></td>
+                 <td><apex:outputField value="{!proj.Name}" /></td>
+                <td><apex:outputField value="{!proj.Project_Status__c}" /></td>
+                <td><apex:outputField value="{!proj.Project_Stage__c}" /></td>
+                <td><apex:outputField value="{!proj.Actual_Start_Date__c}" /></td>
+                <td><apex:outputField value="{!proj.Actual_Completion_Date__c}" /></td>
+                <td><apex:outputField value="{!proj.Total_Estimated_Billable_Amount__c}" /></td>
+                <td colspan="3"><apex:outputField value="{!proj.Project_Manager__c}" /></td>  
+                </tr>
+                </apex:repeat>
+                </td>
+             </tr>   
+             <tr bgcolor="#95B9C7" width="100%" colspan="9">
+                <td>
+                </td>
+                <td nowrap="nowrap" colspan="9">
+                    <b>3rd Party Product Information</b>
+                </td>
+            </tr>
+             <tr class="headerRow" colspan="9">
+                <td></td>
+                
+                <th >Name</th>
+                <th >3rd Party</th>
+                <th >Comments</th>
+                <th >Partner Type</th>
+                <th >Product / Service</th>
+                <th >Created By</th>
+                <th >Created Date</th>
+                <th >Last Modified By</th>
+                <th >Last Modified Date</th> 
+            </tr>
+            <tr colspan="9">
+                <td></td>
+                <td >
+                   <apex:repeat value="{!Master.tempthirdParty}" var="party" > 
+                   <tr>
+                   <td></td>
+                 <td><apex:outputField value="{!party.Name}" /></td>
+                <td><apex:outputField value="{!party.X3rd_Party__c}" /></td>
+                <td><apex:outputField value="{!party.Comments__c}" /></td>
+                <td><apex:outputField value="{!party.Partner_Type__c}" /></td>
+                <td><apex:outputField value="{!party.Product_Service1__c}" /></td>
+                <td><apex:outputField value="{!party.CreatedById}" /></td>
+                <td><apex:outputField value="{!party.CreatedDate}" /></td>
+                <td><apex:outputField value="{!party.LastModifiedById}" /></td>
+                <td><apex:outputField value="{!party.LastModifiedDate}" /></td>
+                   </tr>
+                   </apex:repeat>
+                </td>
+              
+            </tr>    
+            </table>
+       </td>
+       </tr>
+       
+    </apex:repeat>
+    </table>
+    </apex:pageBlockSection>
+    
+    <b>Grand Total: </b>
+    <apex:outputText value="{!GrandTotal}" title="Grand Total"></apex:outputText>
+    <apex:panelGrid columns="2"> 
+                <apex:commandLink id="prev" action="{!previous}" rendered="{!NOT(if(currentPage== 1,true,false))}">Previous</apex:commandlink> 
+                <apex:commandLink id="next" action="{!next}" rendered="{!NOT(if(currentPage== totalPages,true,false))}" >Next</apex:commandlink> 
+    </apex:panelGrid>
+    
+    </apex:pageBlock>
+    
+<apex:inputhidden value="{!alphabet}" id="selectedalpha" />
+<script> var selectedalpha= document.getElementById('{!$Component.selectedalpha}'); </script>
+
+</apex:form>
+
+</apex:page>

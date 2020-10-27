@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Portal xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <admin>qesadmin@qualcomm.com</admin>
+    <defaultLanguage>es</defaultLanguage>
+    <description>Mexico Partner Portal</description>
+    <emailSenderAddress>qes.sfdc.noreply@qualcomm.com</emailSenderAddress>
+    <emailSenderName>QES Admin</emailSenderName>
+    <enableSelfCloseCase>false</enableSelfCloseCase>
+    <footerDocument>QESMarcomElements/PRM_Footer_html.html</footerDocument>
+    <forgotPassTemplate>PartnerRelationshipManagement/Partner_Relationship_Management_Partner_Portal_Lost_Password_CNR</forgotPassTemplate>
+    <isSelfRegistrationActivated>false</isSelfRegistrationActivated>
+    <loginHeaderDocument>CNRDocuments/Spanish_Portal_Login_Page.html</loginHeaderDocument>
+    <logoDocument>ButtonsLogosImages/QUALCOMMHeaderLogo.png</logoDocument>
+    <newPassTemplate>PartnerRelationshipManagement/Partner_Relationship_Management_Partner_Portal_Reset_Password_CNR</newPassTemplate>
+    <newUserTemplate>PartnerRelationshipManagement/Partner_Relationship_Management_Partner_Portal_New_User_Login_Information_CNR</newUserTemplate>
+    <showActionConfirmation>false</showActionConfirmation>
+    <type>Partner</type>
+</Portal>

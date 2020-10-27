@@ -1,0 +1,30 @@
+<!--
+  -- @description  VF page for displaying a list of all Needs Fields and where they are defined as Needs Fields
+  --
+  -- @author  Lawrence Coffin <lawrence.coffin@cloudsherpas.com>
+  -- @since   15.Apr.2015
+  -->
+<apex:page controller="VCG_CPQ_NeedsFieldsReviewController">
+    <div style="font-size: 1.5em; font-weight: bold; margin-top: 16px; margin-bottom: 8px;">
+        Needs Fields Review
+    </div>
+    The following is a list of all "Needs Fields" specified in CPQ and which record the field is specified in.
+    <br/><br/>
+    <b>Note:</b> The fields are listed as specified in the Needs Fields. They are not combined by actual field. (i.e. the &lt;Account&gt;.BillingCountry field may be referenced by "Account__r.BillingCountry", "Quote__r.Account__r.BillingCountry", "Account.BillingCountry", "Quote__r.Reseller__r.BillingCountry", etc.)
+    <br/><br/>
+    <b>Note 2:</b> Needs Fields for all records are included here, even for records that may be marked as not active, or Pricing Conditions not included under an active Pricing Procedure.
+    <br/><br/>
+    <hr/>
+    <br/>
+    
+    <apex:repeat value="{!needsFieldsSourceMap}" var="needsField">
+        <b>{!needsField}</b><br/>
+        <ul>
+            <apex:repeat value="{!needsFieldsSourceMap[needsField]}" var="type">
+                <apex:repeat value="{!needsFieldsSourceMap[needsField][type]}" var="obj">
+                    <li><b>{!type}:</b> <a href="/{!obj.Id}" target="_blank">{!obj.Name}</a></li>
+                </apex:repeat>
+            </apex:repeat>
+        </ul>
+    </apex:repeat>
+</apex:page>

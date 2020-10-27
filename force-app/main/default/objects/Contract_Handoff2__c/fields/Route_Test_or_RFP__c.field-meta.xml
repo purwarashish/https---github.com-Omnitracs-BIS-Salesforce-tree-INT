@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Route_Test_or_RFP__c</fullName>
+    <description>Sales Engineer- If a route test was completed, which sales engineer (se) was involved?  Note: if a route test was completed, SE should be included during the handoff meeting.  Any available demo files/work should be sent to the project manager.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Sales Engineer- If a route test was completed, which sales engineer (se) was involved?  Note: if a route test was completed, SE should be included during the handoff meeting.  Any available demo files/work should be sent to the project manager.</inlineHelpText>
+    <label>Route Test or RFP</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Territory__c</fullName>
+    <description>Name of the territory.  for regions, it&apos;s something like &quot;East District 1&quot;.   For Strategic, it&apos;s the last name of the account manager; for example, &quot;Williams&quot;</description>
+    <externalId>false</externalId>
+    <label>Territory</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Region__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>East District 1</fullName>
+                <default>false</default>
+                <label>East District 1</label>
+            </value>
+            <value>
+                <fullName>East District 2</fullName>
+                <default>false</default>
+                <label>East District 2</label>
+            </value>
+            <value>
+                <fullName>East District 3</fullName>
+                <default>false</default>
+                <label>East District 3</label>
+            </value>
+            <value>
+                <fullName>East District 4</fullName>
+                <default>false</default>
+                <label>East District 4</label>
+            </value>
+            <value>
+                <fullName>East District 5</fullName>
+                <default>false</default>
+                <label>East District 5</label>
+            </value>
+            <value>
+                <fullName>West District 1</fullName>
+                <default>false</default>
+                <label>West District 1</label>
+            </value>
+            <value>
+                <fullName>West District 2</fullName>
+                <default>false</default>
+                <label>West District 2</label>
+            </value>
+            <value>
+                <fullName>West District 3</fullName>
+                <default>false</default>
+                <label>West District 3</label>
+            </value>
+            <value>
+                <fullName>West District 4</fullName>
+                <default>false</default>
+                <label>West District 4</label>
+            </value>
+            <value>
+                <fullName>Bauckman</fullName>
+                <default>false</default>
+                <label>Bauckman</label>
+            </value>
+            <value>
+                <fullName>Coop</fullName>
+                <default>false</default>
+                <label>Coop</label>
+            </value>
+            <value>
+                <fullName>Gallinger</fullName>
+                <default>false</default>
+                <label>Gallinger</label>
+            </value>
+            <value>
+                <fullName>Huprich</fullName>
+                <default>false</default>
+                <label>Huprich</label>
+            </value>
+            <value>
+                <fullName>Pappas</fullName>
+                <default>false</default>
+                <label>Pappas</label>
+            </value>
+            <value>
+                <fullName>Plaat</fullName>
+                <default>false</default>
+                <label>Plaat</label>
+            </value>
+            <value>
+                <fullName>Thell</fullName>
+                <default>false</default>
+                <label>Thell</label>
+            </value>
+            <value>
+                <fullName>Williams</fullName>
+                <default>false</default>
+                <label>Williams</label>
+            </value>
+            <value>
+                <fullName>East Total</fullName>
+                <default>false</default>
+                <label>East Total</label>
+            </value>
+            <value>
+                <fullName>West Total</fullName>
+                <default>false</default>
+                <label>West Total</label>
+            </value>
+            <value>
+                <fullName>Strategic Total</fullName>
+                <default>false</default>
+                <label>Strategic Total</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>East</controllingFieldValue>
+            <valueName>East District 1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>East</controllingFieldValue>
+            <valueName>East District 2</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>East</controllingFieldValue>
+            <valueName>East District 3</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>East</controllingFieldValue>
+            <valueName>East District 4</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>East</controllingFieldValue>
+            <valueName>East District 5</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>East</controllingFieldValue>
+            <valueName>East Total</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>West</controllingFieldValue>
+            <valueName>West District 1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>West</controllingFieldValue>
+            <valueName>West District 2</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>West</controllingFieldValue>
+            <valueName>West District 3</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>West</controllingFieldValue>
+            <valueName>West District 4</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>West</controllingFieldValue>
+            <valueName>West Total</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Strategic</controllingFieldValue>
+            <valueName>Bauckman</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Strategic</controllingFieldValue>
+            <valueName>Coop</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Strategic</controllingFieldValue>
+            <valueName>Gallinger</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Strategic</controllingFieldValue>
+            <valueName>Huprich</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Strategic</controllingFieldValue>
+            <valueName>Pappas</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Strategic</controllingFieldValue>
+            <valueName>Plaat</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Strategic</controllingFieldValue>
+            <valueName>Thell</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Strategic</controllingFieldValue>
+            <valueName>Williams</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Strategic</controllingFieldValue>
+            <valueName>Strategic Total</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

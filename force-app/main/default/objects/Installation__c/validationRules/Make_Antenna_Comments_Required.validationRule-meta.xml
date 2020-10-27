@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Make_Antenna_Comments_Required</fullName>
+    <active>true</active>
+    <description>Make Antenna Comments required if Antenna is No.</description>
+    <errorConditionFormula>AND( 
+ISBLANK( Antenna_Comments__c ), 
+ISPICKVAL( Antenna__c , &quot;No&quot;) 
+)</errorConditionFormula>
+    <errorDisplayField>Antenna_Comments__c</errorDisplayField>
+    <errorMessage>Antenna Comments is required if Antenna is &quot;No&quot;</errorMessage>
+</ValidationRule>

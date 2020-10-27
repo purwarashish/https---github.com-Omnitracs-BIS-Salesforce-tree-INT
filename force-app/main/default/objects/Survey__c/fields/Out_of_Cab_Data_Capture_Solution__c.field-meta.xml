@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Out_of_Cab_Data_Capture_Solution__c</fullName>
+    <description>Used for CAP survey data collection.</description>
+    <externalId>false</externalId>
+    <label>Out-of-Cab Data Capture Solution</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Airclic</fullName>
+                <default>false</default>
+                <label>Airclic</label>
+            </value>
+            <value>
+                <fullName>Blue Dot</fullName>
+                <default>false</default>
+                <label>Blue Dot</label>
+            </value>
+            <value>
+                <fullName>Roadnet MobileCast</fullName>
+                <default>false</default>
+                <label>Roadnet MobileCast</label>
+            </value>
+            <value>
+                <fullName>Blackbay</fullName>
+                <default>false</default>
+                <label>Blackbay</label>
+            </value>
+            <value>
+                <fullName>None / In-house, Custom</fullName>
+                <default>false</default>
+                <label>None / In-house, Custom</label>
+            </value>
+            <value>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+                <label>Unknown</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>7</visibleLines>
+</CustomField>

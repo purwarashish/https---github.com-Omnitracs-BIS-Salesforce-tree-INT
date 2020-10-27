@@ -1,0 +1,330 @@
+<apex:page standardcontroller="Lead" extensions="LeadConversionExtension" action="{!checkIfConvertedLead}">
+    <apex:includeScript value="{!$Resource.EnableDisableButton}"/>
+    <apex:form id="everything">
+        <apex:outputpanel id="defaultConvertSection" layout="block" rendered="{!!showMergeContactsSection}">
+        <apex:image url="{!$Resource.LeadLogo}" width="50" height="50"/>
+        <apex:outputpanel >
+            <apex:outputtext style="font-size:12px"  value="Convert Lead"/><br />
+            <apex:outputtext style="font-size:20px"  value="{!lead.name}"/><br />
+        </apex:outputpanel>
+        <apex:outputtext escape="false" value="{!leadConvertHelpMessage}"/>
+        
+        <!-- left over from the old roadnet instacne dont think this is needed in omnitracs -->
+        <apex:pagemessage rendered="false" strength="2" severity="info" title="Opportunity Amount Help"  
+                detail="If you leave the fields in the 'Opporunity Amount Fields' section below blank, the opportunity will be created with a 0 dollar amount." />
+        <apex:pageblock mode="edit" title="Convert Lead {!lead.name}">
+            <apex:pageMessages />
+             <apex:pageBlockButtons >
+                <apex:commandbutton rerender="everything" action="{!checkForFieldsAndForDupeContacts}" value="Convert" status="convertLeadActionStatus" id="convertLeadButton" />
+                <apex:actionstatus id="convertLeadActionStatus" onstart="DisableButton('{!$Component.convertLeadButton}')" 
+                    onstop="EnableButton('{!$Component.convertLeadButton}')"/>
+                
+                <apex:commandbutton action="{!cancel}" value="Cancel"/>
+             </apex:pageBlockButtons>
+             
+             <apex:pageblocksection title="Convert Lead" columns="2" id="convertleadSection">
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Record Owner"/>
+                    <apex:inputfield value="{!theContactForOwnerLookupOnly.ownerId}"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Send Email to the Owner"/>
+                    <apex:inputcheckbox value="{!isSendEmailToNewOwner}"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionItem >
+                    <apex:outputlabel value="Account Name"/>
+                    <apex:selectlist value="{!accountPicklistUserChoice}" size="1" id="accountNameSection">
+                        <apex:selectoptions value="{!accountPicklist}" />
+                        <apex:actionsupport action="{!accountPicklistOnchange}" event="onchange" rerender="convertleadSection"/>
+                    </apex:selectList>
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem rendered="{!showAccountLookup}" id="accountLookupSection">
+                    <apex:outputlabel value="Account Lookup"/>
+                    <apex:inputfield value="{!theContactForOwnerLookupOnly.accountid}" id="accountLookupField">
+                        <apex:actionsupport event="onblur" action="{!accountLookupOnBlur}"/>
+                    </apex:inputfield>
+                </apex:pageblocksectionItem>
+                 <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Opportunity Name"/>
+                        <apex:outputPanel layout="block" styleClass="requiredInput">
+                            <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                            <apex:inputtextarea rows="1" cols="100" value="{!theOppt.name}" disabled="{!doNotCreateOppt}"/>
+                        </apex:outputPanel>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value=""/>
+                    <apex:outputpanel >
+                        <apex:inputcheckbox value="{!doNotCreateOppt}">
+                            <apex:actionsupport event="onchange" action="{!doNotCreateOpptOnChange}" 
+                                rerender="everything" status="changeMouseCursorStatus"/>
+                        </apex:inputcheckbox>
+                        <apex:outputtext value="Do not create a new opportunity upon conversion."/>
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Converted Status"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectlist value="{!convertedStatusUserChoice}" size="1" >
+                            <apex:selectOPtions value="{!convertedStatusPicklist}"/>
+                        </apex:selectlist>
+                     </apex:outputPanel>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                   <apex:outputlabel value="Segment"/>
+                   <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputfield value="{!theLead.Segment__c}"/>
+                   </apex:outputPanel>
+               </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                   <apex:outputlabel value="System Fleet Size"/>
+                   <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputfield value="{!theLead.Fleet_Size__c}"/>
+                   </apex:outputPanel>
+               </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Self Reported Fleet Size"/>
+                    <apex:inputfield value="{!theLead.Self_Reported_Fleet_Size__c}"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem rendered="{!$UserRole.Name == 'Business Development Associates'}">
+                    <apex:outputlabel value="NAICS Code"/>
+                    <apex:inputfield value="{!theLead.NAICS_Code__c}"/>
+                </apex:pageblocksectionitem>
+             </apex:pageblocksection>
+            
+             
+            <!-- <apex:pageblocksection title="Marketing Fields" rendered="{!!doNotCreateOppt}" id="marketingFieldSection"
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Budget?"/>
+                    <apex:inputfield value="{!theLead.Budget__c}"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Need?"/>
+                    <apex:inputfield value="{!theLead.Need__c}"/>
+                </apex:pageblocksectionitem>
+                
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Authority?"/>
+                    <apex:inputfield value="{!theLead.Decision_Maker_Influencer__c}"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Timeline"/>
+                    <apex:inputfield value="{!theLead.timeframe_to_purchase__c}"/>
+                </apex:pageblocksectionitem>
+                
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Lead Administrator ($)"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputfield value="{!theLead.Lead_Admin__c}"/>
+                     </apex:outputPanel>
+                </apex:pageblocksectionitem>
+                
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="RFC ID"/>
+                    <apex:inputfield value="{!theLead.RFC_ID__c}"/>
+                </apex:pageblocksectionitem>
+            </apex:pageblocksection> -->
+            
+            <!-- <apex:pageblocksection title="Product Interest">
+                <apex:pageblocksectionitem >
+                    <apex:inputfield value="{!theLead.QWBS_Product_Interest__c}"/>
+                </apex:pageblocksectionitem>
+            </apex:pageblocksection> -->
+            
+            <apex:pageblocksection title="Opportunity Fields" rendered="{!!doNotCreateOppt}" id="opptFieldSection">
+               <apex:pageblocksectionitem >
+                   <apex:outputlabel value="Opportunity Record Type"/>
+                   <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                       <apex:selectlist value="{!opptRecordtypeUserChoice}" size="1" >
+                           <apex:actionsupport event="onchange" action="{!opptRecordTypePicklistOnChange}"  rerender="opptAmountFieldSection, opptFieldSection" status="changeMouseCursorStatus"/>
+                           <apex:selectoptions value="{!opptRecordTypePicklist}"/>
+                       </apex:selectlist>
+                   </apex:outputPanel>
+               </apex:pageblocksectionitem>
+               <apex:pageblocksectionItem >
+                   <apex:outputlabel value=""/>
+                   <apex:outputtext value=""/><!--  intentional blank space -->
+               </apex:pageblocksectionItem>               
+               <apex:pageblocksectionitem >
+                   <apex:outputlabel value="Stage"/>
+                   <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectlist value="{!theOppt.StageName}" size="1">
+                            <apex:selectoptions value="{!stageNamePicklist}"/>
+                            <apex:actionsupport event="onchange" rerender="opptFieldSection"/>
+                        </apex:selectlist>
+                    </apex:outputPanel>
+               </apex:pageblocksectionitem>
+               
+               <apex:pageblocksectionitem >
+                   <apex:outputlabel value="Type"/>
+                   <apex:inputfield value="{!theOppt.type}">
+                         <apex:actionsupport event="onchange" rerender="opptFieldSection"/>
+                   </apex:inputfield>
+               </apex:pageblocksectionitem>
+
+               <apex:pageblocksectionitem >
+                   <apex:outputlabel value="Close Date"/>
+                   <apex:inputfield value="{!theOppt.CloseDate}"/>
+               </apex:pageblocksectionitem>
+               <apex:pageblocksectionitem >
+                   <apex:outputlabel value="Order Type"/>
+                   <apex:inputfield value="{!theOppt.Order_Type__c}"/>
+               </apex:pageblocksectionitem>
+               
+               <!--<apex:pageblocksectionitem >
+                   <apex:outputlabel value="Opportunity Quantity"/>
+                   <apex:inputfield value="{!theOppt.TotalOpportunityQuantity}"/>
+               </apex:pageblocksectionitem> --> 
+               
+               <apex:pageblockSectionItem >
+                   <apex:outputLabel value="Editable Opportunity Quantity" />
+                   <apex:inputField value="{!theOppt.Editable_Opportunity_Qty__c}" />
+               </apex:pageblockSectionItem>
+                     
+               <apex:pageblocksectionitem >
+                   <apex:outputlabel value="Order Sub-Type"/>
+                   <apex:inputfield value="{!theOppt.Order_Sub_Type__c}"/>
+               </apex:pageblocksectionitem>
+               
+               
+             </apex:pageblocksection>
+           
+             <!-- <apex:pageblocksection title="Competitors" rendered="{!!doNotCreateOppt}">
+                <apex:pageblocksectionitem >
+                   <apex:outputlabel value="Competitor 1"/>
+                   <apex:inputfield value="{!theOppt.Competitor_1__c}"/>
+               </apex:pageblocksectionitem>
+               <apex:pageblocksectionitem >
+                   <apex:outputlabel value="Competitor 2"/>
+                   <apex:inputfield value="{!theOppt.Competitor_2__c}"/>
+               </apex:pageblocksectionitem>
+               <apex:pageblocksectionitem >
+                   <apex:outputlabel value="Competitor 3"/>
+                   <apex:inputfield value="{!theOppt.Competitor_3__c}"/>
+               </apex:pageblocksectionitem>
+               <apex:pageblocksectionitem >
+                   <apex:outputlabel value="Competitor 4"/>
+                   <apex:inputfield value="{!theOppt.Competitor_4__c}"/>
+               </apex:pageblocksectionitem>
+             </apex:pageblocksection> -->
+             
+             <apex:pageblocksection title="Contact Role" columns="1" rendered="{!!doNotCreateOppt}">
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Contact Name"/>
+                    <apex:outputtext value="{!theLead.name}"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Contact Role"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputfield value="{!contactRoleUsedForRolePicklistOnly.Role}"/>
+                    </apex:outputPanel>
+                </apex:pageblocksectionitem>
+             </apex:pageblocksection>
+             <apex:pageblocksection title="Description Information" columns="1">
+               <apex:pageblocksectionitem >
+                   <apex:outputlabel value="Comments"/>
+                   <apex:inputtextarea value="{!theTask.Description}" rows="5" cols="50"/>
+               </apex:pageblocksectionitem>
+               <apex:pageblocksectionitem >
+                   <apex:outputlabel value="Send Notification Email"/>
+                   <apex:inputcheckbox value="{!taskShouldSendNotficationEmail}"/>
+               </apex:pageblocksectionitem>
+             </apex:pageblocksection>             
+             <apex:pageblocksection title="Task Information - Create Task For Record Owner" id="taskInformationSection">
+                <apex:pageblocksectionitem >
+                     <apex:outputlabel value="Reminder"/>
+                     <apex:outputpanel >
+                         <apex:inputcheckbox value="{!theTask.isReminderSet}">
+                            <apex:actionsupport event="onchange" action="{!taskReminderOnChange}" rerender="taskInformationSection"/>
+                         </apex:inputcheckbox>
+                         <apex:inputfield value="{!theTask.ReminderDateTime}"/>
+                     </apex:outputpanel>
+                 </apex:pageblocksectionitem>
+                   <apex:pageblocksectionitem >
+                       <apex:outputlabel value="Due Date"/>
+                       <apex:inputfield value="{!theTask.ActivityDate}"/>
+                   </apex:pageblocksectionitem>
+                 
+               <!-- start subject required/non required fields -->
+               <apex:pageblocksectionitem rendered="{!areTaskFieldsRequired}">
+                   <apex:outputlabel value="Subject"/>
+                   <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputfield value="{!theTask.Subject}"/>
+                    </apex:outputPanel>
+               </apex:pageblocksectionitem>
+               <apex:pageblocksectionitem rendered="{!!areTaskFieldsRequired}">
+                   <apex:outputlabel value="Subject"/>
+                   <apex:inputfield value="{!theTask.Subject}"/>
+               </apex:pageblocksectionitem>
+               <!-- end subject required/non required fields -->
+                                
+               <!-- start activity required/non required fields -->
+               <apex:pageblocksectionitem rendered="{!areTaskFieldsRequired}" >
+                   <apex:outputlabel value="Activity"/>
+                   <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputfield value="{!theTask.type}" />
+                    </apex:outputPanel>
+               </apex:pageblocksectionitem>
+               <apex:pageblocksectionitem rendered="{!!areTaskFieldsRequired}">
+                   <apex:outputlabel value="Activity"/>
+                   <apex:inputfield value="{!theTask.type}"/>
+               </apex:pageblocksectionitem>
+               <!-- end activity required/non required fields -->
+               
+               <!--  be advised that this field ALWAYS has a required bar as it does not have a None option -->
+               <apex:pageblocksectionitem >
+                   <apex:outputlabel value="Status"/>
+                   <apex:inputfield value="{!theTask.Status}"/>
+               </apex:pageblocksectionitem>
+               
+               <!-- same deal here as with status, there is no none option so it is always has required block -->
+               <apex:pageblocksectionitem >
+                   <apex:outputlabel value="Priority"/>                
+                   <apex:inputfield value="{!theTask.Priority}"/>
+               </apex:pageblocksectionitem>
+                             
+
+               
+             </apex:pageblocksection>
+        </apex:pageblock>
+        </apex:outputpanel>
+        
+        <apex:outputpanel id="mergeContactsSection" rendered="{!showMergeContactsSection}">
+            <apex:image url="{!$Resource.LeadLogo}" width="50" height="50"/>
+            <apex:outputpanel >
+                <apex:outputtext style="font-size:12px"  value="Convert Lead"/><br />
+                <apex:outputtext style="font-size:20px"  value="{!lead.name}"/><br />
+            </apex:outputpanel>
+            <apex:outputtext escape="false" value="{!mergeHelpMessage}"/>
+            <apex:pageblock title="Merge Contacts - Convert Lead" mode="edit">
+               <apex:pageBlockButtons >
+                    <apex:commandbutton action="{!convertLead}" value="Convert"/>
+                    <apex:commandbutton action="{!cancel}" value="Cancel"/>
+                </apex:pageBlockButtons>
+                <apex:pageblocksection title="Convert Lead" columns="1">
+                    <apex:pageblocksectionitem >
+                        <apex:outputlabel value="Account Name"/>
+                        <apex:outputtext value="{!accountToAttachLeadTo.Name}"/>
+                    </apex:pageblocksectionitem>
+                    <apex:pageblocksectionitem >
+                        <apex:outputlabel value="Contact Name"/>
+                        <apex:outputpanel >
+                            <apex:selectlist value="{!mergeContactUserChoice}" size="1">
+                                <apex:selectoptions value="{!mergeContactPicklist}"/>
+                            </apex:selectlist>
+                        </apex:outputpanel>
+                    </apex:pageblocksectionitem>
+                </apex:pageblocksection>
+            </apex:pageblock>     
+        </apex:outputpanel>
+    <apex:actionstatus onstart="document.body.style.cursor='progress'" onstop="document.body.style.cursor='default'" id="changeMouseCursorStatus"/>    
+    </apex:form>
+</apex:page>

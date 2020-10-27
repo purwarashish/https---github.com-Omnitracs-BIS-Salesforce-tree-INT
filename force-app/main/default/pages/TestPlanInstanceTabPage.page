@@ -1,0 +1,23 @@
+<!--
+ *******************************************************************************
+ * File:  TestRunTabPage
+ * Date:  June 4th, 2010
+ * Author:  Evan Hartig
+ *
+ * The use, disclosure, reproduction, modification, transfer, or transmittal of
+ * this work for any purpose in any form or by any means without the written 
+ * permission of United Parcel Service is strictly prohibited.
+ *
+ * Confidential, unpublished property of United Parcel Service.
+ * Use and distribution limited solely to authorized personnel.
+ *
+ * Copyright 2009, UPS Logistics Technologies, Inc.  All rights reserved.
+ *
+ * Purpose: 
+ *   VF tab page for Test Runs
+ *******************************************************************************
+ -->
+
+<apex:page tabStyle="Test_Plan_Instance__c">
+    <apex:enhancedList type="Test_Plan_Instance__c" height="600" id="TestRunList" />
+</apex:page>

@@ -1,0 +1,31 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "00550000004cCkhAAE",
+      "createdByName": "Sripathi Gullapalli",
+      "createdDate": "2017-07-26T17:50:21.000Z",
+      "fileName": "navigationMenus/Default_Navigation1.navigationMenu",
+      "fullName": "Default_Navigation1",
+      "id": "0Lm50000000CabLCAS",
+      "lastModifiedById": "00550000004cCkhAAE",
+      "lastModifiedByName": "Sripathi Gullapalli",
+      "lastModifiedDate": "2017-07-26T17:50:21.000Z",
+      "manageableState": "unmanaged",
+      "type": "NavigationMenu"
+    },
+    {
+      "createdById": "00550000003h5fCAAQ",
+      "createdByName": "Casey Keeling",
+      "createdDate": "2017-04-06T15:21:08.000Z",
+      "fileName": "navigationMenus/Default_Navigation.navigationMenu",
+      "fullName": "Default_Navigation",
+      "id": "0Lm500000008OwnCAE",
+      "lastModifiedById": "00550000003h5fCAAQ",
+      "lastModifiedByName": "Casey Keeling",
+      "lastModifiedDate": "2017-04-06T15:21:08.000Z",
+      "manageableState": "unmanaged",
+      "type": "NavigationMenu"
+    }
+  ]
+}

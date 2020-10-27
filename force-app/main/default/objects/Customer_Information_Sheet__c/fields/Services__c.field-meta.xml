@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Services__c</fullName>
+    <externalId>false</externalId>
+    <label>Services</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Advance Mapping</fullName>
+                <default>false</default>
+                <label>Advance Mapping</label>
+            </value>
+            <value>
+                <fullName>ALK CoPilot</fullName>
+                <default>false</default>
+                <label>ALK CoPilot</label>
+            </value>
+            <value>
+                <fullName>Amber Alert</fullName>
+                <default>false</default>
+                <label>Amber Alert</label>
+            </value>
+            <value>
+                <fullName>Analytics Manager</fullName>
+                <default>false</default>
+                <label>Analytics Manager</label>
+            </value>
+            <value>
+                <fullName>CER - FCW/FTV</fullName>
+                <default>false</default>
+                <label>CER - FCW/FTV</label>
+            </value>
+            <value>
+                <fullName>CER Video</fullName>
+                <default>false</default>
+                <label>CER Video</label>
+            </value>
+            <value>
+                <fullName>Content Delivery</fullName>
+                <default>false</default>
+                <label>Content Delivery</label>
+            </value>
+            <value>
+                <fullName>Critical Event Reporting</fullName>
+                <default>false</default>
+                <label>Critical Event Reporting</label>
+            </value>
+            <value>
+                <fullName>Driver Login</fullName>
+                <default>false</default>
+                <label>Driver Login</label>
+            </value>
+            <value>
+                <fullName>Driver Notification Service</fullName>
+                <default>false</default>
+                <label>Driver Notification Service</label>
+            </value>
+            <value>
+                <fullName>Driver Workflow</fullName>
+                <default>false</default>
+                <label>Driver Workflow</label>
+            </value>
+            <value>
+                <fullName>Hazmat</fullName>
+                <default>false</default>
+                <label>Hazmat</label>
+            </value>
+            <value>
+                <fullName>Hours of Service</fullName>
+                <default>false</default>
+                <label>Hours of Service</label>
+            </value>
+            <value>
+                <fullName>In-Cab Scanning</fullName>
+                <default>false</default>
+                <label>In-Cab Scanning</label>
+            </value>
+            <value>
+                <fullName>Lane Departure</fullName>
+                <default>false</default>
+                <label>Lane Departure</label>
+            </value>
+            <value>
+                <fullName>Mobileye</fullName>
+                <default>false</default>
+                <label>Mobileye</label>
+            </value>
+            <value>
+                <fullName>Navigo Fuel</fullName>
+                <default>false</default>
+                <label>Navigo Fuel</label>
+            </value>
+            <value>
+                <fullName>Navigo Route compliance</fullName>
+                <default>false</default>
+                <label>Navigo Route compliance</label>
+            </value>
+            <value>
+                <fullName>Nav - Maptuit</fullName>
+                <default>false</default>
+                <label>Nav - Maptuit</label>
+            </value>
+            <value>
+                <fullName>Omnitracs Navigation</fullName>
+                <default>false</default>
+                <label>Omnitracs Navigation</label>
+            </value>
+            <value>
+                <fullName>Per Diem</fullName>
+                <default>false</default>
+                <label>Per Diem</label>
+            </value>
+            <value>
+                <fullName>Performance Monitoring</fullName>
+                <default>false</default>
+                <label>Performance Monitoring</label>
+            </value>
+            <value>
+                <fullName>Pre-filled macros</fullName>
+                <default>false</default>
+                <label>Pre-filled macros</label>
+            </value>
+            <value>
+                <fullName>QTRACS</fullName>
+                <default>false</default>
+                <label>QTRACS</label>
+            </value>
+            <value>
+                <fullName>TrailerTRACS</fullName>
+                <default>false</default>
+                <label>TrailerTRACS</label>
+            </value>
+            <value>
+                <fullName>Trip Manager</fullName>
+                <default>false</default>
+                <label>Trip Manager</label>
+            </value>
+            <value>
+                <fullName>Vehicle Command &amp; Control</fullName>
+                <default>false</default>
+                <label>Vehicle Command &amp; Control</label>
+            </value>
+            <value>
+                <fullName>Vehicle Maintenance</fullName>
+                <default>false</default>
+                <label>Vehicle Maintenance</label>
+            </value>
+            <value>
+                <fullName>VIR</fullName>
+                <default>false</default>
+                <label>VIR</label>
+            </value>
+            <value>
+                <fullName>Virtual Display</fullName>
+                <default>false</default>
+                <label>Virtual Display</label>
+            </value>
+            <value>
+                <fullName>Workflow</fullName>
+                <default>false</default>
+                <label>Workflow</label>
+            </value>
+            <value>
+                <fullName>XRS – Fuel Tax</fullName>
+                <default>false</default>
+                <label>XRS – Fuel Tax</label>
+            </value>
+            <value>
+                <fullName>XRS – Mobile APIs</fullName>
+                <default>false</default>
+                <label>XRS – Mobile APIs</label>
+            </value>
+            <value>
+                <fullName>XRS – Smart Forms</fullName>
+                <default>false</default>
+                <label>XRS – Smart Forms</label>
+            </value>
+            <value>
+                <fullName>XRS – Trip Management</fullName>
+                <default>false</default>
+                <label>XRS – Trip Management</label>
+            </value>
+            <value>
+                <fullName>XRS – Web APIs</fullName>
+                <default>false</default>
+                <label>XRS – Web APIs</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

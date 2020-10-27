@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Course__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>used to select the course of the class</description>
+    <externalId>false</externalId>
+    <label>Course</label>
+    <referenceTo>Course_Catalog__c</referenceTo>
+    <relationshipLabel>classes</relationshipLabel>
+    <relationshipName>classes</relationshipName>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

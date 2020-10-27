@@ -1,0 +1,294 @@
+<apex:page controller="ManageQuoteLineScheduleController" sidebar="false" action="{!initialize}">
+    <style>
+       input[type=checkbox] {
+          display: none;
+        }
+        .a-items {margin-top: 5px;}
+        .a-container label {
+          display: block;
+          position: relative;
+          cursor: pointer;
+          font-size: 13px;
+          font-weight: bold;
+          padding: 10px 20px;
+          color: #fff;
+          background-color: #1795BE;
+          border-bottom: 1px solid #ddd;
+        }
+        .a-container label:after {
+          content: "";
+          width: 0;
+          height: 0;
+          border-top: 6px solid transparent;
+          border-right: 8px solid transparent;
+          border-bottom: 6px solid transparent;
+          border-left: 8px solid #fff;
+          position: absolute;
+          right: 10px;
+          top: 12px;
+        }
+        .a-container label:hover {
+          background-color: #008b8b;
+          color: #fff;
+        }
+        .a-container input:checked + label {
+          /*background-color: #ef8c08;*/
+          background-color: #008b8b;
+          color: #fff;
+        }
+        
+        .a-container input:checked + label:after {
+          border-top: 8px solid #fff;
+          border-right: 6px solid transparent;
+          border-bottom: 8px solid transparent;
+          border-left: 6px solid transparent;
+          top: 14px;
+          right: 18px;
+        }
+        
+        .a-content {
+          padding: 0 0 10px;
+          display: none;
+        }
+        
+        .a-container input:checked ~ .a-content {
+          display: block;
+        }
+        .dataCell, .headerRow, input, textarea, select {
+            font-size: 15px;
+            font-family: calibri;
+        }
+        input.btn {
+            font-size: 13px;
+            font-family: calibri;
+            padding: 4px 7px !important;
+        }
+        
+        .rich-tabhdr-side-cell {border-top:none;}   
+        .rich-tabhdr-side-border {background-image:none;}
+        .tabPanel { border: none !important; }
+        .activeTab {
+            background-color: lightblue;
+            font-weight: bold;
+            font-family: calibri;
+            background-image:none; 
+            font-size: 18px;
+            border: none !important;    
+        }
+        .inactiveTab {
+            background-color: lightgrey;
+            font-family: calibri;
+            background-image:none;
+            font-size: 18px;
+            cursor: pointer;
+            border: none !important;
+        }
+        .messageTable td {
+            font-size: 15px;
+            font-family: calibri;
+            font-weight: bold;
+        }
+    </style>
+    
+    <script type="text/javascript">
+        function setFocusOnLoad() {
+            //do nothing, this method is to remove auto focus on first element
+        }
+        function exportToCSV(){
+            var tables = document.querySelectorAll('[title="Working Quote Line Schedules"]');
+            var csv = '';
+            for (var i = 0; i < tables.length; i++) {
+                var table = tables[i];
+                csv += '\n\n';
+                csv += table.parentElement.previousElementSibling.textContent + '\n';
+                for (var j = 0; j < table.rows.length; j++) {
+                    var row = table.rows[j];
+                    for (var k = 0; k < row.cells.length; k++) {
+                        csv += row.cells[k].textContent + ',';
+                    }
+                    csv += '\n';
+                }
+            }
+            var hiddenElement = document.createElement('a');
+            hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
+            hiddenElement.target = '_self';
+            hiddenElement.download = 'RolloutSchedules.csv';
+            document.body.appendChild(hiddenElement);
+            hiddenElement.click();
+        }
+    </script>
+    <apex:tabPanel switchType="client" selectedTab="workingRevision" id="rolloutSchedules" headerClass="tabPanel" activeTabClass="activeTab" inactiveTabClass="inactiveTab">
+        <apex:tab label="Working Revision # : {!IF(isWorkingRevision, workingRevision, 'None')}" name="workingRevision" id="workingRevision">
+            <apex:form >
+                <apex:actionFunction name="reCalculate" action="{!recalculateScheduleLabelMap}" reRender="renderBlock" />
+                <div id="quoteLinesPanel">
+                    <apex:pageBlock id="renderBlock">
+                        <apex:pageMessages escape="false" />
+                        <apex:variable var="quoteLineId" value=""/>
+                        <apex:variable var="rowNumber" value="{!0}"/>
+                        <apex:repeat value="{!workingSchedulesMap}" var="lineId">
+                            <apex:variable var="rowNumber" value="{!0}"/>
+                            <div class="a-container a-items">
+                                <input type="checkbox" name="ac" id="{!lineId}" checked="true"/>
+                                <label for="{!lineId}"><apex:outputText escape="false" value="{!IF(isDraftRevision, lineScheduleLabelMap[lineId], lineIdNameMap[lineId])}"/></label>
+                                <div class="a-content">
+                                    <apex:pageBlockTable id="thetable" title="Working Quote Line Schedules" var="line" value="{!workingSchedulesMap[lineId]}">
+                                      <apex:column headerValue="No." style="width:20px; text-align:center;" headerClass="centertext">
+                                        <apex:outputText value="{0}" style="text-align:center;">
+                                          <apex:param value="{!rowNumber+1}" />
+                                        </apex:outputText>
+                                      </apex:column>
+                                      <apex:column headerValue="Schedule Date" >
+                                        <apex:inputField value="{!line.Schedule_Date__c}" rendered="{!isDraftRevision}"/>
+                                        <apex:outputText value="{0,date,MM/dd/yyyy}" rendered="{! !isDraftRevision}"><apex:param value="{!line.Schedule_Date__c}" /></apex:outputText>
+                                      </apex:column>
+                                      <apex:column headerValue="Schedule Quantity" >
+                                        <apex:inputField value="{!line.Schedule_Quantity__c}" onblur="reCalculate()" rendered="{!isDraftRevision}"/>
+                                        <apex:outputText value="{!line.Schedule_Quantity__c}" rendered="{! !isDraftRevision}"/>
+                                      </apex:column>
+                                      <apex:column headerValue="Reason" >
+                                        <apex:inputField value="{!line.Reason__c}" rendered="{!isDraftRevision}"/>
+                                        <apex:outputText value="{!line.Reason__c}" rendered="{! !isDraftRevision}"/>
+                                      </apex:column>
+                                      <apex:column headerValue="Schedule Status">
+                                        <apex:outputText value="{!line.Schedule_Status__c}"/>
+                                      </apex:column>
+                                      <!--apex:column headerValue="Date Fulfilled">
+                                        <apex:outputText value=""/>
+                                      </apex:column>
+                                      <apex:column headerValue="Quantity Fulfilled">
+                                        <apex:outputText value=""/>
+                                      </apex:column-->
+                                      <!--apex:column headerValue="Action" rendered="{!isDraftRevision}">
+                                        <apex:commandButton value="Delete" action="{!deleteRow}" rendered="{!line.Id == null}" reRender="renderBlock" status="pageStatus">
+                                            <apex:param name="quoteLineId" value="{!lineId}"/>
+                                            <apex:param name="rowIndex" value="{!rowNumber}"/>
+                                        </apex:commandButton>
+                                        <apex:variable var="quoteLineId" value="{!lineId}"/>
+                                        <apex:variable var="rowNumber" value="{!rowNumber+1}"/>
+                                      </apex:column-->
+                                    </apex:pageBlockTable>
+                                    <apex:commandButton value="Add Schedule" action="{!addRow}" reRender="renderBlock" status="pageStatus" rendered="{!isDraftRevision}">
+                                        <apex:param name="quoteLineId" value="{!lineId}"/>
+                                    </apex:commandButton>
+                                </div>
+                            </div>
+                        </apex:repeat>
+                        <apex:outputText styleClass="dataCell" value="No Working Revision" rendered="{! !isWorkingRevision && quoteName != ''}" />
+                        <apex:outputText styleClass="dataCell" value="Quote not applicable for Rollout Schedules" rendered="{! quoteName == ''}" />
+                        <apex:pageBlockButtons >
+                            <apex:commandButton value="Save" action="{!save}" reRender="renderBlock" status="pageStatus" rendered="{!isDraftRevision}"/>
+                            <apex:commandButton value="Save & Submit for Approval" action="{!submit}" reRender="renderBlock" status="pageStatus" rendered="{! isDraftRevision && ((quoteApprovalStatus != 'Pending' && quoteApprovalStatus != 'Approved' && highestRevision == 1) || (quoteApprovalStatus == 'Approved' && highestRevision > 1))}"/>
+                            <apex:commandButton value="Reset" onclick="if(!confirm('Do you want to reset, all the changes will be lost?')) return false;" action="{!reset}" reRender="renderBlock" status="pageStatus" rendered="{!isDraftRevision}"/>
+                            <apex:commandButton value="Add Revision" action="{!addRevision}" reRender="rolloutSchedules" status="pageStatus" oncomplete="alert('Revision added successfully');" rendered="{! !isOppClosed && revisionSchedules.size > 0 && !isWorkingRevision}"/>
+                            <apex:commandButton value="Cancel" action="{!cancel}"/>
+                            <apex:commandButton value="Export Schedules Data" onclick="exportToCSV()" onComplete="return null;" rendered="{! isWorkingRevision && !isDraftRevision}"/>
+                            <apex:actionStatus id="pageStatus">
+                                <apex:facet name="start">
+                                    <div style="position:fixed;top:0;left:0;right:0;bottom:0;opacity:0.75;z-index:1000;background:#000;">
+                                        <div style="position:absolute;left:50%;top:50%;z-index:1001;margin:-16px 0 0 -16px;">
+                                            <img src="/img/loading32.gif" />
+                                        </div>
+                                    </div>
+                                    <!--apex:outputPanel >
+                                        <img src="/img/loading32.gif" width="25" height="25" style="position:absolute;margin-left:5px;"/>
+                                    </apex:outputPanel-->            
+                                </apex:facet>
+                            </apex:actionStatus>
+                        </apex:pageBlockButtons>
+                    </apex:pageBlock>
+                </div>
+            </apex:form>
+        </apex:tab>
+        
+        <apex:tab label="Active Revision # : {!IF(isActiveRevision, activeRevision, 'None')}" name="activeRevision" id="activeRevision">
+            <apex:pageBlock id="renderActiveBlock">
+                <apex:repeat value="{!activeSchedulesMap}" var="lineId">
+                    <apex:variable var="rowNumber" value="{!0}"/>
+                    <div class="a-container a-items">
+                        <input type="checkbox" name="ac" id="{!lineId}-active" checked="true"/>
+                        <label for="{!lineId}-active"><apex:outputText escape="false" value="{!lineIdNameMap[lineId]}"/></label>
+                        <div class="a-content">
+                            <apex:pageBlockTable id="thetable" title="Active Quote Line Schedules" var="line" value="{!activeSchedulesMap[lineId]}">
+                              <apex:column headerValue="No." style="width:20px; text-align:center;" headerClass="centertext">
+                                <apex:outputText value="{0}" style="text-align:center;">
+                                  <apex:param value="{!rowNumber+1}" />
+                                </apex:outputText>
+                                <apex:variable var="rowNumber" value="{!rowNumber+1}"/>
+                              </apex:column>
+                              <apex:column headerValue="Schedule Date" >
+                                <apex:outputText value="{0,date,MM/dd/yyyy}"><apex:param value="{!line.Schedule_Date__c}" /></apex:outputText>
+                              </apex:column>
+                              <apex:column headerValue="Schedule Quantity" >
+                                <apex:outputText value="{!line.Schedule_Quantity__c}"/>
+                              </apex:column>
+                              <apex:column headerValue="Reason" >
+                                <apex:outputText value="{!line.Reason__c}"/>
+                              </apex:column>
+                              <apex:column headerValue="Schedule Status">
+                                <apex:outputText value="{!line.Schedule_Status__c}"/>
+                              </apex:column>
+                              <!--apex:column headerValue="Date Fulfilled">
+                                <apex:outputText value=""/>
+                              </apex:column>
+                              <apex:column headerValue="Quantity Fulfilled">
+                                <apex:outputText value=""/>
+                              </apex:column-->
+                            </apex:pageBlockTable>
+                        </div>
+                    </div>
+                </apex:repeat>
+                <apex:outputText styleClass="dataCell" value="No Active Revision" rendered="{! !isActiveRevision}" />
+            </apex:pageBlock>
+        </apex:tab>
+        
+        <apex:tab label="Previous Revisions (Count: {!revisionList.size})" name="prevRevisions" id="prevRevisions">
+            <apex:pageBlock id="renderRevisionsBlock">
+                <apex:repeat value="{!revisionList}" var="revision">
+                    <div class="a-container">
+                        <input type="checkbox" name="ac" id="revision-{!revision}" />
+                        <label for="revision-{!revision}" style="margin-bottom:5px;background:{!IF(revisionStatusMap[revision] == 'Approved', '#80af41', '#d84747')};"><apex:outputText escape="false" value="Revision {!revision} ({!revisionStatusMap[revision]})"/></label>
+                        <div class="a-content" style="margin:auto 15px;">
+                            <apex:repeat value="{!revisionSchedulesMap[revision]}" var="lineId">
+                                <apex:variable var="rowNumber" value="{!0}"/>
+                                <div class="a-container a-items">
+                                    <input type="checkbox" name="ac" id="{!lineId}-revision-{!revision}" checked="true"/>
+                                    <label for="{!lineId}-revision-{!revision}"><apex:outputText escape="false" value="{!lineIdNameMap[lineId]}"/></label>
+                                    <div class="a-content">
+                                        <apex:pageBlockTable id="thetable" title="Previous Quote Line Schedules" var="line" value="{!revisionSchedulesMap[revision][lineId]}">
+                                          <apex:column headerValue="No." style="width:20px; text-align:center;" headerClass="centertext">
+                                            <apex:outputText value="{0}" style="text-align:center;">
+                                              <apex:param value="{!rowNumber+1}" />
+                                            </apex:outputText>
+                                            <apex:variable var="rowNumber" value="{!rowNumber+1}"/>
+                                          </apex:column>
+                                          <apex:column headerValue="Schedule Date" >
+                                            <apex:outputText value="{0,date,MM/dd/yyyy}"><apex:param value="{!line.Schedule_Date__c}" /></apex:outputText>
+                                          </apex:column>
+                                          <apex:column headerValue="Schedule Quantity" >
+                                            <apex:outputText value="{!line.Schedule_Quantity__c}"/>
+                                          </apex:column>
+                                          <apex:column headerValue="Reason" >
+                                            <apex:outputText value="{!line.Reason__c}"/>
+                                          </apex:column>
+                                          <apex:column headerValue="Schedule Status">
+                                            <apex:outputText value="{!line.Schedule_Status__c}"/>
+                                          </apex:column>
+                                          <!--apex:column headerValue="Date Fulfilled">
+                                            <apex:outputText value=""/>
+                                          </apex:column>
+                                          <apex:column headerValue="Quantity Fulfilled">
+                                            <apex:outputText value=""/>
+                                          </apex:column-->
+                                        </apex:pageBlockTable>
+                                    </div>
+                                </div>
+                            </apex:repeat>
+                        </div>
+                    </div>
+                </apex:repeat>
+                <apex:outputText styleClass="dataCell" value="No Previous Revisions" rendered="{! revisionList.size == 0}" />
+            </apex:pageBlock>
+        </apex:tab>
+    </apex:tabPanel>
+</apex:page>

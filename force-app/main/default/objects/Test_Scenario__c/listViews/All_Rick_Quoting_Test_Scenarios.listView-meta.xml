@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Rick_Quoting_Test_Scenarios</fullName>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>Scenario__c</columns>
+    <columns>Business_Unit__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>OWNER.FIRST_NAME</columns>
+    <columns>OWNER.LAST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Area__c</field>
+        <operation>equals</operation>
+        <value>Quotes</value>
+    </filters>
+    <filters>
+        <field>OWNER.FIRST_NAME</field>
+        <operation>equals</operation>
+        <value>Rick</value>
+    </filters>
+    <label>All Rick Quoting Test Scenarios</label>
+    <language>en_US</language>
+</ListView>

@@ -1,0 +1,84 @@
+<apex:page standardController="Contract" extensions="ContentDeliveryController" tabStyle="Contract">
+    <apex:form >
+    <apex:sectionHeader title="Create Content Delivery" subtitle="Content Delivery Wizard">
+        <center><apex:image url="{!$Resource.ContentDeliveryStep1}" width="1266" height="43"/></center>
+        <br/><br/><br/>
+    </apex:sectionHeader>
+        <apex:pageBlock title="Create Content Delivery">
+            
+            <b><apex:outputLabel value="Search for content"/></b><br/><br/>
+            <apex:outputLabel value="Search In "/>
+           
+             <apex:selectList id="cworkspaceList" value="{!selectedOpt}" multiselect="false" size="1">
+   
+                <apex:selectOptions value="{!workSpaceOptions}"/>
+            </apex:selectList>
+            &nbsp;
+            <apex:outputLabel value="for "/>
+            &nbsp;
+            <apex:outputText value="{!contNum}"/>
+            &nbsp;
+            <apex:commandButton value="Search files" action="{!Search}"/><br/><br/>
+            <apex:outputPanel rendered="{!IF(isResultShow==true,true,false)}">               
+                <apex:pageBlockTable value="{!conDocL}" var="conDL" onclick="" >
+                        <apex:column headerValue="Selected" width="1%" > 
+                                <apex:InputCheckbox value="{!conDL.Orderable__c}" />
+                        </apex:column>  
+                        <apex:column width="10%">
+                            <apex:commandButton value="Preview" action="{!Preview}" style="float-left:10%"/>
+                        </apex:column>
+                        
+                        <apex:column value="{!conDL.Title}" headerValue="Search Results: [{!conDocL.size} files]" />                                                 
+                </apex:pageBlockTable> 
+                 <!--<apex:iframe frameborder="1" title="Preview Document" rendered="{!previewFile}" src="{!FileName}" height="300px" width="200px" scrolling="True" /> -->
+                     <div id="dpvPreviewWrapper" align="center">
+                        <h2 class="filePreviewHeading">Preview</h2>
+                      <!--
+                        <div class="chatterFileViewerPanel" id="chatterFileViewerPanel"> 
+                            <embed src="/DocViewer.swf"  id="renditionLarge" quality="high" bgcolor="#f3f3f3" name="renditionLarge" allowscriptaccess="sameDomain" allowfullscreen="true" 
+                                pluginspage="<a target="_blank" href="http://www.adobe.com/go/getflashplayer"">http://www.adobe.com/go/getflashplayer"</a> wmode="opaque" type="application/x-shockwave-flash" align="middle" height="700px" width="800px"/>
+                                <noembed><p>Flash file preview</p>
+                            </noembed>
+                         </div>
+                       -->  
+                        <script>insertFlexComponent('/_swf/121310/sfc/flex/DocViewer', 'shepherd_prefix=/sfc/servlet.shepherd&v={!ContentVersionId}&mode=chatterfilepreview&in_tests=false', '700px', '400px', '#f3f3f3', 'chatterFileViewerPanel', 'renditionLarge', false, { adobeFlashVersionLbl : 'You must enable or download Adobe Flash Player version 9.0.115 or later to use this feature.', downloadAdobeLbl : 'Download Adobe Flash Player', downloadAdobeLinkLbl : 'Click the link below to download the Adobe Flash Player:', closeDialogLbl : 'Cancel'}); Ninja.Flex.ContentStaticResourcesBase = '/_swf/121310/sfc';Ninja.Flex.ShepherdController = '/sfc/servlet.shepherd';</script>
+                      </div>
+
+
+                <center>
+                    <apex:commandButton action="{!step2}" value="Next" style="margin-top:8px;"/>﻿
+                    <apex:commandButton action="{!Cancel}" value="Cancel" style="margin-top:8px;"/>﻿
+                </center>
+            </apex:outputPanel>
+           
+        </apex:pageBlock>
+    </apex:form>
+
+
+<!--<apex:sectionHeader title="Contract Content Delivery" subtitle="Step 1 of 4"/>-->
+
+    <!--<apex:form title="Deliver Content">-->
+    <!--    This feature will follow the same pattern as the content delivery OOB.  It will end with an email template with the URL generated in the body to send to the customer. <br/><br/>-->
+    <!--        1) Give the user all the documents that are associated with the contract from the parent down <br/><br/>-->
+    <!--            - Allow the user to preview the documents as they are selecting them  <br/><br/>-->
+    <!--        2) Allow the user to select the documents to be delivered including content packs <br/><br/>-->
+    <!--            - Default the directory to Content Document and the for to the contract you started from <br/><br/>-->
+    <!--        3) Move to next page in the wizard  <br/><br/>-->
+    <!--        4) Recreate the content delivery screen with all the options  <br/><br/>-->
+    <!--        5) Move to next page in wizard  <br/><br/>-->
+    <!--        6) Generate the URL for the content delivery and save it to the appropriate objects  <br/><br/>-->
+    <!--        7) Move to next page in wizard  <br/><br/>-->
+    <!--        8) Create a VF email template or call the stardard email template and prepopulate the URL  <br/><br/>-->
+    <!--        9) Allow the user to send the email and return to the contracts page  <br/><br/>-->
+            
+    <!--     Please ensure that the contract ID is part of the content delivery process so the link can be made back to it.   Content delivery is now available via the api version 32.-->
+  
+    <!--      <apex:pageBlock title="Contract Content">-->
+    <!--           <apex:facet name="footer">-->
+    <!--            <apex:commandButton action="{!step2}" value="Next"-->
+    <!--                        styleClass="btn"/>-->
+    <!--          </apex:facet>-->
+    <!--      </apex:pageBlock> -->
+    <!--</apex:form>  -->
+<!--<script>function getRecordIds(keyPrefix) { return [] }</script>-->
+</apex:page>

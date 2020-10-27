@@ -1,0 +1,31 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "assignmentRules/Case.assignmentRules",
+      "fullName": "Case",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": "AssignmentRules"
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "assignmentRules/Lead.assignmentRules",
+      "fullName": "Lead",
+      "id": "",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": "AssignmentRules"
+    }
+  ]
+}

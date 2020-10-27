@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ancillary_Hardware__c</fullName>
+    <externalId>false</externalId>
+    <label>Ancillary Hardware</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Aux Sensor</fullName>
+                <default>false</default>
+                <label>Aux Sensor</label>
+            </value>
+            <value>
+                <fullName>Buzzer</fullName>
+                <default>false</default>
+                <label>Buzzer</label>
+            </value>
+            <value>
+                <fullName>Cargo Sensor</fullName>
+                <default>false</default>
+                <label>Cargo Sensor</label>
+            </value>
+            <value>
+                <fullName>Door Sensor</fullName>
+                <default>false</default>
+                <label>Door Sensor</label>
+            </value>
+            <value>
+                <fullName>Pager</fullName>
+                <default>false</default>
+                <label>Pager</label>
+            </value>
+            <value>
+                <fullName>Panic Button</fullName>
+                <default>false</default>
+                <label>Panic Button</label>
+            </value>
+            <value>
+                <fullName>RMWL</fullName>
+                <default>false</default>
+                <label>RMWL</label>
+            </value>
+            <value>
+                <fullName>VMU</fullName>
+                <default>false</default>
+                <label>VMU</label>
+            </value>
+            <value>
+                <fullName>Wireless Panic Button</fullName>
+                <default>false</default>
+                <label>Wireless Panic Button</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

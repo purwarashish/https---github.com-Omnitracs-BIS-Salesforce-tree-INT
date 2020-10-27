@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>TEST</label>
+    <protected>false</protected>
+    <values>
+        <field>AuthEndpoint__c</field>
+        <value xsi:type="xsd:string">https://authuat.springcm.com/oauth/201309/token/sfaccesstoken</value>
+    </values>
+    <values>
+        <field>Client_Id__c</field>
+        <value xsi:type="xsd:string">f7e6a07a-aa6d-45b8-93c1-4812ea314057</value>
+    </values>
+    <values>
+        <field>Client_Secret__c</field>
+        <value xsi:type="xsd:string">1dbb257cee5844eaa4d99d5b51840f22dZcb3xNU63rt9esErhtKR5ZaYHOOxOIysi3SjYd1H7nbILPau6rZ3rZi9BCwi9hrv2BbkZfSD2DUS8SN2yd0gs5AIVSiVrTI</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Atleast_One_Nonzero_Units_Sold_Field</fullName>
+    <active>true</active>
+    <description>At least one of the unit sold fields should be non-zero</description>
+    <errorConditionFormula>$RecordType.Id == &apos;01250000000QoTV&apos;
+&amp;&amp;  No_6_pin_Units_Sold_PP804879__c ==0
+&amp;&amp;  No_9_pin_Units_Sold_PP804880__c  ==0
+&amp;&amp;  No_of_Bag_Units_Sold_PP804980__c  ==0</errorConditionFormula>
+    <errorMessage>At least one of the unit sold fields ( 6 pin units sold, 9 pin units sold or bag units ) should be non-zero</errorMessage>
+</ValidationRule>

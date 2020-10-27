@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_to_Account_Team</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Send to Account Team</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!requireScript(&quot;/soap/ajax/14.0/connection.js&quot;)};
+{!requireScript(&quot;/js/functions.js&quot;)};
+
+
+var requestToUpdate = new sforce.SObject(&quot;Customer_Information_Sheet__c&quot;);
+var requestId = &apos;{!Customer_Information_Sheet__c.Id}&apos;;
+requestToUpdate.Id = requestId;
+requestToUpdate.Send_Email__c = &quot;true&quot;;
+
+
+var result = sforce.connection.update([requestToUpdate]); 
+if(result[0].success==&quot;true&quot;){ 
+        //Reload the Detail Screen
+        window.location.reload(); 
+} else { 
+       alert(&apos;Error updating CSI: &apos; + result); 
+}</url>
+</WebLink>

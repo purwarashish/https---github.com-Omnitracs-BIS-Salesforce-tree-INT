@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Owner_Territory__c</fullName>
+    <description>Opportunity Owner Territory field is created in Sales Support Activity to facilitate the field in Email Template</description>
+    <externalId>false</externalId>
+    <formula>Text(Opportunity__r.Owner.Territory__c)</formula>
+    <label>Opportunity Owner Territory</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

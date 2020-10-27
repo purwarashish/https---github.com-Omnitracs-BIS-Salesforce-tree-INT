@@ -1,0 +1,72 @@
+<!---------------------------------------------------------------------------------------------------
+Name : OutageNMCSystemPage
+Author : Shruti Karn
+Date : 26 August 2010
+
+Usage : This page is the Step 3 for Outage Contact Wizard when "Systems Only" option is selected at Step2
+    
+----------------------------------------------------------------------------------------------------->
+<apex:page controller="OutageContactWizardController" tabStyle="Contact" id="pageId" wizard="false" showHeader="true" sidebar="true">
+    <apex:sectionHeader title="Outage Contact Tool" subtitle="Step 3 of 6"/>
+    <apex:includeScript value="{!$Resource.OutageTool}"/>
+    <apex:form id="contactNotificationForm">
+     <apex:actionFunction name="redirect2next" action="{!redirectToStep4}" status="loadingStatusAdd"/>
+     <apex:actionFunction name="showMsg1" action="{!showMsg}" rerender="processingMsg"/>
+    <apex:messages />
+    <apex:pageBlock title="Step 3. Select NMC Systems" id="portalinfo">
+        <apex:pageBlockSection collapsible="false" columns="1">
+           <apex:pageBlockSectionItem >
+              <apex:outputPanel id="processingMsg">
+                  <div style="text-align:left">
+                       <font color="red"><apex:outputText id="ProcessingText"  value="Processing.. Please wait" rendered="{!showProcessing}" /></font>
+                  </div>
+              </apex:outputPanel>
+              <apex:outputPanel >
+                  <div style="text-align:right">
+                      <apex:commandButton value="Previous" action="{!redirectToStep2}"/>
+                      <apex:commandButton value="Next" action="{!findNMCAcct}"  onclick="if(validateNMCForm()){this.disabled=false;}else{return false} ; javascript:showMsg();" oncomplete="redirect()" status="loadingStatusAdd"/>
+                      <apex:commandLink value="Cancel" action="/home/home.jsp"/>
+                  </div>
+              </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+
+               <apex:panelGrid columns="2" cellspacing="20" >
+                    <apex:outputText style="nowrap:nowrap;" value="Please Select NMC System" />
+                    <!--  <apex:commandButton style="text-align:center" value="Select All NMC Systems" onclick="javascript:selectall()"/>-->
+                    <!--  <input type='button' class='btn' value ="Select All NMC Systems" onclick = "javascript:selectallNMC()"/>-->
+                    <input type='button' class='btn' value ="Select/Deselect All Systems" onclick = "javascript:toggleAllSystems()"/>
+                </apex:panelGrid>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem id="SelectOption">
+
+                <apex:panelGrid columns="1" cellspacing="5" width="100%">
+
+                    <apex:panelGrid columns="2">
+                        <b>NMC Systems</b>
+                       <apex:selectCheckboxes id="nmc_system" value="{!lstSelected_nmc_system_nmc}" layout="pageDirection">
+                           <apex:selectOptions value="{!NMCSystems}" />
+                       </apex:selectCheckboxes>
+                    </apex:panelGrid>
+
+                </apex:panelGrid>
+
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+              <apex:outputPanel >
+                  <div style="text-align:right">
+                      <apex:commandButton value="Previous" action="{!redirectToStep2}"/>
+                      <apex:commandButton value="Next" action="{!findNMCAcct}"  onclick="if(validateNMCForm()){this.disabled=false;}else{return false} ; javascript:showMsg();" oncomplete="redirect()" status="loadingStatusAdd"/>
+                      <apex:commandLink value="Cancel" action="/home/home.jsp"/>
+                  </div>
+              </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+     </apex:pageBlockSection>
+     <apex:actionStatus id="loadingStatusAdd">
+                        <apex:facet name="start">
+                            <c:loadingStatus id="loadingStatusAddComponent" BackColor="#efefef" borderColor="#336699" borderSize="3" height="50px" width="150px" ImageUrl="/img/loading.gif" Message="Processing..." BluryBackGround_DivId="bbgd1" SalesforceStatusBox_DivId="ssbd1" messageStyle="color:darkred;font-size:11pt;font-weight:bold;"/>
+                        </apex:facet>
+         </apex:actionStatus>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

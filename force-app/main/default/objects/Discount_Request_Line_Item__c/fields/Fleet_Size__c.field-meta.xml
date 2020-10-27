@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fleet_Size__c</fullName>
+    <description>Specifies the fleet size of service plan or ala carte application</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The tier selected should reflect the actual number of units to be contracted. Quantity should not exceed opportunity quantity.</inlineHelpText>
+    <label>Fleet Size</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1-50</fullName>
+                <default>false</default>
+                <label>1-50</label>
+            </value>
+            <value>
+                <fullName>51-1000</fullName>
+                <default>false</default>
+                <label>51-1000</label>
+            </value>
+            <value>
+                <fullName>1001-2500</fullName>
+                <default>false</default>
+                <label>1001-2500</label>
+            </value>
+            <value>
+                <fullName>2501-5000</fullName>
+                <default>false</default>
+                <label>2501-5000</label>
+            </value>
+            <value>
+                <fullName>5001+</fullName>
+                <default>false</default>
+                <label>5001+</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

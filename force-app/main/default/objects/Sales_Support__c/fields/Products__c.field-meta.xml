@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Products__c</fullName>
+    <description>Products specifically involved with this RFP.</description>
+    <externalId>false</externalId>
+    <label>Products</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Active Alert</fullName>
+                <default>false</default>
+                <label>Active Alert</label>
+            </value>
+            <value>
+                <fullName>ALK Co-Pilot</fullName>
+                <default>false</default>
+                <label>ALK Co-Pilot</label>
+            </value>
+            <value>
+                <fullName>AMG</fullName>
+                <default>false</default>
+                <label>AMG</label>
+            </value>
+            <value>
+                <fullName>AMG-C</fullName>
+                <default>false</default>
+                <label>AMG-C</label>
+            </value>
+            <value>
+                <fullName>Android</fullName>
+                <default>false</default>
+                <label>Android</label>
+            </value>
+            <value>
+                <fullName>RNA HOS</fullName>
+                <default>false</default>
+                <label>Compliance</label>
+            </value>
+            <value>
+                <fullName>Critical Event Reporting</fullName>
+                <default>false</default>
+                <label>Critical Event Reporting</label>
+            </value>
+            <value>
+                <fullName>Critical Event Video</fullName>
+                <default>false</default>
+                <label>Critical Event Video</label>
+            </value>
+            <value>
+                <fullName>RNA Dispatching</fullName>
+                <default>false</default>
+                <label>Dispatch</label>
+            </value>
+            <value>
+                <fullName>Drive</fullName>
+                <default>false</default>
+                <label>Drive</label>
+            </value>
+            <value>
+                <fullName>RDC-DVIR</fullName>
+                <default>false</default>
+                <label>DVIR</label>
+            </value>
+            <value>
+                <fullName>Exact Fuel</fullName>
+                <default>false</default>
+                <label>Exact Fuel</label>
+            </value>
+            <value>
+                <fullName>Fault Monitoring</fullName>
+                <default>false</default>
+                <label>Fault Monitoring</label>
+            </value>
+            <value>
+                <fullName>FL</fullName>
+                <default>false</default>
+                <label>FleetLoader</label>
+            </value>
+            <value>
+                <fullName>Grove</fullName>
+                <default>false</default>
+                <label>Grove</label>
+            </value>
+            <value>
+                <fullName>RDC HOS</fullName>
+                <default>false</default>
+                <label>HOS</label>
+            </value>
+            <value>
+                <fullName>Insight</fullName>
+                <default>false</default>
+                <label>Insight</label>
+            </value>
+            <value>
+                <fullName>IVG</fullName>
+                <default>false</default>
+                <label>IVG</label>
+            </value>
+            <value>
+                <fullName>MC Server</fullName>
+                <default>false</default>
+                <label>MobileCast</label>
+            </value>
+            <value>
+                <fullName>Mobile Manager</fullName>
+                <default>false</default>
+                <label>Mobile Manager</label>
+            </value>
+            <value>
+                <fullName>Mobile Tracking</fullName>
+                <default>false</default>
+                <label>Mobile Tracking</label>
+            </value>
+            <value>
+                <fullName>Navigation</fullName>
+                <default>false</default>
+                <label>Navigation</label>
+            </value>
+            <value>
+                <fullName>Omnitracs Analytics</fullName>
+                <default>false</default>
+                <label>Omnitracs Analytics</label>
+            </value>
+            <value>
+                <fullName>Per Diem Manager</fullName>
+                <default>false</default>
+                <label>Per Diem Manager</label>
+            </value>
+            <value>
+                <fullName>Performance Monitoring</fullName>
+                <default>false</default>
+                <label>Performance Monitoring</label>
+            </value>
+            <value>
+                <fullName>PTO Monitoring</fullName>
+                <default>false</default>
+                <label>PTO Monitoring</label>
+            </value>
+            <value>
+                <fullName>Resolve</fullName>
+                <default>false</default>
+                <label>Resolve</label>
+            </value>
+            <value>
+                <fullName>OT1 Mobile</fullName>
+                <default>false</default>
+                <label>RN Mobile</label>
+            </value>
+            <value>
+                <fullName>RN</fullName>
+                <default>false</default>
+                <label>Roadnet</label>
+            </value>
+            <value>
+                <fullName>Roadnet Anywhere</fullName>
+                <default>false</default>
+                <label>Routing</label>
+            </value>
+            <value>
+                <fullName>Scheduler</fullName>
+                <default>false</default>
+                <label>Scheduler</label>
+            </value>
+            <value>
+                <fullName>Strategic Planner</fullName>
+                <default>false</default>
+                <label>Strategic Planner</label>
+            </value>
+            <value>
+                <fullName>Sylectus</fullName>
+                <default>false</default>
+                <label>Sylectus</label>
+            </value>
+            <value>
+                <fullName>RDC IFTA</fullName>
+                <default>false</default>
+                <label>Tax Manager</label>
+            </value>
+            <value>
+                <fullName>Roadnet Telematics</fullName>
+                <default>false</default>
+                <label>Telematics Gateway</label>
+            </value>
+            <value>
+                <fullName>TP</fullName>
+                <default>false</default>
+                <label>Territory Planner</label>
+            </value>
+            <value>
+                <fullName>Trailer Tracking</fullName>
+                <default>false</default>
+                <label>Trailer Tracking</label>
+            </value>
+            <value>
+                <fullName>Virtual Load View</fullName>
+                <default>false</default>
+                <label>Virtual Load View</label>
+            </value>
+            <value>
+                <fullName>Web Services</fullName>
+                <default>false</default>
+                <label>Web Services</label>
+            </value>
+            <value>
+                <fullName>Weigh Station Bypass</fullName>
+                <default>false</default>
+                <label>Weigh Station Bypass</label>
+            </value>
+            <value>
+                <fullName>WMX</fullName>
+                <default>false</default>
+                <label>WinMo</label>
+            </value>
+            <value>
+                <fullName>Mobile Workflow</fullName>
+                <default>false</default>
+                <label>Workflow</label>
+            </value>
+            <value>
+                <fullName>XRS</fullName>
+                <default>false</default>
+                <label>XRS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

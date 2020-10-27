@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Competes_wtih__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Name the UPSLT Products that this vendor competes with</inlineHelpText>
+    <label>Competes with?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>RN</fullName>
+                <default>false</default>
+                <label>RN</label>
+            </value>
+            <value>
+                <fullName>TP</fullName>
+                <default>false</default>
+                <label>TP</label>
+            </value>
+            <value>
+                <fullName>MC Server</fullName>
+                <default>false</default>
+                <label>MC Server</label>
+            </value>
+            <value>
+                <fullName>MC Phone</fullName>
+                <default>false</default>
+                <label>MC Phone</label>
+            </value>
+            <value>
+                <fullName>RNT (Geotab)</fullName>
+                <default>false</default>
+                <label>RNT (Geotab)</label>
+            </value>
+            <value>
+                <fullName>FleetLoader</fullName>
+                <default>false</default>
+                <label>FleetLoader</label>
+            </value>
+            <value>
+                <fullName>RNA (Plan)</fullName>
+                <default>false</default>
+                <label>RNA (Plan)</label>
+            </value>
+            <value>
+                <fullName>RNA (Dispatch)</fullName>
+                <default>false</default>
+                <label>RNA (Dispatch)</label>
+            </value>
+            <value>
+                <fullName>OnTrack</fullName>
+                <default>false</default>
+                <label>OnTrack</label>
+            </value>
+            <value>
+                <fullName>MC POD</fullName>
+                <default>false</default>
+                <label>MC POD</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

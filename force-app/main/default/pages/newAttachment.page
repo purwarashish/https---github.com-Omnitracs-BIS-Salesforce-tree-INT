@@ -1,0 +1,75 @@
+<apex:page showHeader="false" sidebar="false" 
+           standardController="Partner_Support_Information__c" extensions="AttachmentUploadController"
+           action="{!initAll}"> 
+    <apex:form enctype="multipart/form-data">
+        <apex:pageMessages />
+        <apex:pageBlock id="mainBlock" mode="detail"> 
+            <apex:pageBlockButtons id="blockButtons">
+                <apex:commandButton action="{!newLogo}" value="New" rendered="{!renderBlock2}" rerender="mainBlock" />
+                <apex:commandButton action="{!editLogo}" value="Edit" rendered="{!IF(AND(currentLogoExists, renderBlock2), true, false)}" />                                                
+                <apex:commandButton action="{!commitLogo}" value="Commit" rendered="{!IF(AND(currentLogoExists, renderBlock2), true, false)}" onComplete="refreshPage();" />                
+                <apex:commandButton action="{!upload}" value="Save" rendered="{!renderBlock1}" />
+                <apex:commandButton action="{!saveEdit}" value="Save" rendered="{!renderBlock3}" />
+                <apex:commandButton action="{!cancelEdit}" value="Cancel" rendered="{!renderBlock3}" />                
+                <apex:commandButton action="{!cancel}" value="Cancel" rendered="{!renderBlock1}" />
+            </apex:pageBlockButtons>
+ 
+            <apex:pageBlockSection showHeader="false" columns="2" id="block1" rendered="{!renderBlock1}">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="File Name" for="fileName"/>
+                    <apex:inputText value="{!logo.name}" id="fileName"/>
+                </apex:pageBlockSectionItem>
+  
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="File" for="file"/>
+                    <apex:inputFile value="{!logo.body}" filename="{!logo.name}" id="file"/>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Orientation"/>
+                    <apex:inputField required="true"  value="{!masterRecord.Logo_Orientation__c}"/>
+                </apex:pageBlockSectionItem>                          
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection showHeader="false" columns="2" id="block3" rendered="{!renderBlock3}">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="File Name" for="fileName"/>
+                    <apex:inputText value="{!editableName}" id="fileName"/>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Orientation"/>
+                    <apex:inputField required="true" value="{!editablePSI.Logo_Orientation__c}"/>
+                </apex:pageBlockSectionItem>                          
+            </apex:pageBlockSection>             
+            
+            <apex:pageBlockSection showHeader="false" columns="2" id="block2" 
+                                   rendered="{!IF(AND(currentLogoExists, renderBlock2), true, false)}">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Name" for="fileName"/>
+                    <apex:outputText value="{!currentLogo.name}" id="fileName"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Preview"/>
+                    <img src="/servlet/servlet.FileDownload?file={!currentLogo.id}" height="42" 
+                         style="display:{!IF( (currentLogoOrientation == 'Square'), 'normal', 'none')};" />                    
+                    <img src="/servlet/servlet.FileDownload?file={!currentLogo.id}" height="42" 
+                         style="display:{!IF( (currentLogoOrientation == 'Portrait'), 'normal', 'none')};" />                    
+                    <img src="/servlet/servlet.FileDownload?file={!currentLogo.id}" width="200" 
+                         style="display:{!IF( (currentLogoOrientation == 'Landscape'), 'normal', 'none')};" />                                                                      
+                </apex:pageBlockSectionItem>
+ 
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Orientation"/>
+                    <apex:outputText value="{!currentLogoOrientation}"/>
+                </apex:pageBlockSectionItem>                
+             </apex:pageBlockSection>             
+        </apex:pageBlock>
+    </apex:form>
+    <script>
+        function refreshPage() {
+            window.top.location.reload();
+        }
+    </script>
+</apex:page>

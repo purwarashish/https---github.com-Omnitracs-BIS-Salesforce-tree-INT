@@ -1,0 +1,810 @@
+<apex:page id="pg" controller="MainController"   showHeader="false"
+    sidebar="False"  cache="true" action="{!qpm_initSingleton}" >
+    
+<div id="loadingElementParentDiv" class="loadingElementParentDiv"
+    style="display:block; z-index: 8999; height: 100%; width: 100%; position: fixed; display:none;">
+    <div 
+        style="z-index: 9000; background-color: black; filter: alpha(opacity =   30); opacity: 0.3; height: 100%; position: fixed; width: 100%;display:block;">
+        <div id="innerLoadingDiv">
+                <img src="/img/loading.gif" style="left: 50%;top: 50%;position: absolute;display: block;" / >
+        </div>    
+    </div>
+</div>
+    
+<apex:include id="mainpage" pageName="mainPage" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+<!-- Flicker Issue Resolved -->
+<meta http-equiv="Page-Enter" content="blendTrans(Duration=.01)" />
+<meta http-equiv="Page-Exit" content="blendTrans(Duration=.01)" />
+<meta http-equiv="Page-Enter" content="revealtrans(duration=0.0)" />
+<meta http-equiv="Page-Exit" content="revealtrans(duration=0.0)" /> 
+
+<style>
+    #browseProductSupport a
+{
+cursor:normal !important;
+}
+#browseProductSupport a:hover
+{
+background:url("../images/customer/support-button-sprites.png") no-repeat 0 -75px !important;
+}
+
+blockquote
+{
+margin:0pt !important;
+}
+blockquote ul.noindent li
+{
+font-weight : normal !important;
+}
+blockquote ul.noindent li a
+{
+font-weight : bold !important;
+}
+ul.topArticleList li
+{
+font-weight : normal !important;
+}
+ul.topArticleList li a
+{
+font-weight : bold !important;
+
+}
+
+.articleRendererToolbar {
+    display:none !important;
+}
+
+.averageRatingPanel {
+    display:none;
+}
+.gobtn3 {
+    background: url("{!URLFor($Resource.QESUnityCSSAndJS, 'Html/images/customer/support-button-sprites.png')}") no-repeat scroll 0 -296px transparent !important;
+    border: 0 none !important;
+    cursor: pointer !important;
+    height: 34px !important;
+    margin: 0 !important;
+    width: 45px !important;
+}
+.gobtn3:hover {
+    background: url("{!URLFor($Resource.QESUnityCSSAndJS, 'Html/images/customer/support-button-sprites.png')}") no-repeat scroll -47px -296px transparent !important;
+}
+
+a.monitor {visibility:{!CASE(standalone,'1', 'hidden', standalone,'0' , '' )}; display:{!CASE(standalone,'1', 'none', standalone,'0' , '' )};}
+            
+a.manage {visibility:{!CASE(standalone,'1', 'hidden', standalone,'0' , '' )}; display:{!CASE(standalone,'1', 'none', standalone,'0' , '' )};}
+    
+a.shop {visibility:{!CASE(standalone,'1', 'hidden', standalone,'0' , '' )}; display:{!CASE(standalone,'1', 'none', standalone,'0' , '' )};}
+ 
+ul.drop2 {visibility:{!CASE(standalone,'1', 'hidden', standalone,'0' , '' )}; display:{!CASE(standalone,'1', 'none', standalone,'0' , '' )};}
+
+ul.drop3 {visibility:{!CASE(standalone,'1', 'hidden', standalone,'0' , '' )}; display:{!CASE(standalone,'1', 'none', standalone,'0' , '' )};}
+
+#user_profile li:nth-child(-n+2) {
+    display: none;
+}
+            
+div.searchResultInnerRight{
+    display:{!CASE(standalone,'1', 'none', standalone,'0' , 'initial' )};
+}
+
+div.sidemnuTraining{
+    display:{!CASE(standalone,'1', 'none', standalone,'0' , 'initial' )};
+} 
+    
+</style>
+      <script>
+        var pagename="supportanswers";
+        ( function($) {
+            $(document).ready(function(){    
+                $('[id*=next]').hide();
+                $('[id*=previous]').hide();
+
+    
+                $('.clearFilter').click(function(){
+                    $("#loadinglement").css("opacity", "0.5");
+                });
+                $('.middle').click(function(){
+                    $("#loadinglement").css("opacity", "0.5");
+                });
+            });
+        } ) ( jQuery );  
+    </script>
+        
+     <script type="text/javascript">
+	window.onload = function() {
+	    var links = document.getElementsByTagName('a');
+		for(var i=0; i<links.length; i++) {
+		  if(links[i].href == 'http://customer.int.omnitracs.com/'){
+		  	links[i].href = 'https://login.int.omnitracs.com/go.jsp?d=home';
+		  }
+		  else if(links[i].href == 'http://customer.omnitracs.com/'){
+		  	links[i].href = 'https://login.omnitracs.com/go.jsp?d=home';
+		  }
+		}
+	};
+</script>
+            <!-- Begin header -->
+            <!-- jhg -->
+            <div id="bodyWrapper">
+
+
+                <!--Brecrump-par ENDt-->
+                <div class="breadcumWrp">
+                <ul>
+                    <li>
+                        <a href="https://login.{!$Label.CPURL}go.jsp?d=home" class="">Home</a><span>|</span>
+                        <a class="breadcumlink" href="/apex/support">Support</a><span>|</span>
+                        Search Answer Center
+                    </li>
+                </ul>
+                <h1 style="display: normal">Search Answer Center</h1>
+                <hr width="910px" align="center" style="height:1px;border:1px;color:#dadce0;background-color:#dadce0;" />
+                </div>
+                <div id="middle-container"
+                    style="min-height: 500px; top-margin: 45px !important;">
+
+                        <div class="clr"></div>
+                        <apex:outputPanel layout="none" id="QESSearch">
+
+                            <apex:outputPanel layout="none">
+
+                                <!-- BEGIN COMPONENT CODE -->
+                                <apex:form id="theForm">
+                                    <apex:actionFunction name="refineSearch" action="{!qpm.doQESSearch}"
+                                        status="refineStatus" immediate="true" reRender="outpanel2"
+                                        focus="pg" oncomplete="hideLoadingImage();">
+    
+                                        <apex:param value="" name="searchCriteria"
+                                            assignTo="{!qpm.searchCriteria}" />    
+                                    </apex:actionFunction>
+                                    
+                                    <apex:actionFunction name="clearfilters"
+                                        action="{!qpm.clearAllFilters}" immediate="true"
+                                        rerender="CategoryFilters,outpanel2"
+                                        status="refineStatus" focus="pg" oncomplete="hideLoadingImage();"/>  
+                                        
+                                    <apex:inputHidden value="{!qpm.searchPerformed}" id="searchPerformed" />  
+
+                                    <apex:commandLink id="hiddencmdlink"  styleclass="hiddencmdlink" value="" action="{!qpm.redirectToPlatformApp}" />                
+                                    <apex:inputHidden id="hiddenInputField" value="{!qpm.hiddenInputField}"/>                                                           
+                                </apex:form>
+                                
+                                <apex:outputPanel id="CategoryFilters">
+                                    <div class="custom-search-left fll">
+                                        <div id="browseProductSupport" class="sidemnuNarrowSearch">
+                                            <h3>Search Answer Center</h3>
+                                        </div>
+
+
+                                        <!--SIDE Menu-Narrow Search-->
+                                        <div class="sidemnuNarrowSearch">
+                                            <h3
+                                                style="display: block; font-weight: bold; font-family: arial; font-size: 13px;">Narrow
+                                                Search Results</h3>
+
+                                            <div class="filterSearchBox">
+                                                <div style="padding: 8px;">
+                                                    <div class="filterSerchAlign">
+                                                        <apex:variable var="nextCategory" value="false" />
+                                                        <apex:repeat value="{!qpm.listCategoryGroupSelection}"
+                                                            var="categoryconf" id="catchoice">
+                                                            <!-- <H3 class="sifrH3">Selected Category: {!categoryconf.selectedGroupItem}</H3>  -->
+                                                            <div>
+                                                                <apex:outputPanel layout="inline"
+                                                                    rendered="{!nextCategory='true'}">
+
+                                                                </apex:outputPanel>
+
+                                                                <apex:outputPanel >
+                                                                    <h5 style="padding: 5px 0 2px; display: block"
+                                                                        class="listHeader">Filter By
+                                                                        {!categoryconf.categoryGroup.Category_Group_Label__c}
+                                                                    </h5>
+                                                                </apex:outputPanel>
+                                                                <select class="changeMe4"
+                                                                    style="outline: 0pt none; border: 1pt none; width: 200px; background: grey;"
+                                                                    id="{!categoryconf.categoryGroup.Category_Group_Name__c}"
+                                                                    name="{!categoryconf.categoryGroup.Category_Group_Name__c}"
+                                                                    onchange="refineSearch()" size="1">
+
+
+                                                                    <apex:outputPanel layout="none"
+                                                                        rendered="{!qpm.currentCategory = qpm.noFilterValue}">
+                                                                        <option
+                                                                            value="{!categoryconf.categoryGroup.Category_Group_Name__c+':'+qpm.noFilterValue}"
+                                                                            class="selectME4 gselected" selected="selected">{!qpm.noFilterLabel}
+                                                                        </option>
+
+                                                                    </apex:outputPanel>
+                                                                    <apex:outputPanel layout="none"
+                                                                        rendered="{!qpm.currentCategory != qpm.noFilterValue}">
+
+                                                                        <option class="selectME4 gselected"
+                                                                            value="{!categoryconf.categoryGroup.Category_Group_Name__c+':'+qpm.noFilterValue}">{!qpm.noFilterLabel}
+                                                                        </option>
+
+                                                                    </apex:outputPanel>
+
+                                                                    <!--SIDE Menu- Narrow Search ENDS-->
+
+
+                                                                    <apex:outputPanel layout="none"
+                                                                        rendered="{!categoryconf.selectedGroupItem=categoryconf.categoryGroup.Category_Group_Name__c+':'+categoryconf.categoryGroup.Root_Category__c}">
+
+                                                                        <option
+                                                                            value="{!categoryconf.categoryGroup.Category_Group_Name__c+':'+categoryconf.categoryGroup.Root_Category__c}"
+                                                                            selected="selected">All</option>
+
+                                                                    </apex:outputPanel>
+                                                                    <apex:outputPanel layout="none"
+                                                                        rendered="{!categoryconf.selectedGroupItem!=categoryconf.categoryGroup.Category_Group_Name__c+':'+categoryconf.categoryGroup.Root_Category__c}">
+
+                                                                        <option
+                                                                            value="{!categoryconf.categoryGroup.Category_Group_Name__c+':'+categoryconf.categoryGroup.Root_Category__c}">All</option>
+
+                                                                    </apex:outputPanel>
+
+                                                                    <knowledge:categoryList categoryGroup="{!categoryconf.categoryGroup.Category_Group_Name__c}"
+                                                                        ancestorsOf="{!categoryconf.categoryGroup.Ancestors_Of__c}"
+                                                                        rootCategory="{!categoryconf.categoryGroup.Root_Category__c}"
+                                                                        categoryVar="category"
+                                                                        level="{!categoryconf.categoryGroup.Level_or_Depth__c}">
+                                                                        <apex:outputPanel layout="none"
+                                                                            rendered="{!OR(categoryconf.selectedGroupItem=categoryconf.categoryGroup.Category_Group_Name__c+':'+category.name, qpm.currentCategory=categoryconf.categoryGroup.Category_Group_Name__c+':'+category.name)}">
+
+                                                                            <option
+                                                                                value="{!categoryconf.categoryGroup.Category_Group_Name__c+':'+category.name}"
+                                                                                selected="selected">
+                                                                                <apex:outputText escape="false"
+                                                                                    value="{!IF(category.depth=1, '', IF(category.depth=2, '  ', IF(category.depth=3, '    ', IF(category.depth=4, '      ', '        '))))}" />
+                                                                                {!category.label}
+                                                                            </option>
+
+                                                                        </apex:outputPanel>
+                                                                        <apex:outputPanel layout="none"
+                                                                            rendered="{!AND(categoryconf.selectedGroupItem!=categoryconf.categoryGroup.Category_Group_Name__c+':'+category.name, qpm.currentCategory!=categoryconf.categoryGroup.Category_Group_Name__c+':'+category.name)}">
+
+                                                                            <option
+                                                                                value="{!categoryconf.categoryGroup.Category_Group_Name__c+':'+category.name}">
+                                                                                <apex:outputText escape="false"
+                                                                                    value="{!IF(category.depth=1, '', IF(category.depth=2, '  ', IF(category.depth=3, '    ', IF(category.depth=4, '      ', '        '))))}" />
+                                                                                {!category.label}
+                                                                            </option>
+
+                                                                        </apex:outputPanel>
+                                                                    </knowledge:categoryList>
+
+                                                                </select>
+                                                            </div>
+
+                                                            <apex:variable var="nextCategory" value="true" />
+                                                        </apex:repeat>
+                                                    </div>
+
+                                                    <div>
+                                                        <a href="#" class="clearFilter"> Clear All Filters </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                <script>
+                                                    ( function($) {
+                                                        // first locate all of the select tags on the page and hide them
+                                                        $("select.changeMe4").css('display','none');
+                                                        //now, for each select box, run this function
+                                                        $("select.changeMe4").each(function(){
+                                                            
+                                                        var curSel = $(this);
+                                                        // get the CSS width from the original select box
+                                                        var gddWidth = $(curSel).css('width');
+                                                        var gddWidthL = gddWidth.slice(0,-2);
+                                                        var gddWidth2 = gddWidthL - 38;
+                                                        var gddWidth3 = gddWidthL - 16;
+                                                        // build the new div structure
+                                                        var gddTop = '<div style="width:' + gddWidthL + 'px" class="selectME4" tabindex="0"><div class="cornerstop"><div><div></div></div></div><div class="middle"><div><div><div>';
+                                                        //get the default selected option
+                                                        var whatSelected = $(curSel).children('option:selected').text();
+                                                        //write the default
+                                                        var gddFirst = '<div class="first"><span class="selectME4 gselected" style="width:'+ gddWidth2 +  'px;">'+ whatSelected +'</span><span id="arrowImg4"></span><div class="clears"></div></div><ul class="selectME4">';
+                                                        // create a new array of div options from the originals options
+                                                        var addItems = new Array();
+                                                        $(curSel).children('option').each( function() {
+                                                            var text = $(this).text();
+                                                            var selVal = $(this).attr('value');
+                                                            var before =  '<li style="width:' + gddWidthL + 'px;"><a href="#" rel="' + selVal + '" tabindex="0"  style="width:' + gddWidth3 + 'px;">';
+                                                            var after = '</a></li>';
+                                                            addItems.push(before + text + after);
+                                                        });
+                                                        //hide the default from the list of options
+                                                        //var removeFirst = addItems.shift();
+                                                        // create the end of the div selectbox and close everything off
+                                                        var gddBottom ='</ul></div></div></div></div><div class="cornersbottom"><div><div></div></div></div></div>'
+                                                        //write everything after each selectbox
+                                                        var GDD = gddTop + gddFirst + addItems.join('') + gddBottom;
+                                                        $(curSel).after(GDD);
+                                                        //this var selects the div select box directly after each of the origials
+                                                        var nGDD = $(curSel).next('div.selectME4');
+                                                    
+                                                        $(nGDD).find('li:first').addClass("first");
+                                                    
+                                                        $(nGDD).find('li:last').addClass('last');
+                                                        //handle the on click functions - push results back to old text box
+                                                        $(nGDD).click( function(e) {
+                                                             var myTarA = $(e.target).attr('rel');
+                                                             var myTarT = $(e.target).text();
+                                                             var myTar = $(e.target);
+                                                             //if closed, then open
+                                                             if( $(nGDD).find('li').css('display') == 'none')
+                                                                {
+                                                                        //this next line closes any other selectboxes that might be open
+                                                                        $('div.selectME4').find('li').css('display','none');
+                                                                        $(nGDD).find('li').css('display','block');
+                                                    
+                                                                        //if user clicks off of the div select box, then shut the whole thing down
+                                                                        $(document.window || 'body').click( function(f) {
+                                                                                var myTar2 = $(f.target);
+                                                                                if (myTar2 !== nGDD) {$(nGDD).find('li').css('display','none');}
+                                                                        });
+                                                                                return false;
+                                                                }
+                                                                else
+                                                                {
+                                                                        if (myTarA == null){
+                                                                            $(nGDD).find('li').css('display','none');
+                                                                                    return false;
+                                                                                }
+                                                                                else {
+                                                                                    //set the value of the old select box
+                                                                                    $(curSel).val(myTarA);
+                                                                                    //set the text of the new one
+                                                                                     $(nGDD).find('span.gselected').text(myTarT);
+                                                                                     $(nGDD).find('li').css('display','none');
+                                                                                     return false;
+                                                                                }
+                                                                }
+                                                        //handle the tab index functions
+                                                         }).focus( function(e) {                        
+                                                             $(nGDD).find('li:first').addClass('currentDD');
+                                                             $(nGDD).find('li:last').addClass('lastDD');
+                                                             function checkKey(e){
+                                                                //on keypress handle functions
+                                                                function moveDown() {
+                                                                    var current = $(nGDD).find('.currentDD:first');
+                                                                    var next = $(nGDD).find('.currentDD').next();
+                                                                    if ($(current).is('.lastDD')){
+                                                                    return false;
+                                                                    } else {
+                                                                        $(next).addClass('currentDD');
+                                                                        $(current).removeClass('currentDD');
+                                                                    }
+                                                                }
+                                                                function moveUp() {
+                                                                    var current = $(nGDD).find('.currentDD:first');
+                                                                    var prev = $(nGDD).find('.currentDD').prev();
+                                                                    if ($(current).is('.first')){
+                                                                    return false;
+                                                                    } else {
+                                                                        $(prev).addClass('currentDD');
+                                                                        $(current).removeClass('currentDD');
+                                                                    }
+                                                                }
+                                                                var curText = $(nGDD).find('.currentDD:first').text();
+                                                                var curVal = $(nGDD).find('.currentDD:first a').attr('rel');
+                                                               switch (e.keyCode) {
+                                                                    case 40:
+                                                                        $(curSel).val(curVal);
+                                                                        $(nGDD).find('span.gselected').text(curText);
+                                                                        moveDown();
+                                                                        return false;
+                                                                        break;
+                                                                    case 38:
+                                                                        $(curSel).val(curVal);
+                                                                        $(nGDD).find('span.gselected').text(curText);
+                                                                        moveUp();
+                                                                        return false;
+                                                                        break;
+                                                                    case 13:
+                                                                        $(nGDD).find('li').css('display','none');
+                                                                        }
+                                                            }
+                                                            $(document).keydown(checkKey);
+                                                        }).blur( function() {
+                                                                $(document).unbind('keydown');
+                                                        });
+                                                    });
+                                                    
+                                                    $('.selectME4 li a').click(
+                                                    function(){
+                                                        $('.loadingElementParentDiv').show();                                                    
+                                                        refineSearch($(this).attr('rel'));
+                                                    }
+                                                    );
+                                            
+                                                    if($('.search3').val() == '')
+                                                      $('.search3').val('Type Questions or Keywords');
+                                            
+                                            
+                                                    $('.clearFilter').click
+                                                    (
+                                                    function()
+                                                    {                
+                                                       $('.loadingElementParentDiv').show();
+                                                       clearfilters();       
+                                                    }
+                                                    );                                                    
+                                               } ) ( jQuery );     
+                                    </script>                                    
+                                </apex:outputPanel> 
+                                <!-- END COMPONENT CODE -->
+                            </apex:outputPanel>                
+                        </apex:outputPanel>
+
+                        <!-- BEGIN COMPONENT CODE TO RENDER ARTICLE SEARCH LIST -->
+                        <apex:outputPanel id="results">
+                            <apex:outputPanel style="margin-left:0">
+                                <div class="custom-search-right fll" style="margin-left: 0">
+
+                                    <div class="searchContainer2" style="width: 437px !important;">
+                                        <apex:form >
+                                            <apex:inputText id="search-q" value="{!qpm.currentKeyword}"
+                                                onfocus="if (this.value == 'Type Questions or Keywords' ) this.value ='';"
+                                                onblur="if (this.value == '' ) this.value = 'Type Questions or Keywords';"
+                                                styleclass="search3 fll" style="width:372px !important;" />
+                                            <apex:commandButton styleclass="gobtn3" id="search-btn"
+                                                immediate="False" action="{!qpm.doQESSearch}" value="" />
+                                        </apex:form>    
+                                    </div>
+
+                                    <div class="" style="width: 675px;">
+
+                                        <apex:outputPanel style="margin:0pt;"
+                                            styleclass="searchResultInnerLeft fll" id="innerpannel">
+
+                                            <!-- BEGIN COMPONENT CODE TO RENDER ARTICLE SEARCH LIST -->
+
+                                            <apex:variable var="anyDocument" value="false" />
+                                            <apex:variable var="oddrow" value="True" />
+
+                                            <div style="display:{!IF(('' == qpm.currentKeyword), 'none;', 'normal;')}"> 
+                                            <apex:outputPanel style="margin-left:0;">
+                                                <div class="searchResultHeader2">
+                                                    <h2 class="searchTxtArea fll">Search Results</h2>
+                                                    <div class="searchResultCount flr"></div>
+                                                </div>
+                                            </apex:outputPanel>
+                                           
+                                            <knowledge:articleList id="outpanel2"  articleVar="article" keyword="{!qpm.currentKeyword}" hasMoreVar="hasMore" 
+                                                pageNumber="{!qpm.qesCurrentPageNumber}" pageSize="10"
+                                                categories="{!qpm.categoryFilters}">
+                                                
+                                                <script>                                                
+                                                    ( function($) {
+                                                        $(document).ready(function(){
+                                                            if('' == '{!qpm.currentKeyword}') {
+                                                                return;
+                                                            }
+                                                            if({!hasMore}!= true)
+                                                            {
+                                                                $('[id*=next]').hide();
+                                                                if({!qpm.qesCurrentPageNumber}>1)
+                                                                {
+                                                                    $('[id*=previous]').show();
+                                                                }
+                                                                else{
+                                                                    $('[id*=previous]').hide();
+                                                                }
+                                                            }
+                                                            else{
+                                                                $('[id*=next]').show();
+                                                                if({!qpm.qesCurrentPageNumber}>1)
+                                                                {
+                                                                    $('[id*=previous]').show();
+                                                                }
+                                                                else{
+                                                                    $('[id*=previous]').hide();
+                                                                }
+                                                            }
+                                                        });
+                                                    } ) ( jQuery );
+                                                </script>
+                                                <!-- Render search header only when results are found -->
+                                                <apex:outputPanel id="articlePanel" style="margin-left:0;width:667;">
+                                                    <ul id="ul{!article.id}" class="searchArticleList2" style="margin-left: 0">
+                                                        <li id="articleli{!article.id}" class="{!IF(oddrow='True','','even')}" style="margin-left: 0">
+                                                            <a target="_blank" href="/apex/supportarticle{!Left(article.articleTypeName,
+                                                                                     LEN(article.articleTypeName)-5)
+                                                                                     }?type={!Left(article.articleTypeName,
+                                                                                     LEN(article.articleTypeName)-5)
+                                                                                     }&&id={!article.id}&&retUrl=/apex/supportanswers" class="searchTitle"
+                                                                                     >
+                                                                <apex:outputtext rendered="{!LEN(article.summary) <= 50}">{!article.title}</apex:outputtext>
+                                                                <apex:outputtext rendered="{!LEN(article.summary) > 50}">{!Left(article.title,47)}...</apex:outputtext>
+                                                            </a>
+            
+            
+                                                            <apex:outputText rendered="{!LEN(article.summary) > 200}"> {!Left(article.summary,197)}...
+                                                            </apex:outputText>
+                                                            <apex:outputText rendered="{!LEN(article.summary) <= 200}"> {!article.summary}
+                                                            </apex:outputText>
+                                                            <br></br>
+            
+                                                            <!-- knowledge:articleRendererToolbar canVote="false" 
+                                                                                              id="articleToolBar"                                                                                              
+                                                                                              articleId="{!article.id}" -->
+                                                            <!-- /knowledge:articleRendererToolbar -->                                                
+                                                            <!-- span id="stars{!article.id}" class="stars"></span -->
+                                                            
+                                                            <!-- apex:iframe id="starsoddrow"  width="95px"  height="16px" scrolling="false"  src="/apex/articlevote?id={!article.id}" / -->
+                                                            <!-- apex:vote objectId="{!article.id}" ></apex:vote -->
+                                                         </li>
+                                                    </ul>
+                                                </apex:outputPanel>
+
+                                                <apex:variable var="oddrow"
+                                                    value="{!IF(oddrow='True','False','True')}" />
+                                                
+                                                <apex:variable var="anyDocument" value="true" />                                                                                            
+                                            </knowledge:articleList>
+                                            </div>
+
+                                            <apex:outputPanel rendered="{!((anyDocument=='false')&&('' != qpm.currentKeyword))}">
+                                                <div style="margin-top: 16px;">
+                                                    <h4 style="color: grey">
+                                                        <center>No articles found matching your
+                                                            selections. Please modify your search.</center>
+                                                    </h4>
+                                                </div>
+                                            </apex:outputPanel>
+                                            <br/>
+                                            <apex:form >
+                                                <apex:commandLink id="nextArticleLink" styleClass="HiddenCmdLinkNext buttonSet newButton4" 
+                                                                  style="float:right; display:none;" 
+                                                                  value="Next" 
+                                                                  onclick="showLoadingImage();"
+                                                                  action="{!qpm.incrementPageNumber}"  
+                                                                  reRender="outpanel2" 
+                                                                  oncomplete="hideLoadingImage();" />&nbsp;&nbsp;
+                                                <apex:commandLink id="previousArticleLink" styleClass="HiddenCmdLinkPrevious buttonSet newButton5" 
+                                                                  style="float:left; display:none;" 
+                                                                  value="Previous" 
+                                                                  onclick="showLoadingImage();"
+                                                                  action="{!qpm.decrementPageNumber}"  
+                                                                  reRender="outpanel2" 
+                                                                  oncomplete="hideLoadingImage();"/>
+                                            </apex:form>
+                                        </apex:outputPanel>
+
+    <apex:outputPanel layout="block">
+     <!--c:qespkbtoparticleslist title="Top Articles" /-->
+      <div class="searchResultInnerRight supportToolTopMargin flr">
+            <div class="sidemnuNarrowSearch" style="margin-top: -48px" >
+                <h3 style="display:block;" styleclass="searchResultHeader2" ><apex:outputText value="Top Questions & Answers"></apex:outputText> </h3>
+                  <div class="filterSearchBox RightBlockInnerSpace">
+                      <ul class="topArticleList">
+                        <apex:variable var="anyDocument" value="false" />
+                        <apex:variable var="oddrow" value="True" />
+
+                        <apex:repeat value="{!qpm.listPKBTopArticles}" var="article" id="topArticles">
+                        <apex:outputPanel id="outpanel1" layout="block" style="margin-left:0px;" rendered="{!oddrow='True'}">
+                        <script>
+                            var linkId=document.getElementById('{!$Component.outpanel1}');
+                            linkId.oncontextmenu=function(){return false;}
+                        </script>
+                        <li style="margin-left:0px;">
+                           <apex:outputLink styleClass="searchTitle" 
+                                            target="_blank"
+                                            value="{!article.LinkURL}"
+                                            rendered="{!LEN(article.Title) > 40}">
+                                      {!LEFT(article.Title,37)}...
+                           </apex:outputLink>
+                           <apex:outputLink styleClass="searchTitle" 
+                                            target="_blank"
+                                            value="{!article.LinkURL}"
+                                            rendered="{!LEN(article.Title) <= 40}">
+                                      {!article.Title}
+                           </apex:outputLink>                           
+
+                            <br></br>
+                            <apex:outputText escape="false" value="{!Left(article.Body,50)}..." />
+                        </li>
+                        </apex:outputPanel>
+                        <apex:outputPanel id="outpanel3" layout="block" style="margin-left:0px;" rendered="{!oddrow='False'}">
+                        <script>
+                            var linkId=document.getElementById('{!$Component.outpanel3}');
+                            linkId.oncontextmenu=function(){return false;}
+                        </script>    
+                            <li class="even" style="margin-left:0px;">
+                               <apex:outputLink styleClass="searchTitle" 
+                                                target="_blank"
+                                                value="{!article.linkURL}"
+                                                rendered="{!LEN(article.Title) > 40}">
+                                          {!LEFT(article.Title,37)}...
+                               </apex:outputLink>
+                               <apex:outputLink styleClass="searchTitle" 
+                                                target="_blank"
+                                                value="{!article.LinkURL}"
+                                                rendered="{!LEN(article.Title) <= 40}">
+                                          {!article.Title}
+                               </apex:outputLink>                           
+    
+                                <br></br>
+                                <apex:outputText escape="false" value="{!Left(article.Body,50)}..."/>
+                            </li>
+                        </apex:outputPanel>
+
+                        <apex:variable var="oddrow" value="{!IF(oddrow='True','False','True')}" />
+                        <apex:variable var="anyDocument" value="true" />
+                        </apex:repeat>
+                       </ul>
+                       <apex:outputPanel rendered="{!(qpm.listPKBTopArticles==null) || (qpm.listPKBTopArticles.size==0)}">
+                        <div>
+                        <h4 style="color: grey">
+                            <center>No Top Support Answers found.</center>
+                        </h4>                                            
+                        </div>
+                     </apex:outputPanel> 
+
+            <div class="clr">
+                <apex:image value="{!URLFor($Resource.QESUnityCSSAndJS,'Html/images/customer/spacer.png')}"
+                        width="0" height="0" alt="" style="border:0px;" />
+            </div>
+          </div>
+        </div>
+
+     </div>
+                                            <!--SUBMIT Case Button-->
+                                        </apex:outputPanel>
+                                    </div>
+                                </div>
+        <script>
+            ( function($) {
+                $('.custom-search-right span div').css('margin-left','0px');
+            } ) ( jQuery ); 
+        </script>
+                            </apex:outputPanel>
+                        </apex:outputPanel>
+                        <!-- END COMPONENT CODE TO RENDER ARTICLE SEARCH LIST -->
+                    <div class="clr">
+                        <apex:image value="{!URLFor($Resource.QESUnityCSSAndJS,'Html/images/customer/spacer.png')}"
+                        width="0" height="0" alt="" style="border:0px;" />
+                    </div>
+                    <apex:outputText rendered="{!caseCreationAllowed && standalone!='1'}">
+                        <div class="clr supportToolTopMargin flr" style="width: 725px">
+                            <apex:form >
+                                <apex:commandLink rendered="{!caseCreationAllowed}" styleClass="buttonSet newButton6 flr" value="Create a Case" action="/apex/supportcasesubmit?retURL=/apex/supportanswers"/>
+                            </apex:form>
+    
+                            <label class="submitACasePrecedingText">If this doesn’t
+                                answer your question, <a style="text-decoration: underline"
+                                href="#">search again</a> or create a case</label>
+                         </div>
+                     </apex:outputText>
+                    <div class="clr">
+                        <apex:image value="{!URLFor($Resource.QESUnityCSSAndJS,'Html/images/customer/spacer.png')}"
+                        width="0" height="0" alt="" style="border:0px;" />
+                    </div>
+                </div>
+                 <apex:include pageName="UnityFooter" />
+
+            </div>
+            <script>
+            function documentReady() {
+                if(true == docReadyCalled) {
+                    return;
+                }
+                ( function($) {     
+                    $('a.searchTitle').click(
+                    function(e)
+                    {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      var URL = $(this).attr('href');
+                      window.open(URL,'', 'height=550,width=1024,location=no,resizable=yes,toolbar=no,status=no,menubar=no,scrollbars=yes');
+                    });
+                                   
+                     $('a.breadcumlink').click(
+                        function(e)
+                        {
+                           
+                           redir($(this).attr('href'),e);
+                        }
+                    );
+                    
+                    $('.articlesNextButton').click(
+                        function(e)
+                        {
+                            $('.loadingElementParentDiv').show();
+                            window.scroll(0,200);
+                            e.preventDefault();
+                            e.stopPropagation();                                                                                  
+                            $('.HiddenCmdLinkNext').click();                            
+                            return false;
+                        }
+                    );
+    
+                    $('.articlesPreviousButton').click(
+                        function(e)
+                        {
+                            $('.loadingElementParentDiv').show();
+                            window.scroll(0,200);
+                            e.preventDefault();
+                            e.stopPropagation();                    
+                            $('.HiddenCmdLinkPrevious').click(); 
+                            return false;                                             
+                        }
+                    );
+                            
+                    function redir(rUrl,e)
+                    {             
+                        e.preventDefault();
+                        e.stopPropagation();  
+                        $("#pg\\:theForm\\:hiddenInputField").val(rUrl);
+                        $("#pg\\:theForm\\:hiddencmdlink").click();
+                        return false;
+                    }
+                } ) ( jQuery );
+                docReadyCalled = true;
+            }
+        </script>
+    <script>
+    var docReadyCalled = false;
+    function updateRating() { 
+        ( function($) {
+        /*
+                $('[id*=articleli]').each(function(){
+                    var rating = 0;
+                    $('.averageRatingPanel', this).each(function(){
+                        var abc = $(this).html();
+                        if(abc != 'Rate This Article')
+                        {
+                            var abcd = abc.split(":",2);                    
+                            if(null != abcd[1] || ''!= abcd[1])
+                            {
+                                var avgrating = abcd[1].split(")");
+                                avgrating[0] = avgrating[0].trim();
+                                if(isNaN(avgrating[0] - 0))
+                                {
+                                    rating = 0;
+                                }
+                                else
+                                {
+                                    rating = avgrating[0];
+                                }
+                            }
+                        }
+                    });
+                    //alert(rating);
+                    var $span = $('<span />').width(Math.round(16 * rating));
+                    $('span.stars', this).html($span);
+                }); 
+                */
+                hideLoadingImage();
+            } ) ( jQuery );        
+        }
+
+        function showLoadingImage() { 
+            ( function($) {
+               $('.loadingElementParentDiv').show(); 
+               window.scroll(0,200);           
+            } ) ( jQuery );        
+        }        
+                        
+        function hideLoadingImage() { 
+            ( function($) {              
+               documentReady();
+               $('.loadingElementParentDiv').hide();            
+            } ) ( jQuery );        
+        }
+        
+        ( function($) {        
+            $(document).ready( function() {
+                documentReady();
+                // updateRating();
+            });                                                                        
+        } ) ( jQuery );                                                                        
+    </script>
+
+</apex:page>

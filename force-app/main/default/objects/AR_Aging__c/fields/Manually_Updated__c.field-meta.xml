@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Manually_Updated__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( AND(CreatedDate &lt; LastModifiedDate, LastModifiedBy.Profile.Name &lt;&gt; &apos;System Administrator&apos;, LastModifiedBy.Profile.Name &lt;&gt; &apos;QES Interface&apos;), &quot;YES&quot;, &quot;NO&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Has this AR Aging record been manually updated in Salesforce.com since it was loaded on the Snapshot date.</inlineHelpText>
+    <label>Manually Updated?</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

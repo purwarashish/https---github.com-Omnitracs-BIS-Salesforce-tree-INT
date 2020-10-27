@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Omni_Service_Agreement_Adjustment_Nego</fullName>
+    <columns>NAME</columns>
+    <columns>Contact__c</columns>
+    <columns>Contact_Email__c</columns>
+    <columns>Contract__c</columns>
+    <columns>Email_Sent__c</columns>
+    <columns>Email_Sent_Date__c</columns>
+    <columns>Opportunity__c</columns>
+    <columns>Uplift_Effective_Date__c</columns>
+    <columns>CREATEDBY_USER.ALIAS</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Service_Agreement_Adjustment__c.Omnitracs_Service_Agreement_Adjustment</value>
+    </filters>
+    <filters>
+        <field>SAA_Status__c</field>
+        <operation>equals</operation>
+        <value>In Negotiation</value>
+    </filters>
+    <label>Omni US - In Negotiation</label>
+    <language>en_US</language>
+</ListView>

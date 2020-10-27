@@ -1,0 +1,58 @@
+<apex:page standardController="Contract" extensions="ContentDeliveryController" tabStyle="Contract">
+       <script>
+          function confirmCancel() {
+              var isCancel = confirm("Are you sure you wish to cancel?");
+              if (isCancel) return true;
+          
+             return false;
+          }  
+      </script>
+      <style>
+        .dim_a {width:400px; height:50px;}
+        .dim_b {width:200px; height:18px;}
+        .dim_c {width:600px; height:18px;}
+        .dim_d {width:100px; height:18px;}
+        .dim_e {width:70px; height:18px;}
+        .dim_f {width:400px; height:20px;}
+    </style>
+    <apex:form >
+    <apex:sectionHeader title="Create Content Delivery" subtitle="Content Delivery Wizard">
+        <center><apex:image url="{!$Resource.ContentDeliveryStep2}" width="1266" height="53"/></center>
+        <br/><br/><br/>
+     <apex:messages />   
+    </apex:sectionHeader>
+        <apex:pageBlock title="Create Content Delivery">
+             <apex:pageBlockButtons >
+                    <apex:commandButton action="{!step1}" value="Previous" style="margin-top:8px;"/>﻿
+                    <apex:commandButton action="{!step3}" value="Save & Next" style="margin-top:8px;"/>﻿
+                    <apex:commandButton action="{!Cancel}" value="Cancel" style="margin-top:8px;" onclick="return confirmCancel()" immediate="true"/>
+              </apex:pageBlockButtons>
+            <apex:outputPanel >
+            <b><apex:outputLabel value="Content Delivery Selections"/></b><br/><br/>
+                <table>
+                    <tr>
+                    <b>File Name:&nbsp; <apex:outputField value="{!ContentDistribution.Name}"/></b>
+                    </tr><tr>
+                        <td><b>Delivery Name:</b> &nbsp;</td><td><apex:inputField value="{!ContentDistribution.Name}" styleClass="dim_c"/> </td>   
+                    </tr> <tr>
+                        <td><b>Delivery Method: </b>&nbsp;</td><td><apex:inputcheckbox value="{!ContentDistribution.PreferencesAllowViewInBrowser}"/> Allow Recipient to View in the Browser</td>
+                     </tr>  <tr>        
+                            <td></td><td><apex:inputcheckbox value="{!ContentDistribution.PreferencesAllowPDFDownload}"/> Allow Recipient to Download as PDF</td>
+                    </tr> <tr>        
+                            <td></td><td><apex:inputcheckbox value="{!ContentDistribution.PreferencesAllowOriginalDownload}"/> Allow Recipient to Download as &nbsp;<apex:outputText value="{!FileType}"/> </td>
+                    </tr><tr>
+                            <td><b>Delivery Settings: &nbsp;</b></td><td> <apex:inputcheckbox value="{!ContentDistribution.PreferencesNotifyOnVisit}"/>  Notify Me of First View or Download </td>
+                     </tr><tr>
+                            <td></td><td><apex:inputcheckbox value="{!ContentDistribution.PreferencesExpires}" /> Remove Access to Content on  &nbsp;<apex:inputField value="{!ContentDistribution.ExpiryDate}"/> </td>
+                    </tr><tr> 
+                            <td><b>Related To: &nbsp;</b></td><td><b><apex:outputText value="{!contNum}"/></b></td>
+                   </tr> 
+                </table>
+            </apex:outputPanel>
+           
+        </apex:pageBlock>
+    </apex:form>
+
+
+
+</apex:page>

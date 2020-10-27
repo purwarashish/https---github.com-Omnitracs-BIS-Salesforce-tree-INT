@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Category_2__c</fullName>
+    <externalId>false</externalId>
+    <label>Contract Category 2</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Accident Severity</fullName>
+                <default>false</default>
+                <label>Accident Severity</label>
+            </value>
+            <value>
+                <fullName>Advanced Mapping Interface</fullName>
+                <default>false</default>
+                <label>Advanced Mapping Interface</label>
+            </value>
+            <value>
+                <fullName>AMBER Alert</fullName>
+                <default>false</default>
+                <label>AMBER Alert</label>
+            </value>
+            <value>
+                <fullName>Analytics Manager</fullName>
+                <default>false</default>
+                <label>Analytics Manager</label>
+            </value>
+            <value>
+                <fullName>Application Contingency</fullName>
+                <default>false</default>
+                <label>Application Contingency</label>
+            </value>
+            <value>
+                <fullName>BoBo</fullName>
+                <default>false</default>
+                <label>BoBo</label>
+            </value>
+            <value>
+                <fullName>Compliance</fullName>
+                <default>false</default>
+                <label>Compliance</label>
+            </value>
+            <value>
+                <fullName>Content Delivery</fullName>
+                <default>false</default>
+                <label>Content Delivery</label>
+            </value>
+            <value>
+                <fullName>CoPilot Truck</fullName>
+                <default>false</default>
+                <label>CoPilot Truck</label>
+            </value>
+            <value>
+                <fullName>Critical Event Reporting</fullName>
+                <default>false</default>
+                <label>Critical Event Reporting</label>
+            </value>
+            <value>
+                <fullName>Critical Event Video</fullName>
+                <default>false</default>
+                <label>Critical Event Video</label>
+            </value>
+            <value>
+                <fullName>Driver Fatigue</fullName>
+                <default>false</default>
+                <label>Driver Fatigue</label>
+            </value>
+            <value>
+                <fullName>Driver Recruiting</fullName>
+                <default>false</default>
+                <label>Driver Recruiting</label>
+            </value>
+            <value>
+                <fullName>Driver Retention</fullName>
+                <default>false</default>
+                <label>Driver Retention</label>
+            </value>
+            <value>
+                <fullName>Driver Risk (Workers Comp)</fullName>
+                <default>false</default>
+                <label>Driver Risk (Workers Comp)</label>
+            </value>
+            <value>
+                <fullName>Driver Safety</fullName>
+                <default>false</default>
+                <label>Driver Safety</label>
+            </value>
+            <value>
+                <fullName>Driver Workflow</fullName>
+                <default>false</default>
+                <label>Driver Workflow</label>
+            </value>
+            <value>
+                <fullName>DTTS (In-Cab)</fullName>
+                <default>false</default>
+                <label>DTTS (In-Cab)</label>
+            </value>
+            <value>
+                <fullName>DTTS (Trailer)</fullName>
+                <default>false</default>
+                <label>DTTS (Trailer)</label>
+            </value>
+            <value>
+                <fullName>Evaluation</fullName>
+                <default>false</default>
+                <label>Evaluation</label>
+            </value>
+            <value>
+                <fullName>Evaluation (Special Program)</fullName>
+                <default>false</default>
+                <label>Evaluation (Special Program)</label>
+            </value>
+            <value>
+                <fullName>Exact Fuel</fullName>
+                <default>false</default>
+                <label>Exact Fuel</label>
+            </value>
+            <value>
+                <fullName>Extended Productivity</fullName>
+                <default>false</default>
+                <label>Extended Productivity</label>
+            </value>
+            <value>
+                <fullName>Fault Monitoring</fullName>
+                <default>false</default>
+                <label>Fault Monitoring</label>
+            </value>
+            <value>
+                <fullName>Fault Monitoring + Ext. Faults</fullName>
+                <default>false</default>
+                <label>Fault Monitoring + Ext. Faults</label>
+            </value>
+            <value>
+                <fullName>FM Extended Faults</fullName>
+                <default>false</default>
+                <label>FM Extended Faults</label>
+            </value>
+            <value>
+                <fullName>Hours of Service</fullName>
+                <default>false</default>
+                <label>Hours of Service</label>
+            </value>
+            <value>
+                <fullName>Implementation</fullName>
+                <default>false</default>
+                <label>Implementation</label>
+            </value>
+            <value>
+                <fullName>In-Cab Scanning</fullName>
+                <default>false</default>
+                <label>In-Cab Scanning</label>
+            </value>
+            <value>
+                <fullName>Indirect</fullName>
+                <default>false</default>
+                <label>Indirect</label>
+            </value>
+            <value>
+                <fullName>Master</fullName>
+                <default>false</default>
+                <label>Master</label>
+            </value>
+            <value>
+                <fullName>Media Manager</fullName>
+                <default>false</default>
+                <label>Media Manager</label>
+            </value>
+            <value>
+                <fullName>NaviGo powered by Telogis</fullName>
+                <default>false</default>
+                <label>NaviGo powered by Telogis</label>
+            </value>
+            <value>
+                <fullName>Omnitracs Navigation</fullName>
+                <default>false</default>
+                <label>Omnitracs Navigation</label>
+            </value>
+            <value>
+                <fullName>Package Subscription</fullName>
+                <default>false</default>
+                <label>Package Subscription</label>
+            </value>
+            <value>
+                <fullName>Panic Button Notification</fullName>
+                <default>false</default>
+                <label>Panic Button Notification</label>
+            </value>
+            <value>
+                <fullName>Per Diem Manager</fullName>
+                <default>false</default>
+                <label>Per Diem Manager</label>
+            </value>
+            <value>
+                <fullName>Performance Monitoring</fullName>
+                <default>false</default>
+                <label>Performance Monitoring</label>
+            </value>
+            <value>
+                <fullName>PPS Services Agreement</fullName>
+                <default>false</default>
+                <label>PPS Services Agreement</label>
+            </value>
+            <value>
+                <fullName>Production</fullName>
+                <default>false</default>
+                <label>Production</label>
+            </value>
+            <value>
+                <fullName>SpeedGauge Safety Center</fullName>
+                <default>false</default>
+                <label>SpeedGauge Safety Center</label>
+            </value>
+            <value>
+                <fullName>SpeedGauge Safety Center (Eval)</fullName>
+                <default>false</default>
+                <label>SpeedGauge Safety Center (Eval)</label>
+            </value>
+            <value>
+                <fullName>Terrestrial Browsing 2.0</fullName>
+                <default>false</default>
+                <label>Terrestrial Browsing 2.0</label>
+            </value>
+            <value>
+                <fullName>Terrestrial Data Plan</fullName>
+                <default>false</default>
+                <label>Terrestrial Data Plan</label>
+            </value>
+            <value>
+                <fullName>Trailer ABS Connect</fullName>
+                <default>false</default>
+                <label>Trailer ABS Connect</label>
+            </value>
+            <value>
+                <fullName>Vehicle Inspection Report</fullName>
+                <default>false</default>
+                <label>Vehicle Inspection Report</label>
+            </value>
+            <value>
+                <fullName>Virtual Load View</fullName>
+                <default>false</default>
+                <label>Virtual Load View</label>
+            </value>
+            <value>
+                <fullName>Weigh Station Bypass</fullName>
+                <default>false</default>
+                <label>Weigh Station Bypass</label>
+            </value>
+            <value>
+                <fullName>Weigh Station Bypass (Eval)</fullName>
+                <default>false</default>
+                <label>Weigh Station Bypass (Eval)</label>
+            </value>
+            <value>
+                <fullName>XRS Fault Code Data Sharing</fullName>
+                <default>false</default>
+                <label>XRS Fault Code Data Sharing</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

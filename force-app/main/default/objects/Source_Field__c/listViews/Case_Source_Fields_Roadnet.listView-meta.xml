@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_Source_Fields_Roadnet</fullName>
+    <columns>NAME</columns>
+    <columns>Field_Name__c</columns>
+    <columns>Status__c</columns>
+    <columns>Source_Field_Type__c</columns>
+    <columns>Source_Object__c</columns>
+    <columns>System_Field__c</columns>
+    <columns>Transformation__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Source_System__c</field>
+        <operation>equals</operation>
+        <value>Roadnet Salesforce</value>
+    </filters>
+    <filters>
+        <field>Source_Object__c</field>
+        <operation>equals</operation>
+        <value>Case</value>
+    </filters>
+    <label>Case Source Fields (Roadnet)</label>
+    <language>en_US</language>
+</ListView>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Data_Scale_1__c</fullName>
+    <description>Scale is set to 4 so we can store values for currencies that have 3 decimal places, plus 1 extra decimal place for additional precision (to better handle rounding).</description>
+    <externalId>false</externalId>
+    <label>Data Scale 1</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>4</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

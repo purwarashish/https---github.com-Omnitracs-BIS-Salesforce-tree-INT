@@ -1,0 +1,99 @@
+<!---------------------------------------------------------------------------------------------------
+Name : ShowSupportAlerts
+Author : Shruti Karn
+Date : 7 March 2011
+
+Usage : in-line VF page to show support alerts 
+
+Dependencies:  Static Resource -> JQuery
+    
+CR # 23403
+----------------------------------------------------------------------------------------------------->
+<apex:page id="page1" standardController="Case" extensions="ShowSupportAlertController" showHeader="true" sidebar="true" tabStyle="Case">
+    <apex:includeScript value="{!URLFOR($Resource.JQuery, 'jquery.js')}" /> 
+    <apex:includeScript value="{!URLFOR($Resource.JQuery, 'jquery.simpledialog.0.1.js')}" /> 
+    <apex:stylesheet value="{!URLFOR($Resource.JQuery, 'jquery.simpledialog.0.1.css')}"/> 
+
+   <script type="text/javascript">
+   function checkAccount()
+   {
+       
+       if((document.getElementById('{!$Component.form1.pgblk.pgblksectn1.acctID}_lkid').value) != null || (document.getElementById('{!$Component.form1.pgblk.pgblksectn1.acctID}_lkid').value) != '000000000000000')
+       {
+       
+       findAcctId();
+       }
+   } 
+   function findAcctId()
+   {
+      
+      var accountId = document.getElementById('{!$Component.form1.pgblk.pgblksectn1.acctID}_lkid').value;
+      findSuppAlert(accountId);
+              
+   }
+   function refreshAccount()
+   {
+       
+       refreshAcctField();
+   }
+      
+    $(document).ready(function () {
+        $('.simpledialog').simpleDialog();
+      
+    });
+    
+    showData = function() {
+        $('#proxyAnchor').submit();
+        $('#proxyAnchor').click();
+    }   
+   </script>
+   
+  <a rel="dialog_content" class="simpledialog" href="#" id="proxyAnchor" />
+      <div id="dialog_content" style="display:none;padding-left:10%; text-align: left;"> 
+        <!--<apex:outputText escape="false" value="Working"/> -->
+        <apex:pageBlock id="supp">
+        <apex:pageBlockTable value="{!lstSupportAlert}" var="suppAlert" >
+            <apex:column headerValue="Support Alert Name">
+                <apex:outputText value="{!suppAlert.Name}"/>
+            </apex:column>
+            <apex:column headerValue="Critical">
+                <apex:outputText value="{!suppAlert.Critical__c}"/>
+            </apex:column>
+            <apex:column headerValue="Description" width="50%">
+                <apex:outputText style="word-wrap:break-word; text-align: left;"  value="{!suppAlert.Description__c}"/>
+            </apex:column>
+            <apex:column headerValue="Summary" width="50%">
+                <apex:outputText style="word-wrap:break-word; text-align: left;" value="{!suppAlert.Summary__c}"/>
+            </apex:column>
+            <apex:column headerValue="End Date">
+                <apex:outputText value="{!suppAlert.End_Date__c}"/>
+            </apex:column>
+            <!--<apex:column headerValue="Created By">
+                <apex:outputText value="{!suppAlert.CreatedBy}"/> 
+            </apex:column>-->
+        </apex:pageBlockTable> 
+        <apex:outputLink onclick="openIntegration('/apex/ShowAllSupportAlert?AccountId={!acctId}&ic=1', 'height=600,width=810,location=no,resizable=yes,toolbar=no,status=no,menubar=no,scrollbars=1', 1); return false;" value="#" rendered="{!showAll}" >Go To List</apex:outputLink>
+        </apex:pageBlock>
+     </div> 
+  <apex:form id="form1" >
+  <apex:actionFunction name="refreshAcctField" reRender="pgblksectn1,msg,form1,supp" immediate="true" oncomplete="javascript:findAcctId();" />
+  <apex:actionFunction name="findSuppAlert" action="{!findSupportAlert}" reRender="form1,msg1,supp" immediate="true">
+      <apex:param name="a" value="" assignTo="{!acctId}"/>
+  </apex:actionFunction>
+        <apex:outputPanel rendered="{!isSuppAlert}" id="msg1">
+      <apex:outputText style="color:rgb(204,0,0);font-weight: bold;" value="Support Alert on" ></apex:outputText>
+      
+      <apex:outputLink style="color:rgb(204,0,0);font-weight: bold;" target="_blank" value="/{!accSupportAlert}" onmouseover="showData();" >
+           {!acctName}
+      </apex:outputLink>          
+      
+
+      <br/>
+       {!totalSuppAlert} on Account - <apex:outputText style="color:rgb(204,0,0);font-weight: bold;" value=" {!critSupportAlert} Critical"/>
+       <br/>
+       Please check Account for details.<br/>
+       
+       </apex:outputPanel>  
+    </apex:form>   
+ <script>checkAccount()</script>   
+</apex:page>

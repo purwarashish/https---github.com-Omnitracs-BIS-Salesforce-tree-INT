@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Update_Sync_with_FF_to_True</fullName>
+        <field>Sync__c</field>
+        <literalValue>1</literalValue>
+        <name>Update Sync with FF to True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>Case Time%3A Update Sync with FF on Time Change</fullName>
+        <actions>
+            <name>Update_Sync_with_FF_to_True</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED(Work_Effort__c) &amp;&amp; $User.Bypass_Workflows__c = false</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

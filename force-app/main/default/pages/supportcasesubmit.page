@@ -1,0 +1,836 @@
+<apex:page cache="true" id="CaseSubmission" controller="MainController"
+    action="{!csm_initSingleton}" sidebar="false" showHeader="false">
+    
+    <style>
+    
+  .sub_menu{
+      width: 122px !important;
+  }
+  .subMenuList{
+    margin-left: 0 !important;  
+  }
+  .subMenuList li a:visited
+  {
+    color: #315BA7 !important;
+    
+  }
+  blockquote.subMenuList
+  {
+      margin: 0;
+      padding: 0 !important;
+      width: 220px;
+      
+  }
+
+*:first-child+html .suggestSoluctionBlock li a {
+    display: block !important;
+    padding-bottom: 3px;
+}
+
+*:first-child+html .suggestSoluctionBlock li {
+    padding-bottom: 3px !important;
+}
+
+div.selectME9 {
+    float: left;
+}
+
+div.selectME9 div.middle {
+    height: 24px;
+    margin: 0;
+    padding: 0px 0 0;
+    width: 287px;
+    outline: medium none;
+    font-size: 12px;
+    background:
+        url("{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/images/customer/support-button-sprites.png')}")
+        repeat scroll 0 -610px transparent !important;
+}
+
+div.selectME9 div.first {
+    display: block;
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    position: static;
+    height: 18px;
+    *margin-bottom: -1px;
+}
+
+div.selectME9 div.first span.selectME9 {
+    float: left;
+    display: block;
+    font-size: 12px;
+    color: #333;
+    font-weight: normal;
+    left: 12px;
+    vertical-align: text-top;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 24px;
+    line-height: 23px;
+    padding: 1px 0 0 6px;
+    position: static;
+}
+
+div.selectME9 div.first a,div.selectME9 div.first a:visited {
+    display: block;
+    padding: 0;
+}
+
+div.selectME9 ul {
+    list-style-type: none;
+    line-height: normal;
+    padding: 2px 0 0 0;
+    margin: 0px;
+    z-index: 103;
+    position: absolute;
+    float: left;
+    clear: none;
+    width: 202px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 200px;
+    width: 287px;
+    margin-top:5px;
+}
+
+div.selectME9 ul li {
+    display: none;
+    clear: left;
+    margin: 0;
+    padding: 0;
+    color: #8a8a8a;
+    text-align: left;
+    position: static;
+    float: left;
+    z-index: 104;
+    border-left: 1px solid #c0bfbf;
+    border-right: 1px solid #c0bfbf;
+    background: #fafafa;
+    width: 180px !important;
+    background:
+        url("{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/images/customer/list-box-bg-drop2.png')}")
+        repeat-x;
+    font-size: 12px;
+    width: 285px !important;
+}
+
+div.selectME9 ul li a,div.selectME9 ul li a:visited {
+    qwhite-space: nowrap;
+    font-size: 12px;
+    color: #333333;
+    text-decoration: none;
+    display: block;
+    text-indent: 4px;
+    padding: 2px 0px 2px;
+    margin: 0;
+    background: #ccc
+        url("{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/images/customer/list-box-bg-drop2.png')}")
+        repeat-x scroll 0 0 #CCCCCC;
+    width: 285px !important;
+    height: 18px;
+}
+
+div.selectME9 ul li a:hover {
+    background:
+        url("{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/images/customer/list-box-bg-drop-.png')}")
+        repeat-x scroll 0 0 #D8D8D8;
+}
+
+div.selectME9 ul li.last {
+    margin: 0;
+    border-bottom: 1px solid #c0bfbf;
+}
+
+ul.selectME9 li a {
+    list-style-type: none;
+    display: block;
+    line-height: 20px;
+    white-space: nowrap;
+}
+;
+
+    div.filterSearchBox span
+    {
+     display:block !important;
+    };
+    blockquote.subMenuList span li
+    {
+    float:left;
+    width:220px;
+    }
+    div.recentCasesBoxTopMargin
+    {
+    min-height:100px;
+    }
+    
+    a.monitor {visibility:{!CASE(standalone,'1', 'hidden', standalone,'0' , '' )}; display:{!CASE(standalone,'1', 'none', standalone,'0' , '' )};}
+            
+	a.manage {visibility:{!CASE(standalone,'1', 'hidden', standalone,'0' , '' )}; display:{!CASE(standalone,'1', 'none', standalone,'0' , '' )};}
+	    
+	a.shop {visibility:{!CASE(standalone,'1', 'hidden', standalone,'0' , '' )}; display:{!CASE(standalone,'1', 'none', standalone,'0' , '' )};}
+							
+	#drop3 li:nth-child(-n+3) {
+    display: none;
+    }
+    
+    #user_profile li:nth-child(-n+2) {
+        display: none;
+    }
+        
+	ul.drop2 {visibility:{!CASE(standalone,'1', 'hidden', standalone,'0' , '' )}; display:{!CASE(standalone,'1', 'none', standalone,'0' , '' )};}
+	   
+    div.searchResultInnerRight{
+        display:{!CASE(standalone,'1', 'none', standalone,'0' , 'initial' )};
+    }
+</style>
+
+<script type="text/javascript">
+	window.onload = function() {
+	    var links = document.getElementsByTagName('a');
+		for(var i=0; i<links.length; i++) {
+		  if(links[i].href == 'http://customer.int.omnitracs.com/'){
+		  	links[i].href = 'https://login.int.omnitracs.com/go.jsp?d=home';
+		  }
+		  else if(links[i].href == 'http://customer.omnitracs.com/'){
+		  	links[i].href = 'https://login.omnitracs.com/go.jsp?d=home';
+		  }
+		}
+	};
+</script>
+
+    <!-- QESCustomerPortalNewCase -->
+
+    <!-- link
+        href="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/css/mainstyle.css')}"
+        rel="stylesheet" type="text/css" />
+    <link
+        href="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/css/jquery.jcarousel.css')}"
+        rel="stylesheet" type="text/css" />
+    <link
+        href="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/css/customer.css')}"
+        rel="stylesheet" type="text/css" />
+    <link rel="stylesheet"
+        href="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/css/style.css')}"
+        type="text/css" media="screen, projection" />
+
+    <script
+        src="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/scripts/checked.js')}"
+        type="text/javascript"></script>
+    <script
+        src="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/scripts/jquery.dropdownPlain3.js')}"
+        type="text/javascript"></script -->
+    
+    <script
+        src="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/scripts/jquery.pngFix.js')}"
+        type="text/javascript"></script>
+    <script
+        src="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/scripts/mopSlider-2.5.js')}"
+        type="text/javascript"></script>
+
+    <script
+        src="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/scripts/jquery.bxSlider.min.js')}"
+        type="text/javascript"></script>
+    <link
+        href="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/css/selectbox.css')}"
+        rel="stylesheet" type="text/css" />
+
+    <script
+        src="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/scripts/jquery.bxSlider.min2.js')}"
+        type="text/javascript"></script>
+<body>        
+    <apex:variable var="blnSuggestedSolutions" value="false" />
+    <apex:form id="theForm">
+        <script>
+            var selectedrec = document
+                    .getElementById('{!$Component.selectedid}');
+        </script>
+        <!-- apex:actionPoller interval="15" action="{!csm.dummy}" reRender="mainpage"/ -->
+        <apex:commandLink id="hiddencmdlink"  target="_blank" styleclass="hiddencmdlink" value="" action="{!csm.redirectToArticles}" />
+        <apex:commandLink styleClass="hiddenCommandLinkCaseReview" action="{!csm.redirectToCaseDetail}"/>
+        <apex:commandLink id="hiddencmdlink1"  styleclass="hiddencmdlink1" value="" action="{!csm.redirectToArticles}" />
+        <apex:inputHidden id="hiddenInputField" value="{!csm.hiddenInputField}"/>
+        </apex:form>
+    <div id="bodyWrapper">
+
+
+    <apex:include pageName="mainPage" id="mainpage"/>
+    
+
+        <div class="breadcumWrp">
+        <ul>
+            <li>
+                <a href="https://login.{!$Label.CPURL}go.jsp?d=home">Home</a><span>|</span>
+                <a class="breadcumlink" href="/apex/support">Support</a><span>|</span>
+                Submit A Case
+            </li>
+        </ul>
+        <h1 style="display: normal">Submit A Case</h1>
+        <hr width="910px" align="center" style="height:1px;border:1px;color:#dadce0;background-color:#dadce0;" />
+        </div>
+        <div id="middle-container">
+            <div class="custom-search-left fll">
+                <!--<div id="browseProductSupport" class="submitAcase">
+                    <a href="">Browse Product Support</a>
+                </div>-->
+
+                <apex:outputPanel id="SuggestedSolutions">
+                    <script>
+                        setSearchTitleClick();
+                        function setSearchTitleClick() {
+                            $('a.searchTitle').click(
+                            function(e)
+                            {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              var URL = $(this).attr('href');
+                              window.open(URL,'', 'height=550,width=1024,location=no,resizable=yes,toolbar=no,status=no,menubar=no,scrollbars=yes');
+                            });
+                        }                        
+                    </script>
+                    <div class="">
+                        <h3 class="suggestKnowledgeHeader"
+                            style="display: block; font-size: 13px;">Suggested Answers</h3>
+                        <div class="filterSearchBox">
+                            <!-- TODO: After the suggested solutions is implemented, -->
+                            <!-- change the following. -->
+
+                            <ul class="subMenuList">
+                                <apex:variable var="anyDocument" value="false" />
+                                <apex:repeat id="articlelist" value="{!csm.suggestedSolutionsList}" var="article">
+                                    <li style="margin-left: 0;">
+                                        <a target="_blank" class="searchTitle" href="{!article.linkUrl}"
+                                                                             >
+                                            <apex:outputtext >{!article.title}</apex:outputtext>
+                                        </a>
+                                    </li>
+                                    <apex:variable var="blnSuggestedSolutions" value="true" />
+                                    <apex:variable var="anyDocument" value="true" />
+                                </apex:repeat>
+                                
+                                <apex:outputText rendered="{!anyDocument=='false'}">                                
+                                    <center style="padding:10px;">No Top Questions found.</center> 
+                                </apex:outputText>                              
+                            </ul>
+                        </div>
+                        <!-- End filterSearchBox -->
+                    </div>
+                </apex:outputPanel>
+
+
+                <div class="recentCasesBoxTopMargin">
+                    <h3 class="suggestKnowledgeHeader"
+                        style="display: block; font-size: 13px;">Recent Cases</h3>
+                    <h3></h3>
+                    <div id="listdiv" class="filterSearchBox">
+                        <!-- TODO: After the recent cases is implemented, -->
+                        <!-- change the following. -->
+                        <ul class="subMenuList">
+                            <apex:outputText rendered="{!(0 < csm.RecentCase.size)}">
+                                <apex:repeat id="list" value="{!csm.recentCase}" var="rfield">
+                                 <li id="listvalue" style="margin-left: 0;">
+                                     <a id="{!rfield.CaseNumber}" class="{!rfield.CaseNumber}" href="/apex/supportcasedetails?id={!rfield.Id}">
+                                     
+                                     <!-- apex:outputtext rendered="{!LEN(rfield.subject) > 33}" value="{!LEFT(rfield.Subject,30)}..."></apex:outputtext -->
+                                     
+                                     <!--  rendered="{!LEN(rfield.subject) <= 33}" -->
+                                     <apex:outputtext value="{!rfield.Subject}"> </apex:outputtext>
+                                     </a>
+                                        <script>
+                                        $(".{!rfield.CaseNumber}").click(
+                                            function(e) {
+                                                //alert('He-He');
+                                                e.preventDefault();
+                                                e.stopPropagation();
+                                                $("#CaseSubmission\\:theForm\\:hiddenInputField").val("{!rfield.Id}");
+                                                $(".hiddenCommandLinkCaseReview").click();
+                                            }
+                                        );
+                                     </script>
+                                    </li>
+                                </apex:repeat>
+                            </apex:outputText>
+                            <apex:outputText rendered="{!(0 >= csm.RecentCase.size)}">
+                                <center style="padding:10px;">No Recent Cases found.</center> 
+                            </apex:outputText>                                                            
+                        </ul>
+                    </div>
+                </div>
+                <!-- End recentCasesBoxTopMargin -->
+            </div>
+            <!-- End custom-search-left fll -->
+
+            <div class="custom-search-right fll">
+                <div style="width: 675px">
+                    <div class="caseListViewTitle">
+                        <div class="searchTxtArea fll">Case View</div>
+                        <div class="searchResultCount flr"></div>
+                    </div>
+
+                    <div class="caseViewForm">
+                        <div class="fieldBox">
+                            <apex:form id="formId">
+
+                                <h5 class="formTextHeading" style="display: block;height:30px;">Contact Details</h5>
+                                <apex:actionFunction id="savenow1" action="{!csm.customSave1}"
+                                    name="savenow1" />
+                                <div class=" caseSubDataWidth fll">
+                                    <span class="">Name</span> <br /> <span class="bold"><apex:outPutText styleClass="" value="{!$User.FirstName} {!$User.LastName}"></apex:outPutText>
+                                    </span>
+                                </div>
+                                <div class=" caseSubDataWidth fll">
+                                    <span class="" style="padding-left:3px">Email</span> <br /> <span class="bold"><apex:outPutText styleClass="" value="{!$User.Email}"></apex:outPutText> </span>
+                                </div>
+                                <div class=" caseSubDataWidth fll">
+                                    <span class="" style="padding-left:3px">Phone</span> <br /> <span class="bold"> <apex:inputField styleclass="caseViewTxtBox readonly" style="height:20px" id="caseownerphone" value="{!csm.tempCase.QES_Unity_CP_Phone__c}"/><!-- apex:outPutText styleClass="" value="{!$User.Phone}"></apex:outPutText --> </span>
+                                </div>
+
+                                <div class=" caseSubDataWidth clr">
+                                    <span class="">Preferred Contact Method</span> <br />
+                                    <div class="chkBoxAlign fll">
+                                        <span> <apex:inputField styleClass="styled"
+                                                value="{!csm.tempCase.PCMPhone__c}" /> </span> <span class="bold">Phone</span>
+                                    </div>
+                                    <div class="chkBoxAlign fll">
+                                        <span class=""> <apex:inputField styleClass="styled"
+                                                value="{!csm.tempCase.PCMEmail__c}" /> </span> <span class="bold">Email</span>
+                                    </div>
+                                </div>
+
+
+                                 <div class="clr" style="height:1px">
+                                        <img border="0" width="1" height="1" alt=""
+                                            src="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/images/customer/spacer.png')}" />
+                                 </div>
+                                 <div>
+                                
+                                    <h5 class="formTextHeading clr" style="margin-top: 20px; display: block;">Case Details </h5>
+                                     <apex:messages style="color:rgb(204,0,0);font-weight: bold;text-align:center" id="errMsg" />
+                                    <div class="caseSubDataTxt caseSubDataWidth2 fll">
+                                        Platform <br />
+                                        <apex:inputField style="width:252px" id="product"
+                                            value="{!csm.tempCase.Platform__c}" />
+                                    </div>
+                                    <div class="caseSubDataTxt clr"></div>
+                                    <div class="caseSubDataTxt caseSubDataWidth3 fll">
+                                        Application <br />
+                                        <apex:inputField style="width:252px" id="type"
+                                            value="{!csm.tempCase.Application__c}" />
+                                    </div>
+
+                                    <div class="caseSubDataTxt clr">
+                                        Serial Number or Unit Address <br />
+                                        <apex:inputField styleclass="caseViewTxtBox readonly"
+                                            value="{!csm.tempCase.Serial__c}" />
+                                    </div>
+                                    <div class="caseSubDataTxt clr">
+                                        Subject <br />
+                                        <apex:inputField id="subject" styleclass="caseViewTxtBox2"
+                                            value="{!csm.tempCase.Subject}">
+                                            <apex:actionSupport event="onkeyup"
+                                                rerender="SuggestedSolutions,buttons" action="{!csm.dummy}" />
+                                        </apex:inputField>
+                                    </div>
+                                    <div class="caseSubDataTxt">
+                                        Description <br />
+                                        <apex:inputField id="description" styleclass="caseViewTxtBox3"
+                                            value="{!csm.tempCase.Description}"></apex:inputField>
+                                    </div>
+                                    <apex:variable var="idpresent"
+                                        value="{!$CurrentPage.Parameters.id != null && $CurrentPage.Parameters.id != ''}" />
+                                    <!--Solutions not needed...
+        <div class="caseSubDataTxt" style="if (idpresent,'display: normal ',' display:none')">
+                Solution <br />
+                <apex:inputField styleclass="caseViewTxtBox3" value="{!csm.tempCase.Resolution__c}" />
+        </div>
+-->
+
+                                    <apex:outputPanel id="buttons">
+                                        <div class="topMarginForm" style="text-align: left;">
+                                            <!-- action="{!if(blnSuggestedSolutions == 'false', csm.customSave, csm.customSave1)}" onclick="return checkStatus();"  -->
+                                            <apex:commandButton rendered="{!blnSuggestedSolutions != 'true'}" id="submit"
+                                                value="Submit" onclick="return checkStatus();"
+                                                action="{!csm.customSave}" styleclass="caseSubmitButton" />
+                                            <apex:commandButton rendered="{!blnSuggestedSolutions == 'true'}" id="submit1"
+                                                value="Submit" onclick="return checkStatus1();"
+                                                styleclass="caseSubmitButton" />
+                                            <apex:commandButton value="Cancel"
+                                                onclick="javascript:history.go(-1); return false;"
+                                                styleclass="caseSubmitButton" />
+                                        </div>
+                                    </apex:outputPanel>
+
+
+                                </div>
+                            </apex:form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- End custom-search-right flr -->
+
+            <div class="clr">
+                <img width="1" height="1" border="0" alt=""
+                    src="{!URLFOR($Resource.QESUnityCSSAndJS, 'Html/images/customer/spacer.png')}" />
+            </div>
+        </div>
+        <!-- End middle-container -->
+
+       
+        <apex:include pageName="UnityFooter" />
+    </div>
+
+    <!-- TODO: The following script would be removed later on -->
+    <script>
+    var pagename="supportcasesubmit";
+        $(document) .ready(function()
+                        {
+                            $("a:contains('list:0')").attr("id","firstlink");
+                        });
+
+        $("#CaseSubmission\\:formId\\:product,#CaseSubmission\\:formId\\:type")
+                .each(
+                        function() {
+
+                            if (!$(this).attr('multiple')
+                                    && $(this).attr('id').toString().search(
+                                            new RegExp(/image-embed/i)) == -1) {
+                                $(this).css('display', 'none');
+                                var curSel = $(this);
+                                // get the CSS width from the original select box
+                                var gddWidth = $(curSel).css('width');
+                                var gddWidthL = gddWidth.slice(0, -2);
+                                var gddWidth2 = gddWidthL - 28;
+                                var gddWidth3 = gddWidthL - 16;
+                                // build the new div structure
+                                var gddTop = '<div style="width:' + gddWidthL + 'px" class="selectME9" tabindex="0"><div class="cornerstop"><div><div></div></div></div><div class="middle"><div><div><div>';
+                                //get the default selected option
+                                var whatSelected = $(curSel).children(
+                                        'option:selected').text();
+                                //write the default
+                                var gddFirst = '<div class="first"><span class="selectME9 gselected" style="width:'+ gddWidth2 +  'px;">'
+                                        + whatSelected
+                                        + '</span><span id="arrowImg2"></span><div class="clears"></div></div><ul class="selectME9">';
+                                var addItems = new Array();
+                                $(curSel)
+                                        .children('option')
+                                        .each(
+                                                function() {
+                                                    var text = $(this).text();
+                                                    var selVal = $(this).attr(
+                                                            'value');
+                                                    var before = '<li style="width:' + gddWidthL + 'px;"><a href="#" rel="' + selVal + '" tabindex="0"  style="width:' + gddWidth3 + 'px;">';
+                                                    var after = '</a></li>';
+                                                    addItems.push(before + text
+                                                            + after);
+                                                });
+                                //hide the default from the list of options
+                                var removeFirst = addItems.shift();
+                                // create the end of the div selectbox and close everything off
+                                var gddBottom = '</ul></div></div></div></div><div class="cornersbottom"><div><div></div></div></div></div>'
+                                //write everything after each selectbox
+                                var GDD = gddTop + gddFirst + addItems.join('')
+                                        + gddBottom;
+                                $(curSel).after(GDD);
+                                //this var selects the div select box directly after each of the origials
+                                var nGDD = $(curSel).next('div.selectME9');
+
+                                $(nGDD).find('li:first').addClass("first");
+
+                                $(nGDD).find('li:last').addClass('last');
+                                //handle the on click functions - push results back to old text box
+                                $(nGDD)
+                                        .click(
+                                                function(e) {
+                                                    var myTarA = $(e.target)
+                                                            .attr('rel');
+                                                    var myTarT = $(e.target)
+                                                            .text();
+                                                    var myTar = $(e.target);
+                                                    //if closed, then open
+                                                    if ($(nGDD).find('li').css(
+                                                            'display') == 'none') {
+                                                        //this next line closes any other selectboxes that might be open
+                                                        $('div.selectME9')
+                                                                .find('li')
+                                                                .css('display',
+                                                                        'none');
+                                                        $(nGDD).find('li').css(
+                                                                'display',
+                                                                'block');
+
+                                                        //if user clicks off of the div select box, then shut the whole thing down
+                                                        $(
+                                                                document.window
+                                                                        || 'body')
+                                                                .click(
+                                                                        function(
+                                                                                f) {
+                                                                            var myTar2 = $(f.target);
+                                                                            if (myTar2 !== nGDD) {
+                                                                                $(
+                                                                                        nGDD)
+                                                                                        .find(
+                                                                                                'li')
+                                                                                        .css(
+                                                                                                'display',
+                                                                                                'none');
+                                                                            }
+                                                                        });
+                                                        return false;
+                                                    } else {
+                                                        if (myTarA == null) {
+                                                            $(nGDD)
+                                                                    .find('li')
+                                                                    .css(
+                                                                            'display',
+                                                                            'none');
+                                                            return false;
+                                                        } else {
+                                                            //set the value of the old select box
+                                                            $(curSel).val(
+                                                                    myTarA);
+                                                            //set the text of the new one
+                                                            $(nGDD)
+                                                                    .find(
+                                                                            'span.gselected')
+                                                                    .text(
+                                                                            myTarT);
+                                                            $(nGDD)
+                                                                    .find('li')
+                                                                    .css(
+                                                                            'display',
+                                                                            'none');
+                                                            return false;
+                                                        }
+                                                    }
+                                                    //handle the tab index functions
+                                                })
+                                        .focus(
+                                                function(e) {
+
+                                                    $(nGDD)
+                                                            .find('li:first')
+                                                            .addClass(
+                                                                    'currentDD');
+                                                    $(nGDD).find('li:last')
+                                                            .addClass('lastDD');
+                                                    function checkKey(e) {
+                                                        //on keypress handle functions
+                                                        function moveDown() {
+                                                            var current = $(
+                                                                    nGDD)
+                                                                    .find(
+                                                                            '.currentDD:first');
+                                                            var next = $(nGDD)
+                                                                    .find(
+                                                                            '.currentDD')
+                                                                    .next();
+                                                            if ($(current).is(
+                                                                    '.lastDD')) {
+                                                                return false;
+                                                            } else {
+                                                                $(next)
+                                                                        .addClass(
+                                                                                'currentDD');
+                                                                $(current)
+                                                                        .removeClass(
+                                                                                'currentDD');
+                                                            }
+                                                        }
+                                                        function moveUp() {
+                                                            var current = $(
+                                                                    nGDD)
+                                                                    .find(
+                                                                            '.currentDD:first');
+                                                            var prev = $(nGDD)
+                                                                    .find(
+                                                                            '.currentDD')
+                                                                    .prev();
+                                                            if ($(current).is(
+                                                                    '.first')) {
+                                                                return false;
+                                                            } else {
+                                                                $(prev)
+                                                                        .addClass(
+                                                                                'currentDD');
+                                                                $(current)
+                                                                        .removeClass(
+                                                                                'currentDD');
+                                                            }
+                                                        }
+                                                        var curText = $(nGDD)
+                                                                .find(
+                                                                        '.currentDD:first')
+                                                                .text();
+                                                        var curVal = $(nGDD)
+                                                                .find(
+                                                                        '.currentDD:first a')
+                                                                .attr('rel');
+                                                        switch (e.keyCode) {
+                                                        case 40:
+                                                            $(curSel).val(
+                                                                    curVal);
+                                                            $(nGDD)
+                                                                    .find(
+                                                                            'span.gselected')
+                                                                    .text(
+                                                                            curText);
+                                                            moveDown();
+                                                            return false;
+                                                            break;
+                                                        case 38:
+                                                            $(curSel).val(
+                                                                    curVal);
+                                                            $(nGDD)
+                                                                    .find(
+                                                                            'span.gselected')
+                                                                    .text(
+                                                                            curText);
+                                                            moveUp();
+                                                            return false;
+                                                            break;
+                                                        case 13:
+                                                            $(nGDD)
+                                                                    .find('li')
+                                                                    .css(
+                                                                            'display',
+                                                                            'none');
+                                                        }
+                                                    }
+                                                    $(document).keydown(
+                                                            checkKey);
+                                                }).blur(function() {
+                                            $(document).unbind('keydown');
+                                        });
+                            }
+                        });
+
+
+    </script>
+
+    <script>
+        // Removes leading whitespaces
+        function LTrim(value) {
+
+            var re = /\s*((\S+\s*)*)/;
+            return value.replace(re, "$1");
+
+        }
+
+        // Removes ending whitespaces
+        function RTrim(value) {
+
+            var re = /((\s*\S+)*)\s*/;
+            return value.replace(re, "$1");
+
+        }
+
+        // Removes leading and ending whitespaces
+        function myTrim(value) {
+
+            return LTrim(RTrim(value));
+
+        }
+        function checkStatus() {
+            //alert('INSIDE JS');
+
+            var subjectFieldLength = myTrim(document
+                    .getElementById('CaseSubmission:formId:subject').value).length;
+            var descriptionFieldLength = myTrim(document
+                    .getElementById('CaseSubmission:formId:description').value).length;
+            //alert("Description length: "+descriptionFieldLength);        
+            if (subjectFieldLength == 0) 
+            {
+                alert("Subject for a Case cannot be empty. Please enter the Subject and try again");
+                return false;
+            } 
+            
+            else if (descriptionFieldLength == 0)
+            {
+                alert("Description for a Case cannot be empty. Please enter the Description and try again");
+                return false;
+            } 
+            
+            else
+                return true;
+
+        }
+       
+        function setSearchTitleClick() {
+            $('a.searchTitle').click(
+            function(e)
+            {
+              e.preventDefault();
+              e.stopPropagation();
+              var URL = $(this).attr('href');
+              window.open(URL,'', 'height=550,width=1024,location=no,resizable=yes,toolbar=no,status=no,menubar=no,scrollbars=yes');
+            });
+        }
+                   
+        function checkStatus1() {
+            
+            var subjectFieldLength = myTrim(document
+                    .getElementById('CaseSubmission:formId:subject').value).length;
+                    
+            var descriptionFieldLength = myTrim(document
+                    .getElementById('CaseSubmission:formId:description').value).length;
+                    
+                    
+            if (subjectFieldLength == 0) 
+            {
+                alert("Subject for a Case cannot be empty. Please enter the Subject and try again");
+                return false;
+            } 
+            
+            else if (descriptionFieldLength == 0)
+            {
+                alert("Description for a Case cannot be empty. Please enter the Description and try again");
+                return false;
+            } 
+            
+            else
+                return savenow1();
+
+        }
+        $('a.artlink').click(
+            function(e)
+            {
+               redir1($(this).attr('href'),e);
+            }
+        );
+
+        function redir1(rUrl,e)
+        {
+            e.preventDefault();
+            e.stopPropagation();
+             
+            $("#CaseSubmission\\:theForm\\:hiddenInputField").val(rUrl); 
+            $("a.hiddencmdlink").click();
+            
+            return false;
+        }
+         $('a.breadcumlink').click(
+            function(e)
+            {
+               
+               redir($(this).attr('href'),e);
+            }
+        );
+
+        function redir(rUrl,e)
+        {
+            e.preventDefault();
+            e.stopPropagation();
+
+            $("#CaseSubmission\\:theForm\\:hiddenInputField").val(rUrl); 
+            $("a.hiddencmdlink1").click();
+            return false;
+        }
+    </script>
+</body>
+ </apex:page>

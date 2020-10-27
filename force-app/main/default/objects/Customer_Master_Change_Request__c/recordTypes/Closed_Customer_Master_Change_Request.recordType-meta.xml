@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Customer_Master_Change_Request</fullName>
+    <active>true</active>
+    <label>Closed Customer Master Change Request</label>
+    <picklistValues>
+        <picklist>Address_Contact_Usage__c</picklist>
+        <values>
+            <fullName>Bill To</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Both</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ship To</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Request_Status__c</picklist>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Pending Information</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submitted</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Request_Type__c</picklist>
+        <values>
+            <fullName>Add Address</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Add Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change Address</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change Contact</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

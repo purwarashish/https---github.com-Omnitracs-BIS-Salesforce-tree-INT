@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_From_Connection_Type</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>/a14/e?CF00NT0000000ieXC={!Connection_Type__c.Name}&amp;CF00NT0000000ieXC_lkid={!
+Connection_Type__c.Id}&amp;retURL=%2F{!Connection_Type__c.Id}&amp;cancelURL=%2F{!
+Connection_Type__c.Id}&amp;saveURL=%2F{!Connection_Type__c.Id}</url>
+</WebLink>

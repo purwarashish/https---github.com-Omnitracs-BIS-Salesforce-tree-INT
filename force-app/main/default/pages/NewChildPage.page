@@ -1,0 +1,2 @@
+<apex:page standardController="Contract" extensions="NewChildController" action="{!cloneContract}">
+</apex:page>

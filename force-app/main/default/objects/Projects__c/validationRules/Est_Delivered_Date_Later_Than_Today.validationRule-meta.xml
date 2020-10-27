@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Est_Delivered_Date_Later_Than_Today</fullName>
+    <active>true</active>
+    <description>The Estimate Delivered Date cannot be later than today.</description>
+    <errorConditionFormula>Estimate_Delivered_Date__c  &gt; TODAY()</errorConditionFormula>
+    <errorDisplayField>Estimate_Delivered_Date__c</errorDisplayField>
+    <errorMessage>The Estimate Delivered Date cannot be later than today.</errorMessage>
+</ValidationRule>

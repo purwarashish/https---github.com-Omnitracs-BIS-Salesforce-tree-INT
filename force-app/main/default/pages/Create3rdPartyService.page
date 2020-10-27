@@ -1,0 +1,37 @@
+<apex:page standardController="X3rd_Party_Contract_Service__c" extensions="Createx3rdPartyServiceExtension" tabStyle="X3rd_Party_Contract_Service__c">
+<apex:sectionHeader title="3rd Party Contracted Product / Service Edit" subtitle="New 3rd Party Contracted Product / Service"/>
+<apex:form >
+<apex:pageBlock title="3rd Party Contracted Product / Service Edit" mode="edit">
+
+<apex:pageBlockSection title="Competitor Details" collapsible="false" columns="2" >
+<apex:inputHidden value="{!X3rd_Party_Contract_Service__c.Account__c}" />
+<apex:inputHidden value="{!X3rd_Party_Contract_Service__c.Lead__c}"  />
+<apex:inputField value="{!X3rd_Party_Contract_Service__c.Integration_Partner_Account__c}" required="true"/>
+<apex:inputField value="{!X3rd_Party_Contract_Service__c.Product_Service__c}" />
+<!--<apex:inputField value="{!X3rd_Party_Contract_Service__c.Partner_Type__c}" required="true"/>
+<apex:inputField value="{!X3rd_Party_Contract_Service__c.X3rd_Party__c}" required="true"/>-->
+
+
+
+</apex:pageBlockSection>
+<!--
+<apex:pageBlockSection title="Eval Details" collapsible="false" columns="2" >
+<apex:inputField value="{!X3rd_Party_Contract_Service__c.Active_Evaluation__c}"  />
+<apex:inputField value="{!X3rd_Party_Contract_Service__c.Eval_Start_Date__c}"  />
+<apex:inputField value="{!X3rd_Party_Contract_Service__c.Eval_Results__c}"  />
+<apex:inputField value="{!X3rd_Party_Contract_Service__c.Total_Eval_Units__c}"  />
+</apex:pageBlockSection>
+-->
+
+<apex:pageBlockSection title="Comments"   collapsible="false" >
+<apex:inputField value="{!X3rd_Party_Contract_Service__c.Comments__c}"  style="width:220px; height:30px;" />
+</apex:pageBlockSection>
+
+<apex:pageBlockButtons >
+<apex:commandButton value="Save" action="{!save3rdPartyService}"/>
+<apex:commandButton value="Cancel" action="{!Cancel}"/>
+</apex:pageBlockButtons>
+</apex:pageBlock>
+</apex:form>
+
+</apex:page>

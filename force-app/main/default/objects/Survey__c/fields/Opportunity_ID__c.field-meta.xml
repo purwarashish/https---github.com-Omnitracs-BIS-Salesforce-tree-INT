@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_ID__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Returns the opp ID associated with the survey</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Returns the opp ID associated with the survey</inlineHelpText>
+    <label>Opportunity</label>
+    <referenceTo>Opportunity</referenceTo>
+    <relationshipLabel>Surveys</relationshipLabel>
+    <relationshipName>Surveys</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

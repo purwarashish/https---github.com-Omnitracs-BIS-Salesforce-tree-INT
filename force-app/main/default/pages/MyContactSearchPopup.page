@@ -1,0 +1,8 @@
+<apex:page title="Search" showHeader="false" 
+     sideBar="false" tabStyle="Address__c" id="pg">
+     <!-- Use the generic search component -->
+     <c:GenericSearchComponent columns_displayed="Name,Account_Name__c,Location_Type__c,Address_Line_1__c,Address_Line_2__c,City__c,State_Province__c,Phone_Number__c" 
+        object_name="Address__c"
+        additional_custom_filter="{!$CurrentPage.parameters.filter}"
+    />
+</apex:page>

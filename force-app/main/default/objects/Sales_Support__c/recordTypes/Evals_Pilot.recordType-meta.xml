@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Evals_Pilot</fullName>
+    <active>true</active>
+    <description>Short term pre-sales engagement to convince prospect of our value. Ultimate goal is to win a larger opportunity.</description>
+    <label>Evaluation</label>
+    <picklistValues>
+        <picklist>Onsite__c</picklist>
+        <values>
+            <fullName>Maybe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>PS_Resources__c</picklist>
+        <values>
+            <fullName>Bowser%2C Amy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cooper%2C Lynn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dovgin%2C Don</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fiore%2C Vince</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hove%2C Chris</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Johnson%2C Chris</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zibdeh%2C Tawfiq</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Products_Omni_XRS__c</picklist>
+        <values>
+            <fullName>MCP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Omnitracs Analytics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roadnet Software</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sylectus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XRS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Products__c</picklist>
+        <values>
+            <fullName>ALK Co-Pilot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AMG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AMG-C</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Active Alert</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Android</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Critical Event Reporting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Critical Event Video</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exact Fuel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fault Monitoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grove</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IVG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insight</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MC Server</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobile Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobile Tracking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobile Workflow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Navigation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OT1 Mobile</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Omnitracs Analytics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PTO Monitoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Per Diem Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Performance Monitoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RDC IFTA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RNA Dispatching</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RNA HOS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resolve</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roadnet Anywhere</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roadnet Telematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scheduler</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strategic Planner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sylectus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trailer Tracking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Virtual Load View</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WMX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weigh Station Bypass</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XRS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Services_Requested__c</picklist>
+        <values>
+            <fullName>Database Maintenance</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Assigned</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On Hold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Selected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Won</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Support_Type__c</picklist>
+        <values>
+            <fullName>Demo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Discovery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RFI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RFP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Route Test</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Make_Test_Cart_Bench_Comments_Required</fullName>
+    <active>true</active>
+    <description>Make Test Cart/Bench Comments required if Test Cart/Bench is No.</description>
+    <errorConditionFormula>AND( 
+ISBLANK( Test_Cart_Bench_Comments__c ), 
+ISPICKVAL( Test_Cart_Bench__c , &quot;No&quot;) 
+)</errorConditionFormula>
+    <errorDisplayField>Test_Cart_Bench_Comments__c</errorDisplayField>
+    <errorMessage>Test Cart/Bench Comments is required if Test Cart/Bench is &quot;No&quot;</errorMessage>
+</ValidationRule>

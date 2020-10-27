@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Estimated_Billable_Amount__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( ISPICKVAL(Billing__c, &quot;Time &amp; Materials&quot;), Total_Travel_Expenses__c  + Estimated_Billable_Hours__c *  Project_Billing_Rate_Per_Hour__c,  Fixed_Bid_Project_Amount__c + Total_Travel_Expenses__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Total Estimated Project Amount (Estimated Hours * Estimated Rate Per Hour + Estimated Travel Expenses). If Fixed Bid, then Fixed Bid Amount + Estimated Travel)</inlineHelpText>
+    <label>Est. Billable Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

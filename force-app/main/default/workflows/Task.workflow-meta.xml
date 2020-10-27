@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Refractive_Dialer_Subject_Update</fullName>
+        <description>Update subject field on task to CAP DB Prospect Survey.</description>
+        <field>Subject</field>
+        <formula>&quot;CAP DB Prospect Survey&quot;</formula>
+        <name>Refractive Dialer Subject Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Public_Checkbox_to_True</fullName>
+        <description>Checks the public checkbox</description>
+        <field>IsVisibleInSelfService</field>
+        <literalValue>1</literalValue>
+        <name>Set Public Checkbox to True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <outboundMessages>
+        <fullName>Inside_Sales_Capture_External_Emails</fullName>
+        <apiVersion>46.0</apiVersion>
+        <endpointUrl>https://eus-p01.pods.insidesales.com/kpms/SFDC/eyJvcmdfaWQiOjE3MDEzMDc4LCJrcG1fdXVpZCI6Ilh0aHRjdldPemYiLCJhdXRoX2tleSI6IkdjbE14TmxhSW05cmZyN1hNRjNISFlwNkZmMmtacnpPTXVxbVd6eGF2T2NmVE9pdUNMIiwiY3JtX3R5cGUiOiJTRkRDIn0=</endpointUrl>
+        <fields>Id</fields>
+        <fields>LastModifiedById</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>insideadmin@omnitracs.com</integrationUser>
+        <name>Inside Sales Capture External Emails</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>Inside Sales Capture External Emails</fullName>
+        <actions>
+            <name>Inside_Sales_Capture_External_Emails</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Task.Subject</field>
+            <operation>startsWith</operation>
+            <value>Email:</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Email</field>
+            <operation>notContain</operation>
+            <value>@omnitracs.com,@salesforce.com</value>
+        </criteriaItems>
+        <description>Used to capture external emails in InsideSales</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>SP - Coaching Completed</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Task.Coaching_Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Bypass_Workflows__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Public Checkbox</fullName>
+        <actions>
+            <name>Set_Public_Checkbox_to_True</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Set the public checkbox to true when a task is created</description>
+        <formula>1=1</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

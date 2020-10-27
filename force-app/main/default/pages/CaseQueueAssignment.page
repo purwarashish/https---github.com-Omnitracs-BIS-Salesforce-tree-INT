@@ -1,0 +1,105 @@
+<apex:page id="queuepage" standardController="Case" extensions="CaseQueueAssignmentController" sidebar="false" showHeader="false">
+<html>
+<script language="Javascript">
+
+var previousOnload = window.onload;        
+    window.onload = function() { 
+        if (previousOnload) { 
+            previousOnload();
+        }
+        scrollParent1();
+
+    }
+    
+    function scrollParent1()
+    {
+        window.opener.parent.scrollTo(0,0); 
+    }
+
+   function SelectedId(buttonid)
+   {
+       var substring1 = buttonid.substring(buttonid.lastIndexOf("outerrepeat"));
+       var selrecindex = substring1.substring((substring1.indexOf(":")+1),(substring1.lastIndexOf(":")));
+       selectedrec.value = selrecindex ;
+       
+         
+   }
+   
+   function closecurrentwindow()
+   {
+        var test ='false';
+        if('{!Case.status}' == 'Closed')
+        test = 'true';
+        if(test == 'true')
+        {
+           alert('Case is closed and cannot be assigned to a Queue');
+           window.close();    
+        }
+        else
+        {
+          var sURL = unescape(window.opener.parent.location); 
+          window.opener.parent.location.replace(sURL); 
+          window.close();
+        }   
+   }
+    </script>
+    
+    <apex:form id="form1">
+        <apex:Messages style="color:rgb(204,0,0);font-weight: bold;text-align:center" />
+        <apex:actionFunction action="{!AssignUser}" name="assign"/> 
+        <div style="padding-top: 35px;padding-left: 10px;" ><h1>Assign a Case to a User From the Queue</h1></div>
+        <br/>
+        <div>                    
+            This screen allows you to transfer cases from one user or queue to another. When you transfer ownership, the new owner will own: 
+            <ul> 
+                <li>all open activities (tasks and events) for this case that are assigned to the current owner</li> 
+            </ul> 
+            Note that completed activities will not be transferred. Open activities will not be transferred when assigning this case to a queue. 
+                         
+            <br/>
+            </div>
+            <apex:pageBlock id="pgblck">
+            <apex:inputCheckbox style="width:20px" value="{!sendEmail}" selected="true"/> Send Notification Email 
+            <TABLE id="outertable" cellspacing="0" cellpadding="0" border="0" width="30%" class="detailList">    
+                <tr>
+                    <td>
+                    </td>
+                    <td nowrap="nowrap" id="td1"> 
+                        <apex:outputPanel id="panel2">                       
+                            <apex:commandLink style="font-weight:bold;" id="name" value="Queue Name" action="{!ChangeOrder}">
+                                 <apex:image value="../img/sort_asc_arrow.gif" id="asce" rendered="{!asce}" />
+                                 <apex:image value="../img/sort_desc_arrow.gif" id="desc" rendered="NOT{!asce}" />
+                            </apex:commandLink>
+                        </apex:outputPanel>
+                    </td>
+                </tr>
+                <apex:repeat id="outerrepeat" value="{!QueueList}" var="list">
+                <tr>
+                    <td width="20%">
+                        <apex:commandButton value="Assign Queue" id="theButton" action="{!AssignUser}" onclick="SelectedId(this.id);" oncomplete="javascript:closecurrentwindow();" status="loadingStatusAdd" />
+                        <!--<apex:inputHidden value="{!list.Id}" id="selrec"/>-->
+                    </td>
+                
+                  
+                    <td > 
+                       <apex:outputField value="{!list.Queue.Name}" />                                                              
+                    </td>
+                </tr>
+                </apex:repeat>
+               
+            </TABLE>
+            <apex:actionStatus id="loadingStatusAdd">
+            <apex:facet name="start">
+                <c:loadingStatus id="loadingStatusAddComponent" BackColor="#efefef" borderColor="#336699" borderSize="3" height="50px" width="150px" ImageUrl="/img/loading.gif" Message="Processing..." BluryBackGround_DivId="bbgd1" SalesforceStatusBox_DivId="ssbd1" messageStyle="color:darkred;font-size:11pt;font-weight:bold;"/>
+            </apex:facet>
+        </apex:actionStatus>
+
+        </apex:pageBlock>
+<apex:inputhidden value="{!SelectedOwnerId}" id="selectedid" />
+<script> var selectedrec= document.getElementById('{!$Component.selectedid}'); </script>
+
+    </apex:form>
+    
+    </html>
+
+</apex:page>

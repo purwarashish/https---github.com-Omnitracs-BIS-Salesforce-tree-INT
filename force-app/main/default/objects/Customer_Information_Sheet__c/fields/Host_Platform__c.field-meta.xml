@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Host_Platform__c</fullName>
+    <externalId>false</externalId>
+    <label>Host Platform</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Windows</fullName>
+                <default>false</default>
+                <label>Windows</label>
+            </value>
+            <value>
+                <fullName>Linux/Unix</fullName>
+                <default>false</default>
+                <label>Linux/Unix</label>
+            </value>
+            <value>
+                <fullName>IBM iSeries</fullName>
+                <default>false</default>
+                <label>IBM iSeries</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

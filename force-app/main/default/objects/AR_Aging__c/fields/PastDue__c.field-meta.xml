@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PastDue__c</fullName>
+    <description>PastDue from Oracle data load</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Represents the total of all outstanding invoices where the invoice due date is less than the date of the Oracle AR Aging snapshot.</inlineHelpText>
+    <label>Past Due</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

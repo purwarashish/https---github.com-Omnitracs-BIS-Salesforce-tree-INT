@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Request_Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Request Status</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Contract Request Pending</fullName>
+                <default>true</default>
+                <label>Contract Request Pending</label>
+            </value>
+            <value>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+                <label>Submitted</label>
+            </value>
+            <value>
+                <fullName>Pending Approval</fullName>
+                <default>false</default>
+                <label>Pending Approval</label>
+            </value>
+            <value>
+                <fullName>Assigned</fullName>
+                <default>false</default>
+                <label>In Review</label>
+            </value>
+            <value>
+                <fullName>Contract sent to Customer</fullName>
+                <default>false</default>
+                <label>Sent for Signature</label>
+            </value>
+            <value>
+                <fullName>Contract received - OT signature pending</fullName>
+                <default>false</default>
+                <label>Sent for Counter Signature</label>
+            </value>
+            <value>
+                <fullName>Hold: Credit Approval</fullName>
+                <default>false</default>
+                <label>Hold: Credit Approval</label>
+            </value>
+            <value>
+                <fullName>Hold: Finance Approval</fullName>
+                <default>false</default>
+                <label>Hold: Finance Approval</label>
+            </value>
+            <value>
+                <fullName>Hold: Needs Approval</fullName>
+                <default>false</default>
+                <label>Hold: Needs Approval</label>
+            </value>
+            <value>
+                <fullName>Hold: See Notes</fullName>
+                <default>false</default>
+                <label>Hold: See Notes</label>
+            </value>
+            <value>
+                <fullName>Signed by Omnitracs</fullName>
+                <default>false</default>
+                <label>Signed</label>
+            </value>
+            <value>
+                <fullName>Distributed</fullName>
+                <default>false</default>
+                <label>Distributed</label>
+            </value>
+            <value>
+                <fullName>Pending NMC Setup</fullName>
+                <default>false</default>
+                <label>Pending NMC Setup</label>
+            </value>
+            <value>
+                <fullName>Set-up Complete</fullName>
+                <default>false</default>
+                <label>Set-up Complete</label>
+            </value>
+            <value>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+                <label>Cancelled</label>
+            </value>
+            <value>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+                <label>Rejected</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

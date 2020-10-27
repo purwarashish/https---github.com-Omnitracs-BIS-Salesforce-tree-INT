@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Recalculate</fullName>
+    <availability>online</availability>
+    <description>Recalculates the budget based on the approved requests and claims.</description>
+    <displayType>button</displayType>
+    <height>600</height>
+    <linkType>sControl</linkType>
+    <masterLabel>Recalculate</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <scontrol>Recalculate_Budget</scontrol>
+</WebLink>

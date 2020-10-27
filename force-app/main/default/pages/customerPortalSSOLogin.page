@@ -1,0 +1,7 @@
+<apex:page controller="ssoLoginController" showHeader="false" sidebar="false">
+   <script>
+       var QESSpURL = '{!QESLoginURL}';
+       var siteLoginPage = "&returnurl={!$Site.OriginalUrl}";      
+       window.location = QESSpURL+siteLoginPage;
+ </script> 
+</apex:page>

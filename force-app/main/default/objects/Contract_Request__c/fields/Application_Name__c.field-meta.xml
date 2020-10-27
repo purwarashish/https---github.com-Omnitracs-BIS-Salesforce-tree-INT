@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Application_Name__c</fullName>
+    <externalId>false</externalId>
+    <label>Application Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CoPilot Truck</fullName>
+                <default>false</default>
+                <label>CoPilot Truck</label>
+            </value>
+            <value>
+                <fullName>Amber Alert</fullName>
+                <default>false</default>
+                <label>Amber Alert</label>
+            </value>
+            <value>
+                <fullName>Analytics Manager</fullName>
+                <default>false</default>
+                <label>Analytics Manager</label>
+            </value>
+            <value>
+                <fullName>Content Delivery</fullName>
+                <default>false</default>
+                <label>Content Delivery</label>
+            </value>
+            <value>
+                <fullName>Critical Event Reporting</fullName>
+                <default>false</default>
+                <label>Critical Event Reporting</label>
+            </value>
+            <value>
+                <fullName>CSA Safety Performance Service</fullName>
+                <default>false</default>
+                <label>CSA Safety Performance Service</label>
+            </value>
+            <value>
+                <fullName>Data Sharing</fullName>
+                <default>false</default>
+                <label>Data Sharing</label>
+            </value>
+            <value>
+                <fullName>Incab Video Training ( Protread )</fullName>
+                <default>false</default>
+                <label>Incab Video Training ( Protread )</label>
+            </value>
+            <value>
+                <fullName>Driver Workflow</fullName>
+                <default>false</default>
+                <label>Driver Workflow</label>
+            </value>
+            <value>
+                <fullName>Hours of Service</fullName>
+                <default>false</default>
+                <label>Hours of Service</label>
+            </value>
+            <value>
+                <fullName>In-Cab Scanning</fullName>
+                <default>false</default>
+                <label>In-Cab Scanning</label>
+            </value>
+            <value>
+                <fullName>Media Manager Service</fullName>
+                <default>false</default>
+                <label>Media Manager Service</label>
+            </value>
+            <value>
+                <fullName>NaviGo powered by Telogis</fullName>
+                <default>false</default>
+                <label>NaviGo powered by Telogis</label>
+            </value>
+            <value>
+                <fullName>Performance Monitoring</fullName>
+                <default>false</default>
+                <label>Performance Monitoring</label>
+            </value>
+            <value>
+                <fullName>Trip Manager</fullName>
+                <default>false</default>
+                <label>Trip Manager</label>
+            </value>
+            <value>
+                <fullName>Vehicle Inspection Report</fullName>
+                <default>false</default>
+                <label>Vehicle Inspection Report</label>
+            </value>
+            <value>
+                <fullName>Vehicle Maintenance</fullName>
+                <default>false</default>
+                <label>Vehicle Maintenance</label>
+            </value>
+            <value>
+                <fullName>Virtual Load View</fullName>
+                <default>false</default>
+                <label>Virtual Load View</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

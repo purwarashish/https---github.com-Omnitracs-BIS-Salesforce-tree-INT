@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPageWebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <availability>online</availability>
+    <description>Used to determine if an opportunity should be created for a Customer Portal order</description>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Customer Portal Addon Check</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>https://omnitracs.sharepoint.com/teams/Sales/_layouts/15/guestaccess.aspx?guestaccesstoken=q1FWMVl4s1njb1PeDawfOZ3ia5LbeMIUkX4uxHYP8kI%3D&amp;docid=2_1f1164e2a871a4615ad0fd6c4c7e6559d&amp;rev=1&amp;e=d00238a678ec4426a9ad7b2fc6c27c6c</url>
+</CustomPageWebLink>

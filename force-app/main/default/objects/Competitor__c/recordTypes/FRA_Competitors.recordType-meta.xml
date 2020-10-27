@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FRA_Competitors</fullName>
+    <active>false</active>
+    <description>Used for FRA Competitors</description>
+    <label>FRA Competitors</label>
+    <picklistValues>
+        <picklist>Competitor_Name__c</picklist>
+        <values>
+            <fullName>AlertDriving</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CEPA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DriveCam</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DriverCare%2FGE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driving Dynamics%2FPHH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GreenRoads</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interactive Driving Systems %28Virtual Risk Manager - Zurich%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inthinc</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>National Safety Council %28modules only%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PureSafety %28modules only%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

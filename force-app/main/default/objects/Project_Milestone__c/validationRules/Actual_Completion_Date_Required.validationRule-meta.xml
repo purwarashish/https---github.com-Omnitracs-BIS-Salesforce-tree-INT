@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Actual_Completion_Date_Required</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISPICKVAL( Milestone_Status__c, &quot;Completed&quot;), OR(ISNULL( Actual_Completion_Date__c ),ISNULL( Estimated_Completion_Date__c )),
+$RecordType.Name = &quot;PS Milestone&quot;
+)</errorConditionFormula>
+    <errorMessage>Estimated and Actual Completion Date are required if the Status is &quot;Completed&quot;.</errorMessage>
+</ValidationRule>

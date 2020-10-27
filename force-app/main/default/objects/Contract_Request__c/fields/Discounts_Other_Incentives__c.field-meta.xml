@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Discounts_Other_Incentives__c</fullName>
+    <externalId>false</externalId>
+    <label>Discounts/Incentives Options</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <controllingField>Service_Plan__c</controllingField>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Add&apos;l Terms: Non-QC Unit Trade-In</fullName>
+                <default>false</default>
+                <label>Add&apos;l Terms: Non-QC Unit Trade-In</label>
+            </value>
+            <value>
+                <fullName>Amendment: Retention Toolkit</fullName>
+                <default>false</default>
+                <label>Amendment: Retention Toolkit</label>
+            </value>
+            <value>
+                <fullName>Competitive Rebate</fullName>
+                <default>false</default>
+                <label>Competitive Rebate</label>
+            </value>
+            <value>
+                <fullName>Driver/Dispatch Training</fullName>
+                <default>false</default>
+                <label>Driver/Dispatch Training</label>
+            </value>
+            <value>
+                <fullName>Extended Warranty</fullName>
+                <default>false</default>
+                <label>Extended Warranty</label>
+            </value>
+            <value>
+                <fullName>Free Messaging</fullName>
+                <default>false</default>
+                <label>Free Messaging</label>
+            </value>
+            <value>
+                <fullName>High Volume Terminal Install</fullName>
+                <default>false</default>
+                <label>High Volume Terminal Install</label>
+            </value>
+            <value>
+                <fullName>IGPS</fullName>
+                <default>false</default>
+                <label>IGPS</label>
+            </value>
+            <value>
+                <fullName>In-Service Discount</fullName>
+                <default>false</default>
+                <label>In-Service Discount</label>
+            </value>
+            <value>
+                <fullName>Installation Training</fullName>
+                <default>false</default>
+                <label>Installation Training</label>
+            </value>
+            <value>
+                <fullName>Mounts</fullName>
+                <default>false</default>
+                <label>Mounts</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>Off-Hours Discount</fullName>
+                <default>false</default>
+                <label>Off-Hours Discount</label>
+            </value>
+            <value>
+                <fullName>Other (please describe)</fullName>
+                <default>false</default>
+                <label>Other (please describe)</label>
+            </value>
+            <value>
+                <fullName>Panic Button</fullName>
+                <default>false</default>
+                <label>Panic Button</label>
+            </value>
+            <value>
+                <fullName>Qualcomm Authorized Service Installation</fullName>
+                <default>false</default>
+                <label>Qualcomm Authorized Service Installation</label>
+            </value>
+            <value>
+                <fullName>Qualcomm Installation</fullName>
+                <default>false</default>
+                <label>Qualcomm Installation</label>
+            </value>
+            <value>
+                <fullName>Self-install Credit</fullName>
+                <default>false</default>
+                <label>Self-install Credit</label>
+            </value>
+            <value>
+                <fullName>Technical Services</fullName>
+                <default>false</default>
+                <label>Technical Services</label>
+            </value>
+            <value>
+                <fullName>TrailerTRACS Dry Van</fullName>
+                <default>false</default>
+                <label>TrailerTRACS Dry Van</label>
+            </value>
+            <value>
+                <fullName>TrailerTRACS Reefer</fullName>
+                <default>false</default>
+                <label>TrailerTRACS Reefer</label>
+            </value>
+            <value>
+                <fullName>Web-based SFM Training</fullName>
+                <default>false</default>
+                <label>Web-based SFM Training</label>
+            </value>
+            <value>
+                <fullName>Wireless Panic Button</fullName>
+                <default>false</default>
+                <label>Wireless Panic Button</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>OmniTRACS Evaluation</controllingFieldValue>
+            <controllingFieldValue>OEX Basic Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Bronze @ 49.95/59.95 for one (1) year</controllingFieldValue>
+            <controllingFieldValue>OEX Bronze Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Silver @ 43.95/53.95 for three (3) years</controllingFieldValue>
+            <controllingFieldValue>OEX Silver Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Gold @ 39.95/49.95 for five (5) years</controllingFieldValue>
+            <controllingFieldValue>OEX Gold Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Bronze @ 49.95 for one (1) year</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Lite Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Silver @ 43.95 for three (3) years</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Base Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Enhanced Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100S Foundation Service Plan</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS Lite Message Plan</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS  Message Plan</controllingFieldValue>
+            <controllingFieldValue>JDLink Messaging Plans</controllingFieldValue>
+            <controllingFieldValue>ZXLink Messaging Plans</controllingFieldValue>
+            <controllingFieldValue>T2 Asset Service</controllingFieldValue>
+            <controllingFieldValue>T2 Asset Reefer Service</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Gold @ 39.95 for five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP110 Evaluation</controllingFieldValue>
+            <controllingFieldValue>MCP100T Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Gold @ $39.95 for Five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Silver @ 43.95 for Three (3) years</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Bronze @ $49.95 for One (1) year</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Gold @ $49.95 for Five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Silver @ $53.95 for Three (3) years</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Bronze @ $59.95 for One (1) year</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS &amp; GlobalTRACS Lite Message Plans</controllingFieldValue>
+            <valueName>Installation Training</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OmniTRACS Evaluation</controllingFieldValue>
+            <controllingFieldValue>OEX Basic Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Bronze @ 49.95/59.95 for one (1) year</controllingFieldValue>
+            <controllingFieldValue>OEX Bronze Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Silver @ 43.95/53.95 for three (3) years</controllingFieldValue>
+            <controllingFieldValue>OEX Silver Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Gold @ 39.95/49.95 for five (5) years</controllingFieldValue>
+            <controllingFieldValue>OEX Gold Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Bronze @ 49.95 for one (1) year</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Lite Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Silver @ 43.95 for three (3) years</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Base Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Enhanced Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100S Foundation Service Plan</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS Lite Message Plan</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS  Message Plan</controllingFieldValue>
+            <controllingFieldValue>ZXLink Messaging Plans</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Gold @ 39.95 for five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP110 Evaluation</controllingFieldValue>
+            <controllingFieldValue>MCP100T Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Gold @ $39.95 for Five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Silver @ 43.95 for Three (3) years</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Bronze @ $49.95 for One (1) year</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Gold @ $49.95 for Five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Silver @ $53.95 for Three (3) years</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Bronze @ $59.95 for One (1) year</controllingFieldValue>
+            <controllingFieldValue>Monthly Service</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS &amp; GlobalTRACS Lite Message Plans</controllingFieldValue>
+            <valueName>None</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OmniTRACS Evaluation</controllingFieldValue>
+            <controllingFieldValue>OEX Basic Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Bronze @ 49.95/59.95 for one (1) year</controllingFieldValue>
+            <controllingFieldValue>OEX Bronze Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Silver @ 43.95/53.95 for three (3) years</controllingFieldValue>
+            <controllingFieldValue>OEX Silver Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Gold @ 39.95/49.95 for five (5) years</controllingFieldValue>
+            <controllingFieldValue>OEX Gold Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Bronze @ 49.95 for one (1) year</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Lite Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Silver @ 43.95 for three (3) years</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Base Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Enhanced Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100S Foundation Service Plan</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS Lite Message Plan</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS  Message Plan</controllingFieldValue>
+            <controllingFieldValue>JDLink Messaging Plans</controllingFieldValue>
+            <controllingFieldValue>ZXLink Messaging Plans</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Gold @ 39.95 for five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP110 Evaluation</controllingFieldValue>
+            <controllingFieldValue>MCP100T Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Gold @ $39.95 for Five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Silver @ 43.95 for Three (3) years</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Bronze @ $49.95 for One (1) year</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Gold @ $49.95 for Five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Silver @ $53.95 for Three (3) years</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Bronze @ $59.95 for One (1) year</controllingFieldValue>
+            <controllingFieldValue>Monthly Service</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS &amp; GlobalTRACS Lite Message Plans</controllingFieldValue>
+            <valueName>Qualcomm Authorized Service Installation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OmniTRACS Evaluation</controllingFieldValue>
+            <controllingFieldValue>OEX Basic Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Bronze @ 49.95/59.95 for one (1) year</controllingFieldValue>
+            <controllingFieldValue>OEX Bronze Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Silver @ 43.95/53.95 for three (3) years</controllingFieldValue>
+            <controllingFieldValue>OEX Silver Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Gold @ 39.95/49.95 for five (5) years</controllingFieldValue>
+            <controllingFieldValue>OEX Gold Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Bronze @ 49.95 for one (1) year</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Lite Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Silver @ 43.95 for three (3) years</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Base Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Enhanced Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100S Foundation Service Plan</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS Lite Message Plan</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS  Message Plan</controllingFieldValue>
+            <controllingFieldValue>JDLink Messaging Plans</controllingFieldValue>
+            <controllingFieldValue>ZXLink Messaging Plans</controllingFieldValue>
+            <controllingFieldValue>T2 Asset Service</controllingFieldValue>
+            <controllingFieldValue>T2 Asset Reefer Service</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Gold @ 39.95 for five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP110 Evaluation</controllingFieldValue>
+            <controllingFieldValue>MCP100T Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Gold @ $39.95 for Five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Silver @ 43.95 for Three (3) years</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Bronze @ $49.95 for One (1) year</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Gold @ $49.95 for Five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Silver @ $53.95 for Three (3) years</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Bronze @ $59.95 for One (1) year</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS &amp; GlobalTRACS Lite Message Plans</controllingFieldValue>
+            <valueName>Qualcomm Installation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OmniTRACS Evaluation</controllingFieldValue>
+            <controllingFieldValue>OEX Basic Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Bronze @ 49.95/59.95 for one (1) year</controllingFieldValue>
+            <controllingFieldValue>OEX Bronze Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Silver @ 43.95/53.95 for three (3) years</controllingFieldValue>
+            <controllingFieldValue>OEX Silver Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Gold @ 39.95/49.95 for five (5) years</controllingFieldValue>
+            <controllingFieldValue>OEX Gold Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Bronze @ 49.95 for one (1) year</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Lite Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Silver @ 43.95 for three (3) years</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Base Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Enhanced Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100S Foundation Service Plan</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS Lite Message Plan</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS  Message Plan</controllingFieldValue>
+            <controllingFieldValue>JDLink Messaging Plans</controllingFieldValue>
+            <controllingFieldValue>ZXLink Messaging Plans</controllingFieldValue>
+            <controllingFieldValue>T2 Asset Service</controllingFieldValue>
+            <controllingFieldValue>T2 Asset Reefer Service</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Gold @ 39.95 for five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP110 Evaluation</controllingFieldValue>
+            <controllingFieldValue>MCP100T Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Gold @ $39.95 for Five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Silver @ 43.95 for Three (3) years</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Bronze @ $49.95 for One (1) year</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Gold @ $49.95 for Five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Silver @ $53.95 for Three (3) years</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Bronze @ $59.95 for One (1) year</controllingFieldValue>
+            <controllingFieldValue>GlobalTRACS &amp; GlobalTRACS Lite Message Plans</controllingFieldValue>
+            <valueName>Technical Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEX Basic Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>OEX Bronze Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>OEX Silver Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>OEX Gold Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Lite Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Base Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Enhanced Message Service Plan</controllingFieldValue>
+            <valueName>Amendment: Retention Toolkit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEX Basic Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Bronze @ 49.95/59.95 for one (1) year</controllingFieldValue>
+            <controllingFieldValue>OEX Bronze Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Silver @ 43.95/53.95 for three (3) years</controllingFieldValue>
+            <controllingFieldValue>OEX Silver Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Gold @ 39.95/49.95 for five (5) years</controllingFieldValue>
+            <controllingFieldValue>OEX Gold Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Bronze @ 49.95 for one (1) year</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Lite Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Silver @ 43.95 for three (3) years</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Base Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Enhanced Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100S Foundation Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Gold @ 39.95 for five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP110 Evaluation</controllingFieldValue>
+            <controllingFieldValue>MCP100T Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Gold @ $39.95 for Five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Silver @ 43.95 for Three (3) years</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Bronze @ $49.95 for One (1) year</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Gold @ $49.95 for Five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Silver @ $53.95 for Three (3) years</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Bronze @ $59.95 for One (1) year</controllingFieldValue>
+            <valueName>Competitive Rebate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEX Basic Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Bronze @ 49.95/59.95 for one (1) year</controllingFieldValue>
+            <controllingFieldValue>OEX Bronze Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Silver @ 43.95/53.95 for three (3) years</controllingFieldValue>
+            <controllingFieldValue>OEX Silver Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Gold @ 39.95/49.95 for five (5) years</controllingFieldValue>
+            <controllingFieldValue>OEX Gold Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Bronze @ 49.95 for one (1) year</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Lite Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Silver @ 43.95 for three (3) years</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Base Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Enhanced Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100S Foundation Service Plan</controllingFieldValue>
+            <controllingFieldValue>JDLink Messaging Plans</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Gold @ 39.95 for five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP110 Evaluation</controllingFieldValue>
+            <controllingFieldValue>MCP100T Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Gold @ $39.95 for Five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Silver @ 43.95 for Three (3) years</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Bronze @ $49.95 for One (1) year</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Gold @ $49.95 for Five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Silver @ $53.95 for Three (3) years</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Bronze @ $59.95 for One (1) year</controllingFieldValue>
+            <valueName>Driver/Dispatch Training</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEX Basic Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Bronze @ 49.95/59.95 for one (1) year</controllingFieldValue>
+            <controllingFieldValue>OEX Bronze Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Silver @ 43.95/53.95 for three (3) years</controllingFieldValue>
+            <controllingFieldValue>OEX Silver Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Gold @ 39.95/49.95 for five (5) years</controllingFieldValue>
+            <controllingFieldValue>OEX Gold Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Bronze @ 49.95 for one (1) year</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Lite Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Silver @ 43.95 for three (3) years</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Base Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Enhanced Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100S Foundation Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Gold @ 39.95 for five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP110 Evaluation</controllingFieldValue>
+            <controllingFieldValue>MCP100T Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Gold @ $39.95 for Five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Silver @ 43.95 for Three (3) years</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Bronze @ $49.95 for One (1) year</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Gold @ $49.95 for Five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Silver @ $53.95 for Three (3) years</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Bronze @ $59.95 for One (1) year</controllingFieldValue>
+            <valueName>Extended Warranty</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEX Basic Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>OEX Bronze Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>OEX Silver Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>OEX Gold Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Lite Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Base Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Enhanced Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100S Foundation Service Plan</controllingFieldValue>
+            <controllingFieldValue>T2 Asset Service</controllingFieldValue>
+            <controllingFieldValue>T2 Asset Reefer Service</controllingFieldValue>
+            <controllingFieldValue>MCP100T Service Plan</controllingFieldValue>
+            <valueName>Free Messaging</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEX Basic Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Bronze @ 49.95/59.95 for one (1) year</controllingFieldValue>
+            <controllingFieldValue>OEX Bronze Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Silver @ 43.95/53.95 for three (3) years</controllingFieldValue>
+            <controllingFieldValue>OEX Silver Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Gold @ 39.95/49.95 for five (5) years</controllingFieldValue>
+            <controllingFieldValue>OEX Gold Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Bronze @ 49.95 for one (1) year</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Lite Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Silver @ 43.95 for three (3) years</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Base Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Enhanced Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100S Foundation Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Gold @ 39.95 for five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP110 Evaluation</controllingFieldValue>
+            <controllingFieldValue>MCP100T Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Gold @ $39.95 for Five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Silver @ 43.95 for Three (3) years</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Bronze @ $49.95 for One (1) year</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Gold @ $49.95 for Five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Silver @ $53.95 for Three (3) years</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Bronze @ $59.95 for One (1) year</controllingFieldValue>
+            <valueName>In-Service Discount</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEX Basic Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Bronze @ 49.95/59.95 for one (1) year</controllingFieldValue>
+            <controllingFieldValue>OEX Bronze Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Silver @ 43.95/53.95 for three (3) years</controllingFieldValue>
+            <controllingFieldValue>OEX Silver Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Gold @ 39.95/49.95 for five (5) years</controllingFieldValue>
+            <controllingFieldValue>OEX Gold Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Bronze @ 49.95 for one (1) year</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Lite Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Silver @ 43.95 for three (3) years</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Base Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Enhanced Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100S Foundation Service Plan</controllingFieldValue>
+            <controllingFieldValue>T2 Asset Service</controllingFieldValue>
+            <controllingFieldValue>T2 Asset Reefer Service</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Gold @ 39.95 for five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP110 Evaluation</controllingFieldValue>
+            <controllingFieldValue>MCP100T Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Gold @ $39.95 for Five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Silver @ 43.95 for Three (3) years</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Bronze @ $49.95 for One (1) year</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Gold @ $49.95 for Five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Silver @ $53.95 for Three (3) years</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Bronze @ $59.95 for One (1) year</controllingFieldValue>
+            <valueName>Mounts</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEX Basic Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>OEX Bronze Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>OEX Silver Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>OEX Gold Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Lite Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Base Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Enhanced Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100S Foundation Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100T Service Plan</controllingFieldValue>
+            <valueName>Off-Hours Discount</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEX Basic Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Bronze @ 49.95/59.95 for one (1) year</controllingFieldValue>
+            <controllingFieldValue>OEX Bronze Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Silver @ 43.95/53.95 for three (3) years</controllingFieldValue>
+            <controllingFieldValue>OEX Silver Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Gold @ 39.95/49.95 for five (5) years</controllingFieldValue>
+            <controllingFieldValue>OEX Gold Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Bronze @ 49.95 for one (1) year</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Lite Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Silver @ 43.95 for three (3) years</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Base Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Enhanced Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100S Foundation Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Gold @ 39.95 for five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP110 Evaluation</controllingFieldValue>
+            <controllingFieldValue>MCP100T Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Gold @ $39.95 for Five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Silver @ 43.95 for Three (3) years</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Bronze @ $49.95 for One (1) year</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Gold @ $49.95 for Five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Silver @ $53.95 for Three (3) years</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Bronze @ $59.95 for One (1) year</controllingFieldValue>
+            <valueName>Other (please describe)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEX Basic Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Bronze @ 49.95/59.95 for one (1) year</controllingFieldValue>
+            <controllingFieldValue>OEX Bronze Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Silver @ 43.95/53.95 for three (3) years</controllingFieldValue>
+            <controllingFieldValue>OEX Silver Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Gold @ 39.95/49.95 for five (5) years</controllingFieldValue>
+            <controllingFieldValue>OEX Gold Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Bronze @ 49.95 for one (1) year</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Lite Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Silver @ 43.95 for three (3) years</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Base Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Enhanced Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100S Foundation Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Gold @ 39.95 for five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP110 Evaluation</controllingFieldValue>
+            <controllingFieldValue>MCP100T Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Gold @ $39.95 for Five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Silver @ 43.95 for Three (3) years</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Bronze @ $49.95 for One (1) year</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Gold @ $49.95 for Five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Silver @ $53.95 for Three (3) years</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Bronze @ $59.95 for One (1) year</controllingFieldValue>
+            <valueName>Panic Button</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEX Basic Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Bronze @ 49.95/59.95 for one (1) year</controllingFieldValue>
+            <controllingFieldValue>OEX Bronze Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Silver @ 43.95/53.95 for three (3) years</controllingFieldValue>
+            <controllingFieldValue>OEX Silver Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Gold @ 39.95/49.95 for five (5) years</controllingFieldValue>
+            <controllingFieldValue>OEX Gold Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Bronze @ 49.95 for one (1) year</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Lite Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Silver @ 43.95 for three (3) years</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Base Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Enhanced Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100S Foundation Service Plan</controllingFieldValue>
+            <controllingFieldValue>T2 Asset Service</controllingFieldValue>
+            <controllingFieldValue>T2 Asset Reefer Service</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Gold @ 39.95 for five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP110 Evaluation</controllingFieldValue>
+            <controllingFieldValue>MCP100T Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Gold @ $39.95 for Five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Silver @ 43.95 for Three (3) years</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Bronze @ $49.95 for One (1) year</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Gold @ $49.95 for Five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Silver @ $53.95 for Three (3) years</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Bronze @ $59.95 for One (1) year</controllingFieldValue>
+            <valueName>Self-install Credit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEX Basic Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Bronze @ 49.95/59.95 for one (1) year</controllingFieldValue>
+            <controllingFieldValue>OEX Bronze Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Silver @ 43.95/53.95 for three (3) years</controllingFieldValue>
+            <controllingFieldValue>OEX Silver Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Gold @ 39.95/49.95 for five (5) years</controllingFieldValue>
+            <controllingFieldValue>OEX Gold Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Bronze @ 49.95 for one (1) year</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Lite Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Silver @ 43.95 for three (3) years</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Base Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Enhanced Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100S Foundation Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Gold @ 39.95 for five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP110 Evaluation</controllingFieldValue>
+            <controllingFieldValue>MCP100T Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Gold @ $39.95 for Five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Silver @ 43.95 for Three (3) years</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Bronze @ $49.95 for One (1) year</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Gold @ $49.95 for Five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Silver @ $53.95 for Three (3) years</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Bronze @ $59.95 for One (1) year</controllingFieldValue>
+            <valueName>TrailerTRACS Dry Van</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEX Basic Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Bronze @ 49.95/59.95 for one (1) year</controllingFieldValue>
+            <controllingFieldValue>OEX Bronze Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Silver @ 43.95/53.95 for three (3) years</controllingFieldValue>
+            <controllingFieldValue>OEX Silver Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Gold @ 39.95/49.95 for five (5) years</controllingFieldValue>
+            <controllingFieldValue>OEX Gold Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Bronze @ 49.95 for one (1) year</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Lite Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Silver @ 43.95 for three (3) years</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Base Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Enhanced Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100S Foundation Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Gold @ 39.95 for five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP110 Evaluation</controllingFieldValue>
+            <controllingFieldValue>MCP100T Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Gold @ $39.95 for Five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Silver @ 43.95 for Three (3) years</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Bronze @ $49.95 for One (1) year</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Gold @ $49.95 for Five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Silver @ $53.95 for Three (3) years</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Bronze @ $59.95 for One (1) year</controllingFieldValue>
+            <valueName>TrailerTRACS Reefer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEX Basic Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Bronze @ 49.95/59.95 for one (1) year</controllingFieldValue>
+            <controllingFieldValue>OEX Bronze Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Silver @ 43.95/53.95 for three (3) years</controllingFieldValue>
+            <controllingFieldValue>OEX Silver Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP200 UVP - Gold @ 39.95/49.95 for five (5) years</controllingFieldValue>
+            <controllingFieldValue>OEX Gold Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Bronze @ 49.95 for one (1) year</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Lite Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Silver @ 43.95 for three (3) years</controllingFieldValue>
+            <controllingFieldValue>OEX Platinum Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Base Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Enhanced Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100S Foundation Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP110 UVP - Gold @ 39.95 for five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP110 Evaluation</controllingFieldValue>
+            <controllingFieldValue>MCP100T Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Gold @ $39.95 for Five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Silver @ 43.95 for Three (3) years</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Bronze @ $49.95 for One (1) year</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Gold @ $49.95 for Five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Silver @ $53.95 for Three (3) years</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Bronze @ $59.95 for One (1) year</controllingFieldValue>
+            <valueName>Wireless Panic Button</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEX Bronze Message Service Plan</controllingFieldValue>
+            <valueName>High Volume Terminal Install</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCP200 UVP - Gold @ 39.95/49.95 for five (5) years</controllingFieldValue>
+            <controllingFieldValue>IMCT Base Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Enhanced Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>MCP100T UVP – Gold @ $39.95 for Five (5) years</controllingFieldValue>
+            <controllingFieldValue>MCP100S UVP – Gold @ $49.95 for Five (5) years</controllingFieldValue>
+            <valueName>Add&apos;l Terms: Non-QC Unit Trade-In</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IMCT Base Message Service Plan</controllingFieldValue>
+            <controllingFieldValue>IMCT Enhanced Message Service Plan</controllingFieldValue>
+            <valueName>IGPS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Monthly Service</controllingFieldValue>
+            <valueName>Web-based SFM Training</valueName>
+        </valueSettings>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reponsible_Party__c</fullName>
+    <externalId>false</externalId>
+    <label>Reponsible Party</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Account Manager</fullName>
+                <default>false</default>
+                <label>Account Manager</label>
+            </value>
+            <value>
+                <fullName>Customer Service Manager</fullName>
+                <default>false</default>
+                <label>Customer Service Manager</label>
+            </value>
+            <value>
+                <fullName>Executive Management</fullName>
+                <default>false</default>
+                <label>Executive Management</label>
+            </value>
+            <value>
+                <fullName>Professional Services</fullName>
+                <default>false</default>
+                <label>Professional Services</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

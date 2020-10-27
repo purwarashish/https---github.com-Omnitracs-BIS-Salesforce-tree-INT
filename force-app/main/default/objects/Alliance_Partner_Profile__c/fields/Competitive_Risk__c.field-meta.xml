@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Competitive_Risk__c</fullName>
+    <externalId>false</externalId>
+    <label>Competitive Risk</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>High - Direct Competitor</fullName>
+                <default>false</default>
+                <label>High - Direct Competitor</label>
+            </value>
+            <value>
+                <fullName>Medium - Linked to Direct Competitor</fullName>
+                <default>false</default>
+                <label>Medium - Linked to Direct Competitor</label>
+            </value>
+            <value>
+                <fullName>Low - Sale of Similar products</fullName>
+                <default>false</default>
+                <label>Low - Sale of Similar products</label>
+            </value>
+            <value>
+                <fullName>No Competitive Risk</fullName>
+                <default>false</default>
+                <label>No Competitive Risk</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reseller_required_for_New_Message_Srvc</fullName>
+    <active>true</active>
+    <description>Reseller is required for New Message Service Contracts</description>
+    <errorConditionFormula>AND(ISPICKVAL(Request_Type__c,&apos;New Message Service Contract&apos;)
+, LEN(Reseller__c) = 0 )</errorConditionFormula>
+    <errorDisplayField>Reseller__c</errorDisplayField>
+    <errorMessage>Reseller is required for New Message Service Contracts</errorMessage>
+</ValidationRule>

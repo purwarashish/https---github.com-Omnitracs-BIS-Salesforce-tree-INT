@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Request_Distributed_Duration__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF (ISNULL(Distributed__c ), null, 
+  IF(ISNULL(Pending_NMC_Setup__c), 
+    (IF (ISNULL(Set_up_Complete__c ),  Today() - Distributed__c , Set_up_Complete__c  - Distributed__c )),    Pending_NMC_Setup__c - Distributed__c ))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>If Distributed is blank, the duration is calculated by Today minus the Signed by QC date.
+If Distributed is complete, the duration is calculated by the Distributed Date minus the Signed by QC date.</inlineHelpText>
+    <label>Request Distributed (Duration)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

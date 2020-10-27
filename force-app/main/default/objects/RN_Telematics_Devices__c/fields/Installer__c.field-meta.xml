@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Installer__c</fullName>
+    <externalId>false</externalId>
+    <label>Installer</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Self Install</fullName>
+                <default>false</default>
+                <label>Self Install</label>
+            </value>
+            <value>
+                <fullName>AMFS Install</fullName>
+                <default>false</default>
+                <label>AMFS Install</label>
+            </value>
+            <value>
+                <fullName>Handsfree Install</fullName>
+                <default>false</default>
+                <label>Handsfree Install</label>
+            </value>
+            <value>
+                <fullName>RJA</fullName>
+                <default>false</default>
+                <label>RJA</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

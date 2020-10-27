@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Count_of_C_A_S_E_s__c</fullName>
+    <externalId>false</externalId>
+    <label>Count of C.A.S.E.s</label>
+    <summaryForeignKey>Customer_Asset_Shipping_Estimate__c.Customer_Asset_Shipping_Summary__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

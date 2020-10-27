@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>CustomerInformationSheetEast</fullName>
+        <description>Customer Information Sheet - East</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Account Manager APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside CSR</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside CSR APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>jcrellin@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/Customer_Information_Sheet</template>
+    </alerts>
+    <alerts>
+        <fullName>CustomerInformationSheetNotification</fullName>
+        <ccEmails>omnitracs.sfdc.noreply@omnitracs.com</ccEmails>
+        <description>Customer Information Sheet Notification</description>
+        <protected>false</protected>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/Customer_Information_Sheet_Detailed</template>
+    </alerts>
+    <alerts>
+        <fullName>CustomerInformationSheetWest</fullName>
+        <description>Customer Information Sheet - West</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Account Manager APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside CSR</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Inside CSR APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>kpeterso@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/Customer_Information_Sheet</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_PANA_on_completed_NCIS</fullName>
+        <ccEmails>panancis@panapacific.com</ccEmails>
+        <ccEmails>PAMNCIS@qualcomm.com</ccEmails>
+        <description>Notify PANA on completed NCIS</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/Notify_PANA_NCIS_Complete</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Last_Email_Sent</fullName>
+        <field>Last_Pana_Email_Sent__c</field>
+        <formula>NOW()</formula>
+        <name>Last Email Sent</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PANA_Email_Sent</fullName>
+        <field>Email_Status__c</field>
+        <literalValue>Sent to PANA</literalValue>
+        <name>PANA Email Sent</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reset_Trigger_Email</fullName>
+        <field>Trigger_Email__c</field>
+        <literalValue>0</literalValue>
+        <name>Reset Trigger Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>UncheckSendEmail</fullName>
+        <field>Send_Email__c</field>
+        <literalValue>0</literalValue>
+        <name>Uncheck Send Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_CIS_DOT_Number_from_Account</fullName>
+        <field>DOT_Number__c</field>
+        <formula>Account__r.US_DOT__c</formula>
+        <name>Update CIS DOT Number from Account</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Number_Emails_Sent</fullName>
+        <field>Number_of_Pana_Emails__c</field>
+        <formula>Number_of_Pana_Emails__c +1</formula>
+        <name>Update Number Emails Sent</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>CIS - Send Email Notification</fullName>
+        <actions>
+            <name>CustomerInformationSheetNotification</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.Name</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Customer_Information_Sheet__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Direct CIS</value>
+        </criteriaItems>
+        <description>Send an email notification when a CIS is created</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>CIS%3A DOT Number</fullName>
+        <actions>
+            <name>Update_CIS_DOT_Number_from_Account</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Customer_Information_Sheet__c.DOT_Number__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>This workflow populates the DOT Number on the CIS if null from the Account.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Notify PANA NCIS Form</fullName>
+        <actions>
+            <name>Notify_PANA_on_completed_NCIS</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Last_Email_Sent</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PANA_Email_Sent</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Reset_Trigger_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Number_Emails_Sent</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Customer_Information_Sheet__c.Trigger_Email__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Customer_Information_Sheet__c.Status_Formula__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Customer_Information_Sheet__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Partner CIS</value>
+        </criteriaItems>
+        <description>Notify PANA about a completed NCIS Form</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Send Email to Account Team - East</fullName>
+        <actions>
+            <name>CustomerInformationSheetEast</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>UncheckSendEmail</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Customer_Information_Sheet__c.Send_Email__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.District__c</field>
+            <operation>equals</operation>
+            <value>East District 1,East District 2,East District 3,East District 4,East District 5,East District 6</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Customer_Information_Sheet__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Direct CIS</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Send Email to Account Team - West</fullName>
+        <actions>
+            <name>CustomerInformationSheetWest</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>UncheckSendEmail</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Customer_Information_Sheet__c.Send_Email__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.District__c</field>
+            <operation>equals</operation>
+            <value>West District 1,West District 2,West District 3,West District 4,West District 5,West District 6</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Customer_Information_Sheet__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Direct CIS</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

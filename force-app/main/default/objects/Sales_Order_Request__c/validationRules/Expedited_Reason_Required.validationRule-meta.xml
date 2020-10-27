@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expedited_Reason_Required</fullName>
+    <active>true</active>
+    <description>Expedited reason should be required if anything but Ground or Customer Pickup is selected.</description>
+    <errorConditionFormula>AND (
+OR(ISPICKVAL( Ship_Method__c , &quot;Overnight AM&quot;),
+ISPICKVAL(Ship_Method__c , &quot;Overnight PM&quot;)),
+( Expedited_Reason__c  =&quot;&quot; )
+)</errorConditionFormula>
+    <errorDisplayField>Expedited_Reason__c</errorDisplayField>
+    <errorMessage>Expedited Reason is required when Ship Method is Overnight AM or PM</errorMessage>
+</ValidationRule>

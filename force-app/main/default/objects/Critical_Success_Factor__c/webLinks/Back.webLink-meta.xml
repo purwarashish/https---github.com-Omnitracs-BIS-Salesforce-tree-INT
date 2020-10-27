@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Back</fullName>
+    <availability>online</availability>
+    <description>Return to the Strategic Account Profile record</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Return to Strategic Account Profile</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/{!Critical_Success_Factor__c.Strategic_Account_ProfileId__c}</url>
+</WebLink>

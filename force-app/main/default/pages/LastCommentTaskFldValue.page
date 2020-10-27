@@ -1,0 +1,11 @@
+<apex:page sidebar="false" showHeader="false" standardController="Account" >
+
+  <apex:form >
+      <div>
+          <apex:outputLabel value="Last Task Comment" style="margin-right:2% !important;"/>
+         
+          <apex:outputText id="showDetail"  value="{!Account.Last_Task_Comment__c}"/>
+      </div>
+      
+  </apex:form>
+</apex:page>

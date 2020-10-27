@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AND_Display_If__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Optional. If a formula is provided, this field will be displayed if the &quot;Display For Product Type&quot; matches AND this formula evaluates to TRUE. Formula evaluated against the Quote Product record.</inlineHelpText>
+    <label>AND Display If</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

@@ -1,0 +1,926 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Contact_Assigned</fullName>
+        <description>Contact Assigned</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/Contact_Assigned_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Contract_Customer_New</fullName>
+        <description>Contract Customer New Sales Contact</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Account Owner APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Service Rep APEX</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Sales/Contract_C</template>
+    </alerts>
+    <alerts>
+        <fullName>Customer_Portal_Activation_Email</fullName>
+        <ccEmails>omnitracs.sfdc.noreply@omnitracs.com</ccEmails>
+        <description>Customer Portal Activation Email</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Unity_Invitor_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/Customer_Portal_Activation_Success</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Marketing_Ops</fullName>
+        <description>Email Marketing Ops</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>austins@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>swalsh@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>MarketoEmailTemplates/First_and_Last_Name_Changes</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_to_BDR_team_Mexico</fullName>
+        <description>Email to BDR team (Contact - Mexico)</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jpaulo@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>lesquivel@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>All_Email_Templates/Lead_Assigned_to_Mexico_BDR_Contact</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_Assigned_to_Sylectus_BDR_Contact</fullName>
+        <ccEmails>Sylectus.BGT@omnitracs.com</ccEmails>
+        <description>Lead Assigned to Sylectus BDR (Contact)</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>moldham@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>swalsh@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>All_Email_Templates/Lead_Assigned_to_Sylectus_BDR_Contact</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_BDR_of_Fast_Tracked_MQL_Contact</fullName>
+        <description>Notify BDR of Fast Tracked MQL (Contact)</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>moldham@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>swalsh@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>All_Email_Templates/Lead_Assigned_to_Omni_BDR_Contact</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_Inside_Sales</fullName>
+        <ccEmails>BDR.team@omnitracs.com</ccEmails>
+        <description>Notify Inside Sales</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/Contact_Assigned_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_XRS_BDR_of_MQL</fullName>
+        <ccEmails>Ryan.Barnett@xrscorp.com</ccEmails>
+        <description>Notify XRS BDR of MQL (Contact)</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>moldham@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>swalsh@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>MarketoEmailTemplates/Lead_Assigned_to_XRS_ContacT</template>
+    </alerts>
+    <alerts>
+        <fullName>Roadnet_MQLs_Contacts</fullName>
+        <description>Roadnet MQLs (Contacts)</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>moldham@roadnet.omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>swalsh@omnitracs.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>All_Email_Templates/Lead_Assigned_to_RN_BDR_Contact</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_10_day_Reminder_Unity_Invite_Not_Accepted</fullName>
+        <description>Send 10-day Reminder - Unity Invite Not Accepted</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Unity_Invitor_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/Unity_Invite_NOT_Accepted</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_13_day_Reminder_Unity_Invite_Not_Accepted</fullName>
+        <description>Send 13-day Reminder - Unity Invite Not Accepted</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Unity_Invitor_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/Unity_Invite_NOT_Accepted</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_7_day_Reminder_Unity_Invite_Not_Accepted</fullName>
+        <description>Send 7-day Reminder - Unity Invite Not Accepted</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Unity_Invitor_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/Unity_Invite_NOT_Accepted</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Survey_Email</fullName>
+        <description>Send Survey Email</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>CER_Template_Folder/CER_Send_Survey</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Unity_Direct_Sales_Invite_Email</fullName>
+        <ccEmails>omnitracs.sfdc.noreply@omnitracs.com</ccEmails>
+        <description>Send Unity Direct Sales Invite Email</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Unity_Invitor_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.custregistration@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/Unity_Invite_Email_Direct_Sales_Invite</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Unity_Invite_Email</fullName>
+        <ccEmails>omnitracs.sfdc.custregistration@omnitracs.com</ccEmails>
+        <description>Send Unity Invite Email</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Unity_Invitor_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.custregistration@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/Unity_Invite_Email_Sales_Invite</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Unity_Invite_Email_colleage</fullName>
+        <description>Send Unity Invite Email - Colleague</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Unity_Invitor_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QESAutomatedMessages/Unity_Invite_Email_Colleague_Invite</template>
+    </alerts>
+    <alerts>
+        <fullName>XRS_SaaS_Welcome_Email</fullName>
+        <description>XRS SaaS Welcome Email</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/XRS_Welcome_Email_to_Customer</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>CampaignOptOut</fullName>
+        <field>Campaign_Opt_Out__c</field>
+        <literalValue>1</literalValue>
+        <name>Campaign Opt Out</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ContactInactive</fullName>
+        <field>Inactive__c</field>
+        <literalValue>1</literalValue>
+        <name>Contact - Inactive</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Do_not_call</fullName>
+        <description>sets do not call check box to true on a contact</description>
+        <field>DoNotCall</field>
+        <literalValue>1</literalValue>
+        <name>Do not call</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>EmailOptOut</fullName>
+        <description>Set the Email Opt Out flag to True</description>
+        <field>HasOptedOutOfEmail</field>
+        <literalValue>1</literalValue>
+        <name>Email Opt Out</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>FaxOptOut</fullName>
+        <field>HasOptedOutOfFax</field>
+        <literalValue>1</literalValue>
+        <name>Fax Opt Out</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>MailOptOut</fullName>
+        <field>Mail_Opt_Out__c</field>
+        <literalValue>1</literalValue>
+        <name>Mail Opt Out</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PhoneOptOut</fullName>
+        <field>Phone_Opt_Out__c</field>
+        <literalValue>1</literalValue>
+        <name>Phone Opt Out</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Populate_Latest_Marketing_Qualified_Date</fullName>
+        <description>Populates Latest Marketing Qualified Date with today&apos;s date.</description>
+        <field>Latest_Marketing_Qualified_Date__c</field>
+        <formula>Now()</formula>
+        <name>Populate Latest Marketing Qualified Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Con_Lead_Source_Most_Recent_Upd_Date</fullName>
+        <field>Lead_Source_Most_Recent_Update_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>Set Con Lead Source Most Recent Upd Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Cont_Lead_Source_Update_Date</fullName>
+        <field>Lead_Source_Update_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>Set Cont Lead Source Update Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>UNITYTokenReset</fullName>
+        <description>Reset Unity Invite token to blank</description>
+        <field>UnityInviteToken__c</field>
+        <name>UNITYTokenReset</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>UnityInviteSent_to_false</fullName>
+        <field>UnityInviteSent__c</field>
+        <literalValue>0</literalValue>
+        <name>UnityInviteSent to false</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Unity_Invite_Not_Accepted_Reminder</fullName>
+        <field>Unity_Invite_Reminder_Sent__c</field>
+        <formula>Now()</formula>
+        <name>Unity Invite Not Accepted Reminder</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Sent_Unity_Invite</fullName>
+        <description>Updates checkbox on Contact when invite is sent to Unity customer</description>
+        <field>UnityInviteSent__c</field>
+        <literalValue>1</literalValue>
+        <name>Update Sent Unity Invite</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Unity_Invite_Sent_Date</fullName>
+        <description>Updated date invite was sent</description>
+        <field>Unity_Invite_Date_Time__c</field>
+        <formula>now()</formula>
+        <name>Update Unity Invite Sent Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_contact_verified_date</fullName>
+        <field>Contact_Verified_Date__c</field>
+        <formula>if(Contact_Verified__c = TRUE, TEXT(NOW()) + &quot; &quot; + &quot;By&quot; + &quot; &quot; +$User.FirstName + &quot; &quot; + $User.LastName, NULL)</formula>
+        <name>Update contact verified date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>Closed Customers - Inactivate Contacts</fullName>
+        <actions>
+            <name>CampaignOptOut</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Do_not_call</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>EmailOptOut</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>FaxOptOut</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>MailOptOut</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PhoneOptOut</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.QWBS_Status__c</field>
+            <operation>equals</operation>
+            <value>Out of Business,Closed Contract Customer,Inactive,Bankrupt</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>Integration Partner Accounts,Partner Account (Reseller),T&amp;L Sales Accounts</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Bypass_Workflows__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>If a customer is closed, make the contact inactive.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact - Lead Source Change</fullName>
+        <actions>
+            <name>Set_Cont_Lead_Source_Update_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Set lead source updated date on the contact when the lead source changes</description>
+        <formula>ISCHANGED(  LeadSource )   &amp;&amp; $User.Bypass_Workflows__c = false</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact - Lead Source Most Recent Change</fullName>
+        <actions>
+            <name>Set_Con_Lead_Source_Most_Recent_Upd_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Set lead source most recent updated date on the contact when the lead source most recent changes</description>
+        <formula>ISCHANGED( Lead_Source_Most_Recent__c ) &amp;&amp; $User.Bypass_Workflows__c = false</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact Verified date</fullName>
+        <actions>
+            <name>Update_contact_verified_date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Sets date of when the contact is verified. Part of athena project.</description>
+        <formula>ISCHANGED(Contact_Verified__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contract Customer - New Sales Contact</fullName>
+        <actions>
+            <name>Contract_Customer_New</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contact.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Sales</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.QWBS_Status__c</field>
+            <operation>equals</operation>
+            <value>Contract Customer</value>
+        </criteriaItems>
+        <description>Email notification to account team members when new contacts are created</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Customer Portal Activation Success - Colleague</fullName>
+        <actions>
+            <name>Customer_Portal_Activation_Email</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Send email to the Customer when he completes the invitation process initiated by the sales person and the account not a customer yet.</description>
+        <formula>AND( OR(UnityStatus__c = LOWER(&quot;USER&quot;) , UnityStatus__c = &quot;USER&quot;) , Email &lt;&gt; NULL, UnityInviteSent__c = true, UnityInviteToken__c != &quot;&quot;,OR(Unity_Prov_Type__c = &apos;COLLEAGUE_INVITE&apos;,AND(Account.UnityOnboardStatus__c = &apos;CUSTOMER&apos;,Unity_Prov_Type__c = &apos;SALES_INVITE&apos;)),  $User.Bypass_Workflows__c = false)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Customer Portal Activation Success - Direct Sales</fullName>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7</booleanFilter>
+        <criteriaItems>
+            <field>Contact.UnityStatus__c</field>
+            <operation>equals</operation>
+            <value>USER</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.Email</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.UnityInviteSent__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.UnityInviteToken__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.Unity_Prov_Type__c</field>
+            <operation>equals</operation>
+            <value>NEW_USER</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.UnityOnboardStatus__c</field>
+            <operation>notEqual</operation>
+            <value>CUSTOMER</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Bypass_Workflows__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Customer_Portal_Activation_Email</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Customer Portal Activation Success - Sales</fullName>
+        <active>true</active>
+        <description>Send email to the Customer when he completes the invitation process initiated by the sales person and the account not a customer yet.</description>
+        <formula>AND( OR(UnityStatus__c = LOWER(&quot;USER&quot;) , UnityStatus__c = &quot;USER&quot;) , Email &lt;&gt; NULL, UnityInviteSent__c = true, UnityInviteToken__c != &quot;&quot;,AND(Unity_Prov_Type__c = &apos;SALES_INVITE&apos;,Account.UnityOnboardStatus__c != &apos;CUSTOMER&apos;), $User.Bypass_Workflows__c = false)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Customer_Portal_Activation_Email</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Customer Portal Activation Success - VAR</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contact.Send_Success_Email__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Send email to the Customer when he completes the invitation process initiated by the VAR and the account not a customer yet.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Customer_Portal_Activation_Email</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Inactive Contacts</fullName>
+        <actions>
+            <name>CampaignOptOut</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Do_not_call</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>EmailOptOut</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>FaxOptOut</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>MailOptOut</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PhoneOptOut</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contact.Inactive__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Bypass_Workflows__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>If a contact is inactive we need to make all the opt out options (email, phone, campaign) set to true.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Latest Marketing Qualified Date - Populate when MQL%27ed</fullName>
+        <actions>
+            <name>Populate_Latest_Marketing_Qualified_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Populates Latest Marketing Qualified Date with today&apos;s date.</description>
+        <formula>And( $User.Bypass_Workflows__c = false, ISPICKVAL( Lifecycle_Status__c , &apos;MQL&apos;) || ISPICKVAL( Lifecycle_Status__c , &apos;MQC&apos;))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Notify BDR of MQL %28Contact - Roadnet%29</fullName>
+        <actions>
+            <name>Roadnet_MQLs_Contacts</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>And( $User.Bypass_Workflows__c = false, ISPICKVAL( Lifecycle_Status__c , &apos;MQL&apos;),OwnerId=&apos;00550000003KxwF&apos; || OwnerId=&apos;00G500000022SmB&apos;, ISPICKVAL( Lead_Origin__c , &apos;Roadnet&apos;) )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Notify BDR of MQL %28Contact - XRS%29</fullName>
+        <actions>
+            <name>Notify_XRS_BDR_of_MQL</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>And( $User.Bypass_Workflows__c = false, ISPICKVAL( Lifecycle_Status__c , &apos;MQL&apos;)|| ISPICKVAL( Lifecycle_Status__c , &apos;MQC&apos;),OwnerId=&apos;00550000003KxwF&apos; || OwnerId=&apos;00G500000022SmB&apos;, ISPICKVAL( Lead_Origin__c , &apos;XRS&apos;) )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Notify Omnitracs Mexico BDR of MQL %28Contact - Mexico%29</fullName>
+        <actions>
+            <name>Email_to_BDR_team_Mexico</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>And( $User.Bypass_Workflows__c = false, ISPICKVAL( Lifecycle_Status__c , &apos;MQL&apos;),OwnerId=&apos;00G50000002XxTB&apos;, ISPICKVAL( Lead_Origin__c , &apos;Omnitracs Mexico&apos;) )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Notify Sylectus BDR of MQL %28Contact - Sylectus%29</fullName>
+        <actions>
+            <name>Lead_Assigned_to_Sylectus_BDR_Contact</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>And( $User.Bypass_Workflows__c = false, ISPICKVAL( Lifecycle_Status__c , &apos;MQL&apos;),OwnerId=&apos;00550000003KxwF&apos; || OwnerId=&apos;00G500000022SmB&apos;, ISPICKVAL( Lead_Origin__c , &apos;Sylectus&apos;) )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Send Survey Email</fullName>
+        <actions>
+            <name>Send_Survey_Email</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contact.Survey_Email_Sent__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Send Unity Invite Email - Colleague</fullName>
+        <actions>
+            <name>Send_Unity_Invite_Email_colleage</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Update_Sent_Unity_Invite</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Unity_Invite_Sent_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Email_Colleague_Invite</name>
+            <type>Task</type>
+        </actions>
+        <active>true</active>
+        <description>Send email to the Customer if UnityStatus field is equal to Invited and unityprov is colleague</description>
+        <formula>AND( $User.Bypass_Workflows__c = false, OR(UnityStatus__c = LOWER(&quot;INVITED&quot;) , UnityStatus__c = &quot;INVITED&quot;) ,  Email &lt;&gt; NULL,  UnityInviteSent__c = false,  UnityInviteToken__c != &quot;&quot;,  OR(Unity_Prov_Type__c = &apos;COLLEAGUE_INVITE&apos;,        AND(Unity_Prov_Type__c = &apos;SALES_INVITE&apos;,                 OR( Account.UnityOnboardStatus__c = &apos;CUSTOMER&apos;,                 Account.UnityOnboardStatus__c = &apos;PENDING_CUSTOMER&apos;))       )   )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Send Unity Invite Email - Direct Sales</fullName>
+        <actions>
+            <name>Send_Unity_Direct_Sales_Invite_Email</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Update_Sent_Unity_Invite</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Unity_Invite_Sent_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Email_Sales_Invite</name>
+            <type>Task</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7</booleanFilter>
+        <criteriaItems>
+            <field>User.Bypass_Workflows__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.UnityStatus__c</field>
+            <operation>equals</operation>
+            <value>INVITED</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.Email</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.UnityInviteSent__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.UnityInviteToken__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.Unity_Prov_Type__c</field>
+            <operation>equals</operation>
+            <value>NEW_USER</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.UnityOnboardStatus__c</field>
+            <operation>notEqual</operation>
+            <value>CUSTOMER,PENDING_CUSTOMER</value>
+        </criteriaItems>
+        <description>Send email to the Customer if UnityStatus field is equal to Invited</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Send Unity Invite Email - Sales</fullName>
+        <actions>
+            <name>Send_Unity_Invite_Email</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Update_Sent_Unity_Invite</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Unity_Invite_Sent_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Email_Sales_Invite</name>
+            <type>Task</type>
+        </actions>
+        <active>true</active>
+        <description>Send email to the Customer if UnityStatus field is equal to Invited</description>
+        <formula>AND( $User.Bypass_Workflows__c = false, OR(UnityStatus__c = LOWER(&quot;INVITED&quot;) , UnityStatus__c = &quot;INVITED&quot;) ,  Email &lt;&gt; NULL,  UnityInviteSent__c = false,  UnityInviteToken__c != &quot;&quot;, OR(Unity_Prov_Type__c=&apos;SALES_INVITE&apos;,Unity_Prov_Type__c=&apos;VAR&apos;), AND( Account.UnityOnboardStatus__c != &apos;CUSTOMER&apos;,         Account.UnityOnboardStatus__c != &apos;PENDING_CUSTOMER&apos;) )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>UNITY Cancel Invite Reset</fullName>
+        <actions>
+            <name>UNITYTokenReset</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>UnityInviteSent_to_false</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contact.UnityStatus__c</field>
+            <operation>equals</operation>
+            <value>STAGING</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.UnityInviteSent__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Bypass_Workflows__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Reset Unity Invite process when Invitation is Cancelled</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Unity Invite Not Accepted</fullName>
+        <actions>
+            <name>Unity_Invite_Not_Accepted_Reminder</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contact.UnityStatus__c</field>
+            <operation>equals</operation>
+            <value>INVITED</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.Unity_Invite_Date_Time__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.Unity_Invitor_Email__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Bypass_Workflows__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Send reminder in 7, 10 and 13 days</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Send_7_day_Reminder_Unity_Invite_Not_Accepted</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Contact.Unity_Invite_Date_Time__c</offsetFromField>
+            <timeLength>7</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Send_10_day_Reminder_Unity_Invite_Not_Accepted</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Contact.Unity_Invite_Date_Time__c</offsetFromField>
+            <timeLength>10</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Send_13_day_Reminder_Unity_Invite_Not_Accepted</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Contact.Unity_Invite_Date_Time__c</offsetFromField>
+            <timeLength>13</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>XRS SaaS Welcome Email - VAR</fullName>
+        <actions>
+            <name>XRS_SaaS_Welcome_Email</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contact.Send_Success_Email_XRS__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Send email to the Customer when he completes the invitation process initiated by the VAR and the account not a customer yet.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <tasks>
+        <fullName>Email_Colleague_Invite</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Completed</status>
+        <subject>Email: Colleague Invite</subject>
+    </tasks>
+    <tasks>
+        <fullName>Email_Sales_Invite</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Completed</status>
+        <subject>Email: Sales Invite</subject>
+    </tasks>
+</Workflow>

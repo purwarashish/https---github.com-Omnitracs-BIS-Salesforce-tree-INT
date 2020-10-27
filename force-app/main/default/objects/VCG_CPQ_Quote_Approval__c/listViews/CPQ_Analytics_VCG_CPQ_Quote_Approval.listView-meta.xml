@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CPQ_Analytics_VCG_CPQ_Quote_Approval</fullName>
+    <filterScope>Queue</filterScope>
+    <label>CPQ Analytics</label>
+    <queue>CPQ_Analytics</queue>
+    <sharedTo>
+        <allInternalUsers/>
+    </sharedTo>
+</ListView>

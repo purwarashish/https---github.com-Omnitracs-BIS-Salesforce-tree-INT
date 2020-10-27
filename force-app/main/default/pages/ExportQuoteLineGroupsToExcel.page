@@ -1,0 +1,18 @@
+<apex:page controller="UploadCSVAssetsController" contentType="application/vnd.ms-excel#MigratedQuoteLineGroups.xls">
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!qlgList}" var="iqlg">
+           <apex:column headerValue="SBQQ__Account__c">
+                {!iqlg.SBQQ__Account__c}
+           </apex:column>
+           <apex:column headerValue="SBQQ__Quote__c">
+                {!iqlg.SBQQ__Quote__c}
+           </apex:column>
+           <apex:column headerValue="SBQQ__Number__c">
+                {!iqlg.SBQQ__Number__c}
+           </apex:column>
+           <apex:column headerValue="From_Asset_Migration__c">
+                {!iqlg.From_Asset_Migration__c}
+           </apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

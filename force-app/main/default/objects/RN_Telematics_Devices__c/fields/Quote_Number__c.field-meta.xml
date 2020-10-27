@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote_Number__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Lookup to the Quote # associated to the device</description>
+    <externalId>false</externalId>
+    <label>Quote Number</label>
+    <referenceTo>VCG_CPQ_Quote__c</referenceTo>
+    <relationshipLabel>RN Telematics Devices</relationshipLabel>
+    <relationshipName>RN_Telematics_Devices</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

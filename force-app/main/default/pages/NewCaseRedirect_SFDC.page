@@ -1,0 +1,36 @@
+<apex:page showHeader="false" sidebar="false"> 
+
+    <apex:includeScript value="/support/console/32.0/integration.js"/> 
+
+    <script type="text/javascript">    
+
+        var landingPage = '/setup/ui/recordtypeselect.jsp?ent=Case&save_new_url=%2F500%2Fe%3FretURL%3D%252F{!$CurrentPage.parameters.def_account_id}';
+        //var landingPage = '/apex/NewCaseRedirect?ent=Case&save_new_url=%2F500%2Fe%3FretURL%3D%252F{!$CurrentPage.parameters.def_account_id}';
+        
+        if ('{!$CurrentPage.parameters.def_account_id}' != '') {
+            landingPage = landingPage + '%26def_account_id%3D{!$CurrentPage.parameters.def_account_id}';
+        }
+        
+        if ('{!$CurrentPage.parameters.def_contact_id}' != '') {
+            landingPage = landingPage + '%26def_contact_id%3D{!$CurrentPage.parameters.def_contact_id}';
+        }
+        
+        if ('{!$CurrentPage.parameters.busUnit}' != '') {
+            landingPage = landingPage + '%26busUnit%3D{!$CurrentPage.parameters.busUnit}';
+        }
+    
+        if (!(sforce.console.isInConsole())) { 
+            window.location.replace(landingPage);
+        }
+        
+        // override subtab with the landing page requested 
+        sforce.console.getEnclosingPrimaryTabId(getPrimaryTabId); 
+        
+        function getPrimaryTabId(result) { 
+            primaryTabId = result.id; 
+            sforce.console.openPrimaryTab(primaryTabId,landingPage,true);
+        };
+    
+    </script> 
+    
+</apex:page>

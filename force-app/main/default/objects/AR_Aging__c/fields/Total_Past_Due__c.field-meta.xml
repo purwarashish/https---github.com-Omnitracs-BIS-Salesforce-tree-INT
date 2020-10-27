@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Past_Due__c</fullName>
+    <description>Total of all accounts receivable for this account that are past due.</description>
+    <externalId>false</externalId>
+    <formula>Past_Due_31_60_Days__c + Past_Due_61_90_Days__c + Past_Due_91_Days__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Total of all accounts receivable for this account that are past due</inlineHelpText>
+    <label>Past Due &gt; 31 Days</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

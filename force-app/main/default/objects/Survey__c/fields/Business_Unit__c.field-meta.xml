@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Unit__c</fullName>
+    <description>Case Business Unit</description>
+    <externalId>false</externalId>
+    <formula>TEXT(Case__r.Business_Unit__c)</formula>
+    <inlineHelpText>Business Unit on the Case record</inlineHelpText>
+    <label>Business Unit</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

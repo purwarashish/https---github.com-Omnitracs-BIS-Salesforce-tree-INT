@@ -1,0 +1,249 @@
+<apex:page id="thePage" showHeader="false"  sidebar="false" cache="true" 
+           controller="MainController" action="{!gsm_initSingleton}">               
+
+<div id="loadingElementParentDiv" class="loadingElementParentDiv"
+    style="display:block; z-index: 8999; height: 100%; width: 100%; position: fixed; display:none;">
+    <div 
+        style="z-index: 9000; background-color: black; filter: alpha(opacity =   30); opacity: 0.3; height: 100%; position: fixed; width: 100%;display:block;">
+        <div id="innerLoadingDiv">
+                <img src="/img/loading.gif" style="left: 50%;top: 50%;position: absolute;display: block;" / >
+        </div>    
+    </div>
+</div>   
+
+<apex:include id="mainpage" pageName="mainPage" />
+<style>
+ul.searchArticleList2 li a{
+display:inline !important;
+}
+</style>
+<script type="text/javascript">
+	window.onload = function() {
+	    var links = document.getElementsByTagName('a');
+		for(var i=0; i<links.length; i++) {
+		  if(links[i].href == 'http://customer.int.omnitracs.com/'){
+		  	links[i].href = 'https://login.int.omnitracs.com/go.jsp?d=home';
+		  }
+		  else if(links[i].href == 'http://customer.omnitracs.com/'){
+		  	links[i].href = 'https://login.omnitracs.com/go.jsp?d=home';
+		  }
+		}
+	};
+</script>
+<script>
+    var pagename="supportsearcharticles";
+    function documentReady() {
+       $('[id*=next]').hide();
+       $('[id*=previous]').hide();
+       $('a.bcklnk').each(function(){
+           var text = '{!gsm.returnURL}';
+           if($(location).attr('href').search('myqualcomm.forcedev.cs4.force.com') != -1)
+            {
+                $(this).attr('href','/demo/'+text);
+            }
+            else
+            {
+                $(this).attr('href','/apex/'+text);
+            }
+            }
+        );
+        $('a.searchTitle').click(
+            function(e)
+            {
+              e.preventDefault();
+              e.stopPropagation();
+              var URL = $(this).attr('href');
+              window.open(URL,'', 'height=550,width=1024,location=no,resizable=yes,toolbar=no,status=no,menubar=no,scrollbars=yes');
+            }
+        );
+        $('a.artlink').click(
+            function(e)
+            {
+               redir1($(this).attr('href'),e);
+            }
+        );
+        $('a.bcklnk').click(
+            function(e)
+            {
+               redir($(this).attr('href'),e);
+            }
+        );
+    }
+    $(document).ready(
+        function()
+        {
+            documentReady();
+        }
+    );
+       
+        function redir1(rUrl,e)
+        {
+            e.preventDefault();
+            e.stopPropagation();
+            $("#thePage\\:theForm\\:hiddenInputField").val(rUrl);
+            $("#thePage\\:theForm\\:hiddencmdlink").click();
+            return false;
+        }
+       
+        function redir(rUrl,e)
+        {
+            e.preventDefault();
+            e.stopPropagation();
+            $("#thePage\\:theForm\\:hiddenInputField").val(rUrl);
+            $("#thePage\\:theForm\\:hiddencmdlink1").click();
+            return false;
+        }      
+</script>
+<div id="bodyWrapper">
+<div class="breadcumWrp">
+<ul>
+    <li>
+        <a href="https://login.{!$Label.CPURL}go.jsp?d=home" class="bcklnk">Home</a><span>|</span>
+        <a class="bcklnk" href="/apex/support">support</a><span>|</span>
+        <a href="" class="bcklnk">Search Result</a><span>|</span>
+        Articles
+        
+    </li>
+</ul>
+<h1 style="display: normal">Articles</h1>
+<hr width="910px" align="center" style="height:1px;border:1px;color:#dadce0;background-color:#dadce0;" />
+</div>
+<div id="middle-container">
+<apex:form id="theForm">
+        <div class="searchResultInnerLeft fll" style="width:100%">
+        <a href = "#"  class = "bcklnk buttonSet newButton11">Back to Search Results</a>
+        <center><h4 class="sdfcBottomSpace10" style="color:#4f4649">Search Results for {!gsm.searchValue}</h4></center>
+        <div class="MenuBoxHeader">
+        <h3>
+                <span class="floatL">Answers</span>
+                <span class="traRightSpace30 floatR"></span>
+         </h3>
+         
+         <apex:variable var="anyDocument" value="false" />
+         <apex:variable var="oddrow" value="True" />
+         <apex:variable var="hasMoreValue" value="false" />
+         <knowledge:articleList id="outpanel2"  articleVar="article" keyword="{!gsm.searchValue}" hasMoreVar="hasMore" pageNumber="{!gsm.CurrentPageNumber}" pageSize="10">
+                                                <script>                                                
+                                                    var linkId=document.getElementById('{!$Component.outpanel2}');
+                                                    linkId.oncontextmenu=function(){return false;}
+                                                    
+                                                    $(document).ready(function(){
+                                                    
+                                                        if({!hasMore}!= true)
+                                                        {
+                                                            $('[id*=next]').hide();
+                                                            if({!gsm.CurrentPageNumber}>1)
+                                                            {
+                                                                $('[id*=previous]').show();
+                                                            }
+                                                            else{
+                                                                $('[id*=previous]').hide();
+                                                            }
+                                                        }
+                                                        else{
+                                                            $('[id*=next]').show();
+                                                            if({!gsm.CurrentPageNumber}>1)
+                                                            {
+                                                                $('[id*=previous]').show();
+                                                            }
+                                                            else{
+                                                                $('[id*=previous]').hide();
+                                                            }
+                                                        }
+                                                        });
+                                                </script>
+                                                <!-- Render search header only when results are found -->
+                                                <apex:outputPanel rendered="{!oddrow='True'}"
+                                                    style="margin-left:0;width:667;">
+                                                    <ul class="searchArticleList2" style="margin-left: 0">
+                                                    <li style="margin-left: 0">
+                                                <a class="searchTitle" target="_blank" href="/apex/supportarticle{!Left(article.articleTypeName,
+                                                                         LEN(article.articleTypeName)-5)
+                                                                         }?type={!Left(article.articleTypeName,
+                                                                         LEN(article.articleTypeName)-5)
+                                                                         }&&id={!article.id}"
+                                                                         >
+                                                    
+                                                    <apex:outputtext rendered="{!LEN(article.summary) <= 50}">{!article.title}</apex:outputtext>
+                                                    <apex:outputtext rendered="{!LEN(article.summary) > 50}">{!Left(article.title,47)}...</apex:outputtext>
+                                                    
+                                                </a>
+
+                                                <div>
+                                                <apex:outputText rendered="{!LEN(article.summary) > 200}"> {!Left(article.summary,197)}...
+                                                </apex:outputText>
+                                                <apex:outputText rendered="{!LEN(article.summary) <= 200}"> {!article.summary}
+                                                </apex:outputText>
+                                                </div>
+                                                </li>
+                                                </ul>
+                                                </apex:outputPanel>
+
+                                                <apex:outputPanel rendered="{!oddrow='False'}"
+                                                    style="margin-left:0;width:667;">
+                                                                                       
+                                                    <ul class="searchArticleList2" style="margin-left: 0">
+                                                        <li class="even" style="margin-left: 0">
+                                                     <a class="searchTitle" target="_blank" href="/apex/supportarticle{!Left(article.articleTypeName,
+                                                                         LEN(article.articleTypeName)-5)
+                                                                         }?type={!Left(article.articleTypeName,
+                                                                         LEN(article.articleTypeName)-5)
+                                                                         }&&id={!article.id}"
+                                                                         >
+                                                     <apex:outputtext rendered="{!LEN(article.summary) <= 50}">{!article.title}</apex:outputtext>
+                                                     <apex:outputtext rendered="{!LEN(article.summary) > 50}">{!Left(article.title,47)}...</apex:outputtext>
+                                                 </a>
+                                                    <div>
+                                                    <apex:outputText rendered="{!LEN(article.summary) > 200}"> {!Left(article.summary,197)}...
+                                                    </apex:outputText>
+                                                    <apex:outputText rendered="{!LEN(article.summary) <= 200}"> {!article.summary}
+                                                    </apex:outputText>
+                                                    </div>
+                                                    </li>
+                                                    </ul>
+                                                </apex:outputPanel>
+
+                                                <apex:variable var="oddrow"
+                                                    value="{!IF(oddrow='True','False','True')}" />
+                                                
+                                                <apex:variable var="anyDocument" value="true" />
+                                            </knowledge:articleList>
+                                            <apex:outputPanel rendered="{!anyDocument=='false'}">
+                                                <div style="margin-top: 16px;">
+                                                <h4 style="color: grey">
+                                                    <center>No articles found matching your  selections. Please modify your search.</center>
+                                                </h4>                                            
+                                                </div>
+                                             </apex:outputPanel>
+         
+  <br/><br/>
+  <apex:commandLink styleClass="buttonSet newButton5" id="previous" style="float:left;" value="Previous" 
+                    action="{!gsm.decrementPageNumber}"  reRender="outpanel2" 
+                    onclick="showLoadingImage();" oncomplete="hideLoadingImage();"/>
+  <apex:commandLink styleClass="buttonSet newButton4" id="next" style="float: right; display: block;" value="Next"  
+                    action="{!gsm.incrementPageNumber}"  reRender="outpanel2" 
+                    onclick="showLoadingImage();" oncomplete="hideLoadingImage();" />&nbsp;&nbsp;
+  <apex:commandLink id="hiddencmdlink"  target="_blank" styleclass="hiddencmdlink" value="" action="{!menuHeaderRedirectTo}" />
+  <apex:commandLink id="hiddencmdlink1"  styleclass="hiddencmdlink1" value="" action="{!menuHeaderRedirectTo}" />
+  <apex:inputHidden id="hiddenInputField" value="{!hiddenInputField}"/>
+    <script>
+        function hideLoadingImage() { 
+            ( function($) {
+               documentReady();
+               $('.loadingElementParentDiv').hide();            
+            } ) ( jQuery );        
+        }
+        function showLoadingImage() { 
+            ( function($) {
+               $('.loadingElementParentDiv').show();  
+               window.scroll(0,200);          
+            } ) ( jQuery );        
+        }        
+    </script>  
+</div>
+</div>
+</apex:form>
+</div> 
+<apex:include pageName="UnityFooter" /> 
+</div>
+</apex:page>

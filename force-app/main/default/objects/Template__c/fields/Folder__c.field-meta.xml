@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Folder__c</fullName>
+    <externalId>false</externalId>
+    <label>Folder</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>MCP100</fullName>
+                <default>false</default>
+                <label>MCP100</label>
+            </value>
+            <value>
+                <fullName>MCP200</fullName>
+                <default>false</default>
+                <label>MCP200</label>
+            </value>
+            <value>
+                <fullName>NaviGo</fullName>
+                <default>false</default>
+                <label>NaviGo</label>
+            </value>
+            <value>
+                <fullName>HubOps</fullName>
+                <default>false</default>
+                <label>HubOps</label>
+            </value>
+            <value>
+                <fullName>NMC Account Request</fullName>
+                <default>false</default>
+                <label>NMC Account Request</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>8</visibleLines>
+</CustomField>

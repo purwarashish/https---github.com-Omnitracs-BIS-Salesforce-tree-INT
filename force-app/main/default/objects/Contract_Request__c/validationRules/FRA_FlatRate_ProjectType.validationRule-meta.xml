@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FRA_FlatRate_ProjectType</fullName>
+    <active>true</active>
+    <description>Project Type is required for Flat Rate FRA Contract Requests</description>
+    <errorConditionFormula>AND( 
+INCLUDES( Contract_Type__c , &quot;Flat Rate&quot;), 
+INCLUDES( Project_Type__c ,&quot;&quot;) 
+)</errorConditionFormula>
+    <errorDisplayField>Project_Type__c</errorDisplayField>
+    <errorMessage>Project Type is required for Flat Rate FRA Contract Requests</errorMessage>
+</ValidationRule>

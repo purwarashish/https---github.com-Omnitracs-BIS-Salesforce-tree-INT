@@ -1,0 +1,101 @@
+<apex:page id="page" standardController="Lead" extensions="LeadOwnerAssignmentController" sidebar="false" showHeader="false" >
+<!--script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>-->
+<apex:includeScript value="{!URLFOR($Resource.JQueryTable, 'DataTables-1.7.6/media/js/jquery.js')}"/>
+<script language="Javascript">
+
+<!-- For Scrolling the Lead Window to top position -->
+
+
+
+var previousOnload = window.onload;        
+    window.onload = function() { 
+        if (previousOnload) { 
+            previousOnload();
+        }
+        scrollParent1();
+
+    }
+    
+    function scrollParent1()
+    {
+        window.opener.parent.scrollTo(0,0); 
+    }
+
+<!-- For getting the Id of the Selected Owner and setting it to Backend variable-->
+  
+   function SelectedId(id)
+   {
+        selectedrec.value = id;
+        //alert(selectedrec.value);    
+   }
+   
+<!-- For closing the current window and updating the Parent window -->
+   function testclose()
+   {
+       
+       //var sURL = unescape(window.opener.parent.location); 
+       
+       window.opener.parent.location.replace('/00Q/o'); 
+       window.close(); 
+       
+       
+   }
+    </script>
+    <apex:form id="form1">
+    <div style="padding-left:20px">
+        <h1>Assign a Lead to a User or Queue</h1>
+        </div>
+        <br/>
+        <div>                    
+            This screen allows you to transfer Leads from one user or queue to another. When you transfer ownership, the new owner will own: 
+            <ul> 
+                <li>all open activities (tasks and events) for this lead that are assigned to the current owner</li> 
+            </ul> 
+            Note that completed activities will not be transferred. Open activities will not be transferred when assigning this Lead to a queue. 
+                         
+            <br/>
+            <apex:include pageName="Alphabet_Ordering_Leads" /> 
+            <br/>
+        </div>
+        <apex:actionFunction name="Ordering" action="{!Alphabet_Ordering}" />
+        <apex:pageBlock id="pgblk">
+           <apex:inputCheckbox value="{!isSendEmail}" selected="true" />Send Notification Email
+          <!-- <apex:commandButton value="Show All Users" action="{!ShowAllUsers}" /> -->
+           <apex:pageblockTable id="pgBlkTb" value="{!lstOfIdsOfUsernQueue}" var="idOfUsrnQueue" >
+           <apex:column >
+           <apex:commandButton value="Assign" id="theButton"  action="{!AssignUserOrQueue}" oncomplete="javascript:testclose();" status="loadingStatusAdd">
+                            <apex:param name="ownerId" value="{!idOfUsrnQueue}" assignTo="{!SelectedOwnerId}" />
+           </apex:commandButton>
+           </apex:column>
+           <apex:column headerValue="Name">
+                   <apex:outputText value="{!mapOfQueueNUsr[idOfUsrnQueue]}"/>               
+            </apex:column>            
+           <apex:column headerValue="Type">
+               <apex:outputText value="User" rendered="{!if(LEFT(idOfUsrnQueue,3)=='005',true,false)}" />
+               <apex:outputText value="Queue" rendered="{!if(LEFT(idOfUsrnQueue,3)=='00G',true,false)}" />    
+           </apex:column>
+           </apex:pageblockTable>
+            
+            
+             <apex:actionStatus id="loadingStatusAdd">
+            <apex:facet name="start">
+                <c:loadingStatus id="loadingStatusAddComponent" BackColor="#efefef" borderColor="#336699" borderSize="3" height="50px" width="150px" ImageUrl="/img/loading.gif" Message="Processing..." BluryBackGround_DivId="bbgd1" SalesforceStatusBox_DivId="ssbd1" messageStyle="color:darkred;font-size:11pt;font-weight:bold;"/>
+            </apex:facet>
+        </apex:actionStatus>
+<c:JQueryTable filter="true" jqueryUI="true" pbTable="page:form1:pgblk:pgBlkTb"> </c:JQueryTable>
+   <script>
+   var $jq=jQuery.noConflict();
+// jQuery.noConflict();
+$jq(document).ready(function(){
+    $jq('[id*=j_id11header]').unbind('click');
+    $jq('[id*=j_id11header] div span').hide();
+    
+});
+   </script>
+           </apex:pageBlock>
+<apex:inputhidden value="{!SelectedOwnerId}" id="selectedid" />
+<script> var selectedrec= document.getElementById('{!$Component.selectedid}'); </script>
+<apex:inputhidden value="{!alphabet}" id="selectedalpha" />
+<script> var selectedalpha= document.getElementById('{!$Component.selectedalpha}'); </script>
+</apex:form>  
+</apex:page>

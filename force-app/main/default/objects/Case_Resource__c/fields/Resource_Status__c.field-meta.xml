@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Resource_Status__c</fullName>
+    <description>Resource Status identifies progress for each Case Resource on a case.</description>
+    <externalId>false</externalId>
+    <label>Resource Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+                <label>Not Started</label>
+            </value>
+            <value>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+                <label>In Progress</label>
+            </value>
+            <value>
+                <fullName>Pending QA</fullName>
+                <default>false</default>
+                <label>Pending QA</label>
+            </value>
+            <value>
+                <fullName>Pending UAT Testing</fullName>
+                <default>false</default>
+                <label>Pending UAT Testing</label>
+            </value>
+            <value>
+                <fullName>Completed - Pending PROD Release</fullName>
+                <default>false</default>
+                <label>Completed - Pending PROD Release</label>
+            </value>
+            <value>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+                <label>On Hold</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,103 @@
+<!-- 
+	@Author:		Mark David De Chavez
+ 	@Date-created:	October 14, 2014
+ 	@Description:	Displays the CS Case Time Entry of the current user
+ 	@Last-updated:	October 14, 2014
+-->
+<apex:page controller="CsCaseTimeSummaryController" title="CS Case Time Summary">
+    <style type="text/css">
+        .numValues {
+            float: right;
+        }
+    </style>
+    <apex:form >
+        
+        <apex:actionFunction name="mapEndingDate" action="{!mapEndingDate}" reRender="pbCtrl">
+        	<apex:param name="dateCtrl" assignTo="{!dateCtrl}" value=""/>
+        </apex:actionFunction>
+    	
+        <apex:pageBlock id="pbCtrl" title="CS Case Time Summary" >
+            <div style="height: 25px">
+                <div style="margin-top: 10px">
+                    <apex:outputLabel onclick="mapEndingDate('prev')" style="cursor: pointer; text-decoration: underline" value="< Prev Week" />
+                    <apex:outputLabel style="margin-left: 15px"><b>Week Ending Date: </b></apex:outputLabel>
+                    <apex:outputLabel id="lblEndDate" style="margin-left: 5px" value=" {!endDate}"/>
+                    <apex:outputLabel onclick="mapEndingDate('next')" style="margin-left: 15px; cursor: pointer; text-decoration: underline" value="Next Week >" />
+                </div>
+            </div>
+
+            <apex:pageBlockSection columns="1">
+                <apex:pageBlockTable value="{!timecardSummaryList}" var="ts" width="100%">
+                    
+                    <apex:column width="20%" style="{! IF(ts.timeType == 'Total', 'color:black;font-weight: bold;text-decoration:none', 'color:black') }">
+                        <apex:outputText value="{!ts.timeType}"></apex:outputText>
+                    </apex:column>
+                    
+                    <apex:column width="8%"  style="{! IF(ts.timeType == 'Total', 'color:black;font-weight: bold;text-decoration:none', 'color:black') }">
+                        <apex:facet name="header">
+                            <div style="text-align:center"># Timecards</div>
+                        </apex:facet>
+                        <apex:outputText styleClass="numValues" value="{!ts.numTmCards}"></apex:outputText>
+                    </apex:column>
+                    
+                    <apex:column width="9%" style="{! IF(ts.timeType == 'Total', 'color:black;font-weight: bold;text-decoration:none', 'color:black') }">
+                        <apex:facet name="header">
+                            <div style="text-align:center">Sun ({!sun})</div>
+                        </apex:facet>
+                        <apex:outputText styleClass="numValues" value="{!ts.sunHours}"></apex:outputText>
+                    </apex:column>
+                    
+                    <apex:column width="9%" style="{! IF(ts.timeType == 'Total', 'color:black;font-weight: bold;text-decoration:none', 'color:black') }">
+                        <apex:facet name="header">
+                            <div style="text-align:center">Mon ({!mon})</div>
+                        </apex:facet>                        
+                        <apex:outputText styleClass="numValues" value="{!ts.monHours}"></apex:outputText>
+                    </apex:column>
+                    
+                    <apex:column width="9%" style="{! IF(ts.timeType == 'Total', 'color:black;font-weight: bold;text-decoration:none', 'color:black') }">
+                        <apex:facet name="header">
+                            <div style="text-align:center">Tue ({!tue})</div>
+                        </apex:facet>                        
+                        <apex:outputText styleClass="numValues" value="{!ts.tueHours}"></apex:outputText>
+                    </apex:column>
+                    
+                    <apex:column width="9%" style="{! IF(ts.timeType == 'Total', 'color:black;font-weight: bold;text-decoration:none', 'color:black') }">
+                        <apex:facet name="header">
+                            <div style="text-align:center">Wed ({!wed})</div>
+                        </apex:facet>                        
+                        <apex:outputText styleClass="numValues" value="{!ts.wedHours}"></apex:outputText>
+                    </apex:column>
+                     
+                    <apex:column width="9%" style="{! IF(ts.timeType == 'Total', 'color:black;font-weight: bold;text-decoration:none', 'color:black') }">
+                        <apex:facet name="header">
+                            <div style="text-align:center">Thu ({!thu})</div>
+                        </apex:facet>
+                        <apex:outputText styleClass="numValues" value="{!ts.thuHours}"></apex:outputText>
+                    </apex:column>
+                     
+                    <apex:column width="9%" style="{! IF(ts.timeType == 'Total', 'color:black;font-weight: bold;text-decoration:none', 'color:black') }">
+                        <apex:facet name="header">
+                            <div style="text-align:center">Fri ({!fri})</div>
+                        </apex:facet>
+                        <apex:outputText styleClass="numValues" value="{!ts.friHours}"></apex:outputText>
+                    </apex:column>
+                    
+                    <apex:column width="9%" style="{! IF(ts.timeType == 'Total', 'color:black;font-weight: bold;text-decoration:none', 'color:black') }">
+                        <apex:facet name="header">
+                            <div style="text-align:center">Sat ({!sat})</div>
+                        </apex:facet>
+                        <apex:outputText styleClass="numValues" value="{!ts.satHours}"></apex:outputText>
+                    </apex:column>  
+    
+                    <apex:column width="10%" style="{! IF(ts.timeType == 'Total', 'color:black;font-weight: bold;text-decoration:none', 'color:black') }">
+                        <apex:facet name="header">
+                            <div style="text-align:center">Sum</div>
+                        </apex:facet>
+                        <apex:outputText styleClass="numValues" value="{!ts.totalHours}"></apex:outputText>
+                    </apex:column>     
+                    
+                </apex:pageBlockTable>
+        	</apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

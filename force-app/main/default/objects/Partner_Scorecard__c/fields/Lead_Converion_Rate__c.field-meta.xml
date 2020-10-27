@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Converion_Rate__c</fullName>
+    <description>Calculated field that determines the percent of leads that are converted to an account. Number of leads converted/ number of leads total</description>
+    <externalId>false</externalId>
+    <formula>IF( Number_of_Leads_Total__c &gt; 0, Number_of_Leads_converted__c / Number_of_Leads_Total__c , 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Lead Converion Rate</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

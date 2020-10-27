@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PCHKLIST_Sub_For_Bill_Before_Work_Comp</fullName>
+    <active>true</active>
+    <description>Submitted for Billing cannot be checked if Work Completed is not checked.</description>
+    <errorConditionFormula>AND(   Submitted_for_Billing__c  ,   Work_Completed__c &lt;&gt;True)</errorConditionFormula>
+    <errorDisplayField>Submitted_for_Billing__c</errorDisplayField>
+    <errorMessage>Submitted for Billing cannot be checked if Work Completed is not checked.</errorMessage>
+</ValidationRule>

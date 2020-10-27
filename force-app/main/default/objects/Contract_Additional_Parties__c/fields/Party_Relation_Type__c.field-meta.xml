@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Party_Relation_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Party Relation Type</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Affiliate</fullName>
+                <default>false</default>
+                <label>Affiliate</label>
+            </value>
+            <value>
+                <fullName>Addl Signing Party to Contract</fullName>
+                <default>false</default>
+                <label>Addl Signing Party to Contract</label>
+            </value>
+            <value>
+                <fullName>Named Party to Contract</fullName>
+                <default>false</default>
+                <label>Named Party to Contract</label>
+            </value>
+            <value>
+                <fullName>Buyer</fullName>
+                <default>false</default>
+                <label>Buyer</label>
+            </value>
+            <value>
+                <fullName>Parent</fullName>
+                <default>false</default>
+                <label>Parent</label>
+            </value>
+            <value>
+                <fullName>Service Provider</fullName>
+                <default>false</default>
+                <label>Service Provider</label>
+            </value>
+            <value>
+                <fullName>Counterparty</fullName>
+                <default>false</default>
+                <label>Counterparty</label>
+            </value>
+            <value>
+                <fullName>Subsidiary</fullName>
+                <default>false</default>
+                <label>Subsidiary</label>
+            </value>
+            <value>
+                <fullName>Business Unit/Segment</fullName>
+                <default>false</default>
+                <label>Business Unit/Segment</label>
+            </value>
+            <value>
+                <fullName>Subcontractor</fullName>
+                <default>false</default>
+                <label>Subcontractor</label>
+            </value>
+            <value>
+                <fullName>End User</fullName>
+                <default>false</default>
+                <label>End User</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

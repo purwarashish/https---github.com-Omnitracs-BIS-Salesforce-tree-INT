@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Request_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Request Type</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Amendment</fullName>
+                <default>false</default>
+                <label>Amendment</label>
+            </value>
+            <value>
+                <fullName>Application Terms</fullName>
+                <default>false</default>
+                <label>Application Terms</label>
+            </value>
+            <value>
+                <fullName>Beta</fullName>
+                <default>false</default>
+                <label>Beta</label>
+            </value>
+            <value>
+                <fullName>Contract Renewal</fullName>
+                <default>false</default>
+                <label>Contract Renewal</label>
+            </value>
+            <value>
+                <fullName>Developer</fullName>
+                <default>false</default>
+                <label>Developer</label>
+            </value>
+            <value>
+                <fullName>Developer Agreement</fullName>
+                <default>false</default>
+                <label>Developer Agreement</label>
+            </value>
+            <value>
+                <fullName>FleetRisk Advisors Agreement</fullName>
+                <default>false</default>
+                <label>FleetRisk Advisors Agreement</label>
+            </value>
+            <value>
+                <fullName>GSS Amendment</fullName>
+                <default>false</default>
+                <label>GSS Amendment</label>
+            </value>
+            <value>
+                <fullName>GSS Work Authorization - Developer</fullName>
+                <default>false</default>
+                <label>GSS Work Authorization - Developer</label>
+            </value>
+            <value>
+                <fullName>GSS Work Authorization - Services</fullName>
+                <default>false</default>
+                <label>GSS Work Authorization - Services</label>
+            </value>
+            <value>
+                <fullName>JDLink &amp; ZXLink (Internal)</fullName>
+                <default>false</default>
+                <label>JDLink &amp; ZXLink (Internal)</label>
+            </value>
+            <value>
+                <fullName>Letter</fullName>
+                <default>false</default>
+                <label>Letter</label>
+            </value>
+            <value>
+                <fullName>Loan</fullName>
+                <default>false</default>
+                <label>Loan</label>
+            </value>
+            <value>
+                <fullName>Master Contract and Schedule</fullName>
+                <default>false</default>
+                <label>Master Contract and Schedule</label>
+            </value>
+            <value>
+                <fullName>Master Test Agreement</fullName>
+                <default>false</default>
+                <label>Master Test Agreement</label>
+            </value>
+            <value>
+                <fullName>Message Services Agreement</fullName>
+                <default>false</default>
+                <label>Message Services Agreement</label>
+            </value>
+            <value>
+                <fullName>New Message Service Contract</fullName>
+                <default>false</default>
+                <label>New Message Service Contract</label>
+            </value>
+            <value>
+                <fullName>New Sales Contract - Eval Conversion</fullName>
+                <default>false</default>
+                <label>New Sales Contract - Eval Conversion</label>
+            </value>
+            <value>
+                <fullName>Online Application Terms</fullName>
+                <default>false</default>
+                <label>Online Application Terms</label>
+            </value>
+            <value>
+                <fullName>OT/OE Retention Toolkit</fullName>
+                <default>false</default>
+                <label>OT/OE Retention Toolkit</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>PPS Agreement</fullName>
+                <default>false</default>
+                <label>PPS Agreement</label>
+            </value>
+            <value>
+                <fullName>Product Evaluation</fullName>
+                <default>false</default>
+                <label>Product Evaluation</label>
+            </value>
+            <value>
+                <fullName>Renewal Contract</fullName>
+                <default>false</default>
+                <label>Renewal Contract</label>
+            </value>
+            <value>
+                <fullName>Schedule</fullName>
+                <default>false</default>
+                <label>Schedule</label>
+            </value>
+            <value>
+                <fullName>Schedule Only</fullName>
+                <default>false</default>
+                <label>Schedule Only</label>
+            </value>
+            <value>
+                <fullName>Services Agreement</fullName>
+                <default>false</default>
+                <label>Services Agreement</label>
+            </value>
+            <value>
+                <fullName>Telecommunications Link Agreement</fullName>
+                <default>false</default>
+                <label>Telecommunications Link Agreement</label>
+            </value>
+            <value>
+                <fullName>TLA</fullName>
+                <default>false</default>
+                <label>TLA</label>
+            </value>
+            <value>
+                <fullName>Work Authorization - Developer</fullName>
+                <default>false</default>
+                <label>Work Authorization - Developer</label>
+            </value>
+            <value>
+                <fullName>Work Authorization - Services</fullName>
+                <default>false</default>
+                <label>Work Authorization - Services</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

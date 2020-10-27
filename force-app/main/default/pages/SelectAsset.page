@@ -1,0 +1,85 @@
+<apex:page standardController="Case" extensions="CaseContExt" title="Select Asset">
+    <apex:pageMessage summary="This Page is under development - Please do not test now" severity="warning" strength="5" rendered="false" />
+    <apex:sectionHeader title="Case Edit" subtitle="Select Asset for Case #{!Case.CaseNumber}"/>
+    
+    <apex:outputPanel id="errorMsg">
+        <apex:pageMessages />
+    </apex:outputPanel>
+    
+    <apex:form >
+        <apex:pageBlock id="pbCase" mode="edit" >
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Save" 
+                    action="{!saveAsset}" 
+                    reRender="pbCase, errorMsg"
+                    /> 
+                <apex:commandButton value="Cancel" action="{!cancel}" /> 
+            </apex:pageBlockButtons>               
+                   
+            <apex:pageBlockSection rendered="false">
+            	<apex:pageBlockSectionItem >
+            		<apex:outputField value="{!Case.AccountId}"/>
+            	</apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+               
+            <apex:actionRegion >
+            <apex:pageBlockSection title="Product Information" columns="1" id="addInfo">
+                        
+                        <!-- Product Family: Edit -->
+                        <apex:pageBlockSectionItem rendered="true">
+                            <apex:outputLabel value="Product Family"/>
+                            <apex:actionRegion >
+                                <apex:outputPanel id="prodFam">
+                                    <!-- <div class="requiredInput">
+                                        <div class="requiredBlock"></div> -->
+                                        <apex:selectList size="1" value="{!Case.Product_Family_Name__c}" required="false">
+                                            <apex:selectOptions value="{!productFamilyOptions}" />
+                                            <apex:actionSupport event="onchange"
+                                                action="{!makeDependentPicklistSelectionsForProductFamily}" 
+                                                rerender="prodLine, ast, errorMsg"/> 
+                                        </apex:selectList>
+                                    <!-- </div>    -->  
+                                </apex:outputPanel>
+                            </apex:actionRegion>
+                        </apex:pageBlockSectionItem>
+                                             
+                        <apex:pageBlockSectionItem rendered="true">
+                            <apex:outputLabel value="Product Line"/>
+                            <apex:actionRegion >
+                                <apex:outputPanel id="prodLine">
+                                    <!-- <div class="requiredInput"> 
+                                        <div class="requiredBlock"></div> -->
+                                        <apex:selectList size="1" value="{!Case.Product_Line_Name__c}" required="false">
+                                            <apex:selectOptions value="{!productLineOptions}" />
+                                            <apex:actionSupport event="onchange"
+                                                action="{!makeDependentPicklistSelectionsForProductLine}" 
+                                                rerender="ast, errorMsg"/> 
+                                        </apex:selectList>
+                                    <!-- </div> -->      
+                                </apex:outputPanel>
+                            </apex:actionRegion>
+                        </apex:pageBlockSectionItem>
+                        
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Asset"/>
+                            <apex:actionRegion >
+                                <apex:outputPanel id="ast">
+                                    <div class="requiredInput">
+                                        <div class="requiredBlock"></div>
+                                        <apex:selectList size="1" value="{!Case.Asset__c}" required="false">
+                                           <apex:selectOptions value="{!assetOptions}" />
+                                           <apex:actionSupport event="onchange"
+                                                action="{!makeDependentPicklistSelectionsForAsset}" 
+                                                rerender="errorMsg"/> 
+                                         </apex:selectList>
+                                    </div>  
+                                </apex:outputPanel>
+                            </apex:actionRegion>
+                        </apex:pageBlockSectionItem>
+                        
+            </apex:pageBlockSection>
+            </apex:actionRegion>
+ 
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

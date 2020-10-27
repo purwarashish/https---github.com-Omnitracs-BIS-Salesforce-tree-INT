@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Bus_Goal_Stategy</fullName>
+    <availability>online</availability>
+    <description>New button to automatically return the user to the parent object when a record is saved or the action is canceled.</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>/a0F/e?CF00N50000001caC8={!Strategic_Account_Profile__c.Name}&amp;CF00N50000001caC8_lkid={!Strategic_Account_Profile__c.Id}&amp;retURL=%2F{!Strategic_Account_Profile__c.Id}&amp;saveURL=%2F{!Strategic_Account_Profile__c.Id}&amp;cancelURL=%2F{!Strategic_Account_Profile__c.Id}</url>
+</WebLink>

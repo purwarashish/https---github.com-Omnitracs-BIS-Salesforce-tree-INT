@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Display_Score__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(TEXT( Display_Type__c ) == &apos;Green&apos;,  IMAGE(&apos;/resource/1470622569000/AccountScoring/Green.JPG&apos;, TEXT(Score__c)) + &apos; &apos; +  TEXT(Score__c),  
+IF(TEXT( Display_Type__c ) == &apos;Yellow&apos;,  IMAGE(&apos;/resource/1470622569000/AccountScoring/Yellow.JPG&apos;, TEXT(Score__c)) + &apos; &apos; +  TEXT(Score__c),  
+IF(TEXT( Display_Type__c ) == &apos;Red&apos;,  IMAGE(&apos;/resource/1470622569000/AccountScoring/Red.JPG&apos;, TEXT(Score__c)) + &apos; &apos; +  TEXT(Score__c), &apos;&apos; )))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Display Score</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

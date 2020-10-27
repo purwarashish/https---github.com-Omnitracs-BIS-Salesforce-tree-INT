@@ -1,0 +1,1298 @@
+<apex:page StandardController="VCG_CPQ_Quote__c" extensions="VCG_CPQ_QuoteController">
+    <meta charset="utf-8"/>
+    <script>
+        function setFocusOnLoad() {}
+    </script>
+    <script type="text/javascript"> 
+
+        function stopRKey(evt) { 
+             var evt = (evt) ? evt : ((event) ? event : null); 
+             var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null); 
+            if ((evt.keyCode == 13) && (node.type=="text"))  {return false;} 
+        } 
+
+        document.onkeypress = stopRKey; 
+
+    </script>
+    <apex:includeScript value="{!URLFOR($Resource.VCG_CPQ_jQuery, 'jquery-ui-1.10.4.custom/js/jquery-1.10.2.js')}"  />
+    <apex:includeScript value="{!URLFOR($Resource.VCG_CPQ_jQuery, 'jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js')}"  />
+    <apex:includeScript value="{!URLFOR($Resource.VCG_CPQ_jQuery, 'jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.js')}"  />
+    <apex:stylesheet value="{!URLFOR($Resource.VCG_CPQ_jQuery, 'jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.css')}" />
+    
+    <style type="text/css">
+        <!-- Base class for popups for color and centering, use a secondary class to set width and height -->
+        
+            .popup {
+                position: absolute;
+                margin: auto;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0; 
+                z-index: 100;
+                background-color: white;
+                border-width: 2px;
+                border-style: solid;
+                
+            }
+            
+            <!-- migration popup width and height -->
+            .migration {
+                width: 600px;
+//                height: 200px;
+            }
+            
+            .custPopup{
+                background-color: white;
+                border-width: 2px;
+                border-style: solid;
+                z-index: 100;
+                left: 5%;
+                padding:10px;
+                position: fixed;
+                /* These are the 3 css properties you will need to change so the popup 
+                displays in the center of the screen. First set the width. Then set 
+                margin-lefto negative half of what the width is. You can add 
+                the height property for a fixed size pop up if you want.*/
+                width: 80%;
+                left: 10%;
+                right: 20%;
+                top:20px;
+                height: 80%;
+                overflow-y:auto; 
+                overflow-x:auto;
+                }
+            .custPopup1{
+                background-color: white;
+                border-width: 2px;
+                border-style: solid;
+                z-index: 100;
+                /*left: 5%;*/
+                padding:10px;
+                position: fixed;
+                /* These are the 3 css properties you will need to change so the popup 
+                displays in the center of the screen. First set the width. Then set 
+                margin-lefto negative half of what the width is. You can add 
+                the height property for a fixed size pop up if you want.
+                width: 1100px;*/
+                left: 5%;
+                right: 5%;
+                top:20px;
+                width: 90%;
+                height: 90%;
+                overflow-y:auto; 
+                overflow-x:auto;
+                
+                
+                
+            }
+            .custPopup2{
+                background-color: white;
+                border-width: 2px;
+                border-style: solid;
+                z-index: 100;
+                left: 50%;
+                padding:10px;
+                position: fixed;
+                /* These are the 3 css properties you will need to change so the popup 
+                displays in the center of the screen. First set the width. Then set 
+                margin-left to negative half of what the width is. You can add 
+                the height property for a fixed size pop up if you want.*/
+                width: 500px;
+                margin-left: -250px;
+                top:100px;
+            }
+            
+            .custPopup3{
+                background-color: white;
+                border-width: 2px;
+                border-style: solid;
+                z-index: 200;
+                left: 50%;
+                padding:10px;
+                position: fixed;
+                /* These are the 3 css properties you will need to change so the popup 
+                displays in the center of the screen. First set the width. Then set 
+                margin-left to negative half of what the width is. You can add 
+                the height property for a fixed size pop up if you want.*/
+                width: 500px;
+                margin-left: -250px;
+                top:100px;
+            }
+            
+            .popupBackground{
+                background-color:black;
+                opacity: 0.20;
+                filter: alpha(opacity = 20);
+                position: fixed; /* Note: absolute is constrained to the inner part of the VF page */
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: 99;
+            }
+            
+            .waitForLoad {
+                background-color: black;
+                opacity: 0.20;
+                filter: alpha(opacity = 20);
+                position: fixed; /* Note: absolute is constrained to the inner part of the VF page */
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: 999;
+                text-align: center;
+            }
+            
+            #ui-datepicker-div{
+                z-index: 9999; /* must be > than popup editor (950) */
+            }
+            
+            .Custom31Block .bPageBlock {
+                border-top: 1px solid #EAEAEA !important;
+            }
+            
+            /*class for green text  */
+            .newProduct{
+                color:green !important;
+                font-weight:bold;
+            }
+            /*class for blue text  */
+            .extensionProduct{
+                color:blue !important;
+                font-weight:bold;
+            }
+            /*class for black text  */
+            .textDefault{
+            color:black !important;
+            }
+            /*class for orange text  */
+            .migrationProduct{
+                color:orange !important;
+                font-weight:bold;
+            }
+            .underlineText{
+                text-decoration : underline;
+            }
+            
+            /*
+             * Styling for the main page override alert message
+             */
+            .overrideAlertMain {
+                font-weight: bold;
+                font-size: 0.8em;
+                border: 1px solid #808080;
+                padding: 5px;
+                border-radius: 4px;
+                background: #ffffcc;
+                margin-bottom: 8px;
+            }
+            .overrideAlertMain img {
+                vertical-align: text-top;
+            }
+    </style>
+    <script>
+       $(function() {
+        $( document ).tooltip({
+            track: false,
+            effect: "fade",
+            open: function (event, ui) {
+                setTimeout(function () {
+                    $(ui.tooltip).hide();
+                }, 2000);
+            }
+        });
+        });
+    </script>
+    
+    <!-- General-use div for popup backgrounds -->
+    <apex:outputPanel id="popupBGDivPanel">
+    <div id="popupBGDiv" class="popupBackground" style="display: none;"></div>
+    </apex:outputPanel>
+    
+    <apex:form >
+        <apex:actionFunction name="js_showHideDetail" action="{!showHideDetail}" reRender="headerBlock" status="waitForLoad"/>
+        <apex:actionFunction name="js_showHidePricingResults" action="{!showHidePricingResults}" reRender="quoteDetailsPopUp" status="waitForLoad"/>
+        <apex:actionFunction name="js_hideQuoteDetails" action="{!hideQuoteDetailsPopup}" reRender="quoteDetailsPopUp,overridePricingResultDialog" status="waitForLoad"/>
+        <apex:actionFunction name="js_removeOverride" action="{!removeOverride}" reRender="headerBlock,quoteDetailsPopUp,quoteConfigPanel" status="waitForLoad">
+            <apex:param name="overrideProduct" id="overrideProduct" assignto="{!overrideProduct}" value=""/>
+            <apex:param name="overridePPS" id="overridePPS" assignto="{!overridePPS}" value=""/>
+        </apex:actionFunction>
+        <apex:actionFunction name="js_exportWord" action="{!exportWord}" status="waitForLoad"/>
+        <apex:actionFunction name="js_exportPDF" action="{!exportPDF}" status="waitForLoad"/>
+        <apex:actionFunction name="js_exportExcel" action="{!exportExcel}" status="waitForLoad"/>
+        <apex:actionFunction name="js_showFilteredNewProducts" action="{!showFilteredNewProducts}" reRender="bundleFilterList,selectProductsPanel,recAddOnsPanel" status="waitForLoad">
+            <apex:param name="targetPFK" id="targetPFK" assignto="{!targetPFK}" value=""/>
+        </apex:actionFunction>
+    <apex:PageMessages />
+    <apex:PageBlock Id="headerBlock"> <!--  title="Quote Designer"  - removed per DvW request 31 Mar 2014 -LC -->
+        <!--  
+            ICONS FOR DIFFERENT ACTIONS ON PAGE
+        -->
+        <table width="100%">
+             <tr> 
+                <td width="100%" align="right"> 
+                <apex:image url="{!URLFOR($Resource.VCG_CPQ_Icons,'edo_icons_btns/open_icon.png')}" width="22px" height="24px" onClick="js_showHideDetail();" title="Click to show more details." rendered="{!!showDetails}" style="cursor:pointer;"/>&nbsp;
+                <apex:image url="{!URLFOR($Resource.VCG_CPQ_Icons,'edo_icons_btns/close_btn.png')}" width="22px" height="24px" onClick="js_showHideDetail();" title="Click to hide details." rendered="{!showDetails}" style="cursor:pointer;"/>&nbsp;
+                <apex:image url="{!URLFOR($Resource.VCG_CPQ_Icons,'edo_icons_btns/print_icon.png')}" width="22px" height="24px" onClick="javascript:window.print();" title="Click to print this page." style="cursor:pointer;"/>&nbsp;
+                <apex:image url="{!URLFOR($Resource.VCG_CPQ_Icons,'edo_icons_btns/doc_icon.png')}" width="22px" height="24px" onClick="js_exportWord();" title="Click to generate Word Doc" rendered="{!canAccessExportWord}" style="cursor:pointer;"/>&nbsp;
+                <apex:image url="{!URLFOR($Resource.VCG_CPQ_Icons,'edo_icons_btns/pdf_icon.png')}" width="22px" height="24px" onClick="js_exportPDF();" title="Click to generate PDF" rendered="{!canAccessExportPDF}" style="cursor:pointer;"/>&nbsp;
+                <apex:image url="{!URLFOR($Resource.VCG_CPQ_Icons,'edo_icons_btns/xls_icon.png')}" width="22px" height="24px" onClick="js_exportExcel();" title="Click to export as Excel file." rendered="{!canAccessExportExcel}" style="cursor:pointer;"/>
+                </td>
+             </tr>
+          </table>
+        <!--  
+            HEADER SECTION RENDERED DYNAMICALY FROM CONTROLLER
+        -->
+        <apex:dynamicComponent componentValue="{!HeaderSummary}"/>
+        
+        <!--  
+            HEADER DETAIL SECTION RENDERED DYNAMICALY FROM CONTROLLER
+        -->
+        <apex:dynamicComponent componentValue="{!HeaderDetail}"/>
+        
+        </apex:PageBlock>
+        
+
+        <!--  
+            HOLDS THE TABLE THAT LISTS ALL EXISTING AND NEW ASSETS
+        -->
+        <apex:outputPanel id="quoteConfigPanel">
+            <!--
+                Asset Page Quote Totals Block
+            -->
+            <apex:outputPanel id="errorMessages">
+                <apex:PageMessages />
+            </apex:outputPanel>
+            
+            <apex:outputPanel layout="block" rendered="{!overrideCount > 0}" styleClass="overrideAlertMain">
+                <apex:image value="{!URLFOR($Resource.VCG_CPQ_Icons,'edo_icons_btns/alert_icon.gif')}" />
+                The Pricing Results of one or more products is overridden
+            </apex:outputPanel> <!-- Profile check Added for XRS implimentation Case # 01800101 -->
+            <apex:pageBlock rendered="{!if(((allQuoteProductList.size != 0)&&($User.ProfileId !='00e500000018kizAAA')),true,false)}" >
+                <!-- outputPanel to support the onclick actionSupport for this block -->
+                <apex:outputPanel layout="block" style="cursor: pointer;">
+                    <apex:dynamicComponent componentValue="{!QuoteTotalsHeader}"/>
+                    <apex:actionSupport event="onclick" action="{!showQuoteDetailsPopup}" reRender="quoteDetailsPopUp" />
+                </apex:outputPanel>
+            </apex:pageBlock>
+            <script>
+                <!-- @todo  Get this styling working again. Either here, or apply directly in outputField, or in CSS specifier -->
+                $("span[id='hardwareTotal']").addClass("underlineText");
+                $("span[id='softwareTotal']").addClass("underlineText");
+                $("span[id='contractTotal']").addClass("underlineText");
+                $("span[id='quoteTotal']").addClass("underlineText");
+            </script>
+            <!-- END Asset Page Quote Totals Block -->
+            
+            <!--            
+                ASSET LABEL RENDERED DYNAMICALLY FROM CONTROLLER
+            -->
+            <script>
+                var currentGroupName = '';
+                function showGroupEdit(groupTextBox, groupLabel)
+                {
+                    groupTextBox.style.visibility='visible';
+                    groupTextBox.style.width='100px';
+                    groupTextBox.focus();
+                    groupTextBox.value=groupLabel.innerText.trim();
+                    currentGroupName = groupTextBox.value;//old value
+                    groupLabel.style.visibility='hidden';
+                    groupLabel.style.width='1px;';
+                    groupLabel.innerText='';
+                }
+                
+                function hideGroupEdit(groupTextBox, groupLabel)
+                {
+                    groupTextBox.style.visibility='hidden';
+                    groupTextBox.style.width='1px';
+                    groupLabel.style.width='100px';
+                    groupLabel.innerText=groupTextBox.value;
+                    groupLabel.style.visibility='visible';
+                    renameGroup(groupTextBox.value,currentGroupName);
+                }
+            </script>
+            <apex:actionFunction name="renameGroup" action="{!renameGroup}" reRender="quoteConfigPanel">
+                <apex:param name="newGroupName" value=""/>
+                <apex:param name="oldGroupName" value=""/>
+            </apex:actionFunction>
+              
+            <apex:pageBlock mode="detail" Id="configProductsPanel">
+            <!--<apex:pageMessages />-->
+                 <apex:variable var="cnt" value="{!0}" />
+                 
+                 <!-- @todo Do we need the id on this next block for reRender? Can't we just reRender the configProductsPanel? If need, rename (configProductsGroupPanel?). -->
+                 <apex:repeat value="{!groupedQpwMap}" var="key" Id="productGroup">
+                    <table width="100%">
+                        <tr>
+                            <td valign="baseline" align="left">
+                                <span style="vertical-align:bottom;" id="{!key}-label"
+                                      ondblclick="showGroupEdit(document.getElementById('{!$Component.newGroupName}'),this);">{!key}</span>
+                                <apex:inputText value="{!activeGroup}" Id="newGroupName" style="visibility:hidden; width:1px;" rendered="{!key != 'Standalone'}"
+                                                onBlur="hideGroupEdit(this,document.getElementById('{!key}-label'));"/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<apex:commandLink action="{!deleteGroup}" type="image/png" rendered="{!key  != 'Stand-alone' && key != '' && CanCreateProductGroups}">
+                                    <apex:image value="{!URLFOR($Resource.VCG_CPQ_Icons,'edo_icons_btns/trash_icon.png')}" style="height:20px; position: relative; vertical-align:top;" alt="delete group"/>
+                                    <apex:param name="group" value="{!key}" />
+                                </apex:commandlink>
+                                &nbsp;&nbsp;&nbsp;
+                                <apex:commandButton value="Add Group" action="{!addGroup}" reRender="configProductsPanel" rendered="{! AND(cnt = 0, CanCreateProductGroups)}"/>
+                                
+                            </td>
+                            <td  valign="baseline" align="right">
+                                <!-- apex:commandLink style="color:green; font-size:14px; font-weight:bold; text-decoration: none;"
+                                        action="{!showQuoteDetailsPopup}" reRender="quoteDetailsPopUp"
+                                        title="Click to view the quote summary" rendered="{!IF(quote.Total__c == null, false, true)}">Quote Total: {!ROUND(quote.Total__c, 2)}
+                                </apex:commandLink> 
+                                &nbsp;&nbsp; -->
+                                
+                                <apex:commandButton value="Add New" action="{!showAddNew}" reRender="addNewPopUp,configProductsPanel" rendered="{! key  != 'Standalone' }" status="waitForLoad">
+                                    <apex:param name="group" value="{!key}" />
+                                </apex:commandButton>
+                                
+                            </td>
+                        </tr>
+                    </table><!-- value="{!qpwList}" -->
+                    <apex:variable var="cnt" value="{!cnt+1}"/>
+                    <apex:pageBlocktable value="{!groupedQpwMap[key]}" var="pdt">
+                        <apex:column headerValue="Product Name" styleClass="{!IF(pdt.isNew, 'newProduct', IF(pdt.isMigration, 'migrationProduct', 'textDefault'))}" width="300px">
+                            <div id="{!pdt.productRec.ProductCode}-LINE"> <!-- for auto-testing -->
+                                <div id="{!pdt.productRec.ProductCode}-COLA"> <!-- for auto-testing -->
+                                    <div id="asset{!pdt.assetRec.Id}{!pdt.assetRec.Product_Group__c}"><apex:outputLink value="/{!pdt.assetRec.Id}" target="_blank"
+                                            rendered="{!AND(pdt.isExisting,NOT(pdt.isMigration))}"
+                                            onblur="LookupHoverDetail.getHover('asset{!pdt.assetRec.Id}{!pdt.assetRec.Product_Group__c}').hide();"
+                                            onfocus="LookupHoverDetail.getHover('asset{!pdt.assetRec.Id}{!pdt.assetRec.Product_Group__c}', '/{!pdt.assetRec.Id}/m?isAjaxRequest=1&amp;nocache=1411918909119').show();"
+                                            onmouseout="LookupHoverDetail.getHover('asset{!pdt.assetRec.Id}{!pdt.assetRec.Product_Group__c}').hide();"
+                                            onmouseover="LookupHoverDetail.getHover('asset{!pdt.assetRec.Id}{!pdt.assetRec.Product_Group__c}', '/{!pdt.assetRec.Id}/m?isAjaxRequest=1&amp;nocache=1411918909119').show();"
+                                        >{!pdt.productRec.Name}</apex:outputLink></div>
+                                    <apex:outputText styleClass="{!IF(pdt.isNew, 'newProduct', IF(pdt.isMigration, 'migrationProduct', 'textDefault'))}" rendered="{!OR(!pdt.isExisting,pdt.isMigration)}">{!pdt.productRec.Name}</apex:outputText>
+                                    
+                                    <!-- migration code -->
+                                    <apex:outputPanel rendered="{!pdt.hasEquivalency}">
+                                        &nbsp;
+                                    <img src="{!URLFOR($Resource.VCG_CPQ_Icons,'edo_icons_btns/alert_icon.gif')}" 
+                                            width="16px" 
+                                            height="16px" 
+                                            onClick="$('#popupBGDiv').show();$('#mig_{!pdt.productRec.Id}').show();$('#mig_{!pdt.productRec.Id}').height(Math.min(400, $('#mig_{!pdt.productRec.Id}_inner').height()+10));"
+                                            style="cursor: pointer;"
+                                            title="Migration Option"/>
+                                        
+                                        <!-- Popup Div for migrating the product, may need to move outside the parent pageBlocktable -->
+                                        <div id="mig_{!pdt.productRec.Id}" class="migration popup" style="display: none;">
+                                            <div id="mig_{!pdt.productRec.Id}_inner">
+                                                <div style="text-align: right;">
+                                                    <img src="{!URLFOR($Resource.VCG_CPQ_Icons,'edo_icons_btns/close_x_icon.png')}" 
+                                                        width="22px" 
+                                                        height="24px" 
+                                                        onClick="$('#popupBGDiv').hide();$('#mig_{!pdt.productRec.Id}').hide();"
+                                                        title="Close window" 
+                                                        style="float:right;"/>
+                                                </div>
+                                                <div style="font-weight: bold; font-size: 1.1em; text-decoration: underline; margin-bottom: 8px;">Migration Option</div>
+                                                <div style="margin: 0 4px;">
+                                                    {!pdt.productRec.Name} is eligible to be migrated to the following product{!IF(pdt.equivalentProds.size > 1, 's', '')}:
+                                                </div>
+                                                
+                                                <apex:pageBlocktable value="{!pdt.equivalentProds}" var="prod" style="margin: 8px auto 6px auto; width: 95%;">
+                                                    <apex:column headerValue="Product Name">
+                                                        <apex:outputText value="{!prod.Name}"/>
+                                                    </apex:column>
+                                                    <apex:column headerValue="Quantity">
+                                                        <apex:outputText value="{!pdt.assetRec.License_Metric_Quantity__c}"/>
+                                                    </apex:column>
+                                                    <apex:column headerValue="Units">
+                                                        <apex:outputText value="{!prod.License_Metric__c}"/>
+                                                    </apex:column>
+                                                    <apex:column headerValue="Term Start">
+                                                        <apex:outputField value="{!quote.Effective_Date__c}"/>
+                                                    </apex:column>
+                                                    <apex:column headerValue="Term End">
+                                                        <apex:outputField value="{!pdt.assetRec.Asset_Term_End_Date__c}"/>
+                                                    </apex:column>
+                                                </apex:pageBlocktable>
+                                                
+                                                <apex:outputPanel layout="block" style="text-align: right; margin: 0 4px;">
+                                                    <!-- input type="button" value="Migrate" onclick="alert('Migrate to come...');"/ -->
+                                                    <apex:commandButton value="Migrate" action="{!migrateProductWeb}" rerender="quoteConfigPanel,popupBGDivPanel">                    
+                                                        <apex:param name="migrateProdId" assignTo="{!migrateProdId}" value="{!pdt.productRec.Id}"/>                    
+                                                        <apex:param name="activeGroup" assignTo="{!activeGroup}" value="{!key}"/> 
+                                                    </apex:commandButton>
+                                                    
+                                                    <input type="button" class="btn" value="Cancel" onclick="$('#popupBGDiv').hide();$('#mig_{!pdt.productRec.Id}').hide();"/>
+                                                    <!-- apex:commandButton value="Migrate"/> <!-- action="{!Save}" -->
+                                                    <!-- apex:commandButton value="Cancel" onclick="$('#popupBGDiv').hide();$('#mig_{!pdt.productRec.Id}').hide();"/ -->
+                                                </apex:outputPanel>
+                                            </div>
+                                        </div>
+                                        <!-- end popup div for migrating -->
+                                        
+                                    </apex:outputPanel>
+                                    <!-- end migration code -->
+                                    
+                                </div> <!-- for auto-testing -->
+                            </div> <!-- for auto-testing -->
+                        </apex:column>
+                        <!-- apex:column headerValue="Group name" value="{!pdt.quoteProdRec.product_group__c}" / -->
+                        <!--apex:column headerValue="Bundle" >
+                            <apex:outputText value="{!pdt.quoteProdRec.Bundle_Name__c}" rendered="{!pdt.quoteProdRec.Bundle_Name__c != null}"/>
+                            <apex:outputText value="{!pdt.assetRec.Bundle_Name__c}" rendered="{!pdt.assetRec != null && pdt.quoteProdRec.Bundle_Name__c == null}"/>
+                        </apex:column-->
+                        <apex:column headerValue="Existing Quantity">
+                            <div id="{!pdt.productRec.ProductCode}-COLB"> <!-- for auto-testing -->
+                                <apex:outputText value="{!pdt.assetRec.License_Metric_Quantity__c}" />
+                            </div> <!-- for auto-testing -->
+                        </apex:column>
+                        <apex:column styleClass="{!IF(!pdt.isExisting, 'newProduct', IF(pdt.isExtension,'extensionProduct', 'textDefault' ))}" 
+                            headerValue="Quantity">
+                            <div id="{!pdt.productRec.ProductCode}-COLC"> <!-- for auto-testing -->
+                                <apex:inputField value="{!pdt.quoteProdRec.License_Metric_Quantity__c}" style="width: 45px;">
+                                    <apex:actionSupport event="onchange" action="{!pricing}" reRender="quoteConfigPanel" status="waitForLoad"/>
+                                </apex:inputField>
+                            </div> <!-- for auto-testing -->
+                        </apex:column>
+                        <apex:column styleClass="{!IF(!pdt.isExisting, 'newProduct', IF(pdt.isExtension,'extensionProduct', 'textDefault' ))}" 
+                            headerValue="Decom. Quantity">
+                            <div id="{!pdt.productRec.ProductCode}-COLD"> <!-- for auto-testing -->
+                                <apex:inputField value="{!pdt.quoteProdRec.Decommission_Quantity__c}" style="width: 45px;" rendered="{! !pdt.isNew && pdt.mainMaintQPRec == null}">
+                                    <apex:actionSupport event="onchange" action="{!pricing}" reRender="quoteConfigPanel" status="waitForLoad"/>
+                                </apex:inputField>
+                                <apex:inputField value="{!pdt.mainMaintQPRec.Decommission_Quantity__c}" style="width: 45px;" rendered="{! !pdt.isNew && pdt.mainMaintQPRec != null}">
+                                    <apex:actionSupport event="onchange" action="{!pricing}" reRender="quoteConfigPanel" status="waitForLoad"/>
+                                </apex:inputField>
+                            </div> <!-- for auto-testing -->
+                        </apex:column>
+                        <apex:column styleClass="{!IF(pdt.isNew, 'newProduct', 'textDefault')}" headerValue="Units">
+                            <div id="{!pdt.productRec.ProductCode}-COLE"> <!-- for auto-testing -->
+                                <apex:outputText value="{!pdt.productRec.License_Metric__c}" styleClass="{!IF(pdt.isNew, 'newProduct', 'textDefault')}"/>
+                            </div> <!-- for auto-testing -->
+                        </apex:column>
+                        <!--apex:column headerValue="Sales Price" style="text-align: right;">
+                                <apex:outputField value="{!pdt.salesPriceTotal.aCurr2__c}" rendered="{!pdt.salesPriceTotal.aCurr2__c != 0}"/>
+                        </apex:column-->
+                         <apex:column headerValue="Monthly Unit Price" style="text-align: right;">
+                                <apex:outputField value="{!pdt.quoteProdRec.Monthly_Unit_Price__c}" />
+                        </apex:column>
+                        <apex:column headerValue="ARR" style="text-align: right;">
+                                <apex:outputField value="{!pdt.arrTotal.aCurr2__c}" rendered="{!pdt.arrTotal.aCurr2__c != 0}"/>
+                        </apex:column>
+                        <apex:column headerValue="Quote Amount" style="text-align: right;">
+                            <div id="{!pdt.productRec.ProductCode}-COLH"> <!-- for auto-testing -->
+                                <apex:commandLink styleClass="{!IF(pdt.isNew, 'newProduct', IF(pdt.isExtension || pdt.isDecommission || pdt.isRenewal,'extensionProduct', 'textDefault' ))}"
+                                        action="{!showQuoteDetailsPopup}" reRender="quoteDetailsPopUp"
+                                        title="Click to view the quote summary" rendered="{!pdt.lineTotal.aCurr2__c != 0}"><apex:outputField value="{!pdt.lineTotal.aCurr2__c}"/>
+                                </apex:commandLink>
+                                <apex:outputField value="{!pdt.lineTotal.aCurr2__c}" rendered="{!pdt.lineTotal.aCurr2__c == 0}"/>
+                            </div> <!-- for auto-testing -->
+                        </apex:column>
+                        <apex:column styleClass="{!IF(pdt.isNew, 'newProduct', 'textDefault')}" 
+                            headerValue="Asset Term Start"
+                            title="{!IF(!!pdt.isNew,'Double-click to adjust start term date','')}">
+                            <div id="{!pdt.productRec.ProductCode}-COLF"> <!-- for auto-testing -->
+                                <apex:outputField value="{!pdt.assetRec.Asset_Term_Start_Date__c}" rendered="{!pdt.isExisting}"/>
+                                <apex:outputField value="{!pdt.quoteProdRec.Asset_Term_Start_Date__c}" rendered="{!pdt.isNew || pdt.isMigration}"/>
+                                
+                                <apex:actionSupport event="ondblclick" action="{!showEditStartDate}" reRender="extendStartDateDialog" rendered="{!pdt.isNew}" status="waitForLoad">
+                                    <apex:param name="productID" assignto="{!eqProductId}" value="{!pdt.productRec.Id}"/>
+                                    <apex:param name="ngroup" id="ngroup" assignTo="{!activeGroup}" value="{!key}"/>
+                                </apex:actionSupport>
+                            </div> <!-- for auto-testing -->
+                        </apex:column>
+                        <apex:column styleClass="{!IF(pdt.isNew, 'newProduct', IF(pdt.isRenewal,'extensionProduct', 'textDefault' ))}" 
+                            headerValue="Asset Term End"
+                            title="{!pdt.termEndTooltip}">
+                            <div id="{!pdt.productRec.ProductCode}-COLG"> <!-- for auto-testing -->
+                                <apex:outputField value="{!pdt.assetRec.Asset_Term_End_Date__c}" rendered="{!pdt.isExisting && !pdt.isRenewal}"/>
+                                <apex:outputField value="{!pdt.renewalQuoteProdRec.Asset_Term_End_Date__c}" rendered="{!pdt.isRenewal && pdt.renewalQuoteProdRec != null}"/>
+                                <apex:outputField value="{!pdt.renewMaintQPRec.Asset_Term_End_Date__c}" rendered="{!pdt.isRenewal && pdt.renewalQuoteProdRec == null}"/>
+                                <apex:outputField value="{!pdt.quoteProdRec.Asset_Term_End_Date__c}" rendered="{!pdt.isNew || pdt.isMigration}"/>     
+                                <apex:actionSupport event="ondblclick" action="{!showEditEndDate}" reRender="extendTermDateDialog" status="waitForLoad"> <!-- rendered="{!!pdt.isNew}"> -->
+                                    <apex:param name="productID" assignto="{!eqProductId}" value="{!pdt.productRec.Id}"/>
+                                    <apex:param name="group" id="group" assignTo="{!activeGroup}" value="{!key}"/>
+                                </apex:actionSupport>
+                            </div> <!-- for auto-testing -->
+                        </apex:column>
+                        <apex:column styleClass="{!IF(pdt.isNew, 'newProduct', 'textDefault')}" 
+                            headerValue="Contract Term Start">
+                            <div id="{!pdt.productRec.ProductCode}-COLF"> <!-- for auto-testing -->
+                                <apex:outputField value="{!pdt.assetRec.Contract_Term_Start_Date__c}" rendered="{!pdt.isExisting}"/>
+                                <apex:outputField value="{!pdt.quoteProdRec.Contract_Term_Start_Date__c}" rendered="{!pdt.isNew || pdt.isMigration}"/>
+                            </div> <!-- for auto-testing -->
+                        </apex:column>
+                        <apex:column styleClass="{!IF(pdt.isNew, 'newProduct', IF(pdt.isRenewal,'extensionProduct', 'textDefault' ))}" 
+                            headerValue="Contract Term End">
+                            <div id="{!pdt.productRec.ProductCode}-COLG"> <!-- for auto-testing -->
+                                <apex:outputField value="{!pdt.assetRec.Contract_Term_End_Date__c}" rendered="{!pdt.isExisting && !pdt.isRenewal}"/>
+                                <apex:outputField value="{!pdt.renewalQuoteProdRec.Contract_Term_End_Date__c}" rendered="{!pdt.isRenewal && pdt.renewalQuoteProdRec != null}"/>
+                                <apex:outputField value="{!pdt.renewMaintQPRec.Contract_Term_End_Date__c}" rendered="{!pdt.isRenewal && pdt.renewalQuoteProdRec == null}"/>
+                                <apex:outputField value="{!pdt.quoteProdRec.Contract_Term_End_Date__c}" rendered="{!pdt.isNew || pdt.isMigration}"/>
+                            </div> <!-- for auto-testing -->
+                        </apex:column>
+                        <apex:column headerValue="Line Type" style="text-align: right;">
+                            <div id="{!pdt.productRec.ProductCode}-COLI"> <!-- for auto-testing -->
+                                <apex:outputText value="N" rendered="{!IF(pdt.quoteProdRec.Line_Type__c = 'New', true,false)}"></apex:outputText>
+                                <apex:outputText value="E" rendered="{!IF(pdt.quoteProdRec.Line_Type__c = 'Extension', true,false)}"></apex:outputText>
+                                <apex:outputText value="D" rendered="{!IF(pdt.quoteProdRec.Line_Type__c = 'Decommission' || pdt.mainMaintQPRec.Line_Type__c = 'Decommission', true,false)}"></apex:outputText>
+                                <apex:outputText value="M" rendered="{!IF(pdt.quoteProdRec.Line_Type__c = 'Migration', true,false)}"></apex:outputText>
+                                <apex:outputText value="O" rendered="{!IF(pdt.quoteProdRec.Line_Type__c = 'Other', true,false)}"></apex:outputText>
+                                <apex:outputText value="R" rendered="{!IF(pdt.renewalQuoteProdRec.Line_Type__c = 'Renewal', true,false)}"></apex:outputText>
+                                <apex:outputText value="R" rendered="{!IF(pdt.renewMaintQPRec.Line_Type__c = 'Renewal', true,false)}"></apex:outputText>
+                            </div> <!-- for auto-testing -->
+                        </apex:column>
+                        <apex:column headerValue="" style="text-align: right;">
+                            <!-- Edit Other values button column -->
+                            <div id="{!pdt.productRec.ProductCode}-COLJ"> <!-- for auto-testing -->
+                                <apex:image url="/img/icon/custom51_100/gears16.png" title="Click to edit other values" rendered="{!pdt.isExisting}" style="cursor:pointer;"/>&nbsp;
+                                <apex:actionSupport event="onclick" action="{!showEditOtherValues}" reRender="editOtherValuesPopup" rendered="{!pdt.isExisting}" status="waitForLoad">
+                                    <apex:param name="productID" assignto="{!eqProductId}" value="{!pdt.productRec.Id}"/>
+                                    <apex:param name="ngroup2" id="ngroup2" assignTo="{!activeGroup}" value="{!key}"/>
+                                </apex:actionSupport>
+                            </div> <!-- for auto-testing -->
+                        </apex:column>
+                    </apex:pageBlocktable>
+                    <br/>
+                </apex:repeat>
+                <br/>
+                
+            </apex:pageBlock>
+            
+            <apex:outputPanel >
+                <apex:commandButton value="Cancel" action="{!Cancel}" style="float:right;"/>
+                <apex:commandButton value="Save" action="{!Save}" style="float:right;"/>
+            </apex:outputPanel>
+        </apex:outputPanel>
+        <!--  
+            THIS IS A POPUP WINDOW TO ADD NEW QUOTE PRODUCTS
+        -->
+        <apex:outputPanel id="addNewPopUp" style="height:90%">
+            <script>
+              var pfkJSON = '{!ProductFilterKeysJSON}';
+              var ProductFilterKeys = {};
+              
+              if (pfkJSON != '')
+              {
+                  if (window.JSON !== undefined)
+                  {
+                      ProductFilterKeys = JSON.parse(pfkJSON);
+                  }
+                  else
+                  {
+                      // Needed for IE7 and all higher IEs when running in IE7 compatibility mode.
+                      ProductFilterKeys = eval('(' + pfkJSON + ')');
+                  }
+              }
+              
+              function initPFKs()
+              {
+                  // alert('PFKs: ' + ProductFilterKeys);
+                  
+                  if (ProductFilterKeys !== null)
+                  {
+                      var pfkList = document.getElementById('pfkList');
+                      if (pfkList !== undefined && ProductFilterKeys !== undefined)
+                      {
+                          populatePFKs(ProductFilterKeys, pfkList, 'pfkList');
+                      }
+                  }
+              }
+              
+              function populatePFKs(pfKeys, node, idPrefix)
+              {
+                  var keys = Object.keys(pfKeys).sort();
+                  
+                  for (var i = 0; i < keys.length; i++)
+                  {
+                      key = keys[i];
+                      var li = document.createElement('li');
+                      var id = idPrefix + '|' + i;
+                      li.innerHTML = '<input id="' + id + '" type="checkbox" onClick="togglePFK(\'' + id + '\');"/>' + key;
+                      node.appendChild(li);
+                      
+                      if (pfKeys[key] !== null)
+                      {
+                          // Do the child keys recursively
+                          var ul = document.createElement('ul');
+                          ul.style.display = 'none';
+                          li.appendChild(ul);
+                          populatePFKs(pfKeys[key], ul, id);
+                      }
+                      
+                                         
+                  }
+                }
+              
+              function resetPFKs()
+              {
+                  var pfkList = document.getElementById('pfkList');
+                  
+                  // Need to reset/clear any selected Product Filter Keys:
+                  //  - hide any children uls
+                  //  - uncheck any children inputs
+                  var childrenLIs = pfkList.getElementsByTagName('input');
+                  if (childrenLIs !== undefined)
+                  {
+                      for (var i = 0; i < childrenLIs.length; i++)
+                      {
+                          childrenLIs[i].checked = false;
+                      }
+                  }
+                  
+                  var childrenULs = pfkList.getElementsByTagName('ul');
+                  if (childrenULs !== undefined)
+                  {
+                      for (var i = 0; i < childrenULs.length; i++)
+                      {
+                          childrenULs[i].style.display = 'none';
+                      }
+                  }
+              }
+              
+              function togglePFK(id)
+              {
+                  // If the checkbox with the specified id is selected, we need to do:
+                  //  - show the child ul, if one exists
+                  //  - uncheck any sibling nodes and any sibling nodes' children
+                  //  - hide any sibling nodes' children
+                  //  - call SF to get list of matching products (to come)
+                  var checkboxEl = document.getElementById(id);
+                  if (checkboxEl !== undefined)
+                  {
+                      if (checkboxEl.checked)
+                      {
+                          var children;
+                          
+                          if ((children = checkboxEl.parentNode.getElementsByTagName('ul')).length > 0)
+                          {
+                              // just do the first one, in case there are nested children
+                              children[0].style.display = 'block';
+                          }
+                          
+                          var sib = checkboxEl.parentNode;
+                          while (sib = sib.previousSibling)
+                          {
+                              if (sib.tagName == 'LI')
+                              {
+                                  var childrenLIs = sib.getElementsByTagName('input');
+                                  if (childrenLIs !== undefined)
+                                  {
+                                      for (var i = 0; i < childrenLIs.length; i++)
+                                      {
+                                          childrenLIs[i].checked = false;
+                                      }
+                                  }
+                                  
+                                  var childrenULs = sib.getElementsByTagName('ul');
+                                  if (childrenULs !== undefined)
+                                  {
+                                      for (var i = 0; i < childrenULs.length; i++)
+                                      {
+                                          childrenULs[i].style.display = 'none';
+                                      }
+                                  }
+                              }
+                          }
+                          sib = checkboxEl.parentNode;
+                          while (sib = sib.nextSibling)
+                          {
+                              if (sib.tagName == 'LI')
+                              {
+                                  var childrenLIs = sib.getElementsByTagName('input');
+                                  if (childrenLIs !== undefined)
+                                  {
+                                      for (var i = 0; i < childrenLIs.length; i++)
+                                      {
+                                          childrenLIs[i].checked = false;
+                                      }
+                                  }
+                                  
+                                  var childrenULs = sib.getElementsByTagName('ul');
+                                  if (childrenULs !== undefined)
+                                  {
+                                      for (var i = 0; i < childrenULs.length; i++)
+                                      {
+                                          childrenULs[i].style.display = 'none';
+                                      }
+                                  }
+                              }
+                          }
+                          
+                          var targetPFK = getTargetPFK(id);
+                          
+                          js_showFilteredNewProducts(targetPFK);
+                      }
+                      else
+                      {
+                          // User just unchecked the checkbox, we need to do:
+                          //  - hide any children uls
+                          //  - uncheck any children inputs
+                          //  - if there is a parent checked input, then call SF to load the list of products that match that input, otherwise clear the product list (to come)
+                          var childrenLIs = checkboxEl.parentNode.getElementsByTagName('input');
+                          if (childrenLIs !== undefined)
+                          {
+                              for (var i = 0; i < childrenLIs.length; i++)
+                              {
+                                  childrenLIs[i].checked = false;
+                              }
+                          }
+                          
+                          var childrenULs = checkboxEl.parentNode.getElementsByTagName('ul');
+                          if (childrenULs !== undefined)
+                          {
+                              for (var i = 0; i < childrenULs.length; i++)
+                              {
+                                  childrenULs[i].style.display = 'none';
+                              }
+                          }
+                          
+                          // Check to see if there is an input element above us / a shorter PFK to use to refilter the product list
+                          // Just look at our id and remove our index, rather than trying to navigate the DOM to find a parent input field
+                          var keys = id.split("|");
+                          keys.pop(); // discard our index
+                          var targetPFK = getTargetPFK(keys.join("|"));
+                          
+                          js_showFilteredNewProducts(targetPFK);
+                      }
+                  }
+              }
+              
+              function getTargetPFK(id)
+              {
+                  // id is a pipe concatenated list of indexes into ProductFilterKeys, preceeded by 'pfkList|'
+                  var indexes = id.split("|");
+                  
+                  var targetPFK = '';
+                  
+                  var node = ProductFilterKeys;
+                  for (j = 1; j < indexes.length; j++)
+                  {
+                      var idx = indexes[j];
+                      
+                      var keys = Object.keys(node).sort();
+                      var key = keys[idx];
+                      targetPFK = targetPFK + (targetPFK == '' ? '' : '|') + key;
+                      
+                      // move node to the children node for the next level of key values
+                      node = node[key];
+                  }
+                  
+                  return targetPFK;
+              }
+            </script>
+            <style>
+                #pfkList {
+                    padding-left: 0px;
+                }
+                
+                #pfkList ul {
+                    padding-left: 18px;
+                }
+                
+                #pfkList li {
+                    list-style-type: none;
+                    margin-left: 0px;
+                }
+            </style>
+            
+            <apex:outputPanel styleClass="popupBackground" layout="block" rendered="{!isAddNew}"/>
+            
+            <apex:outputPanel id="addNewPanelDetail" rendered="{!isAddNew}" layout="block" styleClass="custPopup" >
+            
+              <apex:actionFunction name="js_showFilteredProducts" action="{!showFilteredNewProducts}" reRender="bundleFilterList,selectProductsPanel,recAddOnsPanel" status="waitForLoad"/>
+              <apex:actionFunction name="js_showBundleProducts" action="{!showFilteredBundledNewProducts}" reRender="bundleFilterList,selectProductsPanel,recAddOnsPanel" status="waitForLoad">
+                <apex:param name="selectedBundle" id="selectedBundle" assignto="{!selectedBundle}" value=""/>
+              </apex:actionFunction>
+                    <table width="100%" height="99%">
+                        <tr height="5%">
+                            <td colspan="2" >
+                                <p><apex:outputText value="Add New" style="font-weight:bold; font-size:16px;"/></p>
+                                <hr/><apex:PageMessages />
+                            </td>
+                        </tr>
+                        <tr height="90%"> 
+                            <td width="40%">
+                                <div style="overflow-y:auto; height:90%">
+                                    <!--  
+                                        JAVASCRIPT FOR ACCORDION EFFECT ON PRODUCT FILTERS
+                                    -->
+                                    <script>
+                                        // Apply the accordian effect
+                                        $(function() {
+                                            $( "#accordion" ).accordion({
+                                                heightStyle: "content",
+                                                collapsible: true
+                                            });
+                                        });
+                                        
+                                        // Hide any empty blocks (i.e. no bundles)
+                                        var $div = $("#accordion > div:empty");
+                                        $div.hide();
+                                        $div.prev('h3').hide();
+                                        
+                                        // Have to show Prod Fam div (not sure why this is needed if the above selector is specifying empty divs...)
+                                        $div.nextUntil('div').next('div').show();
+                                    </script>   
+                                    <div id="accordion">
+                                        
+                                        <!--
+                                            BUNDLES LIST
+                                        -->
+                                        <apex:outputPanel layout="none" rendered="false">
+                                        <h3>Bundles</h3>
+                                        
+                                            <apex:pageblock rendered="{!availableBundlesSize > 0}" Id="bundleFilterList">
+                                                <apex:pageBlockTable value="{!availableBundles}" var="bundleName">
+                                                    <apex:column >
+                                                        <apex:inputCheckbox value="{!availableBundles[bundleName].isSelected}" onClick="js_showBundleProducts('{!JSENCODE(availableBundles[bundleName].bundleName)}'); resetPFKs();">
+                                                        </apex:inputCheckbox>
+                                                    </apex:column>
+                                                    <apex:column value="{!bundleName}"/>
+                                                </apex:pageBlockTable>
+                                            </apex:pageblock>
+                                            <!-- this next pageblock is a stub next sibling stub from the Bundles title so the jQuery UI accordian functionality works when there are no bundles. (jQuery UI accordian expects a next-sibling div, so without this, it collapses the "Product Filters" element -->
+                                            <apex:pageblock rendered="{!availableBundlesSize == 0}">
+                                            </apex:pageblock>
+                                        </apex:outputPanel>
+                                        
+                                        <!--  
+                                            PRODUCT FILTERS LIST
+                                        -->
+                                        <h3>Product Filters</h3>
+                                        <apex:pageBlock Id="productFilterList">
+                                            <ul id="pfkList"></ul>
+                                        </apex:pageBlock>
+                                        
+                                    </div>
+                                </div>  
+                            </td>
+                            <td width="60%">
+                            <div style="overflow-y:auto; height:90%">
+                                <div style="overflow-y:auto; height:60%">
+                                    <apex:outputPanel id="selectProductsPanel">
+                                        <!-- div style="font-size: 10px;">{!now}</div -->
+                                    
+                                        
+                                        <apex:pageBlock id="pBlock" rendered="{!selectedAvailableBundles.size != 0 || addNewFilteredProdList.size != 0}">
+                                            <!-- Bundles 
+                                            <apex:pageBlockTable value="{!selectedAvailableBundles}" var="bundle" rendered="{!selectedAvailableBundles.size != 0}">
+                                                <apex:column value="{!bundle.bundleName}" headerValue="Name" />
+                                                <apex:column headerValue="Quantity">
+                                                    <apex:inputText value="{!bundle.orderedQuantity}" style="width:50px;">
+                                                    </apex:inputText>
+                                                </apex:column>
+                                            </apex:pageBlockTable-->
+                                            
+                                            <!-- Regular Products -->
+                                            <apex:outputPanel layout="block" rendered="{!newFilteredProductListSizeMsg != null}" style="font-size: 0.8em; font-style: italic; padding-left: 6px; margin-bottom: 2px;">{!newFilteredProductListSizeMsg}</apex:outputPanel>
+                                           <apex:pageBlockTable value="{!addNewFilteredProdList}" var="pdt"  rendered="{!addNewFilteredProdList.size != 0}">
+                                                
+                                                <apex:column value="{!pdt.productRec.Name}" headerValue="Name"/>
+                                                <apex:column value="{!pdt.productRec.Oracle_Part_Number__c}" headerValue="Part #"/>
+                                                
+                                                <apex:column headerValue="Quantity">
+                                                    <apex:inputField value="{!pdt.quoteProdRec.License_Metric_Quantity__c}">
+                                                     <apex:actionSupport event="onchange" action="{!getRecAddOns}" rerender="recAddOnsPanel"  status="waitForLoad" />
+                                                     </apex:inputField>
+                                                </apex:column>
+                                                <apex:column value="{!pdt.productRec.License_Metric__c}" headerValue="Unit Type"/>
+                                            </apex:pageBlockTable>
+                                            <br/>
+                                        </apex:pageBlock>
+                                    </apex:outputPanel>
+                                </div>
+                                
+                                <!-- Added BY @Ataullah  --->
+                                <apex:outputPanel id="recAddOnsPanel" rendered="{!if($Profile.Name !='QES Reseller Partner Profile (No MDF)',True,False)}">
+                                  <div style="overflow-y:auto; height:40%">
+                                   
+                                    <apex:outputPanel style="overflow-y:auto; height:175px" rendered="{!recAddOnsList.size != 0}" >
+                                        <!-- @todo  Do we need to have an id for reRender on this block? Can't we just reRender the recAddOnsPanel? If we need, then rename. -->
+                                        <br/>
+                                        <apex:pageBlock id="pBlock1" title="Recommended Add-Ons" rendered="{!recAddOnsList.size != 0}" >
+                                            <apex:pageBlockTable value="{!recAddOnsList}" var="pdt1" >
+                                                <!-- @todo  How do we detect products that not compatible with each other and should be disabled? -->
+                                                <apex:column style="{!IF((pdt1.addOnResultRec.min == pdt1.addOnResultRec.max) && (pdt1.addOnResultRec.min == 0),'color:grey;font-weight:bold;', IF(pdt1.addOnResultRec.required, 'background:#f99;font-weight:bold;','color:black;'))}" 
+                                                             value="{!pdt1.productRec.Name}" headerValue="Name"/>
+                                                <apex:column style="{!IF((pdt1.addOnResultRec.min == pdt1.addOnResultRec.max) && (pdt1.addOnResultRec.min == 0),'color:grey;font-weight:bold;', IF(pdt1.addOnResultRec.required, 'background:#f99;font-weight:bold;','color:black;'))}" 
+                                                             value="{!pdt1.productRec.Oracle_Part_Number__c}" headerValue="Part #"/>
+                                                <apex:column headerValue="Quantity" style="{!IF((pdt1.addOnResultRec.min == pdt1.addOnResultRec.max) && (pdt1.addOnResultRec.min == 0),'color:grey;font-weight:bold;', IF(pdt1.addOnResultRec.required, 'background:#f99;font-weight:bold;','color:black;'))}">
+                                                    <apex:inputField value="{!pdt1.quoteProdRec.License_Metric_Quantity__c}" rendered="{!IF((pdt1.addOnResultRec.min == pdt1.addOnResultRec.max) && (pdt1.addOnResultRec.min == 0),false,true)}">
+                                                      <apex:actionSupport event="onchange" action="{!getRecAddOns}" rerender="pBlock1"  status="waitForLoad" >
+                                                      </apex:actionSupport>
+                                                    </apex:inputField>
+                                                    <apex:outputField value="{!pdt1.quoteProdRec.License_Metric_Quantity__c}" rendered="{!IF((pdt1.addOnResultRec.min == pdt1.addOnResultRec.max) && (pdt1.addOnResultRec.min == 0),true,false)}"/>
+                                                </apex:column>
+                                                <apex:column style="{!IF((pdt1.addOnResultRec.min == pdt1.addOnResultRec.max) && (pdt1.addOnResultRec.min == 0),'color:grey;font-weight:bold;', IF(pdt1.addOnResultRec.required, 'background:#f99;font-weight:bold;','color:black;'))}" value="{!pdt1.productRec.License_Metric__c}" headerValue="Unit Type"/>
+                                            </apex:pageBlockTable>
+                                            <br/>
+                                        </apex:pageBlock>
+                                    </apex:outputPanel>
+                                    
+                                  </div>
+                                </apex:outputPanel>
+                                
+                               <!-- 
+                                  -- Core Products for selection for Add-on roducts
+                                  -->
+                                <apex:outputPanel id="coreProductPanel" rendered="{!isAddNew && addNewFilteredProdList.size != 0 && hasAddonToSelect == true}" layout="block" styleClass="custPopup">
+                                    <apex:outputPanel style="overflow-y:auto; height:175px" rendered="{!addNewFilteredProdList.size != 0 && hasAddonToSelect == true}" id="coreProductTable">
+                                    <apex:outputPanel id="recAddOnParentPanel">
+                                        <apex:pageBlock id="addonCoreProductBlock" title="Core Prodcts" rendered="{!addNewFilteredProdList.size != 0 && hasAddonToSelect == true}">
+                                                <apex:PageMessages />
+                                                <apex:outputPanel >
+                                                   Some of the products selected are Add-ons and require an associated, core product.<br/><br/>
+                                                </apex:outputPanel>
+                                                
+                                                
+                                            <apex:repeat value="{!addNewFilteredProdList}" var="c" >
+                                                
+                                                <apex:outputPanel rendered="{!c.isAddon == true && c.addOnResultRec == null}">
+                                                
+                                                    <b>Add-on: {!c.productRec.Name} </b>
+                                                        <bt/>
+                                                        <br/>
+                                                        <apex:PageBlock rendered="{!c.coreLegacyProductList.size > 0}" title="Legacy Core Products">
+                                                           The Selected Add-On has an existing, Legacy product that needs to be migrated. Would you like to migrate this legacy product?
+                                                            <br/>
+                                                        
+                                                            <apex:pageBlockTable value="{!c.coreLegacyProductList}" var="p" >
+                                                                <apex:column headerValue="Use Legacy Core Product" value="{!p.product.quoteProdRec.product__r.name}"/>
+                                                                <!-- apex:column headerValue="Quantity">
+                                                                         <apex:inputField value="{!p.product.quoteProdRec.License_Metric_Quantity__c}"/>
+                                                                </apex:column-->
+                                                                <apex:column width="80%" headerValue="Migration option">
+                                                                <!--  apex:commandButton value="Add" action="{!addProducts}" 
+                                                                                    reRender="quoteConfigPanel,addNewPopUp,productGroup" 
+                                                                                    status="waitForLoad">
+                                                                    <apex:param name="selectedCoreProduct"
+                                                                                value="{!p.product.productRec.Id}"
+                                                                                assignTo="{!selectedCoreProductId}"/>                    
+                                                                </apex:commandButton-->
+                                                                <!-- Popup Div for migrating the product, may need to move outside the parent pageBlocktable -->
+                                                                    
+                                                                        <div id="mig1_{!p.product.productRec.Id}_inner">
+                                                                            
+                                                                            <div style="margin: 0 4px;">
+                                                                                {!p.product.productRec.Name} is elegable to be migrated to the following product{!IF(p.product.equivalentProds.size > 1, 's', '')}:
+                                                                            </div>
+                                                                            
+                                                                            <apex:pageBlocktable value="{!p.product.equivalentProds}" var="prod" style="margin: 8px auto 6px auto; width: 95%;">
+                                                                                <apex:column headerValue="Product Name">
+                                                                                    <apex:outputText value="{!prod.Name}"/>
+                                                                                </apex:column>
+                                                                                <apex:column headerValue="Quantity">
+                                                                                    <apex:outputText value="{!p.product.assetRec.License_Metric_Quantity__c}"/>
+                                                                                </apex:column>
+                                                                                <apex:column headerValue="Units">
+                                                                                    <apex:outputText value="{!prod.License_Metric__c}"/>
+                                                                                </apex:column>
+                                                                                <apex:column headerValue="Term Start">
+                                                                                    <apex:outputField value="{!quote.Effective_Date__c}"/>
+                                                                                </apex:column>
+                                                                                <apex:column headerValue="Term End">
+                                                                                    <apex:outputField value="{!p.product.assetRec.Asset_Term_End_Date__c}"/>
+                                                                                </apex:column>
+                                                                            </apex:pageBlocktable>
+                                                                            
+                                                                            <apex:outputPanel layout="block" style="text-align: right; margin: 0 4px;">
+                                                                                <!-- input type="button" value="Migrate" onclick="alert('Migrate to come...');"/ >
+                                                                                <apex:commandButton value="Migrate and associate migrated product to selected Add-on." action="{!migrateProductWeb}" rerender="coreProductTable,uoteConfigPanel,popupBGDivPanel">                    
+                                                                                    <apex:param name="migrateProdId" assignTo="{!migrateProdId}" value="{!p.product.productRec.Id}"/>                    
+                                                                                    
+                                                                                    <apex:param name="selectedCoreProduct"
+                                                                                                value="{!p.product.productRec.Id}"
+                                                                                                assignTo="{!selectedCoreProductId}"/> 
+                                                                                     <apex:param name="migrateSelectedCoreProduct"
+                                                                                                value="true"
+                                                                                                assignTo="{!fromCoreProductSelection}"/>  
+                                                                                </apex:commandButton-->
+                                                                                <apex:commandButton value="Migrate and associate migrated product to selected Add-on." action="{!addProducts}" 
+                                                                                        reRender="quoteConfigPanel,addNewPopUp,productGroup" 
+                                                                                        status="waitForLoad">
+                                                                                    <apex:param name="migrateProdId" assignTo="{!migrateProdId}" value="{!p.product.productRec.Id}"/> 
+                                                                                    <apex:param name="selectedCoreProduct"
+                                                                                                value="{!p.product.productRec.Id}"
+                                                                                                assignTo="{!selectedCoreProductId}"/>
+                                                                                     <apex:param name="migrateSelectedCoreProduct"
+                                                                                                value="true"
+                                                                                                assignTo="{!fromCoreProductSelection}"/>                    
+                                                                                </apex:commandButton>
+                                                                            </apex:outputPanel>
+                                                                        </div>
+                                                                </apex:column>
+                                                            </apex:pageBlockTable>
+                                                       </apex:PageBlock>    
+                                                       
+                                                       <apex:PageBlock rendered="{!c.coreProductList.size > 0}" title="Add New Core Product">
+                                                           Please select one of the Core Products below to associate with the selected Add-on Product.
+                                                            <br/>
+                                                        
+                                                    <apex:pageBlockTable value="{!c.coreProductList}" var="p">
+                                                                <apex:column headerValue="Core Product" value="{!p.product.quoteProdRec.product__r.name}"/>
+                                                        <apex:column headerValue="Quantity">
+                                                                 <apex:inputField value="{!p.product.quoteProdRec.License_Metric_Quantity__c}"/>
+                                                        </apex:column>
+                                                                <apex:column width="60%">
+                                                                    <apex:commandButton value="Add" action="{!addProducts}" 
+                                                                                        reRender="quoteConfigPanel,addNewPopUp,productGroup" 
+                                                                                        status="waitForLoad">
+                                                                        <apex:param name="selectedCoreProduct"
+                                                                                    value="{!p.product.productRec.Id}"
+                                                                                    assignTo="{!selectedCoreProductId}"/>                    
+                                                                    </apex:commandButton>
+                                                              </apex:column>
+                                                    </apex:pageBlockTable>
+                                                       </apex:PageBlock>
+                                                </apex:outputPanel>
+                                            
+                                            </apex:repeat>
+                                                <apex:commandButton value="Cancel" action="{!hideAddNew}" reRender="addNewPopUp,errorMessages" status="waitForLoad"/>
+                                        </apex:pageBlock>
+                                    </apex:outputPanel>
+                                </apex:outputPanel>
+                                 </apex:outputPanel>
+                              </div>
+                            </td>
+                        </tr>
+                        <tr height="5%">
+                            <td colspan="2" align="right" >
+                                <apex:commandButton value="Add" action="{!addProducts}" reRender="quoteConfigPanel,addNewPopUp,productGroup" status="waitForLoad"/>
+                                <apex:commandButton value="Add & More" action="{!addMoreProducts}" reRender="quoteConfigPanel,addNewPopUp" status="waitForLoad"/>
+                                <apex:commandButton value="Cancel" action="{!hideAddNew}" reRender="addNewPopUp,errorMessages" status="waitForLoad"/>
+                            </td>
+                        </tr>
+                    </table>
+            </apex:outputPanel>
+            <script>
+                initPFKs();
+            </script>
+        </apex:outputPanel>
+        <!--  
+            POPUP WINDOW TO UPDATE THE RESULT VALUE OF PRICING RESULT
+        -->
+        <apex:outputPanel id="overridePricingResultDialog">
+            <apex:outputPanel styleClass="popupBackground" layout="block" rendered="{!isEditResultValue}"/>
+            <apex:outputPanel styleClass="custPopup3" rendered="{!isEditResultValue}">
+                <apex:outputText ><h2 style="font-size:1.3em">Update Result Value</h2></apex:outputText>
+                <br/><br/>
+                <center>
+                    <apex:outputText value="Enter Result Value" />&nbsp;
+                    <apex:inputField value="{!editPricingResult.Result_Value__c}" rendered="{!AND(ISBLANK(editPricingResult.Result_Value_String__c),ISBLANK(editPricingResult.Result_Value_Date__c))}"/>
+                    <apex:inputField value="{!editPricingResult.Result_Value_String__c}" rendered="{!!ISBLANK(editPricingResult.Result_Value_String__c )}"/>
+                    <apex:inputField value="{!editPricingResult.Result_Value_Date__c}" rendered="{!!ISBLANK(editPricingResult.Result_Value_Date__c )}"/>
+                    <br/><br/>
+                    <apex:commandButton value="OK" action="{!updatePricingResultValue}" reRender="overridePricingResultDialog, quoteDetailsPopUp,quoteConfigPanel"/>
+                    <apex:commandButton value="Cancel" action="{!cancelPricingResultEdit}" reRender="overridePricingResultDialog" immediate="true" id="cancelPricingResult"/>
+              </center>
+            </apex:outputPanel>
+        </apex:outputPanel>
+        
+       <!--  
+            POPUP WINDOW TO EXTEND END TERM DATE OF EXISTING ASSETS
+        -->
+        <apex:outputPanel id="extendTermDateDialog">
+            <apex:outputPanel styleClass="popupBackground" layout="block" rendered="{!isEditEndDate}"/>
+            <apex:outputPanel styleClass="custPopup2" rendered="{!isEditEndDate}">
+                <apex:outputText ><h2 style="font-size:1.3em">Update Term End Date</h2></apex:outputText>
+                <br/><br/>
+                <center>
+                    <apex:outputText value="Enter Term End Date"/>&nbsp;<apex:inputField value="{!editQP.Asset_Term_End_Date__c}"/>
+                    <br/><br/>
+                    <apex:commandButton value="Update Term End Date" action="{!updateEndDate}" reRender="extendTermDateDialog, quoteConfigPanel "/>
+                    <apex:commandButton value="Update Related Term End Dates" action="{!updateCommonTermEndDate}" reRender="extendTermDateDialog,quoteConfigPanel "/>
+                    <apex:commandButton value="Cancel" action="{!cancelEdit}" reRender="extendTermDateDialog "/>
+              </center>
+            </apex:outputPanel>
+        </apex:outputPanel>
+        <!--  
+            POPUP WINDOW TO UPDATE START TERM DATE OF NEW QUOTE PRODUCTS
+        -->
+        <apex:outputPanel id="extendStartDateDialog">
+            <apex:outputPanel styleClass="popupBackground" layout="block" rendered="{!isEditStartDate}"/>
+            <apex:outputPanel styleClass="custPopup2" rendered="{!isEditStartDate}">
+                <apex:outputText ><h2 style="font-size:1.3em">Update Term Start Date</h2></apex:outputText>
+                <br/><br/>
+                <center>
+                    <apex:outputText value="Enter Term Start Date"/>&nbsp;<apex:inputField value="{!editQP.Asset_Term_Start_Date__c}"/>
+                    <br/><br/>
+                    <apex:commandButton value="Update Quote" action="{!updateStartDate}" reRender="extendStartDateDialog, quoteConfigPanel "/>
+                    <apex:commandButton value="Cancel" action="{!cancelEdit}" reRender="extendStartDateDialog "/>
+              </center>
+            </apex:outputPanel>
+        </apex:outputPanel>
+        <!--  
+            POPUP WINDOW TO UPDATE 'Other' values on Existing Assets
+        -->
+        <apex:outputPanel id="editOtherValuesPopup">
+            <apex:outputPanel styleClass="popupBackground" layout="block" rendered="{!isEditOtherValues}"/>
+            <apex:outputPanel styleClass="custPopup2" rendered="{!isEditOtherValues}">
+                <apex:outputText ><h2 style="font-size:1.3em">Edit Other Values</h2></apex:outputText>
+                <br/><br/>
+                <center>
+                    <apex:dynamicComponent componentValue="{!EditOthersVF}"/>
+                    <br/><br/>
+                    <apex:commandButton value="Update" action="{!updateOtherValues}" reRender="editOtherValuesPopup, quoteConfigPanel "/>
+                    <apex:commandButton value="Cancel" action="{!cancelEdit}" reRender="editOtherValuesPopup"/>
+              </center>
+            </apex:outputPanel>
+        </apex:outputPanel>
+        <!--  
+            LISTS SUMMARY OF ALL QUOTE PRODUCTS SEPARATED BY LINE TYPES
+        -->
+        <apex:outputPanel id="quoteDetailsPopUp" >
+            <apex:outputPanel styleClass="popupBackground" layout="block" rendered="{!showQuoteDetails}"/>
+            <apex:outputPanel styleClass="custPopup1" rendered="{!showQuoteDetails}" >
+                <!-- First, some value override removal functionality - Product Specific -->
+                <script>
+                    function removeAllOverridesDialog(overrideProduct) {
+                        $( "#dialog-confirmRemoveAllOverrides" ).dialog({
+                            resizable: false,
+                            height:180,
+                            modal: true,
+                            buttons: {
+                                "Clear All Overrides": function() {
+                                    $( this ).dialog( "close" );
+                                    js_removeOverride(overrideProduct, null);
+                                },
+                                Cancel: function() {
+                                    $( this ).dialog( "close" );
+                                }
+                            }
+                        });
+                    };
+                </script>
+                <div id="dialog-confirmRemoveAllOverrides" style="display: none;">
+                <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>One or more result value for this product has been overridden.</p>
+                </div>
+                
+                <!-- First, some value override removal functionality - Access-Sequence Specific -->
+                <script>
+                    function removeOverrideDialog(overrideProduct, overridePPS) {
+                        $( "#dialog-confirmRemoveOverride" ).dialog({
+                            resizable: false,
+                            height:180,
+                            modal: true,
+                            buttons: {
+                                "Clear Override": function() {
+                                    $( this ).dialog( "close" );
+                                    js_removeOverride(overrideProduct, overridePPS);
+                                },
+                                Cancel: function() {
+                                    $( this ).dialog( "close" );
+                                }
+                            }
+                        });
+                    };
+                </script>
+                <div id="dialog-confirmRemoveOverride" style="display: none;">
+                <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>This step's result value has been overridden.</p>
+                </div>
+                
+            
+                <!--  
+                    CLOSE ICON TO HIDE QUOTE TOTAL POPUP WINDOW
+                -->
+                <apex:image url="{!URLFOR($Resource.VCG_CPQ_Icons,'edo_icons_btns/close_x_icon.png')}" 
+                    width="22px" 
+                    height="24px" 
+                    onClick="js_hideQuoteDetails();" 
+                    title="Close window" 
+                    style="float:right; cursor:pointer;"/>&nbsp;
+                <apex:outputText ><h2 style="font-size:1.3em">Quote</h2></apex:outputText>
+                <br/>
+                
+                <!--
+                    Quote Popup Quote Totals Block
+                -->
+                <apex:pageBlock rendered="{!allQuoteProductList.size != 0}">
+                      <apex:dynamicComponent componentValue="{!QuoteTotalsDetail}"/>
+                </apex:pageBlock>
+                <!-- END Quote Popup Quote Totals Block -->
+                
+                
+                <!--  
+                    Quote Details:New section - LIST OF NEW QUOTE PRODUCTS
+                -->
+                <apex:dynamicComponent componentValue="{!QuoteDetailsNewVF}"/>
+                
+                <!--  
+                    Quote Details:Renewal section - LIST OF RENEWAL QUOTE PRODUCTS
+                -->
+                <apex:dynamicComponent componentValue="{!QuoteDetailsRenewalVF}"/>
+                
+                <!--  
+                    Quote Details:Extension section - LIST OF EXTENSION QUOTE PRODUCTS
+                -->
+                <apex:dynamicComponent componentValue="{!QuoteDetailsExtVF}"/> 
+                
+                <!--  
+                    Quote Details:Decommission section - LIST OF DECOMMISSION QUOTE PRODUCTS
+                -->
+                <apex:dynamicComponent componentValue="{!QuoteDetailsDecomVF}"/>
+                
+                <!--  
+                    Quote Details:Migration section - LIST OF MIGRATION QUOTE PRODUCTS
+                -->
+                <apex:dynamicComponent componentValue="{!QuoteDetailsMigVF}"/>
+                
+                <!--  
+                    Quote Details:Other section - LIST OF OTHER QUOTE PRODUCTS
+                -->
+                <apex:dynamicComponent componentValue="{!QuoteDetailsOtherVF}"/>
+                
+                
+                <!--
+                    Display all Pricing Results down here for now
+                -->
+                <apex:image url="{!URLFOR($Resource.VCG_CPQ_Icons,'edo_icons_btns/open_icon.png')}" width="22px" height="24px" onClick="js_showHidePricingResults();" title="Click to show pricing results." rendered="{!AND(!showPricingResults,CanAccessPricingResults)}" style="cursor:pointer;"/>
+                <apex:image url="{!URLFOR($Resource.VCG_CPQ_Icons,'edo_icons_btns/close_btn.png')}" width="22px" height="24px" onClick="js_showHidePricingResults();" title="Click to hide pricing results." rendered="{!showPricingResults}" style="cursor:pointer;"/>&nbsp;
+                <apex:outputPanel rendered="{!showPricingResults}" id="PricingResultPanel">
+                    <br/><br/>
+                    <h2 style="margin-bottom: 8px;">Pricing Results</h2>
+                    <apex:repeat value="{!pricingResultsMap}" var="key">
+                        <apex:pageblock title="{!key}">
+                            <apex:pageBlockTable value="{!pricingResultsMap[key]}" var="result">
+                                <apex:column >
+                                  <apex:outputPanel rendered="{!result.Pricing_Override__r != null}">
+                                      <!-- @todo  Disable this and the other remove override functionality if the user can't edit overrides -->
+                                      <a href="javascript:void(0);" onclick="removeOverrideDialog('{!key}', '{!result.Pricing_Procedure_Sequence__c}'); return false;"><apex:image value="{!URLFOR($Resource.VCG_CPQ_Icons,'edo_icons_btns/alert_icon.gif')}" title="Result Value for this calculation step has been overridden"/></a>
+                                   </apex:outputPanel>
+                                </apex:column>
+                                <apex:column headerValue="Sequence">
+                                  <apex:outputText value="{!result.Sequence__c}"/>
+                                </apex:column>
+                                <apex:column value="{!result.Access_Sequence__c}"/>
+                                <apex:column value="{!result.Condition__c}"/>
+                                <apex:column headerValue="Lookup Result Value">
+                                    <apex:outputField value="{!result.Lookup_Result_Value__c}" rendered="{!result.Lookup_Result_Value_String__c == null}" />
+                                    <apex:outputField value="{!result.Lookup_Result_Value_String__c}" rendered="{!result.Lookup_Result_Value_String__c != null}" />
+                                </apex:column>
+                                <apex:column value="{!result.Lookup_Result_Type__c}"/>
+                                <apex:column value="{!result.Calculation_Summary__c}"/>
+                                <apex:column headerValue="Result Value" title="{!IF(CanOverridePricingResults,'Double-click if you want to change the Result Value of this Pricing Result.','')}">
+                                    <apex:outputField value="{!result.Result_Value__c}" rendered="{!AND(result.Result_Value_String__c == null,result.Result_Value_Date__c == null)}" />
+                                    <apex:outputField value="{!result.Result_Value_String__c}" rendered="{!result.Result_Value_String__c != null}" />
+                                    <apex:outputField value="{!result.Result_Value_Date__c}" rendered="{!result.Result_Value_Date__c != null}" />
+                                     <apex:actionSupport event="ondblclick" action="{!showEditResultValue}" reRender="overridePricingResultDialog" rendered="{!CanOverridePricingResults}"> 
+                                         <apex:param name="PricingRedultValue" assignto="{!editPricingKey}" value="{!key}"/>
+                                         <apex:param name="AccessSequance" assignto="{!pricingProcSeqId}" value="{!result.Pricing_Procedure_Sequence__c}"/>
+                                     </apex:actionSupport>
+                                </apex:column>
+                                <apex:column value="{!result.Result_Type__c}"/>
+                                <apex:column value="{!result.Assign_To__c}"/>
+                            </apex:pageBlockTable>
+                        </apex:pageblock>
+                    </apex:repeat>
+                </apex:outputPanel>
+                
+            </apex:outputPanel>
+        </apex:outputPanel>
+    </apex:form>
+    
+    <apex:actionStatus id="waitForLoad" >
+        <apex:facet name="start">
+            <div class="waitForLoad">
+                <span style="display: inline-block; height: 100%; vertical-align: middle;"></span>
+                <img src="/img/loading.gif"  style="vertical-align: middle;" />
+            </div>
+        </apex:facet>
+    </apex:actionStatus>
+</apex:page>

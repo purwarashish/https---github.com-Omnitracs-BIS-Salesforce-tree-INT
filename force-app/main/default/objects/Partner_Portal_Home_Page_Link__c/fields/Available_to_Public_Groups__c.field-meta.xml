@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Available_to_Public_Groups__c</fullName>
+    <description>Comma separated list of Public Group Ids that would have access to this link. If left blank, all users would have access to this link.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Comma separated list of Public Group Ids that would have access to this link. If left blank, all users would have access to this link.</inlineHelpText>
+    <label>Available to Public Groups</label>
+    <length>1024</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

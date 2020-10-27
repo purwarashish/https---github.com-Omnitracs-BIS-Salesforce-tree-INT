@@ -1,0 +1,18 @@
+<apex:page standardcontroller="account" extensions="ViewVarHierarchyExtension">
+    <apex:form >
+        <apex:pageBlock title="Var/SubVar Hierarchy for {!theAccount.name}" >
+            <apex:pageBlockTable value="{!allAccountsInHierarchy}" var="accountInList" >
+                <apex:column headervalue="Account Name">
+                    <apex:outputtext value="{!accountInList.spaceForIndentation}" escape="false"/>
+                        <apex:outputlink value="{!$Site.Domain}/{!accountInList.id}" target="_parent">
+                            <apex:outputtext value="{!accountInList.name}" />
+                        </apex:outputlink>
+                </apex:column>
+                <apex:column value="{!accountInList.accounttype}" headervalue="Type"/>
+                <apex:column value="{!accountInList.physicalcountry}" headervalue="Country"/>
+                <apex:column value="{!accountInList.owner}" headervalue="Owner"/>                                                
+                <apex:column value="{!accountInList.industry}" headervalue="Industry"/>
+            </apex:pageBlockTable>
+        </apex:pageblock> 
+    </apex:form>
+</apex:page>

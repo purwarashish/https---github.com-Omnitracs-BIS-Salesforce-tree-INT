@@ -1,0 +1,131 @@
+<apex:page id="pg" controller="LimitedAccountOrLeadViewController">
+
+<apex:form id="frm">
+    <apex:pageBlock id="accBlk" tabStyle="Account" title="Accounts" rendered="{!NOT(ISNULL(selectedAcc))}" >
+          <apex:pageBlockSection title="Information" columns="2" collapsible="false">
+            <apex:outputField value="{!selectedAcc.Name}"/>
+            <apex:outputField value="{!selectedAcc.QWBS_Cust_ID__c}"/>
+            <apex:outputField value="{!selectedAcc.QWBS_Status__c}"/>
+            <apex:outputField value="{!selectedAcc.BillingCity}"/>
+            <apex:outputField value="{!selectedAcc.BillingState}"/>
+          </apex:pageBlockSection>
+          
+    </apex:pageBlock>  
+    <apex:pageBlock id="leadBlk" tabStyle="Lead" title="Leads" rendered="{!NOT(ISNULL(selectedLead))}">
+          <apex:pageBlockSection title="Information" columns="2" collapsible="false">
+            <apex:outputField value="{!selectedLead.Name}"/>
+            <apex:outputField value="{!selectedLead.Title}"/>
+            <apex:outputField value="{!selectedLead.Status}"/>
+            <apex:outputField value="{!selectedLead.Company}"/>
+            <apex:outputField value="{!selectedLead.City}"/>
+            <apex:outputField value="{!selectedLead.State}"/>
+          </apex:pageBlockSection>  
+    </apex:pageBlock> 
+
+
+    <apex:pageBlock title="Activity History" tabStyle="Lead" rendered="{!NOT(ISNULL(selectedLead))}">
+        <div id ="ActHis">
+        <apex:pageBlockTable id="HistoryTable" value="{!selectedLead.ActivityHistories}" var="History" rendered="{!selectedLead.ActivityHistories.size > 0}" rows="10">
+        
+            <apex:column headerValue="Subject" value="{!History.Subject} "/>
+                          
+            <apex:column headerValue="Task"  value="{!History.IsTask}"/>
+            <apex:column headerValue="Due Date"  value="{!History.ActivityDate}"/>
+            <apex:column headerValue="Assigned To"  value="{!History.OwnerId}"/>
+            <apex:column headerValue="Last Modified Date/Time"  value="{!History.LastModifiedDate}"/>
+        </apex:pageBlockTable>
+        </div><br/>
+        <apex:outputLink value="/apex/ShowAllActivitIes?id={!selectedLead.id}&type=AH" rendered="{!selectedLead.ActivityHistories.size > 10}">Go to list »</apex:outputLink>
+    </apex:pageBlock>
+    
+    <apex:pageBlock title="Open Activities" tabStyle="Lead" rendered="{!NOT(ISNULL(selectedLead))}">
+        <div id ="OpenAct">
+        <apex:pageBlockTable id="OpenActTable" value="{!selectedLead.OpenActivities}" var="OpenAct" rendered="{!selectedLead.OpenActivities.size > 0}" rows="10">
+        
+            <apex:column headerValue="Subject" value="{!OpenAct.Subject}"/>
+                            
+            <apex:column headerValue="Task"  value="{!OpenAct.IsTask}"/>
+            <apex:column headerValue="Due Date"  value="{!OpenAct.ActivityDate}"/>
+            <apex:column headerValue="Status"  value="{!OpenAct.Status}"/>
+            <apex:column headerValue="Priority"  value="{!OpenAct.Priority}"/>
+            
+            <apex:column headerValue="Assigned To"  value="{!OpenAct.OwnerId}"/>
+            
+        </apex:pageBlockTable>
+        </div><br/>
+        <apex:outputLink value="/apex/ShowAllActivitIes?id={!selectedLead.id}&type=OA" rendered="{!selectedLead.OpenActivities.size > 10}">Go to list »</apex:outputLink>
+    </apex:pageBlock>
+  
+      
+    <apex:pageBlock title="Activity History" tabStyle="Account" rendered="{!NOT(ISNULL(selectedAcc))}">
+        <div id ="ActHis">
+        <apex:pageBlockTable id="HistoryTable" value="{!selectedAcc.ActivityHistories}" var="History"  rendered="{!selectedAcc.ActivityHistories.size > 0}" rows="10">
+        
+            <apex:column headerValue="Subject" value="{!History.Subject} "/>            
+            <apex:column headerValue="Name"  value="{!History.WhoId}"/>
+        <!--    <apex:column headerValue="Related To"  value="{!History.WhatId}"/>-->
+            <apex:column headerValue="Task"  value="{!History.IsTask}"/>
+            <apex:column headerValue="Due Date"  value="{!History.ActivityDate}"/>
+            
+            <apex:column headerValue="Assigned To"  value="{!History.OwnerId}"/>
+            <apex:column headerValue="Last Modified Date/Time"  value="{!History.LastModifiedDate}"/>
+        </apex:pageBlockTable>
+        </div><br/>
+        <apex:outputLink value="/apex/ShowAllActivitIes?id={!selectedAcc.id}&type=AH" rendered="{!selectedAcc.ActivityHistories.size > 10}">Go to list »</apex:outputLink>
+    </apex:pageBlock> 
+    
+    <apex:pageBlock title="Open Activities" tabStyle="Account" rendered="{!NOT(ISNULL(selectedAcc))}">
+        <div id ="OpenAct">
+        <apex:pageBlockTable id="OpenActTable" value="{!selectedAcc.OpenActivities}" var="OpenAct" rendered="{!selectedAcc.OpenActivities.size > 0}" rows="10">
+        
+            <apex:column headerValue="Subject" value="{!OpenAct.Subject} "/>
+              
+            <apex:column headerValue="Name"  value="{!OpenAct.WhoId}"/>
+        <!--    <apex:column headerValue="Related To"  value="{!OpenAct.WhatId}"/>-->
+            <apex:column headerValue="Task"  value="{!OpenAct.IsTask}"/>
+            <apex:column headerValue="Due Date"  value="{!OpenAct.ActivityDate}"/>
+            <apex:column headerValue="Status"  value="{!OpenAct.Status}"/>
+            <apex:column headerValue="Priority"  value="{!OpenAct.Priority}"/>
+            
+            <apex:column headerValue="Assigned To"  value="{!OpenAct.OwnerId}"/>
+
+            
+        </apex:pageBlockTable>
+        </div><br/>
+        <apex:outputLink value="/apex/ShowAllActivitIes?id={!selectedAcc.id}&type=OA" rendered="{!selectedAcc.OpenActivities.size > 10}">Go to list »</apex:outputLink>
+    </apex:pageBlock>
+
+      <apex:pageBlock id="contBlk" tabStyle="Contact" title="Contacts" rendered="{!NOT(ISNULL(Contacts))}">
+        <apex:pageBlockTable id="contactTbl" value="{!contacts}" var="a" title="Contacts"  rendered="{! Contacts.size > 0}">
+            
+            <apex:column value="{!a.Name}"/>
+            <apex:column value="{!a.Title}"/>
+            <apex:column value="{!a.Account.Name}"/>
+            <apex:column value="{!a.MailingCity}"/>
+            <apex:column value="{!a.MailingState}"/>
+           
+        </apex:pageBlockTable>
+        
+        <apex:outputPanel layout="block" styleClass="pSearchShowMore" id="otpNav1" rendered="{!NOT(ISNULL(setConCont))}">   
+                  Total Contacts: <apex:outputText rendered="{!IF(setConCont.resultSize==10000,true,false)}">10000 +</apex:outputText>
+                 
+                  <apex:outputText rendered="{!IF(setConCont.resultSize < 10000,true,false)}">{!setConCont.resultSize}</apex:outputText>   
+                  
+                      <apex:image url="/img/search_prevarrow_disabled.gif" styleClass="prevArrow" rendered="{!NOT(setConCont.hasPrevious)}"/>   
+                      <apex:image url="/img/search_prevarrow.gif" title="Previous Page" styleClass="prevArrow" rendered="{!setConCont.hasPrevious}"/>   
+                      
+                      <apex:commandLink action="{!setConCont.previous}" rendered="{!setConCont.hasPrevious}" reRender="contBlk">Previous</apex:commandLink>   
+                      <apex:outputPanel styleClass="pShowLess noLink" style="color:grey" rendered="{!NOT(setConCont.hasPrevious)}">Previous Page</apex:outputPanel>            
+                      &nbsp;({!IF(setConCont.PageNumber == 1,1,((setConCont.PageNumber -1) * setConCont.PageSize)+1)}-{!IF(setConCont.resultSize < setConCont.PageSize,setConCont.resultSize,setConCont.PageNumber * setConCont.pageSize)})&nbsp;   
+                      <apex:outputPanel styleClass="pShowLess noLink" style="color:grey" rendered="{!NOT(setConCont.hasNext)}">Next Page</apex:outputPanel>            
+
+                      <apex:commandLink value="Next Page" rendered="{!setConCont.hasNext}" action="{!setConCont.next}" reRender="contBlk"/>&nbsp;   
+
+                      <apex:image url="/img/search_nextarrow.gif" title="Next Page" styleClass="nextArrow" rendered="{!setConCont.hasNext}"/>   
+                      <apex:image url="/img/search_nextarrow_disabled.gif" rendered="{!NOT(setConCont.hasNext)}"/>             
+                  </apex:outputPanel> 
+         </apex:pageBlock>
+      
+ 
+</apex:form>
+</apex:page>

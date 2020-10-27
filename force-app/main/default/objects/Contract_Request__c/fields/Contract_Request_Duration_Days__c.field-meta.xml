@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Request_Duration_Days__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF (ISNULL(Set_up_Complete__c ), null, 
+IF (ISNULL(  Submitted_Submitted_for_Approval__c ), 
+(IF (ISNULL(  Assigned__c ),  Set_up_Complete__c -  Contract_Received__c,Set_up_Complete__c - Assigned__c)) , Set_up_Complete__c - Submitted_Submitted_for_Approval__c 
+))</formula>
+    <inlineHelpText>If Set-up is not complete, the duration is calculated by Today minus the submitted date. 
+If Set-up is complete, the duration is calculated by the set-up complete date minus the submitted date.</inlineHelpText>
+    <label>Contract Request Duration (Days)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

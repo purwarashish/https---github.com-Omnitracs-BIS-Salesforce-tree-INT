@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Drivers__c</fullName>
+    <description>List the events which caused the customer to purchase our products.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>List the events which caused the customer to purchase our products.</inlineHelpText>
+    <label>Product Drivers</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

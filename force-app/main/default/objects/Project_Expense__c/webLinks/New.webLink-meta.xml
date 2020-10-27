@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New</fullName>
+    <availability>online</availability>
+    <description>New Expense override with default fields</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>/a0x/e?CF00N50000001dKBB={!Projects__c.Name}&amp;CF00N50000001dKBB_lkid={!Projects__c.Id}&amp;CF00N50000001dKB9={!User.Name}&amp;retURL=%2F{!Projects__c.Id}&amp;saveURL=%2F{!Projects__c.Id}&amp;cancelURL=%2F{!Projects__c.Id}</url>
+</WebLink>

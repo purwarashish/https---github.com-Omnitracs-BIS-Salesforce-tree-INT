@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cust_S0_1_S2_0_to_LV_IP__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>IP Address</inlineHelpText>
+    <label>Cust S0.1/S2.0 to LV IP</label>
+    <length>15</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

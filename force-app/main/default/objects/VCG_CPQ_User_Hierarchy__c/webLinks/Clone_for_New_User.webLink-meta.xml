@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Clone_for_New_User</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Clone for New User</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>{!REQUIRESCRIPT(&apos;/soap/ajax/29.0/connection.js&apos;)}
+{!REQUIRESCRIPT(&apos;/soap/ajax/29.0/apex.js&apos;)}
+
+var url = parent.location.href;
+var recordIds = {!GETRECORDIDS($ObjectType.VCG_CPQ_User_Hierarchy__c)};
+if (recordIds.length == 0)
+{
+    alert(&quot;Please select at least one record to update.&quot;);
+}
+
+var newUserName = prompt(&apos;Name of new user:&apos;);
+
+var newUserId = null;
+
+if (newUserName != &apos;&apos;)
+{
+
+    var result = sforce.connection.search(&quot;FIND {&quot; + newUserName + &quot;} IN Name FIELDS RETURNING User(Name, Id WHERE IsActive = TRUE)&quot;);
+
+    if (result) {
+        var records = result.getArray(&quot;searchRecords&quot;);
+        if (records.length == 0) {
+            alert(&apos;No users found by that name&apos;);
+        }
+        else if (records.length &gt; 1) {
+            var names = &apos;&apos;;
+            for (var i = 0; i &lt; records.length; i++) {
+                var record = records[i].record;
+                names += &apos;\n&apos; + record.Name;
+            }
+            alert(&apos;More than one user found, please enter a more specific name.\n\nUsers found:\n&apos; + names);
+        }
+        else {
+//            alert(&apos;Found user: &apos; + records[0].record.Name);
+            newUserId = records[0].record.Id;
+            
+//            for (var i=0; i&lt;records.length; i++) {
+//                var record = records[i].record;
+//                log(record.Id + &quot; -- &quot; + record.Name);
+//            }
+        }
+    }
+}
+
+
+if (newUserId != null)
+{
+    var origRecs = sforce.connection.retrieve(&apos;Related_User__c,Related_User_Role__c&apos;, &apos;VCG_CPQ_User_Hierarchy__c&apos;, recordIds);
+    var newRecords = [];
+
+    if (origRecs[0] == null)
+    {
+        alert(&quot;Selected hierarchy records not found. Records deleted in another window or by another user?&quot;);
+    }
+    else
+    {
+//        alert(&apos;Cloning records...&apos;);
+        for (var i = 0; i &lt; origRecs.length; i++) {
+            var newHierRec = new sforce.SObject(&apos;VCG_CPQ_User_Hierarchy__c&apos;); 
+            newHierRec.User__c = newUserId;
+            newHierRec.Related_User__c = origRecs[i].Related_User__c;
+            newHierRec.Related_User_Role__c = origRecs[i].Related_User_Role__c;
+            
+            newRecords.push(newHierRec);
+        }
+        
+//        alert(&apos;Inserting cloned records...&apos;);
+        result = sforce.connection.create(newRecords);
+    
+        if (result[0].success == &apos;true&apos;){
+            alert(&apos;The records have been cloned successfully. Refresh page or view to see.&apos;);
+        }
+        else {
+            alert(&apos;An Error has Occurred. Error: &apos; + result[0].errors.message);
+        }
+    }
+}
+
+/**/</url>
+</WebLink>

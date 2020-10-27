@@ -1,0 +1,425 @@
+<apex:page controller="RequestFormController" action="{!init}">
+<style>
+    .tdLabel {
+        width: 30%;
+        font-weight : bold;
+        padding-left: 10px;
+    }
+    
+    .tdValue{
+        width:700px;
+    }
+    
+    .tableHeader{
+        font-weight:bold;
+        font-size:16px;
+    }
+    
+    .statusStyle {
+        background:url(/img/loading32.gif) no-repeat 0 0; 
+        padding-left:20px; 
+        margin-left:10px; 
+        padding-bottom:5px; 
+    }
+    body.wait, body.wait * { cursor: wait !important; }
+</style>
+<script>
+   function noenter(ev)
+   {
+      if (window.event && window.event.keyCode == 13 || ev.which == 13) {
+            csubmit();
+            return false;
+      } 
+      else {
+            return true;
+      }   
+   }
+</script>
+    <apex:sectionHeader title="NDA REQUEST"/>
+    <apex:outputPanel id="logoPanel">
+        <apex:image value="{!$Resource.OmnitracsLogo}"/>
+    </apex:outputPanel>
+    <apex:actionStatus id="processRequest" stopText="">
+        <apex:facet name="start">
+            <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.6; z-index: 1000; background-color: black;"/>
+            <div style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 1001; margin: 15% 50%">
+                <div style="display: inline-block; padding: 2px; background-color: #fff; width: 125px;">
+                    <img src="/img/loading.gif" style="float: left; margin: 8px;" />
+                    <span style="display: inline-block; padding: 10px 0px;">Please Wait...</span>
+                </div>
+            </div>
+        </apex:facet>
+    </apex:actionStatus>
+    
+    <apex:form id="frm">
+     <apex:outputPanel id="messagepanel">
+        <apex:pageMessages />
+     </apex:outputPanel>
+     <apex:pageBlock id="requestFormPageBlock" rendered="{!!submitSuccessfull}" >
+         <apex:pageBlockButtons id="pageBlckBtns">
+            <apex:commandButton value="Submit" id="submitButton" onclick="csubmit(); return false;" status="processRequest" />
+            <apex:commandButton action="{!clear}" value="Clear" immediate="true" />
+        </apex:pageBlockButtons>
+        <apex:actionFunction name="csubmit" action="{!submit}" rerender="frm"/>
+        
+        <apex:outputPanel Id="requestFormPanel">
+            <apex:outputtext style="font-size:17px" value="Please complete the following form and click submit to email it to nda@omnitracs.com. The Omnitracs legal team will review your request and contact you with any additional questions prior to processing the request."/>
+            <table width="100%" cellspacing="10">
+                <tr><td colspan="2"><apex:outputtext styleclass="tableHeader" value="Omnitracs Requestor Information"/></td></tr>
+                <tr><td colspan="2"><div style="width:100%; height:2px; background:green;"></div></td></tr>
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="Entity" /></td>
+                    <td><apex:inputField styleclass="tdValue" value="{!requestor.Entity__c}" /></td>
+                </tr>
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="First Name"/></td>
+                    <td><apex:inputField styleclass="tdValue" value="{!requestor.First_Name__c}" onkeypress="return noenter(event);" required="true"/></td>
+                </tr>
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="Last Name"/></td>
+                    <td><apex:inputField styleclass="tdValue" value="{!requestor.Name__c}" onkeypress="return noenter(event);" required="true"/></td>
+                </tr>
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="Title"/></td>
+                    <td><apex:inputField styleclass="tdValue" value="{!requestor.Title__c}" onkeypress="return noenter(event);" required="true"/></td>
+                </tr>
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="Department"/></td>
+                    <td><apex:inputField styleclass="tdValue" value="{!requestor.Department__c}" onkeypress="return noenter(event);" required="true"/></td>
+                </tr>
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="Email"/></td>
+                    <td><apex:inputField styleclass="tdValue" value="{!requestor.Email__c}" onkeypress="return noenter(event);" required="true"/></td>
+                </tr>
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="Phone"/></td>
+                    <td ><apex:inputField styleclass="tdValue" value="{!requestor.Phone__c}" onkeypress="return noenter(event);" required="true"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center" style="margin-right:50px;">
+                        <apex:actionRegion id="ignoreEmployees">
+                            <apex:outputLabel styleclass="tdLabel" value="Number of Additional Employees to Add:" style="padding-right: 10px;"/>
+                            <apex:inputText value="{!numberOfAdditionalEmployees}" style="width: 50px;"/>
+                            <apex:commandButton action="{!addAdditionalEmployees}" value="Add Additional Employess" rerender="additionEmployessPanel" style="left:40px;position:relative;"/>
+                        </apex:actionRegion>
+                    </td>
+                </tr>
+            </table>
+            <apex:outputpanel Id="additionEmployessPanel">
+                <apex:repeat value="{!additionalEmployees}" var="additionalEmployee" id="additionalEmployeeListId">
+                    <table width="100%" cellspacing="10">
+                        <tr><td colspan="2"><apex:outputtext styleclass="tableHeader" value="Additional Omnitracs Employee(s) to Include on Notification about this NDA"/></td></tr>
+                        <tr><td colspan="2"><div style="width:100%; height:2px; background:green;"></div></td></tr>
+                        <tr>
+                            <td class="tdLabel"><apex:outputLabel value="First Name"/></td>
+                            <td><apex:inputField styleclass="tdValue" value="{!additionalEmployee.First_Name__c}" /></td>
+                        </tr>
+                        <tr>
+                            <td class="tdLabel"><apex:outputLabel value="Last Name"/></td>
+                            <td><apex:inputField styleclass="tdValue" value="{!additionalEmployee.Name__c}" /></td>
+                        </tr>
+                        <tr>
+                            <td class="tdLabel"><apex:outputLabel value="Title"/></td>
+                            <td><apex:inputField styleclass="tdValue" value="{!additionalEmployee.Title__c}" /></td>
+                        </tr>
+                        <tr>
+                            <td class="tdLabel"><apex:outputLabel value="Department"/></td>
+                            <td><apex:inputField styleclass="tdValue" value="{!additionalEmployee.Department__c}" /></td>
+                        </tr>
+                        <tr>
+                            <td class="tdLabel"><apex:outputLabel value="Email"/></td>
+                            <td><apex:inputField styleclass="tdValue" value="{!additionalEmployee.Email__c}" /></td>
+                        </tr>
+                        <tr>
+                            <td class="tdLabel"><apex:outputLabel value="Phone"/></td>
+                            <td ><apex:inputField styleclass="tdValue" value="{!additionalEmployee.Phone__c}" /></td>
+                        </tr>
+                    </table>
+                </apex:repeat>
+             </apex:outputpanel>
+            
+            <table width="100%" cellspacing="10">
+                <tr><td colspan="2"><apex:outputtext styleclass="tableHeader" value="NDA Request Information"/></td></tr>
+                <tr><td colspan="2"><div style="width:100%; height:2px; background:green;"></div></td></tr>
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="What is your functional area (engineering, marketing, etc.)?"/></td>
+                    <td><apex:inputField styleclass="tdValue" value="{!requestForm.Functional_Area__c}" required="true"/></td>
+                </tr>
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="Primary reason for NDA?"/></td>
+                    <td>
+                        <apex:outputPanel >
+                            <div class="requiredInput">
+                               <div class="requiredBlock"></div>
+                                <apex:selectRadio value="{!requestForm.Primary_reason__c}" layout="pageDirection">
+                                    <apex:selectoptions value="{!primaryReasons}"></apex:selectoptions>
+                                </apex:selectRadio> 
+                            </div>
+                        </apex:outputPanel>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdLabel">&nbsp;</td>
+                    <td><apex:inputField styleclass="tdValue" value="{!requestForm.Primary_reason_Other_Description__c}" style="height:100px;" /></td>
+                </tr>
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="Is this request for an amendment to an existing NDA?"/></td>
+                    <td>
+                        <apex:outputPanel >
+                            <div class="requiredInput">
+                                <div class="requiredBlock"></div>
+                                <apex:selectRadio value="{!requestForm.Request_For_Amendment__c}" layout="pageDirection">
+                                    <apex:selectoptions value="{!requestForAmendment}"></apex:selectoptions>
+                                </apex:selectRadio> 
+                            </div>
+                        </apex:outputPanel>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="Describe business relationship and need for confidential/proprietary discussions/disclosures (provide specific details regarding information that will be shared)."/></td>
+                    <td><apex:inputField styleclass="tdValue" value="{!requestForm.Business_relationship_description__c}" style="height:100px;" required="true"/></td>
+                </tr>
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="Which parties will be sharing their confidential information?"/></td>
+                    <td>
+                        <apex:outputPanel >
+                            <div class="requiredInput">
+                               <div class="requiredBlock"></div>
+                                <apex:selectRadio value="{!requestForm.Confidential_Information_Parties__c}" layout="pageDirection">
+                                    <apex:selectoptions value="{!confidentialParties}"></apex:selectoptions>
+                                </apex:selectRadio>     
+                            </div>
+                        </apex:outputPanel>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="Will our subcontractors or consultants (not including temporary or contingent workforce employees) need to receive confidential/proprietary information related to this NDA?"/></td>
+                    <td>
+                        <apex:outputPanel >
+                            <div class="requiredInput">
+                               <div class="requiredBlock"></div>
+                                <apex:selectRadio value="{!requestForm.Confidential_Information_Contractors__c}" layout="pageDirection">
+                                    <apex:selectoptions value="{!confidentialContractors}"></apex:selectoptions>
+                                </apex:selectRadio>     
+                            </div>
+                        </apex:outputPanel>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="Effective date"/></td>
+                    <td><apex:inputfield value="{!requestForm.Effective_Date__c}" /></td>
+                </tr>
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="Expiration Date"/></td>
+                    <td><apex:inputfield value="{!requestForm.Expiration_Date__c}" /></td>
+                </tr>
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="Legal Entity Type"/></td>
+                    <td><apex:inputField styleclass="tdValue" value="{!requestForm.Legal_Entity_Type__c}" required="true" /></td>
+                </tr>
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="Legal Entity State"/></td>
+                    <td><apex:inputField styleclass="tdValue" value="{!requestForm.Legal_Entity_State__c}" required="true" /></td>
+                </tr>
+            </table>
+            <table width="100%" cellspacing="10">
+                <tr><td colspan="2"><apex:outputtext styleclass="tableHeader" value="Contact Details of Other Parties"/></td></tr>
+                <tr><td colspan="2"><div style="width:100%; height:2px; background:green;"></div></td></tr>
+                <tr><td colspan="2"><apex:outputtext style="font-weight:bold; font-size:14px;" value="First Party:"/></td></tr>
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="First Name"/></td>
+                    <td><apex:inputField styleclass="tdValue" value="{!firstParty.First_Name__c}" required="true" onkeypress="return noenter(event);"/></td>
+                </tr>
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="Last Name"/></td>
+                    <td><apex:inputField styleclass="tdValue" value="{!firstParty.Name__c}" required="true" onkeypress="return noenter(event);"/></td>
+                </tr>
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="Title"/></td>
+                    <td><apex:inputField styleclass="tdValue" value="{!firstParty.Title__c}" /></td>
+                </tr>
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="Contact Phone"/></td>
+                    <td><apex:inputField styleclass="tdValue" value="{!firstParty.Phone__c}" required="true" onkeypress="return noenter(event);"/></td>
+                </tr>
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="Contact Email"/></td>
+                    <td><apex:inputField styleclass="tdValue" value="{!firstParty.Email__c}" required="true" onkeypress="return noenter(event);"/></td>
+                </tr>
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="Contact Fax"/></td>
+                    <td><apex:inputField styleclass="tdValue" value="{!firstParty.Fax__c}" required="true" onkeypress="return noenter(event);"/></td>
+                </tr>
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="Is this person authorized to sign this NDA on behalf of their entity?"/></td>
+                    <td><apex:inputField styleclass="tdValue" value="{!firstParty.Is_Person_authorized_to_Sign_NDA__c}" required="true" onkeypress="return noenter(event);"/></td>
+                </tr>
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="Authorized First Party signer name (First and Last)"/></td>
+                    <td><apex:inputField styleclass="tdValue" value="{!firstParty.Authorized_First_Party_Signer__c}" onkeypress="return noenter(event);"/></td>
+                </tr>
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="Authorized First Party Email"/></td>
+                    <td><apex:inputField styleclass="tdValue" value="{!firstParty.Authorized_First_Party_Email__c}" onkeypress="return noenter(event);"/></td>
+                </tr>
+                
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="Full Company Name"/></td>
+                    <td><apex:inputField styleclass="tdValue" value="{!firstParty.Company__c}" required="true" onkeypress="return noenter(event);"/></td>
+                </tr>
+                <tr>
+                    <td class="tdLabel">&nbsp;</td>
+                    <td><apex:outputText styleclass="tdValue" style="color:red;" value="(This must be a full accurate legal name of the entity. Please also include Inc., Incorporated, Company, LLC as appropriate)" /></td>
+                </tr>
+                
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="Address"/></td>
+                    <td><apex:inputField styleclass="tdValue" value="{!firstParty.Street_1__c}" required="true" onkeypress="return noenter(event);"/></td>
+                </tr>
+                <tr>
+                    <td class="tdLabel">&nbsp;</td>
+                    <td><apex:inputField styleclass="tdValue" value="{!firstParty.Street_2__c}" /></td>
+                </tr>
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="City"/></td>
+                    <td><apex:inputField styleclass="tdValue" value="{!firstParty.City__c}" required="true" onkeypress="return noenter(event);"/></td>
+                </tr>
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="State/Province"/></td>
+                    <td><apex:inputField styleclass="tdValue" value="{!firstParty.State_Province_PL__c}" required="true" onkeypress="return noenter(event);"/></td>
+                </tr>
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="Zip"/></td>
+                    <td><apex:inputField styleclass="tdValue" value="{!firstParty.Zipcode__c}" required="true" onkeypress="return noenter(event);"/></td>
+                </tr>
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="Country"/></td>
+                    <td><apex:inputField styleclass="tdValue" value="{!firstParty.Country__c}"/></td>
+                </tr>
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="Relationship Status"/></td>
+                    <td><apex:inputField styleclass="tdValue" value="{!firstParty.Relationship_Status__c}"/></td>
+                </tr>
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="Relationship Type"/></td>
+                    <td><apex:inputField styleclass="tdValue" value="{!firstParty.Relationship_Type__c}"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center" style="margin-right:50px;">
+                        <apex:actionRegion id="ignoreParty">
+                            <apex:outputLabel styleclass="tdLabel" value="Number of Additional Parties to Add:" style="padding-right: 10px;"/>
+                            <apex:inputText value="{!numberOfOtherContacts}" style="width: 50px;"/>
+                            <apex:commandButton action="{!addOtherPartyContacts}" value="Add Additional Parties" rerender="additionPartiesPanel" style="left:40px;position:relative;"/>
+                        </apex:actionRegion>
+                    </td>
+                </tr>
+            </table>
+            <apex:outputpanel Id="additionPartiesPanel">
+                <apex:repeat value="{!otherPartyContacts}" var="additionalParty" id="additionalPartyListId">
+                    <table width="100%" cellspacing="10">
+                        <tr><td colspan="2"><apex:outputtext styleclass="tableHeader" value="{!additionalParty.Party_Number__c} Party (For Multi­Party NDAs)"/></td></tr>
+                        <tr><td colspan="2"><div style="width:100%; height:2px; background:green;"></div></td></tr>
+                        <tr>
+                            <td class="tdLabel"><apex:outputLabel value="First Name)"/></td>
+                            <td><apex:inputField styleclass="tdValue" value="{!additionalParty.First_Name__c}" /></td>
+                        </tr>
+                        <tr>
+                            <td class="tdLabel"><apex:outputLabel value="Last Name)"/></td>
+                            <td><apex:inputField styleclass="tdValue" value="{!additionalParty.Name__c}" /></td>
+                        </tr>
+                        <tr>
+                            <td class="tdLabel"><apex:outputLabel value="Title"/></td>
+                            <td><apex:inputField styleclass="tdValue" value="{!additionalParty.Title__c}" /></td>
+                        </tr>
+                        <tr>
+                            <td class="tdLabel"><apex:outputLabel value="Contact Phone"/></td>
+                            <td><apex:inputField styleclass="tdValue" value="{!additionalParty.Phone__c}" /></td>
+                        </tr>
+                        <tr>
+                            <td class="tdLabel"><apex:outputLabel value="Contact Email"/></td>
+                            <td><apex:inputField styleclass="tdValue" value="{!additionalParty.Email__c}" /></td>
+                        </tr>
+                        <tr>
+                            <td class="tdLabel"><apex:outputLabel value="Contact Fax"/></td>
+                            <td><apex:inputField styleclass="tdValue" value="{!additionalParty.Fax__c}" /></td>
+                        </tr>
+                        <tr>
+                            <td class="tdLabel"><apex:outputLabel value="Full Company Name"/></td>
+                            <td><apex:inputField styleclass="tdValue" value="{!additionalParty.Company__c}" /></td>
+                        </tr>
+                        <tr>
+                            <td class="tdLabel">&nbsp;</td>
+                            <td><apex:outputText styleclass="tdValue" style="color:red;" value="(This must be a full accurate legal name of the entity. Please also include Inc., Incorporated, Company, LLC as appropriate)" /></td>
+                        </tr>
+                        <tr>
+                            <td class="tdLabel"><apex:outputLabel value="Address"/></td>
+                            <td><apex:inputField styleclass="tdValue" value="{!additionalParty.Street_1__c}" /></td>
+                        </tr>
+                        <tr>
+                            <td class="tdLabel">&nbsp;</td>
+                            <td><apex:inputField styleclass="tdValue" value="{!additionalParty.Street_2__c}" /></td>
+                        </tr>
+                        <tr>
+                            <td class="tdLabel"><apex:outputLabel value="City"/></td>
+                            <td><apex:inputField styleclass="tdValue" value="{!additionalParty.City__c}" /></td>
+                        </tr>
+                        <tr>
+                            <td class="tdLabel"><apex:outputLabel value="State/Province"/></td>
+                            <td><apex:inputField styleclass="tdValue" value="{!additionalParty.State_Province_PL__c}" /></td>
+                        </tr>
+                        <tr>
+                            <td class="tdLabel"><apex:outputLabel value="Zip"/></td>
+                            <td><apex:inputField styleclass="tdValue" value="{!additionalParty.Zipcode__c}" /></td>
+                        </tr>
+                        <tr>
+                            <td class="tdLabel"><apex:outputLabel value="Country"/></td>
+                            <td><apex:inputField styleclass="tdValue" value="{!additionalParty.Country__c}" /></td>
+                        </tr>
+                        <!--  <tr>
+                            <td class="tdLabel"><apex:outputLabel value="Legal Entity Type"/></td>
+                            <td><apex:inputField styleclass="tdValue" value="{!additionalParty.Legal_Entity_Type__c}"/></td>
+                        </tr>-->
+                        <tr>
+                            <td class="tdLabel"><apex:outputLabel value="Relationship Status"/></td>
+                            <td><apex:inputField styleclass="tdValue" value="{!additionalParty.Relationship_Status__c}"/></td>
+                        </tr>
+                        <tr>
+                            <td class="tdLabel"><apex:outputLabel value="Relationship Type"/></td>
+                            <td><apex:inputField styleclass="tdValue" value="{!additionalParty.Relationship_Type__c}"/></td>
+                        </tr>
+                    </table>
+                </apex:repeat>
+              </apex:outputpanel>
+            
+            <table width="100%" cellspacing="10">
+                <tr><td colspan="2"><apex:outputtext styleclass="tableHeader" value="Additional Contact(s) to cc"/></td></tr>
+                <tr><td colspan="2"><div style="width:100%; height:2px; background:green;"></div></td></tr>
+                <tr>
+                    <td colspan="2"><apex:inputField styleclass="tdValue" value="{!requestForm.Additional_Contacts__c}" style="height:150px;"/></td>
+                </tr>
+            </table>
+            <table width="100%" cellspacing="10">
+                <tr><td colspan="2"><apex:outputtext styleclass="tableHeader" value="Additional Information"/></td></tr>
+                <tr><td colspan="2"><div style="width:100%; height:2px; background:green;"></div></td></tr>
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="Will the NDA need to include affiliates or subsidiaries of the outside party?"/></td>
+                    <td>
+                        <apex:outputPanel >
+                            <div class="requiredInput">
+                               <div class="requiredBlock"></div>
+                                <apex:selectRadio value="{!requestForm.Include_affiliates__c}" layout="pageDirection">
+                                    <apex:selectoptions value="{!includeAffiliates}"></apex:selectoptions>
+                                </apex:selectRadio>     
+                            </div>
+                        </apex:outputPanel>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdLabel"><apex:outputLabel value="Any additional information that you feel would be helpful or pertinent to the NDA request"/></td>
+                    <td><apex:inputField styleclass="tdValue" value="{!requestForm.Additional_Information__c}" style="height:100px;"/></td>
+                </tr>
+            </table>
+        </apex:outputPanel>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

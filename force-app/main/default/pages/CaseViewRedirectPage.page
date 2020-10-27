@@ -1,0 +1,23 @@
+<apex:page cache="true" controller="MainController" showHeader="false"  
+    sidebar="false" action="{!csm_initSingleton}" >
+ 
+ <script text="text/javascript"> 
+window.onload = function() {
+
+    selected();
+} 
+</script>
+
+<apex:form >
+<apex:actionFunction name="selected" action="{!csm.viewRedirect}" />
+ <b> Redirecting... Please wait </b>
+ <apex:actionStatus id="loadingStatusAdd">
+                    <apex:facet name="start">
+                        <!--<c:loadingStatus id="loadingStatusAddComponent" BackColor="#efefef" borderColor="#336699" borderSize="3" height="50px" width="150px" ImageUrl="/img/loading.gif" Message="Processing..." BluryBackGround_DivId="bbgd1" SalesforceStatusBox_DivId="ssbd1" messageStyle="color:darkred;font-size:11pt;font-weight:bold;"/>-->
+                        test
+                    </apex:facet>
+                </apex:actionStatus>
+
+
+</apex:form>
+</apex:page>

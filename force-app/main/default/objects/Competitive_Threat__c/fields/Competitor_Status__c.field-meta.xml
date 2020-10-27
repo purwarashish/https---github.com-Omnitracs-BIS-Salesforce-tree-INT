@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Competitor_Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Competitor Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Existing Account – Competitor Soliciting</fullName>
+                <default>false</default>
+                <label>Existing Account - Competitor Soliciting</label>
+            </value>
+            <value>
+                <fullName>Existing Account - Talking to Competitor</fullName>
+                <default>false</default>
+                <label>Existing Account - Talking to Competitor</label>
+            </value>
+            <value>
+                <fullName>Existing Account - Meeting with Competitor</fullName>
+                <default>false</default>
+                <label>Existing Account - Meeting with Competitor</label>
+            </value>
+            <value>
+                <fullName>Existing Account - Evaluating Competitor</fullName>
+                <default>false</default>
+                <label>Existing Account - Evaluating Competitor</label>
+            </value>
+            <value>
+                <fullName>Existing Account - Reviewing Contracts</fullName>
+                <default>false</default>
+                <label>Existing Account - Reviewing Contracts</label>
+            </value>
+            <value>
+                <fullName>Existing Account - Lost Business to Competitor</fullName>
+                <default>false</default>
+                <label>Existing Account - Lost Business to Competitor</label>
+            </value>
+            <value>
+                <fullName>Existing Account - Competitor Eliminated from Consideration</fullName>
+                <default>false</default>
+                <label>Existing Account - Competitor Eliminated from Consideration</label>
+            </value>
+            <value>
+                <fullName>Prospect - Talking to Prospect</fullName>
+                <default>false</default>
+                <label>Prospect - Talking to Prospect</label>
+            </value>
+            <value>
+                <fullName>Prospect - Meeting with Prospect</fullName>
+                <default>false</default>
+                <label>Prospect - Meeting with Prospect</label>
+            </value>
+            <value>
+                <fullName>Prospect - Evaluating with Omnitracs</fullName>
+                <default>false</default>
+                <label>Prospect - Evaluating with Omnitracs</label>
+            </value>
+            <value>
+                <fullName>Prospect - Contract Review</fullName>
+                <default>false</default>
+                <label>Prospect - Contract Review</label>
+            </value>
+            <value>
+                <fullName>Prospect - Lost Opportunity - Stayed with Competitor</fullName>
+                <default>false</default>
+                <label>Prospect - Lost Opportunity - Stayed with Competitor</label>
+            </value>
+            <value>
+                <fullName>Prospect - Won Opportunity</fullName>
+                <default>false</default>
+                <label>Prospect - Won Opportunity</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Callback</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Callback</label>
+            </value>
+            <value>
+                <fullName>Contract out for signature</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Contract out for signature</label>
+            </value>
+            <value>
+                <fullName>Email update</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Email update</label>
+            </value>
+            <value>
+                <fullName>Evaluation</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Evaluation</label>
+            </value>
+            <value>
+                <fullName>Happy with Competition</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Happy with Competition</label>
+            </value>
+            <value>
+                <fullName>Long term contract with competitor</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Long term contract with competitor</label>
+            </value>
+            <value>
+                <fullName>Looking at Functionality</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Looking at Functionality</label>
+            </value>
+            <value>
+                <fullName>On--site Meeting</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>On--site Meeting</label>
+            </value>
+            <value>
+                <fullName>Price negotiations</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Price negotiations</label>
+            </value>
+            <value>
+                <fullName>Solution offered</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Solution offered</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

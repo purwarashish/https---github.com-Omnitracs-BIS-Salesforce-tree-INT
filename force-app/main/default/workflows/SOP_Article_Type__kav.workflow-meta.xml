@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Publish_Article</fullName>
+        <description>Publish Article</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>All_Email_Templates/Roadnet_SOP_Article_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>SOP_Article_Approved</fullName>
+        <description>SOP Article Approved</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>All_Email_Templates/Roadnet_SOP_Article_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>Support_SOP_Article_Approved</fullName>
+        <description>Support SOP Article Approved</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <recipient>Roadnet_Support_Article_Approvers</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>All_Email_Templates/Roadnet_SOP_Article_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>Support_SOP_Article_Rejected</fullName>
+        <description>Support SOP Article Rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>All_Email_Templates/Roadnet_SOP_Article_Rejected</template>
+    </alerts>
+    <knowledgePublishes>
+        <fullName>Publish_Article</fullName>
+        <action>PublishAsNew</action>
+        <label>Publish Article</label>
+        <language>en_US</language>
+        <protected>false</protected>
+    </knowledgePublishes>
+</Workflow>

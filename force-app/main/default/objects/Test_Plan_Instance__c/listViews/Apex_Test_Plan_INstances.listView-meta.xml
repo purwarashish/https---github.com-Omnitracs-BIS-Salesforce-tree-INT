@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Apex_Test_Plan_INstances</fullName>
+    <columns>NAME</columns>
+    <columns>Test_Plan__c</columns>
+    <columns>Description__c</columns>
+    <columns>Run_Status__c</columns>
+    <columns>Percent_Complete__c</columns>
+    <columns>Product_Family__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Product_Family__c</field>
+        <operation>equals</operation>
+        <value>Roadnet Apex</value>
+    </filters>
+    <label>Apex Test Plan Instances</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Roadnet_Users</group>
+    </sharedTo>
+</ListView>

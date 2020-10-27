@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Page_Section__c</fullName>
+    <externalId>false</externalId>
+    <label>Page Section</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Header Summary</fullName>
+                <default>false</default>
+                <label>Header Summary</label>
+            </value>
+            <value>
+                <fullName>Header Detail</fullName>
+                <default>false</default>
+                <label>Header Detail</label>
+            </value>
+            <value>
+                <fullName>Header Totals</fullName>
+                <default>false</default>
+                <label>Header Totals</label>
+            </value>
+            <value>
+                <fullName>Edit Other Values</fullName>
+                <default>false</default>
+                <label>Edit Other Values</label>
+            </value>
+            <value>
+                <fullName>Quote Details:New</fullName>
+                <default>false</default>
+                <label>Quote Details:New</label>
+            </value>
+            <value>
+                <fullName>Quote Details:Renewal</fullName>
+                <default>false</default>
+                <label>Quote Details:Renewal</label>
+            </value>
+            <value>
+                <fullName>Quote Details:Extension</fullName>
+                <default>false</default>
+                <label>Quote Details:Extension</label>
+            </value>
+            <value>
+                <fullName>Quote Details:Decommission</fullName>
+                <default>false</default>
+                <label>Quote Details:Decommission</label>
+            </value>
+            <value>
+                <fullName>Quote Details:Migration</fullName>
+                <default>false</default>
+                <label>Quote Details:Migration</label>
+            </value>
+            <value>
+                <fullName>Quote Details:Upgrade</fullName>
+                <default>false</default>
+                <label>Quote Details:Upgrade</label>
+            </value>
+            <value>
+                <fullName>Quote Details:Other</fullName>
+                <default>false</default>
+                <label>Quote Details:Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

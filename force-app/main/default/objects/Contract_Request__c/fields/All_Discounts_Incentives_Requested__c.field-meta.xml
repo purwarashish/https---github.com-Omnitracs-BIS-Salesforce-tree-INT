@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Discounts_Incentives_Requested__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Please list all discounts or incentives for the deal in this section if approval is required. You do not need to restate them elsewhere in the form unless they are part of a required field.</inlineHelpText>
+    <label>Deal Terms and Justifications</label>
+    <length>32000</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

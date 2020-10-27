@@ -1,0 +1,45 @@
+<apex:page id="OpportunityReport" controller="OutageContactWizardController" showHeader="False" sidebar="False"  cache="true" action="{!ExporttoExcel}" language="english" contentType="application/vnd.ms-excel#OutageContactList.xls">
+
+        <apex:pageBlock id="pgblk">
+                    <table> 
+                            <tr>
+                                <td>
+                                    Contact Name:
+                                </td>
+                                <td>
+                                    Contact Email
+                                </td>
+                                <td>
+                                    Account:Account Name
+                                </td>
+                                <td>
+                                    <apex:outputText value="Account ID" rendered="{!if($CurrentPage.parameters.isaccount == 'true',true,false)}"/>
+                                </td>
+                                <td>
+                                    <apex:outputText value="Contact ID" rendered="{!if($CurrentPage.parameters.iscontact == 'true',true,false)}"/>
+                                </td>
+                            </tr>
+                                <apex:repeat value="{!lstExporttoExcel}" var="list1">
+                                    <tr>
+                                         <apex:repeat value="{!list1}" var="list2">
+                                         <tr>
+                                        <td><apex:outputText value="{!list2.Contact__r.Name}"/></td>
+                                   
+                                   
+                                        <td><apex:outputText value="{!list2.Contact__r.Email}"/></td>
+                                   
+                                   
+                                        <td><apex:outputText value="{!list2.Account__r.Name}"/></td>
+                                        <td><apex:outputText value="{!list2.Account__c}" rendered="{!if($CurrentPage.parameters.isaccount == 'true',true,false)}"/></td>
+                                        <td><apex:outputText value="{!list2.Contact__c}" rendered="{!if($CurrentPage.parameters.iscontact == 'true',true,false)}"/></td>
+                                   </tr>
+                                    
+                                </apex:repeat> 
+                                </tr>
+                                </apex:repeat>
+                                </table>
+                                
+       
+    </apex:pageBlock>
+   
+ </apex:page>

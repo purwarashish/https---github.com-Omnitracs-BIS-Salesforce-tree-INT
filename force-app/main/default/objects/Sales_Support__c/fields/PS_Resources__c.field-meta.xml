@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PS_Resources__c</fullName>
+    <externalId>false</externalId>
+    <label>PS Resources</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Bowser, Amy</fullName>
+                <default>false</default>
+                <label>Bowser, Amy</label>
+            </value>
+            <value>
+                <fullName>Cooper, Lynn</fullName>
+                <default>false</default>
+                <label>Cooper, Lynn</label>
+            </value>
+            <value>
+                <fullName>Dovgin, Don</fullName>
+                <default>false</default>
+                <label>Dovgin, Don</label>
+            </value>
+            <value>
+                <fullName>Fiore, Vince</fullName>
+                <default>false</default>
+                <label>Fiore, Vince</label>
+            </value>
+            <value>
+                <fullName>Hove, Chris</fullName>
+                <default>false</default>
+                <label>Hove, Chris</label>
+            </value>
+            <value>
+                <fullName>Johnson, Chris</fullName>
+                <default>false</default>
+                <label>Johnson, Chris</label>
+            </value>
+            <value>
+                <fullName>Zibdeh, Tawfiq</fullName>
+                <default>false</default>
+                <label>Zibdeh, Tawfiq</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,12 @@
+<apex:page controller="UploadCSVAssetsController" contentType="application/vnd.ms-excel#MigratedOppsAndQuotes.xls">
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!insertQuoteMap}" var="iQuote">
+           <apex:column headerValue="Opportunity ID">
+                {!insertQuoteMap[iQuote].SBQQ__Opportunity2__c}
+            </apex:column>
+             <apex:column headerValue="Quote ID">
+                {!insertQuoteMap[iQuote].Id}
+            </apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

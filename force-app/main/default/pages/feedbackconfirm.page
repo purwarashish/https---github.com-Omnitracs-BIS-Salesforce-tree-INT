@@ -1,0 +1,94 @@
+<apex:page showHeader="false" sidebar="false">
+<apex:include pageName="homePage" />
+<script>
+window.onload = browserDetectionFunction;
+function browserDetectionFunction()
+{    
+    window.resizeTo(794,236);
+    window.resizable = false;
+}
+function closeWindow()
+{
+window.close();
+}
+
+</script>
+
+
+<style>
+.thankYouMsg
+    {
+        background-color: #EFEEEC;
+        border: 1px solid #E1E1E0;
+        color: #4E4548;
+        font-size: 12px;
+        font-weight:bold;
+        padding: 10px 5px;
+    }
+    
+.feedcheckWidth td
+{
+width:100px;
+padding:0 90px 0 0 ;
+font-size:13px;
+}
+.feedbackHeader1
+{
+font-size:20px;
+}
+.feedbackHeader2
+{
+font-size:14px;
+}
+.popupHeaderTopSpace, .feedbackTopSpace
+{
+margin-top:15px;
+}
+.thanksClose
+{
+color:#1C408B;
+text-decoration:none;
+font-weight:normal;
+font-size:12px;
+}
+.thanksClose:hover
+{
+color:#333;
+text-decoration:none;
+}
+</style>
+
+
+<apex:form >
+<div class="popUpFeedback">
+<div class="popUpLogo"></div>
+
+           <div class="popupContents">
+            <h5 class="popupHeaderTopSpace feedbackHeader2" style="display:block;text-align:center">We value your feedback. Thank you!
+                <br /><br />
+                
+                <apex:commandLink style="padding-left:90%" styleClass="thanksClose" value="CLOSE" />
+                
+            </h5>
+            
+            
+        </div>
+     </div>
+
+</apex:form>
+
+<script>
+    $(document).ready(function(){
+        $('a.thanksClose').click(
+        function(e)
+        {
+          e.preventDefault();
+          e.stopPropagation();
+          window.open('', '_self', '');
+          window.closeWindow();
+          return false;
+        });
+    });
+</script>
+
+</apex:page>

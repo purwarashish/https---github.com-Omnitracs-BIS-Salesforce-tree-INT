@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Competitor_Name__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <externalId>false</externalId>
+    <inlineHelpText>If you don&apos;t find the competitor you are looking for, send an email to competitor.list@omnitracs.com to have it added.</inlineHelpText>
+    <label>Competitor Name</label>
+    <referenceTo>Competitor__c</referenceTo>
+    <relationshipLabel>Competitive Intelligence</relationshipLabel>
+    <relationshipName>Competitive_Threats</relationshipName>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

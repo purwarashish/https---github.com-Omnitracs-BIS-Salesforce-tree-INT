@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Outbound_Integration_Notes__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Notes pertaining to the outbound integration that this field is used for.</inlineHelpText>
+    <label>Outbound Integration Notes</label>
+    <length>700</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>4</visibleLines>
+</CustomField>

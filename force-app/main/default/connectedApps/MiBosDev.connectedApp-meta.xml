@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>c_abhishekd@omnitracs.com</contactEmail>
+    <contactPhone>8586105963</contactPhone>
+    <label>MiBosDev</label>
+    <samlConfig>
+        <acsUrl>https://omnitracs--mibosDev.cs2.my.salesforce.com?so=00DR0000001yPiP</acsUrl>
+        <encryptionType>AES_128</encryptionType>
+        <entityUrl>https://omnitracs--mibosDev.cs2.my.salesforce.com</entityUrl>
+        <issuer>https://omnitracs.my.salesforce.com</issuer>
+        <samlNameIdFormat>Unspecified</samlNameIdFormat>
+        <samlSubjectType>FederationId</samlSubjectType>
+    </samlConfig>
+    <startUrl>https://omnitracs--mibosDev.cs2.my.salesforce.com</startUrl>
+</ConnectedApp>

@@ -1,0 +1,16 @@
+<apex:page standardController="Opportunity" extensions="SalesReversalController">
+    <apex:form >
+        <apex:pageBlock >
+        <apex:pageBlockButtons id="btns" location="bottom" rendered="true">
+          <apex:commandButton id="saveBtn" value="Create Sales Reversal Opportunity" action="{!save}" />
+          <apex:commandButton id="cancelBtn" value="Cancel" action="{!cancel}" />
+          </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!oli}" var="oliList">
+                <apex:column headerValue="Opportunity Name"><apex:outputField value="{!opp.name}"/></apex:column>
+                <apex:column headerValue="Opportunity Product Name"><apex:inputField value="{!oliList.name}"/></apex:column>
+                <apex:column headerValue="Sales Reverse?"><apex:inputField value="{!oliList.Sales_Reverse__c}"/></apex:column>
+                <apex:outputText value="{!Opportunity.Name}" rendered="false" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

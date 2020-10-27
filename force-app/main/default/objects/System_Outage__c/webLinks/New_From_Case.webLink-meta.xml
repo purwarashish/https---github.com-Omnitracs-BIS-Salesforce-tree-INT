@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_From_Case</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>/a0t/e?CF00N50000001caGA={!Case.CaseNumber}&amp;CF00N50000001caGA_lkid={!Case.Id}&amp;retURL=%2F{!Case.Id}&amp;cancelURL=%2F{!Case.Id}&amp;saveURL=%2F{!Case.Id}</url>
+</WebLink>

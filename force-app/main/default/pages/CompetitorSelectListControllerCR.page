@@ -1,0 +1,184 @@
+<apex:page StandardController="Call_Report__c" extensions="CompetitorSelectListControllerCR">
+    <style>    
+        .customTabStyle {
+        border-bottom-color:white;
+        border-left-color:white;
+        border-right-color:white;
+        background-color:white;        
+        }
+        body{
+        background: #fff url(/img/alohaSkin/lookup_bg.png) repeat-x;
+        padding: 10px;
+        }
+        .customIcon{
+        background: url(/img/sprites/master.png);
+        background-position:0 -1202px;
+        width: 32px;
+        height: 32px;    
+        border:none;    
+        }
+        h1{
+        font-size: 1.8em;
+        color: #333435;
+        margin: 8px 0 4px;
+        }
+        .customtab{    
+        font-size:1.0em;    
+        font-weight:none;
+        font-family: Arial,Helvetica,sans-serif;
+        //border-radius:20px;
+        }
+        .activeTab{    
+        color:none;
+        background-image:none;
+        }
+        .inactiveTab{    
+        color:none;
+        background-image:none;
+        }
+        .disabled {
+        pointer-events: none;
+        cursor: default;
+        }
+        .enabled {
+        pointer-events: yes;
+        cursor: default;
+        }
+        .nullData {
+        background-color : red;
+        }
+    </style>
+    <script>
+        function enterPress(e){
+            if(e.keyCode==13){
+                if(e.preventDefault){ 
+                    e.preventDefault();
+                }
+                else{
+                    e.returnValue=false;
+                }
+                validate();
+            }        
+        }
+        function validate(){
+            
+            FindAF();
+            return true;
+        }
+    </script>
+    <apex:pageBlock id="theTabPanel" >    
+        
+        <apex:form id="comFrm" styleClass="customTabStyle" style="color:white; width:auto; align=left; margin:initial" >
+            <apex:actionFunction action="{!Find}" name="FindAF" rerender="IdlistAvailable, confirm"/>
+            <apex:pageBlockSection id="two" title="Competitors" collapsible="true" rendered="true" showHeader="false" >
+                <apex:outputPanel id="thePanel" layout="block" styleClass="duelingListBox" >
+                    
+                    <div style="font-weight: bold; width:100%; margin:10px 5px;" > 
+                        <apex:outputLabel value="Search " rendered="{!displayInputputText}" />
+                        <apex:inputText value="{!input}" id="searchText" rendered="{!displayInputputText}" onkeypress="enterPress(event)" />                                                                         
+                        <span style="float: left;">&nbsp;</span>
+                        <apex:actionStatus id="SearchIcon">
+                            <apex:facet name="start">
+                                <apex:outputPanel >
+                                    <apex:commandButton style="float: left;" disabled="true" value="Search" />
+                                    <img style="float: left;" src="/img/loading24.gif" />
+                                </apex:outputPanel>
+                            </apex:facet>  
+                            <apex:facet name="stop">
+                                <apex:outputPanel >
+                                    <apex:commandButton action="{!Find}" value="Search" rerender="IdlistAvailable, confirm" status="SearchIcon" rendered="{!displayInputputText}"/>
+                                </apex:outputPanel>
+                            </apex:facet>
+                        </apex:actionStatus>
+                    </div>                            
+                </apex:outputPanel>
+                
+                <div style="float:left; width:100%; margin:initial;" >
+                <apex:outputPanel id="IoResult" layout="block" styleClass="duelingListBox" style="font-weight:bold; font-style:italic; color:white; margin:0; " >
+                        <table class="layout" >
+                            <tbody>
+                                <tr>
+                                    <td class="leftCell">
+                                        <apex:outputPanel layout="block" styleClass="selectTitle" style="width:auto; margin:0" >
+                                            <apex:outputLabel value="Available Competitors" for="IoResult:leftList" rendered="{!displayInputputText}" />
+                                        </apex:outputPanel>
+                                        <apex:selectList id="IdlistAvailable" value="{!LeftSelectedList}" multiselect="true" style="width:300px;overflow-x: scroll;" size="10" rendered="{!displayInputputText}" >                            
+                                            <apex:selectOptions value="{!UnSelectedValues}" />                            
+                                        </apex:selectList> 
+                                    </td>
+                                    <td class="buttonClick">
+                                        <apex:outputPanel rendered="{!displayInputputText}" layout="block" styleClass="text">Add</apex:outputPanel>
+                                        <apex:outputPanel layout="block" styleClass="text">
+                                            <apex:commandLink styleClass="{!disableValue}" action="{!addMembers}" rerender="IdlistAvailable, IdSelectedCompetitors" id="IdBtnRight" rendered="{!displayInputputText}"> 
+                                                <apex:image value="/s.gif" alt="Add" styleClass="rightArrowIcon" title="Add" />
+                                            </apex:commandLink>
+                                        </apex:outputPanel>
+                                        <apex:outputPanel layout="block" styleClass="text">
+                                            <apex:commandLink styleClass="{!disableValue}" action="{!removeMembers}" rerender="IdSelectedCompetitors, IdlistAvailable" id="IdBtnLeft" rendered="{!displayInputputText}">
+                                                <apex:image value="/s.gif" alt="Remove" styleClass="leftArrowIcon" title="Remove" />
+                                            </apex:commandLink>
+                                            <apex:outputPanel rendered="{!displayInputputText}" layout="block" styleClass="duelingText">Remove</apex:outputPanel>
+                                        </apex:outputPanel>
+                                    </td>
+                                    <td class="RightCell">
+                                        <apex:outputPanel layout="block" styleClass="selectTitle">
+                                            <apex:outputLabel value="Selected Competitors" for="IoResult:rightList" rendered="{!displayInputputText}" />
+                                        </apex:outputPanel>
+                                        <apex:selectList id="IdSelectedCompetitors" value="{!RightSelectedList}" multiselect="true" style="width:300px;overflow-x: scroll;" size="10" rendered="{!displayInputputText}">
+                                            <apex:actionSupport id="linkcomp" event="ondblclick" action="{!competitorLink}" />
+                                            <apex:selectOptions value="{!SelectedOptionValues}"/>
+                                        </apex:selectList>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>                    
+                </apex:outputPanel>
+                </div>
+                <apex:outputPanel id="confirm" style="margin:10px 5px;">
+                    <apex:commandButton value="Save" onclick="if(!confirm('Are you sure you want to save the changes to Competitors?')) return false;" action="{!save}" rendered="{!saveAfterdisplay}" />
+                    <apex:commandButton value="Cancel" onclick="javascript:CloseAndRefresh();" action="{!Cancel}" rendered="{!saveAfterdisplay}"/>
+                </apex:outputPanel> 
+            </apex:pageBlocksection>
+            <apex:pageBlock title="Competitive Intelligence records created by the Call Report" id="competitorData">
+                
+         <apex:pageBlockTable value="{!competitivelistofocallreport}" var="item">
+
+            <apex:column headerValue="Competitive Intelligence ID">
+            <a href="/{!item.id}" target="_blank">{!item.name}</a>
+            </apex:column>
+                  
+            <apex:column headervalue="Competitor Name">
+            <apex:outputText value="{!item.Competitor_Name__r.Name}" > </apex:outputText> 
+            </apex:column>
+                  
+            <apex:column headervalue="Competitor Status" styleClass="{!IF(item.Competitor_Status__c == null || item.Competitor_Status__c == '','nullData','')}">
+            <apex:outputText value="{!item.Competitor_Status__c}" ></apex:outputText>
+            <apex:outputText value="Required Field: Complete the record by clicking on Competitive Intelligence ID" Rendered="{!IF(item.Competitor_Status__c != null || item.Competitor_Status__c != '', false, true)}" ></apex:outputText>    
+            </apex:column>
+            
+            <apex:column headervalue="Has Competitor Product/Solution Today?" styleClass="{!IF(item.Has_Product_Solution_Today__c == null || item.Has_Product_Solution_Today__c == '','nullData','')}">
+            <apex:outputText value="{!item.Has_Product_Solution_Today__c}" ></apex:outputText>
+			<apex:outputText value="Required Field: Complete the record by clicking on Competitive Intelligence ID" Rendered="{!IF(item.Has_Product_Solution_Today__c != null || item.Has_Product_Solution_Today__c != '', false, true)}" ></apex:outputText> 
+            </apex:column>
+            
+            <apex:column headervalue="Created Date">
+            <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+            <apex:param value="{!item.CreatedDate}" /> 
+            </apex:outputText>
+            </apex:column>
+
+        </apex:pageBlockTable>
+
+    </apex:pageBlock>                    
+             
+        </apex:form>
+    </apex:pageBlock>   
+    
+    <script language="JavaScript" type="text/javascript">
+    function CloseAndRefresh(){
+        window.opener.location.href="/{!$CurrentPage.parameters.id}";
+        window.top.close();
+    }
+    </script>
+
+</apex:page>

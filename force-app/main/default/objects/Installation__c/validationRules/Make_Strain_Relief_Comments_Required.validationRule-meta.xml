@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Make_Strain_Relief_Comments_Required</fullName>
+    <active>true</active>
+    <description>Make Strain Relief Bracket Comments required if Strain Relief Bracket is No.</description>
+    <errorConditionFormula>AND( 
+ISBLANK( Strain_Relief_Bracket_Comments__c ), 
+ISPICKVAL( Strain_Relief_Bracket__c , &quot;No&quot;) 
+)</errorConditionFormula>
+    <errorDisplayField>Strain_Relief_Bracket_Comments__c</errorDisplayField>
+    <errorMessage>Strain Relief Bracket Comments is required if Strain Relief Bracket is &quot;No&quot;</errorMessage>
+</ValidationRule>

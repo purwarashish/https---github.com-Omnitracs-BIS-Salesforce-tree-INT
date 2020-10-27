@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Solution_Name_Required</fullName>
+    <active>true</active>
+    <description>Make Product/Solution Name required if Has Product/Solution is yes</description>
+    <errorConditionFormula>AND ( 
+ISPICKVAL(Has_Product_Solution_Today__c ,&quot;Yes&quot;), 
+Product_Solution_Name__c =&quot;&quot; 
+)</errorConditionFormula>
+    <errorDisplayField>Product_Solution_Name__c</errorDisplayField>
+    <errorMessage>Product/Solution Name is required if Has Product/Solution is Yes.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_Sent__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Emails will be triggered to contact based on this checkbox</description>
+    <externalId>false</externalId>
+    <label>Send Email</label>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

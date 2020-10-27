@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cloned_Record__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This field denotes whether record is a cloned record</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This field denotes whether record is a cloned record</inlineHelpText>
+    <label>Cloned Record</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

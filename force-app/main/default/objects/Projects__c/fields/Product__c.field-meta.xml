@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product__c</fullName>
+    <externalId>false</externalId>
+    <label>Product</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>AA&amp;D</fullName>
+                <default>false</default>
+                <label>AA&amp;D</label>
+            </value>
+            <value>
+                <fullName>Access (SaaS)</fullName>
+                <default>false</default>
+                <label>Access (SaaS)</label>
+            </value>
+            <value>
+                <fullName>AccessPlus (SaaS)</fullName>
+                <default>false</default>
+                <label>AccessPlus (SaaS)</label>
+            </value>
+            <value>
+                <fullName>AlliancePRO</fullName>
+                <default>false</default>
+                <label>AlliancePRO</label>
+            </value>
+            <value>
+                <fullName>AMI</fullName>
+                <default>false</default>
+                <label>AMI</label>
+            </value>
+            <value>
+                <fullName>AS400 Thin Client</fullName>
+                <default>false</default>
+                <label>AS400 Thin Client</label>
+            </value>
+            <value>
+                <fullName>CER</fullName>
+                <default>false</default>
+                <label>CER</label>
+            </value>
+            <value>
+                <fullName>ChoiceTRAK</fullName>
+                <default>false</default>
+                <label>ChoiceTRAK</label>
+            </value>
+            <value>
+                <fullName>CoS Workflow Host Integration</fullName>
+                <default>false</default>
+                <label>CoS Workflow Host Integration</label>
+            </value>
+            <value>
+                <fullName>Customer Portal</fullName>
+                <default>false</default>
+                <label>Customer Portal</label>
+            </value>
+            <value>
+                <fullName>Dispatch</fullName>
+                <default>false</default>
+                <label>Dispatch</label>
+            </value>
+            <value>
+                <fullName>Dispatch Central</fullName>
+                <default>false</default>
+                <label>Dispatch Central</label>
+            </value>
+            <value>
+                <fullName>DRT</fullName>
+                <default>false</default>
+                <label>DRT</label>
+            </value>
+            <value>
+                <fullName>Dsi Transportation Mgr</fullName>
+                <default>false</default>
+                <label>Dsi Transportation Mgr</label>
+            </value>
+            <value>
+                <fullName>EMSI</fullName>
+                <default>false</default>
+                <label>EMSI</label>
+            </value>
+            <value>
+                <fullName>Exact Fuel</fullName>
+                <default>false</default>
+                <label>Exact Fuel</label>
+            </value>
+            <value>
+                <fullName>FACTS</fullName>
+                <default>false</default>
+                <label>FACTS</label>
+            </value>
+            <value>
+                <fullName>Fleet Advisor</fullName>
+                <default>false</default>
+                <label>Fleet Advisor</label>
+            </value>
+            <value>
+                <fullName>GlobalTRACS</fullName>
+                <default>false</default>
+                <label>GlobalTRACS</label>
+            </value>
+            <value>
+                <fullName>Handheld</fullName>
+                <default>false</default>
+                <label>Handheld</label>
+            </value>
+            <value>
+                <fullName>HEAT</fullName>
+                <default>false</default>
+                <label>HEAT</label>
+            </value>
+            <value>
+                <fullName>Horizon</fullName>
+                <default>false</default>
+                <label>Horizon</label>
+            </value>
+            <value>
+                <fullName>HOS</fullName>
+                <default>false</default>
+                <label>HOS</label>
+            </value>
+            <value>
+                <fullName>IDSC ExpertFuel</fullName>
+                <default>false</default>
+                <label>IDSC ExpertFuel</label>
+            </value>
+            <value>
+                <fullName>IDSC Netwise</fullName>
+                <default>false</default>
+                <label>IDSC Netwise</label>
+            </value>
+            <value>
+                <fullName>iNAV</fullName>
+                <default>false</default>
+                <label>iNAV</label>
+            </value>
+            <value>
+                <fullName>InCab Scanning</fullName>
+                <default>false</default>
+                <label>InCab Scanning</label>
+            </value>
+            <value>
+                <fullName>Intermodal</fullName>
+                <default>false</default>
+                <label>Intermodal</label>
+            </value>
+            <value>
+                <fullName>Intermodal Dispatch</fullName>
+                <default>false</default>
+                <label>Intermodal Dispatch</label>
+            </value>
+            <value>
+                <fullName>iWF</fullName>
+                <default>false</default>
+                <label>iWF</label>
+            </value>
+            <value>
+                <fullName>JTRACS</fullName>
+                <default>false</default>
+                <label>JTRACS</label>
+            </value>
+            <value>
+                <fullName>LoadMaster (JAVA)</fullName>
+                <default>false</default>
+                <label>LoadMaster (JAVA)</label>
+            </value>
+            <value>
+                <fullName>LTL</fullName>
+                <default>false</default>
+                <label>LTL</label>
+            </value>
+            <value>
+                <fullName>LTL Dispatch</fullName>
+                <default>false</default>
+                <label>LTL Dispatch</label>
+            </value>
+            <value>
+                <fullName>Mapping</fullName>
+                <default>false</default>
+                <label>Mapping</label>
+            </value>
+            <value>
+                <fullName>MatchAdvice</fullName>
+                <default>false</default>
+                <label>MatchAdvice</label>
+            </value>
+            <value>
+                <fullName>MMS</fullName>
+                <default>false</default>
+                <label>MMS</label>
+            </value>
+            <value>
+                <fullName>Mobile</fullName>
+                <default>false</default>
+                <label>Mobile</label>
+            </value>
+            <value>
+                <fullName>NAV: ALK</fullName>
+                <default>false</default>
+                <label>NAV: ALK</label>
+            </value>
+            <value>
+                <fullName>NAV: Telogis</fullName>
+                <default>false</default>
+                <label>NAV: Telogis</label>
+            </value>
+            <value>
+                <fullName>Navigation</fullName>
+                <default>false</default>
+                <label>Navigation</label>
+            </value>
+            <value>
+                <fullName>Oil Field Dispatch</fullName>
+                <default>false</default>
+                <label>Oil Field Dispatch</label>
+            </value>
+            <value>
+                <fullName>Omni Container</fullName>
+                <default>false</default>
+                <label>Omni Container</label>
+            </value>
+            <value>
+                <fullName>Omni Local</fullName>
+                <default>false</default>
+                <label>Omni Local</label>
+            </value>
+            <value>
+                <fullName>Omni LTL</fullName>
+                <default>false</default>
+                <label>Omni LTL</label>
+            </value>
+            <value>
+                <fullName>Omni Truckload</fullName>
+                <default>false</default>
+                <label>Omni Truckload</label>
+            </value>
+            <value>
+                <fullName>Operations Manager</fullName>
+                <default>false</default>
+                <label>Operations Manager</label>
+            </value>
+            <value>
+                <fullName>PowerPro</fullName>
+                <default>false</default>
+                <label>PowerPro</label>
+            </value>
+            <value>
+                <fullName>Q7</fullName>
+                <default>false</default>
+                <label>Q7</label>
+            </value>
+            <value>
+                <fullName>QTM</fullName>
+                <default>false</default>
+                <label>QTM</label>
+            </value>
+            <value>
+                <fullName>QTRACS</fullName>
+                <default>false</default>
+                <label>QTRACS</label>
+            </value>
+            <value>
+                <fullName>Stingray Handheld</fullName>
+                <default>false</default>
+                <label>Stingray Handheld</label>
+            </value>
+            <value>
+                <fullName>STRACS (PM)</fullName>
+                <default>false</default>
+                <label>STRACS (PM)</label>
+            </value>
+            <value>
+                <fullName>StrategyLive</fullName>
+                <default>false</default>
+                <label>StrategyLive</label>
+            </value>
+            <value>
+                <fullName>TL2000</fullName>
+                <default>false</default>
+                <label>TL2000</label>
+            </value>
+            <value>
+                <fullName>TMWSuite</fullName>
+                <default>false</default>
+                <label>TMWSuite</label>
+            </value>
+            <value>
+                <fullName>Trans*Eaz</fullName>
+                <default>false</default>
+                <label>Trans*Eaz</label>
+            </value>
+            <value>
+                <fullName>TransFreight</fullName>
+                <default>false</default>
+                <label>TransFreight</label>
+            </value>
+            <value>
+                <fullName>Transman (AS/400)</fullName>
+                <default>false</default>
+                <label>Transman (AS/400)</label>
+            </value>
+            <value>
+                <fullName>Transman (Windows)</fullName>
+                <default>false</default>
+                <label>Transman (Windows)</label>
+            </value>
+            <value>
+                <fullName>Transman (Windows-hosted)</fullName>
+                <default>false</default>
+                <label>Transman (Windows-hosted)</label>
+            </value>
+            <value>
+                <fullName>TripAlert</fullName>
+                <default>false</default>
+                <label>TripAlert</label>
+            </value>
+            <value>
+                <fullName>Truck Dispatch</fullName>
+                <default>false</default>
+                <label>Truck Dispatch</label>
+            </value>
+            <value>
+                <fullName>Trucking Dispatch</fullName>
+                <default>false</default>
+                <label>Trucking Dispatch</label>
+            </value>
+            <value>
+                <fullName>Truckload</fullName>
+                <default>false</default>
+                <label>Truckload</label>
+            </value>
+            <value>
+                <fullName>Truckload Dispatch</fullName>
+                <default>false</default>
+                <label>Truckload Dispatch</label>
+            </value>
+            <value>
+                <fullName>TruckMate</fullName>
+                <default>false</default>
+                <label>TruckMate</label>
+            </value>
+            <value>
+                <fullName>TTRACS</fullName>
+                <default>false</default>
+                <label>TTRACS</label>
+            </value>
+            <value>
+                <fullName>VCC</fullName>
+                <default>false</default>
+                <label>VCC</label>
+            </value>
+            <value>
+                <fullName>VM</fullName>
+                <default>false</default>
+                <label>VM</label>
+            </value>
+            <value>
+                <fullName>WF: MCP100</fullName>
+                <default>false</default>
+                <label>WF: MCP100</label>
+            </value>
+            <value>
+                <fullName>WF: MCP110</fullName>
+                <default>false</default>
+                <label>WF: MCP110</label>
+            </value>
+            <value>
+                <fullName>WF: MCP200</fullName>
+                <default>false</default>
+                <label>WF: MCP200</label>
+            </value>
+            <value>
+                <fullName>WF: MCP50</fullName>
+                <default>false</default>
+                <label>WF: MCP50</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

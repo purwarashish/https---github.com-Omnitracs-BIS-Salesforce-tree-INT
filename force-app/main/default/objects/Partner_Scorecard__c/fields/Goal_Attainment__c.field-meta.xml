@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Goal_Attainment__c</fullName>
+    <description>Calculated field that is the % of the YTD Activated/Current Year Unit Goal</description>
+    <externalId>false</externalId>
+    <formula>IF( YTD_Customer_Activated_Units__c &gt; 0, YTD_Customer_Activated_Units__c / Current_Year_Units_Goal__c , 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>% Goal Attainment</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

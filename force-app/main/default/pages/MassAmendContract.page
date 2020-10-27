@@ -1,0 +1,45 @@
+<apex:page controller="MassAmendContractController" title="Mass Amend Contracts">
+    <style>
+        .controlPanel td{
+            width:200px;
+        }
+        .controlPanel{
+            margin-top:20px;
+        }
+    </style>    
+    <apex:form >                    
+        <apex:pageBlock id="controlPanel">                        
+            <apex:pagemessages />
+			<table class="controlPanel fromFile">
+                <tr>
+                    <td colspan="2"><b>Upload a CSV file to mass amend the contracts</b></td>
+                </tr>
+                <tr>
+                    <td>Upload CSV file</td><td><apex:inputFile value="{!csvFileBody}" accept="csv" contentType="text/csv" /></td>
+                </tr>
+                <tr>
+                    <td><apex:commandButton value="Upload CSV" action="{!readFromFile}"/></td>
+					<td><apex:commandButton value="Mass Amend" action="{!massAmend}" rendered="{!modelList.size > 0}"/></td>
+                </tr>
+            </table>
+        </apex:pageBlock>
+        <apex:pageBlock id="dataPanel" Title="Mass Contract Amend Data" rendered="{!modelList.size > 0}">
+            <apex:pageblocktable value="{!modelList}" var="model">
+                <apex:column headerValue="ContractNumber" value="{!model.contractNumber}" />
+				<apex:column headerValue="ProductId" value="{!model.productId}" />
+				<apex:column headerValue="OracleId" value="{!model.oracleId}" />
+                <apex:column headerValue="Quantity" value="{!model.qty}" />
+                <apex:column headerValue="QuantityType" value="{!model.qtyType}" />
+                <apex:column headerValue="IsNew" value="{!model.isNew}" />
+                <apex:column headerValue="FinalUnitPrice" value="{!model.finalUnitPrice}" />
+				<apex:column headerValue="OptyRecordType" value="{!model.optyRecordType}" />
+				<apex:column headerValue="OptyOrderType" value="{!model.optyOrderType}" />
+				<apex:column headerValue="OptyOrderSubType" value="{!model.optyOrderSubType}" />
+				<apex:column headerValue="PriceBookId" value="{!model.priceBookId}" />
+                <apex:column headerValue="CurrencyCode" value="{!model.currencyCode}" />
+                <apex:column headerValue="AdditionalDiscount" value="{!model.additionalDisc}" />
+                <apex:column headerValue="DiscountType" value="{!model.discType}" />
+            </apex:pageblocktable>
+        </apex:pageBlock>
+    </apex:form>        
+</apex:page>

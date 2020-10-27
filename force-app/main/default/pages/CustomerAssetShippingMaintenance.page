@@ -1,0 +1,177 @@
+<!--
+ - Created by CrutchfieldJody on 11/29/2016.
+
+   Modified by Arman Shah on 10/05/2018.
+ -->
+
+<apex:page id="CustomerAssetShippingMaintenance" standardController="Customer_Asset_Shipping_Summary__c"
+           extensions="CustomerAssetShippingController">
+    <br/>
+    <br/><br/>
+
+    <br/> <B>This functionality is currently unavailable. </B> <br/> <!-- by ARMAN -->
+
+    <apex:form id="frmCustAssetShipping">
+        <!-- ARMAN: apex:pageBlock id="pbSummary" rendered="{!IF(summary.Name != null,true,false)}">
+            <apex:outputText style="font-size: 20px;" value="Add/Edit Shipping Estimate"/>
+            <br/><br/>
+            <apex:pageBlockSection id="summaryInfo" title="Shipping Estimate Summary Information" columns="2"
+                                   collapsible="false">
+                <apex:outputText label="Shipping Estimate Summary" value="{!summary.Name}"/>
+                <apex:outputText label="Customer Asset Start Date" value="{0,date,MM/dd/yy}">
+                    <apex:param value="{!summary.Customer_Asset__r.Term_Start_Date__c}"/>
+                </apex:outputText>
+                <apex:outputText label="Customer Asset End Date" value="{0,date,MM/dd/yy}">
+                    <apex:param value="{!summary.Customer_Asset__r.Term_End_Date__c}"/>
+                </apex:outputText>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons id="pbButtons">
+                <apex:commandButton style="margin-right:20px" value="Close Page" action="{!closePage}"/>
+                <apex:commandButton value="Cancel Changes" action="{!cancelChanges}" reRender="frmCustAssetShipping"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection id="quantityInfo" title="Shipping Estimate Summary Quantities" columns="2"
+                                   collapsible="false">
+                <apex:outputText label="Total Customer Asset Quantity"
+                                 value="{!summary.Customer_Asset__r.Quantity__c}"/>
+                <apex:outputText label="" value=""/>
+                <apex:outputText label="Total Estimated Shipping Quantity"
+                                 value="{!summary.Estimated_Shipping_Quantity__c}"/>
+                <apex:outputText label="Total Actual Shipped Quantity" value="{!summary.Actual_Shipped_Quantity__c}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+
+        <apex:pageBlock rendered="{!IF(summary.Name == null,true,false)}">
+            <apex:outputPanel id="pnlMessages">
+                <apex:pageMessages />
+            </apex:outputPanel>
+            <apex:commandButton style="margin-right:20px" value="Start New Estimate" action="{!saveShippingSummary}"
+                                rendered="{!IF(summary.Name == null,true,false)}"/>
+            <apex:commandButton style="margin-right:20px" value="Close Page" action="{!closePage}"/>
+        </apex:pageBlock>
+
+
+        <apex:pageBlock id="pbEstimate" rendered="{!IF(summary.Name != null,true,false)}">
+            <apex:pageMessages rendered="{!IF(estErr == true,true,false)}"/>
+            <apex:variable var="rowNumber" value="{!0}"/>
+            <apex:pageBlockSection title="Shipping Estimate" collapsible="false" columns="1"
+                                   rendered="{!IF(summary.Name == null,false,true)}">
+                <apex:outputText label="Estimates Changed" rendered="true" value="{!estimatesChanged}"/>
+                <apex:pageBlockTable id="shipEstimate" value="{!shippingEstimateList}" var="estList">
+                    <apex:column style="width:115px; text-align:center;">
+                        <apex:facet name="header">
+                            <div style="text-align:center">Estimate Number</div>
+                        </apex:facet>
+                        <apex:outputText value="{0}">
+                            <apex:param value="{!rowNumber+1}"/>
+                        </apex:outputText>
+                    </apex:column>
+                    <apex:column headerValue="Estimated Date">
+                        <apex:inputField value="{!estList.Estimated_Shipping_Date__c}">
+                            <apex:actionSupport event="onchange" action="{!estimateDataChanged}" reRender="pbEstimate"/>
+                        </apex:inputField>
+                    </apex:column>
+                    <apex:column headerValue="Estimated Quantity">
+                        <apex:inputField value="{!estList.Estimated_Shipping_Quantity__c}">
+                            <apex:actionSupport event="onchange" action="{!estimateDataChanged}" reRender="pbEstimate"/>
+                        </apex:inputField>
+                    </apex:column>
+                    <apex:column headerValue="Notes">
+                        <apex:inputField value="{!estList.Shipping_Notes__c}">
+                            <apex:actionSupport event="onchange" action="{!estimateDataChanged}" reRender="pbEstimate"/>
+                        </apex:inputField>
+                    </apex:column>
+                    <apex:column headerValue="Id" rendered="false">
+                        <apex:inputField value="{!estList.Id}"/>
+                    </apex:column>
+                    <apex:column headerValue="Summary" rendered="false">
+                        <apex:inputField value="{!estList.Customer_Asset_Shipping_Summary__r.Name}"/>
+                    </apex:column>
+                    <apex:column style="width:115px; text-align:center;">
+                        <apex:facet name="header">
+                            <div style="text-align:center">Delete?</div>
+                        </apex:facet>
+                        <apex:outputPanel >
+                            <apex:outputText >
+                                <div style="cursor:pointer">X</div>
+                            </apex:outputText>
+                            <apex:actionSupport event="onclick" action="{!deleteShippingEstimate}"
+                                                reRender="pbEstimate">
+                                <apex:param name="rowIndex" value="{!rowNumber}"/>
+                            </apex:actionSupport>
+                        </apex:outputPanel>
+                        <apex:variable var="rowNumber" value="{!rowNumber+1}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons id="pbButtons">
+                <apex:commandButton style="margin-right:20px" action="{!addRow}" value="Add Estimate"
+                                    reRender="pbEstimate"
+                                    rendered="{!IF(summary.Name != null,true,false)}"/>
+                <apex:commandButton style="margin-right:20px" value="Save Estimates" action="{!saveShippingEstimates}"
+                                    rendered="{!IF(rowNumber >= 1,true,false)}" reRender="pbEstimate"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        <apex:pageBlock id="pbActual" rendered="{!IF(summary.Name != null,true,false)}">
+            <apex:pageMessages rendered="{!IF(actErr == true,true,false)}"/>
+            <apex:variable var="actRowNumber" value="{!0}"/>
+            <apex:pageBlockSection title="Shipping Actual" collapsible="false" columns="1"
+                                   rendered="{!IF(summary.Name == null,false,true)}">
+                <apex:outputText label="Actuals Changed" rendered="true" value="{!actualsChanged}"/>
+                <apex:pageBlockTable id="shipActual" value="{!shippingActualList}" var="actList">
+                    <apex:column style="width:115px; text-align:center;">
+                        <apex:facet name="header">
+                            <div style="text-align:center">Row Number</div>
+                        </apex:facet>
+                        <apex:outputText value="{0}">
+                            <apex:param value="{!actRowNumber+1}"/>
+                        </apex:outputText>
+                    </apex:column>
+                    <apex:column headerValue="Actual Shipped Date">
+                        <apex:inputField value="{!actList.Actual_Shipped_Date__c}">
+                            <apex:actionSupport event="onchange" action="{!actualDataChanged}" reRender="pbActual"/>
+                        </apex:inputField>
+                    </apex:column>
+                    <apex:column headerValue="Actual Shipped Quantity">
+                        <apex:inputField value="{!actList.Actual_Shipped_Quantity__c}">
+                            <apex:actionSupport event="onchange" action="{!actualDataChanged}" reRender="pbActual"/>
+                        </apex:inputField>
+                    </apex:column>
+                    <apex:column headerValue="Notes">
+                        <apex:inputField value="{!actList.Shipping_Notes__c}">
+                            <apex:actionSupport event="onchange" action="{!actualDataChanged}" reRender="pbActual"/>
+                        </apex:inputField>
+                    </apex:column>
+                    <apex:column headerValue="Id" rendered="false">
+                        <apex:inputField value="{!actList.Id}"/>
+                    </apex:column>
+                    <apex:column headerValue="Summary" rendered="false">
+                        <apex:inputField value="{!actList.Customer_Asset_Shipping_Summary__r.Name}"/>
+                    </apex:column>
+                    <apex:column style="width:115px; text-align:center;">
+                        <apex:facet name="header">
+                            <div style="text-align:center">Delete?</div>
+                        </apex:facet>
+                        <apex:outputPanel >
+                            <apex:outputText >
+                                <div style="cursor:pointer">X</div>
+                            </apex:outputText>
+                            <apex:actionSupport event="onclick" action="{!deleteShippingActual}" reRender="pbActual">
+                                <apex:param name="actRowIndex" value="{!actRowNumber}"/>
+                            </apex:actionSupport>
+                        </apex:outputPanel>
+                        <apex:variable var="actRowNumber" value="{!actRowNumber+1}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons id="pbActButtons">
+                <apex:commandButton style="margin-right:20px" action="{!addActRow}" value="Add Actual"
+                                    reRender="pbActual"
+                                    rendered="{!IF(summary.Name != null,true,false)}"/>
+                <apex:commandButton style="margin-right:20px" value="Save Actuals" action="{!saveShippingActuals}"
+                                    rendered="{!IF(actRowNumber >= 1,true,false)}" reRender="pbActual"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock-->
+    </apex:form>
+    <script>function setFocusOnLoad() {
+    }</script>
+</apex:page>

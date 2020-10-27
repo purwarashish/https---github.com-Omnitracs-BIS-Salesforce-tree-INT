@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Referral_Fee_Percentage__c</fullName>
+    <externalId>false</externalId>
+    <label>Referral Fee Percentage</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>5% - Lead Pass (RN)</fullName>
+                <default>false</default>
+                <label>5% - Lead Pass (RN)</label>
+            </value>
+            <value>
+                <fullName>10% - Flat (XRS, Sylectus)</fullName>
+                <default>false</default>
+                <label>10% - Flat (XRS, Sylectus)</label>
+            </value>
+            <value>
+                <fullName>15% - Co-Sell (RN)</fullName>
+                <default>false</default>
+                <label>15% - Co-Sell (RN)</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

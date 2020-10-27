@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>In_cab_media_content_delivery_100_200__c</fullName>
+    <description>Used for CAP survey data collection.</description>
+    <externalId>false</externalId>
+    <label>In-cab media content delivery (100-200)</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1 – Not Interested</fullName>
+                <default>false</default>
+                <label>1 – Not Interested</label>
+            </value>
+            <value>
+                <fullName>2 – A Little Interested</fullName>
+                <default>false</default>
+                <label>2 – A Little Interested</label>
+            </value>
+            <value>
+                <fullName>3 – Somewhat Interested</fullName>
+                <default>false</default>
+                <label>3 – Somewhat Interested</label>
+            </value>
+            <value>
+                <fullName>4 – Interested</fullName>
+                <default>false</default>
+                <label>4 – Interested</label>
+            </value>
+            <value>
+                <fullName>5 – Very Interested</fullName>
+                <default>false</default>
+                <label>5 – Very Interested</label>
+            </value>
+            <value>
+                <fullName>6 – Currently Using</fullName>
+                <default>false</default>
+                <label>6 – Currently Using</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

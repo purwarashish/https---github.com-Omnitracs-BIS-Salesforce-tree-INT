@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Submitted_Submitted_for_Approval__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Date the Contract Request was Submitted</inlineHelpText>
+    <label>Submitted/Submitted for Approval</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

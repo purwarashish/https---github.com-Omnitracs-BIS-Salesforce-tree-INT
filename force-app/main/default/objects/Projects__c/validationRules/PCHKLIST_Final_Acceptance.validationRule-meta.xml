@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PCHKLIST_Final_Acceptance</fullName>
+    <active>true</active>
+    <description>Final Acceptance fields must be populated if Final Acceptance has been completed.</description>
+    <errorConditionFormula>OR(AND ( Final_Acceptance__c , ISNULL( Final_Acceptance_Date__c )), AND(Final_Acceptance__c &lt;&gt; True, NOT(ISNULL(Final_Acceptance_Date__c))))</errorConditionFormula>
+    <errorDisplayField>Final_Acceptance__c</errorDisplayField>
+    <errorMessage>Final Acceptance checkbox AND Final Acceptance Date must be populated if Final Acceptance has been completed.</errorMessage>
+</ValidationRule>

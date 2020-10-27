@@ -1,0 +1,107 @@
+<apex:page standardController="Lead" recordSetVar="unused"  sidebar="false" extensions="Overlay_Lead_Extension">
+    
+  <apex:include pageName="Overlay_Resources"/>  
+     
+    <apex:form id="mainBlock">
+        
+        <apex:pageBlock id="leadListPageBlock" title="{!$Label.Lead_Mass_Edit_Title}">
+            <apex:pageBlock >
+                {!$Label.Mass_Edit_Unsaved_Information_Lost}
+            </apex:pageBlock>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="{!$Label.Mass_Edit_Save_Button}" action="{!saveLeads}"/>
+                <apex:commandButton value="{!$Label.Mass_Edit_Return_Button}" action="{!cancel}" immediate="true" onclick="return confirmCancel('{!$Label.Unsaved_Overlay}')"/>
+            </apex:pageBlockButtons>
+            
+            <table class="list" cellspacing="0" cellpadding="0" border="0">
+                <colgroup span="8"></colgroup>
+                <thead class="rich-table-head">
+                  <tr class="headerRow">
+                     <th class="headerRow" colspan="1" scope="col">
+                        <div> {!$ObjectType.Lead.Fields.OwnerID.Label} </div>
+                     </th>
+                     
+                     <th class="headerRow" colspan="1" scope="col">
+                        <div> {!$ObjectType.Lead.Fields.Company.Label} </div>
+                     </th>
+                     
+                     <th class="headerRow" colspan="1" scope="col">
+                        <div> {!$ObjectType.Lead.Fields.Self_Reported_Fleet_Size__c.Label} </div>
+                     </th>
+                     
+                     <th class="headerRow" colspan="1" scope="col">
+                        <div> {!$ObjectType.Lead.Fields.FirstName.Label} </div>
+                     </th>
+                     
+                     <th class="headerRow" colspan="1" scope="col">
+                        <div> {!$ObjectType.Lead.Fields.LastName.Label} </div>
+                     </th>
+                     
+                     <th class="headerRow" colspan="1" scope="col">
+                        <div> {!$ObjectType.Lead.Fields.Email.Label} </div>
+                     </th>
+                     
+                     <th class="headerRow" colspan="1" scope="col">
+                        <div> {!$ObjectType.Lead.Fields.Phone.Label} </div>
+                     </th>
+                     
+                  </tr>
+                </thead>
+                <tbody>
+                    <apex:repeat var="leadWrapper" value="{!selectedLeads}">
+                      <tr>
+                        <td>
+                           <apex:outputField value="{!leadWrapper.leadInstance.Owner.Name}"/>
+                        </td>
+                      
+                        <td>
+                           <apex:outputField value="{!leadWrapper.leadInstance.Company}"/>
+                        </td>
+                     
+                        <td>
+                            <apex:inputField value="{!leadWrapper.leadInstance.Self_Reported_Fleet_Size__c}"/>  
+                        </td>
+                        
+                        <td>
+                           <apex:inputField value="{!leadWrapper.leadInstance.FirstName}"/>
+                        </td>
+                        
+                        <td>
+                           <apex:inputField value="{!leadWrapper.leadInstance.LastName}"/>
+                        </td>
+                        
+                        <td>
+                          <apex:inputField value="{!leadWrapper.leadInstance.Email}"/>
+                        </td>
+                        
+                        <td>
+                          <apex:inputField value="{!leadWrapper.leadInstance.Phone}"/>
+                        </td>
+                      
+                      </tr>
+                      
+                      <tr>
+                       <td>
+                          <div> <strong>{!$Label.Mass_Edit_Activity_Label} </strong></div> 
+                       </td>
+                        <td colspan="7">
+                          <apex:inputTextArea value="{!leadWrapper.taskInstance.Description}" cols="220" rows="1"/>
+                        </td>
+                      </tr>
+                    </apex:repeat>
+                </tbody>
+            </table>
+            
+             
+            
+            
+        </apex:pageBlock>
+        
+        
+          
+  
+    </apex:form>
+    
+ 
+ 
+</apex:page>

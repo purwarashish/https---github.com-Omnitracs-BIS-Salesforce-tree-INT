@@ -1,0 +1,83 @@
+<!-- /*******************************************************************************
+ * File:  ChangeLeadOwner.Page
+ * Date:  June 21, 2013
+ * Author:  Joseph Hutchins
+ *
+ * The use, disclosure, reproduction, modification, transfer, or transmittal of
+ * this work for any purpose in any form or by any means without the written 
+ * permission of United Parcel Service is strictly prohibited.
+ *
+ * Confidential, unpublished property of United Parcel Service.
+ * Use and distribution limited solely to authorized personnel.
+ *
+ * Copyright 2009, UPS Logistics Technologies, Inc.  All rights reserved.
+ *  *******************************************************************************/ -->
+<apex:page standardcontroller="Lead" extensions="ChangeLeadOwnerExtension">
+    <apex:form >
+        <apex:pageBlock title="Change Lead Owner">
+            <apex:pageblockbuttons location="bottom">
+                <apex:commandbutton value="Change Owner" action="{!changeOwner}"/>
+                <apex:commandbutton value="Cancel" action="{!cancel}"/>
+            </apex:pageblockbuttons>
+            <apex:pageblocksection title="Change Lead Owner" columns="1">
+            
+	            <apex:pageblocksectionitem >
+	            	<apex:outputlabel value="Transfer this lead"/>
+	            	<apex:outputfield value="{!lead.name}"/>
+	            </apex:pageblocksectionitem>
+	            
+	            <apex:inputfield value="{!lead.ownerId}"/>
+	             <apex:pageblocksectionItem >
+                    <apex:outputlabel value="Send Email to New Owner"/>
+                    <apex:inputcheckbox value="{!notifyNewOwner}"/>
+                </apex:pageblocksectionItem>
+                
+                <apex:pageblocksectionItem >
+                    <apex:outputlabel value="Email Comments"/>
+                    <apex:inputtextarea cols="50" rows="10" value="{!emailComments}"/>
+                </apex:pageblocksectionItem>
+                
+            </apex:pageblocksection>
+            <!--
+			<apex:pageblocksection title="Select User Or Queue">
+	            <apex:selectradio value="{!queueOrUser}">
+	                <apex:selectoption itemlabel="User" itemvalue="User"/>
+	                <apex:selectoption itemlabel="Queue" itemvalue="Queue"/>
+	                <apex:actionsupport action="{!radioButtonOnChange}" event="onchange"/>
+	            </apex:selectradio>
+            </apex:pageblocksection>
+			
+            <apex:pageblocksection title="Select User" rendered="{!!isSelectingQueue}" columns="1">
+                <apex:pageblocksectionItem >
+                    <apex:outputlabel value="Select one:"/>
+	                <apex:selectRadio value="{!supportOrAll}">
+	                    <apex:selectOption itemlabel="Customer Support" itemvalue="Customer Support"/>
+	                    <apex:selectOption itemlabel="All Users" itemvalue="All Users"/>
+	                    <apex:actionsupport action="{!radioButtonOnChange}" event="onchange"/>
+	            </apex:selectRadio>
+            </apex:pageblocksectionItem>
+                
+           
+                <apex:pageblocksectionItem >
+                    <apex:outputlabel value="Send Email to New Owner"/>
+                    <apex:inputcheckbox value="{!notifyNewOwner}"/>
+                </apex:pageblocksectionItem>                
+                
+                <apex:pageblocksectionItem >
+                    <apex:outputlabel value="Email Comments"/>
+                    <apex:inputtextarea cols="50" rows="10" value="{!emailComments}"/>
+                </apex:pageblocksectionItem>
+            </apex:pageblocksection>
+             
+            <apex:pageblocksection title="Select Queue" rendered="{!isSelectingQueue}">
+                <apex:pageBlocksectionIteM >
+                    <apex:outputlabel value="Select Queue"/>
+                    <apex:selectList value="{!queueId}" size="1">
+                        <apex:selectoptions value="{!queuePicklist}"/>
+                    </apex:selectList>
+                </apex:pageBlocksectionIteM>
+            </apex:pageblocksection>
+            -->
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

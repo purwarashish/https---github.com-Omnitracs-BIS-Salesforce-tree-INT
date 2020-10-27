@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>shippingDurationStatus__c</fullName>
+    <description>The status of the 1st shipment after the order has been received.  A duration more than 4 calendar days is red-flagged.</description>
+    <externalId>false</externalId>
+    <formula>IF (ISNULL(shippingDuration__c), &quot;&quot;, IF (shippingDuration__c &gt; 4, IMAGE(&quot;/img/samples/light_red.gif&quot;,&quot;Red&quot;), IMAGE(&quot;/img/samples/light_green.gif&quot;, &quot;Green&quot;)))</formula>
+    <label>Shipping Duration Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

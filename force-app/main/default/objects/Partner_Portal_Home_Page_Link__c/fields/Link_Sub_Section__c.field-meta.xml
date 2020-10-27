@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Link_Sub_Section__c</fullName>
+    <description>Captures the sub section within the section</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Applicable only for Sidebar-Partner Quicklinks section</inlineHelpText>
+    <label>Link Sub Section</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Link_Section__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>My Leads</fullName>
+                <default>false</default>
+                <label>My Leads</label>
+            </value>
+            <value>
+                <fullName>MDF</fullName>
+                <default>false</default>
+                <label>MDF</label>
+            </value>
+            <value>
+                <fullName>Support</fullName>
+                <default>false</default>
+                <label>Support</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Sidebar - Partner Quicklinks</controllingFieldValue>
+            <valueName>My Leads</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sidebar - Partner Quicklinks</controllingFieldValue>
+            <valueName>MDF</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sidebar - Partner Quicklinks</controllingFieldValue>
+            <valueName>Support</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

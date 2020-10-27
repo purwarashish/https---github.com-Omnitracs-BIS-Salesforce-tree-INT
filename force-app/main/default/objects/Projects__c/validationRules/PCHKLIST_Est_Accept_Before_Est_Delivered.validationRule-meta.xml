@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PCHKLIST_Est_Accept_Before_Est_Delivered</fullName>
+    <active>true</active>
+    <description>Estimate Accepted cannot be checked if Estimate Delivered is not checked.</description>
+    <errorConditionFormula>AND( Estimate_Accepted__c,  Estimate_Delivered__c &lt;&gt;True)</errorConditionFormula>
+    <errorDisplayField>Estimate_Accepted__c</errorDisplayField>
+    <errorMessage>Estimate Accepted cannot be checked if Estimate Delivered is not checked.</errorMessage>
+</ValidationRule>

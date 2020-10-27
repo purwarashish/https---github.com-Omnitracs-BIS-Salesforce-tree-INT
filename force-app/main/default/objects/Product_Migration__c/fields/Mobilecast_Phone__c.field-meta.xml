@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mobilecast_Phone__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Owned by Sales (Hy Mixson/Dean Bikle) and PM (Casey Crawford). Required as part of the MBO to track RTS to RNA Product Migrations.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Is this customer using Mobilecast Phone?</inlineHelpText>
+    <label>Mobilecast Phone</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

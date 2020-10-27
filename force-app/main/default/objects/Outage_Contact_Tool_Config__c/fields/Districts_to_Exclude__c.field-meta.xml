@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Districts_to_Exclude__c</fullName>
+    <description>The Outage Contact Tool wizard will process each District found in the Account object picklist unless it is specifically excluded here.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The Outage Contact Tool wizard will process each District found in the Account object picklist unless it is specifically excluded here.</inlineHelpText>
+    <label>Districts to Exclude</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>B2B2C</fullName>
+                <default>false</default>
+                <label>B2B2C</label>
+            </value>
+            <value>
+                <fullName>Canada</fullName>
+                <default>false</default>
+                <label>Canada</label>
+            </value>
+            <value>
+                <fullName>Central</fullName>
+                <default>false</default>
+                <label>Central</label>
+            </value>
+            <value>
+                <fullName>CNR Strategic</fullName>
+                <default>false</default>
+                <label>CNR Strategic</label>
+            </value>
+            <value>
+                <fullName>Consumer Content Services</fullName>
+                <default>false</default>
+                <label>Consumer Content Services</label>
+            </value>
+            <value>
+                <fullName>East</fullName>
+                <default>false</default>
+                <label>East</label>
+            </value>
+            <value>
+                <fullName>East District 1</fullName>
+                <default>false</default>
+                <label>East District 1</label>
+            </value>
+            <value>
+                <fullName>East District 2</fullName>
+                <default>false</default>
+                <label>East District 2</label>
+            </value>
+            <value>
+                <fullName>East District 3</fullName>
+                <default>false</default>
+                <label>East District 3</label>
+            </value>
+            <value>
+                <fullName>East District 4</fullName>
+                <default>false</default>
+                <label>East District 4</label>
+            </value>
+            <value>
+                <fullName>Indirect</fullName>
+                <default>false</default>
+                <label>Indirect</label>
+            </value>
+            <value>
+                <fullName>Industrial</fullName>
+                <default>false</default>
+                <label>Industrial</label>
+            </value>
+            <value>
+                <fullName>International</fullName>
+                <default>false</default>
+                <label>International</label>
+            </value>
+            <value>
+                <fullName>LBS</fullName>
+                <default>false</default>
+                <label>LBS</label>
+            </value>
+            <value>
+                <fullName>Leasing/Financial</fullName>
+                <default>false</default>
+                <label>Leasing/Financial</label>
+            </value>
+            <value>
+                <fullName>Metro</fullName>
+                <default>false</default>
+                <label>Metro</label>
+            </value>
+            <value>
+                <fullName>Midwest District 1</fullName>
+                <default>false</default>
+                <label>Midwest District 1</label>
+            </value>
+            <value>
+                <fullName>Midwest District 2</fullName>
+                <default>false</default>
+                <label>Midwest District 2</label>
+            </value>
+            <value>
+                <fullName>Midwest District 3</fullName>
+                <default>false</default>
+                <label>Midwest District 3</label>
+            </value>
+            <value>
+                <fullName>Midwest District 4</fullName>
+                <default>false</default>
+                <label>Midwest District 4</label>
+            </value>
+            <value>
+                <fullName>Mountain</fullName>
+                <default>false</default>
+                <label>Mountain</label>
+            </value>
+            <value>
+                <fullName>North</fullName>
+                <default>false</default>
+                <label>North</label>
+            </value>
+            <value>
+                <fullName>Notebook and MID Management Services</fullName>
+                <default>false</default>
+                <label>Notebook and MID Management Services</label>
+            </value>
+            <value>
+                <fullName>ORMM East</fullName>
+                <default>false</default>
+                <label>ORMM East</label>
+            </value>
+            <value>
+                <fullName>ORMM Midwest</fullName>
+                <default>false</default>
+                <label>ORMM Midwest</label>
+            </value>
+            <value>
+                <fullName>ORMM National</fullName>
+                <default>false</default>
+                <label>ORMM National</label>
+            </value>
+            <value>
+                <fullName>ORMM OEM</fullName>
+                <default>false</default>
+                <label>ORMM OEM</label>
+            </value>
+            <value>
+                <fullName>ORMM West</fullName>
+                <default>false</default>
+                <label>ORMM West</label>
+            </value>
+            <value>
+                <fullName>QC Accounts</fullName>
+                <default>false</default>
+                <label>QC Accounts</label>
+            </value>
+            <value>
+                <fullName>QES</fullName>
+                <default>false</default>
+                <label>QES</label>
+            </value>
+            <value>
+                <fullName>QGOV</fullName>
+                <default>false</default>
+                <label>QGOV</label>
+            </value>
+            <value>
+                <fullName>Service Center</fullName>
+                <default>false</default>
+                <label>Service Center</label>
+            </value>
+            <value>
+                <fullName>South</fullName>
+                <default>false</default>
+                <label>South</label>
+            </value>
+            <value>
+                <fullName>Strategic</fullName>
+                <default>false</default>
+                <label>Strategic</label>
+            </value>
+            <value>
+                <fullName>Telemedicine</fullName>
+                <default>false</default>
+                <label>Telemedicine</label>
+            </value>
+            <value>
+                <fullName>Topcon</fullName>
+                <default>false</default>
+                <label>Topcon</label>
+            </value>
+            <value>
+                <fullName>VASP</fullName>
+                <default>false</default>
+                <label>VASP</label>
+            </value>
+            <value>
+                <fullName>West</fullName>
+                <default>false</default>
+                <label>West</label>
+            </value>
+            <value>
+                <fullName>West District 1</fullName>
+                <default>false</default>
+                <label>West District 1</label>
+            </value>
+            <value>
+                <fullName>West District 2</fullName>
+                <default>false</default>
+                <label>West District 2</label>
+            </value>
+            <value>
+                <fullName>West District 3</fullName>
+                <default>false</default>
+                <label>West District 3</label>
+            </value>
+            <value>
+                <fullName>West District 4</fullName>
+                <default>false</default>
+                <label>West District 4</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

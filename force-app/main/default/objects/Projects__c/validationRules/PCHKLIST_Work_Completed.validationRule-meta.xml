@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PCHKLIST_Work_Completed</fullName>
+    <active>true</active>
+    <description>Work Completed fields must be populated if the work has been completed.</description>
+    <errorConditionFormula>OR(AND ( Work_Completed__c , ISNULL( Work_Completed_Date__c  )), AND(Work_Completed__c &lt;&gt; True, NOT(ISNULL(Work_Completed_Date__c ))))</errorConditionFormula>
+    <errorDisplayField>Work_Completed__c</errorDisplayField>
+    <errorMessage>Work Completed checkbox AND Work Completed Date must be populated if the work has been completed.</errorMessage>
+</ValidationRule>

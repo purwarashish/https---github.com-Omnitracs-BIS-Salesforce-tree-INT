@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RecordTypeDeveloperName__c</fullName>
+    <caseSensitive>true</caseSensitive>
+    <description>This field will store the Record Type&apos;s developer Name (which will not change throughout sandboxes and prod).</description>
+    <externalId>false</externalId>
+    <label>RecordTypeDeveloperName</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

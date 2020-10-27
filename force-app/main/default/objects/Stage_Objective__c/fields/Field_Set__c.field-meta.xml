@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Field_Set__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Used to display custom fields for this SPI Objective. MUST match the API Name of a Opportunity Field Set</inlineHelpText>
+    <label>Field Set</label>
+    <length>100</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

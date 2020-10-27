@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Est_Start_Date_Before_Est_End_Date</fullName>
+    <active>true</active>
+    <description>Estimated Start Date cannot be later than Estimated Completion Date</description>
+    <errorConditionFormula>Estimated_Start_Date__c &gt;  Estimated_Completion_Date__c</errorConditionFormula>
+    <errorDisplayField>Estimated_Completion_Date__c</errorDisplayField>
+    <errorMessage>The Estimated Completion Date cannot be earlier than the Estimated Start Date.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,875 @@
+<apex:page id="SystemOutage" title="Display Outage Details" tabStyle="System_Outage__c"  standardController="System_Outage__c" extensions="SystemOutageController">
+
+<script language="Javascript">
+
+function Verify()
+{
+var answer = confirm('Are you sure?');
+if(answer)
+   {
+      DeleteHeader();
+      return true;
+   }
+   else
+   {
+        return false;
+   }
+}
+
+function RenderCells()
+ {
+    var size=document.getElementById('SystemOutage:form:listSize').value;
+    for(i=0;i<size;i++)
+    {
+     var remove=false;
+     var outer = document.getElementById('SystemOutage:form:pboutage:ptoutage:'+i+':Coldate').childNodes[0].innerHTML;
+     for(t=0;t<size;t++)
+     {
+       var inner = document.getElementById('SystemOutage:form:pboutage:ptoutage:'+t+':Coldate').childNodes[0].innerHTML;
+       if(outer==inner && remove==false)
+        {
+          remove=true;
+        }
+        else if(outer==inner && remove==true)
+        {
+          document.getElementById('SystemOutage:form:pboutage:ptoutage:'+t+':Coldate').childNodes[0].innerHTML='<span></span>';
+          document.getElementById('SystemOutage:form:pboutage:ptoutage:'+t+':Colname').childNodes[0].innerHTML='<span></span>';
+        }
+      }     
+     }
+  }
+  
+function RenderDateCells()
+{
+  var size=document.getElementById('SystemOutage:form:listSize').value;
+  var pstoldvalue;
+  var pstnewvalue;
+  var checkOld;
+  var checkNew;
+  var DSstart;
+  var DSend;
+  var mins;
+  var modmins;
+  for(m=0;m<size;m++)
+  {
+   var field=document.getElementById('SystemOutage:form:pboutage:ptoutage:'+m+':Colaction').innerHTML;
+   
+  if(field.indexOf("End Date")!=-1)
+  {
+    var Endold=document.getElementById('SystemOutage:form:pboutage:ptoutage:'+m+':j_id63').innerHTML;
+    var Endnew=document.getElementById('SystemOutage:form:pboutage:ptoutage:'+m+':j_id66').innerHTML;
+           
+    if(Endold!='null' && Endnew!='null') 
+    {
+      checkOld=new Date(Endold.replace("GMT",""));
+      checkNew=new Date(Endnew.replace("GMT",""));
+      
+      <!-- END DATE OLD VALUE DS CHECK -->
+      DSstart=new Date(checkOld.getFullYear(),2,1,2,0,0);
+      if(DSstart.getDay()==0)
+      {
+        DSstart.setDate(DSstart.getDate()+7);
+      } 
+      if(DSstart.getDay()==1)
+      {
+       DSstart.setDate(DSstart.getDate()+13);
+      }
+      if(DSstart.getDay()==2)
+      {
+       DSstart.setDate(DSstart.getDate()+12);
+      }
+      if(DSstart.getDay()==3)
+      {
+       DSstart.setDate(DSstart.getDate()+11);
+      } 
+      if(DSstart.getDay()==4)
+      {
+       DSstart.setDate(DSstart.getDate()+10);
+      } 
+      if(DSstart.getDay()==5)
+      {
+       DSstart.setDate(DSstart.getDate()+9);
+      }
+      if(DSstart.getDay()==6)
+      {
+       DSstart.setDate(DSstart.getDate()+8);
+      }   
+      DSstart.setHours(DSstart.getHours()+8);     
+      
+      DSend=new Date(checkOld.getFullYear(),10,1,2,0,0)
+      if(DSend.getDay()==1)
+      {
+       DSend.setDate(DSend.getDate()+6);
+      }
+      if(DSend.getDay()==2)
+      {
+       DSend.setDate(DSend.getDate()+5);
+      }
+      if(DSend.getDay()==3)
+      {
+       DSend.setDate(DSend.getDate()+4);
+      } 
+      if(DSend.getDay()==4)
+      {
+       DSend.setDate(DSend.getDate()+3);
+      } 
+      if(DSend.getDay()==5)
+      {
+       DSend.setDate(DSend.getDate()+2);
+      }
+      if(DSend.getDay()==6)
+      {
+       DSend.setDate(DSend.getDate()+1);
+      }
+      DSend.setHours(DSend.getHours()+7);
+      
+      if(checkOld>=DSstart && checkOld<=DSend)
+      {
+       pstoldvalue=new Date(checkOld.getTime()-(7*3600000));
+      }
+      else
+      {
+       pstoldvalue=new Date(checkOld.getTime()-(8*3600000));
+      }
+      
+      <!-- END DATE NEW VALUE DS CHECK -->
+      DSstart=new Date(checkNew.getFullYear(),2,1,2,0,0);
+      if(DSstart.getDay()==0)
+      {
+        DSstart.setDate(DSstart.getDate()+7);
+      } 
+      if(DSstart.getDay()==1)
+      {
+       DSstart.setDate(DSstart.getDate()+13);
+      }
+      if(DSstart.getDay()==2)
+      {
+       DSstart.setDate(DSstart.getDate()+12);
+      }
+      if(DSstart.getDay()==3)
+      {
+       DSstart.setDate(DSstart.getDate()+11);
+      } 
+      if(DSstart.getDay()==4)
+      {
+       DSstart.setDate(DSstart.getDate()+10);
+      } 
+      if(DSstart.getDay()==5)
+      {
+       DSstart.setDate(DSstart.getDate()+9);
+      }
+      if(DSstart.getDay()==6)
+      {
+       DSstart.setDate(DSstart.getDate()+8);
+      }   
+      DSstart.setHours(DSstart.getHours()+8);    
+      
+      DSend=new Date(checkNew.getFullYear(),10,1,2,0,0)
+      if(DSend.getDay()==1)
+      {
+       DSend.setDate(DSend.getDate()+6);
+      }
+      if(DSend.getDay()==2)
+      {
+       DSend.setDate(DSend.getDate()+5);
+      }
+      if(DSend.getDay()==3)
+      {
+       DSend.setDate(DSend.getDate()+4);
+      } 
+      if(DSend.getDay()==4)
+      {
+       DSend.setDate(DSend.getDate()+3);
+      } 
+      if(DSend.getDay()==5)
+      {
+       DSend.setDate(DSend.getDate()+2);
+      }
+      if(DSend.getDay()==6)
+      {
+       DSend.setDate(DSend.getDate()+1);
+      }
+      DSend.setHours(DSend.getHours()+7);
+      
+      if(checkNew>=DSstart && checkNew<=DSend)
+      {
+       pstnewvalue=new Date(checkNew.getTime()-(7*3600000));
+      }
+      else
+      {
+       pstnewvalue=new Date(checkNew.getTime()-(8*3600000));
+      }
+ 
+    if(pstoldvalue.getHours()>=0 && pstoldvalue.getHours()<=11)
+    {
+     mins=String(pstoldvalue.getMinutes());
+     (mins.length==1)? modmins='0'+mins : modmins=mins;
+     if(pstoldvalue.getHours()==0)
+     { 
+      document.getElementById('SystemOutage:form:pboutage:ptoutage:'+m+':j_id63').innerHTML= (pstoldvalue.getMonth()+1)+'/'+pstoldvalue.getDate()+'/'+pstoldvalue.getFullYear()+' '+'12'+':'+modmins+' AM';
+     }
+     else
+     {
+      document.getElementById('SystemOutage:form:pboutage:ptoutage:'+m+':j_id63').innerHTML= (pstoldvalue.getMonth()+1)+'/'+pstoldvalue.getDate()+'/'+pstoldvalue.getFullYear()+' '+pstoldvalue.getHours()+':'+modmins+' AM';
+     } 
+    }
+    else
+    {
+     mins=String(pstoldvalue.getMinutes());
+     (mins.length==1)? modmins='0'+mins : modmins=mins;
+     if(pstoldvalue.getHours()>12)
+     {
+      document.getElementById('SystemOutage:form:pboutage:ptoutage:'+m+':j_id63').innerHTML= (pstoldvalue.getMonth()+1)+'/'+pstoldvalue.getDate()+'/'+pstoldvalue.getFullYear()+' '+(pstoldvalue.getHours()-12)+':'+modmins+' PM';
+     }
+     else
+     {
+       document.getElementById('SystemOutage:form:pboutage:ptoutage:'+m+':j_id63').innerHTML= (pstoldvalue.getMonth()+1)+'/'+pstoldvalue.getDate()+'/'+pstoldvalue.getFullYear()+' '+pstoldvalue.getHours()+':'+modmins+' PM';    
+     } 
+    }
+    
+    if(pstnewvalue.getHours()>=0 && pstnewvalue.getHours()<=11)
+    {
+      mins=String(pstnewvalue.getMinutes());
+      (mins.length==1)? modmins='0'+mins : modmins=mins;
+      if(pstnewvalue.getHours()==0)
+      {
+       document.getElementById('SystemOutage:form:pboutage:ptoutage:'+m+':j_id66').innerHTML= (pstnewvalue.getMonth()+1)+'/'+pstnewvalue.getDate()+'/'+pstnewvalue.getFullYear()+' '+'12'+':'+modmins+' AM';
+      }
+      else
+      {
+       document.getElementById('SystemOutage:form:pboutage:ptoutage:'+m+':j_id66').innerHTML= (pstnewvalue.getMonth()+1)+'/'+pstnewvalue.getDate()+'/'+pstnewvalue.getFullYear()+' '+pstnewvalue.getHours()+':'+modmins+' AM';
+      } 
+    }
+    else 
+    {
+      mins=String(pstnewvalue.getMinutes());
+      (mins.length==1)? modmins='0'+mins : modmins=mins;
+      if(pstnewvalue.getHours()>12)
+      {
+       document.getElementById('SystemOutage:form:pboutage:ptoutage:'+m+':j_id66').innerHTML= (pstnewvalue.getMonth()+1)+'/'+pstnewvalue.getDate()+'/'+pstnewvalue.getFullYear()+' '+(pstnewvalue.getHours()-12)+':'+modmins+' PM';
+      }
+      else
+      {
+       document.getElementById('SystemOutage:form:pboutage:ptoutage:'+m+':j_id66').innerHTML= (pstnewvalue.getMonth()+1)+'/'+pstnewvalue.getDate()+'/'+pstnewvalue.getFullYear()+' '+(pstnewvalue.getHours())+':'+modmins+' PM';
+      } 
+    }
+  } 
+  else if(Endold!='null')
+  {
+    checkOld=new Date(Endold.replace("GMT",""));
+    DSstart=new Date(checkOld.getFullYear(),2,1,2,0,0);
+    if(DSstart.getDay()==0)
+    {
+      DSstart.setDate(DSstart.getDate()+7);
+    } 
+    if(DSstart.getDay()==1)
+    {
+     DSstart.setDate(DSstart.getDate()+13);
+    }
+    if(DSstart.getDay()==2)
+    {
+     DSstart.setDate(DSstart.getDate()+12);
+    }
+    if(DSstart.getDay()==3)
+    {
+     DSstart.setDate(DSstart.getDate()+11);
+    } 
+    if(DSstart.getDay()==4)
+    {
+     DSstart.setDate(DSstart.getDate()+10);
+    } 
+    if(DSstart.getDay()==5)
+    {
+     DSstart.setDate(DSstart.getDate()+9);
+    }
+    if(DSstart.getDay()==6)
+    {
+     DSstart.setDate(DSstart.getDate()+8);
+    }
+    DSstart.setHours(DSstart.getHours()+8);
+    
+    DSend=new Date(checkOld.getFullYear(),10,1,2,0,0)
+    if(DSend.getDay()==1)
+    {
+     DSend.setDate(DSend.getDate()+6);
+    }
+    if(DSend.getDay()==2)
+    {
+     DSend.setDate(DSend.getDate()+5);
+    }
+    if(DSend.getDay()==3)
+    {
+     DSend.setDate(DSend.getDate()+4);
+    } 
+    if(DSend.getDay()==4)
+    {
+     DSend.setDate(DSend.getDate()+3);
+    } 
+    if(DSend.getDay()==5)
+    {
+     DSend.setDate(DSend.getDate()+2);
+    }
+    if(DSend.getDay()==6)
+    {
+     DSend.setDate(DSend.getDate()+1);
+    }
+    DSend.setHours(DSend.getHours()+7);
+    
+    if(checkOld>=DSstart && checkOld<=DSend)
+    {
+      pstoldvalue=new Date(checkOld.getTime()-(7*3600000));
+    }
+    else
+    {
+      pstoldvalue=new Date(checkOld.getTime()-(8*3600000));
+    }
+
+    var olddel;
+    if(pstoldvalue.getHours()>=0 && pstoldvalue.getHours()<=11)
+    {
+     mins=String(pstoldvalue.getMinutes());
+     (mins.length==1)? modmins='0'+mins : modmins=mins;
+     if(pstoldvalue.getHours()==0)
+     {
+      olddel=(pstoldvalue.getMonth()+1)+'/'+pstoldvalue.getDate()+'/'+pstoldvalue.getFullYear()+' '+'12'+':'+modmins+' AM';
+     }
+     else
+     {
+      olddel=(pstoldvalue.getMonth()+1)+'/'+pstoldvalue.getDate()+'/'+pstoldvalue.getFullYear()+' '+pstoldvalue.getHours()+':'+modmins+' AM';
+     } 
+    }
+    else
+    {
+     mins=String(pstoldvalue.getMinutes());
+     (mins.length==1)? modmins='0'+mins : modmins=mins;
+     if(pstoldvalue.getHours()>12)
+     {
+      olddel=(pstoldvalue.getMonth()+1)+'/'+pstoldvalue.getDate()+'/'+pstoldvalue.getFullYear()+' '+(pstoldvalue.getHours()-12)+':'+modmins+' PM';
+     }
+     else
+     {
+       olddel=(pstoldvalue.getMonth()+1)+'/'+pstoldvalue.getDate()+'/'+pstoldvalue.getFullYear()+' '+pstoldvalue.getHours()+':'+modmins+' PM';    
+     } 
+    }
+    document.getElementById('SystemOutage:form:pboutage:ptoutage:'+m+':Colaction').innerHTML='Deleted <span style="font-weight:bold">'+olddel+'</span> in <span style="font-weight:bold">End Date</span>';
+  }
+  else
+  {
+    checkNew=new Date(Endnew.replace("GMT",""));
+    DSstart=new Date(checkNew.getFullYear(),2,1,2,0,0);
+    if(DSstart.getDay()==0)
+    {
+     DSstart.setDate(DSstart.getDate()+7);
+    } 
+    if(DSstart.getDay()==1)
+    {
+     DSstart.setDate(DSstart.getDate()+13);
+    }
+    if(DSstart.getDay()==2)
+    {
+     DSstart.setDate(DSstart.getDate()+12);
+    }
+    if(DSstart.getDay()==3)
+    {
+     DSstart.setDate(DSstart.getDate()+11);
+    } 
+    if(DSstart.getDay()==4)
+    {
+     DSstart.setDate(DSstart.getDate()+10);
+    } 
+    if(DSstart.getDay()==5)
+    {
+     DSstart.setDate(DSstart.getDate()+9);
+    }
+    if(DSstart.getDay()==6)
+    {
+     DSstart.setDate(DSstart.getDate()+8);
+    }
+    DSstart.setHours(DSstart.getHours()+8);
+    
+    DSend=new Date(checkNew.getFullYear(),10,1,2,0,0)
+    if(DSend.getDay()==1)
+    {
+     DSend.setDate(DSend.getDate()+6);
+    }
+    if(DSend.getDay()==2)
+    {
+     DSend.setDate(DSend.getDate()+5);
+    }
+    if(DSend.getDay()==3)
+    {
+     DSend.setDate(DSend.getDate()+4);
+    } 
+    if(DSend.getDay()==4)
+    {
+     DSend.setDate(DSend.getDate()+3);
+    } 
+    if(DSend.getDay()==5)
+    {
+     DSend.setDate(DSend.getDate()+2);
+    }
+    if(DSend.getDay()==6)
+    {
+     DSend.setDate(DSend.getDate()+1);
+    }
+    DSend.setHours(DSend.getHours()+7);  
+    
+    if(checkNew>=DSstart && checkNew<=DSend)
+    {
+     pstnewvalue=new Date(checkNew.getTime()-(7*3600000));
+    }
+    else
+    {
+     pstnewvalue=new Date(checkNew.getTime()-(8*3600000));
+    }
+    
+    var newadd;
+    if(pstnewvalue.getHours()>=0 && pstnewvalue.getHours()<=11)
+    {
+      mins=String(pstnewvalue.getMinutes());
+     (mins.length==1)? modmins='0'+mins : modmins=mins;
+      if(pstnewvalue.getHours()==0)
+      {
+       newadd=(pstnewvalue.getMonth()+1)+'/'+pstnewvalue.getDate()+'/'+pstnewvalue.getFullYear()+' '+'12'+':'+modmins+' AM';
+      }
+      else
+      {
+       newadd=(pstnewvalue.getMonth()+1)+'/'+pstnewvalue.getDate()+'/'+pstnewvalue.getFullYear()+' '+pstnewvalue.getHours()+':'+modmins+' AM';
+      } 
+    }
+    else 
+    {
+      mins=String(pstnewvalue.getMinutes());
+     (mins.length==1)? modmins='0'+mins : modmins=mins;
+      if(pstnewvalue.getHours()>12)
+      {
+       newadd=(pstnewvalue.getMonth()+1)+'/'+pstnewvalue.getDate()+'/'+pstnewvalue.getFullYear()+' '+(pstnewvalue.getHours()-12)+':'+modmins+' PM';
+      }
+      else
+      {
+       newadd=(pstnewvalue.getMonth()+1)+'/'+pstnewvalue.getDate()+'/'+pstnewvalue.getFullYear()+' '+(pstnewvalue.getHours())+':'+modmins+' PM';
+      } 
+    }
+    document.getElementById('SystemOutage:form:pboutage:ptoutage:'+m+':Colaction').innerHTML='Changed <span style="font-weight:bold">End Date</span> to <span style="font-weight:bold">'+newadd+'</span>';
+   }
+  }   
+    
+   if(field.indexOf("Start Date")!=-1)
+   {
+    var Startold=document.getElementById('SystemOutage:form:pboutage:ptoutage:'+m+':j_id55').innerHTML;
+    var Startnew=document.getElementById('SystemOutage:form:pboutage:ptoutage:'+m+':j_id58').innerHTML;
+    var checkstartOld=new Date(Startold.replace("GMT",""));
+    var checkStartNew=new Date(Startnew.replace("GMT",""));
+    
+    <!-- START DATE OLD VALUE DS CHECK -->
+    DSstart=new Date(checkstartOld.getFullYear(),2,1,2,0,0);
+    if(DSstart.getDay()==0)
+    {
+      DSstart.setDate(DSstart.getDate()+7);
+    } 
+    if(DSstart.getDay()==1)
+    {
+     DSstart.setDate(DSstart.getDate()+13);
+    }
+    if(DSstart.getDay()==2)
+    {
+     DSstart.setDate(DSstart.getDate()+12);
+    }
+    if(DSstart.getDay()==3)
+    {
+       DSstart.setDate(DSstart.getDate()+11);
+    } 
+    if(DSstart.getDay()==4)
+    {
+     DSstart.setDate(DSstart.getDate()+10);
+    } 
+    if(DSstart.getDay()==5)
+    {
+     DSstart.setDate(DSstart.getDate()+9);
+    }
+    if(DSstart.getDay()==6)
+    {
+     DSstart.setDate(DSstart.getDate()+8);
+    }
+    DSstart.setHours(DSstart.getHours()+8);
+    
+    DSend=new Date(checkstartOld.getFullYear(),10,1,2,0,0)
+    if(DSend.getDay()==1)
+    {
+     DSend.setDate(DSend.getDate()+6);
+    }
+    if(DSend.getDay()==2)
+    {
+     DSend.setDate(DSend.getDate()+5);
+    }
+    if(DSend.getDay()==3)
+    {
+     DSend.setDate(DSend.getDate()+4);
+    } 
+    if(DSend.getDay()==4)
+    {
+     DSend.setDate(DSend.getDate()+3);
+    } 
+    if(DSend.getDay()==5)
+    {
+     DSend.setDate(DSend.getDate()+2);
+    }
+    if(DSend.getDay()==6)
+    {
+     DSend.setDate(DSend.getDate()+1);
+    }
+    DSend.setHours(DSend.getHours()+7);  
+    
+    if(checkstartOld>=DSstart && checkstartOld<=DSend)
+    {
+     modoldvalue=new Date(checkstartOld.getTime()-(7*3600000));
+    }
+    else
+    {
+     modoldvalue=new Date(checkstartOld.getTime()-(8*3600000));
+    }
+    
+    <!-- Start Date Old Value Date Conversion --> 
+    if(modoldvalue.getHours()>=0 && modoldvalue.getHours()<=11)
+    {
+      mins=String(modoldvalue.getMinutes());
+     (mins.length==1)? modmins='0'+mins : modmins=mins;
+      if(modoldvalue.getHours()==0)
+      {
+       document.getElementById('SystemOutage:form:pboutage:ptoutage:'+m+':j_id55').innerHTML= (modoldvalue.getMonth()+1)+'/'+modoldvalue.getDate()+'/'+modoldvalue.getFullYear()+' '+'12'+':'+modmins+' AM';
+      }
+      else
+      {
+       document.getElementById('SystemOutage:form:pboutage:ptoutage:'+m+':j_id55').innerHTML= (modoldvalue.getMonth()+1)+'/'+modoldvalue.getDate()+'/'+modoldvalue.getFullYear()+' '+modoldvalue.getHours()+':'+modmins+' AM';
+      } 
+    }
+    else
+    {
+      mins=String(modoldvalue.getMinutes());
+     (mins.length==1)? modmins='0'+mins : modmins=mins;
+      if(modoldvalue.getHours()>12)
+      {
+       document.getElementById('SystemOutage:form:pboutage:ptoutage:'+m+':j_id55').innerHTML= (modoldvalue.getMonth()+1)+'/'+modoldvalue.getDate()+'/'+modoldvalue.getFullYear()+' '+(modoldvalue.getHours()-12)+':'+modmins+' PM';
+      }
+      else
+      {
+       document.getElementById('SystemOutage:form:pboutage:ptoutage:'+m+':j_id55').innerHTML= (modoldvalue.getMonth()+1)+'/'+modoldvalue.getDate()+'/'+modoldvalue.getFullYear()+' '+modoldvalue.getHours()+':'+modmins+' PM';
+      } 
+    }
+    
+    <!-- START DATE NEW VALUE DS CHECK -->
+    DSstart=new Date(checkStartNew.getFullYear(),2,1,2,0,0);
+    if(DSstart.getDay()==0)
+    {
+      DSstart.setDate(DSstart.getDate()+7);
+    } 
+    if(DSstart.getDay()==1)
+    {
+     DSstart.setDate(DSstart.getDate()+13);
+    }
+    if(DSstart.getDay()==2)
+    {
+     DSstart.setDate(DSstart.getDate()+12);
+    }
+    if(DSstart.getDay()==3)
+    {
+       DSstart.setDate(DSstart.getDate()+11);
+    } 
+    if(DSstart.getDay()==4)
+    {
+     DSstart.setDate(DSstart.getDate()+10);
+    } 
+    if(DSstart.getDay()==5)
+    {
+     DSstart.setDate(DSstart.getDate()+9);
+    }
+    if(DSstart.getDay()==6)
+    {
+     DSstart.setDate(DSstart.getDate()+8);
+    }
+    DSstart.setHours(DSstart.getHours()+8);
+    
+    DSend=new Date(checkStartNew.getFullYear(),10,1,2,0,0)
+    if(DSend.getDay()==1)
+    {
+     DSend.setDate(DSend.getDate()+6);
+    }
+    if(DSend.getDay()==2)
+    {
+     DSend.setDate(DSend.getDate()+5);
+    }
+    if(DSend.getDay()==3)
+    {
+     DSend.setDate(DSend.getDate()+4);
+    } 
+    if(DSend.getDay()==4)
+    {
+     DSend.setDate(DSend.getDate()+3);
+    } 
+    if(DSend.getDay()==5)
+    {
+     DSend.setDate(DSend.getDate()+2);
+    }
+    if(DSend.getDay()==6)
+    {
+     DSend.setDate(DSend.getDate()+1);
+    }
+    DSend.setHours(DSend.getHours()+7);  
+    
+    if(checkStartNew>=DSstart && checkStartNew<=DSend)
+    {
+     modnewvalue=new Date(checkStartNew.getTime()-(7*3600000));
+    }
+    else
+    {
+     modnewvalue=new Date(checkStartNew.getTime()-(8*3600000));
+    }
+    
+    <!-- Start Date New Value Date Conversion --> 
+    if(modnewvalue.getHours()>=0 && modnewvalue.getHours()<=11)
+    {
+      mins=String(modnewvalue.getMinutes());
+     (mins.length==1)? modmins='0'+mins : modmins=mins;
+      if(modnewvalue.getHours()==0)
+      {
+       document.getElementById('SystemOutage:form:pboutage:ptoutage:'+m+':j_id58').innerHTML= (modnewvalue.getMonth()+1)+'/'+modnewvalue.getDate()+'/'+modnewvalue.getFullYear()+' '+'12'+':'+modmins+' AM';
+      }
+      else
+      {
+       document.getElementById('SystemOutage:form:pboutage:ptoutage:'+m+':j_id58').innerHTML= (modnewvalue.getMonth()+1)+'/'+modnewvalue.getDate()+'/'+modnewvalue.getFullYear()+' '+modnewvalue.getHours()+':'+modmins+' AM';
+      } 
+    }
+    else
+    {
+      mins=String(modnewvalue.getMinutes());
+     (mins.length==1)? modmins='0'+mins : modmins=mins;
+      if(modnewvalue.getHours()>12)
+      {
+       document.getElementById('SystemOutage:form:pboutage:ptoutage:'+m+':j_id58').innerHTML= (modnewvalue.getMonth()+1)+'/'+modnewvalue.getDate()+'/'+modnewvalue.getFullYear()+' '+(modnewvalue.getHours()-12)+':'+modmins+' PM';
+      }
+      else
+      {
+       document.getElementById('SystemOutage:form:pboutage:ptoutage:'+m+':j_id58').innerHTML= (modnewvalue.getMonth()+1)+'/'+modnewvalue.getDate()+'/'+modnewvalue.getFullYear()+' '+modnewvalue.getHours()+':'+modmins+' PM';
+      } 
+    }
+   }
+ }
+}
+
+</script>
+    <apex:form id="form">
+    <apex:inputHidden id="listSize" value="{!LIST_SIZE}" />
+    <apex:sectionHeader title="System Outage" />
+            <apex:outputPanel id="MainSection">
+                <apex:pageblock id="pgBlk" Title="System Outage Detail">
+                    <apex:pageBlockButtons location="both">
+                        <apex:commandbutton value="Edit" rerender="form" action="{!editRecords}"/>
+                        <apex:commandbutton value="Delete" rerender="form"  onclick="Verify();"/>
+                        <apex:actionFunction name="DeleteHeader" action="{!deleteHeader}" />
+                        <apex:commandbutton value="Back to Case" rerender="form" action="{!BackToCase}"/>
+                        <apex:commandbutton value="System Outages List" rerender="form" action="{!RedirectToOutageList}"/>
+                        <apex:commandbutton value="Clone" rerender="form" action="{!CloneObj}"/>
+                    </apex:pageBlockButtons>
+                    <apex:pageblockSection title="Information">
+                    </apex:pageblockSection>
+                    <br/>
+
+                    <table  class="detailList" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="labelCol">
+                                <b>Type</b>
+                            </td>
+                            <td class="dataCol col02">
+                             <apex:outputText id="outageType" value="{!outageType}" />
+                            </td>
+
+                            <td class="labelCol">
+                                <b>Start Date</b>
+                            </td>
+                            <td class="dataCol col02">
+                                <apex:outputText value="{!strStartDate}" id="startDate"/>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="labelCol">
+                                <b>System</b>
+                            </td>
+                            <td class="dataCol col02">
+                                <apex:outputText value="{!level0system}"id="MasterSystem" />
+                            </td>
+
+                            <td class="labelCol">
+                                <b>End Date</b>
+                            </td>
+                            <td class="dataCol col02">
+                                <apex:outputText value="{!strEndDate}" id="endDate"/>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="labelCol">
+                                <b>Subsystem</b>
+                            </td>
+                            <td class="dataCol col02">
+                                <apex:outputText id="SubSystem" value="{!level1system}" />
+                            </td>
+                            <td class="labelCol">
+                            <b>Total Outage Time</b>
+                            </td>
+                                <td class="dataCol col02">
+                                <apex:outputText id="totalDownTime" value="{!totalOutageTime}" />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="labelCol">
+                                <b></b>
+                            </td>
+                            <td class="dataCol col02">
+
+                            </td>
+                            <td class="labelCol">
+                            <b>Start Time (GMT)</b>
+                            </td>
+                                <td class="dataCol col02">
+                                <apex:outputText id="GMTStartTime" value="{!strStartDateGMT}" />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="labelCol">
+                                <b></b>
+                            </td>
+                            <td class="dataCol col02">
+
+                            </td>
+                            <td class="labelCol">
+                            <b>End Time (GMT)</b>
+                            </td>
+                                <td class="dataCol col02">
+                                <apex:outputText id="GMTEndTime" value="{!strEndDateGMT}" />
+                            </td>
+                        </tr>
+
+                        </table>
+                        <apex:pageblockSection title="System Information"/><br/>
+                        <table class="detailList" border="0" cellpadding="0" cellspacing="0">                        <tr>
+                            <td class="labelCol">
+                                <b>Created By</b>
+                            </td>
+                            <td class="dataCol col02">
+                                <apex:outputField id="createdBy" value="{!outageObj.CreatedById}"/>
+                                &nbsp;
+                                <apex:outputText id="createdDate" value="{!CreatedDate}"/>
+                             </td>
+                            <td class="labelCol">
+                                <b>Last Modified By</b>
+                            </td>
+                            <td class="dataCol col02">
+                                <apex:outputField id="lastModifiedBy" value="{!outageObj.LastModifiedById}"/>
+                                &nbsp;
+                                <apex:outputText id="lastModifiedDate" value="{!LastModifiedDate}"/>
+                             </td>
+                        </tr>
+                        <tr>
+                            <td class="labelCol">
+                                <b>Case</b>
+                            </td>
+                            <td class="dataCol col02">
+                                <a href="/{!parentCase.Id}"><apex:outputText value="{!parentCase.CaseNumber}" /> </a>
+                            </td>
+
+                            <td class="labelCol">
+                                <b>System Outage </b>
+                            </td>
+                            <td class="dataCol col02">
+                                <apex:outputField id="systemOutage" value="{!outageObj.Name}" />
+                            </td>
+                        </tr>
+                    </table>
+
+                </apex:pageblock>
+                </apex:outputPanel>
+
+         <!--  -------------Dependency Table---------------- -->
+
+                <apex:outputPanel id="dependencies" >
+                    <apex:pageBlock Title="Dependencies">
+                         <apex:pageBlockTable value="{!displayedList}" var="L2System" cellpadding="0" cellspacing="0" style="width:100%;" >
+                            <apex:column title="Level 2 / Level 3 System" headervalue="Level 2 / Level 3 Subsystem" style="width:350px; bgcolor=#F7F6BC;">
+                                <apex:outputPanel rendered="{!if(L2System.Level__c=='Level - 2',true,false)}" >
+                                   <b><apex:outputField value="{!L2System.System_Master__c}" style="font-weight:bold"/></b>
+                                </apex:outputPanel>
+                                <apex:outputPanel rendered="{!if(L2System.Level__c=='Level - 3',true,false)}" >
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputField value="{!L2System.System_Master__c}" />
+                                </apex:outputPanel>
+                            </apex:column>
+                            <apex:column headervalue="Outage Type" style="width:350px;bgcolor=#F7F6BC;">
+                                <apex:outputField value="{!L2System.Outage_Type__c}" />
+                            </apex:column>
+                            <apex:column style="width:350px;">
+                            </apex:column>
+                    </apex:pageBlockTable>
+                     <apex:pageBlockTable style="width:75%;" value="{!displayedList}" var="dummy">
+                      </apex:pageBlockTable>
+
+                    </apex:pageBlock>
+                </apex:outputPanel>
+                
+          <!---------------- System Outage History --------------------->       
+                
+              <apex:pageBlock id="pboutage" title="System Outage History">
+                  <apex:pageBlockTable id="ptoutage" value="{!HistoryList}" var="His"> 
+                    <apex:column id="Coldate">
+                      <apex:facet name="header">Date</apex:facet>
+                      <apex:outputField value="{!His.CreatedDate}" />
+                    </apex:column>
+                    <apex:column id="Colname">
+                      <apex:outputLink value="/{!His.CreatedBy.Id}" >{!His.CreatedBy.Name}</apex:outputLink>
+                      <apex:facet name="header">User</apex:facet>
+                    </apex:column>
+                    <apex:column id="Colaction">
+                      <apex:facet name="header">Action</apex:facet>
+                       <apex:outputText value="Changed" rendered="{!If(His.Field='Type__c',true,false)}" /> 
+                       <apex:outputText value=" Type" style="font-weight:bold" rendered="{!If(His.Field='Type__c',true,false)}" /> 
+                       <apex:outputText value=" from {!His.OldValue} to" rendered="{!If(His.Field='Type__c',true,false)}" /> 
+                       <apex:outputText value=" {!His.NewValue}" style="font-weight:bold" rendered="{!If(His.Field='Type__c',true,false)}" />
+                       <apex:outputText value="Changed" rendered="{!If(His.Field='Start_Time__c',true,false)}" /> 
+                       <apex:outputText value=" Start Date" style="font-weight:bold" rendered="{!If(His.Field='Start_Time__c',true,false)}" /> 
+                       <apex:outputText value=" from " rendered="{!If(His.Field='Start_Time__c',true,false)}" /> 
+                       <!-- apex:outputField value=" {!His.OldValue}" rendered="{!If(His.Field='Start_Time__c',true,false)}" /-->
+                       <apex:outputText value=" {!His.OldValue}" rendered="{!If(His.Field='Start_Time__c',true,false)}" />                       
+                       <apex:outputText value=" to " rendered="{!If(His.Field='Start_Time__c',true,false)}" /> 
+                       <span style="font-weight:bold"> 
+                         <!--apex:outputField value=" {!His.NewValue}" rendered="{!If(His.Field='Start_Time__c',true,false)}" /--> 
+                         <apex:outputText value=" {!His.NewValue}" rendered="{!If(His.Field='Start_Time__c',true,false)}" />
+                       </span>
+                       <apex:outputText value="Changed" rendered="{!If(His.Field='End_Time__c',true,false)}" /> 
+                       <apex:outputText value=" End Date" style="font-weight:bold" rendered="{!If(His.Field='End_Time__c',true,false)}" /> 
+                       <apex:outputText value=" from " rendered="{!If(His.Field='End_Time__c',true,false)}" /> 
+                       <!-- apex:outputField value=" {!His.OldValue}" rendered="{!If(His.Field='End_Time__c',true,false)}" /-->
+                       <apex:outputText value=" {!His.OldValue}" rendered="{!If(His.Field='End_Time__c',true,false)}" />
+                       <apex:outputText value=" to " rendered="{!If(His.Field='End_Time__c',true,false)}" /> 
+                       <span style="font-weight:bold"> 
+                         <!-- apex:outputField value=" {!His.NewValue}" rendered="{!If(His.Field='End_Time__c',true,false)}" /--> 
+                         <apex:outputText value=" {!His.NewValue}" rendered="{!If(His.Field='End_Time__c',true,false)}" />
+                       </span>
+                       <apex:outputText value="Changed" rendered="{!If(His.Field='SubSystems__c',true,false)}" /> 
+                       <apex:outputText value=" Subsystem" style="font-weight:bold" rendered="{!If(His.Field='SubSystems__c',true,false)}" /> 
+                       <apex:outputText value=" from {!His.OldValue} to" rendered="{!If(His.Field='SubSystems__c',true,false)}" /> 
+                       <apex:outputText value=" {!His.NewValue}" style="font-weight:bold" rendered="{!If(His.Field='SubSystems__c',true,false)}" />
+                       <apex:outputText value="Changed" rendered="{!If(His.Field='System__c',true,false)}" /> 
+                       <apex:outputText value=" System" style="font-weight:bold" rendered="{!If(His.Field='System__c',true,false)}" /> 
+                       <apex:outputText value=" from {!His.OldValue} to" rendered="{!If(His.Field='System__c',true,false)}" /> 
+                       <apex:outputText value=" {!His.NewValue}" style="font-weight:bold" rendered="{!If(His.Field='System__c',true,false)}" />
+                       <apex:outputText value="Created" style="font-weight:bold" rendered="{!If(His.Field='created',true,false)}" />
+                    </apex:column>
+                  </apex:pageBlockTable> 
+                <script language="Javascript">RenderCells();</script>
+                <script language="Javascript">RenderDateCells();</script>
+              <apex:commandLink id="Fetchmore"  action="{!getMoreList}" value="Go to List>>" rendered="{!LIST_LINK}"/>
+              </apex:pageBlock>
+
+    </apex:form>
+</apex:page>

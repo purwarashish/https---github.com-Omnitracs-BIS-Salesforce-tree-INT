@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCategoryGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <dataCategory>
+        <dataCategory>
+            <label>Analytics Manager</label>
+            <name>Analytics_Manager</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Canada Enhanced Cellular Roaming</label>
+            <name>Canada_Enhanced_Cellular_Roaming</name>
+        </dataCategory>
+        <dataCategory>
+            <label>CoPilot Truck</label>
+            <name>ALK_Co_Pilot</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Critical Event Reporting</label>
+            <name>Critical_Event_Reporting</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Customer Portal</label>
+            <name>QCP</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Driver Workflow</label>
+            <name>Driver_Workflow</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Exact Fuel</label>
+            <name>Exact_Fuel</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Extended Fault Monitoring</label>
+            <name>Extended_Fault_Monitoring</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Extended Productivity POD</label>
+            <name>Extended_Productivity_POD</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Fault Monitoring</label>
+            <name>Vehicle_Maintenance</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Hours of Service</label>
+            <name>Hours_of_Service</name>
+        </dataCategory>
+        <dataCategory>
+            <label>In-Cab Scanning</label>
+            <name>In_Cab_Scanning</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Media Manager</label>
+            <name>Media_Manager</name>
+        </dataCategory>
+        <dataCategory>
+            <label>NaviGo powered by Telogis</label>
+            <name>Maptuit_NaviGo</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Omnitracs Navigation</label>
+            <name>Omnitracs_Navigation</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Per Diem Manager</label>
+            <name>Per_Diem_Manager</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Performance Monitoring</label>
+            <name>Performance_Monitoring</name>
+        </dataCategory>
+        <dataCategory>
+            <label>QTRACS</label>
+            <name>QTRACS</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Services Portal</label>
+            <name>Qualcomm_Services_Portal_QSP</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Terrestrial Browsing</label>
+            <name>Terrestrial_Browsing</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Trailer Tracks</label>
+            <name>Trailer_Tracks</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Trip Manager</label>
+            <name>Trip_Manager</name>
+        </dataCategory>
+        <dataCategory>
+            <label>VDC</label>
+            <name>VDC</name>
+        </dataCategory>
+        <dataCategory>
+            <label>VIR</label>
+            <name>VIR</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Weigh Station Bypass</label>
+            <name>Weigh_Station_Bypass</name>
+        </dataCategory>
+        <dataCategory>
+            <label>XRS</label>
+            <name>XRS</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Other</label>
+            <name>Other</name>
+        </dataCategory>
+        <label>All</label>
+        <name>All</name>
+    </dataCategory>
+    <label>Applications</label>
+    <objectUsage>
+        <object>KnowledgeArticleVersion</object>
+    </objectUsage>
+</DataCategoryGroup>

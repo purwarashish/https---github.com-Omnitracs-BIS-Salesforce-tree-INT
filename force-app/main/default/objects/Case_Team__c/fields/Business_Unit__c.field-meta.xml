@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Unit__c</fullName>
+    <description>List pulled from the user.business_unit__c picklist.</description>
+    <externalId>false</externalId>
+    <label>Business Unit</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Omnitracs MX</fullName>
+                <default>false</default>
+                <label>Omnitracs MX</label>
+            </value>
+            <value>
+                <fullName>Omnitracs US</fullName>
+                <default>false</default>
+                <label>Omnitracs US</label>
+            </value>
+            <value>
+                <fullName>Roadnet</fullName>
+                <default>false</default>
+                <label>Roadnet</label>
+            </value>
+            <value>
+                <fullName>Sylectus</fullName>
+                <default>false</default>
+                <label>Sylectus</label>
+            </value>
+            <value>
+                <fullName>XRS</fullName>
+                <default>false</default>
+                <label>XRS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

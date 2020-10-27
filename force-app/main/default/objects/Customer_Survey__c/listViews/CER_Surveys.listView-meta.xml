@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CER_Surveys</fullName>
+    <columns>NAME</columns>
+    <columns>OBJECT_ID</columns>
+    <columns>Completion_Date__c</columns>
+    <columns>Initiated_By__c</columns>
+    <columns>Recipient_Contact__c</columns>
+    <columns>Response_Value_Average__c</columns>
+    <columns>Subject_User__c</columns>
+    <columns>Survey_Type__c</columns>
+    <columns>Survey_URL__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>LAST_ACTIVITY</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Survey_Type__c</field>
+        <operation>equals</operation>
+        <value>CERSurvey</value>
+    </filters>
+    <label>CSM Surveys</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>TLAllAccounts</group>
+        <group>TLEasternRegion</group>
+        <group>TLEasternSales</group>
+        <group>TLStrategic</group>
+        <group>TLStrategicSales</group>
+        <group>TLUsers</group>
+        <group>TLWesternRegion</group>
+        <group>TLWesternSales</group>
+    </sharedTo>
+</ListView>

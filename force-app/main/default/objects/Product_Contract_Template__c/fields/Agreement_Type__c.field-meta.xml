@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Agreement_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Agreement Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Master</fullName>
+                <default>false</default>
+                <label>Master</label>
+            </value>
+            <value>
+                <fullName>Schedule</fullName>
+                <default>false</default>
+                <label>Schedule</label>
+            </value>
+            <value>
+                <fullName>Individual</fullName>
+                <default>false</default>
+                <label>Individual</label>
+            </value>
+            <value>
+                <fullName>Attached Agreement</fullName>
+                <default>false</default>
+                <label>Attached Agreement</label>
+            </value>
+            <value>
+                <fullName>Statement of Work (SOW)</fullName>
+                <default>false</default>
+                <label>Statement of Work (SOW)</label>
+            </value>
+            <value>
+                <fullName>Addendum</fullName>
+                <default>false</default>
+                <label>Addendum</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

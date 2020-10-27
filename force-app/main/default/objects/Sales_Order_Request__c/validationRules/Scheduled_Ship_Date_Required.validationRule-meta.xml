@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Scheduled_Ship_Date_Required</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(
+(ISPICKVAL( Sales_Order_Request_Status__c , &quot;Order Placed&quot;)),
+(ISNULL(Scheduled_Ship_Date__c)),
+False
+)</errorConditionFormula>
+    <errorDisplayField>Scheduled_Ship_Date__c</errorDisplayField>
+    <errorMessage>Scheduled Ship Date is required when an Order is placed</errorMessage>
+</ValidationRule>

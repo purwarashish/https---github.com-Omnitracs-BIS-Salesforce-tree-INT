@@ -1,0 +1,71 @@
+<apex:page controller="NewRequirement_Ctrl" tabStyle="Requirements__c">
+<apex:form >
+        <apex:pagemessages />
+        <apex:sectionHeader title="Requirement Edit" subtitle="New Requirement"/>
+        <apex:pageBlock title="Requirement Edit" mode="edit">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!save}" status="SaveAndAttachStatus" />
+                <apex:commandButton value="Save & New" action="{!saveAndNew}" status="SaveAndAttachStatus" />
+                <apex:commandButton value="Cancel" action="{!cancel}" status="SaveAndAttachStatus" immediate="true"/>
+            </apex:pageBlockButtons>
+            <apex:pageblockSection columns="2" title="Information">
+                <apex:pageblockSectionItem helpText="{!$ObjectType.Requirements__c.Fields.Title__c.inlineHelpText}">
+                    <apex:outputLabel value="Title"/>
+                    <apex:inputField value="{!req.Title__c}" required="true"/>
+                </apex:pageblockSectionItem>
+                <apex:pageblockSectionItem helpText="{!$ObjectType.Requirements__c.Fields.Business_Owner__c.inlineHelpText}">
+                    <apex:outputLabel value="Business Owner"/>
+                    <apex:inputField value="{!req.Business_Owner__c}" required="true"/>
+                </apex:pageblockSectionItem>
+                <apex:pageblockSectionItem helpText="{!$ObjectType.Requirements__c.Fields.Track__c.inlineHelpText}">
+                    <apex:outputLabel value="Track"/>
+                    <apex:inputField value="{!req.Track__c}"/>
+                </apex:pageblockSectionItem>
+                <apex:pageblocksectionItem />
+                <apex:pageblockSectionItem helpText="{!$ObjectType.Requirements__c.Fields.Area__c.inlineHelpText}">
+                    <apex:outputLabel value="Area"/>
+                    <apex:inputField value="{!req.Area__c}"/>
+                </apex:pageblockSectionItem>
+                <apex:pageblocksectionItem />
+                <apex:pageblockSectionItem helpText="{!$ObjectType.Requirements__c.Fields.Origin__c.inlineHelpText}">
+                    <apex:outputLabel value="Origin"/>
+                    <apex:inputField value="{!req.Origin__c}"/>
+                </apex:pageblockSectionItem>
+                <apex:pageblocksectionItem />
+                <apex:pageblockSectionItem helpText="{!$ObjectType.Requirements__c.Fields.Req_Identified_During__c.inlineHelpText}">
+                    <apex:outputLabel value="Req. Identified During"/>
+                    <apex:inputField value="{!req.Req_Identified_During__c}"/>
+                </apex:pageblockSectionItem>
+                <apex:pageblocksectionItem />
+            </apex:pageblockSection>
+            <apex:pageBlockSection columns="2">
+            	<apex:pageblockSectionItem helpText="{!$ObjectType.Requirements__c.Fields.Approved_Status__c.inlineHelpText}">
+                    <apex:outputLabel value="Approval Status"/>
+                    <apex:inputField value="{!req.Approved_Status__c}"/>
+                </apex:pageblockSectionItem>
+                <apex:pageblocksectionItem />
+                <apex:pageblockSectionItem helpText="{!$ObjectType.Requirements__c.Fields.Requirement_Status__c.inlineHelpText}">
+                    <apex:outputLabel value="Requirement Status"/>
+                    <apex:inputField value="{!req.Requirement_Status__c}"/>
+                </apex:pageblockSectionItem>
+                <apex:pageblocksectionItem />
+                <apex:pageblockSectionItem helpText="{!$ObjectType.Requirements__c.Fields.Development_Status__c.inlineHelpText}">
+                    <apex:outputLabel value="Development Status"/>
+                    <apex:inputField value="{!req.Development_Status__c}"/>
+                </apex:pageblockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1">
+            	<apex:pageBlockSectionItem helpText="{!$ObjectType.Requirements__c.Fields.Additional_Details__c.inlineHelpText}">
+            		<apex:outputlabel value="Additional Details"/>
+            		<apex:inputField value="{!req.Additional_Details__c}" style="width:500px"/>
+            	</apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1">
+            	<apex:pageBlockSectionItem helpText="{!$ObjectType.Requirements__c.Fields.Assumptions__c.inlineHelpText}">
+            		<apex:outputlabel value="Assumptions"/>
+            		<apex:inputField value="{!req.Assumptions__c}" style="width:500px"/>
+            	</apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

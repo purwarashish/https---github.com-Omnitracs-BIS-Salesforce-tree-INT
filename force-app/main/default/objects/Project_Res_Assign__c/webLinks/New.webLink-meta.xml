@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New</fullName>
+    <availability>online</availability>
+    <description>Override the New button to return to the parent record.</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>/a0w/e?CF00N50000001dKAy={!Projects__c.Name}&amp;CF00N50000001dKAy_lkid={!Projects__c.Id}&amp;retURL=%2F{!Projects__c.Id}&amp;cancelURL=%2F{!Projects__c.Id}&amp;saveURL=%2F{!Projects__c.Id}</url>
+</WebLink>

@@ -1,0 +1,13 @@
+<apex:page id="page" tabStyle="Customer_Idea__c" standardController="Customer_Idea__c" extensions="NewAccountIdeaLinkController">
+<script text="text/javascript"> 
+window.onload = function() {
+    selected();
+} 
+</script>
+
+   <apex:form >
+      <apex:actionFunction action="{!redirectionOnEdit}" name="selected"/>
+      <b>Redirecting.. Please wait</b>
+  </apex:form>
+
+</apex:page>

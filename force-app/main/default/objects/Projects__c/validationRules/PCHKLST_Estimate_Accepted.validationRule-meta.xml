@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PCHKLST_Estimate_Accepted</fullName>
+    <active>true</active>
+    <description>Estimated Accepted fields must be populated if the Estimate has been accepted.</description>
+    <errorConditionFormula>OR(AND ( Estimate_Accepted__c , ISNULL( Estimate_Accepted_Date__c )), AND(Estimate_Accepted__c &lt;&gt; True, NOT(ISNULL(Estimate_Accepted_Date__c))))</errorConditionFormula>
+    <errorDisplayField>Estimate_Accepted__c</errorDisplayField>
+    <errorMessage>Estimate Accepted checkbox AND Estimate Accepted Date must be populated if the Estimate has been accepted.</errorMessage>
+</ValidationRule>

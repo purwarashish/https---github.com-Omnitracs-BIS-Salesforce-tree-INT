@@ -1,0 +1,19 @@
+<apex:page standardController="Contract">
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Contract Termination rules <br/><br/>
+          1. custom link on the Contract to take you to this page<br/>
+          2. present this page with the Contract Treeview in it.<br/>
+          3. present a checkbox beside each contract in the tree so the user can check off at will the contracts to be terminated<br/>
+              a. do a collection of all the contract ids<br/>
+              b. Two Buttons "Next" and "Cancel"
+          5. Present the second VF page with all the contract to be termineated in a list view. <br/>
+              a. Add a note field at the end of each contract in the list. <br/>
+              b. upon save save create a note for each contract with the notes entered. <br/>
+                  - Title of note should be "Termination Notes" <br/>
+              c. Two buttons "Save" and "Cancel"    <br/>
+          6. update all the selected contracts Status from Activated to Terminated.  <br/>
+          7. Return the user back to the contract they started from.
+          
+  </h1>
+  
+</apex:page>

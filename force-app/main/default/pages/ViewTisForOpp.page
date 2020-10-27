@@ -1,0 +1,25 @@
+<apex:page showHeader="false" standardController="opportunity" tabstyle="opportunity" sidebar="false" extensions="ViewTISController" action="{!showTISDetail}">
+    <apex:form id="TISForm">
+        <apex:pageBlock >
+            <apex:pageBlockButtons location="top" >
+                <b>Display History for&nbsp;</b>
+                <apex:selectList value="{!state}" multiselect="false" size="1" required="true">
+                    <apex:actionSupport event="onchange" rerender="detail" />
+                    <apex:selectOptions value="{!OptionsList}"/>
+                </apex:selectList>
+               <!-- <apex:commandButton value="Show Detail" action="{!showTISDetail}" rerender="TISForm"/-->
+                <!--apex:commandButton value="Show Summary" disabled="{!!ShowDetail}" action="{!FalseToggleShowDetail}" reRender="TISForm"/-->
+            </apex:pageBlockButtons>
+        
+            <apex:outputPanel id="detail">
+            <apex:pageBlockTable value="{!TISDetail}" var="TISD">
+                <apex:column headerValue="State" value="{!TISD.State__c}"/> 
+                <!-- <apex:column headerValue="Modified By" value="{!TISD.Who__c}"/ -->
+                <apex:column headerValue="Date Time In" value="{!TISD.Date_Time_In__c}"/> 
+                <apex:column headerValue="Date Time Out"  value="{!TISD.Date_Time_Out__c}"/>
+                <apex:column headerValue="Duration" value="{!TISD.Duration__c}"/>
+            </apex:pageBlockTable>     
+            </apex:outputPanel>  
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

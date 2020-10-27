@@ -1,0 +1,1042 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Direct_CIS</fullName>
+    <active>true</active>
+    <description>NCIS record type for direct</description>
+    <label>Direct CIS</label>
+    <picklistValues>
+        <picklist>Additional_Applications_Services__c</picklist>
+        <values>
+            <fullName>CER - Stability Control %26 Lane Departure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Navigation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Performance Monitoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trip Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle Inspection Report</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Ancillary_Hardware__c</picklist>
+        <values>
+            <fullName>Aux Sensor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Buzzer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cargo Sensor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Door Sensor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Panic Button</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RMWL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VMU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wireless Panic Button</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Comm_Link_Agreement_Sent__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Comm_Link_Type__c</picklist>
+        <values>
+            <fullName>Dial Up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Frame</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISP</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contract_Type__c</picklist>
+        <values>
+            <fullName>Eval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Special Offer</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Default_US_duty_cycle__c</picklist>
+        <values>
+            <fullName>CAN 14%2F120 hrs%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CAN 7%2F70 hrs%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>US 7%2F60 hrs%2E %28Dec 2014%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>US 8%2F70 hrs%2E %28Dec 2014%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Dispatch_Software__c</picklist>
+        <values>
+            <fullName>Add-On Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CAMS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Carrier Logistics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Choice Technologies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Classic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Creative Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DPS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Daffron</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Descartes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dispatching Solutions INc%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GPSNet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In-House %2F Home Grown</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Innovative-%28ICC%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Keystone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>McLeod Software</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Melton Technologies %28MTI%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Milsoft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NISC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>North American Dispatch Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Omni Information Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PCS Software</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paradigm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner Software</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Profit Tools</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Progressive Data Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prophesy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RoadVision</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roadnet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Show Me</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strategic Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sylectus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Syneristic Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Systems Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TME Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMS %28Custom Software Solutions%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMW Suite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMW Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMW Truckmate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TellSystems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TransWork Solutions Inc%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Truck Master</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Varipro</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Email_Status__c</picklist>
+        <values>
+            <fullName>Exception</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Sent</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Sent to PANA</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Fleet_Type__c</picklist>
+        <values>
+            <fullName>Both</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Owner Operator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private Fleet</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>HOS_Rule_Set__c</picklist>
+        <values>
+            <fullName>CAN 14%2F120 hr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CAN 7%2F70 hr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>US 7%2F60 hr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>US 8%2F70 hr</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>HOS_Rule_State__c</picklist>
+        <values>
+            <fullName>Alabama %28AL%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alaska %28AK%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arizona %28AZ%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arkansas %28AR%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>California %28CA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Colorado %28CO%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connecticut %28CT%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delaware %28DE%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Florida %28FL%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Georgia %28GA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hawaii %28HI%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Idaho %28ID%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Illinois %28IL%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Indiana %28IN%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Iowa %28IA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kansas %28KS%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kentucky %28KY%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Louisiana %28LA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maine %28ME%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maryland %28MD%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Massachusetts %28MA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Michigan %28MI%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Minnesota %28MN%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mississippi %28MS%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missouri %28MO%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Montana %28MT%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nebraska %28NE%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nevada %28NV%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Hampshire %28NH%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Jersey %28NJ%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Mexico %28NM%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New York %28NY%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>North Carolina %28NC%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>North Dakota %28ND%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ohio %28OH%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oklahoma %28OK%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oregon %28OR%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pennsylvania %28PA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rhode Island %28RI%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>South Carolina %28SC%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>South Dakota %28SD%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tennessee %28TN%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Texas %28TX%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Utah %28UT%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vermont %28VT%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Virginia %28VA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Washington %28WA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>West Virginia %28WV%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wisconsin %28WI%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wyoming %28WY%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>HOS_Rule__c</picklist>
+        <values>
+            <fullName>Canadian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Federal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>State</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Host_Platform__c</picklist>
+        <values>
+            <fullName>IBM iSeries</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Linux%2FUnix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Windows</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Integration__c</picklist>
+        <values>
+            <fullName>3rd Party</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Homegrown</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QC</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Mobile_Device_Type__c</picklist>
+        <values>
+            <fullName>Certified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unknown</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>QC_Unit__c</picklist>
+        <values>
+            <fullName>IVG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP100S</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP100T</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP110</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP200 SDM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP200T - 16G</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP50</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TT210</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XRS %E2%80%93 WinMo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XRS - Android</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>QTRACS_Software__c</picklist>
+        <values>
+            <fullName>400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Service_Plan_Term__c</picklist>
+        <values>
+            <fullName>1 year</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 years</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Service_Plan__c</picklist>
+        <values>
+            <fullName>CORE Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compliance Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EOBR Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Performance Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Premium Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Premium Trip Manager Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XRS Relay</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Services__c</picklist>
+        <values>
+            <fullName>ALK CoPilot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Advance Mapping</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Amber Alert</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Analytics Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CER - FCW%2FFTV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CER Video</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Content Delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Critical Event Reporting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driver Login</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driver Notification Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driver Workflow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hazmat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hours of Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In-Cab Scanning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lane Departure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobileye</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nav - Maptuit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Navigo Fuel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Navigo Route compliance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Omnitracs Navigation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Per Diem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Performance Monitoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre-filled macros</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QTRACS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TrailerTRACS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trip Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VIR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle Command %26 Control</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle Maintenance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Virtual Display</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Workflow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XRS %E2%80%93 Fuel Tax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XRS %E2%80%93 Mobile APIs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XRS %E2%80%93 Smart Forms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XRS %E2%80%93 Trip Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XRS %E2%80%93 Web APIs</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Time_Zone__c</picklist>
+        <values>
+            <fullName>Alaska</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arizona</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Atlantic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Central</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eastern</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hawaii</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Indiana</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mountain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Newfoundland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pacific</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Saskatchewan</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Trailer_Type__c</picklist>
+        <values>
+            <fullName>Flatbed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reefer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tank</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Van</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type_of_Business__c</picklist>
+        <values>
+            <fullName>Auto Haulers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Building Materials</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Bulk Commodities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cement Hauler</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food %26 Bev Distribution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food Products %28Grocery%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Forest Products</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Freight Delivery %28LTL%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General Freight %28TL%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hazardous Products</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Heavy Hauling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Household Goods</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mfg%2E %26 Processing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Petroleum Production %26 Distribution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Petroleum Products</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refrigerated Liquids</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refrigerated Solids</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail%2FWholesale</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tank Truck</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Unit_Install__c</picklist>
+        <values>
+            <fullName>Crew</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Center</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Unit_Installation__c</picklist>
+        <values>
+            <fullName>Dealer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Installation Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+</RecordType>

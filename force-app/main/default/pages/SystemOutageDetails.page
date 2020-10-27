@@ -1,0 +1,190 @@
+<apex:page id="OutagePage" title="System Outage" tabStyle="System_Outage__c"  standardController="System_Outage__c" extensions="SystemOutageController">
+
+<script language="Javascript">
+var makeAlert=false;
+function test()
+{
+    //alert("Called onload func");
+    fetchChildren();
+}
+function disableSave(){
+    //document.getElementById('OutagePage:form:j_id21:j_id33:saveBtn').disabled=true;
+    makeAlert=true;
+}
+function save(){
+    if(makeAlert){
+     alert('You have changed the System, Sub subsystem and/or Outage Type. Please click on \'Get Dependencies\' before saving the data.');
+
+     return false;
+    }
+    else{
+      return validate();
+    }
+}
+function polulateDependacies(){
+        makeAlert=false;
+        document.getElementById('OutagePage:form:pgBlk:depeHdn').value='Y';
+        getDependencies();
+}
+function validate(){
+    for(var i=0;i<20;i++){
+
+        var obj = document.getElementById('OutagePage:form:j_id33:j_id34:'+i+':j_id44');
+        if(obj!=null && obj.value=='' ){
+         //var obj2=  document.getElementById('OutagePage:form:j_id33:j_id34:'+i+':j_id38');
+         alert('You have changed the System, Sub subsystem and/or Outage Type. Please click on \'Get Dependencies\' before saving the data.');
+         obj.focus();
+         return false;
+        }
+    }
+    return true;
+}
+
+function noenter(ev)
+ {
+ alert(window.event.keyCode);
+    if (window.event && window.event.keyCode == 13 || ev.which == 13)
+    {
+
+       var ele=document.getElementById('{!$Component.OutagePage:form:pgBlk:j_id4:j_id5}');
+       alert(ele);
+       ele.click();
+       return false;
+    }
+    else
+    {
+       return true;
+    }
+ }
+
+function fetchChildren1(){
+fetchChildren();
+}
+</script>
+<!--Commented By Shruti Karn for solving Safari Browser Issue-->
+<!--<body onload="test();">-->
+    <apex:form id="form">
+        <apex:actionFunction name="fetchChildren" action="{!fetchL1Systems}" />
+        <apex:actionFunction name="getDependencies" action="{!getDependencies}"  />
+        <apex:sectionHeader title="System Outage" />
+            <apex:pageblock id="pgBlk" Title="System Outage Edit" mode="edit">
+                <apex:inputHidden id="depeHdn" value="{!calledFromDependacies}"/>
+                <apex:pageBlockButtons location="both">
+                    <apex:commandbutton value="Get Dependencies" onclick="polulateDependacies();"  rerender="MainSection,Errorsection" />
+                    <apex:commandbutton value="Cancel" action="{!CancelUpdate}" rendered="{!isUpdate}"/>
+                    <apex:commandbutton value="Cancel" action="{!CancelProcess}" rendered="{!NOT(isUpdate)}"/>
+                </apex:pageBlockButtons>
+                <apex:outputPanel id="ErrorSection" >
+                 <apex:Messages style="color:rgb(204,0,0);font-weight: bold;text-align:center" />
+
+                 <!--<div class="pbError" id="errorDiv1">{!if(DisplayError ,'Error: Invalid Data. ','')}{!if(DisplayError ,'Values are required for System, Sub System and Outage Type fields.','')}</div>
+                  <div class="pbError">  {!if(DisplayDateError ,'Error: Invalid Data. ','')}{!if(DisplayDateError ,'Value required for Start Date field.','')}</div>
+                  <div class="pbError">  {!if(invalidDates ,'Error: Invalid Data. ','')}{!if(invalidDates ,'Start Date cannot be greater than End Date.','')}</div>-->
+                                   </apex:outputPanel>
+
+                <apex:pageblockSection title="Information">
+             <apex:pageBlockSectionItem id="TypeSection">
+                <apex:outputLabel value="Type"/>
+                <apex:outputPanel id="pnlType">
+                    <div class="requiredInput">
+                        <div class="requiredBlock">
+                     </div>
+                        <apex:inputField value="{!outageObj.Type__c}" onchange="disableSave()"/>                </div>
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem id="StartDateSection">
+                    <apex:outputLabel value="Start Date" />
+                    <apex:outputPanel id="pnlStartDate">
+                    <div class="requiredInput">
+                     <div class="requiredBlock">
+                        </div>
+
+                     <table cellspacing="1" cellpadding="0" border="0">
+                            <tr>
+                                   <td><apex:inputField value="{!outageObj.Start_Time__c}" id="startDate"/> </td>
+                             </tr>
+                        </table></div>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem id="SystemSection">
+                    <apex:outputLabel value="System" />
+                    <apex:outputPanel id="pnlSystem">
+                        <div class="requiredInput">
+                     <div class="requiredBlock">
+                        </div>
+                            <apex:selectList value="{!outageObj.System_Lookup__c}" multiselect="false" size="1" id="MasterSystem" onchange="fetchChildren1();disableSave();" >
+                                <apex:selectOptions value="{!L0systemList}" />
+                            </apex:selectList>
+                        </div>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem id="EndDateSection">
+                 <apex:outputLabel value="End Date"/>
+                     <apex:outputPanel id="pnlEndDate">
+                        <apex:inputField value="{!outageObj.End_Time__c}" id="endDate"/>
+                 </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem id="SubsystemSection">
+                    <apex:outputLabel value="Subsystem" />
+                    <apex:outputPanel id="MainSection">
+                     <div class="requiredInput">
+                            <div class="requiredBlock">
+                         </div>
+                            <apex:selectList value="{!strLevel1System}" multiselect="false" size="1" id="SubSystem" disabled="{!disableSubsystem}"  styleClass="" onchange="disableSave()" >
+                                <apex:selectOptions value="{!L1systemList}" />
+                            </apex:selectList>
+                        </div>
+                </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem id="CaseSection">
+                     <apex:outputLabel value="Case" />
+                    <apex:outputPanel id="pnlCase">
+                     <a href="/{!parentCase.Id}"><apex:outputText value="{!parentCase.CaseNumber}" />   </a>                  </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+
+                 <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                </apex:pageblockSection>
+               </apex:pageblock>
+
+
+            <!-- ----------Dependency Table------------- -->
+
+            <apex:outputPanel id="PnlDependencies" rendered="{!requestDependency}">
+                <apex:pageBlock Title="Dependencies" mode="edit">
+                     <apex:DataTable value="{!displayedList}" var="L2System" cellpadding="2" cellspacing="3" style="width:75%;" rendered="{!NOT(noDependencies)}">
+                            <apex:column title="Level 2 / Level 3 System" headervalue="Level 2 / Level 3 Subsystem" style="width:350px; bgcolor=#F7F6BC;">
+
+                                <apex:outputPanel rendered="{!if(L2System.Level__c=='Level - 2',true,false)}" >
+                                   <b><apex:outputField value="{!L2System.System_Master__c}" style="font-weight:bold"/></b>
+                                </apex:outputPanel>
+                                <apex:outputPanel rendered="{!if(L2System.Level__c=='Level - 3',true,false)}" >
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputField value="{!L2System.System_Master__c}" />
+                                </apex:outputPanel>
+                            </apex:column>
+                            <apex:column headervalue="Outage Type" style="width:350px;bgcolor=#F7F6BC;">
+                                <apex:inputField value="{!L2System.Outage_Type__c}" />
+                            </apex:column>
+                      </apex:DataTable>
+
+                      <apex:DataTable value="{!displayedList}" var="L2System2" cellpadding="2" cellspacing="3" style="width:75%;" rendered="{!noDependencies}" >
+                            <apex:column title="No Dependencies" headervalue="No dependencies exist. " style="width:350px; bgcolor=#F7F6BC;">
+                                   <b><apex:outputText style="font-weight:bold">None</apex:outputText></b>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputField value="{!L2System2.System_Master__c}" />
+                            </apex:column>
+                      </apex:DataTable>
+                <apex:pageBlockButtons location="bottom">
+                    <apex:commandbutton value="Save" id="saveBtn" onclick="return save()" action="{!saveRecords}" disabled="false" />
+                    <apex:commandbutton value="Cancel" action="{!CancelUpdate}" rendered="{!isUpdate}"/>
+                </apex:pageBlockButtons>
+                </apex:pageBlock>
+            </apex:outputPanel>
+    </apex:form>
+<!--</body>-->
+</apex:page>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project_Checklist_Incomplete</fullName>
+    <active>true</active>
+    <description>Project Stage cannot be completed if the Project Checklist is incomplete.</description>
+    <errorConditionFormula>AND(NOT(ISNEW()),AND( ISPICKVAL(Project_Stage__c, &quot;Completed&quot;), Submitted_for_Billing__c &lt;&gt; True))</errorConditionFormula>
+    <errorDisplayField>Project_Stage__c</errorDisplayField>
+    <errorMessage>Project Stage cannot be &quot;Completed&quot; if the Project Checklist is not complete.</errorMessage>
+</ValidationRule>

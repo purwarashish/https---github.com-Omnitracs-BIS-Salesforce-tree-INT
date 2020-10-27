@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Vehicle_Type_CAP__c</fullName>
+    <description>Used for CAP data collection.</description>
+    <externalId>false</externalId>
+    <label>Primary Vehicle Type (CAP)</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Dry Van</fullName>
+                <default>false</default>
+                <label>Dry Van</label>
+            </value>
+            <value>
+                <fullName>Straight Trucks</fullName>
+                <default>false</default>
+                <label>Straight Trucks</label>
+            </value>
+            <value>
+                <fullName>18-Wheeler/Semi-truck</fullName>
+                <default>false</default>
+                <label>18-Wheeler/Semi-truck</label>
+            </value>
+            <value>
+                <fullName>Flat Bed</fullName>
+                <default>false</default>
+                <label>Flat Bed</label>
+            </value>
+            <value>
+                <fullName>Pick-Up Trucks (or smaller than straight trucks)</fullName>
+                <default>false</default>
+                <label>Pick-Up Trucks (or smaller than straight trucks)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

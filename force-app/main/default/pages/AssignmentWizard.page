@@ -1,0 +1,284 @@
+<apex:page standardController="Contract" extensions="AssignmentWizardController">
+  <apex:form >
+    <apex:pageBlock title="Assignment Wizard" mode="detail">
+    <apex:pageMessages />
+        <apex:outputPanel rendered="{!IF(isStep==1,true,false)}">
+            <!--<apex:pageBlockButtons >-->
+            <!--    <apex:commandButton action="{!save}" value="Save"/>-->
+            <!--</apex:pageBlockButtons>-->
+            
+            
+            <apex:pageBlockSection title="{!contrName} is currently assigned to {!Acc.Name}" columns="1" collapsible="false">
+            <apex:selectList value="{!selectedYesNo}" multiselect="false" size="1">
+                <b><font size="2.5">Would you like to reassign <u>{!contrName}</u> to a different account?</font></b>
+                &nbsp;<apex:selectOptions value="{!YesNo}"/>
+                <apex:actionSupport event="onchange" rerender="MyPanel"/>
+            </apex:selectList>
+            <apex:outputPanel id="MyPanel">
+                <!--OPTION "{!selectedYesNo}"-->
+                <apex:outputPanel rendered="{!IF(selectedYesNo=='Yes',true,false)}">
+                <table style="width:25%">
+                  <tr>
+                    <td><b>New Account:&nbsp;</b></td>
+                    <td><apex:inputField value="{!Contract.AccountId}"/></td>   
+                  </tr>
+                </table>
+                    <apex:commandButton action="{!next}" value="Next"/>
+                    
+                </apex:outputPanel>
+                <apex:commandButton action="{!cancel}" value="Cancel"/>
+            </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:outputPanel>
+        
+        <apex:outputPanel rendered="{!IF(isStep==2,true,false)}">
+            <apex:pageBlockSection title="You have selected {!newAccID.Name}" columns="1" collapsible="false">
+                <b><font size="2.5">Would you like to assign <u>{!newAccID.Name}</u> to other related Contracts?</font></b>
+            </apex:pageBlockSection>
+            &nbsp;&nbsp;
+            <apex:commandButton action="{!yes}" value="  Yes  "/>
+            <apex:commandButton action="{!no}" value="  No  "/>
+            
+        </apex:outputPanel>
+        
+    <!--TREEVIEW PAGE-->    
+    <style>
+        div.treeNode{
+            top
+        }
+    
+        td{
+            border-bottom: 0px solid;
+        }
+    
+        #tb{
+            border-collapse: collapse;
+            border-spacing: 0px 0px;
+            table-layout:fixed; 
+            word-wrap:break-word; 
+            border-bottom: 1px solid;
+            border-color: darkgray;
+        }
+    </style>
+        <apex:outputPanel rendered="{!isTreeShow}">
+        <table width="100%">
+            <tr>
+                <td bgcolor="#8cab87" height="20" style="vertical-align: middle;"><font color="white"><b>Account Selected: {!newAccID.Name}</b></font></td>
+            </tr>
+        </table>
+        
+            <table width="100%">
+                <tr height="23">
+                    <th width="11.1%"><h1> Contract Number </h1></th>
+                    <th width="11.4%"><h1> Account </h1></th>
+                    <th width="11.4%"><h1> Agreement Type </h1></th>
+                    <th width="11.4%"><h1> Contract Title</h1></th>
+                    <th width="11.4%"><h1> Start Date</h1></th>
+                    <th width="11.2%"><h1> End Date</h1></th>
+                    <th width="11.4%"><h1> Status</h1></th>
+                    <!--<th width="11.4%"><h1>Contract Term (months)</h1></th>-->
+                </tr>
+            </table>
+
+           <div class="treeNode">
+                <apex:repeat value="{!ObjectStructure}" var="pos">
+                    <table id="tb" width="100%">
+                        <tr>
+                            <td>
+                                <apex:repeat value="{!pos.levelFlag}" var="flag" first="0">                     
+                                    <apex:image url="/img/tree/empty.gif" height="16" width="20" rendered="{!IF(flag,false,true)}"/>
+                                    <apex:image url="/img/tree/chain.gif" height="16" width="20" rendered="{!IF(flag,true,false)}"/>
+                                </apex:repeat>
+                    
+                                <apex:outputText rendered="{!IF(pos.nodeType=='start',true,false)}">
+                                    <apex:image id="tree_start" url="/img/tree/minusStart.gif" height="16" width="20" title="Click to expand/collapse nested items." onClick="TreeNodeElement.prototype.toggle(this,'{!pos.nodeId}');changeImage('{!$Component.tree_start}', 1)"/>
+                                </apex:outputText>
+                    
+                                <apex:outputText rendered="{!IF(OR(pos.nodeType=='parent',pos.nodeType=='parent_end'),true,false)}">
+                                    <apex:image id="Tree_parent" url="/img/tree/minus.gif" rendered="{!IF(pos.nodeType=='parent',true,false)}" height="16" width="20" title="Click to expand/collapse nested items." onClick="TreeNodeElement.prototype.toggle(this,'{!pos.nodeId}');changeImage('{!$Component.Tree_parent}', 2)"/>
+                                    <apex:image id="Tree_parent_end" url="/img/tree/minusEnd.gif" rendered="{!IF(pos.nodeType=='parent_end',true,false)}" height="16" width="20" title="Click to expand/collapse nested items." onClick="TreeNodeElement.prototype.toggle(this,'{!pos.nodeId}');changeImage('{!$Component.Tree_parent_end}', 3)"/>               
+                                </apex:outputText>
+                                
+                                <apex:outputText rendered="{!IF(OR(pos.nodeType=='child',pos.nodeType=='child_end'),true,false)}">
+                                    <apex:image id="Tree_child" url="/img/tree/node.gif" rendered="{!IF(pos.nodeType=='child',true,false)}" height="16" width="20" title="Click to expand/collapse nested items." onClick="TreeNodeElement.prototype.toggle(this,'{!pos.nodeId}')"/>
+                                    <apex:image id="Tree_child_current" url="/img/tree/nodeEnd.gif" rendered="{!IF(pos.nodeType=='child_end',true,false)}" height="16" width="20" title="Click to expand/collapse nested items." onClick="TreeNodeElement.prototype.toggle(this,'{!pos.nodeId}')"/>
+                                </apex:outputText>
+                                
+                                <apex:outputText rendered="{!IF(pos.nodeType=='end',true,false)}">
+                                    <apex:image id="Tree_end" url="/img/tree/nodeEnd.gif" height="16" width="20"/>
+                                </apex:outputText>
+                    
+                                <apex:inputCheckbox value="{!pos.selectd}"/>
+
+                                <apex:outputLink value="/{!pos.contract.Id}" target="_top">{!pos.contract.ContractNumber}</apex:outputLink>
+                            </td>
+                            <span height="16" v="top">    </span>     
+                            <td>
+                                <!--style="position:absolute; left: 16.5%; width: 22.5%; float:left; margin:0px 30px 0px 0px;"-->
+                                <!--onclick="javascript:CloseAndRefresh('{!pos.contract.Account.Id}')"-->
+                                <apex:outputLink value="/{!pos.contract.Account.Id}" target="_top">{!pos.contract.Account.Name}</apex:outputLink>
+                                <!--<apex:outputLabel >-->
+                                <!--<apex:outputText value="{!pos.contract.Account.Name}" rendered="{!IF(pos.contract.Account.Name!= null, true, false)}"/>-->
+                                <!--</apex:outputLabel>-->
+                            </td>
+                            <td>
+                                <!--style="position:absolute; left: 37.3%; width: 22.5%; float:left; margin:0px 30px 0px 0px;"-->
+                                <apex:outputLabel >
+                                    <apex:outputText value="{!pos.contract.Agreement_Type__c}" rendered="{!IF(pos.contract.Agreement_Type__c!= null, true, false)}"/>
+                                </apex:outputLabel>
+                            </td>
+                            <td>
+                                <!--style="position:absolute; left: 57.9%%; width: 23%; float:left; margin:0px 30px 0px 0px;"-->
+                                <apex:outputLabel >
+                                    <apex:outputText value="{!pos.contract.Contract_Title__c}" rendered="{!IF(pos.contract.Contract_Title__c!= '', true, false)}"/>
+                                </apex:outputLabel>
+                            </td>
+                            
+                            <td>
+                                <!--style="position:absolute; left: 84.8%%; width: 23%;float:left; margin:0px 30px 0px 0px;"-->
+                                <apex:outputLabel >
+                                    <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                                        <apex:param value="{!pos.contract.StartDate}"/>
+                                    </apex:outputText>
+                                </apex:outputLabel>
+                            </td>
+                            
+                            <td>
+                                <!--style="position:absolute; left: 84.8%%; width: 23%;float:left; margin:0px 30px 0px 0px;"-->
+                                <apex:outputLabel >
+                                    <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                                        <apex:param value="{!pos.contract.EndDate}"/>
+                                    </apex:outputText>
+                                </apex:outputLabel>
+                            </td>
+                            
+                            <td>
+                                <!--style="position:absolute; left: 57.9%%; width: 23%; float:left; margin:0px 30px 0px 0px;"-->
+                                <apex:outputLabel >
+                                    <apex:outputText value="{!pos.contract.Status}" rendered="{!IF(pos.contract.Status!= '', true, false)}"/>
+                                </apex:outputLabel>
+                            </td>
+                            <!--<td>-->
+                                <!--style="position:absolute; left: 57.9%%; width: 23%; float:left; margin:0px 30px 0px 0px;"-->
+                            <!--    <apex:outputLabel >-->
+                            <!--        <apex:outputText value="{!pos.contract.ContractTerm}"/>-->
+                            <!--    </apex:outputLabel>-->
+                            <!--</td>-->
+                    
+                        </tr>
+                    </table>
+                        <!--  <hr size="1.5" align="left" width="100%" color="black"></hr>-->
+                        <div> </div>
+
+                            <script>
+                                document.write('<div id={!pos.nodeId}>');
+                            </script>
+                            
+                                <apex:outputText rendered="{!IF(OR(pos.nodeType=='child_end',pos.nodeType=='child'),false,true)}"></apex:outputText>
+                                <apex:outputText rendered="{!IF(OR(pos.nodeType=='child_end',pos.nodeType=='child'),true,false)}">
+                                    <div id='{!pos.nodeId}'></div>
+                                </apex:outputText>
+                        
+                            <apex:repeat value="{!pos.closeFlag}" var="close">
+                                
+                            </apex:repeat>
+                </apex:repeat>
+                <br/>
+            </div>
+                
+                
+            <script type="text/javascript">
+                String.prototype.endsWith = function(str){
+                    return (this.match(str+"$")==str)
+                }
+
+                function changeImage(s,i){
+                    imageURL = document.getElementById(s).src;
+                    if (i == 1) {
+                        if (imageURL.endsWith("/img/tree/minusStart.gif"))
+                            imageURL = "/img/tree/plusStart.gif";
+                        else if (imageURL.endsWith("/img/tree/plusStart.gif"))
+                            imageURL = "/img/tree/minusStart.gif";
+                    }
+                    else if (i == 2) {
+                        if (imageURL.endsWith("/img/tree/minus.gif"))
+                            imageURL = "/img/tree/plus.gif";
+                        else if (imageURL.endsWith("/img/tree/plus.gif"))
+                            imageURL = "/img/tree/minus.gif";
+                    }
+                    else if (i == 3) {
+                        if (imageURL.endsWith("/img/tree/minusEnd.gif"))
+                            imageURL = "/img/tree/plusEnd.gif";
+                    else if (imageURL.endsWith("/img/tree/plusEnd.gif"))
+                        imageURL = "/img/tree/minusEnd.gif";
+                    }
+                    else{
+                        return null;
+                    }
+                    document.getElementById(s).src=imageURL;
+                }
+            </script>
+        </apex:outputPanel>
+    
+    <apex:outputPanel rendered="{!IF(isNextCancel==true,true,false)}">
+                <apex:commandButton action="{!cont}" value="Continue" style="margin-top:8px;"/>
+                <apex:commandButton action="{!back}" value="Back" style="margin-top:8px;"/>
+    </apex:outputPanel>
+    
+    <apex:outputPanel rendered="{!IF(isStep==3,true,false)}">
+                <table width="100%">
+                    <tr>
+                        <td  bgcolor="#8cab87" height="20"  style="vertical-align: middle;"><font color="white"><b>The selected Account {!newAccID.Name} will be assigned to the following Contracts:</b></font></td>
+                    </tr>
+                </table>
+                <apex:pageBlockTable value="{!Contracts}" var="termwrap">
+                    <apex:column value="{!termwrap.contract.ContractNumber}"/> 
+                    <apex:column value="{!termwrap.contract.Account.Name}"/> 
+                    <apex:column value="{!termwrap.contract.RecordType.Name}"/> 
+                    <apex:column value="{!termwrap.contract.Contract_Title__c}"/> 
+                    <apex:column value="{!termwrap.contract.Status}"/> 
+                    <apex:column headerValue="Start Date">
+                        <apex:outputLabel >
+                            <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                                <apex:param value="{!termwrap.contract.StartDate}"/>
+                            </apex:outputText>
+                        </apex:outputLabel>
+                    </apex:column>
+                    <apex:column headerValue="End Date">
+                        <apex:outputLabel >
+                            <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                                <apex:param value="{!termwrap.contract.StartDate}"/>
+                            </apex:outputText>
+                        </apex:outputLabel>
+                    </apex:column>
+                    <apex:column value="{!termwrap.contract.ContractTerm}"/> 
+                    <!--<apex:column headerValue="Note"><apex:inputTextarea value="{!termwrap.noteBody}"/></apex:column> -->
+                </apex:pageBlockTable> 
+                <apex:commandButton action="{!finish}" value="Finish" style="margin-top:8px;"/>
+                <apex:commandButton action="{!back2}" value="Back" style="margin-top:8px;"/>
+    </apex:outputPanel>
+    
+    </apex:pageBlock>
+</apex:form>
+  
+  
+  
+  
+  
+  
+  
+  
+<!--  <h1>1.  Button called "Assignment" on the Contracts page <br/>  style="margin-top:8px;"-->
+<!--2.  First Screen will inform user: "This Contract is currently assigned to:" existing Account Name of the Contract <br/>-->
+<!--     "Would you like to reassign this Contract to a different account?"  (yes/no=exit) <br/>-->
+<!--      user should see a lookup field called New Account  on the screen to lookup a different Account<br/>-->
+<!--3.  Next screen :  "You have selected:" selected Account<br/>-->
+<!--     "Would you like this assign this Account to other related Contracts?"  yes/no=apply change to Contract's Account field and exit back to updated Contract record <br/>-->
+<!--4.  Next screen should be similar to Termination Wizard's tree of related Contracts with checkboxes to select different Contracts and button to Continue or go back to screen #3 <br/>-->
+<!--5. Next screen should confirm the Contract(s) selected and a statement like "The selected Account: selected Account will be assigned to the following Contracts:" <br/>-->
+<!--    Go Back = go back to selection screen (step 4) <br/>-->
+<!--    Finish button = exit back to exit back to updated Contract record <br/>-->
+ 
+<!--</h1>-->
+
+</apex:page>

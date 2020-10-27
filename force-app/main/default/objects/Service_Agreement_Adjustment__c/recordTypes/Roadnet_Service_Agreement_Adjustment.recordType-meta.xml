@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Roadnet_Service_Agreement_Adjustment</fullName>
+    <active>true</active>
+    <description>Roadnet Service Agreement Adjustment</description>
+    <label>Roadnet Service Agreement Adjustment</label>
+    <picklistValues>
+        <picklist>Notice_Period__c</picklist>
+        <values>
+            <fullName>Any with 60 days notice</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SAA_Status__c</picklist>
+        <values>
+            <fullName>Email Bounce Back</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

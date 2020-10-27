@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Service_Plan_Discount_Details_Required</fullName>
+    <active>true</active>
+    <description>If other option is selected in Service Plan or In-Service % then Service plan discount details have to be filled out.</description>
+    <errorConditionFormula>AND( 
+OR(ISPICKVAL( Service_Plan__c ,&apos;Other&apos;),ISPICKVAL( In_Service_percent__c ,&apos;Other&apos;)), 
+Free_Messaging__c =NULL 
+)</errorConditionFormula>
+    <errorDisplayField>Free_Messaging__c</errorDisplayField>
+    <errorMessage>If &quot;Other&quot; is selected as an option in &quot;Service Plan&quot; or in &quot;In-Service/NRF %&quot; then you have to fill out this section.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,55 @@
+<apex:page standardController="Deal_Desk__c" extensions="OppDealDeskController" action="{!loadCompetitorData}" sidebar="false" showchat="false" showheader="false" >
+<style>
+table
+{
+ table-layout: auto;
+ border:1px Solid Black;
+ border-collapse: collapse;
+}
+
+tr
+{
+ border:1px Solid Black; 
+}
+
+th
+{
+ font-size:14px;
+ font-face:Arial;
+ background-color: #CCCCCC;
+ text-align: center;
+ border:1px Solid Black;
+ padding: 5px;
+} 
+
+td
+{
+ font-size:12px;
+ font-weight:bolder;
+ font-face:Arial;
+ border:1px Solid Black;
+ padding: 5px;
+}
+</style>
+
+  
+  <apex:pageblock >
+       
+      <b>Type of Competitor : </b> <apex:outputText value="{!typeofcompetitor}"/> <br/>
+      <br/>
+      <apex:pageblockTable value="{!comWra}" var="a" >
+          <apex:column headerValue="Competitor Name" value="{!a.CompetitorName}"/>
+          <apex:column headerValue="Competitor Status" value="{!a.CompetitorStatus}"/>
+          <apex:column headerValue="Competitor Product/Solution Name" value="{!a.CompetitorProductSolution}"/>
+          <apex:column headerValue="Units at Risk" value="{!a.NumberofUnitsatRisk}"/>
+		  <apex:column headerValue="Competitive Units Installed" value="{!a.NumberofCompetitiveUnitsInstalled}"/>
+		  <apex:column headerValue="Satisfaction Level" value="{!a.SatisfactionLevel}"/>
+          <apex:column headerValue="Expected Competitor Contract Expiration Date">
+              <apex:outputText value="{0,date,MM/dd/yyyy}">
+                  <apex:param value="{!a.ExpectedExpireDate}" />
+              </apex:outputText>
+          </apex:column>
+      </apex:pageblockTable>
+  
+  </apex:pageblock>
+</apex:page>

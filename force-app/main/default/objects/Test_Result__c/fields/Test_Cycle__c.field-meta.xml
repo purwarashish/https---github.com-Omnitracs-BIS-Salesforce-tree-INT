@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Test_Cycle__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>When did this test occur?</inlineHelpText>
+    <label>Test Cycle</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Working Model</fullName>
+                <default>false</default>
+                <label>Working Model</label>
+            </value>
+            <value>
+                <fullName>Pre-Validation</fullName>
+                <default>false</default>
+                <label>Pre-Validation</label>
+            </value>
+            <value>
+                <fullName>Validation</fullName>
+                <default>false</default>
+                <label>Validation</label>
+            </value>
+            <value>
+                <fullName>Pre-UAT 1</fullName>
+                <default>false</default>
+                <label>Pre-UAT 1</label>
+            </value>
+            <value>
+                <fullName>UAT 1</fullName>
+                <default>false</default>
+                <label>UAT 1</label>
+            </value>
+            <value>
+                <fullName>Pre-UAT 2</fullName>
+                <default>false</default>
+                <label>Pre-UAT 2</label>
+            </value>
+            <value>
+                <fullName>UAT 2</fullName>
+                <default>false</default>
+                <label>UAT 2</label>
+            </value>
+            <value>
+                <fullName>UAT 2.5</fullName>
+                <default>false</default>
+                <label>UAT 2.5</label>
+            </value>
+            <value>
+                <fullName>Pre-UAT 3</fullName>
+                <default>false</default>
+                <label>Pre-UAT 3</label>
+            </value>
+            <value>
+                <fullName>UAT 3</fullName>
+                <default>false</default>
+                <label>UAT 3</label>
+            </value>
+            <value>
+                <fullName>Pre-Go-Live</fullName>
+                <default>false</default>
+                <label>Pre-Go-Live</label>
+            </value>
+            <value>
+                <fullName>Go-Live</fullName>
+                <default>true</default>
+                <label>Go-Live</label>
+            </value>
+            <value>
+                <fullName>Post Go-Live</fullName>
+                <default>false</default>
+                <label>Post Go-Live</label>
+            </value>
+            <value>
+                <fullName>UAT 4 (Contract Carve Out Only)</fullName>
+                <default>false</default>
+                <label>UAT 4 (Contract Carve Out Only)</label>
+            </value>
+            <value>
+                <fullName>XRS UAT 1</fullName>
+                <default>false</default>
+                <label>XRS UAT 1</label>
+            </value>
+            <value>
+                <fullName>XRS UAT 2</fullName>
+                <default>false</default>
+                <label>XRS UAT 2</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

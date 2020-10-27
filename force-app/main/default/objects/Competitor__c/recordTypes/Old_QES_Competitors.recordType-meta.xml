@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Old_QES_Competitors</fullName>
+    <active>true</active>
+    <description>Used for QES Competitors</description>
+    <label>Old Omnitracs Competitors</label>
+    <picklistValues>
+        <picklist>Competes_wtih__c</picklist>
+        <values>
+            <fullName>FleetLoader</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MC POD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MC Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MC Server</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OnTrack</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RNA %28Dispatch%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RNA %28Plan%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RNT %28Geotab%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TP</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Competitor_Name__c</picklist>
+        <values>
+            <fullName>AT%26T</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Apacheta</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cadec</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CarrierWeb</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cooltrax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DSi Mobile</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Discrete Wireless</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fastercom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Garmin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Geotab</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GreenMile</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>I%2ED%2E Systems %28formerly%2C GE Asset Intelligence%2C Terion%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International Telematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JJ Keller</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MiX Telematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Navman Wireless</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Networkfleet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Orbcomm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PAR Logistics Management Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PeopleNet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roadnet Telematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Routific</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SageQuest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SkyBitz</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sprint</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Teletrac</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trailer Tracking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TransCore</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trimble</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U-Drove</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Verizon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vnomics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WebTech Wireless</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wireless Matrix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wise Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XATA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XATA Turnpike</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zonar Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>iGlobal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Competitor_Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inactive</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cost_compared_to_UPSLT__c</picklist>
+        <values>
+            <fullName>Higher %2825%25%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lower %28-25%25%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Much Higher %28%3E50%25%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Much Lower %28%3C50%25%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Same</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Dom_Sales_Model__c</picklist>
+        <values>
+            <fullName>Direct</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Channels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partners</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TeleSales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VAR%2FReseller%28s%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Int_l_Sales_Model__c</picklist>
+        <values>
+            <fullName>Direct</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Channels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partners</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TeleSales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VAR%2FReseller%28s%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Ownership__c</picklist>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Subsidairy</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Threat_Level__c</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

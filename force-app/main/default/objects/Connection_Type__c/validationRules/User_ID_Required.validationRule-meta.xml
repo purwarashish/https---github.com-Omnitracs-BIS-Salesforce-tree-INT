@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>User_ID_Required</fullName>
+    <active>true</active>
+    <description>When Navigation or VCC is NOT selected as a Connection Type for Web Products, make User ID required.</description>
+    <errorConditionFormula>AND (
+NOT(ISPICKVAL( Connection_Type__c ,&quot;Navigation&quot;)), 
+NOT(ISPICKVAL( Connection_Type__c ,&quot;VCC&quot;)), 
+User_ID_Login_Aux_ID__c = &quot;&quot;, 
+$RecordType.Name = &quot;Web Product&quot;, NOT(CONTAINS($Profile.Name, &quot;Interface&quot;))
+
+)</errorConditionFormula>
+    <errorDisplayField>User_ID_Login_Aux_ID__c</errorDisplayField>
+    <errorMessage>User ID/Login/Aux ID is required.</errorMessage>
+</ValidationRule>

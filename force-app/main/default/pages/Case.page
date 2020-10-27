@@ -1,0 +1,260 @@
+<apex:page standardController="Case" extensions="CaseContExt" title="Create Case" showHeader="true">
+    <style>
+        .statusStyle {
+            background:url(/img/loading.gif) no-repeat 0 0; 
+            padding-left:20px; 
+            margin-left:10px; 
+            padding-bottom:5px; 
+        }
+    </style>        
+    
+    <apex:pageMessage summary="This Page is under development - Please do not test now" severity="warning" strength="5" rendered="false" />
+    <apex:sectionHeader title="Case Edit" subtitle="New Case"/>
+    
+    <apex:outputPanel id="errorMsg">
+        <apex:pageMessages />
+    </apex:outputPanel>
+    
+    <apex:form >
+        <apex:pageBlock id="pbCase" mode="edit" >
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="{!IF(isPortal,'Save','Next')}" 
+                    action="{!saveOnly}" 
+                    reRender="pbCase, errorMsg" status="stat"
+                    /> 
+                <!-- <apex:commandButton value="Save & Attach" 
+                    action="{!saveAndAttach}" 
+                    reRender="pbCase, errorMsg"
+                    rendered="{!NOT(isChangeAsset)}"
+                    />-->
+                <apex:commandButton value="Cancel" action="{!cancel}" /> 
+            </apex:pageBlockButtons>
+            
+            <!-- General Edit Section -->
+            <apex:pageblockSection columns="1" title="Case Information" collapsible="false" showHeader="true" >
+                
+                <apex:pageblockSectionItem >
+                    <apex:pageBlockSection id="lookupSection" collapsible="false"  columns="2" >
+                         
+                        <!-- Account: Editable -->
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Account Name" />
+                            <apex:actionRegion >
+                                <apex:outputPanel >
+                                    <div class="requiredInput">
+                                    <div class="requiredBlock" ></div>
+                                        <apex:inputField value="{!Case.AccountId}" required="true">
+                                        <apex:actionSupport event="onchange"
+                                                action="{!makeDependentPicklistSelectionsForAccount}" 
+                                                rerender="lookupSection, prodFam, prodLine, ast, errorMsg"
+                                                onbeforedomupdate="elementFocus = document.activeElement" oncomplete="retainFocus()" /> 
+                                        </apex:inputField>
+                                    </div>
+                                </apex:outputPanel>
+                            </apex:actionRegion>    
+                        </apex:pageBlockSectionItem>
+
+   
+                        <!-- Contact: Edit -->
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Contact Name"/>
+                                <apex:outputPanel >
+                                    <!-- div class="requiredInput">
+                                        <div class="requiredBlock" ></div> -->
+                                        <apex:inputField value="{!Case.ContactId}" id="conCase" required="true"/>
+                                        <!-- <apex:selectList value="{!Case.ContactId}" size="1" required="true">
+                                            <apex:selectOptions value="{!contactOptions}" />
+                                        </apex:selectList>-->
+                                    <!-- /div -->
+                                </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                                                
+                        <!-- <apex:pageBlockSectionItem rendered="{!NOT(isPortal)}">
+                            <apex:outputLabel value="Reopened Case"/>
+                            <apex:inputField value="{!Case.Reopened_Case__c}"/>
+                        </apex:pageBlockSectionItem>-->                       
+                        
+                        <apex:pageBlockSectionItem rendered="true">
+                            <apex:outputLabel value="Business Unit" style="display: none"/>
+                            <apex:inputField value="{!Case.Business_Unit__c}" style="display: none"/>
+                        </apex:pageBlockSectionItem>
+                        
+                        <!-- <apex:pageBlockSectionItem rendered="{!NOT(isPortal)}">
+                            <apex:outputLabel value="Severity"/>
+                            <apex:inputField value="{!Case.Severity__c}"/>
+                        </apex:pageBlockSectionItem>-->
+                        
+                    </apex:pageBlockSection>
+                </apex:pageblockSectionItem>
+            </apex:pageblockSection>                                  
+            
+            <apex:actionRegion >
+            <apex:pageBlockSection title="Additional Information" columns="2" id="addInfo"   rendered="{!NOT(isPortal)}" >
+                <!-- Status: Edit -->
+                        <apex:pageBlockSectionItem rendered="{!NOT(isPortal)}">
+                            <apex:outputLabel value="Status"/>
+                            <apex:inputField value="{!Case.Status}" required="true"/>
+                        </apex:pageBlockSectionItem>
+                        
+                        <apex:pageBlockSectionItem rendered="true">
+                            <apex:outputLabel value="Priority"/>
+                            <apex:inputField value="{!Case.Priority}"/>
+                        </apex:pageBlockSectionItem>
+                        
+                        <!-- Product Family: Edit -->
+                        <apex:pageBlockSectionItem rendered="true">
+                            <apex:outputLabel value="Product Family"/>
+                            <apex:actionRegion >
+                                <apex:outputPanel id="prodFam">
+                                    <!-- <div class="requiredInput">
+                                        <div class="requiredBlock"></div> -->
+                                        <apex:selectList size="1" value="{!Case.Product_Family_Name__c}" required="false">
+                                            <apex:selectOptions value="{!productFamilyOptions}" />
+                                            <apex:actionSupport event="onchange"
+                                                action="{!makeDependentPicklistSelectionsForProductFamily}" 
+                                                rerender="prodLine, ast, errorMsg"
+                                                onbeforedomupdate="elementFocus = document.activeElement" oncomplete="retainFocus()" /> 
+                                        </apex:selectList>
+                                    <!-- </div>    -->  
+                                </apex:outputPanel>
+                            </apex:actionRegion>
+                        </apex:pageBlockSectionItem>
+                        
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Category (Level 1)"/>
+                            <apex:inputField value="{!Case.Category__c}" required="true"/>
+                        </apex:pageBlockSectionItem>
+                                             
+                        <apex:pageBlockSectionItem rendered="true">
+                            <apex:outputLabel value="Product Line"/>
+                            <apex:actionRegion >
+                                <apex:outputPanel id="prodLine">
+                                    <!-- <div class="requiredInput"> 
+                                        <div class="requiredBlock"></div> -->
+                                        <apex:selectList size="1" value="{!Case.Product_Line_Name__c}" required="false">
+                                            <apex:selectOptions value="{!productLineOptions}" />
+                                            <apex:actionSupport event="onchange"
+                                                action="{!makeDependentPicklistSelectionsForProductLine}" 
+                                                rerender="ast, errorMsg"
+                                                onbeforedomupdate="elementFocus = document.activeElement" oncomplete="retainFocus()" /> 
+                                        </apex:selectList>
+                                    <!-- </div> -->      
+                                </apex:outputPanel>
+                            </apex:actionRegion>
+                        </apex:pageBlockSectionItem>
+                        
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Type (Level 2)"/>
+                            <apex:inputField value="{!Case.Type_Level_2__c}" required="true"/>
+                        </apex:pageBlockSectionItem>
+                        
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Customer Asset"/>
+                            <apex:actionRegion >
+                                <apex:outputPanel id="ast">
+                                    <div class="requiredInput">
+                                        <div class="{!IF(NOT(isPortal), 'requiredBlock','')}"></div>
+                                        <apex:selectList size="1" value="{!Case.Customer_Asset__c}" required="{!NOT(isPortal)}" >
+                                           <apex:selectOptions value="{!assetOptions}" />
+                                           <apex:actionSupport event="onchange"
+                                                action="{!makeDependentPicklistSelectionsForAsset}" 
+                                                rerender="errorMsg, prodLine, prodFam"
+                                                onbeforedomupdate="elementFocus = document.activeElement" oncomplete="retainFocus()"/> 
+                                         </apex:selectList>
+                                    </div>  
+                                </apex:outputPanel>
+                            </apex:actionRegion>
+                        </apex:pageBlockSectionItem>
+
+                        
+                        <apex:pageBlockSectionItem >
+                            <apex:outputlabel value="Area (Level 3)"/>
+                            <apex:inputField value="{!Case.Area_Level_3__c}"/>
+                        </apex:pageBlockSectionItem>
+                        
+            </apex:pageBlockSection>
+            </apex:actionRegion>
+            
+            <!-- <apex:actionRegion> -->
+            <apex:outputPanel id="details">
+            <apex:pageBlockSection title="Description Information" collapsible="false" columns="1" rendered="true">
+            
+                <apex:pageBlockSectionItem >
+                     <apex:outputLabel value="Subject"/>
+                     <apex:actionRegion >
+                        <apex:inputField value="{!Case.Subject}" required="true" style="width: 80%;" id="subject" >
+                            <apex:actionSupport event="onchange" action="{!showArticles}" rerender="showArticles" status="myStatus" 
+                            onbeforedomupdate="elementFocus = document.activeElement" oncomplete="retainFocus()"/> 
+                        </apex:inputField>
+                     </apex:actionRegion>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem rendered="{!isPortal}">
+                    <apex:outputLabel value=""/>
+                    <apex:actionStatus id="myStatus" startText="Searching Knowledge Base..." 
+                           stopText=""   startStyleClass="statusStyle"/>
+                </apex:pageBlockSectionItem>
+                
+                <!-- Display related Articles for Case Deflection -->
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value=""/>
+                <apex:actionRegion >
+                <apex:outputPanel id="showArticles">
+                    <apex:variable var="noArticles" value="true"/>
+                    <apex:pageBlock title="Suggested Articles" rendered="{!showSuggestedArticles}">
+                        <apex:pageBlockSection columns="1">
+                            <apex:outputText value="Before submitting a Case, see if one of these articles answers your question:"/>
+                            <br/>
+                            <!-- <ul> or <table> or other start goes here -->
+                            <knowledge:articleList articleVar="article" pageSize="5" keyword="{!Case.Subject}">
+                                <!-- Article info goes here, currently a series of spans. If <ul> or <table> or other nested structure is wanted add start/finish above/below -->
+                                <!-- this section can contain any combination of Visualforce (<apex:...>) and standard html tags -->
+                                <span style="margin-left:50px"><li><a href="{!URLFOR($Action.KnowledgeArticle.View, article.id)}" target="_blank" style="color: #0000FF;">{!article.title}</a></li></span><br/>
+                                <!--<apex:outputText rendered="{!NOT(ISNULL(article.summary))}"><span style="margin-left:60px">Summary: </span><span style="font-style:italic">{!article.summary}</span><br/></apex:outputText>-->
+                                <!--<apex:outputText ><span style="margin-left:60px">Article Type: </span><span style="font-style:italic">{!article.articletypelabel}</span><br/></apex:outputText>-->
+                                <!--<apex:outputText ><span style="margin-left:60px">Updated: </span><span style="font-style:italic">{!article.lastpublisheddate}</span><br/></apex:outputText>-->
+                                <!--<apex:outputText ><span style="margin-left:60px">Updated: </span><span style="font-style:italic">{!article.lastmodifieddate}</span><br/></apex:outputText>-->
+                                <apex:variable var="noArticles" value="false"/>
+                            </knowledge:articleList>
+                            <!-- </ul> or </table> or other end goes here -->
+                            <apex:outputText value="Unfortunately, no articles were found." rendered="{!noArticles}" style="color: #FF0000; margin-left:50px"/> 
+                            <br/>
+                        </apex:pageBlockSection>
+                     </apex:pageBlock>
+                </apex:outputPanel>
+                </apex:actionRegion>
+                </apex:pageBlockSectionItem>
+               
+                
+                <!-- Summary: Edit -->
+                <apex:pageBlockSectionItem >
+                    <apex:outputlabel value="Description"/>
+                    <apex:outputPanel layout="none">
+                        <div class="requiredInput">
+                            <div class="requiredBlock"></div>
+                            <apex:inputTextArea value="{!Case.Description}" required="true" style="width:80%" rows="4" id="desc"/>
+                        </div>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem rendered="{!NOT(isPortal)}">
+                    <apex:outputlabel value="Send Email Notification to Contact?"/>
+                    <apex:inputField value="{!Case.Send_email_notification_to_contact__c}"/>
+                </apex:pageBlockSectionItem>
+                
+            </apex:pageBlockSection>
+            </apex:outputPanel>   
+            
+            <center><apex:actionStatus style="margin: 0 auto" startText="Redirecting... Please Wait" id="stat"></apex:actionStatus></center>
+            <!-- </apex:actionRegion>  --> 
+        </apex:pageBlock> 
+        
+        <script>
+            var elementFocus = null;    
+            function retainFocus(){
+                elementFocus.focus();
+            }            
+        </script>
+                
+    </apex:form>
+</apex:page>

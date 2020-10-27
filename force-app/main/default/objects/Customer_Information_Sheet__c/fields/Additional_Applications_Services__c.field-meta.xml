@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Additional_Applications_Services__c</fullName>
+    <externalId>false</externalId>
+    <label>Additional Applications / Services</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Analytics Manager</fullName>
+                <default>false</default>
+                <label>Analytics Manager</label>
+            </value>
+            <value>
+                <fullName>CER - Forward Collision Warning</fullName>
+                <default>false</default>
+                <label>CER - Forward Collision Warning</label>
+            </value>
+            <value>
+                <fullName>CER - Stability Control &amp; Lane Departure</fullName>
+                <default>false</default>
+                <label>CER - Stability Control &amp; Lane Departure</label>
+            </value>
+            <value>
+                <fullName>COPILOT Truck</fullName>
+                <default>false</default>
+                <label>COPILOT Truck</label>
+            </value>
+            <value>
+                <fullName>CSA Safety Performance Service</fullName>
+                <default>false</default>
+                <label>CSA Safety Performance Service</label>
+            </value>
+            <value>
+                <fullName>Critical Event Reporting</fullName>
+                <default>false</default>
+                <label>Critical Event Reporting</label>
+            </value>
+            <value>
+                <fullName>Driver Login</fullName>
+                <default>false</default>
+                <label>Driver Login</label>
+            </value>
+            <value>
+                <fullName>Navigation</fullName>
+                <default>false</default>
+                <label>Navigation</label>
+            </value>
+            <value>
+                <fullName>Odometer Positions</fullName>
+                <default>false</default>
+                <label>Odometer Positions</label>
+            </value>
+            <value>
+                <fullName>Performance Monitoring</fullName>
+                <default>false</default>
+                <label>Performance Monitoring</label>
+            </value>
+            <value>
+                <fullName>Omnitracs Hours of Service</fullName>
+                <default>false</default>
+                <label>Omnitracs Hours of Service</label>
+            </value>
+            <value>
+                <fullName>State Miles Counter</fullName>
+                <default>false</default>
+                <label>State Miles Counter</label>
+            </value>
+            <value>
+                <fullName>Trip Manager</fullName>
+                <default>false</default>
+                <label>Trip Manager</label>
+            </value>
+            <value>
+                <fullName>Vehicle Inspection Report</fullName>
+                <default>false</default>
+                <label>Vehicle Inspection Report</label>
+            </value>
+            <value>
+                <fullName>Qualcomm Hours of Service</fullName>
+                <default>false</default>
+                <label>Qualcomm Hours of Service</label>
+            </value>
+            <value>
+                <fullName>Hours of Service</fullName>
+                <default>false</default>
+                <label>Hours of Service</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

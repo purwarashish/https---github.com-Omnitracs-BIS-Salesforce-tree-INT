@@ -1,0 +1,53 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "00550000004cCkhAAE",
+      "createdByName": "Sripathi Gullapalli",
+      "createdDate": "2017-07-26T17:50:21.000Z",
+      "fileName": "audience/Default3.audience",
+      "fullName": "Default3",
+      "id": "6Au50000000TOIWCA4",
+      "lastModifiedById": "00550000004cCkhAAE",
+      "lastModifiedByName": "Sripathi Gullapalli",
+      "lastModifiedDate": "2017-07-26T17:50:21.000Z",
+      "type": "Audience"
+    },
+    {
+      "createdById": "00550000001IbGRAA0",
+      "createdByName": "Automated Process",
+      "createdDate": "2017-06-10T07:45:19.000Z",
+      "fileName": "audience/Default2.audience",
+      "fullName": "Default2",
+      "id": "6Au50000000CaU3CAK",
+      "lastModifiedById": "00550000001IbGRAA0",
+      "lastModifiedByName": "Automated Process",
+      "lastModifiedDate": "2017-06-10T07:45:19.000Z",
+      "type": "Audience"
+    },
+    {
+      "createdById": "00550000001IbGRAA0",
+      "createdByName": "Automated Process",
+      "createdDate": "2017-06-10T07:45:18.000Z",
+      "fileName": "audience/Default.audience",
+      "fullName": "Default",
+      "id": "6Au50000000CaU1CAK",
+      "lastModifiedById": "00550000001IbGRAA0",
+      "lastModifiedByName": "Automated Process",
+      "lastModifiedDate": "2017-06-10T07:45:18.000Z",
+      "type": "Audience"
+    },
+    {
+      "createdById": "00550000001IbGRAA0",
+      "createdByName": "Automated Process",
+      "createdDate": "2017-06-10T07:45:19.000Z",
+      "fileName": "audience/Default1.audience",
+      "fullName": "Default1",
+      "id": "6Au50000000CaU2CAK",
+      "lastModifiedById": "00550000001IbGRAA0",
+      "lastModifiedByName": "Automated Process",
+      "lastModifiedDate": "2017-06-10T07:45:19.000Z",
+      "type": "Audience"
+    }
+  ]
+}

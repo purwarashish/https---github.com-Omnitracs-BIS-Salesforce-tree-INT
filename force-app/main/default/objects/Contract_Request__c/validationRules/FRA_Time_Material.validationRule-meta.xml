@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FRA_Time_Material</fullName>
+    <active>true</active>
+    <description>If Time &amp; Material is selected, Maximum Charge is required</description>
+    <errorConditionFormula>AND( 
+INCLUDES( Contract_Type__c , &quot;Time &amp; Material&quot;), 
+ISBLANK( Maximum_Charge__c ))</errorConditionFormula>
+    <errorDisplayField>Maximum_Charge__c</errorDisplayField>
+    <errorMessage>If Time &amp; Material is selected, Maximum Charge is required</errorMessage>
+</ValidationRule>

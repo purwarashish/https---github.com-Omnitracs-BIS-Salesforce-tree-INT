@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Contains the details of the Profile used to determine whether &quot;Do not Create an Opportunity&quot; is checked or not during the Lead Conversion process</description>
+    <enableFeeds>false</enableFeeds>
+    <label>Lead Profiles</label>
+    <visibility>Protected</visibility>
+</CustomObject>

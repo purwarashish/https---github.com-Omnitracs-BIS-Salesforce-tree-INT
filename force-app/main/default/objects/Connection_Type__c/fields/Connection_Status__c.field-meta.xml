@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Connection_Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Connection Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Active</fullName>
+                <default>false</default>
+                <label>Active</label>
+            </value>
+            <value>
+                <fullName>Active - Primary</fullName>
+                <default>false</default>
+                <label>Active - Primary</label>
+            </value>
+            <value>
+                <fullName>Active - Secondary</fullName>
+                <default>false</default>
+                <label>Active - Secondary</label>
+            </value>
+            <value>
+                <fullName>Active - Tertiary</fullName>
+                <default>false</default>
+                <label>Active - Tertiary</label>
+            </value>
+            <value>
+                <fullName>Additional - Set Ups</fullName>
+                <default>false</default>
+                <label>Additional - Set Ups</label>
+            </value>
+            <value>
+                <fullName>Disaster Recover</fullName>
+                <default>false</default>
+                <label>Disaster Recover</label>
+            </value>
+            <value>
+                <fullName>Disconnected</fullName>
+                <default>false</default>
+                <label>Disconnected</label>
+            </value>
+            <value>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+                <label>Inactive</label>
+            </value>
+            <value>
+                <fullName>Pending - Disconnect</fullName>
+                <default>false</default>
+                <label>Pending - Disconnect</label>
+            </value>
+            <value>
+                <fullName>Pending - Set Up</fullName>
+                <default>false</default>
+                <label>Pending - Set Up</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

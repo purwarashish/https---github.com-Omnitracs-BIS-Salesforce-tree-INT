@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contracts_Request_Editing</fullName>
+    <active>true</active>
+    <description>Validation rule to control who can edit contracts dependent on stage by the user profile.</description>
+    <errorConditionFormula>AND( $User.ProfileId &lt;&gt; &apos;00e50000000p0zW&apos;, 
+$User.ProfileId &lt;&gt;&apos;00e50000000mzNu&apos; ,
+$User.ProfileId &lt;&gt;&apos;00e50000000pKon&apos;,
+$User.ProfileId &lt;&gt;&apos;00e50000000ovLW&apos;,
+$User.ProfileId &lt;&gt;&apos;00e50000000pBRo&apos;,
+$User.ProfileId &lt;&gt;&apos;00e50000000pPTY&apos;,
+$User.ProfileId &lt;&gt;&apos;00e500000018Un5&apos;,
+SystemIsApprovalProcess__c = false,
+CASE(Request_Status__c, &quot;Contract Request Pending&quot;, 0, &quot;Cancelled&quot;, 0, 1) =1)</errorConditionFormula>
+    <errorMessage>This request can only be saved or edited if the the Request Status is Change Request Pending or Cancelled</errorMessage>
+</ValidationRule>

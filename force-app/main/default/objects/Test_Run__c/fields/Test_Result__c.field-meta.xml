@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Test_Result__c</fullName>
+    <description>Shows color codes for test case runs that pass or fail.</description>
+    <externalId>false</externalId>
+    <formula>CASE(TEXT(Result__c), 
+&quot;Pass&quot;, IMAGE(&quot;/img/samples/color_green.gif&quot;, &quot;green&quot;, 10, 10) &amp; &quot; Pass&quot;, 
+&quot;Fail&quot;, IMAGE(&quot;/img/samples/color_red.gif&quot;, &quot;red&quot;, 10, 10) &amp; &quot; Fail&quot;,
+&quot;Not yet run&quot;, IMAGE(&quot;/img/samples/color_yellow.gif&quot;, &quot;yellow&quot;, 10, 10) &amp; &quot; Not run&quot;,
+&quot;Blocked&quot;, IMAGE(&quot;/servlet/servlet.FileDownload?file=01530000001G6XM&quot;, &quot;blue&quot;, 10, 10) &amp; &quot; Blocked&quot;,
+&quot;Expected fail&quot;, IMAGE(&quot;/servlet/servlet.FileDownload?file=01530000002fK9x&quot;, &quot;orange&quot;, 10, 10) &amp; &quot; Expected fail&quot;,
+IMAGE(&quot;/img/samples/color_yellow.gif&quot;, &quot;yellow&quot;, 10, 10) &amp; &quot; Not run&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Test Result</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

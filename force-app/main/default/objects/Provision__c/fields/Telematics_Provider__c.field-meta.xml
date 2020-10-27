@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Telematics_Provider__c</fullName>
+    <externalId>false</externalId>
+    <label>Telematics Provider</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Sky Patrol</fullName>
+                <default>false</default>
+                <label>Sky Patrol</label>
+            </value>
+            <value>
+                <fullName>PeopleNet</fullName>
+                <default>false</default>
+                <label>PeopleNet</label>
+            </value>
+            <value>
+                <fullName>RoadNet Telematics</fullName>
+                <default>false</default>
+                <label>RoadNet Telematics</label>
+            </value>
+            <value>
+                <fullName>Geotab</fullName>
+                <default>false</default>
+                <label>Geotab</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>AMFS</fullName>
+                <default>false</default>
+                <label>AMFS</label>
+            </value>
+            <value>
+                <fullName>Xatanet</fullName>
+                <default>false</default>
+                <label>Xatanet</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DelegateGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Sylectus Delegated Admin</label>
+    <loginAccess>false</loginAccess>
+    <permissionSets>DDP User - Gold partner</permissionSets>
+    <permissionSets>Adobe eSign</permissionSets>
+    <profiles>Sylectus Profile</profiles>
+    <profiles>Sylectus Customer Community Admin</profiles>
+    <profiles>Sylectus Customer Community User</profiles>
+    <roles>Sylectus Management</roles>
+    <roles>Sylectus User</roles>
+</DelegateGroup>

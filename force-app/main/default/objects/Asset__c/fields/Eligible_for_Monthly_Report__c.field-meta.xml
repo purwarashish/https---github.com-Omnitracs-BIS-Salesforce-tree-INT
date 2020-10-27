@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Eligible_for_Monthly_Report__c</fullName>
+    <description>This field was created for the Informatica Cloud integration for &quot;Contract ARR Report&quot; object</description>
+    <externalId>false</externalId>
+    <formula>IF(NOT(ISPICKVAL(Contract__r.Term_Type__c , &quot;Perpetual&quot;)) &amp;&amp; ARR__c &gt; 0 &amp;&amp; OR(
+ISPICKVAL(Contract__r.Status, &quot;Active&quot;),
+ISPICKVAL(Contract__r.Status, &quot;Activated&quot;)
+),&quot;Yes&quot;, &quot;No&quot;)</formula>
+    <label>Eligible for Monthly Report</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

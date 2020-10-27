@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllResourceAssignments</fullName>
+    <columns>NAME</columns>
+    <columns>Resource__c</columns>
+    <columns>Resource_Role__c</columns>
+    <columns>Projects__c</columns>
+    <columns>Effective_Start_Date__c</columns>
+    <columns>Effective_End_Date__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Resource Assignments</label>
+    <language>en_US</language>
+</ListView>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Map_Vendor__c</fullName>
+    <externalId>false</externalId>
+    <label>Map Vendor</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Digibase (TeleAtlas)</fullName>
+                <default>false</default>
+                <label>Digibase (TeleAtlas)</label>
+            </value>
+            <value>
+                <fullName>Dmapas</fullName>
+                <default>false</default>
+                <label>Dmapas</label>
+            </value>
+            <value>
+                <fullName>ESRI Thailand</fullName>
+                <default>false</default>
+                <label>ESRI Thailand</label>
+            </value>
+            <value>
+                <fullName>GDT Brazil</fullName>
+                <default>false</default>
+                <label>GDT Brazil</label>
+            </value>
+            <value>
+                <fullName>Geobis</fullName>
+                <default>false</default>
+                <label>Geobis</label>
+            </value>
+            <value>
+                <fullName>Geocenter Consulting</fullName>
+                <default>false</default>
+                <label>Geocenter Consulting</label>
+            </value>
+            <value>
+                <fullName>GeoMapas</fullName>
+                <default>false</default>
+                <label>GeoMapas</label>
+            </value>
+            <value>
+                <fullName>Geotarget</fullName>
+                <default>false</default>
+                <label>Geotarget</label>
+            </value>
+            <value>
+                <fullName>Geovision</fullName>
+                <default>false</default>
+                <label>Geovision</label>
+            </value>
+            <value>
+                <fullName>GNX Technologies Pte Ltd</fullName>
+                <default>false</default>
+                <label>GNX Technologies Pte Ltd</label>
+            </value>
+            <value>
+                <fullName>Imagem</fullName>
+                <default>false</default>
+                <label>Imagem</label>
+            </value>
+            <value>
+                <fullName>Lead Dog</fullName>
+                <default>false</default>
+                <label>Lead Dog</label>
+            </value>
+            <value>
+                <fullName>Mapah</fullName>
+                <default>false</default>
+                <label>Mapah</label>
+            </value>
+            <value>
+                <fullName>MapaServ</fullName>
+                <default>false</default>
+                <label>MapaServ</label>
+            </value>
+            <value>
+                <fullName>MapData</fullName>
+                <default>false</default>
+                <label>MapData</label>
+            </value>
+            <value>
+                <fullName>Map Data Sciences</fullName>
+                <default>false</default>
+                <label>Map Data Sciences</label>
+            </value>
+            <value>
+                <fullName>MapInfo</fullName>
+                <default>false</default>
+                <label>MapInfo</label>
+            </value>
+            <value>
+                <fullName>MapIt</fullName>
+                <default>false</default>
+                <label>MapIt</label>
+            </value>
+            <value>
+                <fullName>MapKing International Limited</fullName>
+                <default>false</default>
+                <label>MapKing International Limited</label>
+            </value>
+            <value>
+                <fullName>Mapping Solutions Company Ltd.</fullName>
+                <default>false</default>
+                <label>Mapping Solutions Company Ltd.</label>
+            </value>
+            <value>
+                <fullName>Mardis Research</fullName>
+                <default>false</default>
+                <label>Mardis Research</label>
+            </value>
+            <value>
+                <fullName>MultiSpectral</fullName>
+                <default>false</default>
+                <label>MultiSpectral</label>
+            </value>
+            <value>
+                <fullName>NAV2</fullName>
+                <default>false</default>
+                <label>NAV2</label>
+            </value>
+            <value>
+                <fullName>Naviar</fullName>
+                <default>false</default>
+                <label>Naviar</label>
+            </value>
+            <value>
+                <fullName>Here - NAVTEQ</fullName>
+                <default>false</default>
+                <label>Here - NAVTEQ</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>PitneyBowes MapInfo</fullName>
+                <default>false</default>
+                <label>PitneyBowes MapInfo</label>
+            </value>
+            <value>
+                <fullName>Sensis</fullName>
+                <default>false</default>
+                <label>Sensis</label>
+            </value>
+            <value>
+                <fullName>TeleAtlas</fullName>
+                <default>false</default>
+                <label>TeleAtlas</label>
+            </value>
+            <value>
+                <fullName>TeleNavis</fullName>
+                <default>false</default>
+                <label>TeleNavis</label>
+            </value>
+            <value>
+                <fullName>Tramigo</fullName>
+                <default>false</default>
+                <label>Tramigo</label>
+            </value>
+            <value>
+                <fullName>Transnavicom (TNV) - Ukraine</fullName>
+                <default>false</default>
+                <label>Transnavicom (TNV) - Ukraine</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

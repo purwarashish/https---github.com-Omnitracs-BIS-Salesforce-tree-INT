@@ -1,0 +1,150 @@
+<apex:page standardController="case" extensions="UnityFeedbackFormController"
+                    showHeader="false" sidebar="false" cache="true">
+<apex:include pageName="homePage" />
+<!--apex:include pageName="supportGoogleAnalytics" /-->
+<style>
+    .feedcheckWidth td
+    {
+        width:100px;
+        padding:0 90px 0 0 ;
+        font-size:13px;
+    }
+    html* .feedcheckWidth td
+    {
+        padding:0 79px 0 0 ;
+    }
+    .feedbackHeader1
+    {
+        font-size:20px;
+    }
+    .feedbackHeader2
+    {
+        font-size:14px;
+    }
+    .popupHeaderTopSpace, .feedbackTopSpace
+    {
+        margin-top:15px;
+    }
+    
+    .commentsWidth {
+        font-size: 13px;
+        font-weight: bold;
+        width: 550px;
+    }    
+</style>
+
+
+
+<apex:form >
+<div class="popUpFeedback">
+<div class="popUpLogo"></div>
+    <div class="popupContents">
+    <h5 class="popupHeaderTopSpace feedbackHeader2"><i>What you think is important to us…</i></h5><br/>
+    <br/>
+    <h5 class="popupHeaderTopSpace feedbackHeader2">IF YOU NEED TECHNICAL SUPPORT, PLEASE SUBMIT A CASE ON THE SUPPORT TAB.</h5>  
+    <br/><br/>
+    <h5 class="popupHeaderTopSpace feedbackHeader2">SHOULD YOU HAVE QUESTIONS CONCERNING THE CUSTOMER PORTAL, PLEASE CALL 1-800-541-7490 OPTION 2.</h5>
+    <br/><br/>
+    <h5 class="popupHeaderTopSpace feedbackHeader2">IF YOU HAVE FEEDBACK REGARDING WHAT WOULD MAKE THIS PAGE MORE USABLE TO YOU IN THE FUTURE, PLEASE CONTINUE COMPLETING THIS FORM.</h5>
+
+    <!--
+    <h5 class="popupHeaderTopSpace feedbackHeader2">Please use this form to help us improve your online experience with Qualcomm.<br/>All feedback is appreciated and carefully reviewed.</h5>
+    -->
+    <div class="popupHeaderTopSpace">
+    <h5 class="rowFeedback">How do you rate this page?</h5>
+    
+        <div class="rowFeedback">
+            <label class="fll feedlabelWidth">&nbsp;</label>
+            <span class="fll">
+                <span class="feedcheckWidth feedLeftSpace">Excellent</span>
+                <span class="feedcheckWidth feedLeftSpace">Average</span>
+                <span class="feedcheckWidth feedLeftSpace">Poor</span>
+            </span>
+        </div>
+
+        <div class="rowFeedback">
+            <label class="fll feedlabelWidth">Are the labels and instructions clear?</label>
+            <span class="fll">
+                <apex:selectRadio styleclass="styled feedcheckWidth" id="RadioLabel"  value="{!ratingForLabel}">
+                    <apex:selectOptions value="{!labelRatingValues}"/>
+                </apex:selectRadio>
+            </span>
+        </div>
+        <div class="rowFeedback">
+            <label class="fll feedlabelWidth">Is the information included on this page helpful?</label>
+            <span class="fll">
+            <apex:selectRadio styleclass="styled feedcheckWidth" id="RadioIsHelpful"  value="{!RatingIsHelpful}">
+                <apex:selectOptions value="{!HelpratingValues}"/>
+            </apex:selectRadio>
+            </span>
+        </div>
+        <div class="rowFeedback">
+            <label class="fll feedlabelWidth">Can you easily take the action you need on this page?</label>
+            <span class="fll"  styleclass="styled">
+            <apex:selectRadio styleclass="styled feedcheckWidth" id="RadioAction"  value="{!ratingAction}">
+                <apex:selectOptions value="{!actionRatingValues}"/>
+            </apex:selectRadio>
+            </span>
+        </div>
+        <div class="rowFeedback">
+            <label class="fll feedlabelWidth">Overall Use:</label>
+            <span class="fll">
+            <apex:selectRadio styleclass="styled feedcheckWidth" id="RadioUse"  value="{!ratingUse}">
+                <apex:selectOptions value="{!useRatingValues}"/>
+            </apex:selectRadio>
+            </span>
+        </div>
+
+        <div class="rowFeedback">
+        <label class="fll feedlabelWidth" style="padding-bottom:10px">Comments:</label>
+        <apex:inputTextarea styleClass="caseViewTxtBox4" value="{!comments}" />
+        </div>
+        <div class="rowFeedback">
+         <label class="fll commentsWidth" style="padding-bottom:10px">Please provide details regarding the page you are commenting on and how we could make this page more usable for you.</label>
+         <apex:inputTextarea styleClass="caseViewTxtBox4" value="{!suggestions}" />
+         </div>
+         <div class="rowFeedback caseSubDataTxt clr">
+         <label class="commentsWidth">Would you like us to contact you? If so, please select one (if not, no selection is needed).</label><br/>
+         <div class="rowFeedback">
+             <input type="radio" class="" name="emailPhone" id="email" value="{!phoneField}" onClick="javascript:selectedRec('{!phoneField}');"> </input>
+             <!-- label class="fll feedlabelWidth">Phone</label -->
+             <span class="feedBckPhoneTxt">Phone :</span>
+             <apex:inputText styleClass="caseViewTxtBox readonly phoneNumber" onchange="javascript:selectedRec('{!phoneField}');" value="{!phoneField}" /><br/>
+        </div>
+        <div class="rowFeedback">
+            <input type="radio" class="" name="emailPhone" id="email" value="{!emailField}" onclick="javascript:selectedRec('{!emailField}');">
+            </input>
+            <span class="feedBckPhoneTxt">Email :</span>
+            <apex:inputText styleClass="caseViewTxtBox readonly emailId" onclick="javascript:selectedRec('{!emailField}');" value="{!emailField}" />
+            </div>
+                <apex:commandButton styleClass="caseSubmitButton flr" value="Submit" action="{!submitCase}"/>
+                <apex:messages style="color:rgb(204,0,0);font-weight: bold;text-align:right;padding-top:15px;width:100%;float:right;" id="errMsg" />
+                <apex:inputhidden value="{!chooseContact}" id="chooseContID" />
+                <script> var selRec= document.getElementById('{!$Component.chooseContID}'); </script>
+            </div>  
+        </div>
+        </div>
+    </div>
+</apex:form>
+<script>
+    function selectedRec(obj)
+    {
+        selRec.value = obj;
+        
+    }
+    </script>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28473692-5']);
+  _gaq.push(['_setDomainName', 'cs13.my.salesforce.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</apex:page>

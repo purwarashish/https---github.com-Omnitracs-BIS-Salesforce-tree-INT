@@ -1,0 +1,31 @@
+<apex:page controller="OutageContactWizardController" tabStyle="Campaign" id="notificaionType" wizard="false" showHeader="true" sidebar="true" >
+    <apex:sectionHeader title="" subtitle="Complete"/>
+
+    <apex:form id="finalForm" style="width:100%" >
+    <apex:messages />
+    <apex:pageBlock title="Finish" id="contactInfo">
+        <apex:pageBlockSection collapsible="false" columns="1" >
+            <apex:pageBlockSectionItem >
+              <apex:outputPanel >
+                  <div style="text-align:right">
+                      <apex:commandButton value="Finish" action="/home/home.jsp"/>
+                  </div>
+              </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <b>The emails will be sent to the selected Contacts.
+                Please click Finish to proceed.</b>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+              <apex:outputPanel >
+                  <div style="text-align:right">
+                      <apex:commandButton value="Finish" action="/home/home.jsp"/>
+                  </div>
+              </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+
+            </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:form>
+
+</apex:page>

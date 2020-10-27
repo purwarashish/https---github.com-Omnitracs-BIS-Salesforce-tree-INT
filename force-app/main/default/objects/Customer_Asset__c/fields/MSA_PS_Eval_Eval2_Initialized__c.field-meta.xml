@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MSA_PS_Eval_Eval2_Initialized__c</fullName>
+    <description>Identify the Customer Assets that have no association with a (MSA, Schedule, Eval, Eval2) contract; but certainly should.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+  OR(
+    AND(
+      ISBLANK(MSA_Document__c),
+      NOT(ISBLANK(Latest_Quote_Line__r.SBQQ__Product__r.Output_MSA_Document_Template__c))
+    ),
+    AND(
+      ISBLANK(Product_Schedule_Document__c),
+      NOT(ISBLANK(Latest_Quote_Line__r.SBQQ__Product__r.Output_Schedule_Document_Template__c))
+    ),
+    AND(
+      ISBLANK(Eval_Document__c),
+      TEXT(Latest_Opportunity__r.Order_Type__c) == &apos;Eval&apos;,
+      OR(
+        ISBLANK(TEXT(Latest_Opportunity__r.Order_Sub_Type__c)),
+        TEXT(Latest_Opportunity__r.Order_Sub_Type__c) != &apos;XRS CMPP&apos;
+      ),
+      NOT(ISBLANK(Latest_Quote_Line__r.SBQQ__Product__r.Output_Eval_Document_Template__c))
+    ),
+    AND(
+      ISBLANK(Eval2_Document__c),
+      TEXT(Latest_Opportunity__r.Order_Type__c) == &apos;Eval&apos;,
+      OR(
+        NOT(ISBLANK(TEXT(Latest_Opportunity__r.Order_Sub_Type__c))),
+        TEXT(Latest_Opportunity__r.Order_Sub_Type__c) == &apos;XRS CMPP&apos;
+      ),
+      NOT(ISBLANK(Latest_Quote_Line__r.SBQQ__Product__r.Output_Eval2_Document_Template__c))
+    )
+  ),
+  false,
+  true
+)</formula>
+    <inlineHelpText>If checked, the Customer Asset has been correctly mapped to an (MSA, Product Schedule, Eval, or Eval2) Contract record.</inlineHelpText>
+    <label>(MSA, PS, Eval, Eval2) Initialized?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

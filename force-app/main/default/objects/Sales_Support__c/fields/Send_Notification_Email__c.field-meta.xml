@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_Notification_Email__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Tied to a workflow that will send an email alert out to the Managed By and account owner if checkbox is set.</description>
+    <externalId>false</externalId>
+    <label>Send Notification Email</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Status__c</fullName>
+    <description>This is needed for Contracts Team</description>
+    <externalId>false</externalId>
+    <formula>IMAGE(
+IF(Product__r.IsActive = TRUE, &quot;/img/samples/flag_green.gif&quot;,
+&quot;/img/samples/flag_red.gif&quot;),
+&quot;Status Flag&quot;)</formula>
+    <inlineHelpText>Displays the status of the Product in Salesforce:
+Green Flag = Product is active
+Red Flag = Product is not active (cannot be selected going forward)</inlineHelpText>
+    <label>Product Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

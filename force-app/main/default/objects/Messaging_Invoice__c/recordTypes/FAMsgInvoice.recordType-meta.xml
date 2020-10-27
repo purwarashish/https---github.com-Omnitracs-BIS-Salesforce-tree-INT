@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FAMsgInvoice</fullName>
+    <active>true</active>
+    <description>Used for Fleet Advisor message bill</description>
+    <label>FA Msg Invoice</label>
+</RecordType>

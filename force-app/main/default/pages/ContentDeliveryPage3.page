@@ -1,0 +1,57 @@
+<apex:page standardController="Contract" extensions="ContentDeliveryController" tabStyle="Contract">
+    <script>  
+      function OpenWin(url){
+           var newwindow = window.open(url, 'open page','_blank','scrollbars=yes,toolbar=no,status=no');
+           newwindow.focus();
+      }
+    </script>
+    <apex:form >
+    <apex:messages />
+    <apex:sectionHeader title="Review Content Delivery" subtitle="Content Delivery Wizard">
+        <center><apex:image url="{!$Resource.ContentDeliveryStep3}" width="1266" height="46"/></center>
+        <br/><br/><br/>
+    </apex:sectionHeader>
+        <apex:pageBlock title="Review Content Delivery">
+            <apex:pageBlockButtons >
+                    <apex:commandButton action="{!step4}" value="Create Email" style="margin-top:8px;"/>﻿
+                    <apex:commandButton action="{!Cancel}" value="Cancel" style="margin-top:8px;" onclick="return confirmCancel()" immediate="true"/>
+              </apex:pageBlockButtons>
+            <apex:outputPanel id="Show" >
+                     <apex:actionstatus id="topStatus" stopText="">
+                        <apex:facet name="start">
+                            <div class="progress progress-striped active">
+                                <div class="progress-bar"  role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                    Generating URL Please wait...
+                                </div>
+                           </div>           
+                        </apex:facet>
+                    </apex:actionstatus>
+                   <table>
+                    <tr>
+                        <td><b>Status &nbsp;&nbsp;&nbsp;</b></td><td><apex:image url="{!$Resource.Checkmark}" width="30" height="30" /> Selecting file...done!</td>
+                    </tr><tr>
+                        <td></td><td><apex:image url="{!$Resource.Checkmark}" width="30" height="30"/> Creating an online version of the presentation...done!</td>   
+                    </tr> <tr>
+                        <td></td><td><apex:image url="{!$Resource.Checkmark}" width="30" height="30"/> Creating a custom webpage...done!</td>
+                    </tr> <tr>
+                        <td><b>Preview </b>&nbsp;&nbsp;&nbsp;</td><td><b>An online version of your file has been created.  Preview the webpage your recipient will see:</b></td>
+                     </tr>  <tr>               
+                            <td></td><td> &nbsp;&nbsp;&nbsp;<apex:commandButton value="Preview"  action="{!Preview}" onComplete="window.open('{!PublicURL}','_blank','height=600,location=no,resizable=yes,toolbar=no,status=no,menubar=no,scrollbars=1', 1)" style="background:#99CCFF; font-weight=bold"  reRender="Show"/>&nbsp; &nbsp; &nbsp; &nbsp; <a href="https://help.salesforce.com/htviewhelpdoc?id=content_delivery_about.htm&siteLang=en_US">What if I don't like the preview?</a></td>
+                    </tr><tr>
+                            <td><b>Deliver: </b></td><td>  To deliver your content, use email or instant message to send the sample text below: </td>
+                         <td></td>
+                     </tr><tr>    
+                         <td></td><td>
+                         <table border="1" bgcolor="Yellow">
+                             <tr>
+                                    <td>&nbsp;&nbsp;I've sent you a presentation that you can view online by clicking on the following link: &nbsp;&nbsp;<br/><br/>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="{!PublicURL}"/></td>
+                             </tr>
+                        </table></td>
+                   </tr> 
+                </table>
+            </apex:outputPanel>
+           
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Opportunities</fullName>
+                <default>false</default>
+                <label>Opportunities</label>
+            </value>
+            <value>
+                <fullName>Strengths</fullName>
+                <default>false</default>
+                <label>Strengths</label>
+            </value>
+            <value>
+                <fullName>Threats</fullName>
+                <default>false</default>
+                <label>Threats</label>
+            </value>
+            <value>
+                <fullName>Weaknesses</fullName>
+                <default>false</default>
+                <label>Weaknesses</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

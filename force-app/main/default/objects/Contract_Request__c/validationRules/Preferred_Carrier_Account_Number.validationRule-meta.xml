@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Preferred_Carrier_Account_Number</fullName>
+    <active>true</active>
+    <description>Preferred Carrier Account Number is required if the Preferred Carrier is selected</description>
+    <errorConditionFormula>AND (
+OR(ISPICKVAL(Preferred_Carrier__c , &quot;Bill Me&quot;), ISPICKVAL(Preferred_Carrier__c , &quot;Charge My Account&quot;)),
+(Preferred_Carrier_Account_Number__c =&quot;&quot; )
+)</errorConditionFormula>
+    <errorMessage>Preferred Carrier Account Number is required when a Preferred Carrier is selected.</errorMessage>
+</ValidationRule>

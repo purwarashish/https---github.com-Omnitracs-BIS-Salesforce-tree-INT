@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Purpose__c</fullName>
+    <externalId>false</externalId>
+    <label>Purpose</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AR Review</fullName>
+                <default>false</default>
+                <label>AR Review</label>
+            </value>
+            <value>
+                <fullName>Authorized Service Centers</fullName>
+                <default>false</default>
+                <label>Authorized Service Centers</label>
+            </value>
+            <value>
+                <fullName>BETA Feedback</fullName>
+                <default>false</default>
+                <label>BETA Feedback</label>
+            </value>
+            <value>
+                <fullName>Business Development</fullName>
+                <default>false</default>
+                <label>Business Development</label>
+            </value>
+            <value>
+                <fullName>Business Review</fullName>
+                <default>false</default>
+                <label>Business Review</label>
+            </value>
+            <value>
+                <fullName>Customer Service Visit</fullName>
+                <default>false</default>
+                <label>Customer Service Visit</label>
+            </value>
+            <value>
+                <fullName>Demo</fullName>
+                <default>false</default>
+                <label>Demo</label>
+            </value>
+            <value>
+                <fullName>Discovery Call</fullName>
+                <default>false</default>
+                <label>Discovery Call</label>
+            </value>
+            <value>
+                <fullName>Discuss Alliance Partnership</fullName>
+                <default>false</default>
+                <label>Discuss Alliance Partnership</label>
+            </value>
+            <value>
+                <fullName>Executive Visit</fullName>
+                <default>false</default>
+                <label>Executive Visit</label>
+            </value>
+            <value>
+                <fullName>Fleet Risk Meeting</fullName>
+                <default>false</default>
+                <label>Fleet Risk Meeting</label>
+            </value>
+            <value>
+                <fullName>Follow Up Net Promoter Survey</fullName>
+                <default>false</default>
+                <label>Follow Up Net Promoter Survey</label>
+            </value>
+            <value>
+                <fullName>General Feedback</fullName>
+                <default>false</default>
+                <label>General Feedback</label>
+            </value>
+            <value>
+                <fullName>General Product Discussion</fullName>
+                <default>false</default>
+                <label>General Product Discussion</label>
+            </value>
+            <value>
+                <fullName>Inside CSR Account review</fullName>
+                <default>false</default>
+                <label>Inside CSR Account review</label>
+            </value>
+            <value>
+                <fullName>Net Promoter Score (NPS) Survey Feedback</fullName>
+                <default>false</default>
+                <label>Net Promoter Score (NPS) Survey Feedback</label>
+            </value>
+            <value>
+                <fullName>New Product Discussion</fullName>
+                <default>false</default>
+                <label>New Product Discussion</label>
+            </value>
+            <value>
+                <fullName>Operations Meeting</fullName>
+                <default>false</default>
+                <label>Operations Meeting</label>
+            </value>
+            <value>
+                <fullName>PS MCP/IVG Delivery</fullName>
+                <default>false</default>
+                <label>PS MCP/IVG Delivery</label>
+            </value>
+            <value>
+                <fullName>PS RDC Delivery</fullName>
+                <default>false</default>
+                <label>PS RDC Delivery</label>
+            </value>
+            <value>
+                <fullName>PS RN Delivery</fullName>
+                <default>false</default>
+                <label>PS RN Delivery</label>
+            </value>
+            <value>
+                <fullName>PS XRS Delivery</fullName>
+                <default>false</default>
+                <label>PS XRS Delivery</label>
+            </value>
+            <value>
+                <fullName>Quarterly Review Meeting</fullName>
+                <default>false</default>
+                <label>Quarterly Review Meeting</label>
+            </value>
+            <value>
+                <fullName>Roadmap review</fullName>
+                <default>false</default>
+                <label>Roadmap review</label>
+            </value>
+            <value>
+                <fullName>Sponsor Letter Call</fullName>
+                <default>false</default>
+                <label>Sponsor Letter Call</label>
+            </value>
+            <value>
+                <fullName>Strategic Account Meeting</fullName>
+                <default>false</default>
+                <label>Strategic Account Meeting</label>
+            </value>
+            <value>
+                <fullName>Technical Discussion</fullName>
+                <default>false</default>
+                <label>Technical Discussion</label>
+            </value>
+            <value>
+                <fullName>Training</fullName>
+                <default>false</default>
+                <label>Training</label>
+            </value>
+            <value>
+                <fullName>Win/Loss Call</fullName>
+                <default>false</default>
+                <label>Win/Loss Call</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,15 @@
+{
+  "status": 0,
+  "result": {
+    "createdById": "00550000001IbGRAA0",
+    "createdByName": "Automated Process",
+    "createdDate": "2017-02-11T08:08:32.000Z",
+    "fileName": "LeadConvertSettings/LeadConvertSettings.LeadConvertSetting",
+    "fullName": "LeadConvertSettings",
+    "id": "0Eq50000000GmaTCAS",
+    "lastModifiedById": "00550000006mzYsAAI",
+    "lastModifiedByName": "Sneh Jha",
+    "lastModifiedDate": "2019-10-12T02:23:14.000Z",
+    "type": "LeadConvertSettings"
+  }
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Test_Results_Count__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Count the number of Test Results</inlineHelpText>
+    <label>Test Results Count</label>
+    <summaryForeignKey>Test_Result__c.Test_Scenario__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,344 @@
+<apex:page standardController="Opportunity" extensions="SP_OpportunityActionPlanExtension" cache="false" >
+    <apex:stylesheet value="{!$Resource.jqueryui_zip}/css/smoothness/jquery-ui-1.8.9.custom.css" />   
+    <apex:includeScript value="{!$Resource.jqueryui_zip}/js/jquery-1.4.4.min.js"/>
+    <apex:includeScript value="{!$Resource.jqueryui_zip}/js/jquery-ui-1.8.8.custom.min.js"/>
+    
+    <apex:stylesheet value="{!$Resource.Consolidated_CSS}"/>
+   <!-- <style>
+        .ui-accordion-header { display:block;}
+        #advancementCriteria.ui-state-default { 
+            background-color:#D0E5F5;
+            background-image: url({!$Resource.jqueryui_zip}/css/redmond/images/ui-bg_glass_75_d0e5f5_1x400.png);
+        }
+        #advancementCriteria a {
+            font-weight:bold;
+            color:#1D5987;
+        }
+        .dateFormat{ display:none;}
+        .saveButton{ display:none;}
+        .cancelButton{ display:none;}
+    </style> -->
+    <style type="text/css">
+        .waitForLoad {
+            background-color: black;
+            opacity: 0.20;
+            filter: alpha(opacity = 20);
+            position: fixed; /* Note: absolute is constrained to the inner part of the VF page */
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            text-align: center;
+        }
+        .custPopup{
+            background-color: white;
+            border-width: 2px;
+            border-style: solid;
+            z-index: 9999;
+            left: 50%;
+            padding:10px;
+            position: absolute;
+            /* These are the 3 css properties you will need to change so the popup 
+            displays in the center of the screen. First set the width. Then set 
+            margin-left to negative half of what the width is. You can add 
+            the height property for a fixed size pop up if you want.*/
+            width: 500px;
+            margin-left: -250px;
+            top:100px;
+        }
+        .popupBackground{
+            background-color:black;
+            opacity: 0.20;
+            filter: alpha(opacity = 20);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 9998;
+        }
+    </style>
+    <script type="text/javascript">
+        var j$ = jQuery.noConflict();
+        j$(function() {
+            j$( "#accordion" ).accordion({
+                fillSpace: true,
+                clearStyle: true
+            });
+            //j$( "#tabs" ).tabs();
+            j$('#tabs').tabs({ selected: {!defaultTabIndex} });
+        });
+        //j$("saveButton").hide();
+        function setSaveFocus() {
+            j$('saveButton').focus();
+        }
+        function resetInlineEdit(){
+            document.getElementById("saveButton").style.display = 'none';
+            document.getElementById("cancelButton").style.display = 'none';
+        }
+        function showButtons(){
+            j$('.btn').show();
+            j$('saveButton').show();
+            j$('cancelButton').show();
+        }
+        function saveAlert() {
+            alert("Sales Plan Saved");
+        }
+        function rerender(){
+            /*if (document.getElementById('j_id0:theForm:j_id18').innerHTML != '') {
+                return null;
+            }
+            else if(window.parent == null) {
+                  top.location = "/apex/OpportunityActionPlan?id={!Opportunity.Id}";
+            } else {
+                   top.location.href =  "/{!Opportunity.Id}";
+            }*/
+            top.location.href =  "/{!Opportunity.Id}";
+        }
+         function  setFocusOnLoad() {}
+         
+        
+    </script>
+    <apex:outputField value="{!Opportunity.Opportunity_Stage__c}" rendered="false"/>
+    <apex:outputField value="{!Opportunity.StageName}" rendered="false"/>
+    <apex:outputField value="{!Opportunity.Name}" rendered="false"/>    
+    <apex:variable value="{!Opportunity.Opportunity_Stage__r}" var="stage"/>
+    <apex:outputPanel rendered="{!render}">
+    <apex:form id="theForm">
+        <apex:actionFunction action="{!FSMapFunc}" name="setFSMApJS" reRender="err" status="waitForLoad">
+            <apex:param name="fld" value="" />
+            <apex:param name="val" value="" />
+        </apex:actionFunction>
+    <apex:outputPanel id="mgrpopup">
+        <apex:outputPanel styleClass="popupBackground" layout="block" rendered="{!displayMgrDialog}"/>
+        <apex:outputPanel styleClass="custPopup" layout="block" rendered="{!displayMgrDialog}">
+                Manager not found. Please provide an email address to receive your request: <br/><br/>
+                <apex:outputLabel value="Manager Email:     " for="mgrEmail"/>
+                <apex:inputText value="{!mgrEmail}" id="mgrEmail"/><br/><br/>
+                <apex:commandButton value="Send" action="{!requestCoachingNoMgr}" onClick="coachingConfirmation(document.getElementById('j_id0:theForm:mgrEmail').value);" onComplete="rerender()"/>
+                <apex:commandButton value="Cancel" action="{!closeMgrDialog}" rerender="mgrpopup" onComplete="rerender()"/>
+        </apex:outputPanel>
+    </apex:outputPanel>
+    <apex:outputPanel id="err">
+        <apex:pageMessages />
+    </apex:outputPanel>
+    <apex:pageBlock mode="mainDetail" title="{!blockTitle}" id="block">
+        <apex:pageblockButtons location="top">
+          <apex:commandButton value="Job Aids" action="{!coachingInfo}" rendered="{!NOT($Setup.SP_Settings__c.Disable_Coaching__c)}"/>
+          <apex:commandButton value="{!$Label.Update_Plan}" action="{!saveActions}" id="saveButton" oncomplete="rerender()" rerender="err"/>
+          <apex:commandButton value="{!$Label.site.cancel}" action="{!cancelActions}" id="cancelButton" onclick="resetInlineEdit()"/>
+        </apex:pageblockButtons>
+        <apex:pageblockSection >
+          <apex:pageblocksectionItem rendered="false">
+            <apex:outputLabel >{!$ObjectType.Opportunity.Fields.StageName.Label}</apex:outputLabel>
+            <apex:selectList size="1" value="{!currentStage}">
+              <apex:selectOptions value="{!stages}"></apex:selectOptions>
+              <apex:actionSupport event="onchange"/>
+            </apex:selectList>
+          </apex:pageblocksectionItem>
+          <apex:pageblocksectionitem rendered="false">
+          <apex:outputLabel >{!$Label.Show_Hide_Actions}</apex:outputLabel>
+          <apex:selectList size="1" value="{!currentView}">
+            <apex:selectOptions value="{!viewOptions}"/>
+            <apex:actionSupport event="onchange"/>
+          </apex:selectList>
+          </apex:pageblocksectionitem>
+        </apex:pageblockSection>
+           <script>
+               j$('.pbButton').append('<div style="float:right;"><span><a href="{!stage.Reference_URL_1__c}" target="_blank">{!stage.Reference_Title_1__c}</a> </span><span> <a href="{!stage.Reference_URL_2__c}" target="_blank">{!stage.Reference_Title_2__c}</a></span></div>');
+           </script>
+            <div style="overflow:auto;">
+            <div id="tabs">
+                <ul>
+                <apex:repeat value="{!stageObjectives}" var="objective">
+                    <li>
+                        <a href="#tabs-{!objective.orderNumber}">
+                            {!objective.name}
+                            <!--<table width="100%">
+                                <tr>
+                                    <td><b>{!objective.name}</b></td>
+                                    <td align="right">
+                                        <apex:commandButton value="Request Additional Coaching" rendered="{!AND(NOT(ISNULL(usrInfo.Manager.Email)), NOT($Setup.SP_Settings__c.Disable_Coaching__c))}" oncomplete="rerender()" onclick="javascript:requestCoaching('{!objective.objId}', '{!usrInfo.Manager.Email}'); coachingConfirmation('{!usrInfo.Manager.Email}');"/>
+                                        <apex:commandButton value="Request Additional Coaching" rendered="{!AND(ISNULL(usrInfo.Manager.Email), NOT($Setup.SP_Settings__c.Disable_Coaching__c))}" action="{!showMgrDialog}" onclick="javascript:showMgrDialog('{!objective.objId}');" rerender="mgrpopup"/>
+                                    </td>
+                                </tr>
+                            </table>-->
+                        </a>   
+                    </li>
+               </apex:repeat>
+               </ul>
+               <apex:repeat value="{!stageObjectives}" var="objective">
+                   <div id="tabs-{!objective.orderNumber}">
+                        <apex:outputPanel rendered="{!objective.isEmpty}">
+                                    <table class="list" border="0" cellspacing="0" cellpadding="0">
+                                        <tr class="headerRow">
+                                            <th class="noRowsHeader" styleclass="norowheaderstyle">
+                                            {!$Label.No_Commited_Actions}
+                                            </th>
+                                        </tr>
+                                    </table>
+                        </apex:outputPanel>
+                        <table width="100%">
+                            <tr>
+                                <td align="right">
+                                    <apex:commandButton value="Request Additional Coaching" rendered="{!AND(NOT(ISNULL(usrInfo.Manager.Email)), NOT($Setup.SP_Settings__c.Disable_Coaching__c))}" oncomplete="rerender()" onclick="javascript:requestCoaching('{!objective.objId}', '{!usrInfo.Manager.Email}'); coachingConfirmation('{!usrInfo.Manager.Email}');"/>
+                                    <apex:commandButton value="Request Additional Coaching" rendered="{!AND(ISNULL(usrInfo.Manager.Email), NOT($Setup.SP_Settings__c.Disable_Coaching__c))}" action="{!showMgrDialog}" onclick="javascript:showMgrDialog('{!objective.objId}');" rerender="mgrpopup"/>
+                                </td>
+                            </tr>
+                        </table>
+                        <apex:pageBlockTable value="{!objective.actions}" var="a"  rendered="{!NOT(objective.isEmpty)}">
+                           <!-- <apex:column styleClass="actionColumn" onclick="showButtons();">
+                                <apex:facet name="header">Committed</apex:facet>
+                                <apex:inputCheckbox value="{!a.committed}" rendered="{!NOT(a.committed)}"/>
+                                <c:Checkbox value="{!a.committed}" rendered="{!a.committed}"/>
+                            </apex:column>
+                            <apex:column value="{!a}"/>-->
+                            <apex:column style="background-color:{!IF(((NOT(allProductsExempt) && a.exemptProds) || NOT(a.exemptProds)) && (CONTAINS(a.oppTypes, Opportunity.Type) || CONTAINS(a.orderTypes, Opportunity.Order_Type__c) || (NOT(ISBLANK(Opportunity.Order_Sub_Type__c)) && CONTAINS(a.orderSubTypes, Opportunity.Order_Sub_Type__c))),a.bgColor,'#FFFFFF')};">
+                                <apex:facet name="header">{!$Label.Action_Header_on_Custom_Related_List}</apex:facet>
+                                <apex:outputText rendered="{!ISNULL(a.action.Id)}">{!a.subject}</apex:outputText>
+                                <apex:commandLink value="{!a.subject}" action="{!a.linkToView}" rendered="{!NOT(ISNULL(a.action.Id))}" target="_top"/>
+                                <!--<apex:outputLink value="/{!a.action.Id}" rendered="{!NOT(ISNULL(a.action.Id))}" target="_top">{!a.action.subject}</apex:outputLink>-->
+                            </apex:column>
+                            <apex:column style="background-color:{!IF(((NOT(allProductsExempt) && a.exemptProds) || NOT(a.exemptProds)) && (CONTAINS(a.oppTypes, Opportunity.Type) || CONTAINS(a.orderTypes, Opportunity.Order_Type__c) || (NOT(ISBLANK(Opportunity.Order_Sub_Type__c)) && CONTAINS(a.orderSubTypes, Opportunity.Order_Sub_Type__c))),a.bgColor,'#FFFFFF')};">
+                                <apex:facet name="header">Required</apex:facet>
+                                <apex:outputText rendered="{!a.actionType='Required' && ((NOT(allProductsExempt) && a.exemptProds) || NOT(a.exemptProds)) && (CONTAINS(a.oppTypes, Opportunity.Type) || CONTAINS(a.orderTypes, Opportunity.Order_Type__c) || (NOT(ISBLANK(Opportunity.Order_Sub_Type__c)) && CONTAINS(a.orderSubTypes, Opportunity.Order_Sub_Type__c)))}" value="Yes"/>
+                                <apex:outputText rendered="{!a.actionType='Highly Recommended' && ((NOT(allProductsExempt) && a.exemptProds) || NOT(a.exemptProds)) && (CONTAINS(a.oppTypes, Opportunity.Type) || CONTAINS(a.orderTypes, Opportunity.Order_Type__c) || (NOT(ISBLANK(Opportunity.Order_Sub_Type__c)) && CONTAINS(a.orderSubTypes, Opportunity.Order_Sub_Type__c)))}" value="Recommended"/>
+                                <apex:outputText rendered="{!a.actionType='Not Required' || (allProductsExempt && a.exemptProds) || NOT(CONTAINS(a.oppTypes, Opportunity.Type) || CONTAINS(a.orderTypes, Opportunity.Order_Type__c) || (NOT(ISBLANK(Opportunity.Order_Sub_Type__c)) && CONTAINS(a.orderSubTypes, Opportunity.Order_Sub_Type__c)))}" value="No"/>
+                                <!--<apex:outputText rendered="true" value="{!IF(a.actionType='Required', 'Yes', IF(a.actionType='Highly Recommended', 'Recommended', 'No'))}"/>-->
+                            </apex:column>
+                            <apex:column onclick="showButtons();" style="background-color:{!IF(((NOT(allProductsExempt) && a.exemptProds) || NOT(a.exemptProds)) && (CONTAINS(a.oppTypes, Opportunity.Type) || CONTAINS(a.orderTypes, Opportunity.Order_Type__c) || (NOT(ISBLANK(Opportunity.Order_Sub_Type__c)) && CONTAINS(a.orderSubTypes, Opportunity.Order_Sub_Type__c))),a.bgColor,'#FFFFFF')};">
+                                <apex:facet name="header">{!$ObjectType.Task.Fields.isClosed.Label}</apex:facet>
+                                <apex:inputCheckbox value="{!a.completed}" rendered="{!NOT(a.completed)}"/>
+                                <c:Checkbox value="{!a.completed}" rendered="{!a.completed}" />
+                            </apex:column>
+                            <apex:column width="200" style="background-color:{!IF(((NOT(allProductsExempt) && a.exemptProds) || NOT(a.exemptProds)) && (CONTAINS(a.oppTypes, Opportunity.Type) || CONTAINS(a.orderTypes, Opportunity.Order_Type__c) || (NOT(ISBLANK(Opportunity.Order_Sub_Type__c)) && CONTAINS(a.orderSubTypes, Opportunity.Order_Sub_Type__c))),a.bgColor,'#FFFFFF')};">
+                                  <apex:facet name="header">{!$ObjectType.Task.Fields.Description.label}</apex:facet>
+                                <apex:outputText >{!a.ActionDescription}</apex:outputText>                           
+                            </apex:column>
+                            <apex:column style="background-color:{!IF(((NOT(allProductsExempt) && a.exemptProds) || NOT(a.exemptProds)) && (CONTAINS(a.oppTypes, Opportunity.Type) || CONTAINS(a.orderTypes, Opportunity.Order_Type__c) || (NOT(ISBLANK(Opportunity.Order_Sub_Type__c)) && CONTAINS(a.orderSubTypes, Opportunity.Order_Sub_Type__c))),a.bgColor,'#FFFFFF')};">
+                                <apex:facet name="header">Due Date</apex:facet>
+                                <apex:inputField value="{!a.action.ActivityDate}" rendered="{!NOT(a.completed)}" />
+                                <apex:outputField value="{!a.action.ActivityDate}" rendered="{!a.completed}" />
+                            </apex:column>
+                            <apex:column style="background-color:{!IF(((NOT(allProductsExempt) && a.exemptProds) || NOT(a.exemptProds)) && (CONTAINS(a.oppTypes, Opportunity.Type) || CONTAINS(a.orderTypes, Opportunity.Order_Type__c) || (NOT(ISBLANK(Opportunity.Order_Sub_Type__c)) && CONTAINS(a.orderSubTypes, Opportunity.Order_Sub_Type__c))),a.bgColor,'#FFFFFF')};" rendered="{!NOT($Setup.SP_Settings__c.Disable_Coaching__c)}">
+                                <apex:facet name="header">Coaching Status</apex:facet>
+                                <apex:inputField value="{!a.action.Coaching_Status__c}" rendered="{!AND(isMgr, a.action.Coaching_Status__c != 'Completed')}"/>
+                                <apex:outputField value="{!a.action.Coaching_Status__c}" rendered="{!OR(NOT(isMgr), a.action.Coaching_Status__c = 'Completed')}"/>
+                            </apex:column>
+                            <apex:column style="background-color:{!IF(((NOT(allProductsExempt) && a.exemptProds) || NOT(a.exemptProds)) && (CONTAINS(a.oppTypes, Opportunity.Type) || CONTAINS(a.orderTypes, Opportunity.Order_Type__c) || (NOT(ISBLANK(Opportunity.Order_Sub_Type__c)) && CONTAINS(a.orderSubTypes, Opportunity.Order_Sub_Type__c))),a.bgColor,'#FFFFFF')};" rendered="{!NOT($Setup.SP_Settings__c.Disable_Coaching__c)}">
+                                <apex:facet name="header">Coached By</apex:facet>
+                                <apex:outputField value="{!a.action.Coached_By__c}"/><apex:outputText rendered="{!a.action.Coached_By__c != ''}">&nbsp;on&nbsp;</apex:outputText><apex:outputField value="{!a.action.Date_of_Coaching__c}"/>
+                            </apex:column>
+                            </apex:pageblockTable>
+                            <br/>
+                            <apex:pageBlockSection columns="2">
+                                <apex:repeat value="{!objective.fs}" var="f">
+                                    <apex:pageBlockSectionItem >
+                                        <apex:outputLabel value="{!f.label}" style="color: #000000; font-size: 88%;"/>
+                                        <apex:inputField value="{!Opportunity[f.fieldPath]}" onchange="setFSMApJS('{!f.fieldPath}',this.value)"/>
+                                    </apex:pageBlockSectionItem>
+                                </apex:repeat>
+                            </apex:pageBlockSection>
+                    </div>
+               </apex:repeat>
+               
+                    <!--<h3 id="advancementCriteria">
+                        <a href="#">
+                            {!advancementCriteria.name}
+                        </a>
+                    </h3>
+                    <div>
+                        <apex:pageBlockTable value="{!advancementCriteria.actions}" var="a" >
+                            <apex:column >
+                                <apex:outputText rendered="{!ISNULL(a.action.Id)}">{!a.subject}</apex:outputText>
+                                <apex:outputLink value="/{!a.action.Id}" rendered="{!NOT(ISNULL(a.action.Id))}" target="_top">{!a.subject}</apex:outputLink>
+                                <apex:facet name="header">{!$Label.Action_Header_on_Custom_Related_List}</apex:facet>
+                            </apex:column>
+                            <apex:column onclick="showButtons();">
+                                <apex:facet name="header">{!$ObjectType.Task.Fields.IsClosed.Label}</apex:facet>
+                                <apex:inputCheckbox value="{!a.completed}" rendered="{!NOT(a.completed)}"/>
+                                <c:Checkbox value="{!a.completed}" rendered="{!a.completed}" />
+                            </apex:column>
+                            <apex:column >
+                                <apex:outputField value="{!a.action.Description}">
+                                    <apex:inlineEditSupport rendered="{!NOT(a.completed)}" event="ondblclick" showOnEdit="saveButton,cancelButton" resetFunction="resetInlineEdit" />
+                               </apex:outputField>
+                                <apex:facet name="header">{!$ObjectType.Task.Fields.Description.label}</apex:facet>
+                            </apex:column>
+                            <apex:column >
+                                <apex:facet name="header">{!$ObjectType.Task.Fields.ActivityDate.Label}</apex:facet>
+                                <apex:inputField value="{!a.action.ActivityDate}" rendered="{!NOT(a.completed)}"/>
+                                <apex:outputField value="{!a.action.ActivityDate}" rendered="{!a.completed}" />
+                              </apex:column>
+                            </apex:pageblockTable>
+                    </div>-->
+            </div>
+            </div>
+    </apex:pageBlock>
+    <apex:actionFunction action="{!requestCoaching}" name="requestCoaching" rerender="block">
+         <apex:param name="selectedObjId" value="" assignTo="{!selectedObjId}"/>
+         <apex:param name="mgrEmail" value="{!mgrEmail}" assignTo="{!mgrEmail}"/>
+    </apex:actionFunction> 
+    <apex:actionFunction action="{!showMgrDialog}" name="showMgrDialog" rerender="block">
+         <apex:param name="selectedObjId" value="" assignTo="{!selectedObjId}"/>
+    </apex:actionFunction> 
+    </apex:form>
+    </apex:outputPanel>
+
+    <script type="text/javascript">
+        
+        function setFSMAP(fieldApi,fieldType,ele) {
+            //alert(ele.id);
+            if(fieldType == 'reference') {
+                var refId = ele.id+'_lkid';
+                //var lookupId = j$("[id$='+refId+']").val();
+                var lookupEle = document.getElementById(refId);
+                if(lookupEle != null) {
+                    var lookupId = lookupEle.value;
+                    console.log(lookupId);
+                    console.log(ele.value);
+                    if(ele.value) {
+                        setFSMApJS(fieldApi,lookupId);
+                    } else {
+                        setFSMApJS(fieldApi,'');
+                    }
+                }
+            } else {
+                setFSMApJS(fieldApi,ele.value);
+            }
+        }
+    
+        function coachingConfirmation(mgrEmail) {
+            var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if (mgrEmail != null && re.test(mgrEmail)) {
+                alert('A request for coaching has been sent to your Manager via email at ' + mgrEmail);
+            }
+            else {
+                alert('ERROR: Please provide a valid email address');
+            }
+        }
+    
+        function showBox() {
+            var box = new SimpleDialog("helder1", true);
+
+            box.setTitle("Sales Coach - Stage: {!Opportunity.StageName}");
+
+            box.createDialog();
+            box.setWidth(900);
+            box.setContentInnerHTML("<a href=\"#\" onClick=\"box.hide(); return false;\">Close</a><br/><iframe src =\"/apex/SalesCoachV2?id={!Opportunity.Id}\" height=\"700\" width=\"950\" frameborder=\"0\" style=\"border:none; width:850px; margin-left:0; margin-right: auto; height:600px;overflow-x:hidden;\"><p>Your browser does not support iframes.</p></iframe>");
+
+            box.setupDefaultButtons();
+
+            box.show();
+        }
+    </script>
+    <apex:actionStatus id="waitForLoad" >
+        <apex:facet name="start">
+            <div class="waitForLoad">
+                <span style="display: inline-block; height: 100%; vertical-align: middle;"></span>
+                <img src="/img/loading.gif"  style="vertical-align:300px;" />
+            </div>
+        </apex:facet>
+    </apex:actionStatus>
+</apex:page>

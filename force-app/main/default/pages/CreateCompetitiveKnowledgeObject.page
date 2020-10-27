@@ -1,0 +1,39 @@
+<apex:page standardController="Competitive_Knowledge__c" extensions="CreateCompKnowledgeObjectExtension" tabStyle="Competitive_Knowledge__c">
+<apex:sectionHeader title="Competitive Knowledge Edit" subtitle="New Competitive Knowledge"/>
+<apex:form >
+<apex:pageBlock title="Competitive Knowledge Edit" mode="edit">
+
+<apex:pageBlockSection title="Competitor Details" collapsible="false" columns="2" >
+<apex:inputHidden value="{!Competitive_Knowledge__c.Account__c}" />
+<apex:inputHidden value="{!Competitive_Knowledge__c.Lead__c}"  />
+<apex:inputField value="{!Competitive_Knowledge__c.Competitor_Company_Name__c}" required="true"/>
+<apex:inputField value="{!Competitive_Knowledge__c.Competitor_Product_Name__c}" />
+<apex:inputField value="{!Competitive_Knowledge__c.Competitor_Mobile_Com_Units__c}"/>
+<apex:inputField value="{!Competitive_Knowledge__c.Satisfaction_Level__c}"/>
+
+<apex:inputField value="{!Competitive_Knowledge__c.Next_Steps__c}"/>
+
+<apex:inputField value="{!Competitive_Knowledge__c.Next_Steps_Date__c}"/>
+<apex:inputField value="{!Competitive_Knowledge__c.Expected_Competitor_Contract_Expiration__c}"/>
+</apex:pageBlockSection>
+<!--
+<apex:pageBlockSection title="Eval Details" collapsible="false" columns="2" >
+<apex:inputField value="{!Competitive_Knowledge__c.Active_Evaluation__c}"  />
+<apex:inputField value="{!Competitive_Knowledge__c.Eval_Start_Date__c}"  />
+<apex:inputField value="{!Competitive_Knowledge__c.Eval_Results__c}"  />
+<apex:inputField value="{!Competitive_Knowledge__c.Total_Eval_Units__c}"  />
+</apex:pageBlockSection>
+-->
+
+<apex:pageBlockSection title="Comments"   collapsible="false" >
+<apex:inputField value="{!Competitive_Knowledge__c.Comments__c}"  style="width:220px; height:30px;" />
+</apex:pageBlockSection>
+
+<apex:pageBlockButtons >
+<apex:commandButton value="Save" action="{!saveCompKnowledge}"/>
+<apex:commandButton value="Cancel" action="{!Cancel}"/>
+</apex:pageBlockButtons>
+</apex:pageBlock>
+</apex:form>
+
+</apex:page>

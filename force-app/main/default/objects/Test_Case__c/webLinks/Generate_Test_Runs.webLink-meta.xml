@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Generate_Test_Runs</fullName>
+    <availability>online</availability>
+    <description>Creates a test run object for each selected test case</description>
+    <displayType>massActionButton</displayType>
+    <height>600</height>
+    <linkType>page</linkType>
+    <masterLabel>Generate Test Runs</masterLabel>
+    <openType>sidebar</openType>
+    <page>TestRunGenerator</page>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+</WebLink>

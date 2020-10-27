@@ -1,0 +1,1850 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QES_Contracts_Supplemental_Data</fullName>
+    <active>true</active>
+    <label>QES Contracts Supplemental Data</label>
+    <picklistValues>
+        <picklist>Accounting_Memo_Requirement__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Accounting_Treatment_OMNI__c</picklist>
+        <values>
+            <fullName>No Accounting Impact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>See Accounting Treatment Details</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applications__c</picklist>
+        <values>
+            <fullName>AA%26D</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ALK CoPilot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Additional Stored Positions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Advanced Mapping Interface</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Amber Alert</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Analytics Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CSA Safety Performance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Content Delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Critical Event Reporting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cross Street Location</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DTTS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Sharing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driver Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driver Notification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driver Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driver Workflow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exact Fuel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Extended Productivity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fault Monitoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fault Monitoring Extended Faults</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hard Braking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hours of Service Macro</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hours of Service Mobile</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In-Cab Printing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In-Cab Scanning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Machine Health Monitoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Media Manager Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NaviGo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Panic Notification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Per Diem Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Performance Monitoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Premium Wi-Fi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QTRACS%2FPortal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QTRACS%2FWeb</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Fleet Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>State Miles Counter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>T2 Portal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Terrestrial Browsing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Terrestrial Data Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trailer ABS Connect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trip Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VCC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle Inspection Report</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ViaWeb</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Virtual Load View</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Assignment__c</picklist>
+        <values>
+            <fullName>All parties with exception</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>All parties%27 consent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>By OMNI%27s consent only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other party%27s consent only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CAS_Clause__c</picklist>
+        <values>
+            <fullName>52%2E230-2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>52%2E230-3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Closed__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Confidentiality__c</picklist>
+        <values>
+            <fullName>Non-Standard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contains_52_222_54_E_Verify__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contingency_Provision__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contract_Grade__c</picklist>
+        <values>
+            <fullName>A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Customer_Indemnification__c</picklist>
+        <values>
+            <fullName>Non-Standard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Customer_Limitation_of_Liability__c</picklist>
+        <values>
+            <fullName>Non-Standard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Customer_s_Assignability_Rights__c</picklist>
+        <values>
+            <fullName>Assign rights %26 obligations in Customer discretion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Assign rights %26 obligations with OMNI consent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Both parties%27 written consent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No assignment of rights or obligations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OMNI%27s written consent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other party%27s written consent</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>DD250_Required__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>DD882_Required__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Data_Access__c</picklist>
+        <values>
+            <fullName>John Deere</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>John Deere and Dealers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vermeer</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Data_Policy__c</picklist>
+        <values>
+            <fullName>Aggregate and Anonymous</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aggregate or Anonymous</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P%2EI%2EI%2E Removed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unknown</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unrestricted</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Extended_Terminal_Maintenance__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FAR_12_FAR_15__c</picklist>
+        <values>
+            <fullName>FAR 12</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>FAR 15</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Final_Payment_Received__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Free_Driver_Dispatcher_Training__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Free_Installation_Training__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Free_Installation__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Future_Products_Obsolescence_Clause__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>GSA__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Gov_t_Automated_Invoicing_Required__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Governing_Law_Venue__c</picklist>
+        <values>
+            <fullName>Alabama</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alaska</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Amman%2C Jordan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Argentina</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arizona</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arkansas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Australia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Austria</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Barbados</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Belgium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brazil</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>British Columbia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>British Virgin Islands</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>California</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Canada</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cayman Islands</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chile</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>China %28PRC%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Colorado</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commonwealth of Massachusetts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commonwealth of Virginia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connecticut</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Czech Republic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delaware</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Denmark</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>District of Columbia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dubai%2C UAE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dutch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>England</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Florida</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>France</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Georgia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Germany</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Greece</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hong Kong</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Illinois</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>India</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Indiana</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Indonesia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Iowa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Iran</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ireland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Isle of Manx</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Israel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Istanbul%2C Turkey</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Italy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Japan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kansas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kentucky</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Korea</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lithuania</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Louisiana</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Macau</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maryland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Massachusetts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mexico</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Michigan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Milan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Minnesota</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mississippi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missouri</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Montana</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Negotiated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Netherlands %2F Dutch Law</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nevada</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Hampshire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Jersey</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Mexico</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New York</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Zealand</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>North Carolina</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Norway</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ohio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oklahoma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ontario</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oregon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28Non-Standard%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pennsylvania</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Poland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portugal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Province of Ontario %26 federal laws of Canada</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quebec</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Republic of Bulgaria</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Republic of Chile</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Romania</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Russia Federation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scotland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Silent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Singapore</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>South Africa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>South Carolina</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>South Korea</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sweden</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Switzerland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taiwan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tennessee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Texas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thailand</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Netherlands</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Turkey</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>USA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ukraine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Utah</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Virginia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Washington %28State%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Washington D%2EC%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wisconsin</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Government_Agency__c</picklist>
+        <values>
+            <fullName>Federal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>State%2FLocal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Government_Property_Clause__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Hardware_MFN__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Hardware_Platform__c</picklist>
+        <values>
+            <fullName>Critical Event Video</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP100S</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP100T</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP110</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP200</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP50</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OmniExpress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OmniTRACS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Fleet Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TT210</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trailer Tracks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TruckMAIL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XRS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>If_cause_is_Restructure_or_Successor__c</picklist>
+        <values>
+            <fullName>Assignment rights apply to Omni</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Assignment rights apply to all parties</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Assignment rights apply to other party</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>If_with_exception_cause__c</picklist>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Restructure or Successor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Invoicing__c</picklist>
+        <values>
+            <fullName>Combination</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delivery%2FAcceptance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Milestone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Limitation_of_Funds_Clause__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OMNI_ok_to_assign_w_o_consent_restructu__c</picklist>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Omni_Assignability_Rights__c</picklist>
+        <values>
+            <fullName>Assign rights %26 obligations in OMNI discretion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Assign rights %26 obligations with Customer consent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Assign rights in OMNI discretion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Assign rights with customer consent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Both parties%27 written consent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No assignment of rights or obligations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OMNI%27s written consent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other party%27s written consent</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Omni_Indemnification__c</picklist>
+        <values>
+            <fullName>Non-Standard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Omni_Limitation_of_Liability__c</picklist>
+        <values>
+            <fullName>Non-Standard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Payment_Method__c</picklist>
+        <values>
+            <fullName>3rd Party Financing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BACS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Check</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Credit Card</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Direct Debit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Letter of Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No cost loan agreement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OMNI Financing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P-Card</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wire Transfer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>distributed by Distributor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Payment_Terms_QES__c</picklist>
+        <values>
+            <fullName>15 Days Prior Shipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>30 Days Prior Shipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>45 Days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>45 Days After Quarter Ends</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Due Upon Receipt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 15 Days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 20 Days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 30 Days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 45 Days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 60 Days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 7 Days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Payment Terms were Established For this Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Standard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre-pay or LC %28equipment%29 and Net 30 %28software%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre-payment or Letter of Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Upfront Fee</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Payment_Withholds__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Price_Increases_Y_N__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Prime_or_Sub_Contractor__c</picklist>
+        <values>
+            <fullName>Prime</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sub Contractor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Related_Party__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Remarketing_Rights__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Retention_Toolkit_Terms__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBA_Plan_Prepared__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SLA__c</picklist>
+        <values>
+            <fullName>Non-Standard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Service_MFN__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Service_Plan__c</picklist>
+        <values>
+            <fullName>Asset Service %26 Asset Reefer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asset Service Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Base Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compliance Bundle with Macros</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enhanced Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enhanced Plan w%2F Fleet Averaging</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enhanced Plan w%2F Volume Message Rate Tiers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eval Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FleetAdvisor Plus Base Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FleetAdvisor Plus Enhanced Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FleetAdvisor Plus Standard Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FleetAdvisor Plus Volume Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Foundation Plan %28MCP100S%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LTL Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP110 Compliance Plan %281yr%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP110 Compliance Plan %283yr%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP110 Compliance Plan %285yr%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP110 HOS Integration Plan %281yr%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP110 HOS Integration Plan %283yr%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP110 HOS Integration Plan %285yr%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP110 Performance Monitoring Integration Plan %281yr%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP110 Performance Monitoring Integration Plan %283yr%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP110 Performance Monitoring Integration Plan %285yr%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP110 Safety %26 Compliance Plan %281yr%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP110 Safety %26 Compliance Plan %283yr%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP110 Safety %26 Compliance Plan %285yr%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP110 Safety %26 Compliance w%2F Dispatch Integration Plan %281yr%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP110 Safety %26 Compliance w%2F Dispatch Integration Plan %283yr%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP110 Safety %26 Compliance w%2F Dispatch Integration Plan %285yr%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP50 EOBR Plan 1 Year%2C %2423%2E95</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP50 EOBR Plan 2 Years%2C %2422%2E95</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP50 EOBR Plan 3 Years%2C %2421%2E95</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP50 EOBR Plan 5 Years%2C %2419%2E95</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEX Basic Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEX Bronze Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEX Gold Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEX Platinum Lite Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEX Platinum Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEX Silver Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Performance Monitoring %26 Compliance Bundle with Macros</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Fleet Manager Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Plans</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Simplified Billing Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard Terrestrial Plan 1 Year</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard Terrestrial Plan 2 Years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard Terrestrial Plan 3 Years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard Terrestrial Plan 5 Years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Terrestrial Service Plan %28MCP100T%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UVP Bronze</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UVP Gold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UVP Silver</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Shipment_Terms__c</picklist>
+        <values>
+            <fullName>FOB Origin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Software_MFN__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Software__c</picklist>
+        <values>
+            <fullName>FleetAdvisor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JTRACS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Message Abbreviator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QTRACS%2F36</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QTRACS%2F400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QTRACS%2FLAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QTRACS%2FPortal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QTRACS%2FUNV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QTRACS%2FWIN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QTRACS%2FWeb</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SensorTRACS%2F400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SensorTRACS%2FWIN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TrailerTRACS%2F400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TrailerTRACS%2FPortal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TrailerTRACS%2FWIN</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sole_Source_or_Competitive__c</picklist>
+        <values>
+            <fullName>Competitive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sole Source</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Terminal_Credits__c</picklist>
+        <values>
+            <fullName>3rd Party Comm Unit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Future Hardware Purchase</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Terrestrial_Data_Plan__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Trade_In_Program__c</picklist>
+        <values>
+            <fullName>IVG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP100S</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCP100T</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEX %28TCU 2%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEX %28TCU1%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OT %28IMCT%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OT %28MCT%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OmniEXPRESS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TT210</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>What_is_Being_Purchased__c</picklist>
+        <values>
+            <fullName>Extended Warranty</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Funded Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Messaging</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>O%26M Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Written_Consent__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

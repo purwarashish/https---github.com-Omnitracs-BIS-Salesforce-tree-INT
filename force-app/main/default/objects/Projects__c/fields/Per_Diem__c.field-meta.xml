@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Per_Diem__c</fullName>
+    <description>Daily per diem rate for this project.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Daily Per Diem amount for this Project. Click the &quot;Per Diem Rates&quot; hyperlink in the Web Links section on this screen to obtain the current Per Deim Rate by State/City.</inlineHelpText>
+    <label>Daily Per Diem Rate</label>
+    <precision>6</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

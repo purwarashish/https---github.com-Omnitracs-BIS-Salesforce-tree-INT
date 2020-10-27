@@ -1,0 +1,41 @@
+<apex:page controller="VCG_CPQ_ObjectManagementController">
+    <apex:PageBlock mode="maindetail">
+        <apex:PageBlockSection Title="Object Links">
+        
+            <apex:outputLink value="{!PricingProcedureUrl}">Pricing Procedures</apex:outputLink><p/>
+            <apex:outputLink value="{!PricingAccessSequenceUrl}">Pricing Access Sequences</apex:outputLink><p/>
+            <apex:outputLink value="{!PricingConditionUrl}">Pricing Conditions</apex:outputLink><p/>
+            <apex:outputLink value="{!PricingConditionDataUrl}">Pricing Condition Data</apex:outputLink><p/>
+            <br/><br/>
+        
+            <apex:outputLink value="{!ApprovalGroupsUrl}">Approval Groups</apex:outputLink><p/>
+            <apex:outputLink value="{!UserHierarchyUrl}">User Hierarchy</apex:outputLink><p/>
+            <apex:outputLink value="{!ApprovalConditionsUrl}">Approval Conditions</apex:outputLink> <p/>
+            <apex:outputLink value="{!ApprovalGroupMatricesUrl}">Approval Group Matrices</apex:outputLink><p/>
+            <br/><br/>
+            
+            <apex:outputLink value="{!ProductAddonsUrl}">Product Addons</apex:outputLink><p/>
+            <apex:outputLink value="{!ProductEquivalencyUrl}">Product Equivalencies</apex:outputLink><p/>
+            <apex:outputLink value="{!ProductRulesUrl}">Product Rules</apex:outputLink> <p/>
+            <apex:outputLink value="{!ProductIncompatibilitiesUrl}">Product Incompatibilities</apex:outputLink><p/>
+            <br/><br/>
+            
+            <apex:outputLink value="{!BundlesUrl}">Bundles</apex:outputLink><p/>
+            <apex:outputLink value="{!ProductFilterUrl}">Product Filters</apex:outputLink><p/>
+            <apex:outputLink value="{!FieldLayoutsUrl}">Field Layouts (was: Page Layout Items)</apex:outputLink><p/>
+            <br/><br/>
+            <apex:outputLink value="{!OppToQuoteMapsUrl}">Opportunity to Quote Mappings</apex:outputLink><p/>
+            <apex:outputLink value="{!QuoteToOppMapsUrl}">Quote to Opportunity Mappings</apex:outputLink><p/>
+            <apex:outputLink value="{!QLItoOLIMapsUrl}">QLI to OLI Mappings</apex:outputLink><p/>
+            <br/><br/>
+            <apex:outputLink value="{!SecurityRestrictionUrl}">Security Restrictions</apex:outputLink><p/>
+            <br/><br/>
+        
+            <apex:outputLink value="/apex/VCG_CPQ_NeedsFieldsReview">Needs Fields Review</apex:outputLink><p/>
+            <apex:outputLink value="/apex/VCG_CPQ_ExportConfig">Export Config</apex:outputLink><p/>
+            <br/><br/>
+            
+        </apex:PageBlockSection>
+            
+    </apex:PageBlock>
+</apex:page>

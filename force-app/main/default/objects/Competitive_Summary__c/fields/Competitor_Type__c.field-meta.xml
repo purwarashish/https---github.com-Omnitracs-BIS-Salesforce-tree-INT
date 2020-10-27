@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Competitor_Type__c</fullName>
+    <description>Competitor type particular to the record</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Type of Competitor is entered with respect to particular Opportunity/Call Report</inlineHelpText>
+    <label>Competitor Type</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date_of_Payment_4_to_UPSLT__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText># of days from delivery or acceptance (e.g., upon delivery, 30 days after delivery, 60 days after acceptance, etc...)</inlineHelpText>
+    <label>Payment #4 to RTI (# Days from DEL)</label>
+    <length>50</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

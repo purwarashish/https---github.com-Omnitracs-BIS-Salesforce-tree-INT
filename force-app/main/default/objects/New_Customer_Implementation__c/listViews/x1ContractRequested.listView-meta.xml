@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>x1ContractRequested</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>currentStage__c</columns>
+    <columns>percentComplete__c</columns>
+    <columns>contractRequestDate__c</columns>
+    <columns>contractToShipStatus__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>currentStage__c</field>
+        <operation>equals</operation>
+        <value>1-Contract Requested</value>
+    </filters>
+    <label>1-Contract Requested</label>
+    <language>en_US</language>
+</ListView>

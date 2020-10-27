@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project_Stage_Order</fullName>
+    <active>true</active>
+    <description>Validations to ensure the Project Stage always starts at &quot;Draft&quot; or &quot;In Progress&quot;. This will help to ensure all related lists are populated and prevent accidental project closures.</description>
+    <errorConditionFormula>AND( ISNEW() , AND(NOT(ISPICKVAL( Project_Stage__c , &quot;Draft&quot;)),NOT(ISPICKVAL( Project_Stage__c , &quot;In Progress&quot;))))</errorConditionFormula>
+    <errorDisplayField>Project_Stage__c</errorDisplayField>
+    <errorMessage>The Stage for new Projects must be &quot;Draft&quot; or &quot;In Progress&quot;. After the Project has been created, you can edit the Project to change the Stage to &quot;Completed&quot; or &quot;Cancelled&quot;.</errorMessage>
+</ValidationRule>

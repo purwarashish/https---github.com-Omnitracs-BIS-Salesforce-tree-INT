@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Stores the Connection Name and the corresponing Account which should be set as the Case&apos;s Account on Cases getting created through S2S connection.</description>
+    <enableFeeds>false</enableFeeds>
+    <label>S2SNameAccountId</label>
+    <visibility>Protected</visibility>
+</CustomObject>

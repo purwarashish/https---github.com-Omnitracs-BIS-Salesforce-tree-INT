@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Service__c</fullName>
+    <description>the various services that are offered</description>
+    <externalId>false</externalId>
+    <label>Service</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Category__c</controllingField>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Advanced Mapping</fullName>
+                <default>false</default>
+                <label>Advanced Mapping</label>
+            </value>
+            <value>
+                <fullName>Advanced Workflow</fullName>
+                <default>false</default>
+                <label>Advanced Workflow</label>
+            </value>
+            <value>
+                <fullName>ALK Copilot</fullName>
+                <default>false</default>
+                <label>ALK Copilot</label>
+            </value>
+            <value>
+                <fullName>Automated Arrival/Departure</fullName>
+                <default>false</default>
+                <label>Automated Arrival/Departure</label>
+            </value>
+            <value>
+                <fullName>CDS</fullName>
+                <default>false</default>
+                <label>CDS</label>
+            </value>
+            <value>
+                <fullName>CER Basic</fullName>
+                <default>false</default>
+                <label>CER Basic</label>
+            </value>
+            <value>
+                <fullName>CER FCW/FTV</fullName>
+                <default>false</default>
+                <label>CER FCW/FTV</label>
+            </value>
+            <value>
+                <fullName>CER-Over Speed Event</fullName>
+                <default>false</default>
+                <label>CER-Over Speed Event</label>
+            </value>
+            <value>
+                <fullName>CER Premium</fullName>
+                <default>false</default>
+                <label>CER Premium</label>
+            </value>
+            <value>
+                <fullName>Compliance Plan - Satellite</fullName>
+                <default>false</default>
+                <label>Compliance Plan - Satellite</label>
+            </value>
+            <value>
+                <fullName>Compliance Plan - Terrestrial</fullName>
+                <default>false</default>
+                <label>Compliance Plan - Terrestrial</label>
+            </value>
+            <value>
+                <fullName>CoPilot Route Sync</fullName>
+                <default>false</default>
+                <label>CoPilot Route Sync</label>
+            </value>
+            <value>
+                <fullName>Core Plan - Satellite</fullName>
+                <default>false</default>
+                <label>Core Plan - Satellite</label>
+            </value>
+            <value>
+                <fullName>Core Plan - Terrestrial</fullName>
+                <default>false</default>
+                <label>Core Plan - Terrestrial</label>
+            </value>
+            <value>
+                <fullName>Data Plan</fullName>
+                <default>false</default>
+                <label>Data Plan</label>
+            </value>
+            <value>
+                <fullName>Define Macro Message</fullName>
+                <default>false</default>
+                <label>Define Macro Message</label>
+            </value>
+            <value>
+                <fullName>Driver Workflow</fullName>
+                <default>false</default>
+                <label>Driver Workflow</label>
+            </value>
+            <value>
+                <fullName>DVIR</fullName>
+                <default>false</default>
+                <label>DVIR</label>
+            </value>
+            <value>
+                <fullName>EOBR Plan - Satellite</fullName>
+                <default>false</default>
+                <label>EOBR Plan - Satellite</label>
+            </value>
+            <value>
+                <fullName>EOBR Plan - Terrestrial</fullName>
+                <default>false</default>
+                <label>EOBR Plan - Terrestrial</label>
+            </value>
+            <value>
+                <fullName>Fleet Advisor Service</fullName>
+                <default>false</default>
+                <label>Fleet Advisor Service</label>
+            </value>
+            <value>
+                <fullName>Frequent MIPR</fullName>
+                <default>false</default>
+                <label>Frequent MIPR</label>
+            </value>
+            <value>
+                <fullName>HAZMAT Recurring</fullName>
+                <default>false</default>
+                <label>HAZMAT Recurring</label>
+            </value>
+            <value>
+                <fullName>HOS</fullName>
+                <default>false</default>
+                <label>HOS</label>
+            </value>
+            <value>
+                <fullName>ICS</fullName>
+                <default>false</default>
+                <label>ICS</label>
+            </value>
+            <value>
+                <fullName>Maptuit Compliance</fullName>
+                <default>false</default>
+                <label>Maptuit Compliance</label>
+            </value>
+            <value>
+                <fullName>Maptuit Fuel</fullName>
+                <default>false</default>
+                <label>Maptuit Fuel</label>
+            </value>
+            <value>
+                <fullName>Maptuit Hazmat</fullName>
+                <default>false</default>
+                <label>Maptuit Hazmat</label>
+            </value>
+            <value>
+                <fullName>Maptuit Navigo</fullName>
+                <default>false</default>
+                <label>Maptuit Navigo</label>
+            </value>
+            <value>
+                <fullName>MMS</fullName>
+                <default>false</default>
+                <label>MMS</label>
+            </value>
+            <value>
+                <fullName>Network Reservation Fee</fullName>
+                <default>false</default>
+                <label>Network Reservation Fee</label>
+            </value>
+            <value>
+                <fullName>OEX Service</fullName>
+                <default>false</default>
+                <label>OEX Service</label>
+            </value>
+            <value>
+                <fullName>OT Service</fullName>
+                <default>false</default>
+                <label>OT Service</label>
+            </value>
+            <value>
+                <fullName>Per Diem</fullName>
+                <default>false</default>
+                <label>Per Diem</label>
+            </value>
+            <value>
+                <fullName>Performance Monitoring</fullName>
+                <default>false</default>
+                <label>Performance Monitoring</label>
+            </value>
+            <value>
+                <fullName>Performance Plan - Satellite</fullName>
+                <default>false</default>
+                <label>Performance Plan - Satellite</label>
+            </value>
+            <value>
+                <fullName>Performance Plan - Terrestrial</fullName>
+                <default>false</default>
+                <label>Performance Plan - Terrestrial</label>
+            </value>
+            <value>
+                <fullName>Premium Plan - Satellite</fullName>
+                <default>false</default>
+                <label>Premium Plan - Satellite</label>
+            </value>
+            <value>
+                <fullName>Premium Plan - Terrestrial</fullName>
+                <default>false</default>
+                <label>Premium Plan - Terrestrial</label>
+            </value>
+            <value>
+                <fullName>Premium Trip Management Plan - Satellite</fullName>
+                <default>false</default>
+                <label>Premium Trip Management Plan - Satellite</label>
+            </value>
+            <value>
+                <fullName>Premium Trip Management Plan - Terrestrial</fullName>
+                <default>false</default>
+                <label>Premium Trip Management Plan - Terrestrial</label>
+            </value>
+            <value>
+                <fullName>Service Plan Charge</fullName>
+                <default>false</default>
+                <label>Service Plan Charge</label>
+            </value>
+            <value>
+                <fullName>Service Plan Charge - Satellite</fullName>
+                <default>false</default>
+                <label>Service Plan Charge - Satellite</label>
+            </value>
+            <value>
+                <fullName>Service Plan Charge - Terrestrial</fullName>
+                <default>false</default>
+                <label>Service Plan Charge - Terrestrial</label>
+            </value>
+            <value>
+                <fullName>SpeedGauge</fullName>
+                <default>false</default>
+                <label>SpeedGauge</label>
+            </value>
+            <value>
+                <fullName>T2 Service</fullName>
+                <default>false</default>
+                <label>T2 Service</label>
+            </value>
+            <value>
+                <fullName>Terrestrial Browsing</fullName>
+                <default>false</default>
+                <label>Terrestrial Browsing</label>
+            </value>
+            <value>
+                <fullName>TMVP Terrestrial</fullName>
+                <default>false</default>
+                <label>TMVP Terrestrial</label>
+            </value>
+            <value>
+                <fullName>TPM</fullName>
+                <default>false</default>
+                <label>TPM</label>
+            </value>
+            <value>
+                <fullName>Trip Manager</fullName>
+                <default>false</default>
+                <label>Trip Manager</label>
+            </value>
+            <value>
+                <fullName>UVP Satellite</fullName>
+                <default>false</default>
+                <label>UVP Satellite</label>
+            </value>
+            <value>
+                <fullName>UVP Terrestrial</fullName>
+                <default>false</default>
+                <label>UVP Terrestrial</label>
+            </value>
+            <value>
+                <fullName>Vehicle Maintenance</fullName>
+                <default>false</default>
+                <label>Vehicle Maintenance</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Base Application</controllingFieldValue>
+            <valueName>Automated Arrival/Departure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Base Application</controllingFieldValue>
+            <valueName>CER Basic</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Base Application</controllingFieldValue>
+            <valueName>Define Macro Message</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Base Application</controllingFieldValue>
+            <valueName>Driver Workflow</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Base Application</controllingFieldValue>
+            <valueName>DVIR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Base Application</controllingFieldValue>
+            <valueName>HOS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Base Application</controllingFieldValue>
+            <valueName>Performance Monitoring</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Base Application</controllingFieldValue>
+            <valueName>Trip Manager</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Base Application</controllingFieldValue>
+            <valueName>Vehicle Maintenance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Premium Application</controllingFieldValue>
+            <valueName>Advanced Mapping</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Premium Application</controllingFieldValue>
+            <valueName>Advanced Workflow</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Premium Application</controllingFieldValue>
+            <valueName>ALK Copilot</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Premium Application</controllingFieldValue>
+            <valueName>CDS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Premium Application</controllingFieldValue>
+            <valueName>CER FCW/FTV</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Premium Application</controllingFieldValue>
+            <valueName>CER-Over Speed Event</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Premium Application</controllingFieldValue>
+            <valueName>CER Premium</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Premium Application</controllingFieldValue>
+            <valueName>CoPilot Route Sync</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Premium Application</controllingFieldValue>
+            <valueName>Data Plan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Premium Application</controllingFieldValue>
+            <valueName>Frequent MIPR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Premium Application</controllingFieldValue>
+            <valueName>HAZMAT Recurring</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Premium Application</controllingFieldValue>
+            <valueName>ICS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Premium Application</controllingFieldValue>
+            <valueName>Maptuit Compliance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Premium Application</controllingFieldValue>
+            <valueName>Maptuit Fuel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Premium Application</controllingFieldValue>
+            <valueName>Maptuit Hazmat</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Premium Application</controllingFieldValue>
+            <valueName>Maptuit Navigo</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Premium Application</controllingFieldValue>
+            <valueName>MMS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Premium Application</controllingFieldValue>
+            <valueName>Per Diem</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Premium Application</controllingFieldValue>
+            <valueName>Terrestrial Browsing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Premium Application</controllingFieldValue>
+            <valueName>TPM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Plan</controllingFieldValue>
+            <valueName>Compliance Plan - Satellite</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Plan</controllingFieldValue>
+            <valueName>Compliance Plan - Terrestrial</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Plan</controllingFieldValue>
+            <valueName>Core Plan - Satellite</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Plan</controllingFieldValue>
+            <valueName>Core Plan - Terrestrial</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Plan</controllingFieldValue>
+            <valueName>EOBR Plan - Satellite</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Plan</controllingFieldValue>
+            <valueName>EOBR Plan - Terrestrial</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Plan</controllingFieldValue>
+            <valueName>Fleet Advisor Service</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Plan</controllingFieldValue>
+            <valueName>Network Reservation Fee</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Plan</controllingFieldValue>
+            <valueName>OEX Service</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Plan</controllingFieldValue>
+            <valueName>OT Service</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Plan</controllingFieldValue>
+            <valueName>Performance Plan - Satellite</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Plan</controllingFieldValue>
+            <valueName>Performance Plan - Terrestrial</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Plan</controllingFieldValue>
+            <valueName>Premium Plan - Satellite</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Plan</controllingFieldValue>
+            <valueName>Premium Plan - Terrestrial</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Plan</controllingFieldValue>
+            <valueName>Premium Trip Management Plan - Satellite</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Plan</controllingFieldValue>
+            <valueName>Premium Trip Management Plan - Terrestrial</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Plan</controllingFieldValue>
+            <valueName>Service Plan Charge</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Plan</controllingFieldValue>
+            <valueName>Service Plan Charge - Satellite</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Plan</controllingFieldValue>
+            <valueName>Service Plan Charge - Terrestrial</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Plan</controllingFieldValue>
+            <valueName>T2 Service</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Plan</controllingFieldValue>
+            <valueName>TMVP Terrestrial</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Plan</controllingFieldValue>
+            <valueName>UVP Satellite</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Plan</controllingFieldValue>
+            <valueName>UVP Terrestrial</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

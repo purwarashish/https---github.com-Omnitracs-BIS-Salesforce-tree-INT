@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_Request</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Copy Request</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/{!Contract_Request__c.Id}/e?clone=1&amp;&amp;retURL=%2F{!Contract_Request__c.Id}&amp;00N50000001eJHr=&quot;Contract Request Pending&quot;&amp;00N50000001enzg=&amp;00NR0000000V7JQ=&amp;00N50000001enzj=&amp;00N50000001enzf=&amp;00N50000001enzo=&amp;00N50000001fEsg=&amp;00N50000001fEsh=&amp;00N50000001enzp=&amp;00N50000001fEsi=&amp;00N50000001fEsm=&amp;00N50000001enze=&amp;00N50000001ucY4=</url>
+</WebLink>

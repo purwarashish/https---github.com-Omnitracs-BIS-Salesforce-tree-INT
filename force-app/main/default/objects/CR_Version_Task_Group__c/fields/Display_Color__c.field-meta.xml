@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Display_Color__c</fullName>
+    <description>Color used on charts to display trend data for this group.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Color used on charts to display trend data for this group.</inlineHelpText>
+    <label>Display Color</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Aquamarine: 7FFFD4</fullName>
+                <default>false</default>
+                <label>Aquamarine: 7FFFD4</label>
+            </value>
+            <value>
+                <fullName>Azure: F0FFFF</fullName>
+                <default>false</default>
+                <label>Azure: F0FFFF</label>
+            </value>
+            <value>
+                <fullName>Beige: F5F5DC</fullName>
+                <default>false</default>
+                <label>Beige: F5F5DC</label>
+            </value>
+            <value>
+                <fullName>Black: 000000</fullName>
+                <default>false</default>
+                <label>Black: 000000</label>
+            </value>
+            <value>
+                <fullName>Blue: 0000FF</fullName>
+                <default>false</default>
+                <label>Blue: 0000FF</label>
+            </value>
+            <value>
+                <fullName>Brown: A52A2A</fullName>
+                <default>false</default>
+                <label>Brown: A52A2A</label>
+            </value>
+            <value>
+                <fullName>Chocolate: D2691E</fullName>
+                <default>false</default>
+                <label>Chocolate: D2691E</label>
+            </value>
+            <value>
+                <fullName>Crimson: DC143C</fullName>
+                <default>false</default>
+                <label>Crimson: DC143C</label>
+            </value>
+            <value>
+                <fullName>Cyan: 00FFFF</fullName>
+                <default>false</default>
+                <label>Cyan: 00FFFF</label>
+            </value>
+            <value>
+                <fullName>Dark Blue: 00008B</fullName>
+                <default>false</default>
+                <label>Dark Blue: 00008B</label>
+            </value>
+            <value>
+                <fullName>Dark Cyan: 008B8B</fullName>
+                <default>false</default>
+                <label>Dark Cyan: 008B8B</label>
+            </value>
+            <value>
+                <fullName>Dark Gray: A9A9A9</fullName>
+                <default>false</default>
+                <label>Dark Gray: A9A9A9</label>
+            </value>
+            <value>
+                <fullName>Dark Green: 006400</fullName>
+                <default>false</default>
+                <label>Dark Green: 006400</label>
+            </value>
+            <value>
+                <fullName>Dark Magenta: 8B008B</fullName>
+                <default>false</default>
+                <label>Dark Magenta: 8B008B</label>
+            </value>
+            <value>
+                <fullName>Dark Orange: FF8C00</fullName>
+                <default>false</default>
+                <label>Dark Orange: FF8C00</label>
+            </value>
+            <value>
+                <fullName>Dark Red: 8B0000</fullName>
+                <default>false</default>
+                <label>Dark Red: 8B0000</label>
+            </value>
+            <value>
+                <fullName>Dark Slate Gray: 2F4F4F</fullName>
+                <default>false</default>
+                <label>Dark Slate Gray: 2F4F4F</label>
+            </value>
+            <value>
+                <fullName>Deep Pink: FF1493</fullName>
+                <default>false</default>
+                <label>Deep Pink: FF1493</label>
+            </value>
+            <value>
+                <fullName>Forest Green: 228B22</fullName>
+                <default>false</default>
+                <label>Forest Green: 228B22</label>
+            </value>
+            <value>
+                <fullName>Gold: FFD700</fullName>
+                <default>false</default>
+                <label>Gold: FFD700</label>
+            </value>
+            <value>
+                <fullName>Goldenrod: DAA520</fullName>
+                <default>false</default>
+                <label>Goldenrod: DAA520</label>
+            </value>
+            <value>
+                <fullName>Gray: 808080</fullName>
+                <default>false</default>
+                <label>Gray: 808080</label>
+            </value>
+            <value>
+                <fullName>Green: 008000</fullName>
+                <default>false</default>
+                <label>Green: 008000</label>
+            </value>
+            <value>
+                <fullName>Indigo: 4B0082</fullName>
+                <default>false</default>
+                <label>Indigo: 4B0082</label>
+            </value>
+            <value>
+                <fullName>Light Blue: ADD8E6</fullName>
+                <default>false</default>
+                <label>Light Blue: ADD8E6</label>
+            </value>
+            <value>
+                <fullName>Light Cyan: E0FFFF</fullName>
+                <default>false</default>
+                <label>Light Cyan: E0FFFF</label>
+            </value>
+            <value>
+                <fullName>Light Green: 90EE90</fullName>
+                <default>false</default>
+                <label>Light Green: 90EE90</label>
+            </value>
+            <value>
+                <fullName>Light Grey: D3D3D3</fullName>
+                <default>false</default>
+                <label>Light Grey: D3D3D3</label>
+            </value>
+            <value>
+                <fullName>Light Pink: FFB6C1</fullName>
+                <default>false</default>
+                <label>Light Pink: FFB6C1</label>
+            </value>
+            <value>
+                <fullName>Light Yellow: FFFFE0</fullName>
+                <default>false</default>
+                <label>Light Yellow: FFFFE0</label>
+            </value>
+            <value>
+                <fullName>Lime Green: 32CD32</fullName>
+                <default>false</default>
+                <label>Lime Green: 32CD32</label>
+            </value>
+            <value>
+                <fullName>Magenta: FF00FF</fullName>
+                <default>false</default>
+                <label>Magenta: FF00FF</label>
+            </value>
+            <value>
+                <fullName>Maroon: 800000</fullName>
+                <default>false</default>
+                <label>Maroon: 800000</label>
+            </value>
+            <value>
+                <fullName>Medium Blue: 0000CD</fullName>
+                <default>false</default>
+                <label>Medium Blue: 0000CD</label>
+            </value>
+            <value>
+                <fullName>Midnight Blue: 191970</fullName>
+                <default>false</default>
+                <label>Midnight Blue: 191970</label>
+            </value>
+            <value>
+                <fullName>Navy: 000080</fullName>
+                <default>false</default>
+                <label>Navy: 000080</label>
+            </value>
+            <value>
+                <fullName>Olive: 808000</fullName>
+                <default>false</default>
+                <label>Olive: 808000</label>
+            </value>
+            <value>
+                <fullName>Olive Drab: 6B8E23</fullName>
+                <default>false</default>
+                <label>Olive Drab: 6B8E23</label>
+            </value>
+            <value>
+                <fullName>Orange: FFA500</fullName>
+                <default>false</default>
+                <label>Orange: FFA500</label>
+            </value>
+            <value>
+                <fullName>Orange Red: FF4500</fullName>
+                <default>false</default>
+                <label>Orange Red: FF4500</label>
+            </value>
+            <value>
+                <fullName>Pink: FFC0CB</fullName>
+                <default>false</default>
+                <label>Pink: FFC0CB</label>
+            </value>
+            <value>
+                <fullName>Plum: DDA0DD</fullName>
+                <default>false</default>
+                <label>Plum: DDA0DD</label>
+            </value>
+            <value>
+                <fullName>Purple: 800080</fullName>
+                <default>false</default>
+                <label>Purple: 800080</label>
+            </value>
+            <value>
+                <fullName>Red: FF0000</fullName>
+                <default>false</default>
+                <label>Red: FF0000</label>
+            </value>
+            <value>
+                <fullName>Royal Blue: 4169E1</fullName>
+                <default>false</default>
+                <label>Royal Blue: 4169E1</label>
+            </value>
+            <value>
+                <fullName>Saddle Brown: 8B4513</fullName>
+                <default>false</default>
+                <label>Saddle Brown: 8B4513</label>
+            </value>
+            <value>
+                <fullName>Sea Green: 2E8B57</fullName>
+                <default>false</default>
+                <label>Sea Green: 2E8B57</label>
+            </value>
+            <value>
+                <fullName>Sienna: A0522D</fullName>
+                <default>false</default>
+                <label>Sienna: A0522D</label>
+            </value>
+            <value>
+                <fullName>Silver: C0C0C0</fullName>
+                <default>false</default>
+                <label>Silver: C0C0C0</label>
+            </value>
+            <value>
+                <fullName>Sky Blue: 87CEEB</fullName>
+                <default>false</default>
+                <label>Sky Blue: 87CEEB</label>
+            </value>
+            <value>
+                <fullName>Slate Blue: 6A5ACD</fullName>
+                <default>false</default>
+                <label>Slate Blue: 6A5ACD</label>
+            </value>
+            <value>
+                <fullName>Slate Gray: 708090</fullName>
+                <default>false</default>
+                <label>Slate Gray: 708090</label>
+            </value>
+            <value>
+                <fullName>Spring Green: 00FF7F</fullName>
+                <default>false</default>
+                <label>Spring Green: 00FF7F</label>
+            </value>
+            <value>
+                <fullName>Tan: D2B48C</fullName>
+                <default>false</default>
+                <label>Tan: D2B48C</label>
+            </value>
+            <value>
+                <fullName>Teal: 008080</fullName>
+                <default>false</default>
+                <label>Teal: 008080</label>
+            </value>
+            <value>
+                <fullName>Turquoise: 40E0D0</fullName>
+                <default>false</default>
+                <label>Turquoise: 40E0D0</label>
+            </value>
+            <value>
+                <fullName>Violet: EE82EE</fullName>
+                <default>false</default>
+                <label>Violet: EE82EE</label>
+            </value>
+            <value>
+                <fullName>Yellow: FFFF00</fullName>
+                <default>false</default>
+                <label>Yellow: FFFF00</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

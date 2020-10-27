@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Roadnet_Assets</fullName>
+    <columns>Account__c</columns>
+    <columns>NAME</columns>
+    <columns>Product__c</columns>
+    <columns>Asset_Term_Start_Date__c</columns>
+    <columns>Asset_Term_End_Date__c</columns>
+    <columns>ARR__c</columns>
+    <columns>License_Metric_Quantity__c</columns>
+    <columns>Fulfilled_Licenses__c</columns>
+    <columns>History_LinteItem_Name__c</columns>
+    <columns>History_Billing_Detail_Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Business_Unit__c</field>
+        <operation>equals</operation>
+        <value>Roadnet</value>
+    </filters>
+    <label>Roadnet Assets</label>
+    <language>en_US</language>
+    <sharedTo>
+        <allInternalUsers/>
+    </sharedTo>
+</ListView>

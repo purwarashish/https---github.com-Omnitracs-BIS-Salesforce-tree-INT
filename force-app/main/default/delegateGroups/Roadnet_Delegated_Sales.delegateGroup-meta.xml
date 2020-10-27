@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DelegateGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Roadnet Delegated Sales</label>
+    <loginAccess>true</loginAccess>
+    <permissionSets>Roadnet Delegated Administration</permissionSets>
+    <profiles>CS Contract</profiles>
+    <profiles>Sales - Domestic AR</profiles>
+    <profiles>Sales - Domestic Sales Manager</profiles>
+    <roles>Systems Planning Lead</roles>
+    <roles>VP of Sales</roles>
+</DelegateGroup>

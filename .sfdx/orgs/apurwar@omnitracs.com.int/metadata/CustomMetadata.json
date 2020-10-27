@@ -1,0 +1,112 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "customMetadata/SpringCMApiEnvironment.PROD.md",
+      "fullName": "SpringCMApiEnvironment.PROD",
+      "id": "m0150000000GpNkAAK",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "manageableState": "unmanaged",
+      "type": "CustomMetadata"
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "customMetadata/SpringCMApiEnvironment.TEST.md",
+      "fullName": "SpringCMApiEnvironment.TEST",
+      "id": "m0150000000GpNVAA0",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "manageableState": "unmanaged",
+      "type": "CustomMetadata"
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "customMetadata/qbdialer__isTriggerConfig.Manage_Triggers.md",
+      "fullName": "qbdialer__isTriggerConfig.Manage_Triggers",
+      "id": "m005000000008MhAAI",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "manageableState": "installed",
+      "namespacePrefix": "qbdialer",
+      "type": "CustomMetadata"
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "customMetadata/UnityDirectSalesAPI.DirectSales.md",
+      "fullName": "UnityDirectSalesAPI.DirectSales",
+      "id": "m0250000000LEOQAA4",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "manageableState": "unmanaged",
+      "type": "CustomMetadata"
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "customMetadata/CommunityUserSettings.SharedFileIds.md",
+      "fullName": "CommunityUserSettings.SharedFileIds",
+      "id": "m0C3F0000009zdZUAQ",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "manageableState": "unmanaged",
+      "type": "CustomMetadata"
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "customMetadata/qbdialer__ISDC_SF_Setting.ISDC_Setting_Record.md",
+      "fullName": "qbdialer__ISDC_SF_Setting.ISDC_Setting_Record",
+      "id": "m0750000000GoUMAA0",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "manageableState": "installed",
+      "namespacePrefix": "qbdialer",
+      "type": "CustomMetadata"
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "customMetadata/qbdialer__isKeyConfig.lmp_auth_mode.md",
+      "fullName": "qbdialer__isKeyConfig.lmp_auth_mode",
+      "id": "m0A1T0000008OVKUA2",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "manageableState": "installed",
+      "namespacePrefix": "qbdialer",
+      "type": "CustomMetadata"
+    },
+    {
+      "createdById": "0053F000006SgquQAC",
+      "createdByName": "Ashish Purwar",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "customMetadata/SVR_Email_Setting.PROD.md",
+      "fullName": "SVR_Email_Setting.PROD",
+      "id": "m0850000000XZpZAAW",
+      "lastModifiedById": "0053F000006SgquQAC",
+      "lastModifiedByName": "Ashish Purwar",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "manageableState": "unmanaged",
+      "type": "CustomMetadata"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Business_Unit__c</fullName>
+    <externalId>false</externalId>
+    <label>Primary Business Unit</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Omnitracs Domestic</fullName>
+                <default>false</default>
+                <label>Omnitracs Domestic</label>
+            </value>
+            <value>
+                <fullName>Omnitracs Mexico</fullName>
+                <default>false</default>
+                <label>Omnitracs Mexico</label>
+            </value>
+            <value>
+                <fullName>Roadnet</fullName>
+                <default>false</default>
+                <label>Roadnet</label>
+            </value>
+            <value>
+                <fullName>Sylectus</fullName>
+                <default>false</default>
+                <label>Sylectus</label>
+            </value>
+            <value>
+                <fullName>XRS Corporation</fullName>
+                <default>false</default>
+                <label>XRS Corporation</label>
+            </value>
+            <value>
+                <fullName>Turnpike Global Technologies Inc.</fullName>
+                <default>false</default>
+                <label>Turnpike Global Technologies Inc.</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

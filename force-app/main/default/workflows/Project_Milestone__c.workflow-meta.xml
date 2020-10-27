@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>PM_Project_Current_Milestone_Date_Change_Notification</fullName>
+        <description>PM Project - Current Milestone Date Change Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>qesadmin@qualcomm.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>omnitracs.sfdc.noreply@omnitracs.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>QESAutomatedMessages/ProjectCurrentMilestoneDateChanged</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Update_Release_Date_on_Project</fullName>
+        <field>Release_Updated_Date_Time__c</field>
+        <formula>LastModifiedDate</formula>
+        <name>Update Release Date on Project</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <targetObject>Project__c</targetObject>
+    </fieldUpdates>
+    <rules>
+        <fullName>Update Release Date on Project</fullName>
+        <actions>
+            <name>Update_Release_Date_on_Project</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Project_Milestone__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>PM Milestone</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Project_Milestone__c.Milestone_Name__c</field>
+            <operation>equals</operation>
+            <value>Commercial Release</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

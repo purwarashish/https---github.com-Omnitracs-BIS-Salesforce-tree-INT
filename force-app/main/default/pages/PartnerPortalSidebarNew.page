@@ -1,0 +1,141 @@
+<apex:page controller="PartnerPortalWelcomeController" showHeader="false" sidebar="false">
+
+    <style type="text/css">
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        .cmComponent {
+            font-size:12px;
+            font-family:arial,verdana,sans-serif;
+            color: #3f383b;
+        }
+        
+        .cmComponent table {
+            margin-left:-2px;
+        }
+        
+        a {
+
+            color: #315BA7;
+            font-size:12px;         
+            text-decoration:none;
+
+        }
+
+        a:hover {
+
+            text-decoration: underline;
+
+        }
+        
+        a#logout {
+        
+            font-size:12px;
+            color: #3f383b;
+        }
+        
+        a:hover#logout {
+
+            text-decoration: underline;
+
+        }
+        table, tr, td {
+            margin:0;padding:0;
+            font-size:12px;
+        }
+        
+        td.statvalue {
+            padding-left:2px;
+            text-align:right;
+            font-weight:bold;
+        }
+        
+        ul {
+            list-style-type:none;
+            margin:0;padding:0;
+        }
+        
+        ul li {
+            margin:0;padding:0;
+            line-height:1.3;
+            border-bottom: 1px solid #d6d6d6;
+        }
+        
+        .title {
+            display:block;
+            font-weight:bold;
+            font-size:12px;
+            padding: 10px 0 5px 0;
+            border-bottom: 1px solid #d6d6d6;
+        }
+        
+        
+        .clearfloats {
+            clear:both;
+        }
+        .sidebarlinks {
+            padding: 3px 0;
+            display: block;
+        }
+
+    </style>
+
+
+    <div class="cmComponent">
+
+        <span class="title">{!$User.FirstName}&nbsp;{!$User.LastName} (<a href="/secur/logout.jsp" target="_top" id="logout">Logout</a>)</span>
+        
+        <apex:dataList value="{!lstPartnerWelcomeLinks}" var="link">
+            <apex:outputLink value="{!if(link.name == 'My Company Profile', link.URL__c + '?id='+PartnerUser.Contact.AccountId, link.URL__c)}" target="_top" styleclass="sidebarlinks">{!link.name}</apex:outputLink>
+        </apex:dataList>
+        <!-- ul>
+          <li><a href='/{!PartnerUser.Contact.AccountId}' target="_top" class="sidebarlinks">My Company Profile</a></li>
+          <li><a href="/apex/PartnerProfile?id={!PartnerUser.Contact.AccountId}" target="_top" class="sidebarlinks">My Company Profile</a></li>
+          <li><a href="/_ui/core/portal/PortalUserMyProfilePage/d" target="_top" class="sidebarlinks">My Profile</a></li>
+        </ul -->
+
+<!--
+        <span class="title">My Channel Manager:</span>
+        <ul>
+          <li><a href='mailto:{!PartnerUser.Contact.Account.Owner.Email}' title='{}'>{!PartnerUser.Contact.Account.Owner.Name}</a></li>
+        </ul>
+-->
+     
+        <!-- START PARTNER STATS. IF YOU DON'T WANT TO SHOW THIS SECTION, COMMENT IT OUT OR DELETE IT -->
+<!-- 
+        <span class="title">My Stats:</span>
+        
+        <table>
+        <tr><td>
+        <!--
+            // Replace URL with the URL to the list view you want
+            
+            // Before this will work in your org, you need to make sure the SOQL statement in the controller's
+            initExpiringDealRegs method maps to your org's RecordTypeId and LeadSource for a Deal Registration Lead.
+             
+        -->
+<!-- 
+        <a href="/006?fcf=00B30000005gyjz" target="_parent">Deal Regs Exp Next 30 Days</a> 
+        </td> 
+        <td class="statvalue">{!ExpiringDealRegs}
+        </td>
+        </tr>
+        
+        <tr>
+        <td>
+               
+        <!-- Replace URL with the URL to the list view you want --> 
+<!--        
+        <a href="/00Q?fcf=00B500000036aPs" target="_parent">My Active Leads</a>
+        </td>
+        <td class="statvalue">{!ActiveLeads}
+        </td>
+        </tr>
+        </table>
+-->
+        <!-- END PARTNER STATS. IF YOU DON'T WANT TO SHOW THIS SECTION, COMMENT IT OUT OR DELETE IT -->
+    </div>
+   
+
+</apex:page>

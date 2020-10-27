@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Sales_Scenarios_minus_CPQ</fullName>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>Scenario__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>Ready_for_Implementation__c</columns>
+    <columns>Track_From_Requirement__c</columns>
+    <columns>Requirement__c</columns>
+    <columns>Area__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Track_From_Requirement__c</field>
+        <operation>contains</operation>
+        <value>Sales</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Area__c</field>
+        <operation>notEqual</operation>
+        <value>Quotes</value>
+    </filters>
+    <label>All Sales Scenarios (minus CPQ)</label>
+    <language>en_US</language>
+</ListView>

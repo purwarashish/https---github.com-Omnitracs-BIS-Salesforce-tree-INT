@@ -1,0 +1,54 @@
+<!-- /*******************************************************************************
+ * File:  UpdateRTSVersionPage.Page
+ * Date:  October 19th, 2009
+ * Author:  Joseph Hutchins
+ *
+ * The use, disclosure, reproduction, modification, transfer, or transmittal of
+ * this work for any purpose in any form or by any means without the written 
+ * permission of United Parcel Service is strictly prohibited.
+ *
+ * Confidential, unpublished property of United Parcel Service.
+ * Use and distribution limited solely to authorized personnel.
+ *
+ * Copyright 2009, UPS Logistics Technologies, Inc.  All rights reserved.
+ *  *******************************************************************************/ -->
+<apex:page standardController="Account" extensions="UpdateRTSVersionExtension" >
+<apex:includeScript value="{!$Resource.EnableDisableButton}"/>  
+    <apex:form id="theForm">
+    <apex:pagemessages />
+    <apex:pagemessage rendered="{!showUpdateSuccessfulSEction}"  strength="2" 
+                severity="confirm" title="Account Update Successful" detail="The account and any child account's with Inherit Parent's Products have been updated.  You can return to the account." />
+        <apex:pageblock title="Update Account RTS Version" mode="edit">
+            <apex:pageBlockbuttons location="top">
+                <apex:commandbutton action="{!returnToAccount}" value="Back To Account" id="backToAccountButton" onclick="myFunction()"/>
+            </apex:pageblockButtons>
+            <p>
+            <apex:outputtext value="This page will update RTS Version/Database Platform of the account and any child accounts that have the Inherit Parents Products checkbox checked."/>
+            </p><p></p>
+            <apex:pageblocksection columns="2" >
+                <apex:pageblocksectionItem >
+                    <apex:outputLabel value="RTS installed version" />
+                    <apex:inputfield value="{!account.RTS_Installed_Version__c}"/>
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem >
+                    <apex:outputLabel value="Database Platform" />
+                    <apex:inputfield value="{!account.Database_Platform__c}"/>
+                </apex:pageblocksectionItem>
+              
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value=""/>
+                    <apex:commandbutton value="Update RTS INSTALLED Version/DB Platform" 
+                        action="{!updateRTSInstalledVersion}" id="updateRTSInstalledVersionButton" 
+                        status="updateRTSInstalledVersionButtonStatus"/>
+                </apex:pageblocksectionitem>
+            </apex:pageblocksection>
+            
+        </apex:pageBlock>
+    </apex:form>
+    <script>
+        function myFunction()
+        {
+            window.opener.location.reload(true);
+        }
+    </script>
+</apex:page>

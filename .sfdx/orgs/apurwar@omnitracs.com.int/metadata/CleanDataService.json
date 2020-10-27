@@ -1,0 +1,44 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "00550000001IbGRAA0",
+      "createdByName": "Automated Process",
+      "createdDate": "2016-06-11T06:40:34.000Z",
+      "fileName": "cleanDataServices/DataCloudGeoLocation.cleanDataService",
+      "fullName": "DataCloudGeoLocation",
+      "id": "07S5000000000YWEAY",
+      "lastModifiedById": "00550000001IbGRAA0",
+      "lastModifiedByName": "Automated Process",
+      "lastModifiedDate": "2016-06-11T06:40:34.000Z",
+      "manageableState": "unmanaged",
+      "type": "CleanDataService"
+    },
+    {
+      "createdById": "00550000001IbGRAA0",
+      "createdByName": "Automated Process",
+      "createdDate": "2016-06-14T13:01:30.000Z",
+      "fileName": "cleanDataServices/DataCloudCompanyMatch.cleanDataService",
+      "fullName": "DataCloudCompanyMatch",
+      "id": "07S500000000137EAA",
+      "lastModifiedById": "00550000001IbGRAA0",
+      "lastModifiedByName": "Automated Process",
+      "lastModifiedDate": "2016-06-14T13:01:30.000Z",
+      "manageableState": "unmanaged",
+      "type": "CleanDataService"
+    },
+    {
+      "createdById": "00550000001IbGRAA0",
+      "createdByName": "Automated Process",
+      "createdDate": "2016-02-13T06:02:37.000Z",
+      "fileName": "cleanDataServices/DataCloudLeadAppend.cleanDataService",
+      "fullName": "DataCloudLeadAppend",
+      "id": "07S50000000PAyLEAW",
+      "lastModifiedById": "00550000001IbGRAA0",
+      "lastModifiedByName": "Automated Process",
+      "lastModifiedDate": "2016-02-13T06:02:37.000Z",
+      "manageableState": "unmanaged",
+      "type": "CleanDataService"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Final_Acceptance_Date_Later_Than_Today</fullName>
+    <active>true</active>
+    <description>The Final Acceptance Date cannot be later than today.</description>
+    <errorConditionFormula>Final_Acceptance_Date__c  &gt; TODAY()</errorConditionFormula>
+    <errorDisplayField>Final_Acceptance_Date__c</errorDisplayField>
+    <errorMessage>The Final Acceptance Date cannot be later than today.</errorMessage>
+</ValidationRule>

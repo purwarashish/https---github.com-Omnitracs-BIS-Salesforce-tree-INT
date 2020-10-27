@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Order_SubType__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>If Required to Advance is checked, specify the Order Sub-Types for which it is required.</inlineHelpText>
+    <label>Opportunity Order SubType</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>AddOn</fullName>
+                <default>false</default>
+                <label>AddOn</label>
+            </value>
+            <value>
+                <fullName>Annual Increase</fullName>
+                <default>false</default>
+                <label>Annual Increase</label>
+            </value>
+            <value>
+                <fullName>Assignment</fullName>
+                <default>false</default>
+                <label>Assignment</label>
+            </value>
+            <value>
+                <fullName>Contingency</fullName>
+                <default>false</default>
+                <label>Contingency</label>
+            </value>
+            <value>
+                <fullName>Contract</fullName>
+                <default>false</default>
+                <label>Contract</label>
+            </value>
+            <value>
+                <fullName>Contract Renewal</fullName>
+                <default>false</default>
+                <label>Contract Renewal</label>
+            </value>
+            <value>
+                <fullName>Data Clean-Up</fullName>
+                <default>false</default>
+                <label>Data Clean-Up</label>
+            </value>
+            <value>
+                <fullName>Decommission</fullName>
+                <default>false</default>
+                <label>Decommission</label>
+            </value>
+            <value>
+                <fullName>Evergreen Renewal</fullName>
+                <default>false</default>
+                <label>Evergreen Renewal</label>
+            </value>
+            <value>
+                <fullName>Existing Customer</fullName>
+                <default>false</default>
+                <label>Existing Customer</label>
+            </value>
+            <value>
+                <fullName>Frictionless</fullName>
+                <default>false</default>
+                <label>Frictionless</label>
+            </value>
+            <value>
+                <fullName>Full Cancellation</fullName>
+                <default>false</default>
+                <label>Full Cancellation</label>
+            </value>
+            <value>
+                <fullName>Increase</fullName>
+                <default>false</default>
+                <label>Increase</label>
+            </value>
+            <value>
+                <fullName>License Compliance</fullName>
+                <default>false</default>
+                <label>License Compliance</label>
+            </value>
+            <value>
+                <fullName>License Transfer</fullName>
+                <default>false</default>
+                <label>License Transfer</label>
+            </value>
+            <value>
+                <fullName>Migration</fullName>
+                <default>false</default>
+                <label>Migration</label>
+            </value>
+            <value>
+                <fullName>New</fullName>
+                <default>false</default>
+                <label>New</label>
+            </value>
+            <value>
+                <fullName>Non-Payment/ROS</fullName>
+                <default>false</default>
+                <label>Non-Payment/ROS</label>
+            </value>
+            <value>
+                <fullName>Perpetual to SaaS</fullName>
+                <default>false</default>
+                <label>Perpetual to SaaS</label>
+            </value>
+            <value>
+                <fullName>Perpetual to Term</fullName>
+                <default>false</default>
+                <label>Perpetual to Term</label>
+            </value>
+            <value>
+                <fullName>Prior Customer</fullName>
+                <default>false</default>
+                <label>Prior Customer</label>
+            </value>
+            <value>
+                <fullName>Prof to EE</fullName>
+                <default>false</default>
+                <label>Prof to EE</label>
+            </value>
+            <value>
+                <fullName>Reduction</fullName>
+                <default>false</default>
+                <label>Reduction</label>
+            </value>
+            <value>
+                <fullName>Reinstatement</fullName>
+                <default>false</default>
+                <label>Reinstatement</label>
+            </value>
+            <value>
+                <fullName>Renewal w. Addon</fullName>
+                <default>false</default>
+                <label>Renewal w. Addon</label>
+            </value>
+            <value>
+                <fullName>Renewal w. Migration</fullName>
+                <default>false</default>
+                <label>Renewal w. Migration</label>
+            </value>
+            <value>
+                <fullName>Renewal w. Upsell</fullName>
+                <default>false</default>
+                <label>Renewal w. Upsell</label>
+            </value>
+            <value>
+                <fullName>Sales Reversal</fullName>
+                <default>false</default>
+                <label>Sales Reversal</label>
+            </value>
+            <value>
+                <fullName>Standard</fullName>
+                <default>false</default>
+                <label>Standard</label>
+            </value>
+            <value>
+                <fullName>Term to SaaS</fullName>
+                <default>false</default>
+                <label>Term to SaaS</label>
+            </value>
+            <value>
+                <fullName>Transfer</fullName>
+                <default>false</default>
+                <label>Transfer</label>
+            </value>
+            <value>
+                <fullName>XRS CMPP</fullName>
+                <default>false</default>
+                <label>XRS CMPP</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

@@ -1,0 +1,126 @@
+<apex:page showheader="false" controller="PartnerPortalWelcomeController" sidebar="false" showHeader="false">
+
+    <style type="text/css">
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        .cmComponent {
+            font-size:12px;
+            font-family:arial,verdana,sans-serif;
+            color: #3f383b;
+        }
+        
+        .cmComponent table {
+            margin-left:-2px;
+        }
+        
+        a {
+
+            color: #315BA7;
+            font-size:12px;         
+            text-decoration:none;
+
+        }
+
+        a:hover {
+
+            text-decoration: underline;
+
+        }
+        
+        a#logout {
+        
+            font-size:12px;
+            color: #3f383b;
+        }
+        
+        a:hover#logout {
+
+            text-decoration: underline;
+
+        }
+        table, tr, td {
+            margin:0;padding:0;
+            font-size:12px;
+        }
+        
+        td.statvalue {
+            padding-left:2px;
+            text-align:right;
+            font-weight:bold;
+        }
+        
+        ul {
+            list-style-type:none;
+            margin:0;padding:0;
+        }
+        
+        ul li {
+            margin:0;padding:0;
+            line-height:1.3;
+            border-bottom: 1px solid #d6d6d6;
+        }
+        
+        .title {
+            display:block;
+            font-weight:bold;
+            font-size:12px;
+            padding: 10px 0 5px 0;
+            border-bottom: 1px solid #d6d6d6;
+        }
+        
+        
+        .clearfloats {
+            clear:both;
+        }
+        .sidebarlinks {
+            padding: 3px 0;
+            display: block;
+        }
+
+    </style>
+
+    <div class="cmComponent">
+
+        <span class="title">My Leads </span> 
+         <apex:dataList value="{!lstLeadQuicklinks}" var="link">
+             <apex:outputLink target="_top" styleclass="sidebarlinks" value="{!link.URL__c}">{!link.name}</apex:outputLink>
+         </apex:dataList>
+         <!-- ul>
+           <li><a href="/00Q?fcf=00B50000005lNYw" target="_top" class="sidebarlinks">Open Leads</a></li>
+           <li><a href="/00Q?fcf=00B500000030DzM" target="_top" class="sidebarlinks">Leads Exp this Week</a></li>
+           <li><a href="/00Q?fcf=00B50000005lNYx" target="_top" class="sidebarlinks">Leads Not Submitted</a></li>
+           <li><a href="/00Q/e" target="_top" class="sidebarlinks">New Lead Registration</a></li>
+         </ul -->
+        
+        <!-- span class="title">My Deals </span> 
+          <ul>
+            <li><a href="/006?fcf=00B50000005lNZG" target="_top" class="sidebarlinks">Open Deals</a></li>
+            <li><a href="/006?fcf=00B500000036aPt" target="_top" class="sidebarlinks">Deals Closing in 30 Days</a></li>
+            <li><a href="/006?fcf=00B50000005lNZB" target="_top" class="sidebarlinks">Deals Exp in 30 Days</a></li>        
+         </ul -->
+        <!-- 
+        <span class="title">MDF </span> 
+          <apex:dataList value="{!lstMDFQuicklinks}" var="link">
+             <apex:outputLink target="_top" styleclass="sidebarlinks" value="{!link.URL__c}">{!link.name}</apex:outputLink>
+         </apex:dataList> -->
+          <!-- ul>
+            <li><a href="/a1w?fcf=00BP0000000Q1i6" target="_top" class="sidebarlinks">Active MDF Budgets</a></li>
+         </ul -->
+        
+        <span class="title">Support </span> 
+          <apex:dataList value="{!lstSupportQuicklinks}" var="link">
+             <apex:outputLink target="_top" styleclass="sidebarlinks" value="{!link.URL__c}">{!link.name}</apex:outputLink>
+         </apex:dataList>
+          <!-- ul>
+            <!-- The following two Links are commented (by Avinash) as they are not yet ready to Go Live. -->
+            <!-- li><a href="https://myqualcomm.forcedev.cs4.force.com/demo/sitelogin1?un=singh.jaspreet@tcs.com&&pwd=QESUnity@2011&&pi=1" target="_top" class="sidebarlinks">Search the Knowledge Base</a></li -->
+            <!-- li><a href="https://myqualcomm.forcedev.cs4.force.com/demo/sitelogin1?un=singh.jaspreet@tcs.com&&pwd=QESUnity@2011&&pi=2" target="_top" class="sidebarlinks">Create/View Trouble Tickets</a></li -->
+            
+            <!-- li><a href="{!$Label.Partner_Portal_User_Guide_URL}" target="_blank" class="sidebarlinks">Partner Portal User Guide</a></li>
+         </ul -->
+    
+</div>
+
+</apex:page>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Services__c</fullName>
+    <externalId>false</externalId>
+    <label>Services</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Analytics Manager</fullName>
+                <default>false</default>
+                <label>Analytics Manager</label>
+            </value>
+            <value>
+                <fullName>Analytics Manager - Premium</fullName>
+                <default>false</default>
+                <label>Analytics Manager - Premium</label>
+            </value>
+            <value>
+                <fullName>Automated Arrival &amp; Departure</fullName>
+                <default>false</default>
+                <label>Automated Arrival &amp; Departure</label>
+            </value>
+            <value>
+                <fullName>Content Delivery Service</fullName>
+                <default>false</default>
+                <label>Content Delivery Service</label>
+            </value>
+            <value>
+                <fullName>Critical Event Reporting</fullName>
+                <default>false</default>
+                <label>Critical Event Reporting</label>
+            </value>
+            <value>
+                <fullName>CSA Safety Perf</fullName>
+                <default>false</default>
+                <label>CSA Safety Perf</label>
+            </value>
+            <value>
+                <fullName>Driver HOS Manager</fullName>
+                <default>false</default>
+                <label>Driver HOS Manager</label>
+            </value>
+            <value>
+                <fullName>Driver Notification Services</fullName>
+                <default>false</default>
+                <label>Driver Notification Services</label>
+            </value>
+            <value>
+                <fullName>GlobalTRACS</fullName>
+                <default>false</default>
+                <label>GlobalTRACS</label>
+            </value>
+            <value>
+                <fullName>Hours of Service</fullName>
+                <default>false</default>
+                <label>Hours of Service</label>
+            </value>
+            <value>
+                <fullName>In-cab Scanning</fullName>
+                <default>false</default>
+                <label>In-cab Scanning</label>
+            </value>
+            <value>
+                <fullName>Interactive Qualcomm</fullName>
+                <default>false</default>
+                <label>Interactive Qualcomm</label>
+            </value>
+            <value>
+                <fullName>MCP Enhanced Positions</fullName>
+                <default>false</default>
+                <label>MCP Enhanced Positions</label>
+            </value>
+            <value>
+                <fullName>MMS-Media Manager</fullName>
+                <default>false</default>
+                <label>MMS-Media Manager</label>
+            </value>
+            <value>
+                <fullName>Navigation</fullName>
+                <default>false</default>
+                <label>Navigation</label>
+            </value>
+            <value>
+                <fullName>QTRACS</fullName>
+                <default>false</default>
+                <label>QTRACS</label>
+            </value>
+            <value>
+                <fullName>SensorTRACS</fullName>
+                <default>false</default>
+                <label>SensorTRACS</label>
+            </value>
+            <value>
+                <fullName>Services Portal Integration</fullName>
+                <default>false</default>
+                <label>Services Portal Integration</label>
+            </value>
+            <value>
+                <fullName>SFM</fullName>
+                <default>false</default>
+                <label>SFM</label>
+            </value>
+            <value>
+                <fullName>TrailerTRACS</fullName>
+                <default>false</default>
+                <label>TrailerTRACS</label>
+            </value>
+            <value>
+                <fullName>Trip Manager</fullName>
+                <default>false</default>
+                <label>Trip Manager</label>
+            </value>
+            <value>
+                <fullName>Vehicle Command &amp; Control</fullName>
+                <default>false</default>
+                <label>Vehicle Command &amp; Control</label>
+            </value>
+            <value>
+                <fullName>Vehicle Data Configurator</fullName>
+                <default>false</default>
+                <label>Vehicle Data Configurator</label>
+            </value>
+            <value>
+                <fullName>Vehicle Maintenance</fullName>
+                <default>false</default>
+                <label>Vehicle Maintenance</label>
+            </value>
+            <value>
+                <fullName>Workflow Management Center</fullName>
+                <default>false</default>
+                <label>Workflow Management Center</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

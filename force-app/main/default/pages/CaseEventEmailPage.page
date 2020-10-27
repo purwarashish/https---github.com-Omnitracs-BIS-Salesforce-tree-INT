@@ -1,0 +1,102 @@
+<!--created by Joseph Hutchins November 3, 2008 -->
+<apex:page standardcontroller="Case_Event__c" extensions="CaseEventEmailExtension" sidebar="false" showheader="false">
+    <apex:form >
+    <apex:pagemessages />
+        <!--   START of contact/user lookup  -->
+        <apex:pageblock title="Contact Or User Lookup" >
+        <apex:pageblockSection id="contactOrUserSection" columns="2" showheader="false">
+             <apex:pageblocksectionItem >
+                <apex:outputlabel value="Contact Or User?"/>
+                <apex:selectradio value="{!isSelectingContact}">
+                    <apex:selectOption itemValue="true" itemLabel="Contact"/>
+                    <apex:selectOption itemValue="false" itemLabel="User"/>
+                    <apex:actionSupport event="onclick" 
+                        action="{!determineWhichLookUpToGrabEmailAddressFor}" 
+                        rerender="contactOrUserSection"
+                        status="actionStatusTag"/>
+                    </apex:selectradio>
+            </apex:pageblocksectionItem>
+            <apex:outputtext value=""/>  <!--  blank space -->
+            
+            <apex:pageblocksectionItem rendered="{!!isSelectingContact}" >
+                <apex:outputlabel value="User"/>
+                <apex:inputfield value="{!tempCaseObject.Closed_By__c}">
+                <apex:actionSupport event="onblur" 
+                   action="{!selectContactOrUser}" 
+                   rerender="contactOrUserSection" status="actionStatusTag"/>
+                </apex:inputfield>
+            </apex:pageblocksectionItem>
+            <apex:pageblocksectionItem rendered="{!isSelectingContact}">
+                <apex:outputlabel value="Contact"/>
+                <apex:inputfield value="{!tempCaseObject.contactid}">
+                    <apex:actionSupport event="onblur" 
+                       action="{!selectContactOrUser}" 
+                       rerender="contactOrUserSection" status="actionStatusTag"/>
+                </apex:inputfield>
+            </apex:pageblocksectionItem>
+            <apex:pageblocksectionItem >
+                <apex:outputlabel value="Email Address of contact/user"/>
+                <apex:outputtext value="{!selectedEmailAddress}"/>
+            </apex:pageblocksectionItem>
+        </apex:pageblockSection>
+        <apex:pageblocksection columns="2">
+            <apex:outputtext value=""/>  <!--  blank space -->
+            <apex:outputpanel >
+                <apex:commandbutton action="{!addEmailAddress}" 
+                    value="Add To Email Address" rerender="emailCaseEventSection, contactOrUserSection"/>&nbsp;&nbsp;&nbsp;
+                <apex:commandbutton action="{!addCCEmailAddress}" 
+                    value="Add CC Email Address" rerender="emailCaseEventSection, contactOrUserSection"/>&nbsp;&nbsp;&nbsp;
+                <apex:commandbutton action="{!addBCCEmailAddress}" 
+                    value="Add BCC Email Address" rerender="emailCaseEventSection, contactOrUserSection"/>
+            </apex:outputpanel>
+        </apex:pageblocksection>
+    </apex:pageblock>
+    <apex:actionStatus startText="Retrieving Information...." id="actionStatusTag"/>
+    <!-- end of contact or user section lookup -->
+
+        <apex:outputPanel id="emailCaseEventSection">
+        <apex:pageBlock title="Email Case Event">
+	        <apex:pageblocksection columns="1">
+	            <apex:outputtext value="Enter Email Addresses:"/>
+	            <apex:outputtext value="*To Send Email To Multiple Reciepeints, seperate the email address with a semicolon"/>
+	            <apex:outputtext value="For Example: johndoe@gmail.com; janedoe@aol.com; johndeere@yahoo.com"/>           
+	            <apex:inputtextarea value="{!toEmailAddress}" cols="150" rows="1"/>
+	            <p></p>
+	            <apex:outputtext value="CC address:" />
+	            <apex:inputtextarea value="{!ccemailAddress}" cols="150" rows="1"/>
+	            <apex:outputtext value="BCC address:"/>
+                <apex:inputtextarea value="{!bccemailAddress}" cols="150" rows="1"/>
+	            <apex:outputtext value="Subject:"/>
+	            <apex:inputtextarea value="{!emailSubject}" cols="150" rows="2"/>
+	            <p></p>
+	            <apex:outputtext value="Body:"/>
+	            <apex:inputtextarea value="{!emailBodyText}" rows="10" cols="150"/>
+	            <p></p>
+	        </apex:pageblocksection>
+        </apex:pageBLock>
+        
+            <apex:pageBlock title="Email Preview:">
+                    <b>To:  </b>
+                    <i><apex:outputText value="{!toEmailAddress}"/></i>
+                    <p></p>
+                    <b>CC Address:</b>
+                    <i><apex:outputText value="{!ccEmailAddress}"/></i>
+                    <p></p>
+                    <b>BCC Address:</b>
+                    <i><apex:outputText value="{!bccEmailAddress}"/></i>
+                    <p></p>
+                    
+                    <b>Subject:  </b>
+                    <i><apex:outputText value="{!Emailsubject}"/></i>
+                    <p></p>
+                    <b>Body:  </b>
+                    <i><apex:outputText escape="false" value="{!emailBodyHTML}"/></i>
+            </apex:pageBlock>
+        </apex:outputPanel>
+        <apex:commandLink rerender="emailCaseEventSection" action="{!updatescreen}">Click Me To Update Email Info</apex:commandLink>
+        <p></p>
+        <apex:commandbutton action="{!sendEmail}" value="Send Email"/>
+    
+        <apex:outputtext value="{!emailstatus}"/>
+    </apex:form>
+</apex:page>

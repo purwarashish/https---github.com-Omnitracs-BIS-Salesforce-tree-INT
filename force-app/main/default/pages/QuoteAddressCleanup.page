@@ -1,0 +1,1 @@
+<apex:page id="QuoteAddressCleanup" standardController="SBQQ__Quote__c" extensions="QuoteAddressAutoPopulateController" action="{!cleanupQuote}" ></apex:page>

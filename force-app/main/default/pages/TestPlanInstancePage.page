@@ -1,0 +1,178 @@
+<!--
+ *******************************************************************************
+ * File:  TestPlanViewPage
+ * Date:  November 7th, 2012
+ * Author:  Evan Hartig
+ *
+ * The use, disclosure, reproduction, modification, transfer, or transmittal of
+ * this work for any purpose in any form or by any means without the written 
+ * permission of Roadnet Technologies is strictly prohibited.
+ *
+ * Confidential, unpublished property of Roadnet Technologies.
+ * Use and distribution limited solely to authorized personnel.
+ *
+ * Copyright 2012, Roadnet Technologies, Inc.  All rights reserved.
+ *
+ * Purpose: 
+ *   VF page for viewing test plan instances
+ *******************************************************************************
+ -->
+
+<apex:page standardController="Test_Plan_Instance__c" extensions="TestPlanInstanceExtension" title="Running Test Plan: {!currentPlan.Name}" action="{!RecalculatePctComplete}" >
+    <script>
+       function setFocusOnLoad(){}
+    </script>
+    
+    <style>
+        .rowClass1{background-color:#ffffff;}
+        .rowClass2{background-color:#eeeeee;}
+    </style>
+    
+    <apex:sectionHeader title="Test Plan Instance" subtitle="{!currentPlanInstance.Name}" />
+    
+    <apex:form id="instanceForm">
+        <apex:pageBlock id="areYouSureBlock" rendered="{!showDeleteWarning}">
+            <center>
+                <apex:actionStatus id="deleteInstanceStatus">
+                    <apex:facet name="stop">
+                        <apex:outputPanel >
+                            <apex:outputText value="Are you sure you want to delete this test plan instance and all of its 'Not Yet Run' test runs?"/>
+                            <br/>
+                            
+                            <apex:commandButton action="{!DeleteInstanceWithRuns}" value="Yes" status="deleteInstanceStatus"/>
+                            <apex:commandButton action="{!CancelDeleteInstance}" value="No" rerender="instanceForm" status="deleteInstanceStatus"/>
+                        </apex:outputPanel>
+                    </apex:facet>
+                    <apex:facet name="start">
+                        <apex:outputText value="Sounds good..."/>
+                    </apex:facet>
+                </apex:actionStatus>
+            </center>
+        </apex:pageBlock>
+        
+        <apex:pageBlock id="pageBlock" rendered="{!NOT(showDeleteWarning)}">
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!SaveChanges}" value="Save" reRender="pageBlock" status="updateStatus"/>
+                <apex:commandButton action="{!Edit}" value="Edit"/>
+                <apex:commandButton action="{!TryDeleteInstance}" value="Delete Instance" title="Deletes the plan instance and any Not Yet Run test runs that are on it" status="updateStatus"/>
+                <apex:commandButton action="{!RefreshRuns}" value="Refresh" reRender="caseChart" status="updateStatus"/>
+                <apex:commandButton action="{!UpdateInstanceFromPlan}" value="Sync from Plan" reRender="pageBlock" status="updateStatus"/>
+                <apex:commandButton action="{!DeleteSelected}" value="Delete Selected Runs" status="updateStatus" reRender="caseChart"/>
+            </apex:pageBlockButtons>
+            
+            <apex:pageMessages />
+            
+            <apex:pageBlockSection collapsible="true" title="Plan Info" columns="2">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Test Plan"/>
+                    <apex:outputField value="{!currentPlanInstance.Test_Plan__c}"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel />
+                    <apex:actionStatus id="updateStatus" startText="Updating..." stopText=" " />
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Plan Description"/>
+                    <apex:outputText value="{!currentPlan.Description__c}"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel />
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Instance Description"/>
+                    <apex:outputText value="{!currentPlanInstance.Description__c}"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel />
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Product Family" />
+                    <apex:outputField value="{!currentPlanInstance.Product_Family__c}" />
+                </apex:pageBlockSectionItem>
+            
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Tested Version" />
+                    <apex:outputField value="{!currentPlanInstance.Product_Version_PL__c}" />
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Status"/>
+                    <apex:inputField value="{!currentPlanInstance.Status__c}"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Creator"/>
+                    <apex:inputField value="{!currentPlanInstance.Owner__c}"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Percent Complete"/>
+                    <apex:outputText value="{!Text(currentPlanInstance.Percent_Complete__c)}%"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Run list height (px)"/>
+                    <apex:inputField value="{!currentPlanInstance.Window_Height__c}"/>
+                </apex:pageBlockSectionItem>
+
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="caseChart" collapsible="false" title="Tests to Run ({!UnrunCases}/{!Text(currentPlanInstance.Number_of_Runs__c)})" columns="1">
+                <apex:outputpanel style="overflow:scroll;height:{!currentPlanInstance.Window_Height__c}px;" layout="block">
+                    <apex:pageBlockTable value="{!testRunList}" var="row" rules="cols" width="100%" rowClasses="rowClass1,rowClass2">
+                        <apex:column >
+                            <apex:facet name="header">
+                                <apex:inputCheckbox value="{!allChecked}">
+                                    <apex:actionSupport event="onclick" action="{!UpdateCheckboxes}" rerender="caseChart" status="updateStatus"/>
+                                </apex:inputCheckbox>
+                            </apex:facet>
+                            <apex:inputField value="{!row.Selected__c}" />
+                        </apex:column>
+                        <apex:column >
+                            <apex:outputLink value="/{!row.Test_Run__c}?retURL=/{!currentPlanInstance.Id}">{!row.Test_Run__r.Name}</apex:outputLink>
+                            <apex:facet name="header">Test Run</apex:facet>
+                        </apex:column>
+                        <apex:column style="{!IF(row.Test_Run__r.Result__c == 'Fail' && NOT(row.Test_Run__r.Resolved__c), 'background-color:#FF8080', '')}" width="100">
+                            <apex:inputField value="{!row.Test_Run__r.Result__c}" rendered="{!CONTAINS(row.Test_Run__r.Test_Result__c, 'Not run')}"/>
+                            <apex:outputField value="{!row.Test_Run__r.Test_Result__c}" rendered="{!NOT(CONTAINS(row.Test_Run__r.Test_Result__c, 'Not run'))}"/>
+                            <apex:facet name="header">Result</apex:facet>
+                        </apex:column>
+                        <apex:column >
+                            <apex:inputText value="{!row.Test_Run__r.Product_Patch__c}" rendered="{!CONTAINS(row.Test_Run__r.Test_Result__c, 'Not run')}" size="8"/>
+                            <apex:outputText value="{!row.Test_Run__r.Product_Patch__c}" rendered="{!NOT(CONTAINS(row.Test_Run__r.Test_Result__c, 'Not run'))}"/>
+                            <apex:facet name="header">Build #</apex:facet>
+                        </apex:column>
+                        <apex:column rendered="{!currentPlanInstance.Test_Plan__r.Type__c == 'Mobile'}">
+                            <apex:inputText value="{!row.Test_Run__r.Mobile_Device_Version__c}" rendered="{!CONTAINS(row.Test_Run__r.Test_Result__c, 'Not run')}" size="8"/>
+                            <apex:outputText value="{!row.Test_Run__r.Mobile_Device_Version__c}" rendered="{!NOT(CONTAINS(row.Test_Run__r.Test_Result__c, 'Not run'))}"/>
+                            <apex:facet name="header">Device Version</apex:facet>
+                        </apex:column>
+                        <apex:column value="{!row.Test_Run__r.Test_Objective__c}">
+                            <apex:facet name="header">Objective</apex:facet>
+                        </apex:column>
+                        <apex:column width="15%">
+                            <apex:facet name="header">Run Params</apex:facet>
+                            <apex:outputField value="{!row.Description__c}"/>
+                        </apex:column>
+                        <apex:column value="{!row.Test_Run__r.Test_Case__c}">
+                            <apex:facet name="header">Test Case</apex:facet>
+                        </apex:column>
+                        <apex:column width="20">
+                            <apex:commandButton title="Rerun case" value="+" action="{!RerunCase}" reRender="pageBlock" status="updateStatus">
+                                <apex:param name="rerunId" value="{!row.Id}"/>
+                            </apex:commandButton>
+                        </apex:column>
+                    </apex:pageBlockTable>
+                </apex:outputpanel>
+
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

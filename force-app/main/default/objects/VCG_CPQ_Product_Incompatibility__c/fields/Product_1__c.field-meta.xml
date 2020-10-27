@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_1__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Product 1</label>
+    <referenceTo>Product2</referenceTo>
+    <relationshipLabel>VCG CPQ Product Incompatibilities</relationshipLabel>
+    <relationshipName>VCG_CPQ_Product_Incompatibilities</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

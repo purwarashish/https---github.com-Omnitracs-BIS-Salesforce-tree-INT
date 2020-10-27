@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Non_Billable_Expenses__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Total of all non-billable expenses from the Expense related list</inlineHelpText>
+    <label>Non-Billable Expenses</label>
+    <summarizedField>Project_Expense__c.Total_Non_Billable_Expenses__c</summarizedField>
+    <summaryForeignKey>Project_Expense__c.Projects__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

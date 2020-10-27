@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Actual_Comp_Date_Populated</fullName>
+    <active>true</active>
+    <description>If the Project Stage is Completed, the Actual Completion Date must be populated.</description>
+    <errorConditionFormula>AND(NOT(ISNEW()),AND(ISPICKVAL( Project_Stage__c, &quot;Completed&quot;),ISNULL( Actual_Completion_Date__c )))</errorConditionFormula>
+    <errorDisplayField>Actual_Completion_Date__c</errorDisplayField>
+    <errorMessage>Actual Completion Date must be populated if the Project Stage is &quot;Completed&quot;.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Risk_Closed_Date_Update</fullName>
+        <description>used to know when the risk assessment is closed</description>
+        <field>Risk_Closed_Date__c</field>
+        <formula>IF( Risk_Closed__c , TODAY(),null)</formula>
+        <name>Risk Closed Date Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>PSA Risk Closed Date Update</fullName>
+        <actions>
+            <name>Risk_Closed_Date_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>OR( ISCHANGED( Risk_Closed__c ),ISNEW())</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

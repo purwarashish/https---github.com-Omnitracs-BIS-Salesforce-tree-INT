@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Term</fullName>
+    <active>true</active>
+    <label>Term</label>
+    <picklistValues>
+        <picklist>Product_Type__c</picklist>
+        <values>
+            <fullName>RNA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Vendor_Map_Version_PL__c</picklist>
+        <values>
+            <fullName>DMTI Canmap V%2E2008%2E1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digibase - Brazil</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GEDAS - Mexico</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Geo Strategies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HERE 2016%2E03 v8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HERE 2016%2E1 v8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HERE 2016%2E4 v8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HERE 2017%2E3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HERE 2017%2E4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HERE 2018%2E1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HERE 2019%2E1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HERE 2019%2E4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HERE BRAZIL 2017%2E03</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HERE North America 2015%2E1 v9</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HERE North America 2017%2E1 v9</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HERE North America 2017%2E2 v9</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Here 2017%2E01 Routenet 8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Here2019%2E3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LeadDog</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MapInfo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MapInfo - Singapore</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mapping Solutions Company Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maps Provided by VAR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NAV2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NavTeq - Europe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NavTeq - NT02</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NavTeq - Oman</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NavTeq - U%2EK%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Navteq 2011%2E3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SGSI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TomTom 2014%2E06 v8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TomTom 2014%2E09 v8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TomTom 2014%2E12 v8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TomTom 2015%2E03 v8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TomTom 2015%2E06 v8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TomTom 2015%2E09 v8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TomTom 2015%2E12 v8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TomTom 2016%2E05 v9</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TomTom 2016%2E09 v8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TomTom 2016%2E3 v8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TomTom 2017%2E03 v8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TomTom 2017%2E06</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TomTom 2017%2E09 v8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TomTom 2017%2E12 v8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TomTom 2018%2E03</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TomTom 2019%2E03</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TomTom 2019%2E06</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TomTom 2019%2E12</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TomTom 2020%2E03</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TomTom Australia New Zealand 2015%2E03</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TomTom Brasil 2015%2E09</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TomTom Italy 2015%2E06</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TomTom North America 2014%2E12 v9</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TomTom North America 2015%2E03 v9</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TomTom North America 2015%2E06 v9</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TomTom North America 2015%2E09 v9</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TomTom North America 2016%2E03 v9</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TomTom North America 2016%2E12 v9</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TomTom North America 2017%2E03 v9</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>United Arab Emirates</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

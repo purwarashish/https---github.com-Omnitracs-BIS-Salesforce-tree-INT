@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Additional_Request__c</fullName>
+    <externalId>false</externalId>
+    <label>Additional Request</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>I have additional feedback and would lik</fullName>
+                <default>false</default>
+                <label>I have additional feedback and would lik</label>
+            </value>
+            <value>
+                <fullName>I do not wish to share my name, company&apos;</fullName>
+                <default>false</default>
+                <label>I do not wish to share my name, company&apos;</label>
+            </value>
+            <value>
+                <fullName>I would like someone from your managemen</fullName>
+                <default>false</default>
+                <label>I would like someone from your managemen</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

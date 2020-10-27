@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project_Stage_Validation</fullName>
+    <active>true</active>
+    <description>Evaluate the checklist to determine if the Project Stage is correct.</description>
+    <errorConditionFormula>AND(NOT(ISNEW()), AND( ISPICKVAL(Project_Stage__c, &quot;Draft&quot;),  Estimate_Delivered__c ))</errorConditionFormula>
+    <errorDisplayField>Project_Stage__c</errorDisplayField>
+    <errorMessage>The Stage cannot be &quot;Draft&quot; if the &quot;Estimate Delivered&quot; checklist step has been completed. Please change the Stage to &quot;In Progress&quot;.</errorMessage>
+</ValidationRule>

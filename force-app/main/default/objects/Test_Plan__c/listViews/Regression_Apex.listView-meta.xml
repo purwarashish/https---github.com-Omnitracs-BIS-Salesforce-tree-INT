@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Regression_Apex</fullName>
+    <columns>NAME</columns>
+    <columns>Description__c</columns>
+    <columns>Number_of_Cases__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Product_Family_PL__c</field>
+        <operation>equals</operation>
+        <value>Roadnet Apex</value>
+    </filters>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Regression - Full,Regression - Certification,Regression - Smoke</value>
+    </filters>
+    <label>Regression All - Apex</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Roadnet_Users</group>
+    </sharedTo>
+</ListView>

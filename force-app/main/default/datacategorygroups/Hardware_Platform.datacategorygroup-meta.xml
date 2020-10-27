@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCategoryGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <dataCategory>
+        <dataCategory>
+            <label>Omnitracs IVG</label>
+            <name>Omnitracs_IVG</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <label>MCP50</label>
+                <name>MCP50</name>
+            </dataCategory>
+            <dataCategory>
+                <label>MCP100</label>
+                <name>MCP100</name>
+            </dataCategory>
+            <dataCategory>
+                <label>MCP110</label>
+                <name>MCP110</name>
+            </dataCategory>
+            <dataCategory>
+                <label>MCP200</label>
+                <name>MCP200</name>
+            </dataCategory>
+            <label>MCP</label>
+            <name>MCP</name>
+        </dataCategory>
+        <dataCategory>
+            <label>OmniExpress</label>
+            <name>OmniExpress</name>
+        </dataCategory>
+        <dataCategory>
+            <label>OmniTRACS</label>
+            <name>OmniTRACS</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <label>TT150</label>
+                <name>TT150</name>
+            </dataCategory>
+            <dataCategory>
+                <label>TT200</label>
+                <name>TT200</name>
+            </dataCategory>
+            <dataCategory>
+                <label>TT210</label>
+                <name>TT210</name>
+            </dataCategory>
+            <label>Trailer Tracks</label>
+            <name>Trailer_Tracks</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Critical Event Video</label>
+            <name>Critical_Event_Video</name>
+        </dataCategory>
+        <label>All</label>
+        <name>All</name>
+    </dataCategory>
+    <label>Hardware Platform</label>
+    <objectUsage>
+        <object>KnowledgeArticleVersion</object>
+    </objectUsage>
+</DataCategoryGroup>

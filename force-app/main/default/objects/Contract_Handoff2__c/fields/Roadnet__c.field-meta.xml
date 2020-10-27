@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Roadnet__c</fullName>
+    <description>Routing Type -
+Same/Next Day - 
+Multiple Day/Overnight Routes, pickups, backhauls, or reloads
+Number of stops per route
+Time Windows
+Driver Pay Type
+Number of Vehicles
+Hours Per Route
+Order Cutoff</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Routing Type -
+Same/Next Day - 
+Multiple Day/Overnight Routes, pickups, backhauls, or reloads -
+Number of stops per route
+Time Windows
+Driver Pay Type
+Number of Vehicles
+Hours Per Route
+Order Cutoff</inlineHelpText>
+    <label>Roadnet</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

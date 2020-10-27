@@ -1,0 +1,30 @@
+<apex:page sidebar="true" showHeader="true" >
+<apex:sectionHeader title="Custom Reports"/>
+<apex:form id="form">
+   
+    <apex:pageBlock >
+        <table class="list" id="reporttable" cellspacing="0" cellpadding="5" border="0" >
+        <tr class="headerRow" nowrap="nowrap">
+            <th>Report Name</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td class="dataCell" >
+                <apex:commandLink action="/apex/CustomerIdeasbyNumberofTrucks" value="Customer Ideas(by number of trucks)" id="optyRptCmdLnk"/>
+            </td>
+            <td class="dataCell" >
+                This report will show all the Ideas by Total number of Trucks
+            </td>
+        </tr>
+        <tr>
+            <td class="dataCell" >
+                <apex:commandLink action="/apex/Customer_Ideas_by_Customers" value="Customer Ideas(by Customers)" id="ldrRptCmdLnk"/>
+            </td>
+            <td class="dataCell" >
+                This report will show all the Ideas by Customers
+            </td>
+        </tr>        
+        </table>
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

@@ -1,0 +1,84 @@
+<!-- /*******************************************************************************
+ * File:  GenerateTempExtensionUnlockPage.Page
+ * Date:  11/24/2015
+ * Author:  Cody Worth
+ *
+ *  *******************************************************************************/ -->
+<apex:page standardController="Account" extensions="GenerateTempExtensionCodeExtension" >
+<apex:includeScript value="{!$Resource.EnableDisableButton}"/>  
+    <apex:form id="theForm">
+        <apex:pagemessages />
+        <apex:pagemessage strength="2" 
+            severity="info" title="" detail="Select the contact who requested the product term extension.  Specify the reason for the extension.  Pressing the 'Send Product Term Extension' will email the extension code to your email address." />
+        <apex:pageblock title="Product Term Extension for {!account.Name}">
+            <apex:pageblocksection columns="1">
+                
+                <apex:outputfield value="{!licenseTask.WhatId}"/>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputlabel value="Picklist or Lookup?"/>
+                    <apex:outputpanel >
+                        <apex:selectRadio value="{!isSelectingPickList}">
+                            <apex:selectoption itemvalue="true" itemlabel="Picklist"/>
+                            <apex:selectoption itemvalue="false" itemlabel="Look Up"/>
+                            <apex:actionSupport event="onclick" />
+                        </apex:selectRadio>
+                    </apex:outputpanel>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageblocksectionItem rendered="{!!isSelectingPickList}">     
+                    <apex:outputlabel value="Contact"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                    <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputField value="{!licenseTask.whoId}"/>
+                    </apex:outputPanel>    
+                </apex:pageblocksectionItem> 
+
+                <apex:pageblocksectionItem rendered="{!isSelectingPickList}" >     
+                    <apex:outputlabel value="Contact"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                    <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList value="{!pickListSelection}" size="1"> 
+                            <apex:selectOptions value="{!accountContacts}"/>
+                        </apex:selectList>
+                    </apex:outputPanel>    
+                </apex:pageblocksectionItem> 
+                
+
+                <apex:pageblocksectionItem >     
+                    <apex:outputlabel value="Product"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                    <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:selectList value="{!selectedProductType}" size="1"> 
+                            <apex:selectOptions value="{!productTypes}"/>
+                        </apex:selectList>
+                    </apex:outputPanel>    
+                </apex:pageblocksectionItem> 
+                       
+                <apex:pageblocksectionItem >     
+                    <apex:outputlabel value="Reason"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                    <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <!-- <apex:inputtextarea value="{!lru.Reason__c}" cols="100" rows="10"/>-->
+                        <c:RemainingCharactersComponent id="statusChangeReasonText" theTextArea="{!licenseTask.Description}" theMaxLength="255"
+                            displayLengthOfCharsRemaining="5" numberOfRows="10" numberOfCols="100"/>
+                    </apex:outputPanel>    
+                </apex:pageblocksectionItem>            
+                <!-- 
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Email Destination"/>
+                    <apex:outputfield value="{!loggedInUser.email}"/>
+                </apex:pageBlockSectionItem>-->
+                
+                <apex:pageblocksectionItem >
+                    <apex:outputlabel value=""/>
+                    <apex:outputPanel >
+                        <apex:commandButton value="Send Product Term Extension" action="{!sendEmail}"/>
+                        <apex:commandButton value="Cancel" action="{!cancel}"/>
+                    </apex:outputPanel>
+                </apex:pageblocksectionItem>
+
+            </apex:pageblocksection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

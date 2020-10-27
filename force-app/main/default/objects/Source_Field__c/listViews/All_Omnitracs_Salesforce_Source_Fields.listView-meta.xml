@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Omnitracs_Salesforce_Source_Fields</fullName>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>Field_Name__c</columns>
+    <columns>System_Name__c</columns>
+    <columns>Source_Field_Type__c</columns>
+    <columns>Source_Object__c</columns>
+    <columns>Transformation__c</columns>
+    <columns>Inbound_Integration_Notes__c</columns>
+    <columns>Outbound_Integration_Notes__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Source_System__c</field>
+        <operation>equals</operation>
+        <value>Omnitracs Salesforce</value>
+    </filters>
+    <label>All Omnitracs Salesforce Source Fields</label>
+    <language>en_US</language>
+</ListView>

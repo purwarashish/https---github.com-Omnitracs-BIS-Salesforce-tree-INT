@@ -1,0 +1,44 @@
+<apex:page standardController="Deal_Desk__c" extensions="OppDealDeskController" action="{!LoadProductsData}" sidebar="false" showchat="false" showheader="false" >
+<style>
+table
+{
+ table-layout: auto;
+ border:1px Solid Black;
+ border-collapse: collapse;
+}
+
+tr
+{
+ border:1px Solid Black; 
+}
+
+th
+{
+ font-size:14px;
+ font-face:Arial;
+ background-color: #CCCCCC;
+ text-align: left;
+ border:1px Solid Black;
+ padding: 5px;
+} 
+
+td
+{
+ font-size:12px;
+ font-face:Arial;
+ border:1px Solid Black;
+ padding: 5px;
+}
+</style>
+
+    <apex:form >
+        <apex:pageBlock >  
+			<apex:dataTable value="{!lineItems}" var="oli" cellPadding="4" border="1" width="100%">
+				<apex:column headervalue="Product Name" Value="{!oli.Product2.Name}"/>
+                <apex:column headervalue="Quantity" Value="{!oli.Quantity}"/>
+				<apex:column headervalue="Unit Price" Value="{!oli.Unit_Price__c}"/>
+				<apex:column headerValue="Final Unit Price" Value="{!oli.Final_Unit_Price__c}"/>
+            </apex:dataTable>    
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

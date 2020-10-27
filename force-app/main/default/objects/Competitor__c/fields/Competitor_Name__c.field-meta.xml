@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Competitor_Name__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>If you don&apos;t see a competitor listed, please send an email to competitor.list@omnitracs.com for assistance.</inlineHelpText>
+    <label>Competitor Name</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>@Road</fullName>
+                <default>false</default>
+                <label>@Road</label>
+            </value>
+            <value>
+                <fullName>123Loadboard</fullName>
+                <default>false</default>
+                <label>123Loadboard</label>
+            </value>
+            <value>
+                <fullName>Alda Digital</fullName>
+                <default>false</default>
+                <label>Alda Digital</label>
+            </value>
+            <value>
+                <fullName>AlertDriving</fullName>
+                <default>false</default>
+                <label>AlertDriving</label>
+            </value>
+            <value>
+                <fullName>AMA</fullName>
+                <default>false</default>
+                <label>AMA</label>
+            </value>
+            <value>
+                <fullName>Apacheta</fullName>
+                <default>false</default>
+                <label>Apacheta</label>
+            </value>
+            <value>
+                <fullName>Astrum Satelital (Proeza TI)</fullName>
+                <default>false</default>
+                <label>Astrum Satelital (Proeza TI)</label>
+            </value>
+            <value>
+                <fullName>AT&amp;T</fullName>
+                <default>false</default>
+                <label>AT&amp;T</label>
+            </value>
+            <value>
+                <fullName>Axon</fullName>
+                <default>false</default>
+                <label>Axon</label>
+            </value>
+            <value>
+                <fullName>Axon Development Corporation</fullName>
+                <default>false</default>
+                <label>Axon Development Corporation</label>
+            </value>
+            <value>
+                <fullName>Big Roads</fullName>
+                <default>false</default>
+                <label>Big Roads</label>
+            </value>
+            <value>
+                <fullName>Bolt</fullName>
+                <default>false</default>
+                <label>Bolt</label>
+            </value>
+            <value>
+                <fullName>Cadec</fullName>
+                <default>false</default>
+                <label>Cadec</label>
+            </value>
+            <value>
+                <fullName>CanHAUL.com</fullName>
+                <default>false</default>
+                <label>CanHAUL.com</label>
+            </value>
+            <value>
+                <fullName>CarrierWeb</fullName>
+                <default>false</default>
+                <label>CarrierWeb</label>
+            </value>
+            <value>
+                <fullName>Central de Alarmas</fullName>
+                <default>false</default>
+                <label>Central de Alarmas</label>
+            </value>
+            <value>
+                <fullName>CEPA</fullName>
+                <default>false</default>
+                <label>CEPA</label>
+            </value>
+            <value>
+                <fullName>Control Track</fullName>
+                <default>false</default>
+                <label>Control Track</label>
+            </value>
+            <value>
+                <fullName>Cooltrax</fullName>
+                <default>false</default>
+                <label>Cooltrax</label>
+            </value>
+            <value>
+                <fullName>Copiloto Satelital</fullName>
+                <default>false</default>
+                <label>Copiloto Satelital</label>
+            </value>
+            <value>
+                <fullName>Descartes Systems Group, Inc.</fullName>
+                <default>false</default>
+                <label>Descartes Systems Group, Inc.</label>
+            </value>
+            <value>
+                <fullName>Discrete Wireless</fullName>
+                <default>false</default>
+                <label>Discrete Wireless</label>
+            </value>
+            <value>
+                <fullName>Dispatch Track</fullName>
+                <default>false</default>
+                <label>Dispatch Track</label>
+            </value>
+            <value>
+                <fullName>DriveCam</fullName>
+                <default>false</default>
+                <label>DriveCam</label>
+            </value>
+            <value>
+                <fullName>DriverCare/GE</fullName>
+                <default>false</default>
+                <label>DriverCare/GE</label>
+            </value>
+            <value>
+                <fullName>Driving Dynamics/PHH</fullName>
+                <default>false</default>
+                <label>Driving Dynamics/PHH</label>
+            </value>
+            <value>
+                <fullName>DSi Mobile</fullName>
+                <default>false</default>
+                <label>DSi Mobile</label>
+            </value>
+            <value>
+                <fullName>Elitesat Networks</fullName>
+                <default>false</default>
+                <label>Elitesat Networks</label>
+            </value>
+            <value>
+                <fullName>Encontrack</fullName>
+                <default>false</default>
+                <label>Encontrack</label>
+            </value>
+            <value>
+                <fullName>Express Technologies</fullName>
+                <default>false</default>
+                <label>Express Technologies</label>
+            </value>
+            <value>
+                <fullName>Fastercom</fullName>
+                <default>false</default>
+                <label>Fastercom</label>
+            </value>
+            <value>
+                <fullName>Fleetrackers</fullName>
+                <default>false</default>
+                <label>Fleetrackers</label>
+            </value>
+            <value>
+                <fullName>Full Mar</fullName>
+                <default>false</default>
+                <label>Full Mar</label>
+            </value>
+            <value>
+                <fullName>Garmin</fullName>
+                <default>false</default>
+                <label>Garmin</label>
+            </value>
+            <value>
+                <fullName>Geotab</fullName>
+                <default>false</default>
+                <label>Geotab</label>
+            </value>
+            <value>
+                <fullName>Get Loaded</fullName>
+                <default>false</default>
+                <label>Get Loaded</label>
+            </value>
+            <value>
+                <fullName>Globalstar</fullName>
+                <default>false</default>
+                <label>Globalstar</label>
+            </value>
+            <value>
+                <fullName>Global Track</fullName>
+                <default>false</default>
+                <label>Global Track</label>
+            </value>
+            <value>
+                <fullName>GreenMile</fullName>
+                <default>false</default>
+                <label>GreenMile</label>
+            </value>
+            <value>
+                <fullName>GreenRoads</fullName>
+                <default>false</default>
+                <label>GreenRoads</label>
+            </value>
+            <value>
+                <fullName>I.D. Systems (formerly, GE Asset Intelligence, Terion)</fullName>
+                <default>false</default>
+                <label>I.D. Systems (formerly, GE Asset Intelligence, Terion)</label>
+            </value>
+            <value>
+                <fullName>iGlobal</fullName>
+                <default>false</default>
+                <label>iGlobal</label>
+            </value>
+            <value>
+                <fullName>ILSP</fullName>
+                <default>false</default>
+                <label>ILSP</label>
+            </value>
+            <value>
+                <fullName>Inmosat</fullName>
+                <default>false</default>
+                <label>Inmosat</label>
+            </value>
+            <value>
+                <fullName>Interactive Driving Systems (Virtual Risk Manager - Zurich)</fullName>
+                <default>false</default>
+                <label>Interactive Driving Systems (Virtual Risk Manager - Zurich)</label>
+            </value>
+            <value>
+                <fullName>Intermec</fullName>
+                <default>false</default>
+                <label>Intermec</label>
+            </value>
+            <value>
+                <fullName>International Telematics</fullName>
+                <default>false</default>
+                <label>International Telematics</label>
+            </value>
+            <value>
+                <fullName>Internet Truck Stop</fullName>
+                <default>false</default>
+                <label>Internet Truck Stop</label>
+            </value>
+            <value>
+                <fullName>Inthinc</fullName>
+                <default>false</default>
+                <label>Inthinc</label>
+            </value>
+            <value>
+                <fullName>iTrack</fullName>
+                <default>false</default>
+                <label>iTrack</label>
+            </value>
+            <value>
+                <fullName>JJ Keller</fullName>
+                <default>false</default>
+                <label>JJ Keller</label>
+            </value>
+            <value>
+                <fullName>KeepTruckin</fullName>
+                <default>false</default>
+                <label>KeepTruckin</label>
+            </value>
+            <value>
+                <fullName>Load Surfer</fullName>
+                <default>false</default>
+                <label>Load Surfer</label>
+            </value>
+            <value>
+                <fullName>Locatek</fullName>
+                <default>false</default>
+                <label>Locatek</label>
+            </value>
+            <value>
+                <fullName>Loc-Jack</fullName>
+                <default>false</default>
+                <label>Loc-Jack</label>
+            </value>
+            <value>
+                <fullName>Logisteam</fullName>
+                <default>false</default>
+                <label>Logisteam</label>
+            </value>
+            <value>
+                <fullName>LoJack</fullName>
+                <default>false</default>
+                <label>LoJack</label>
+            </value>
+            <value>
+                <fullName>Lytx (Drivecam)</fullName>
+                <default>false</default>
+                <label>Lytx (Drivecam)</label>
+            </value>
+            <value>
+                <fullName>MAS</fullName>
+                <default>false</default>
+                <label>MAS</label>
+            </value>
+            <value>
+                <fullName>Max 4 technologies</fullName>
+                <default>false</default>
+                <label>Max 4 technologies</label>
+            </value>
+            <value>
+                <fullName>McLeod Software</fullName>
+                <default>false</default>
+                <label>McLeod Software</label>
+            </value>
+            <value>
+                <fullName>Mercury Gate</fullName>
+                <default>false</default>
+                <label>Mercury Gate</label>
+            </value>
+            <value>
+                <fullName>Misanti</fullName>
+                <default>false</default>
+                <label>Misanti</label>
+            </value>
+            <value>
+                <fullName>MiX Telematics</fullName>
+                <default>false</default>
+                <label>MiX Telematics</label>
+            </value>
+            <value>
+                <fullName>MobileFinder</fullName>
+                <default>false</default>
+                <label>MobileFinder</label>
+            </value>
+            <value>
+                <fullName>Monsat</fullName>
+                <default>false</default>
+                <label>Monsat</label>
+            </value>
+            <value>
+                <fullName>National Safety Council (modules only)</fullName>
+                <default>false</default>
+                <label>National Safety Council (modules only)</label>
+            </value>
+            <value>
+                <fullName>Navman Wireless</fullName>
+                <default>false</default>
+                <label>Navman Wireless</label>
+            </value>
+            <value>
+                <fullName>Networkfleet</fullName>
+                <default>false</default>
+                <label>Networkfleet</label>
+            </value>
+            <value>
+                <fullName>Nextraq</fullName>
+                <default>false</default>
+                <label>Nextraq</label>
+            </value>
+            <value>
+                <fullName>Orbcomm</fullName>
+                <default>false</default>
+                <label>Orbcomm</label>
+            </value>
+            <value>
+                <fullName>ORTEC</fullName>
+                <default>false</default>
+                <label>ORTEC</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>PAR Logistics Management Systems</fullName>
+                <default>false</default>
+                <label>PAR Logistics Management Systems</label>
+            </value>
+            <value>
+                <fullName>Pedigree Technologies</fullName>
+                <default>false</default>
+                <label>Pedigree Technologies</label>
+            </value>
+            <value>
+                <fullName>PeopleNet</fullName>
+                <default>false</default>
+                <label>PeopleNet</label>
+            </value>
+            <value>
+                <fullName>Pointer</fullName>
+                <default>false</default>
+                <label>Pointer</label>
+            </value>
+            <value>
+                <fullName>PrePass</fullName>
+                <default>false</default>
+                <label>PrePass</label>
+            </value>
+            <value>
+                <fullName>Prophecy by Accellos</fullName>
+                <default>false</default>
+                <label>Prophecy by Accellos</label>
+            </value>
+            <value>
+                <fullName>Protectio</fullName>
+                <default>false</default>
+                <label>Protectio</label>
+            </value>
+            <value>
+                <fullName>PureSafety (modules only)</fullName>
+                <default>false</default>
+                <label>PureSafety (modules only)</label>
+            </value>
+            <value>
+                <fullName>Rand McNally/DriverTech</fullName>
+                <default>false</default>
+                <label>Rand McNally/DriverTech</label>
+            </value>
+            <value>
+                <fullName>Roadnet Telematics</fullName>
+                <default>false</default>
+                <label>Roadnet Telematics</label>
+            </value>
+            <value>
+                <fullName>Routific</fullName>
+                <default>false</default>
+                <label>Routific</label>
+            </value>
+            <value>
+                <fullName>SageQuest</fullName>
+                <default>false</default>
+                <label>SageQuest</label>
+            </value>
+            <value>
+                <fullName>Sepromex</fullName>
+                <default>false</default>
+                <label>Sepromex</label>
+            </value>
+            <value>
+                <fullName>SIS</fullName>
+                <default>false</default>
+                <label>SIS</label>
+            </value>
+            <value>
+                <fullName>Sky Angel</fullName>
+                <default>false</default>
+                <label>Sky Angel</label>
+            </value>
+            <value>
+                <fullName>SkyBitz</fullName>
+                <default>false</default>
+                <label>SkyBitz</label>
+            </value>
+            <value>
+                <fullName>SkyWorld Protection</fullName>
+                <default>false</default>
+                <label>SkyWorld Protection</label>
+            </value>
+            <value>
+                <fullName>Smart Tracker</fullName>
+                <default>false</default>
+                <label>Smart Tracker</label>
+            </value>
+            <value>
+                <fullName>Soltrack</fullName>
+                <default>false</default>
+                <label>Soltrack</label>
+            </value>
+            <value>
+                <fullName>Sprint</fullName>
+                <default>false</default>
+                <label>Sprint</label>
+            </value>
+            <value>
+                <fullName>Star911</fullName>
+                <default>false</default>
+                <label>Star911</label>
+            </value>
+            <value>
+                <fullName>Stop &amp; Track</fullName>
+                <default>false</default>
+                <label>Stop &amp; Track</label>
+            </value>
+            <value>
+                <fullName>Tanscore</fullName>
+                <default>false</default>
+                <label>Tanscore</label>
+            </value>
+            <value>
+                <fullName>Tecnolider</fullName>
+                <default>false</default>
+                <label>Tecnolider</label>
+            </value>
+            <value>
+                <fullName>Tecnologistik</fullName>
+                <default>false</default>
+                <label>Tecnologistik</label>
+            </value>
+            <value>
+                <fullName>Teletrac</fullName>
+                <default>false</default>
+                <label>Teletrac</label>
+            </value>
+            <value>
+                <fullName>Telnorm</fullName>
+                <default>false</default>
+                <label>Telnorm</label>
+            </value>
+            <value>
+                <fullName>Thyme (Fresh Software Solutions)</fullName>
+                <default>false</default>
+                <label>Thyme (Fresh Software Solutions)</label>
+            </value>
+            <value>
+                <fullName>TMW Suite</fullName>
+                <default>false</default>
+                <label>TMW Suite</label>
+            </value>
+            <value>
+                <fullName>Tracker GPS</fullName>
+                <default>false</default>
+                <label>Tracker GPS</label>
+            </value>
+            <value>
+                <fullName>TrackJack (SkyPatrol S.A. de C.V.)</fullName>
+                <default>false</default>
+                <label>TrackJack (SkyPatrol S.A. de C.V.)</label>
+            </value>
+            <value>
+                <fullName>Trailer Tracking</fullName>
+                <default>false</default>
+                <label>Trailer Tracking</label>
+            </value>
+            <value>
+                <fullName>Tramigo</fullName>
+                <default>false</default>
+                <label>Tramigo</label>
+            </value>
+            <value>
+                <fullName>TransCore</fullName>
+                <default>false</default>
+                <label>TransCore</label>
+            </value>
+            <value>
+                <fullName>Transportek</fullName>
+                <default>false</default>
+                <label>Transportek</label>
+            </value>
+            <value>
+                <fullName>Trimble</fullName>
+                <default>false</default>
+                <label>Trimble</label>
+            </value>
+            <value>
+                <fullName>TruckWin.net</fullName>
+                <default>false</default>
+                <label>TruckWin.net</label>
+            </value>
+            <value>
+                <fullName>Ubicacel Vehicular Iusacell</fullName>
+                <default>false</default>
+                <label>Ubicacel Vehicular Iusacell</label>
+            </value>
+            <value>
+                <fullName>Ubicalo</fullName>
+                <default>false</default>
+                <label>Ubicalo</label>
+            </value>
+            <value>
+                <fullName>UbicaMovil</fullName>
+                <default>false</default>
+                <label>UbicaMovil</label>
+            </value>
+            <value>
+                <fullName>Ubicaware</fullName>
+                <default>false</default>
+                <label>Ubicaware</label>
+            </value>
+            <value>
+                <fullName>UDA (Tracking System de México)</fullName>
+                <default>false</default>
+                <label>UDA (Tracking System de México)</label>
+            </value>
+            <value>
+                <fullName>U-Drove</fullName>
+                <default>false</default>
+                <label>U-Drove</label>
+            </value>
+            <value>
+                <fullName>Unicomm</fullName>
+                <default>false</default>
+                <label>Unicomm</label>
+            </value>
+            <value>
+                <fullName>USACanadaLoadup</fullName>
+                <default>false</default>
+                <label>USACanadaLoadup</label>
+            </value>
+            <value>
+                <fullName>UTS</fullName>
+                <default>false</default>
+                <label>UTS</label>
+            </value>
+            <value>
+                <fullName>Vectium (Remora)</fullName>
+                <default>false</default>
+                <label>Vectium (Remora)</label>
+            </value>
+            <value>
+                <fullName>Verizon</fullName>
+                <default>false</default>
+                <label>Verizon</label>
+            </value>
+            <value>
+                <fullName>Vertrax, Inc. (SmartDrops)</fullName>
+                <default>false</default>
+                <label>Vertrax, Inc. (SmartDrops)</label>
+            </value>
+            <value>
+                <fullName>Vessage.com</fullName>
+                <default>false</default>
+                <label>Vessage.com</label>
+            </value>
+            <value>
+                <fullName>Virtual Dispatch</fullName>
+                <default>false</default>
+                <label>Virtual Dispatch</label>
+            </value>
+            <value>
+                <fullName>Visualsat</fullName>
+                <default>false</default>
+                <label>Visualsat</label>
+            </value>
+            <value>
+                <fullName>Vnomics</fullName>
+                <default>false</default>
+                <label>Vnomics</label>
+            </value>
+            <value>
+                <fullName>WebTech</fullName>
+                <default>false</default>
+                <label>WebTech</label>
+            </value>
+            <value>
+                <fullName>WebTech Wireless</fullName>
+                <default>false</default>
+                <label>WebTech Wireless</label>
+            </value>
+            <value>
+                <fullName>Wireless Matrix</fullName>
+                <default>false</default>
+                <label>Wireless Matrix</label>
+            </value>
+            <value>
+                <fullName>Wise Systems</fullName>
+                <default>false</default>
+                <label>Wise Systems</label>
+            </value>
+            <value>
+                <fullName>XATA</fullName>
+                <default>false</default>
+                <label>XATA</label>
+            </value>
+            <value>
+                <fullName>XATA Turnpike</fullName>
+                <default>false</default>
+                <label>XATA Turnpike</label>
+            </value>
+            <value>
+                <fullName>Xora, Inc. (GPS TimeTrack)</fullName>
+                <default>false</default>
+                <label>Xora, Inc. (GPS TimeTrack)</label>
+            </value>
+            <value>
+                <fullName>Zonar Systems</fullName>
+                <default>false</default>
+                <label>Zonar Systems</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

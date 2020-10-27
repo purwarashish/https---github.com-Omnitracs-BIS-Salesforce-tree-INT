@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>System__c</fullName>
+    <externalId>false</externalId>
+    <label>System-old</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>3rd Party Providers</fullName>
+                <default>false</default>
+                <label>3rd Party Providers</label>
+            </value>
+            <value>
+                <fullName>NMC</fullName>
+                <default>false</default>
+                <label>NMC</label>
+            </value>
+            <value>
+                <fullName>NMC - Hosted</fullName>
+                <default>false</default>
+                <label>NMC - Hosted</label>
+            </value>
+            <value>
+                <fullName>QDC</fullName>
+                <default>false</default>
+                <label>QDC</label>
+            </value>
+            <value>
+                <fullName>QSP (Mex)</fullName>
+                <default>false</default>
+                <label>QSP (Mex)</label>
+            </value>
+            <value>
+                <fullName>QSP (US)</fullName>
+                <default>false</default>
+                <label>QSP (US)</label>
+            </value>
+            <value>
+                <fullName>WEB</fullName>
+                <default>false</default>
+                <label>WEB</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

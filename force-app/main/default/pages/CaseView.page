@@ -1,0 +1,5 @@
+<apex:page standardController="Case" showHeader="true" tabStyle="case" >
+   <apex:form >
+       <apex:detail relatedList="true" relatedListHover="true" showChatter="true" title="true" inlineEdit="true"/>
+   </apex:form>
+</apex:page>

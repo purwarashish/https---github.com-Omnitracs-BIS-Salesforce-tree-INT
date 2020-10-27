@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Test_Plan_Instance__c</fullName>
+    <externalId>false</externalId>
+    <label>Test Plan Instance</label>
+    <referenceTo>Test_Plan_Instance__c</referenceTo>
+    <relationshipLabel>Test Plan Instance Run Junctions</relationshipLabel>
+    <relationshipName>Test_Plan_Instance_Run_Junctions</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

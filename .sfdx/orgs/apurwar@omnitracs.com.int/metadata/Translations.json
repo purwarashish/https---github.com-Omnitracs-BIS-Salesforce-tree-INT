@@ -1,0 +1,16 @@
+{
+  "status": 0,
+  "result": {
+    "createdById": "00550000000vfNuAAI",
+    "createdByName": "Omnitracs Admin",
+    "createdDate": "2007-12-01T00:43:09.000Z",
+    "fileName": "translations/es.translation",
+    "fullName": "es",
+    "id": "01h50000000CgozAAC",
+    "lastModifiedById": "0051T000008Q72SQAS",
+    "lastModifiedByName": "Marketing Cloud",
+    "lastModifiedDate": "2020-10-10T14:22:30.000Z",
+    "manageableState": "beta",
+    "type": "Translations"
+  }
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Pricing_Related__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Used in Oracle integration. Informatica script will look at this field to determine which pricing condition data records should be truncated on a nighly basis. If TRUE, they will be truncated.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If pricing condition, TRUE. Otherwise, FALSE.</inlineHelpText>
+    <label>Is Pricing Related?</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

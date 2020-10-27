@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_ID_3XXX</fullName>
+    <columns>OBJECT_ID</columns>
+    <columns>NAME</columns>
+    <columns>Condition__c</columns>
+    <columns>Data_Key__c</columns>
+    <columns>Product__c</columns>
+    <columns>Result_Value__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Data_Key__c</field>
+        <operation>startsWith</operation>
+        <value>99</value>
+    </filters>
+    <filters>
+        <field>Condition__c</field>
+        <operation>notContain</operation>
+        <value>roadnet</value>
+    </filters>
+    <label>Account ID - 3XXX</label>
+    <language>en_US</language>
+</ListView>

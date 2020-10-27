@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Assisting_Techs__c</fullName>
+    <externalId>false</externalId>
+    <label>Assisting Techs</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Akpaidem, Kufre</fullName>
+                <default>false</default>
+                <label>Akpaidem, Kufre</label>
+            </value>
+            <value>
+                <fullName>Berman, Joshua</fullName>
+                <default>false</default>
+                <label>Berman, Joshua</label>
+            </value>
+            <value>
+                <fullName>Burk, Darrell</fullName>
+                <default>false</default>
+                <label>Burk, Darrell</label>
+            </value>
+            <value>
+                <fullName>Campiglio, Alessandro</fullName>
+                <default>false</default>
+                <label>Campiglio, Alessandro</label>
+            </value>
+            <value>
+                <fullName>Carroll, Geavonna</fullName>
+                <default>false</default>
+                <label>Carroll, Geavonna</label>
+            </value>
+            <value>
+                <fullName>Cheezum, Trevor</fullName>
+                <default>false</default>
+                <label>Cheezum, Trevor</label>
+            </value>
+            <value>
+                <fullName>Dean, Matt</fullName>
+                <default>false</default>
+                <label>Dean, Matt</label>
+            </value>
+            <value>
+                <fullName>Dowd, Amanda</fullName>
+                <default>false</default>
+                <label>Dowd, Amanda</label>
+            </value>
+            <value>
+                <fullName>Duncan, Tina</fullName>
+                <default>false</default>
+                <label>Duncan, Tina</label>
+            </value>
+            <value>
+                <fullName>Eberhart, David</fullName>
+                <default>false</default>
+                <label>Eberhart, David</label>
+            </value>
+            <value>
+                <fullName>Evans, Zach</fullName>
+                <default>false</default>
+                <label>Evans, Zach</label>
+            </value>
+            <value>
+                <fullName>Ginn, David</fullName>
+                <default>false</default>
+                <label>Ginn, David</label>
+            </value>
+            <value>
+                <fullName>Grueninger, Lisa</fullName>
+                <default>false</default>
+                <label>Grueninger, Lisa</label>
+            </value>
+            <value>
+                <fullName>Harris, Linda</fullName>
+                <default>false</default>
+                <label>Harris, Linda</label>
+            </value>
+            <value>
+                <fullName>Harris, Teri</fullName>
+                <default>false</default>
+                <label>Harris, Teri</label>
+            </value>
+            <value>
+                <fullName>Holman, Dennis</fullName>
+                <default>false</default>
+                <label>Holman, Dennis</label>
+            </value>
+            <value>
+                <fullName>LaMarr, Guy</fullName>
+                <default>false</default>
+                <label>LaMarr, Guy</label>
+            </value>
+            <value>
+                <fullName>Leon, Alex</fullName>
+                <default>false</default>
+                <label>Leon, Alex</label>
+            </value>
+            <value>
+                <fullName>Maslow, Rachel</fullName>
+                <default>false</default>
+                <label>Maslow, Rachel</label>
+            </value>
+            <value>
+                <fullName>Ozeryan, Vladimir</fullName>
+                <default>false</default>
+                <label>Ozeryan, Vladimir</label>
+            </value>
+            <value>
+                <fullName>Posada, Kristal</fullName>
+                <default>false</default>
+                <label>Posada, Kristal</label>
+            </value>
+            <value>
+                <fullName>Schulman, Casey</fullName>
+                <default>false</default>
+                <label>Schulman, Casey</label>
+            </value>
+            <value>
+                <fullName>Struckmeier, Brian</fullName>
+                <default>false</default>
+                <label>Struckmeier, Brian</label>
+            </value>
+            <value>
+                <fullName>Wajer, John</fullName>
+                <default>false</default>
+                <label>Wajer, John</label>
+            </value>
+            <value>
+                <fullName>Watson, Colleen</fullName>
+                <default>false</default>
+                <label>Watson, Colleen</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

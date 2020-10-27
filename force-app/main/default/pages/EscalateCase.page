@@ -1,0 +1,3 @@
+<apex:page controller="EscalateCaseController" action="{!EscalateToEngineering}">
+    <apex:messages />
+</apex:page>

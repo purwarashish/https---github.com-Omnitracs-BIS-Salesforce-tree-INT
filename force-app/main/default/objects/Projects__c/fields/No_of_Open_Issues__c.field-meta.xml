@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_of_Open_Issues__c</fullName>
+    <description>Number of Open Issues from the Project Issues related object.</description>
+    <externalId>false</externalId>
+    <inlineHelpText># of Open Issues from the Project Issues related list.</inlineHelpText>
+    <label># of Open Issues</label>
+    <summaryFilterItems>
+        <field>Project_Issues__c.Issue_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Resolved</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Project_Issues__c.Project__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

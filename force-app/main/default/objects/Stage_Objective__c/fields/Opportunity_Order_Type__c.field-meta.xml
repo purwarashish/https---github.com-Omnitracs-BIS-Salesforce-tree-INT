@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Order_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Opportunity Order Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>AddOn</fullName>
+                <default>false</default>
+                <label>AddOn</label>
+            </value>
+            <value>
+                <fullName>Annual Increase Within Term</fullName>
+                <default>false</default>
+                <label>Annual Increase Within Term</label>
+            </value>
+            <value>
+                <fullName>Auto Renewal With Increase</fullName>
+                <default>false</default>
+                <label>Auto Renewal With Increase</label>
+            </value>
+            <value>
+                <fullName>Auto Renewal Without Increase</fullName>
+                <default>false</default>
+                <label>Auto Renewal Without Increase</label>
+            </value>
+            <value>
+                <fullName>Change Order</fullName>
+                <default>false</default>
+                <label>Change Order</label>
+            </value>
+            <value>
+                <fullName>Contract Renewal</fullName>
+                <default>false</default>
+                <label>Contract Renewal</label>
+            </value>
+            <value>
+                <fullName>Customer Portal</fullName>
+                <default>false</default>
+                <label>Customer Portal</label>
+            </value>
+            <value>
+                <fullName>Data Clean-Up</fullName>
+                <default>false</default>
+                <label>Data Clean-Up</label>
+            </value>
+            <value>
+                <fullName>Decommission</fullName>
+                <default>false</default>
+                <label>Decommission</label>
+            </value>
+            <value>
+                <fullName>Eval</fullName>
+                <default>false</default>
+                <label>Eval</label>
+            </value>
+            <value>
+                <fullName>Maintenance</fullName>
+                <default>false</default>
+                <label>Maintenance</label>
+            </value>
+            <value>
+                <fullName>Migration</fullName>
+                <default>false</default>
+                <label>Migration</label>
+            </value>
+            <value>
+                <fullName>New</fullName>
+                <default>false</default>
+                <label>New</label>
+            </value>
+            <value>
+                <fullName>New Services</fullName>
+                <default>false</default>
+                <label>New Services</label>
+            </value>
+            <value>
+                <fullName>Reactivation</fullName>
+                <default>false</default>
+                <label>Reactivation</label>
+            </value>
+            <value>
+                <fullName>Renewal Within Term (No Increase)</fullName>
+                <default>false</default>
+                <label>Renewal Within Term (No Increase)</label>
+            </value>
+            <value>
+                <fullName>Subscription</fullName>
+                <default>false</default>
+                <label>Subscription</label>
+            </value>
+            <value>
+                <fullName>Subscription Renewal</fullName>
+                <default>false</default>
+                <label>Subscription Renewal</label>
+            </value>
+            <value>
+                <fullName>Term License</fullName>
+                <default>false</default>
+                <label>Term License</label>
+            </value>
+            <value>
+                <fullName>Transfer</fullName>
+                <default>false</default>
+                <label>Transfer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

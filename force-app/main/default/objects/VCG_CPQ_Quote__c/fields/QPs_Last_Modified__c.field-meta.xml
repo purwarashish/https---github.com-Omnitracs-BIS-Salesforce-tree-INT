@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QPs_Last_Modified__c</fullName>
+    <description>This is used just to trigger an update to the Quote after the last Quote Product has been saved. This tracks the Last Modified so will be guaranteed to be updated anytime any of the QP records are updated. This is used to trigger the QuoteUtility.setMSADocIds() trigger handler (possibly others).</description>
+    <externalId>false</externalId>
+    <label>QPs Last Modified</label>
+    <summarizedField>VCG_CPQ_Quote_Product__c.LastModifiedDate</summarizedField>
+    <summaryForeignKey>VCG_CPQ_Quote_Product__c.Quote__c</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

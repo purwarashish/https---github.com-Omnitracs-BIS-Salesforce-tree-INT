@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Decommission_Reason__c</fullName>
+    <externalId>false</externalId>
+    <label>Decommission Reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Gone out of business</fullName>
+                <default>false</default>
+                <label>Gone out of business</label>
+            </value>
+            <value>
+                <fullName>Move to a different product family</fullName>
+                <default>false</default>
+                <label>Move to a different product family</label>
+            </value>
+            <value>
+                <fullName>Change order after signing</fullName>
+                <default>false</default>
+                <label>Change order after signing</label>
+            </value>
+            <value>
+                <fullName>Opt-out</fullName>
+                <default>false</default>
+                <label>Opt-out</label>
+            </value>
+            <value>
+                <fullName>Reduction in number of licenses</fullName>
+                <default>false</default>
+                <label>Reduction in number of licenses</label>
+            </value>
+            <value>
+                <fullName>Competitive</fullName>
+                <default>false</default>
+                <label>Competitive</label>
+            </value>
+            <value>
+                <fullName>Sent to collections</fullName>
+                <default>false</default>
+                <label>Sent to collections</label>
+            </value>
+            <value>
+                <fullName>Using via another customer</fullName>
+                <default>false</default>
+                <label>Using via another customer</label>
+            </value>
+            <value>
+                <fullName>First year cancel</fullName>
+                <default>false</default>
+                <label>First year cancel</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

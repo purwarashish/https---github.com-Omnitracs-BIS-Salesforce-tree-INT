@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Make_Cables_Comments_Required</fullName>
+    <active>true</active>
+    <description>Make Cables Comments required if Cables is No.</description>
+    <errorConditionFormula>AND( 
+ISBLANK( Cables_Comments__c ), 
+ISPICKVAL( Cables__c , &quot;No&quot;) 
+)</errorConditionFormula>
+    <errorDisplayField>Cables_Comments__c</errorDisplayField>
+    <errorMessage>Cables Comments is required if Cables is &quot;No&quot;</errorMessage>
+</ValidationRule>

@@ -1,0 +1,47 @@
+<!---------------------------------------------------------------------------------------------------
+Name : OutageCustomSearch
+Author : Shruti Karn
+Date : 30 August 201028 June 2011
+
+Usage : This page is the Step 6 for Outage Contact Wizard to send emails through ExactTarget
+    
+----------------------------------------------------------------------------------------------------->
+<apex:page controller="OutageContactWizardController" tabStyle="Campaign" id="pageId" wizard="false" showHeader="true" sidebar="true">
+    
+    <apex:includeScript value="{!URLFOR($Resource.JQuery, 'jquery.js')}" /> 
+        
+    <apex:sectionHeader title="Outage Contact Tool" subtitle="Step 6 of 6" />
+    <apex:includeScript value="{!$Resource.OutageTool}"/>
+    <apex:form id="sendEmailForm"> 
+    
+    <apex:messages style="color:rgb(204,0,0);font-weight: bold;text-align:center"/>
+    <apex:pageBlock title="Step 6. Send Email" id="pgSendEmail">
+        <apex:pageBlockSection collapsible="false" columns="1" id="pgblksectn">
+        <apex:pageBlockSectionItem id="pgblksectnitm1" >  
+              <apex:outputPanel >
+                  <div style="text-align:right">
+                      <apex:commandButton value="Previous" action="{!redirectToStep5}"/>
+                      <apex:commandLink value="Cancel" action="/home/home.jsp"/>
+                  </div>
+              </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+           <apex:pageBlockSectionItem id="pgblksectnitm2" >  
+             <apex:iframe scrolling="true" height="380px" id="sid" src="https://members.exacttarget.com/Integration/SalesforceUI/EmailSend.aspx?sendtype=Campaign&sfid={!newCampaign.Id}&sessid={!$Api.Session_ID}&sessurl={!$Api.Partner_Server_URL_60}"/>
+             <!--<apex:outputLink value="/servlet/servlet.Integration?lid=00bP0000000MFVJ&eid=701P0000000Dq7J&ic=1"> Send Email </apex:outputLink>-->
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem id="pgblksectnitm3" >  
+              <apex:outputPanel >
+                  <div style="text-align:right">
+                      <apex:commandButton value="Previous" action="{!redirectToStep5}"/>
+                      <apex:commandLink value="Cancel" action="/home/home.jsp"/>
+                  </div>
+              </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+     </apex:pageBlockSection>   
+    </apex:pageBlock>
+    <!--<input type="button" id="start" value="start" />-->
+   </apex:form>
+
+
+    
+</apex:page>

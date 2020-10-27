@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Serial_Number_VTM_Atleast_Nine_Digits</fullName>
+    <active>true</active>
+    <description>Serial Number VTM Should be at least nine digits</description>
+    <errorConditionFormula>LEN( Serial_VTM__c ) &lt; 9</errorConditionFormula>
+    <errorDisplayField>Serial_VTM__c</errorDisplayField>
+    <errorMessage>Serial Number VTM Should be at least nine digits</errorMessage>
+</ValidationRule>

@@ -1,0 +1,179 @@
+<apex:page standardController="Account" extensions="AcquisitionWizardController" docType="html-5.0">
+    <apex:form >
+        <style type="text/css">
+        .bPageBlock .detailList .labelCol {
+        width: 5%;
+        }
+        </style>
+   
+        <apex:pageBlock title="Acquisition Wizard">
+        <apex:pageMessages />
+            <apex:outputPanel rendered="{!IF(step==1,true,false)}">
+                <table width="100%">
+                    <tr>
+                        <td  bgcolor="#236fbd" height="20"  style="vertical-align: middle;"><font color="white"><b>Please lookup the Account that has acquired <u>{!Account.Name}</u></b></font></td>
+                    </tr>
+                </table>
+                <br/>
+                <apex:pageBlockSection >
+                    <apex:inputField value="{!conForAccLookup.AccountId}">
+                        <apex:actionSupport event="onchange" rerender="acpick"/>
+                    </apex:inputField>
+                    
+                </apex:pageBlockSection>
+                <br/>
+                <apex:outputPanel id="acpick">
+                </apex:outputPanel>
+                <apex:commandButton action="{!cancel}" value="Cancel"/>
+                <apex:commandButton action="{!nextbtn}" value="Next"/>
+            </apex:outputPanel>
+            
+            <!--Step2-->
+            <apex:outputPanel rendered="{!IF(step==2,true,false)}">
+                
+                
+                 <table width="100%">
+                    <tr>
+                        <td  bgcolor="#236fbd" height="20"  style="vertical-align: middle;"><font color="white"><b>Please select the Contracts you wish to transfer to <u>{!AccountId.Name}</u></b></font></td>
+                    </tr>
+                </table>
+                <apex:pageBlockTable value="{!contracts}" var="c" id="table">
+                    <apex:column >
+                        <apex:facet name="header">
+                            <apex:outputPanel layout="none">
+                                <apex:inputCheckbox onclick="selectAllCheckboxes(this,'inputId')"/><apex:outputLabel value="Select All" style="vertical-align:super"/>
+                            </apex:outputPanel>
+                        </apex:facet>
+                        <apex:inputCheckbox value="{!c.selected}" id="inputId"/>
+                    </apex:column>
+                    <apex:column value="{!c.con.Family_ID__c}" />
+                    <apex:column value="{!c.con.ContractNumber}" />
+                    <apex:column value="{!c.con.Account.Name}" />
+                    <apex:column value="{!c.con.Agreement_Type__c}" />
+                    <apex:column value="{!c.con.Contract_Title__c}" />
+                    <apex:column headerValue="Start Date">
+                            <apex:outputLabel >
+                                <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                                    <apex:param value="{!c.con.StartDate}"/>
+                                </apex:outputText>
+                            </apex:outputLabel>
+                    </apex:column>
+                    <apex:column headerValue="End Date">
+                            <apex:outputLabel >
+                                <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                                    <apex:param value="{!c.con.EndDate}"/>
+                                </apex:outputText>
+                            </apex:outputLabel>
+                    </apex:column>
+                    <apex:column value="{!c.con.Status}" />
+                    <apex:column value="{!c.con.Owner.Name}" />
+                    <apex:column value="{!c.con.owner.IsActive}" />
+                </apex:pageBlockTable>
+                <br/>
+                <apex:commandButton action="{!prevbtn}" value="Previous"/>
+                <apex:commandButton action="{!cancel}" value="Cancel"/>
+                <apex:commandButton action="{!nextbtn2}" value="Next"/>
+            </apex:outputPanel>
+            
+            <!--Step3-->
+            <apex:outputPanel rendered="{!IF(step==3,true,false)}">
+                
+                <table width="100%">
+                    <tr>
+                        <td  bgcolor="#236fbd" height="20"  style="vertical-align: middle;"><font color="white"><b>Selected Account is:</b></font></td>
+                    </tr>
+                </table>
+                <apex:pageBlockTable value="{!AccountId}" var="ac" id="table2">
+                    <apex:column value="{!ac.Name}" />
+                </apex:pageBlockTable>
+                <br/>
+                <table width="100%">
+                    <tr>
+                        <td  bgcolor="#236fbd" height="20"  style="vertical-align: middle;"><font color="white"><b>Selected Contract/s are:</b></font></td>
+                    </tr>
+                </table>
+                <apex:pageBlockTable value="{!selectedContracts}" var="c" id="table3">
+                    <apex:column value="{!c.ContractNumber}" />
+                    <apex:column value="{!c.Account.Name}" />
+                    <apex:column value="{!c.Agreement_Type__c}" />
+                    <apex:column value="{!c.Contract_Title__c}" />
+                    <apex:column headerValue="Start Date">
+                            <apex:outputLabel >
+                                <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                                    <apex:param value="{!c.StartDate}"/>
+                                </apex:outputText>
+                            </apex:outputLabel>
+                    </apex:column>
+                    <apex:column headerValue="End Date">
+                            <apex:outputLabel >
+                                <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                                    <apex:param value="{!c.EndDate}"/>
+                                </apex:outputText>
+                            </apex:outputLabel>
+                    </apex:column>
+                    <apex:column value="{!c.Status}" />
+                    <apex:column value="{!c.Owner.Name}" />
+                    <apex:column value="{!c.owner.IsActive}" />
+                </apex:pageBlockTable>
+                <br/>
+                <apex:commandButton action="{!prevbtn2}" value="Previous"/>
+                <apex:commandButton action="{!cancel}" value="Cancel"/>
+                <apex:commandButton action="{!nextbtn3}" value="Next"/>
+            </apex:outputPanel>
+            
+            <!--Step4-->
+            <apex:outputPanel rendered="{!IF(step==4,true,false)}">
+                <apex:selectList value="{!selectedYesNo}" multiselect="false" size="1">
+                    <b><font size="2">Do you wish to have <u>{!Account.Name}</u> remain Active?</font></b>&nbsp;&nbsp;
+                        &nbsp;<apex:selectOptions value="{!YesNo}"/>
+                    <apex:actionSupport event="onchange" rerender="MyPanel"/>
+                </apex:selectList>
+                
+                <br/><br/>
+                <apex:commandButton action="{!prevbtn3}" value="Previous"/>
+                <apex:commandButton action="{!cancel}" value="Cancel"/>
+                <apex:commandButton action="{!nextbtn4}" value="Next"/>
+            </apex:outputPanel>
+            
+            <!--Step5-->
+            <apex:outputPanel rendered="{!IF(step==5,true,false)}">
+                 <table width="100%">
+                    <tr>
+                        <td  bgcolor="#236fbd" height="20"  style="vertical-align: middle;"><font color="white"><b>Please add any notes or description related to this acquisition. This will appear as a Note on both Accounts</b></font></td>
+                    </tr>
+                </table>
+                <br/>
+                <table width="100%">
+                    <tr>
+                        <th width="1.90%">Note</th>
+                        <th width="4%">Acquisition Date</th>
+                    </tr>
+                </table>
+                <apex:pageBlockSection columns="3">
+            
+                    <apex:inputField style="height:26px;" value="{!noteToInsert.Body} " required="true" label=""/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                            <apex:input type="date" value="{!myDate}" required="true" >
+                                <apex:actionSupport event="onchange" rerender="acdate"/>
+                            </apex:input>
+                    </apex:outputPanel>
+                </apex:pageBlockSection>
+                <br/>
+                <apex:commandButton action="{!prevbtn4}" value="Previous"/>
+                <apex:commandButton action="{!cancel}" value="Cancel"/>
+                <apex:commandButton action="{!finish}" value="Finish"/>
+            </apex:outputPanel>
+        </apex:pageBlock>
+    </apex:form>
+    <script type="text/javascript">
+        function selectAllCheckboxes(obj,receivedInputID){
+            var inputCheckBox = document.getElementsByTagName("input");                  
+            for(var i=0; i<inputCheckBox.length; i++){          
+                if(inputCheckBox[i].id.indexOf(receivedInputID)!=-1){                                     
+                    inputCheckBox[i].checked = obj.checked;
+                }
+            }
+        }
+    </script>
+</apex:page>

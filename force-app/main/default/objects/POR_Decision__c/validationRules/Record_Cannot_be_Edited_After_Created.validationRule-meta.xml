@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Record_Cannot_be_Edited_After_Created</fullName>
+    <active>true</active>
+    <description>The POR Decision record can&apos;t be updated after it has been created</description>
+    <errorConditionFormula>AND( 
+NOT( ISNEW() ), 
+OR( 
+ISCHANGED( Date_POR_Change_Approved__c ), 
+ISCHANGED( POR_Commercial_Release_Date__c ), 
+ISCHANGED( Impact_Assessment__c) , 
+ISCHANGED( Reason_for_Change__c) , 
+ISCHANGED( Platform__c ) 
+) 
+)</errorConditionFormula>
+    <errorMessage>The POR Decision record can&apos;t be updated after it has been created. Please create a new record.</errorMessage>
+</ValidationRule>

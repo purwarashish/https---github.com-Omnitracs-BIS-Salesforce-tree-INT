@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_GT_Reporting_Interval_Required</fullName>
+    <active>true</active>
+    <description>Other GT Reporting Interval is required if &quot;Other&quot; is specified as the GT Reporting Interval</description>
+    <errorConditionFormula>AND(  ISPICKVAL(GT_Reporting_Interval__c, &apos;Other&apos;)  ,  Other_GT_Reporting_Interval__c = &quot;&quot; )</errorConditionFormula>
+    <errorDisplayField>Other_GT_Reporting_Interval__c</errorDisplayField>
+    <errorMessage>This field is required if GT Reporting Interval is &apos;Other&apos;</errorMessage>
+</ValidationRule>

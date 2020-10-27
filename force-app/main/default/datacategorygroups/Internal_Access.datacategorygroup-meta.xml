@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCategoryGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <dataCategory>
+        <dataCategory>
+            <label>Field Engineering</label>
+            <name>Field_Engineering</name>
+        </dataCategory>
+        <dataCategory>
+            <label>GNS/IT</label>
+            <name>GNS_IT</name>
+        </dataCategory>
+        <dataCategory>
+            <label>ETS</label>
+            <name>ETS</name>
+        </dataCategory>
+        <label>All QES Internal Support</label>
+        <name>All</name>
+    </dataCategory>
+    <label>Internal Access</label>
+    <objectUsage>
+        <object>KnowledgeArticleVersion</object>
+    </objectUsage>
+</DataCategoryGroup>

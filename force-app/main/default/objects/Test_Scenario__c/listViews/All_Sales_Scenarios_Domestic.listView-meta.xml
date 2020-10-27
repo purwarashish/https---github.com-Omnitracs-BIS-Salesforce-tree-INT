@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Sales_Scenarios_Domestic</fullName>
+    <columns>NAME</columns>
+    <columns>Verification_User__c</columns>
+    <columns>Business_Unit__c</columns>
+    <columns>Track_From_Requirement__c</columns>
+    <columns>Status__c</columns>
+    <columns>Scenario__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>Ready_for_Implementation__c</columns>
+    <columns>Requirement__c</columns>
+    <columns>Area__c</columns>
+    <columns>Pre_condition__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Track_From_Requirement__c</field>
+        <operation>contains</operation>
+        <value>Sales,CPQ</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notContain</operation>
+        <value>Cancelled,Scheduled for UAT4,Duplicate,Phase II,Enhancement Request</value>
+    </filters>
+    <filters>
+        <field>Business_Unit__c</field>
+        <operation>notContain</operation>
+        <value>MX</value>
+    </filters>
+    <label>All Sales Scenarios-Domestic</label>
+    <language>en_US</language>
+</ListView>

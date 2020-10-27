@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_Validation</fullName>
+    <active>true</active>
+    <description>Status should be Completed if Actual Completion Date is populated.</description>
+    <errorConditionFormula>AND(NOT(ISPICKVAL( Milestone_Status__c, &quot;Completed&quot;)),NOT(ISNULL( Actual_Completion_Date__c )),
+$RecordType.Name = &quot;PS Milestone&quot;
+)</errorConditionFormula>
+    <errorMessage>Status must be &quot;Completed&quot; if the Actual Completion Date is populated.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Used to denote which Case Record Types will receive reminder emails when Approvals are Pending</description>
+    <enableFeeds>false</enableFeeds>
+    <label>CasePendingReminderEmailRecType</label>
+    <visibility>Protected</visibility>
+</CustomObject>
